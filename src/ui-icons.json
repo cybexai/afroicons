@@ -862,5 +862,445 @@
   "family": "Actions",
   "afro": null,
   "body": "<path d=\"M10.71 5.53L10.78 2.88L13.22 2.88L13.29 5.53A6.6 6.6 0 0 1 15.67 6.51L15.67 6.51L17.58 4.69L19.31 6.42L17.49 8.33A6.6 6.6 0 0 1 18.47 10.71L18.47 10.71L21.12 10.78L21.12 13.22L18.47 13.29A6.6 6.6 0 0 1 17.49 15.67L17.49 15.67L19.31 17.58L17.58 19.31L15.67 17.49A6.6 6.6 0 0 1 13.29 18.47L13.29 18.47L13.22 21.12L10.78 21.12L10.71 18.47A6.6 6.6 0 0 1 8.33 17.49L8.33 17.49L6.42 19.31L4.69 17.58L6.51 15.67A6.6 6.6 0 0 1 5.53 13.29L5.53 13.29L2.88 13.22L2.88 10.78L5.53 10.71A6.6 6.6 0 0 1 6.51 8.33L6.51 8.33L4.69 6.42L6.42 4.69L8.33 6.51A6.6 6.6 0 0 1 10.71 5.53Z\"/><circle cx=\"12\" cy=\"12\" r=\"2.8\"/>"
+ },
+ {
+  "id": "AlertCircle",
+  "fr": "Alerte",
+  "en": "Alert",
+  "family": "Statuts et alertes",
+  "afro": null,
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7.5V12.8\"/><circle cx=\"12\" cy=\"16.3\" r=\"0.95\" fill=\"currentColor\" stroke=\"none\"/>"
+ },
+ {
+  "id": "Info",
+  "fr": "Information",
+  "en": "Info",
+  "family": "Statuts et alertes",
+  "afro": null,
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 11V16.5\"/><circle cx=\"12\" cy=\"7.8\" r=\"0.95\" fill=\"currentColor\" stroke=\"none\"/>"
+ },
+ {
+  "id": "HelpCircle",
+  "fr": "Aide contextuelle",
+  "en": "Help",
+  "family": "Statuts et alertes",
+  "afro": null,
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M9.4 9.4A2.7 2.7 0 0 1 14.7 10.1C14.7 11.8 12 12.3 12 14\"/><circle cx=\"12\" cy=\"17\" r=\"0.95\" fill=\"currentColor\" stroke=\"none\"/>"
+ },
+ {
+  "id": "XCircle",
+  "fr": "Échec",
+  "en": "Failed",
+  "family": "Actions",
+  "afro": null,
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M9 9L15 15M15 9L9 15\"/>"
+ },
+ {
+  "id": "Ban",
+  "fr": "Interdit",
+  "en": "Forbidden",
+  "family": "Statuts et alertes",
+  "afro": null,
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M5.7 5.7L18.3 18.3\"/>"
+ },
+ {
+  "id": "Shield",
+  "fr": "Sécurité",
+  "en": "Security",
+  "family": "Statuts et alertes",
+  "afro": null,
+  "body": "<path d=\"M12 3L19.5 6V11.5C19.5 16 16.3 19.6 12 21C7.7 19.6 4.5 16 4.5 11.5V6Z\"/>"
+ },
+ {
+  "id": "ShieldAlert",
+  "fr": "Risque",
+  "en": "Risk",
+  "family": "Statuts et alertes",
+  "afro": null,
+  "body": "<path d=\"M12 3L19.5 6V11.5C19.5 16 16.3 19.6 12 21C7.7 19.6 4.5 16 4.5 11.5V6Z\"/><path d=\"M12 8V12.5\"/><circle cx=\"12\" cy=\"15.6\" r=\"0.95\" fill=\"currentColor\" stroke=\"none\"/>"
+ },
+ {
+  "id": "Activity",
+  "fr": "Activité",
+  "en": "Activity",
+  "family": "Statuts et alertes",
+  "afro": null,
+  "body": "<path d=\"M3 12H7L9.5 5L14.5 19L17 12H21\"/>"
+ },
+ {
+  "id": "BellRing",
+  "fr": "Rappel",
+  "en": "Reminder",
+  "family": "Statuts et alertes",
+  "afro": null,
+  "body": "<path d=\"M6 16.5V11A6 6 0 0 1 18 11V16.5L19.5 18H4.5Z\"/><path d=\"M10 20.5C10.4 21.2 11.1 21.5 12 21.5S13.6 21.2 14 20.5\"/><path d=\"M3.5 8.5C3.9 6.6 4.9 5 6.3 3.8M20.5 8.5C20.1 6.6 19.1 5 17.7 3.8\"/>"
+ },
+ {
+  "id": "Cloud",
+  "fr": "En ligne",
+  "en": "Cloud",
+  "family": "Statuts et alertes",
+  "afro": null,
+  "body": "<path d=\"M7 18.5H17A4 4 0 0 0 17.5 10.5A5.6 5.6 0 0 0 6.8 11.9A3.3 3.3 0 0 0 7 18.5Z\"/>"
+ },
+ {
+  "id": "WifiOff",
+  "fr": "Pas de réseau",
+  "en": "No network",
+  "family": "Statuts et alertes",
+  "afro": null,
+  "body": "<path d=\"M2.5 8.8A14 14 0 0 1 21.5 8.8\"/><path d=\"M5.5 12.3A9.5 9.5 0 0 1 18.5 12.3\"/><path d=\"M8.6 15.7A5 5 0 0 1 15.4 15.7\"/><path d=\"M3.5 3.5L20.5 20.5\"/><circle cx=\"12\" cy=\"19.2\" r=\"0.95\" fill=\"currentColor\" stroke=\"none\"/>"
+ },
+ {
+  "id": "Rocket",
+  "fr": "Lancement",
+  "en": "Launch",
+  "family": "Statuts et alertes",
+  "afro": null,
+  "body": "<path d=\"M12 15.5L8.5 12C9.6 8 12.6 4.4 19.5 4.5C19.6 11.4 16 14.4 12 15.5Z\"/><path d=\"M8.5 12L5 11.5L7.2 8.8C8 8.4 9 8.4 10 8.6\"/><path d=\"M12 15.5L12.5 19L15.2 16.8C15.6 16 15.6 15 15.4 14\"/><path d=\"M6.2 17.8C5.3 18.7 5 20.1 5 21C5.9 21 7.3 20.7 8.2 19.8\"/><circle cx=\"15.3\" cy=\"8.7\" r=\"1.6\"/>"
+ },
+ {
+  "id": "Lightbulb",
+  "fr": "Astuce",
+  "en": "Tip",
+  "family": "Statuts et alertes",
+  "afro": null,
+  "body": "<path d=\"M9 14.5C7.5 13.4 6.5 11.7 6.5 9.8A5.5 5.5 0 0 1 17.5 9.8C17.5 11.7 16.5 13.4 15 14.5V17.5H9Z\"/><path d=\"M10 20.5H14\"/>"
+ },
+ {
+  "id": "Globe",
+  "fr": "Langue et web",
+  "en": "Language and web",
+  "family": "Communication",
+  "afro": "Un globe centré sur l'Afrique.",
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M8.69 6.44H14.39L15.68 8.55L17.34 10.02L15.5 11.68L15.31 14.26L13.29 17.57L12.37 18.49L11.45 16.46L11.26 13.7L10.34 12.23L7.77 11.68L7.03 9.47Z\"/><circle cx=\"17.1\" cy=\"15.1\" r=\"0.75\" fill=\"currentColor\" stroke=\"none\"/>"
+ },
+ {
+  "id": "Phone",
+  "fr": "Appeler",
+  "en": "Call",
+  "family": "Communication",
+  "afro": null,
+  "body": "<path d=\"M6.5 3.5H8.6C9 3.5 9.4 3.8 9.5 4.2L10.4 7.4C10.5 7.8 10.3 8.3 9.9 8.5L8.2 9.4C9.3 11.8 11.2 13.7 13.6 14.8L14.5 13.1C14.7 12.7 15.2 12.5 15.6 12.6L18.8 13.5C19.2 13.6 19.5 14 19.5 14.4V16.5C19.5 18.7 17.7 20.5 15.5 20.4C9.1 20 4 14.9 3.6 8.5C3.4 5.8 4.6 3.5 6.5 3.5Z\"/>"
+ },
+ {
+  "id": "MessageCircle",
+  "fr": "Discussion",
+  "en": "Chat",
+  "family": "Communication",
+  "afro": null,
+  "body": "<path d=\"M20.5 11.8A8.5 8.5 0 0 1 8.2 19.4L3.5 20.5L4.7 16.2A8.5 8.5 0 1 1 20.5 11.8Z\"/>"
+ },
+ {
+  "id": "Inbox",
+  "fr": "Boîte de réception",
+  "en": "Inbox",
+  "family": "Communication",
+  "afro": null,
+  "body": "<path d=\"M3.5 13.5H8L9.5 16H14.5L16 13.5H20.5\"/><path d=\"M5.8 5.6C6.1 4.9 6.8 4.5 7.6 4.5H16.4C17.2 4.5 17.9 4.9 18.2 5.6L20.5 13.5V18C20.5 19.1 19.6 20 18.5 20H5.5C4.4 20 3.5 19.1 3.5 18V13.5Z\"/>"
+ },
+ {
+  "id": "Camera",
+  "fr": "Photo",
+  "en": "Photo",
+  "family": "Communication",
+  "afro": null,
+  "body": "<path d=\"M3.5 9C3.5 7.9 4.4 7 5.5 7H7.6L9.2 4.5H14.8L16.4 7H18.5C19.6 7 20.5 7.9 20.5 9V17.5C20.5 18.6 19.6 19.5 18.5 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5Z\"/><circle cx=\"12\" cy=\"13\" r=\"3.6\"/>"
+ },
+ {
+  "id": "Monitor",
+  "fr": "Écran",
+  "en": "Screen",
+  "family": "Communication",
+  "afro": null,
+  "body": "<rect x=\"2.5\" y=\"4\" width=\"19\" height=\"12.5\" rx=\"2.2\"/><path d=\"M8 20.5H16M12 16.5V20.5\"/>"
+ },
+ {
+  "id": "Minus",
+  "fr": "Retirer",
+  "en": "Remove",
+  "family": "Actions",
+  "afro": null,
+  "body": "<path d=\"M4.5 12H19.5\"/>"
+ },
+ {
+  "id": "Edit2",
+  "fr": "Éditer",
+  "en": "Edit",
+  "family": "Actions",
+  "afro": null,
+  "body": "<path d=\"M16.2 3.8C17 3 18.3 3 19.1 3.8L20.2 4.9C21 5.7 21 7 20.2 7.8L8.5 19.5L3.5 20.5L4.5 15.5Z\"/>"
+ },
+ {
+  "id": "Upload",
+  "fr": "Envoyer un fichier",
+  "en": "Upload",
+  "family": "Actions",
+  "afro": null,
+  "body": "<path d=\"M12 15V3.5M7 8.5L12 3.5L17 8.5\"/><path d=\"M4 16.5V18.5C4 19.6 4.9 20.5 6 20.5H18C19.1 20.5 20 19.6 20 18.5V16.5\"/>"
+ },
+ {
+  "id": "EyeOff",
+  "fr": "Masquer",
+  "en": "Hide",
+  "family": "Actions",
+  "afro": null,
+  "body": "<path d=\"M3 3L21 21\"/><path d=\"M10.2 5.7C10.8 5.6 11.4 5.5 12 5.5C16 5.5 19.4 7.8 21.5 12C20.9 13.2 20.2 14.3 19.3 15.2\"/><path d=\"M6.4 7C4.8 8.2 3.5 9.9 2.5 12C4.6 16.2 8 18.5 12 18.5C13.8 18.5 15.4 18 16.8 17.2\"/><path d=\"M9.9 9.9A3 3 0 0 0 14.1 14.1\"/>"
+ },
+ {
+  "id": "Star",
+  "fr": "Favori",
+  "en": "Favourite",
+  "family": "Actions",
+  "afro": null,
+  "body": "<path d=\"M12 3.5L14.6 8.9L20.5 9.6L16.1 13.6L17.3 19.5L12 16.5L6.7 19.5L7.9 13.6L3.5 9.6L9.4 8.9Z\"/>"
+ },
+ {
+  "id": "Link2",
+  "fr": "Lier",
+  "en": "Link",
+  "family": "Actions",
+  "afro": null,
+  "body": "<path d=\"M9 17H7.5A5 5 0 0 1 7.5 7H9M15 7H16.5A5 5 0 0 1 16.5 17H15\"/><path d=\"M8 12H16\"/>"
+ },
+ {
+  "id": "Share2",
+  "fr": "Partager",
+  "en": "Share",
+  "family": "Actions",
+  "afro": null,
+  "body": "<circle cx=\"18\" cy=\"5.5\" r=\"2.5\"/><circle cx=\"6\" cy=\"12\" r=\"2.5\"/><circle cx=\"18\" cy=\"18.5\" r=\"2.5\"/><path d=\"M8.2 10.8L15.8 6.7M8.2 13.2L15.8 17.3\"/>"
+ },
+ {
+  "id": "Paperclip",
+  "fr": "Pièce jointe",
+  "en": "Attachment",
+  "family": "Actions",
+  "afro": null,
+  "body": "<path d=\"M20 11.5L12.2 19.3A5 5 0 0 1 5.1 12.2L13 4.3A3.3 3.3 0 0 1 17.7 9L10 16.7A1.7 1.7 0 0 1 7.6 14.3L14.6 7.3\"/>"
+ },
+ {
+  "id": "Play",
+  "fr": "Lancer",
+  "en": "Play",
+  "family": "Actions",
+  "afro": null,
+  "body": "<path d=\"M7 4.5V19.5C7 20.3 7.9 20.8 8.6 20.4L20 13C20.6 12.6 20.6 11.4 20 11L8.6 3.6C7.9 3.2 7 3.7 7 4.5Z\"/>"
+ },
+ {
+  "id": "ScanLine",
+  "fr": "Scanner",
+  "en": "Scan",
+  "family": "Actions",
+  "afro": null,
+  "body": "<path d=\"M3.5 8V6C3.5 4.6 4.6 3.5 6 3.5H8M16 3.5H18C19.4 3.5 20.5 4.6 20.5 6V8M20.5 16V18C20.5 19.4 19.4 20.5 18 20.5H16M8 20.5H6C4.6 20.5 3.5 19.4 3.5 18V16\"/><path d=\"M7 12H17\"/>"
+ },
+ {
+  "id": "Settings2",
+  "fr": "Options",
+  "en": "Options",
+  "family": "Actions",
+  "afro": null,
+  "body": "<path d=\"M6 3.5V10M6 14V20.5M12 3.5V7M12 11V20.5M18 3.5V13M18 17V20.5\"/><circle cx=\"6\" cy=\"12\" r=\"2\"/><circle cx=\"12\" cy=\"9\" r=\"2\"/><circle cx=\"18\" cy=\"15\" r=\"2\"/>"
+ },
+ {
+  "id": "Wrench",
+  "fr": "Maintenance",
+  "en": "Maintenance",
+  "family": "Actions",
+  "afro": null,
+  "body": "<path d=\"M14.6 3.7C12.6 4.6 11.6 6.9 12.4 9L4.6 16.8C3.8 17.6 3.8 18.9 4.6 19.7S6.6 20.5 7.4 19.7L15.2 11.9C17.3 12.7 19.6 11.7 20.5 9.7L17.7 9.9L15.5 7.8L15.7 5Z\"/>"
+ },
+ {
+  "id": "Handshake",
+  "fr": "Partenariat",
+  "en": "Partnership",
+  "family": "Actions",
+  "afro": null,
+  "body": "<path d=\"M2.5 7.5L6 6.5L11 9\"/><path d=\"M21.5 7.5L17.5 6.5L14.5 6.5L9.6 10.6C9 11.1 9 12 9.6 12.5C10.1 13 10.9 13 11.4 12.5L13.6 10.6\"/><path d=\"M13.6 10.6L18.6 15.2\"/><path d=\"M21.5 15L18.6 15.2L13.2 19.6C12.6 20.1 11.7 20 11.2 19.4L5.2 13.4L2.5 13.2\"/><path d=\"M9.2 16.6L11.2 18.6M11.4 14.8L13.6 17\"/>"
+ },
+ {
+  "id": "ChevronUp",
+  "fr": "Replier",
+  "en": "Collapse",
+  "family": "Navigation",
+  "afro": null,
+  "body": "<path d=\"M6 14.5L12 8.5L18 14.5\"/>"
+ },
+ {
+  "id": "ChevronLeft",
+  "fr": "Précédent",
+  "en": "Previous",
+  "family": "Navigation",
+  "afro": null,
+  "body": "<path d=\"M14.5 6L8.5 12L14.5 18\"/>"
+ },
+ {
+  "id": "ExternalLink",
+  "fr": "Lien externe",
+  "en": "External link",
+  "family": "Navigation",
+  "afro": null,
+  "body": "<path d=\"M13.5 4H20V10.5\"/><path d=\"M20 4L11 13\"/><path d=\"M18 14V18C18 19.1 17.1 20 16 20H6C4.9 20 4 19.1 4 18V8C4 6.9 4.9 6 6 6H10\"/>"
+ },
+ {
+  "id": "LogOut",
+  "fr": "Se déconnecter",
+  "en": "Sign out",
+  "family": "Navigation",
+  "afro": null,
+  "body": "<path d=\"M10 4H6C4.9 4 4 4.9 4 6V18C4 19.1 4.9 20 6 20H10\"/><path d=\"M9.5 12H20.5M16 7.5L20.5 12L16 16.5\"/>"
+ },
+ {
+  "id": "MapPin",
+  "fr": "Adresse",
+  "en": "Location",
+  "family": "Navigation",
+  "afro": null,
+  "body": "<path d=\"M12 21C12 21 19 14.6 19 9.5A7 7 0 0 0 5 9.5C5 14.6 12 21 12 21Z\"/><circle cx=\"12\" cy=\"9.5\" r=\"2.6\"/>"
+ },
+ {
+  "id": "Undo2",
+  "fr": "Revenir",
+  "en": "Undo",
+  "family": "Navigation",
+  "afro": null,
+  "body": "<path d=\"M9 14.5L4 9.5L9 4.5\"/><path d=\"M4 9.5H14.5A5.5 5.5 0 0 1 14.5 20.5H11\"/>"
+ },
+ {
+  "id": "CreditCard",
+  "fr": "Carte bancaire",
+  "en": "Card",
+  "family": "Argent et paiement",
+  "afro": null,
+  "body": "<rect x=\"2.5\" y=\"5\" width=\"19\" height=\"14\" rx=\"2.5\"/><path d=\"M2.5 9.5H21.5\"/><path d=\"M6 15H9.5\"/>"
+ },
+ {
+  "id": "Calculator",
+  "fr": "Calcul",
+  "en": "Calculator",
+  "family": "Argent et paiement",
+  "afro": null,
+  "body": "<rect x=\"5\" y=\"2.5\" width=\"14\" height=\"19\" rx=\"2.5\"/><rect x=\"8\" y=\"5.5\" width=\"8\" height=\"4\" rx=\"1\"/><path d=\"M8.5 13.5H8.6M12 13.5H12.1M15.5 13.5H15.6M8.5 17H8.6M12 17H12.1M15.5 17H15.6\"/>"
+ },
+ {
+  "id": "Scale",
+  "fr": "Balance",
+  "en": "Scale",
+  "family": "Argent et paiement",
+  "afro": null,
+  "body": "<path d=\"M12 3.5V20.5\"/><path d=\"M8 20.5H16\"/><path d=\"M5 7H19\"/><path d=\"M5 7L2.5 13.5M5 7L7.5 13.5M2.5 13.5C3 16 7 16 7.5 13.5Z\"/><path d=\"M19 7L16.5 13.5M19 7L21.5 13.5M16.5 13.5C17 16 21 16 21.5 13.5Z\"/>"
+ },
+ {
+  "id": "User",
+  "fr": "Utilisateur",
+  "en": "User",
+  "family": "Personnes",
+  "afro": null,
+  "body": "<circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4.5 20.5C4.5 16.6 7.9 14 12 14S19.5 16.6 19.5 20.5\"/>"
+ },
+ {
+  "id": "UserPlus",
+  "fr": "Ajouter une personne",
+  "en": "Add person",
+  "family": "Personnes",
+  "afro": null,
+  "body": "<circle cx=\"9\" cy=\"8\" r=\"3.6\"/><path d=\"M2.5 20.5C2.5 16.9 5.4 14.5 9 14.5S15.5 16.9 15.5 20.5\"/><path d=\"M19 8V14M16 11H22\"/>"
+ },
+ {
+  "id": "Moon",
+  "fr": "Mode sombre",
+  "en": "Dark mode",
+  "family": "Thème et météo",
+  "afro": null,
+  "body": "<path d=\"M20 14.5A8 8 0 1 1 9.5 4A6.5 6.5 0 0 0 20 14.5Z\"/>"
+ },
+ {
+  "id": "Calendar",
+  "fr": "Calendrier",
+  "en": "Calendar",
+  "family": "Documents et données",
+  "afro": null,
+  "body": "<rect x=\"3.5\" y=\"5\" width=\"17\" height=\"15.5\" rx=\"2.5\"/><path d=\"M8 3V7M16 3V7M3.5 10H20.5\"/>"
+ },
+ {
+  "id": "CalendarDays",
+  "fr": "Planning",
+  "en": "Schedule",
+  "family": "Documents et données",
+  "afro": null,
+  "body": "<rect x=\"3.5\" y=\"5\" width=\"17\" height=\"15.5\" rx=\"2.5\"/><path d=\"M8 3V7M16 3V7M3.5 10H20.5\"/><path d=\"M8 13.5H8.1M12 13.5H12.1M16 13.5H16.1M8 17H8.1M12 17H12.1M16 17H16.1\"/>"
+ },
+ {
+  "id": "CalendarRange",
+  "fr": "Période",
+  "en": "Date range",
+  "family": "Documents et données",
+  "afro": null,
+  "body": "<rect x=\"3.5\" y=\"5\" width=\"17\" height=\"15.5\" rx=\"2.5\"/><path d=\"M8 3V7M16 3V7M3.5 10H20.5\"/><path d=\"M7.5 14H12.5M11.5 17H16.5\"/>"
+ },
+ {
+  "id": "FileSpreadsheet",
+  "fr": "Tableur",
+  "en": "Spreadsheet",
+  "family": "Documents et données",
+  "afro": null,
+  "body": "<path d=\"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z\"/><path d=\"M14 3V8H19\"/><path d=\"M8 12H16V18H8Z\"/><path d=\"M8 15H16M11.5 12V18\"/>"
+ },
+ {
+  "id": "Layers",
+  "fr": "Couches",
+  "en": "Layers",
+  "family": "Documents et données",
+  "afro": null,
+  "body": "<path d=\"M12 3.5L21 8.2L12 12.9L3 8.2Z\"/><path d=\"M3 12.4L12 17.1L21 12.4\"/><path d=\"M3 16.4L12 21.1L21 16.4\"/>"
+ },
+ {
+  "id": "LayoutGrid",
+  "fr": "Grille",
+  "en": "Grid",
+  "family": "Documents et données",
+  "afro": null,
+  "body": "<rect x=\"3.5\" y=\"3.5\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"13.5\" y=\"3.5\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"3.5\" y=\"13.5\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"13.5\" y=\"13.5\" width=\"7\" height=\"7\" rx=\"1.5\"/>"
+ },
+ {
+  "id": "BookMarked",
+  "fr": "Marque-page",
+  "en": "Bookmarked",
+  "family": "Documents et données",
+  "afro": null,
+  "body": "<path d=\"M4.5 19V5C4.5 3.9 5.4 3 6.5 3H19.5V17H6.5C5.4 17 4.5 17.9 4.5 19S5.4 21 6.5 21H19.5V17\"/><path d=\"M10 3V10.5L12.5 9L15 10.5V3\"/>"
+ },
+ {
+  "id": "Database",
+  "fr": "Base de données",
+  "en": "Database",
+  "family": "Documents et données",
+  "afro": null,
+  "body": "<ellipse cx=\"12\" cy=\"6\" rx=\"8\" ry=\"3\"/><path d=\"M4 6V18C4 19.7 7.6 21 12 21S20 19.7 20 18V6\"/><path d=\"M4 12C4 13.7 7.6 15 12 15S20 13.7 20 12\"/>"
+ },
+ {
+  "id": "HardDrive",
+  "fr": "Stockage",
+  "en": "Storage",
+  "family": "Documents et données",
+  "afro": null,
+  "body": "<rect x=\"2.5\" y=\"13\" width=\"19\" height=\"7\" rx=\"2\"/><path d=\"M2.5 15L5.5 5.5C5.8 4.6 6.6 4 7.5 4H16.5C17.4 4 18.2 4.6 18.5 5.5L21.5 15\"/><circle cx=\"6.5\" cy=\"16.5\" r=\"0.9\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"9.5\" cy=\"16.5\" r=\"0.9\" fill=\"currentColor\" stroke=\"none\"/>"
+ },
+ {
+  "id": "ShoppingBag",
+  "fr": "Achats",
+  "en": "Shopping",
+  "family": "Commerce et stock",
+  "afro": "Le sac de marché en raphia tressé.",
+  "body": "<path d=\"M4.5 8.5H19.5L18.6 19.4C18.5 20.3 17.8 21 16.9 21H7.1C6.2 21 5.5 20.3 5.4 19.4Z\"/><path d=\"M8.5 8.5V7A3.5 3.5 0 0 1 15.5 7V8.5\"/><path d=\"M6 13.5L8.2 11.5L10.4 13.5L12.6 11.5L14.8 13.5L17 11.5\"/><path d=\"M6.4 17L8.4 15.2L10.4 17L12.4 15.2L14.4 17L16.4 15.2\"/>"
+ },
+ {
+  "id": "PackageCheck",
+  "fr": "Colis livré",
+  "en": "Delivered",
+  "family": "Commerce et stock",
+  "afro": "Le colis ficelé, validé.",
+  "body": "<path d=\"M20.5 11.5V7.5L12 3.5L3.5 7.5V16.5L12 20.5L13 20\"/><path d=\"M3.5 7.5L12 11.5L20.5 7.5M12 11.5V20.5\"/><path d=\"M7.8 5.5L16.2 9.5V12\"/><path d=\"M15 17.5L17 19.5L21 15.5\"/>"
  }
 ]

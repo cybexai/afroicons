@@ -1,5 +1,8 @@
 # Journal des versions
 
+## À venir
+- `afroicons-ui` et `afroicons-angular` : **55 nouvelles icônes d'interface** (les P2 de NAFA ERP), soit 163 au total. Parmi elles, 3 nouvelles métaphores africaines : `Globe` centré sur l'Afrique, `ShoppingBag` en sac de raphia tressé, `PackageCheck` en colis ficelé
+
 ## 0.4.0 — 29 octobre 2026 · nouveaux paquets
 
 ### afroicons-ui et afroicons-angular

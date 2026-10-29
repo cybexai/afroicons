@@ -1,6 +1,6 @@
 <p align="center"><img src="docs/logo.svg" width="96" alt="Afroicons"></p>
 <h1 align="center">Afroicons</h1>
-<p align="center"><b>Des icônes libres qui racontent l'Afrique.</b><br>150 icônes culturelles + 108 icônes d'interface · grille 24 px · FR / EN · open source (MIT)</p>
+<p align="center"><b>Des icônes libres qui racontent l'Afrique.</b><br>150 icônes culturelles + 163 icônes d'interface · grille 24 px · FR / EN · open source (MIT)</p>
 <p align="center"><a href="https://afroicons.org"><b>afroicons.org</b></a></p>
 <p align="center">
   <a href="LICENSE"><img alt="Licence MIT" src="https://img.shields.io/badge/licence-MIT-C24E2A"></a>
@@ -20,7 +20,7 @@
 | --- | --- |
 | [`afroicons`](packages/afroicons) | SVG, sprite, `icons.json`, fonction `toSvg()` (JS natif) |
 | [`afroicons-react`](packages/afroicons-react) | Un composant React par icône |
-| [`afroicons-ui`](packages/afroicons-ui) | 108 icônes d'interface, compatibles `lucide-react` (mêmes noms, mêmes props) |
+| [`afroicons-ui`](packages/afroicons-ui) | 163 icônes d'interface, compatibles `lucide-react` (mêmes noms, mêmes props) |
 | [`afroicons-angular`](packages/afroicons-angular) | Composant Angular autonome `<afroicon>`, toutes les icônes |
 
 ## Démarrage rapide · Quick start
