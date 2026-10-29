@@ -11,7 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: 20, registry-url: "https://registry.npmjs.org" }
+        with: { node-version: 20, cache: npm, registry-url: "https://registry.npmjs.org" }
+      - run: npm ci
       - run: cp LICENSE packages/afroicons-angular/
       - run: npm test
       - run: cp LICENSE packages/afroicons/ && cp LICENSE packages/afroicons-react/ && cp LICENSE packages/afroicons-ui/
