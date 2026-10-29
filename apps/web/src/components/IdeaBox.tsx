@@ -63,6 +63,13 @@ export function IdeaBox() {
     return () => { stale = true; };
   }, [be, authors]);
 
+  // Une piste d'inspiration pré-remplit le formulaire.
+  const nameInput = useRef<HTMLInputElement>(null);
+  const pick = (p: { name: string; cat: string; region: string }) => {
+    setForm((f) => ({ ...f, name: p.name, cat: p.cat, region: p.region }));
+    nameInput.current?.focus({ preventScroll: true });
+    nameInput.current?.closest("form")?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  };
   const fail = (e: any) => {
     if (e?.code === "invalid_argument") setRo(true);
     else if (e?.code === "limit") a.toast(a.tt("20 propositions maximum par personne.", "20 suggestions max per person."));
@@ -104,7 +111,7 @@ export function IdeaBox() {
       <div className="ideas">
         <form className="iform" autoComplete="off" onSubmit={submit}>
           <h3><T k="if1" /></h3><p><T k="if2" /></p>
-          <label><span><T k="if3" /></span><input maxLength={60} required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder={a.tt("Ex. Ndolè, lutteur, Gye Nyame…", "e.g. Ndolè, wrestler, Gye Nyame…")} /></label>
+          <label><span><T k="if3" /></span><input ref={nameInput} maxLength={60} required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder={a.tt("Ex. Ndolè, lutteur, Gye Nyame…", "e.g. Ndolè, wrestler, Gye Nyame…")} /></label>
           <div className="two">
             <label><span><T k="if4" /></span><select value={form.cat} onChange={(e) => setForm({ ...form, cat: e.target.value })}>{CATS.filter((c) => c.id !== "all").map((c) => <option key={c.id} value={c.id}>{a.tt(c.fr, c.en)}</option>)}</select></label>
             <label><span><T k="if5" /></span><select value={form.region} onChange={(e) => setForm({ ...form, region: e.target.value })}>{Object.entries(REGNAME).map(([k, v]) => <option key={k} value={k}>{v[a.lang]}</option>)}</select></label>
@@ -113,7 +120,7 @@ export function IdeaBox() {
           <button className="btn p" type="submit" disabled={busy || (!!be && ro)}>{ready && !be ? a.tt("Proposer sur GitHub", "Suggest on GitHub") : <T k="if7" />}</button>
           {note && <div className="inote">{note}</div>}
         </form>
-        {ready && !be ? <GitHubIdeas /> : <div>
+        {ready && !be ? <GitHubIdeas onPick={pick} /> : <div>
           <div className="ibar">
             <div className="seg">{(["top", "new", "done"] as const).map((o, j) => <button key={o} className={sort === o ? "on" : ""} onClick={() => setSort(o)}><T k={"io" + (j + 1)} /></button>)}</div>
             <span className="stats">{a.lang === "en" ? `${all.length} ideas · ${voters} voters` : `${all.length} idée${all.length > 1 ? "s" : ""} · ${voters} votant${voters > 1 ? "s" : ""}`}</span>
@@ -156,6 +163,19 @@ type GhIdea = { n: number; name: string; url: string; votes: number; comments: n
 const GH_API = REPO.replace("https://github.com/", "https://api.github.com/repos/") + "/issues?state=all&per_page=100";
 const PREFIX = /^nouvelle icône\s*:\s*/i;
 
+/** Des icônes qui manquent encore, pour lancer la discussion quand la liste est vide. */
+const SPARKS: { fr: string; en: string; cat: string; region: string }[] = [
+  { fr: "Lutteur", en: "Wrestler", cat: "vie", region: "ouest" },
+  { fr: "Gye Nyame", en: "Gye Nyame", cat: "symboles", region: "ouest" },
+  { fr: "Thiéboudienne", en: "Thieboudienne", cat: "cuisine", region: "ouest" },
+  { fr: "Injera", en: "Injera", cat: "cuisine", region: "est" },
+  { fr: "Case à impluvium", en: "Impluvium house", cat: "architecture", region: "ouest" },
+  { fr: "Toguna", en: "Toguna", cat: "architecture", region: "ouest" },
+  { fr: "Sapeur", en: "Sapeur", cat: "vie", region: "centre" },
+  { fr: "Chéchia", en: "Chechia", cat: "vie", region: "nord" },
+  { fr: "Moringa", en: "Moringa", cat: "nature", region: "pan" },
+];
+
 export async function loadGithubIdeas(): Promise<GhIdea[]> {
   try { const c = JSON.parse(sessionStorage.getItem("afroicons:gh") || "null"); if (c && Date.now() - c.t < 10 * 60e3) return c.v; } catch { /* rien */ }
   const r = await fetch(GH_API, { headers: { Accept: "application/vnd.github+json" } });
@@ -172,7 +192,7 @@ export async function loadGithubIdeas(): Promise<GhIdea[]> {
   return v;
 }
 
-function GitHubIdeas() {
+function GitHubIdeas({ onPick }: { onPick: (p: { name: string; cat: string; region: string }) => void }) {
   const a = useApp();
   const [items, setItems] = useState<GhIdea[] | null>(null);
   const [failed, setFailed] = useState(false);
@@ -188,9 +208,24 @@ function GitHubIdeas() {
       ].map(([t, d], k) => <li key={k}><b><span>{k + 1}</span>{t}</b><p>{d}</p></li>)}
     </ol>
   );
+  const sparks = SPARKS.filter((x) => !ICONS.some((i) => norm(i.fr) === norm(x.fr)));
   if (failed || (items && !items.length)) return (
     <div className="ighost">
       {steps}
+      <div className="isparks">
+        <h3>{a.tt("Pas d'inspiration ? Quelques icônes qui manquent", "Need ideas? A few missing icons")}</h3>
+        <div className="sgrid">{sparks.map((x) => {
+          const c = catOf(x.cat);
+          const name = a.lang === "en" ? x.en : x.fr;
+          return (
+            <button key={x.fr} type="button" onClick={() => onPick({ name, cat: x.cat, region: x.region })}>
+              <i>{byId[c.ic] && <Svg i={byId[c.ic]} o={{ s: 20, w: 1.9 }} />}</i>
+              <span><b>{name}</b><small>{a.tt(c.fr, c.en)} · {REGNAME[x.region][a.lang]}</small></span>
+              <em aria-hidden="true">+</em>
+            </button>
+          );
+        })}</div>
+      </div>
       <p className="inote">{failed
         ? a.tt("Les propositions n'ont pas pu être chargées depuis GitHub.", "Suggestions couldn't be loaded from GitHub.")
         : a.tt("Aucune proposition pour l'instant : la vôtre sera la première.", "No suggestions yet: yours will be the first.")}{" "}
