@@ -474,11 +474,11 @@ footer .fr{display:flex;align-items:center;gap:16px}
 .mcities button{display:flex;align-items:center;gap:8px;padding:8px;border-radius:10px;font-size:13.5px;font-weight:500;text-align:left}
 .mcities button.on,.mcities button:hover{background:var(--bg2)}
 @media (max-width:1120px){.navlinks{display:none}.menum{display:block}}
-@media (max-width:420px){.citym,.ib.thm{display:none}.mpop .mx{display:block}nav.top{gap:10px}.navr{gap:6px}}
+@media (max-width:420px){.citym,.ib.thm{display:none}.mpop .mx{display:block}nav.top{gap:8px}.navr{gap:4px}.logo{gap:8px}}
 @media (hover:none){
   .hint,.cmd .foot,.kbtn .kbd,.sbox .kbd,.dacts .kbd{display:none}
 }
-@media (max-width:360px){.logo .wm-t{display:none}}
+@media (max-width:369px){.logo .wm-t{display:none}}
 /* Mobile : le flou de la barre d'outils servait de repère aux éléments « fixed » et coinçait le panneau Personnaliser.
    Sans flou, le panneau devient une vraie feuille en bas de l'écran. */
 @media (max-width:640px){
@@ -534,3 +534,14 @@ footer .fr{display:flex;align-items:center;gap:16px}
   .tools .regs{flex:none}
   .cpop{max-height:calc(100vh - 170px);overflow-y:auto;overscroll-behavior:contain}
 }
+
+/* ===== Pagination de la grille ===== */
+.grid{scroll-margin-top:200px}
+.pager{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 0 4px}
+.pager .rng{font-size:12.5px;color:var(--muted)}
+.pager .pg{display:flex;align-items:center;gap:6px}
+.pager .pill{height:40px;min-width:40px;justify-content:center;padding:0 10px}
+.pager .pill:first-child svg{transform:rotate(90deg)}.pager .pill:last-child svg{transform:rotate(-90deg)}
+.pager .pill:disabled{opacity:.35;cursor:default;border-color:var(--line)}
+.pager .gap{min-width:20px;text-align:center;color:var(--muted)}
+@media (max-width:640px){.grid{scroll-margin-top:230px}.pager{justify-content:center}.pager .rng{width:100%;text-align:center}}

@@ -62,6 +62,17 @@ function Customize() {
   );
 }
 
+/** Icônes par page : divisible par 3, 4, 5, 6, 10 et 12 colonnes, pour remplir les rangées. */
+const PER = 60;
+
+/** Numéros de page avec ellipses : 1 … 4 5 6 … 17 */
+function pageItems(page: number, pages: number): (number | "…")[] {
+  const keep = new Set([0, pages - 1, page - 1, page, page + 1].filter((p) => p >= 0 && p < pages));
+  const out: (number | "…")[] = [];
+  [...keep].sort((x, y) => x - y).forEach((p, k, arr) => { if (k && p - arr[k - 1] > 1) out.push("…"); out.push(p); });
+  return out;
+}
+
 type CardProps = { i: Icon; idx: number; focusIdx: number; fav: boolean; sel: boolean; anim: boolean; o: Parameters<typeof svgStr>[1] };
 const Card = memo(function Card({ i, idx, focusIdx, fav, sel, anim, o }: CardProps) {
   const a = useApp();
@@ -95,7 +106,9 @@ export function Library() {
   const [favOnly, setFavOnly] = useState(false);
   const [focusIdx, setFocusIdx] = useState(-1);
   const [anim, setAnim] = useState(true);
+  const [page, setPage] = useState(0);
   const grid = useRef<HTMLDivElement>(null);
+  const pendingFocus = useRef<number | null>(null);
 
   // Permet aux tags de la fiche et à la palette de piloter la recherche.
   useEffect(() => {
@@ -106,6 +119,28 @@ export function Library() {
 
   const list = useMemo(() => rank(ICONS.filter((i) => (cat === "all" || i.cat === cat) && (reg === "all" || i.region === reg) && (!favOnly || a.favs.has(i.id))), q), [cat, reg, q, favOnly, a.favs]);
   useEffect(() => { a.setList(list); }, [list]); // eslint-disable-line react-hooks/exhaustive-deps
+  const pages = Math.max(1, Math.ceil(list.length / PER));
+  // Nouveau filtre : retour à la première page. Liste raccourcie (favori retiré…) : on reste dans les bornes.
+  useEffect(() => { setPage(0); }, [cat, reg, q, favOnly]);
+  useEffect(() => { setPage((p) => Math.min(p, pages - 1)); }, [pages]);
+  // La fiche parcourt toute la liste (← →) : la grille suit, pour que le focus revienne sur la bonne carte.
+  useEffect(() => {
+    const k = a.current ? list.findIndex((i) => i.id === a.current) : -1;
+    if (k >= 0) setPage(Math.floor(k / PER));
+  }, [a.current]); // eslint-disable-line react-hooks/exhaustive-deps
+  // Focus demandé au clavier sur une carte d'une autre page : posé une fois la page affichée.
+  useEffect(() => {
+    if (pendingFocus.current == null) return;
+    const el = grid.current?.querySelector<HTMLElement>(`.hit[data-idx="${pendingFocus.current}"]`);
+    pendingFocus.current = null;
+    el?.focus(); el?.scrollIntoView({ block: "nearest" });
+  }, [page]);
+  const start = page * PER;
+  const shown = list.slice(start, start + PER);
+  const goPage = (p: number) => {
+    setAnim(true); setFocusIdx(-1); setPage(p);
+    requestAnimationFrame(() => grid.current?.scrollIntoView({ block: "start", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }));
+  };
   const change = (fn: () => void) => { setAnim(true); setFocusIdx(-1); const go = () => fn(); (document as any).startViewTransition && !matchMedia("(prefers-reduced-motion: reduce)").matches ? (document as any).startViewTransition(go) : go(); };
   useEffect(() => { if (anim) { const h = setTimeout(() => setAnim(false), 900); return () => clearTimeout(h); } }, [anim, list]);
 
@@ -121,8 +156,9 @@ export function Library() {
       e.preventDefault();
       const n = Math.max(0, Math.min(list.length - 1, k + mv));
       setFocusIdx(n);
-      const el = grid.current.querySelector<HTMLElement>(`.hit[data-idx="${n}"]`);
-      el?.focus(); el?.scrollIntoView({ block: "nearest" });
+      const focus = () => { const el = grid.current?.querySelector<HTMLElement>(`.hit[data-idx="${n}"]`); el?.focus(); el?.scrollIntoView({ block: "nearest" }); };
+      // Au bord de la page, les flèches passent à la page voisine.
+      if (Math.floor(n / PER) !== page) { pendingFocus.current = n; setPage(Math.floor(n / PER)); } else focus();
       return;
     }
     const i = list[k];
@@ -159,8 +195,20 @@ export function Library() {
       </div>
       <div ref={grid} className={"grid" + (a.selecting || a.sel.size ? " selecting" : "")} aria-label={a.t("nav1")} style={{ ["--cell" as string]: a.size + 92 + "px" }} onKeyDown={onKey}
         onFocus={(e) => { const c = (e.target as HTMLElement).closest<HTMLElement>(".hit"); if (c) setFocusIdx(+c.dataset.idx!); }}>
-        {list.map((i, k) => <Card key={i.id} i={i} idx={k} focusIdx={focusIdx} fav={a.favs.has(i.id)} sel={a.sel.has(i.id)} anim={anim} o={o} />)}
+        {shown.map((i, k) => <Card key={i.id} i={i} idx={start + k} focusIdx={focusIdx >= start && focusIdx < start + shown.length ? focusIdx : start} fav={a.favs.has(i.id)} sel={a.sel.has(i.id)} anim={anim} o={o} />)}
       </div>
+      {pages > 1 && (
+        <nav className="pager" aria-label={a.tt("Pages d'icônes", "Icon pages")}>
+          <span className="rng mono">{a.tt(`${start + 1}–${start + shown.length} sur ${list.length}`, `${start + 1}–${start + shown.length} of ${list.length}`)}</span>
+          <div className="pg">
+            <button className="pill" disabled={page === 0} aria-label={a.tt("Page précédente", "Previous page")} onClick={() => goPage(page - 1)}><IChevron s={16} w={2.4} /></button>
+            {pageItems(page, pages).map((p, k) => p === "…"
+              ? <span key={"e" + k} className="gap" aria-hidden="true">…</span>
+              : <button key={p} className={"pill num" + (p === page ? " on" : "")} aria-current={p === page ? "page" : undefined} aria-label={a.tt("Page ", "Page ") + (p + 1)} onClick={() => goPage(p)}>{p + 1}</button>)}
+            <button className="pill" disabled={page === pages - 1} aria-label={a.tt("Page suivante", "Next page")} onClick={() => goPage(page + 1)}><IChevron s={16} w={2.4} /></button>
+          </div>
+        </nav>
+      )}
       {!list.length && <div className="empty"><div className="big"><T k="e1" /></div><T k="e2" /></div>}
       <div className="hint">
         {[["←↑→↓", "h1"], [a.tt("Entrée", "Enter"), "h2"], ["C", "h3"], ["F", "h4"], ["X", "h5"], ["?", "h6"]].map(([kb, k]) => <span key={k}><span className="kbd">{kb}</span><span><T k={k} /></span></span>)}
