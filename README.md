@@ -21,12 +21,14 @@
 | [`afroicons`](packages/afroicons) | SVG, sprite, `icons.json`, fonction `toSvg()` (JS natif) |
 | [`afroicons-react`](packages/afroicons-react) | Un composant React par icône |
 | [`afroicons-ui`](packages/afroicons-ui) | 108 icônes d'interface, compatibles `lucide-react` (mêmes noms, mêmes props) |
+| [`afroicons-angular`](packages/afroicons-angular) | Composant Angular autonome `<afroicon>`, toutes les icônes |
 
 ## Démarrage rapide · Quick start
 
 ```bash
 npm install afroicons          # SVG + JS
 npm install afroicons-react    # React
+npm install afroicons-angular  # Angular
 ```
 
 ### React
@@ -102,6 +104,7 @@ scripts/build.mjs           ← génère les paquets à partir de icons.json
 packages/afroicons          ← paquet npm : SVG, sprite, toSvg()
 packages/afroicons-react    ← paquet npm : composants React
 packages/afroicons-ui       ← paquet npm : icônes d'interface compatibles lucide-react
+packages/afroicons-angular  ← paquet npm : composant Angular (le composant est écrit à la main, les données générées)
 apps/web                    ← le site afroicons.org (React + Vite + TypeScript)
   src/lib/                  ← données, SVG, recherche, motifs, i18n, boîte à idées
   src/components/           ← en-tête, bibliothèque, fiche, atelier, vitrine, marque…

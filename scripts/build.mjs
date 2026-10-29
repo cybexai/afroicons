@@ -148,3 +148,15 @@ ujs += `export const afroiconNames = ${JSON.stringify(ui.map((i) => i.id))};\n`;
 writeFileSync(join(U, "index.js"), ujs);
 writeFileSync(join(U, "index.d.ts"), udts);
 console.log(`✔ ${ui.length} icônes d'interface → packages/afroicons-ui`);
+
+/* ---------- afroicons-angular : données des icônes (le composant est écrit à la main) ---------- */
+// Une constante exportée par icône, pour que le bundle ne garde que celles qui sont importées.
+const NG = join(root, "packages/afroicons-angular/src/icons.ts");
+const node = (name, body) => `{ name: ${JSON.stringify(name)}, nodes: ${JSON.stringify(toJsxChildren(body).map(([t, p]) => [t, Object.fromEntries(Object.entries(p).map(([k, v]) => [k.replace(/[A-Z]/g, (c) => "-" + c.toLowerCase()), v]))]))} }`;
+let ng = `// afroicons-angular v${version} — généré par scripts/build.mjs, ne pas modifier à la main.\nimport type { AfroiconNode } from "./types";\n\n// Icônes culturelles (id Afroicons)\n`;
+for (const i of icons) ng += `/** ${i.fr} · ${i.en} */\nexport const ${pascal(i.id)}: AfroiconNode = ${node(i.id, i.body)};\n`;
+ng += `\n// Icônes d'interface (noms Lucide, comme afroicons-ui)\n`;
+for (const i of ui) ng += `/** ${i.fr} · ${i.en} */\nexport const ${i.id}: AfroiconNode = ${node(i.id, i.body)};\n`;
+ng += `\n/** Toutes les icônes : provideAfroicons(afroicons). Pratique, mais tout entre dans le bundle. */\nexport const afroicons = { ${[...icons.map((i) => pascal(i.id)), ...ui.map((i) => i.id)].join(", ")} } as const;\n`;
+writeFileSync(NG, ng);
+console.log(`✔ ${icons.length + ui.length} icônes → packages/afroicons-angular`);

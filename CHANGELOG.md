@@ -4,6 +4,7 @@
 - Nouveau paquet **`afroicons-ui`** : 108 icônes d'interface redessinées (les P1 de NAFA ERP), compatibles `lucide-react` — mêmes noms, mêmes props, classes `lucide-*` conservées ; les autres icônes Lucide restent disponibles
 - 15 métaphores africaines : case, panier tressé, boutique, cauri, moto de livraison, taxi-brousse, moustiquaire, dashiki, marmite, bidon, gele…
 - Site : nouvelle catégorie « Interface »
+- Nouveau paquet **`afroicons-angular`** : composant autonome `<afroicon>` (Angular 18+), les 150 icônes culturelles et les 108 d'interface, import sélectif (tree-shaking), SVG construit sans innerHTML
 
 ## À venir · projet open source
 - Code de conduite, politique de sécurité, guide de contribution complet (installation, icônes d'interface, relecture, licence des contributions)
