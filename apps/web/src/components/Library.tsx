@@ -3,7 +3,7 @@ import { CATS, ICONS, REGS, STYLES, byId, isNew, type Icon, type Style } from ".
 import { rank } from "../lib/search";
 import { svgStr } from "../lib/svg";
 import { useApp, useName } from "../state";
-import { ICheck, IChevron, ICopy, IHeart, ISearch, ISelect, Svg, T } from "./ui";
+import { ICheck, IChevron, ICopy, IHeart, ISearch, ISelect, ISliders, Svg, T } from "./ui";
 import { inert } from "./Overlays";
 
 export const exportSvg = (i: Icon, a: { style: Style; stroke: number; color: string | null; badgeBg: string }) =>
@@ -28,8 +28,8 @@ function Customize() {
   };
   return (
     <div className="custom">
-      <button className="pill" aria-expanded={open} aria-haspopup="true" onClick={(e) => { e.stopPropagation(); setOpen((o) => !o); }}>
-        <span className="dots"><i style={{ background: a.style === "line" ? a.ink : a.badgeBg }} /></span><T k="cust" /><IChevron s={14} w={2.4} />
+      <button className="pill" aria-label={a.t("cust")} aria-expanded={open} aria-haspopup="true" onClick={(e) => { e.stopPropagation(); setOpen((o) => !o); }}>
+        <span className="mic"><ISliders s={17} /></span><span className="dots"><i style={{ background: a.style === "line" ? a.ink : a.badgeBg }} /></span><span className="pl"><T k="cust" /></span><IChevron s={14} w={2.4} />
       </button>
       <div className={"cpop" + (open ? " open" : "")} {...inert(!open)}>
         <div className="blk"><h3><T k="pStyle" /></h3>
@@ -143,10 +143,10 @@ export function Library() {
             <input id="q" type="search" aria-label={a.t("cmdLbl")} autoComplete="off" value={q} onChange={(e) => { setQ(e.target.value); setFocusIdx(-1); }} placeholder={a.tt("baobab, okada, attiéké, tresses…", "baobab, okada, fufu, braids…")} />
             <span className="cnt">{list.length}/{ICONS.length}</span><span className="kbd">/</span>
           </label>
-          <button className={"pill" + (favOnly ? " on" : "")} onClick={() => { change(() => setFavOnly((f) => !f)); if (!favOnly && !a.favs.size) a.toast(a.tt("Pas encore de favoris : appuyez sur F sur une icône", "No favourites yet: press F on an icon")); }}>
-            <IHeart /><T k="fav" /> <small className="mono">{a.favs.size || ""}</small>
+          <button className={"pill" + (favOnly ? " on" : "")} aria-label={a.t("fav")} aria-pressed={favOnly} onClick={() => { change(() => setFavOnly((f) => !f)); if (!favOnly && !a.favs.size) a.toast(a.tt("Pas encore de favoris : appuyez sur F sur une icône", "No favourites yet: press F on an icon")); }}>
+            <IHeart /><span className="pl"><T k="fav" /></span><small className="mono">{a.favs.size || ""}</small>
           </button>
-          <button className={"pill" + (a.selecting ? " on" : "")} onClick={() => { if (a.selecting) a.setSel(new Set()); a.setSelecting(!a.selecting); }}><ISelect s={17} /><T k="sel" /></button>
+          <button className={"pill" + (a.selecting ? " on" : "")} aria-label={a.t("sel")} aria-pressed={a.selecting} onClick={() => { if (a.selecting) a.setSel(new Set()); a.setSelecting(!a.selecting); }}><ISelect s={17} /><span className="pl"><T k="sel" /></span></button>
           <Customize />
         </div>
         <div className="trow">

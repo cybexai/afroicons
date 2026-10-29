@@ -142,9 +142,9 @@ export function Tray() {
     <aside className={"tray" + (n ? " open" : "")} aria-label={a.tt("Sélection", "Selection")} {...inert(!n)}>
       <div className="th">{ids.slice(-10).map((id) => <Svg key={id} i={byId[id]} o={{ s: 22 }} />)}</div>
       <b>{a.lang === "en" ? `${n} selected` : `${n} sélectionnée${n > 1 ? "s" : ""}`}</b>
-      <button className="btn" onClick={() => a.copy(spriteStr(ids.map((id) => byId[id]), a.stroke))}><T k="tCopy" /></button>
-      <button className="btn" onClick={() => { a.setPattern((p) => ({ ...p, icons: ids })); document.getElementById("atelier")?.scrollIntoView(); a.toast(a.tt("Motif créé à partir de votre sélection", "Pattern created from your selection")); }}><T k="tPat" /></button>
-      {a.canDownload && <button className="btn a" onClick={() => zipIcons(ids.map((id) => byId[id]), a, `afroicons-selection-${n}.zip`)}><T k="tZip" /></button>}
+      <button className="btn" onClick={() => a.copy(spriteStr(ids.map((id) => byId[id]), a.stroke))}><span className="lg"><T k="tCopy" /></span><span className="sm">Sprite</span></button>
+      <button className="btn" onClick={() => { a.setPattern((p) => ({ ...p, icons: ids })); document.getElementById("atelier")?.scrollIntoView(); a.toast(a.tt("Motif créé à partir de votre sélection", "Pattern created from your selection")); }}><span className="lg"><T k="tPat" /></span><span className="sm">{a.tt("Motif", "Pattern")}</span></button>
+      {a.canDownload && <button className="btn a" onClick={() => zipIcons(ids.map((id) => byId[id]), a, `afroicons-selection-${n}.zip`)}><span className="lg"><T k="tZip" /></span><span className="sm">.zip</span></button>}
       <button className="btn" aria-label={a.tt("Vider", "Clear")} onClick={() => { a.setSel(new Set()); a.setSelecting(false); }}><IClose s={16} w={2.4} /></button>
     </aside>
   );
@@ -194,7 +194,7 @@ export function CommandPalette() {
               else if (e.key === "Enter") { e.preventDefault(); run(idx, e.shiftKey); }
               else if (e.key === "Escape") a.setCmdOpen(false);
             }} />
-          <span className="kbd">Esc</span>
+          <span className="kbd">Esc</span><button className="cmdx" aria-label={a.tt("Fermer", "Close")} onClick={() => a.setCmdOpen(false)}><IClose s={18} /></button>
         </div>
         <div className="res" ref={res}>
           {!items.length && <div className="empty" style={{ padding: 30 }}><T k="e1" /></div>}
