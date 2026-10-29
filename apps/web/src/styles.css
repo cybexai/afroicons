@@ -580,3 +580,13 @@ a.vote span:first-child{font-size:17px;line-height:1}
 .sgrid small{color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .sgrid em{font-style:normal;font:700 18px "DM Sans";color:var(--muted)}
 .sgrid button:hover em{color:var(--ink)}
+
+/* Listes déroulantes : flèche dessinée, à 14 px du bord, couleur du thème */
+:root{--chev:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2373685B' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9.5l6 6 6-6'/%3E%3C/svg%3E")}
+[data-mode="dark"]{--chev:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23A79987' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9.5l6 6 6-6'/%3E%3C/svg%3E")}
+.iform select,.iadm select{-webkit-appearance:none;appearance:none;background-image:var(--chev);background-repeat:no-repeat;background-position:right 14px center;background-size:16px;padding-right:40px;cursor:pointer}
+.iadm select{background-position:right 7px center;background-size:13px;padding-right:24px}
+/* Pistes : 3 × 3 sur grand écran, sans orphelin */
+.sgrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:1180px){.sgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.sgrid{grid-template-columns:1fr}}
