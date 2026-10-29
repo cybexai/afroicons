@@ -152,7 +152,7 @@ export function Brand() {
           </div>
         </div>
         <div className="bcard" style={{ background: "var(--card)" }}><small><T k="b4" /></small><div className="lg"><Raw html={logoSvg({ s: 72, door, sun })} /><span className="wm" style={{ fontSize: 36 }}>Afroicons</span></div><small><T k="b5" /></small></div>
-        <div className="bcard" style={{ background: "var(--a1)", color: "#fff", borderColor: "transparent" }}><small><T k="b6" /></small><div className="lg"><Raw html={logoSvg({ s: 72, bg: "none", fg: "#fff", door: "#fff", sun: "#fff" })} /><span className="wm" style={{ fontSize: 36 }}>Afroicons</span></div><small><T k="b7" /></small></div>
+        <div className="bcard" style={{ background: "var(--a1s)", color: "#fff", borderColor: "transparent" }}><small><T k="b6" /></small><div className="lg"><Raw html={logoSvg({ s: 72, bg: "none", fg: "#fff", door: "#fff", sun: "#fff" })} /><span className="wm" style={{ fontSize: 36 }}>Afroicons</span></div><small><T k="b7" /></small></div>
         <div className="story">{story.map(([k, b, t]) => <div key={k}><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" dangerouslySetInnerHTML={{ __html: ic[k] }} /><b>{b}</b><span>{t}</span></div>)}</div>
         <div className="swrow">{sw.map((h, k) => <button key={k} style={{ background: h, color: light(h) ? "#1F1A15" : "#fff" }} onClick={() => a.copy(h, a.tt("Couleur copiée : ", "Colour copied: ") + h)}><b>{names[k]}</b><span>{h}</span></button>)}</div>
       </div>

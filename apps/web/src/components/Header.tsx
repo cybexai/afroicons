@@ -35,6 +35,13 @@ export function Nav() {
     wide.addEventListener("change", off);
     return () => { document.removeEventListener("click", close); document.removeEventListener("keydown", esc); wide.removeEventListener("change", off); };
   }, [menuOpen]);
+  // Met en avant la section visible dans le menu.
+  const [active, setActive] = useState("");
+  useEffect(() => {
+    const io = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && setActive(e.target.id)), { rootMargin: "-45% 0px -50% 0px" });
+    ["top", "icones", "atelier", "vitrine", "utiliser", "marque", "idees", "manifeste"].forEach((id) => { const el = document.getElementById(id); if (el) io.observe(el); });
+    return () => io.disconnect();
+  }, []);
   const links = [["icones", "nav1"], ["atelier", "nav2"], ["vitrine", "nav5"], ["utiliser", "nav3"], ["marque", "nav6"], ["idees", "nav7"]];
   const toggleMode = () => a.setMode(a.mode === "dark" ? "light" : "dark");
   const logo = logoSvg({ s: 36, door: a.pal[1], sun: a.pal[0] });
@@ -43,7 +50,7 @@ export function Nav() {
     <nav className={"top wrap" + (scrolled ? " scrolled" : "")}>
       <a className="logo" href="#top" aria-label="Afroicons"><Raw className="mk" html={logo} /><span className="wm-t">Afroicons</span></a>
       <div className="navlinks">
-        {links.map(([h, k]) => <a key={h} href={"#" + h}><T k={k} /></a>)}
+        {links.map(([h, k]) => <a key={h} href={"#" + h} className={active === h ? "on" : ""} aria-current={active === h ? "location" : undefined}><T k={k} /></a>)}
       </div>
       <div className="navr">
         <button className="kbtn" onClick={() => a.setCmdOpen(true)}><ISearch s={17} /><span className="lbl"><T k="cmdLbl" /></span><span className="kbd">{isMac ? "⌘K" : "Ctrl K"}</span></button>
