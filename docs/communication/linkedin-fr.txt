@@ -1,0 +1,27 @@
+Cherchez une icône de moto-taxi dans les grandes bibliothèques d'icônes.
+Ou de tontine. Ou de plantain.
+
+Vous trouverez des taxis jaunes, des tasses de latte et des maisons à cheminée. Pas le quotidien de nos utilisateurs.
+
+Alors nous l'avons dessiné.
+
+Afroicons est maintenant disponible sur npm, en open source.
+
+→ 150 icônes culturelles : paysages, faune, instruments, symboles adinkra, cuisine, vie quotidienne, architecture
+→ 108 icônes d'interface compatibles Lucide : on change une ligne d'import, et toute l'app passe en Afroicons
+→ Pour React, Angular ou en SVG, en français et en anglais
+→ Licence MIT : gratuite, même pour un usage commercial
+
+Ce qui nous tient le plus à cœur, ce sont les métaphores.
+Dans une app Afroicons, la caisse est un panier tressé. L'argent, un cauri. La livraison, une moto. L'hôtel, un lit sous sa moustiquaire.
+Des détails, oui. Mais ce sont eux qui disent à un utilisateur : cette app a été pensée pour vous.
+
+Et la bibliothèque n'est pas finie. Elle se construit avec vous : proposez l'icône qui vous manque, votez pour celles des autres, et les plus demandées entrent dans la prochaine version.
+
+Designers, développeurs, passionnés de culture : vos dessins, votre code et vos savoirs sont les bienvenus.
+
+Alors, quelle icône devrions-nous dessiner ensuite ? 👇
+
+Un projet de THAFAM HOLDING SARL, fait avec soin à Yaoundé 🇨🇲, avec le soutien de NAFA ERP.
+
+#OpenSource #DesignSystem #React #Angular #TechAfrique

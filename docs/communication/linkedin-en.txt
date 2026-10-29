@@ -1,0 +1,27 @@
+Look for a moto-taxi icon in the big icon libraries.
+Or a tontine. Or a plantain.
+
+You'll find yellow cabs, latte cups and chimney houses. Not our users' everyday life.
+
+So we drew it.
+
+Afroicons is now on npm, open source.
+
+→ 150 cultural icons: landscapes, wildlife, instruments, adinkra symbols, food, daily life, architecture
+→ 108 Lucide-compatible interface icons: change one import line and your whole app switches to Afroicons
+→ For React, Angular or plain SVG, in French and English
+→ MIT licence: free, commercial use included
+
+What we care about most are the metaphors.
+In an Afroicons app, checkout is a woven basket. Money is a cowrie shell. Delivery is a motorbike. A hotel is a bed under its mosquito net.
+Small details, yes. But they are what tells users: this app was made for you.
+
+And the library isn't finished. It grows with you: suggest the icon you're missing, vote for others' ideas, and the most wanted make it into the next release.
+
+Designers, developers, culture lovers: your drawings, code and knowledge are welcome.
+
+So, which icon should we draw next? 👇
+
+A THAFAM HOLDING SARL project, made with care in Yaoundé 🇨🇲, supported by NAFA ERP.
+
+#OpenSource #DesignSystem #React #Angular #AfricanTech

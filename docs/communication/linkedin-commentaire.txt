@@ -1,0 +1,8 @@
+🔗 Le site, pour explorer, personnaliser et télécharger les icônes : https://afroicons.org
+💻 Le code source, pour contribuer : https://github.com/cybexai/afroicons
+
+Pour l'installer :
+• React : npm install afroicons-react
+• Angular : npm install afroicons-angular
+• Pour remplacer Lucide : npm install afroicons-ui, puis remplacer « lucide-react » par « afroicons-ui » dans vos imports
+• En SVG seuls : npm install afroicons
