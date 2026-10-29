@@ -57,7 +57,23 @@ export const PALS: Record<string, { n: string; bg: string; c: string[] }> = {
   indigo: { n: "Adire", bg: "#1C2A4E", c: ["#DCE6F5", "#8FA9D8", "#DCE6F5", "#5E7BBE"] },
 };
 
-export const ROT_CITIES = ["Douala", "Dakar", "Lagos", "Nairobi", "Kinshasa", "Abidjan", "Le Caire", "Addis-Abeba", "Accra", "Johannesburg", "Marrakech", "Yaoundé"];
+export const REPO = "https://github.com/cybexai/afroicons";
+
+// Villes du titre, avec la préposition qui convient en français (du Caire, d'Abidjan…).
+export const ROT_CITIES: { fr: string; en: string }[] = [
+  { fr: "de Douala", en: "from Douala" },
+  { fr: "de Dakar", en: "from Dakar" },
+  { fr: "de Lagos", en: "from Lagos" },
+  { fr: "de Nairobi", en: "from Nairobi" },
+  { fr: "de Kinshasa", en: "from Kinshasa" },
+  { fr: "d'Abidjan", en: "from Abidjan" },
+  { fr: "du Caire", en: "from Cairo" },
+  { fr: "d'Addis-Abeba", en: "from Addis Ababa" },
+  { fr: "d'Accra", en: "from Accra" },
+  { fr: "de Johannesburg", en: "from Johannesburg" },
+  { fr: "de Marrakech", en: "from Marrakesh" },
+  { fr: "de Yaoundé", en: "from Yaoundé" },
+];
 export const STYLES: { id: Style; fr: string; en: string }[] = [
   { id: "line", fr: "Trait", en: "Line" },
   { id: "badge", fr: "Pastille", en: "Badge" },

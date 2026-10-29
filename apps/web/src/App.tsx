@@ -18,6 +18,12 @@ export default function App() {
     return () => removeEventListener("hashchange", open);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // Pas de défilement de la page derrière une fenêtre ouverte.
+  const modal = !!a.current || a.cmdOpen || a.helpOpen;
+  useEffect(() => {
+    document.documentElement.classList.toggle("locked", modal);
+  }, [modal]);
+
   // Raccourcis globaux
   useEffect(() => {
     const f = (e: KeyboardEvent) => {

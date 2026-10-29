@@ -3,6 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  // Applique thème, ambiance et langue avant le premier affichage (évite le flash du thème clair).
+  (function () {
+    var h = document.documentElement, get = function (k) { try { return JSON.parse(localStorage.getItem("afroicons:" + k)); } catch (e) { return null; } };
+    var m = get("theme");
+    if (m !== "light" && m !== "dark") m = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    h.dataset.mode = m;
+    var c = get("city"); if (typeof c === "string" && /^[a-z]+$/.test(c)) h.dataset.city = c;
+    var l = get("lang"); if (l === "fr" || l === "en") h.lang = l;
+  })();
+</script>
 <title>Afroicons — des icônes qui racontent l'Afrique</title>
 <meta name="description" content="150 icônes SVG libres qui racontent l'Afrique : paysages, faune, musique, symboles adinkra, cuisine, vie quotidienne et architecture. Bilingue FR/EN, React et SVG.">
 <link rel="canonical" href="https://afroicons.org/">

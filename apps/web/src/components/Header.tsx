@@ -27,7 +27,7 @@ export function Nav() {
 
   return (
     <nav className={"top wrap" + (scrolled ? " scrolled" : "")}>
-      <a className="logo" href="#top" aria-label="Afroicons"><Raw className="mk" html={logo} />Afroicons</a>
+      <a className="logo" href="#top" aria-label="Afroicons"><Raw className="mk" html={logo} /><span className="wm-t">Afroicons</span></a>
       <div className="navlinks">
         {[["icones", "nav1"], ["atelier", "nav2"], ["vitrine", "nav5"], ["utiliser", "nav3"], ["marque", "nav6"], ["idees", "nav7"]].map(([h, k]) => <a key={h} href={"#" + h}><T k={k} /></a>)}
       </div>
@@ -92,7 +92,7 @@ export function Hero() {
         </button>
         <h1>
           <T k="h1a" /> <span className="acc"><T k="h1b" /></span>, <br />
-          <T k="h1c" /> <span className="rot"><span key={rot}>{ROT_CITIES[rot % ROT_CITIES.length]}</span></span>.
+          <span className="rot"><span key={rot}>{ROT_CITIES[rot % ROT_CITIES.length][a.lang]}</span></span>.
         </h1>
         <p className="lead"><T k="lead" /></p>
         <div className="cta">

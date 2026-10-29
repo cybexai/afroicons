@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { ICONS, PALS, byId } from "../lib/constants";
+import { ICONS, PALS, REPO, VERSION, byId } from "../lib/constants";
 import { buildTile, posterSvg, tileSvg, type PatternState } from "../lib/pattern";
 import { highlight, logoSvg, spriteStr, svgToPng } from "../lib/svg";
 import { useApp, useName } from "../state";
@@ -180,8 +180,8 @@ export function Footer() {
   return (
     <>
       <footer className="wrap">
-        <span>© 2026 Afroicons · <T k="f1" /> · <a href="https://nafaerp.com" style={{ textDecoration: "underline", textUnderlineOffset: 3 }}><T k="f2" /></a> · <span className="mono">afroicons.org</span></span>
-        <span className="mono">v0.3 · {ICONS.length} {a.tt("icônes", "icons")}</span>
+        <span>© 2026 THAFAM HOLDING SARL · <T k="f1" /> · <a className="ul" href="https://nafaerp.com"><T k="f2" /></a></span>
+        <span className="fr"><a className="ul" href={REPO}>GitHub</a><span className="mono">v{VERSION} · {ICONS.length} {a.tt("icônes", "icons")}</span></span>
       </footer>
       <div className="band" />
     </>

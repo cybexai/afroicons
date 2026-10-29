@@ -218,10 +218,12 @@ export function CommandPalette() {
 
 export function Help() {
   const a = useApp();
+  const box = useRef<HTMLDivElement>(null);
+  useEffect(() => { if (a.helpOpen) box.current?.focus(); }, [a.helpOpen]);
   const rows: [string, string][] = [["⌘K", "hk1"], ["/", "hk2"], ["←↑→↓", "hk3"], [a.tt("Entrée", "Enter"), "hk4"], ["C", "hk5"], ["F", "hk6"], ["X", "hk7"], ["T", "hk8"], ["Esc", "hk9"]];
   return (
     <div className={"help" + (a.helpOpen ? " open" : "")} {...inert(!a.helpOpen)} onClick={() => a.setHelpOpen(false)}>
-      <div className="box" role="dialog" aria-modal="true" aria-labelledby="hkTitle"><h3 id="hkTitle"><T k="hk" /></h3><dl>{rows.map(([k, l]) => <div key={l} style={{ display: "contents" }}><dt><span className="kbd">{k}</span></dt><dd style={{ margin: 0 }}><T k={l} /></dd></div>)}</dl></div>
+      <div className="box" ref={box} tabIndex={-1} onClick={(e) => e.stopPropagation()} role="dialog" aria-modal="true" aria-labelledby="hkTitle"><h3 id="hkTitle"><T k="hk" /></h3><dl>{rows.map(([k, l]) => <div key={l} style={{ display: "contents" }}><dt><span className="kbd">{k}</span></dt><dd style={{ margin: 0 }}><T k={l} /></dd></div>)}</dl></div>
     </div>
   );
 }

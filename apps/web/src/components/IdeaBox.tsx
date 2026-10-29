@@ -1,9 +1,15 @@
 import { Component, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { CATS, ICONS, REGNAME, byId, catOf } from "../lib/constants";
+import { CATS, ICONS, REGNAME, REPO, byId, catOf } from "../lib/constants";
 import { connectIdeas, type Idea, type IdeaBackend, type IdeaStatus, type Profile, type Snapshot } from "../lib/ideas";
 import { norm } from "../lib/search";
 import { useApp } from "../state";
 import { ITrash, IUp, Svg, T } from "./ui";
+
+/** Sans backend (afroicons.org), une proposition devient un ticket GitHub pré-rempli. */
+const githubIssue = (f: { name: string; cat: string; region: string; desc: string }) => {
+  const body = `**Nom (FR / EN) :** ${f.name}\n**Catégorie :** ${f.cat}\n**Région :** ${f.region}\n**À quoi elle servirait :** ${f.desc}\n**Références visuelles (photos libres de droits) :**\n`;
+  return `${REPO}/issues/new?${new URLSearchParams({ title: `Nouvelle icône : ${f.name}`, labels: "nouvelle-icône", body })}`;
+};
 
 const ST: Record<IdeaStatus, [string, string]> = { new: ["Proposée", "Suggested"], planned: ["Planifiée", "Planned"], done: ["Dessinée", "Drawn"] };
 
@@ -70,9 +76,14 @@ export function IdeaBox() {
   };
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!be || ro) return a.toast(a.tt("Les propositions s'ouvrent sur la page publiée.", "Suggestions open on the published page."));
     const name = form.name.trim().slice(0, 60);
     if (!name) return;
+    if (!be) {
+      if (ICONS.some((x) => norm(x.fr) === norm(name) || norm(x.en) === norm(name))) return a.toast(a.tt("Cette icône existe déjà.", "This icon already exists."));
+      window.open(githubIssue({ ...form, name, desc: form.desc.trim() }), "_blank", "noopener");
+      return;
+    }
+    if (ro) return a.toast(a.tt("Pour proposer, demandez un accès Contributeur.", "To suggest, ask for Contributor access."));
     if (snap.ideas.some((x) => norm(x.name) === norm(name)) || ICONS.some((x) => norm(x.fr) === norm(name) || norm(x.en) === norm(name)))
       return a.toast(a.tt("Cette icône existe déjà ou a déjà été proposée.", "This icon already exists or was suggested."));
     setBusy(true);
@@ -84,7 +95,7 @@ export function IdeaBox() {
   };
 
   const note = !ready ? null : !be
-    ? a.tt("La boîte à idées fonctionne sur la page publiée, pour les visiteurs connectés.", "The idea box works on the published page, for signed-in visitors.")
+    ? a.tt("Votre proposition s'ouvre sur GitHub, pré-remplie. Un compte GitHub gratuit suffit.", "Your suggestion opens on GitHub, pre-filled. A free GitHub account is all you need.")
     : ro ? a.tt("Vous pouvez consulter les idées. Pour proposer ou voter, demandez au propriétaire un accès Contributeur.", "You can browse the ideas. To suggest or vote, ask the owner for Contributor access.") : null;
 
   return (
@@ -99,16 +110,18 @@ export function IdeaBox() {
             <label><span><T k="if5" /></span><select value={form.region} onChange={(e) => setForm({ ...form, region: e.target.value })}>{Object.entries(REGNAME).map(([k, v]) => <option key={k} value={k}>{v[a.lang]}</option>)}</select></label>
           </div>
           <label><span><T k="if6" /></span><textarea rows={3} maxLength={200} value={form.desc} onChange={(e) => setForm({ ...form, desc: e.target.value })} placeholder={a.tt("Où l'utiliseriez-vous ?", "Where would you use it?")} /></label>
-          <button className="btn p" type="submit" disabled={busy}><T k="if7" /></button>
+          <button className="btn p" type="submit" disabled={busy || (!!be && ro)}>{ready && !be ? a.tt("Proposer sur GitHub", "Suggest on GitHub") : <T k="if7" />}</button>
           {note && <div className="inote">{note}</div>}
         </form>
         <div>
-          <div className="ibar">
+          {(!ready || be) && <div className="ibar">
             <div className="seg">{(["top", "new", "done"] as const).map((o, j) => <button key={o} className={sort === o ? "on" : ""} onClick={() => setSort(o)}><T k={"io" + (j + 1)} /></button>)}</div>
             <span className="stats">{a.lang === "en" ? `${all.length} ideas · ${voters} voters` : `${all.length} idée${all.length > 1 ? "s" : ""} · ${voters} votant${voters > 1 ? "s" : ""}`}</span>
-          </div>
+          </div>}
           <div className="ilist">
-            {!shown.length && <div className="empty" style={{ padding: "50px 0" }}><div className="big">{a.tt("Pas encore d'idée ici", "No ideas here yet")}</div>{a.tt("Soyez le premier à en proposer une.", "Be the first to suggest one.")}</div>}
+            {!shown.length && (ready && !be
+              ? <div className="empty" style={{ padding: "50px 0" }}><div className="big">{a.tt("Les idées vivent sur GitHub", "Ideas live on GitHub")}</div>{a.tt("Consultez les propositions et votez avec un 👍.", "Browse the suggestions and vote with a 👍.")}<div style={{ marginTop: 16 }}><a className="btn" href={`${REPO}/issues`} target="_blank" rel="noopener">{a.tt("Voir les propositions", "See suggestions")}</a></div></div>
+              : <div className="empty" style={{ padding: "50px 0" }}><div className="big">{a.tt("Pas encore d'idée ici", "No ideas here yet")}</div>{a.tt("Proposez la première !", "Suggest the first one!")}</div>)}
             {shown.map((i) => {
               const cat = catOf(i.cat), pr = profiles[i.author];
               const author = i.author === "seed" ? "Afroicons" : pr?.name || a.tt("Quelqu'un", "Someone");
