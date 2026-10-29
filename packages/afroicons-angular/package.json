@@ -1,6 +1,6 @@
 {
   "name": "afroicons-angular",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Les icônes Afroicons en composant Angular autonome : 150 icônes culturelles et 108 icônes d'interface (noms Lucide).",
   "keywords": ["angular", "icons", "svg", "africa", "afroicons", "lucide"],
   "license": "MIT",

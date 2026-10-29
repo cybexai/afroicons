@@ -1,6 +1,6 @@
 {
   "name": "afroicons-react",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Les 150 icônes Afroicons en composants React.",
   "type": "module",
   "main": "./index.js",

@@ -1,4 +1,4 @@
-// afroicons-react v0.3.0 — généré, ne pas modifier à la main.
+// afroicons-react v0.4.0 — généré, ne pas modifier à la main.
 import { createElement, forwardRef } from "react";
 
 const make = (name, nodes) => {
