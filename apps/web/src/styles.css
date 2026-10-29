@@ -63,7 +63,10 @@ nav.top.scrolled{border-bottom-color:var(--line)}
 .hero h1{font-size:clamp(46px,7.2vw,104px);font-weight:800;margin:22px 0 20px}
 .hero h1 .acc{color:var(--a1);transition:color .3s}
 [data-mode="dark"] .hero h1 .acc{color:var(--at)}
-.rot{display:inline-block;position:relative;vertical-align:bottom}
+/* La ville tourne sur sa propre ligne, sans retour à la ligne : sa taille suit la largeur de la colonne (cqi). */
+.hero>div:first-child{container-type:inline-size;min-width:0}
+.rot{display:block;position:relative;white-space:nowrap;font-size:min(1em,var(--rotfs,12cqi))}
+:lang(en) .rot{--rotfs:10.5cqi}
 .rot span{display:inline-block;animation:rotIn .55s var(--ease) both}
 @keyframes rotIn{from{opacity:0;transform:translateY(.35em) rotate(3deg);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
 .lead{font-size:19px;color:var(--muted);max-width:560px;margin:0 0 30px}

@@ -128,7 +128,7 @@ export function Hero() {
         </div>
         <h1>
           <T k="h1a" /> <span className="acc"><T k="h1b" /></span>, <br />
-          <span className="rot"><span key={rot}>{ROT_CITIES[rot % ROT_CITIES.length][a.lang]}</span></span>.
+          <span className="rot"><span key={rot}>{ROT_CITIES[rot % ROT_CITIES.length][a.lang]}.</span></span>
         </h1>
         <p className="lead"><T k="lead" /></p>
         <div className="cta">
