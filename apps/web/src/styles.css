@@ -369,7 +369,7 @@ footer{margin-top:70px;border-top:1px solid var(--line);padding-top:26px;padding
 .iform label{display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:700;font-family:"JetBrains Mono";letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .iform input,.iform select,.iform textarea{font:15px "DM Sans";color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:11px 12px;outline:none;text-transform:none;letter-spacing:0;font-weight:400;resize:vertical}
 .iform input:focus,.iform select:focus,.iform textarea:focus{border-color:var(--ink)}
-.iform .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.iform .two{display:grid;grid-template-columns:1fr;gap:12px}
 .iform .btn{justify-content:center}
 .inote{font-size:13px;color:var(--muted);background:var(--bg2);border-radius:12px;padding:10px 12px}
 .ilist{display:flex;flex-direction:column;gap:10px}
@@ -545,3 +545,18 @@ footer .fr{display:flex;align-items:center;gap:16px}
 .pager .pill:disabled{opacity:.35;cursor:default;border-color:var(--line)}
 .pager .gap{min-width:20px;text-align:center;color:var(--muted)}
 @media (max-width:640px){.grid{scroll-margin-top:230px}.pager{justify-content:center}.pager .rng{width:100%;text-align:center}}
+
+/* ===== Boîte à idées : propositions GitHub ===== */
+.isteps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.isteps li{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px}
+.isteps b{display:flex;align-items:center;gap:10px;font:800 18px "Bricolage Grotesque"}
+.isteps b span{width:30px;height:30px;border-radius:10px;display:grid;place-items:center;background:var(--a1s);color:#fff;font-size:15px}
+.isteps p{margin:10px 0 0;color:var(--muted);font-size:13.5px}
+.ighost{display:flex;flex-direction:column;gap:12px}
+a.vote{text-decoration:none;color:inherit;font-size:16px}
+a.vote span:first-child{font-size:17px;line-height:1}
+.idea h4 a{color:inherit;text-decoration:none}.idea h4 a:hover{text-decoration:underline;text-underline-offset:3px}
+.idea.skel{height:92px;background:linear-gradient(90deg,var(--card),var(--bg2),var(--card));background-size:200% 100%;animation:skel 1.2s linear infinite}
+@keyframes skel{to{background-position:-200% 0}}
+.imore{margin:12px 0 0;font-size:13.5px;color:var(--muted)}
+@media (max-width:760px){.isteps{grid-template-columns:1fr}}

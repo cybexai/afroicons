@@ -113,15 +113,13 @@ export function IdeaBox() {
           <button className="btn p" type="submit" disabled={busy || (!!be && ro)}>{ready && !be ? a.tt("Proposer sur GitHub", "Suggest on GitHub") : <T k="if7" />}</button>
           {note && <div className="inote">{note}</div>}
         </form>
-        <div>
-          {(!ready || be) && <div className="ibar">
+        {ready && !be ? <GitHubIdeas /> : <div>
+          <div className="ibar">
             <div className="seg">{(["top", "new", "done"] as const).map((o, j) => <button key={o} className={sort === o ? "on" : ""} onClick={() => setSort(o)}><T k={"io" + (j + 1)} /></button>)}</div>
             <span className="stats">{a.lang === "en" ? `${all.length} ideas · ${voters} voters` : `${all.length} idée${all.length > 1 ? "s" : ""} · ${voters} votant${voters > 1 ? "s" : ""}`}</span>
-          </div>}
+          </div>
           <div className="ilist">
-            {!shown.length && (ready && !be
-              ? <div className="empty" style={{ padding: "50px 0" }}><div className="big">{a.tt("Les idées vivent sur GitHub", "Ideas live on GitHub")}</div>{a.tt("Consultez les propositions et votez avec un 👍.", "Browse the suggestions and vote with a 👍.")}<div style={{ marginTop: 16 }}><a className="btn" href={`${REPO}/issues`} target="_blank" rel="noopener">{a.tt("Voir les propositions", "See suggestions")}</a></div></div>
-              : <div className="empty" style={{ padding: "50px 0" }}><div className="big">{a.tt("Pas encore d'idée ici", "No ideas here yet")}</div>{a.tt("Proposez la première !", "Suggest the first one!")}</div>)}
+            {!shown.length && <div className="empty" style={{ padding: "50px 0" }}><div className="big">{a.tt("Pas encore d'idée ici", "No ideas here yet")}</div>{a.tt("Proposez la première !", "Suggest the first one!")}</div>}
             {shown.map((i) => {
               const cat = catOf(i.cat), pr = profiles[i.author];
               const author = i.author === "seed" ? "Afroicons" : pr?.name || a.tt("Quelqu'un", "Someone");
@@ -147,8 +145,91 @@ export function IdeaBox() {
               );
             })}
           </div>
-        </div>
+        </div>}
       </div>
     </section>
+  );
+}
+
+/* ---------------- Propositions publiées sur GitHub (site statique) ---------------- */
+type GhIdea = { n: number; name: string; url: string; votes: number; comments: number; at: number; cat: string; region: string; st: IdeaStatus; who: string; avatar: string };
+const GH_API = REPO.replace("https://github.com/", "https://api.github.com/repos/") + "/issues?state=all&per_page=100";
+const PREFIX = /^nouvelle icône\s*:\s*/i;
+
+export async function loadGithubIdeas(): Promise<GhIdea[]> {
+  try { const c = JSON.parse(sessionStorage.getItem("afroicons:gh") || "null"); if (c && Date.now() - c.t < 10 * 60e3) return c.v; } catch { /* rien */ }
+  const r = await fetch(GH_API, { headers: { Accept: "application/vnd.github+json" } });
+  if (!r.ok) throw new Error("github " + r.status);
+  const raw: any[] = await r.json();
+  const v: GhIdea[] = raw.filter((x) => !x.pull_request && typeof x.title === "string" && PREFIX.test(x.title) && !(x.state === "closed" && x.state_reason === "not_planned")).map((x) => {
+    const body = typeof x.body === "string" ? x.body : "";
+    const field = (k: string) => (body.match(new RegExp("\\*\\*" + k + " :\\*\\*\\s*([a-z]+)", "i"))?.[1] ?? "").toLowerCase();
+    const labels: string[] = (x.labels ?? []).map((l: any) => String(l?.name ?? "").toLowerCase());
+    const st: IdeaStatus = x.state === "closed" ? "done" : labels.some((l) => l.startsWith("planifi")) ? "planned" : "new";
+    return { n: x.number, name: x.title.replace(PREFIX, "").slice(0, 60), url: x.html_url, votes: x.reactions?.["+1"] ?? 0, comments: x.comments ?? 0, at: Date.parse(x.created_at) || 0, cat: field("Catégorie"), region: field("Région"), st, who: x.user?.login ?? "", avatar: x.user?.avatar_url ?? "" };
+  });
+  try { sessionStorage.setItem("afroicons:gh", JSON.stringify({ t: Date.now(), v })); } catch { /* rien */ }
+  return v;
+}
+
+function GitHubIdeas() {
+  const a = useApp();
+  const [items, setItems] = useState<GhIdea[] | null>(null);
+  const [failed, setFailed] = useState(false);
+  const [sort, setSort] = useState<"top" | "new" | "done">("top");
+  useEffect(() => { let off = false; loadGithubIdeas().then((v) => !off && setItems(v)).catch(() => !off && setFailed(true)); return () => { off = true; }; }, []);
+
+  const steps = (
+    <ol className="isteps">
+      {[
+        [a.tt("Proposez", "Suggest"), a.tt("Remplissez le formulaire : la proposition s'ouvre sur GitHub, déjà rédigée.", "Fill in the form: the suggestion opens on GitHub, already written.")],
+        [a.tt("Votez", "Vote"), a.tt("Un 👍 sur une proposition compte comme un vote.", "A 👍 on a suggestion counts as a vote.")],
+        [a.tt("On dessine", "We draw"), a.tt("Les plus demandées entrent dans la prochaine version.", "The most wanted make it into the next release.")],
+      ].map(([t, d], k) => <li key={k}><b><span>{k + 1}</span>{t}</b><p>{d}</p></li>)}
+    </ol>
+  );
+  if (failed || (items && !items.length)) return (
+    <div className="ighost">
+      {steps}
+      <p className="inote">{failed
+        ? a.tt("Les propositions n'ont pas pu être chargées depuis GitHub.", "Suggestions couldn't be loaded from GitHub.")
+        : a.tt("Aucune proposition pour l'instant : la vôtre sera la première.", "No suggestions yet: yours will be the first.")}{" "}
+        <a className="ul" href={`${REPO}/issues`} target="_blank" rel="noopener">{a.tt("Voir sur GitHub", "View on GitHub")}</a></p>
+    </div>
+  );
+  if (!items) return <div className="ilist" aria-busy="true">{[0, 1, 2].map((k) => <div key={k} className="idea skel" />)}</div>;
+
+  const voters = items.reduce((s, i) => s + i.votes, 0);
+  const shown = items.filter((i) => (sort === "done" ? i.st === "done" : i.st !== "done"))
+    .sort(sort === "new" ? (x, y) => y.at - x.at : (x, y) => y.votes - x.votes || y.at - x.at);
+  return (
+    <div>
+      <div className="ibar">
+        <div className="seg">{(["top", "new", "done"] as const).map((o, j) => <button key={o} className={sort === o ? "on" : ""} onClick={() => setSort(o)}><T k={"io" + (j + 1)} /></button>)}</div>
+        <span className="stats">{a.lang === "en" ? `${items.length} ideas · ${voters} votes` : `${items.length} idée${items.length > 1 ? "s" : ""} · ${voters} vote${voters > 1 ? "s" : ""}`}</span>
+      </div>
+      <div className="ilist">
+        {!shown.length && <div className="empty" style={{ padding: "40px 0" }}><div className="big">{sort === "done" ? a.tt("Rien de dessiné pour l'instant", "Nothing drawn yet") : a.tt("Tout a été dessiné !", "Everything has been drawn!")}</div></div>}
+        {shown.map((i) => {
+          const cat = catOf(i.cat);
+          return (
+            <div key={i.n} className="idea">
+              <a className="vote" href={i.url} target="_blank" rel="noopener" title={a.tt("Voter avec un 👍 sur GitHub", "Vote with a 👍 on GitHub")} aria-label={a.tt(`${i.votes} votes, voter sur GitHub`, `${i.votes} votes, vote on GitHub`)}><span aria-hidden="true">👍</span><span>{i.votes}</span></a>
+              <div>
+                <h4><a href={i.url} target="_blank" rel="noopener">{i.name}</a></h4>
+                <div className="meta">
+                  {cat.id !== "all" && byId[cat.ic] && <><Svg i={byId[cat.ic]} o={{ s: 15, w: 2 }} /><span>{a.tt(cat.fr, cat.en)}</span>·</>}
+                  {REGNAME[i.region] && <><span>{REGNAME[i.region][a.lang]}</span>·</>}
+                  {i.avatar && <img alt="" src={i.avatar + "&s=36"} />}<span>{i.who}</span>
+                  {i.comments > 0 && <span>· 💬 {i.comments}</span>}
+                  <span className={"st " + i.st}>{(ST[i.st] ?? ST.new)[a.lang === "en" ? 1 : 0]}</span>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <p className="imore"><a className="ul" href={`${REPO}/issues`} target="_blank" rel="noopener">{a.tt("Toutes les propositions sur GitHub", "All suggestions on GitHub")} →</a></p>
+    </div>
   );
 }
