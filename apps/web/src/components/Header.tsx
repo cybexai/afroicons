@@ -120,10 +120,12 @@ export function Hero() {
   return (
     <header className="hero wrap" id="top">
       <div>
+        <div className="eyebrows">
         <span className="eyebrow"><b>v{VERSION}</b><span>{a.tt(`${AFRO.length} icônes libres · dessinées à la main`, `${AFRO.length} free icons · hand-drawn`)}</span></span>
         <button className="eyebrow iod" onClick={() => a.openIcon(iod.id)}>
           <Svg i={iod} o={{ s: 18, w: 2 }} /><span>{a.tt("Icône du jour", "Icon of the day")} : <strong style={{ color: "var(--ink)" }}>{nm(iod)}</strong></span>
         </button>
+        </div>
         <h1>
           <T k="h1a" /> <span className="acc"><T k="h1b" /></span>, <br />
           <span className="rot"><span key={rot}>{ROT_CITIES[rot % ROT_CITIES.length][a.lang]}</span></span>.

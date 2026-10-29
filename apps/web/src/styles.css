@@ -57,7 +57,8 @@ nav.top.scrolled{border-bottom-color:var(--line)}
 
 /* ===== HERO ===== */
 .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding-top:44px;padding-bottom:56px;position:relative}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:6px 12px 6px 6px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:13px;font-weight:500;color:var(--muted)}
+.eyebrows{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;height:36px;line-height:1;padding:0 12px 0 6px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:13px;font-weight:500;color:var(--muted)}
 .eyebrow b{background:var(--a1s);color:#fff;border-radius:999px;padding:2px 9px;font-size:11.5px;letter-spacing:.02em}
 .hero h1{font-size:clamp(46px,7.2vw,104px);font-weight:800;margin:22px 0 20px}
 .hero h1 .acc{color:var(--a1);transition:color .3s}
@@ -352,7 +353,7 @@ footer{margin-top:70px;border-top:1px solid var(--line);padding-top:26px;padding
 .fact i{flex:none;width:30px;height:30px;border-radius:9px;background:var(--a2);color:#1F1A15;display:grid;place-items:center;font-style:normal;font-weight:800}
 .fact b{display:block;font-size:12.5px;font-family:"JetBrains Mono";letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
 .fact span{font-size:14px}
-.eyebrow.iod{cursor:pointer;margin-left:6px}
+.eyebrow.iod{cursor:pointer}
 .eyebrow.iod:hover{border-color:var(--ink)}
 .eyebrow.iod svg{color:var(--a1)}
 @media (max-width:1020px){.vitr{grid-template-columns:1fr}.brand{grid-template-columns:1fr}.story{grid-template-columns:1fr 1fr}.swrow{grid-template-columns:repeat(3,1fr)}}
