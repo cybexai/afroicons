@@ -2,13 +2,14 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { CATS, CITIES, ICONS, REGNAME, ROT_CITIES, SHOWCASE, VERSION, byId, catOf, type CityId } from "../lib/constants";
 import { animateDraw, logoSvg, svgStr } from "../lib/svg";
 import { useApp, useName } from "../state";
-import { IDown, IMoon, ISearch, ISun, Raw, Svg, T } from "./ui";
+import { IClose, IDown, IMenu, IMoon, ISearch, ISun, Raw, Svg, T } from "./ui";
 import { inert } from "./Overlays";
 
 export function Nav() {
   const a = useApp();
   const [scrolled, setScrolled] = useState(false);
   const [cityOpen, setCityOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const isMac = /Mac|iPhone|iPad/.test(navigator.platform);
   useEffect(() => {
     const f = () => setScrolled(scrollY > 8);
@@ -23,13 +24,26 @@ export function Nav() {
     document.addEventListener("keydown", esc);
     return () => { document.removeEventListener("click", close); document.removeEventListener("keydown", esc); };
   }, [cityOpen]);
+  useEffect(() => {
+    if (!menuOpen) return;
+    const close = (e: MouseEvent) => { if (!(e.target as HTMLElement).closest(".menum")) setMenuOpen(false); };
+    const esc = (e: KeyboardEvent) => { if (e.key === "Escape") setMenuOpen(false); };
+    const wide = matchMedia("(min-width: 1121px)");
+    const off = () => { if (wide.matches) setMenuOpen(false); };
+    document.addEventListener("click", close);
+    document.addEventListener("keydown", esc);
+    wide.addEventListener("change", off);
+    return () => { document.removeEventListener("click", close); document.removeEventListener("keydown", esc); wide.removeEventListener("change", off); };
+  }, [menuOpen]);
+  const links = [["icones", "nav1"], ["atelier", "nav2"], ["vitrine", "nav5"], ["utiliser", "nav3"], ["marque", "nav6"], ["idees", "nav7"]];
+  const toggleMode = () => a.setMode(a.mode === "dark" ? "light" : "dark");
   const logo = logoSvg({ s: 36, door: a.pal[1], sun: a.pal[0] });
 
   return (
     <nav className={"top wrap" + (scrolled ? " scrolled" : "")}>
       <a className="logo" href="#top" aria-label="Afroicons"><Raw className="mk" html={logo} /><span className="wm-t">Afroicons</span></a>
       <div className="navlinks">
-        {[["icones", "nav1"], ["atelier", "nav2"], ["vitrine", "nav5"], ["utiliser", "nav3"], ["marque", "nav6"], ["idees", "nav7"]].map(([h, k]) => <a key={h} href={"#" + h}><T k={k} /></a>)}
+        {links.map(([h, k]) => <a key={h} href={"#" + h}><T k={k} /></a>)}
       </div>
       <div className="navr">
         <button className="kbtn" onClick={() => a.setCmdOpen(true)}><ISearch s={17} /><span className="lbl"><T k="cmdLbl" /></span><span className="kbd">{isMac ? "⌘K" : "Ctrl K"}</span></button>
@@ -46,9 +60,22 @@ export function Nav() {
             ))}
           </div>
         </div>
-        <button className="ib" title={a.tt("Thème", "Theme")} aria-label={a.mode === "dark" ? a.tt("Passer en mode clair", "Switch to light mode") : a.tt("Passer en mode sombre", "Switch to dark mode")} onClick={() => a.setMode(a.mode === "dark" ? "light" : "dark")}>{a.mode === "dark" ? <ISun /> : <IMoon />}</button>
+        <button className="ib thm" title={a.tt("Thème", "Theme")} aria-label={a.mode === "dark" ? a.tt("Passer en mode clair", "Switch to light mode") : a.tt("Passer en mode sombre", "Switch to dark mode")} onClick={toggleMode}>{a.mode === "dark" ? <ISun /> : <IMoon />}</button>
         <div className="seg lang">
           {(["fr", "en"] as const).map((l) => <button key={l} aria-pressed={a.lang === l} aria-label={l === "fr" ? "FR, Français" : "EN, English"} className={a.lang === l ? "on" : ""} onClick={() => a.setLang(l)}>{l.toUpperCase()}</button>)}
+        </div>
+        <div className="menum">
+          <button className="ib" aria-label={a.tt("Menu", "Menu")} aria-expanded={menuOpen} aria-controls="mmenu" onClick={(e) => { e.stopPropagation(); setMenuOpen((o) => !o); }}>{menuOpen ? <IClose /> : <IMenu />}</button>
+          <div id="mmenu" className={"mpop" + (menuOpen ? " open" : "")} {...inert(!menuOpen)}>
+            {links.map(([h, k]) => <a key={h} href={"#" + h} onClick={() => setMenuOpen(false)}><T k={k} /></a>)}
+            <div className="mx">
+              <button onClick={toggleMode}>{a.mode === "dark" ? <ISun /> : <IMoon />}{a.mode === "dark" ? a.tt("Mode clair", "Light mode") : a.tt("Mode sombre", "Dark mode")}</button>
+              <div className="kick" style={{ padding: "10px 12px 4px", margin: 0 }}>{a.tt("Ambiance", "Mood")}</div>
+              <div className="mcities">{(Object.entries(CITIES) as [CityId, (typeof CITIES)[CityId]][]).map(([k, v]) => (
+                <button key={k} className={a.city === k ? "on" : ""} aria-pressed={a.city === k} onClick={() => a.setCity(k)}><span className="dots">{v.c.slice(0, 3).map((c) => <i key={c} style={{ background: c }} />)}</span>{v.n}</button>
+              ))}</div>
+            </div>
+          </div>
         </div>
       </div>
     </nav>

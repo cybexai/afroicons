@@ -26,6 +26,7 @@ const ui = (d: string, fill = false) => ({ s = 18, w = 2 }: P) => (
   <svg width={s} height={s} viewBox="0 0 24 24" fill={fill ? "currentColor" : "none"} stroke="currentColor" strokeWidth={w} strokeLinecap="round" strokeLinejoin="round" dangerouslySetInnerHTML={{ __html: d }} />
 );
 export const ISearch = ui('<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>');
+export const IMenu = ui('<path d="M4 7h16M4 12h16M4 17h16"/>');
 export const IClose = ui('<path d="M6 6l12 12M18 6L6 18"/>');
 export const IPrev = ui('<path d="M15 6l-6 6 6 6"/>');
 export const INext = ui('<path d="M9 6l6 6-6 6"/>');
