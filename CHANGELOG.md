@@ -1,0 +1,38 @@
+# Journal des versions
+
+## 0.3.1 — 29 octobre 2026 · audit
+**Accessibilité (0 violation axe-core, clair / sombre / mobile)**
+- Fenêtres fermées (fiche, palette, aide, sélection, menus) rendues inertes : plus de focus invisible au clavier
+- Fiche et palette déclarées comme dialogues modaux ; le focus entre à l'ouverture et revient à la fermeture
+- Cartes restructurées : plus de boutons imbriqués, nom accessible, actions rapides hors tabulation
+- Libellés pour les curseurs, sélecteurs de couleur, pastilles, boutons d'icône ; lien « Aller aux icônes »
+- Contrastes corrigés (titres de section, badges « Nouveau », écrans d'app, cartes de marque)
+
+**Bugs**
+- Mobile : débordement horizontal de la boîte à idées ; les actions invisibles des cartes captaient les touchers
+- Boîte à idées : une donnée inattendue pouvait faire planter tout le site (nettoyage + garde-fou) ; un vote pouvait effacer des votes précédents ; abonnements en double ; noms d'auteurs écrasés
+- Fiche : ← / → partaient au mauvais endroit depuis une icône hors filtre ; raccourcis actifs derrière l'aide
+- Recherche : une espace seule masquait tout ; « coeur », « noeud », « boeuf » trouvent maintenant cœur, nœud, bœuf
+- Motifs : coutures visibles sur les bords de la tuile
+- Couleur blanche du sélecteur mal reconnue ; Échap ferme la palette et les menus ; le filtre favoris ne bloque plus les tags
+
+**Performance et référencement**
+- JSZip chargé seulement au premier téléchargement (-30 Ko gzip au démarrage)
+- Image de partage 1200×630, robots.txt, sitemap.xml, manifeste web, balises Open Graph et Twitter
+
+## 0.3.0 — 29 octobre 2026
+- Site réécrit en **React + Vite + TypeScript** (`apps/web`), alimenté par le paquet `afroicons`
+- Boîte à idées découplée de son stockage (interface `IdeaBackend`), prête pour un backend serverless
+- Correctif : icônes invisibles en mode sombre dans l'application Claude
+- 150 icônes (+9 : gele, kanaga, okapi, pangolin, machine à coudre, fer à charbon, étal, noix de palme, casque séchoir)
+- Redessin de keke, porteuse de bébé, ngoni, awalé, façade ndebele
+- Nouveau logo : le « A-case »
+- Site : vitrine d'apps, page de marque, anecdotes « Le saviez-vous ? », icône du jour, boîte à idées avec votes
+- Premiers paquets `afroicons` et `afroicons-react`
+
+## 0.2.0
+- 141 icônes, régions, styles trait / pastille / cercle
+- Site : palette de commandes ⌘K, navigation clavier, sélection multiple, atelier de motifs, ambiances de villes, mode sombre
+
+## 0.1.0
+- 45 icônes et première version du site

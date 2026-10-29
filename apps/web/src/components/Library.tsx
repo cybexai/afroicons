@@ -1,0 +1,170 @@
+import { memo, useEffect, useMemo, useRef, useState, type KeyboardEvent } from "react";
+import { CATS, ICONS, REGS, STYLES, byId, isNew, type Icon, type Style } from "../lib/constants";
+import { rank } from "../lib/search";
+import { svgStr } from "../lib/svg";
+import { useApp, useName } from "../state";
+import { ICheck, IChevron, ICopy, IHeart, ISearch, ISelect, Svg, T } from "./ui";
+import { inert } from "./Overlays";
+
+export const exportSvg = (i: Icon, a: { style: Style; stroke: number; color: string | null; badgeBg: string }) =>
+  svgStr(i, { style: a.style, w: a.stroke, bg: a.badgeBg, cls: `afroicon afroicon-${i.id}`, c: a.style === "line" ? "currentColor" : a.color ?? "#FFFFFF" });
+
+function Customize() {
+  const a = useApp();
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    if (!open) return;
+    const close = (e: MouseEvent) => { if (!(e.target as HTMLElement).closest(".custom")) setOpen(false); };
+    const esc = (e: globalThis.KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
+    document.addEventListener("click", close);
+    document.addEventListener("keydown", esc);
+    return () => { document.removeEventListener("click", close); document.removeEventListener("keydown", esc); };
+  }, [open]);
+  const inks = [a.theme.ink, ...a.pal];
+  const pickStyle = (s: Style) => {
+    a.setStyle(s);
+    if (s !== "line" && !a.color) a.setColor("#FFFFFF");
+    if (s === "line" && a.color?.toUpperCase() === "#FFFFFF") a.setColor(null);
+  };
+  return (
+    <div className="custom">
+      <button className="pill" aria-expanded={open} aria-haspopup="true" onClick={(e) => { e.stopPropagation(); setOpen((o) => !o); }}>
+        <span className="dots"><i style={{ background: a.style === "line" ? a.ink : a.badgeBg }} /></span><T k="cust" /><IChevron s={14} w={2.4} />
+      </button>
+      <div className={"cpop" + (open ? " open" : "")} {...inert(!open)}>
+        <div className="blk"><h3><T k="pStyle" /></h3>
+          <div className="styles">{STYLES.map((s) => (
+            <button key={s.id} className={a.style === s.id ? "on" : ""} onClick={() => pickStyle(s.id)}>
+              <Svg i={byId.baobab} o={{ s: 30, style: s.id, c: s.id === "line" ? a.ink : "#fff", bg: a.badgeBg }} />{a.tt(s.fr, s.en)}
+            </button>
+          ))}</div>
+        </div>
+        <div className="blk"><h3><T k="pCol" /></h3>
+          <div className="swat">
+            {inks.map((x) => <button key={x} style={{ background: x }} aria-label={a.t("pCol") + " " + x} aria-pressed={a.ink === x} className={a.ink === x ? "on" : ""} onClick={() => a.setColor(x === a.theme.ink ? null : x)} />)}
+            {a.style !== "line" && <button style={{ background: "#fff" }} aria-label={a.t("pCol") + " #FFFFFF"} className={a.color?.toUpperCase() === "#FFFFFF" ? "on" : ""} onClick={() => a.setColor("#FFFFFF")} />}
+            <input type="color" value={a.ink.length === 7 ? a.ink : "#000000"} onChange={(e) => a.setColor(e.target.value)} title={a.tt("Couleur libre", "Custom colour")} aria-label={a.tt("Couleur libre", "Custom colour")} />
+          </div>
+        </div>
+        {a.style !== "line" && (
+          <div className="blk"><h3><T k="pBg" /></h3>
+            <div className="swat">
+              {[...a.pal, a.theme.ink].map((x) => <button key={x} style={{ background: x }} aria-label={a.t("pBg") + " " + x} className={a.badgeBg === x ? "on" : ""} onClick={() => a.setBg(x)} />)}
+              <input type="color" value={a.badgeBg} aria-label={a.t("pBg")} onChange={(e) => a.setBg(e.target.value)} />
+            </div>
+          </div>
+        )}
+        <div className="blk"><h3><T k="pStroke" /></h3><div className="rng"><input type="range" aria-label={a.t("pStroke")} min={1} max={2.5} step={0.25} value={a.stroke} onChange={(e) => a.setStroke(+e.target.value)} /><output>{a.stroke}</output></div></div>
+        <div className="blk"><h3><T k="pSize" /></h3><div className="rng"><input type="range" aria-label={a.t("pSize")} min={24} max={64} step={4} value={a.size} onChange={(e) => a.setSize(+e.target.value)} /><output>{a.size}</output></div></div>
+        <button className="btn sm" onClick={() => { a.setColor(null); a.setBg(null); a.setStroke(1.75); a.setSize(40); a.setStyle("line"); }}><T k="reset" /></button>
+      </div>
+    </div>
+  );
+}
+
+type CardProps = { i: Icon; idx: number; focusIdx: number; fav: boolean; sel: boolean; anim: boolean; o: Parameters<typeof svgStr>[1] };
+const Card = memo(function Card({ i, idx, focusIdx, fav, sel, anim, o }: CardProps) {
+  const a = useApp();
+  const nm = useName();
+  const onClick = (e: React.MouseEvent) => {
+    const act = (e.target as HTMLElement).closest<HTMLElement>("[data-act]")?.dataset.act;
+    if (act === "fav") return a.toggleFav(i.id);
+    if (act === "copy") return a.copy(exportSvg(i, a), a.tt("SVG copié : ", "SVG copied: ") + nm(i));
+    if (act === "sel" || a.selecting || e.shiftKey || e.metaKey || e.ctrlKey) return a.toggleSel(i.id);
+    a.openIcon(i.id);
+  };
+  return (
+    <div className={"card" + (sel ? " sel" : "")} style={{ ["--i" as string]: anim ? Math.min(idx, 40) : 0, animation: anim ? undefined : "none", color: a.color ?? "var(--ink)" }} onClick={onClick}>
+      <button className="hit" data-idx={idx} tabIndex={idx === Math.max(0, focusIdx) ? 0 : -1} aria-label={nm(i) + (sel ? a.tt(", sélectionnée", ", selected") : "")} />
+      {isNew(i) && <span className="new" aria-hidden="true">{a.tt("NOUVEAU", "NEW")}</span>}
+      <Svg className="ico" i={i} o={o} /><span className="nm" aria-hidden="true">{nm(i)}</span>
+      <span className="qa">
+        <button className={"fav" + (fav ? " on" : "")} data-act="fav" tabIndex={-1} aria-pressed={fav} aria-label={(fav ? a.t("remFav") : a.t("addFav")) + " : " + nm(i)} title={a.t("fav")}><IHeart s={15} on={fav} /></button>
+        <button data-act="copy" tabIndex={-1} aria-label={a.t("cSvg") + " : " + nm(i)} title={a.t("cSvg")}><ICopy s={15} /></button>
+      </span>
+      <button className="chk" data-act="sel" tabIndex={-1} aria-pressed={sel} aria-label={a.t("sel") + " : " + nm(i)}><ICheck s={13} w={3.4} /></button>
+    </div>
+  );
+});
+
+export function Library() {
+  const a = useApp();
+  const [cat, setCat] = useState("all");
+  const [reg, setReg] = useState("all");
+  const [q, setQ] = useState("");
+  const [favOnly, setFavOnly] = useState(false);
+  const [focusIdx, setFocusIdx] = useState(-1);
+  const [anim, setAnim] = useState(true);
+  const grid = useRef<HTMLDivElement>(null);
+
+  // Permet aux tags de la fiche et à la palette de piloter la recherche.
+  useEffect(() => {
+    const f = (e: Event) => { const d = (e as CustomEvent).detail ?? {}; if (d.q != null) { setQ(d.q); setCat("all"); setReg("all"); } if (d.favOnly != null) setFavOnly(d.favOnly); };
+    addEventListener("afroicons:filter", f);
+    return () => removeEventListener("afroicons:filter", f);
+  }, []);
+
+  const list = useMemo(() => rank(ICONS.filter((i) => (cat === "all" || i.cat === cat) && (reg === "all" || i.region === reg) && (!favOnly || a.favs.has(i.id))), q), [cat, reg, q, favOnly, a.favs]);
+  useEffect(() => { a.setList(list); }, [list]); // eslint-disable-line react-hooks/exhaustive-deps
+  const change = (fn: () => void) => { setAnim(true); setFocusIdx(-1); const go = () => fn(); (document as any).startViewTransition && !matchMedia("(prefers-reduced-motion: reduce)").matches ? (document as any).startViewTransition(go) : go(); };
+  useEffect(() => { if (anim) { const h = setTimeout(() => setAnim(false), 900); return () => clearTimeout(h); } }, [anim, list]);
+
+  const o = { s: a.size, style: a.style, w: a.stroke, c: a.style === "line" ? "currentColor" : a.color ?? "#fff", bg: a.badgeBg };
+
+  const onKey = (e: KeyboardEvent<HTMLDivElement>) => {
+    const tgt = (e.target as HTMLElement).closest<HTMLElement>(".hit");
+    if (!tgt || !grid.current || a.current) return;
+    const k = +tgt.dataset.idx!;
+    const cols = getComputedStyle(grid.current).gridTemplateColumns.split(" ").length || 1;
+    const mv = ({ ArrowRight: 1, ArrowLeft: -1, ArrowDown: cols, ArrowUp: -cols } as Record<string, number>)[e.key];
+    if (mv != null) {
+      e.preventDefault();
+      const n = Math.max(0, Math.min(list.length - 1, k + mv));
+      setFocusIdx(n);
+      const el = grid.current.querySelector<HTMLElement>(`.hit[data-idx="${n}"]`);
+      el?.focus(); el?.scrollIntoView({ block: "nearest" });
+      return;
+    }
+    const i = list[k];
+    if (!i || e.metaKey || e.ctrlKey) return;
+    const key = e.key.toLowerCase();
+    if (e.key === "Enter") { e.preventDefault(); a.openIcon(i.id); }
+    else if (key === "c") a.copy(exportSvg(i, a), a.tt("SVG copié : ", "SVG copied: ") + (a.lang === "en" ? i.en : i.fr));
+    else if (key === "f") a.toggleFav(i.id);
+    else if (key === "x" || e.key === " ") { e.preventDefault(); a.toggleSel(i.id); }
+  };
+
+  return (
+    <section id="icones">
+      <div className="shead"><div><div className="kick"><T k="k1" /></div><h2><T k="s1" /></h2><p><T k="s1p" /></p></div></div>
+      <div className="tools">
+        <div className="trow">
+          <label className="sbox"><ISearch s={19} />
+            <input id="q" type="search" aria-label={a.t("cmdLbl")} autoComplete="off" value={q} onChange={(e) => { setQ(e.target.value); setFocusIdx(-1); }} placeholder={a.tt("baobab, okada, attiéké, tresses…", "baobab, okada, fufu, braids…")} />
+            <span className="cnt">{list.length}/{ICONS.length}</span><span className="kbd">/</span>
+          </label>
+          <button className={"pill" + (favOnly ? " on" : "")} onClick={() => { change(() => setFavOnly((f) => !f)); if (!favOnly && !a.favs.size) a.toast(a.tt("Pas encore de favoris : appuyez sur F sur une icône", "No favourites yet: press F on an icon")); }}>
+            <IHeart /><T k="fav" /> <small className="mono">{a.favs.size || ""}</small>
+          </button>
+          <button className={"pill" + (a.selecting ? " on" : "")} onClick={() => { if (a.selecting) a.setSel(new Set()); a.setSelecting(!a.selecting); }}><ISelect s={17} /><T k="sel" /></button>
+          <Customize />
+        </div>
+        <div className="trow">
+          <div className="cats">{CATS.map((c) => {
+            const n = c.id === "all" ? ICONS.length : ICONS.filter((i) => i.cat === c.id).length;
+            return <button key={c.id} className={"cat" + (cat === c.id ? " on" : "")} onClick={() => change(() => setCat(c.id))}><Svg i={byId[c.ic]} o={{ s: 18, w: 2 }} />{a.tt(c.fr, c.en)}<small>{n}</small></button>;
+          })}</div>
+          <div className="regs">{REGS.map((r) => <button key={r.id} className={"reg" + (reg === r.id ? " on" : "")} onClick={() => change(() => setReg(r.id))}>{a.tt(r.fr, r.en)}</button>)}</div>
+        </div>
+      </div>
+      <div ref={grid} className={"grid" + (a.selecting || a.sel.size ? " selecting" : "")} aria-label={a.t("nav1")} style={{ ["--cell" as string]: a.size + 92 + "px" }} onKeyDown={onKey}
+        onFocus={(e) => { const c = (e.target as HTMLElement).closest<HTMLElement>(".hit"); if (c) setFocusIdx(+c.dataset.idx!); }}>
+        {list.map((i, k) => <Card key={i.id} i={i} idx={k} focusIdx={focusIdx} fav={a.favs.has(i.id)} sel={a.sel.has(i.id)} anim={anim} o={o} />)}
+      </div>
+      {!list.length && <div className="empty"><div className="big"><T k="e1" /></div><T k="e2" /></div>}
+      <div className="hint">
+        {[["←↑→↓", "h1"], [a.tt("Entrée", "Enter"), "h2"], ["C", "h3"], ["F", "h4"], ["X", "h5"], ["?", "h6"]].map(([kb, k]) => <span key={k}><span className="kbd">{kb}</span><span><T k={k} /></span></span>)}
+      </div>
+    </section>
+  );
+}

@@ -1,0 +1,21 @@
+{
+  "name": "afroicons",
+  "version": "0.3.0",
+  "description": "150 icônes SVG libres qui racontent l'Afrique — paysages, faune, musique, symboles, cuisine, vie quotidienne, architecture.",
+  "type": "module",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": { "types": "./index.d.ts", "default": "./index.js" },
+    "./icons.json": "./icons.json",
+    "./sprite.svg": "./sprite.svg",
+    "./svg/*": "./svg/*"
+  },
+  "files": ["index.js", "index.d.ts", "icons.json", "sprite.svg", "svg", "LICENSE", "README.md"],
+  "sideEffects": false,
+  "keywords": ["icons", "svg", "africa", "afrique", "icon-set", "afroicons", "adinkra", "wax"],
+  "license": "MIT",
+  "author": "Etonge Dannick Tchatchoua",
+  "repository": { "type": "git", "url": "https://github.com/OWNER/afroicons", "directory": "packages/afroicons" },
+  "homepage": "https://afroicons.org"
+}

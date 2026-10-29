@@ -1,0 +1,20 @@
+{
+  "name": "afroicons-monorepo",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Afroicons \u2014 des ic\u00f4nes libres qui racontent l'Afrique.",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs && node scripts/test.mjs",
+    "dev": "npm run build && npm run dev -w @afroicons/web",
+    "build:web": "npm run build && npm run build -w @afroicons/web",
+    "build:single": "npm run build && npm run build:single -w @afroicons/web"
+  },
+  "license": "MIT",
+  "author": "Etonge Dannick Tchatchoua"
+}

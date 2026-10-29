@@ -1,0 +1,17 @@
+{
+  "name": "afroicons-react",
+  "version": "0.3.0",
+  "description": "Les 150 icônes Afroicons en composants React.",
+  "type": "module",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": { ".": { "types": "./index.d.ts", "default": "./index.js" } },
+  "files": ["index.js", "index.d.ts", "LICENSE", "README.md"],
+  "sideEffects": false,
+  "peerDependencies": { "react": ">=17" },
+  "keywords": ["react", "icons", "svg", "africa", "afroicons"],
+  "license": "MIT",
+  "author": "Etonge Dannick Tchatchoua",
+  "repository": { "type": "git", "url": "https://github.com/OWNER/afroicons", "directory": "packages/afroicons-react" },
+  "homepage": "https://afroicons.org"
+}

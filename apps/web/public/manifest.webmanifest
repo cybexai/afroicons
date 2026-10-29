@@ -1,0 +1,10 @@
+{
+  "name": "Afroicons",
+  "short_name": "Afroicons",
+  "description": "Des icônes libres qui racontent l'Afrique.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#FBF5EA",
+  "theme_color": "#1F1A15",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

@@ -1,0 +1,22 @@
+# Publie les deux paquets sur npm quand on pousse un tag v*, ex. : git tag v0.3.0 && git push --tags
+# Prérequis : un secret NPM_TOKEN (npm > Access Tokens > Granular, droit "publish") dans les réglages du dépôt.
+name: Release
+on:
+  push:
+    tags: ["v*"]
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions: { contents: read, id-token: write }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, registry-url: "https://registry.npmjs.org" }
+      - run: npm test
+      - run: cp LICENSE packages/afroicons/ && cp LICENSE packages/afroicons-react/
+      - run: npm publish --provenance --access public
+        working-directory: packages/afroicons
+        env: { NODE_AUTH_TOKEN: "${{ secrets.NPM_TOKEN }}" }
+      - run: npm publish --provenance --access public
+        working-directory: packages/afroicons-react
+        env: { NODE_AUTH_TOKEN: "${{ secrets.NPM_TOKEN }}" }
