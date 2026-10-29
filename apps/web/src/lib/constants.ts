@@ -1,13 +1,23 @@
 import { icons as ICON_MAP } from "afroicons";
 import type { AfroiconData } from "afroicons";
+import UI_ICONS from "afroicons-ui/icons.json";
 
-export type Icon = AfroiconData & { _hay?: string; _n?: string };
+/** Une icône du site : icône Afroicons, ou icône d'interface (paquet afroicons-ui, nom Lucide dans `lucide`). */
+export type Icon = Omit<AfroiconData, "id" | "cat" | "region"> & { id: string; cat: string; region: string; lucide?: string; _hay?: string; _n?: string };
 export type Style = "line" | "badge" | "circle";
 export type CityId = keyof typeof CITIES;
 
 export const VERSION = "0.3";
 const ORDER = ["nature", "faune", "musique", "symboles", "cuisine", "vie", "architecture"];
-export const ICONS: Icon[] = Object.values(ICON_MAP).sort((a, b) => ORDER.indexOf(a.cat) - ORDER.indexOf(b.cat));
+/** Les icônes culturelles (paquets afroicons et afroicons-react). */
+export const AFRO: Icon[] = Object.values(ICON_MAP).sort((a, b) => ORDER.indexOf(a.cat) - ORDER.indexOf(b.cat));
+const uiId = (n: string) => "ui-" + n.replace(/([a-z0-9])([A-Z])/g, "$1-$2").replace(/([a-zA-Z])(\d)/g, "$1-$2").toLowerCase();
+/** Les icônes d'interface (paquet afroicons-ui), placées dans la catégorie « Interface ». */
+export const UI: Icon[] = (UI_ICONS as { id: string; fr: string; en: string; family: string; afro: string | null; body: string }[]).map((u) => ({
+  id: uiId(u.id), lucide: u.id, fr: u.fr, en: u.en, cat: "interface", region: "pan", since: "ui", body: u.body,
+  tags: [u.id, u.family, ...(u.afro ? ["afrique", ...(u.afro.toLowerCase().match(/[a-zà-ÿ]{4,}/g) ?? [])] : [])],
+}));
+export const ICONS: Icon[] = [...AFRO, ...UI];
 export const byId: Record<string, Icon> = Object.fromEntries(ICONS.map((i) => [i.id, i]));
 export const isNew = (i: Icon) => i.since === VERSION;
 
@@ -20,6 +30,7 @@ export const CATS = [
   { id: "cuisine", fr: "Cuisine", en: "Food", ic: "marmite" },
   { id: "vie", fr: "Vie quotidienne", en: "Daily life", ic: "mototaxi" },
   { id: "architecture", fr: "Architecture", en: "Architecture", ic: "case" },
+  { id: "interface", fr: "Interface", en: "Interface", ic: "ui-layout-dashboard" },
 ] as const;
 export const catOf = (id: string) => CATS.find((c) => c.id === id) ?? CATS[0];
 

@@ -17,6 +17,7 @@ export function svgStr(i: Icon, o: SvgOpts = {}): string {
 export const pascal = (id: string) => id.replace(/(^|[-_])(\w)/g, (_, _a, b) => b.toUpperCase());
 
 export function jsxSnippet(i: Icon, stroke: number) {
+  if (i.lucide) return `// npm install afroicons-ui lucide-react\n// Mêmes noms que lucide-react : remplacez simplement l'import.\nimport { ${i.lucide} } from "afroicons-ui";\n\n<${i.lucide} size={24} strokeWidth={${stroke}} />`;
   return `import { ${pascal(i.id)} } from "afroicons-react";\n\n<${pascal(i.id)} size={24} strokeWidth={${stroke}} />\n\n// ou, sans dépendance :\nexport function ${pascal(i.id)}({ size = 24, color = "currentColor", strokeWidth = ${stroke}, ...props }) {\n  return (\n    <svg width={size} height={size} viewBox="0 0 24 24" fill="none"\n      stroke={color} strokeWidth={strokeWidth}\n      strokeLinecap="round" strokeLinejoin="round" {...props}>\n      ${i.body.replace(/stroke-width/g, "strokeWidth")}\n    </svg>\n  );\n}`;
 }
 

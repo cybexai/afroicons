@@ -105,3 +105,46 @@ for (const i of icons) {
 writeFileSync(join(Rd, "index.js"), js);
 writeFileSync(join(Rd, "index.d.ts"), dts);
 console.log(`✔ ${icons.length} icônes → packages/afroicons, packages/afroicons-react`);
+
+/* ---------- afroicons-ui (icônes d'interface, compatibles lucide-react) ---------- */
+// Mêmes noms et mêmes props que lucide-react : on remplace l'import, rien d'autre.
+// Les icônes pas encore dessinées sont reprises de lucide-react (export *).
+const ui = JSON.parse(readFileSync(join(root, "src/ui-icons.json"), "utf8"));
+const U = join(root, "packages/afroicons-ui");
+const kebab = (n) => n.replace(/([a-z0-9])([A-Z])/g, "$1-$2").replace(/([a-zA-Z])(\d)/g, "$1-$2").toLowerCase();
+rmSync(join(U, "svg"), { recursive: true, force: true });
+mkdirSync(join(U, "svg"), { recursive: true });
+for (const i of ui) writeFileSync(join(U, "svg", `${i.id}.svg`),
+  `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${STROKE}" stroke-linecap="round" stroke-linejoin="round" class="afroicon afroicon-ui-${kebab(i.id)}">${i.body}</svg>\n`);
+writeFileSync(join(U, "icons.json"), JSON.stringify(ui.map(({ id, fr, en, family, afro, body }) => ({ id, fr, en, family, afro, body })), null, 1));
+let ujs = `// afroicons-ui v${version} — généré, ne pas modifier à la main.
+import { createElement, forwardRef } from "react";
+export * from "lucide-react";
+
+const make = (name, nodes) => {
+  const C = forwardRef(function Afroicon({ color = "currentColor", size = 24, strokeWidth = ${STROKE}, absoluteStrokeWidth, className = "", children, ...rest }, ref) {
+    return createElement("svg", {
+      ref, xmlns: "http://www.w3.org/2000/svg", width: size, height: size, viewBox: "0 0 24 24", fill: "none",
+      stroke: color, strokeWidth: absoluteStrokeWidth ? (Number(strokeWidth) * 24) / Number(size) : strokeWidth,
+      strokeLinecap: "round", strokeLinejoin: "round",
+      className: ["lucide", "lucide-" + name, "afroicon", className].filter(Boolean).join(" "), ...rest,
+    }, ...nodes.map(([t, p], k) => createElement(t, { key: k, ...p })), ...(Array.isArray(children) ? children : [children]));
+  });
+  C.displayName = name;
+  return C;
+};
+`;
+let udts = `// afroicons-ui v${version} — généré, ne pas modifier à la main.
+export * from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+/** Noms des icônes redessinées par Afroicons (les autres viennent de lucide-react). */
+export declare const afroiconNames: readonly string[];
+`;
+for (const i of ui) {
+  ujs += `export const ${i.id} = make("${kebab(i.id)}", ${JSON.stringify(toJsxChildren(i.body))});\nexport { ${i.id} as ${i.id}Icon, ${i.id} as Lucide${i.id} };\n`;
+  udts += `/** ${i.fr} · ${i.en}${i.afro ? ` — ${i.afro}` : ""} */\nexport declare const ${i.id}: LucideIcon;\nexport declare const ${i.id}Icon: LucideIcon;\nexport declare const Lucide${i.id}: LucideIcon;\n`;
+}
+ujs += `export const afroiconNames = ${JSON.stringify(ui.map((i) => i.id))};\n`;
+writeFileSync(join(U, "index.js"), ujs);
+writeFileSync(join(U, "index.d.ts"), udts);
+console.log(`✔ ${ui.length} icônes d'interface → packages/afroicons-ui`);

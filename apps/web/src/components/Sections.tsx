@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { ICONS, PALS, REPO, VERSION, byId } from "../lib/constants";
+import { AFRO, ICONS, PALS, REPO, VERSION, byId } from "../lib/constants";
 import { buildTile, posterSvg, tileSvg, type PatternState } from "../lib/pattern";
 import { highlight, logoSvg, spriteStr, svgToPng } from "../lib/svg";
 import { useApp, useName } from "../state";
@@ -12,10 +12,10 @@ export function Studio() {
   const P = a.pattern;
   const set = (p: Partial<PatternState>) => a.setPattern({ ...P, ...p });
   const t = useMemo(() => buildTile(P), [P]);
-  const picks = [...P.icons.map((id) => byId[id]).filter(Boolean), ...ICONS.filter((i) => !P.icons.includes(i.id))];
+  const picks = [...P.icons.map((id) => byId[id]).filter(Boolean), ...AFRO.filter((i) => !P.icons.includes(i.id))];
   const shuffle = () => {
     const keys = Object.keys(PALS);
-    const pool = ICONS.map((i) => i.id).sort(() => Math.random() - 0.5);
+    const pool = AFRO.map((i) => i.id).sort(() => Math.random() - 0.5);
     set({ seed: Math.floor(Math.random() * 1e9), pal: Math.random() < 0.5 ? keys[Math.floor(Math.random() * keys.length)] : P.pal, icons: pool.slice(0, 4 + Math.floor(Math.random() * 4)) });
   };
   const L = [["grid", "Grille", "Grid"], ["brick", "Quinconce", "Brick"], ["scatter", "Semis", "Scatter"]] as const;

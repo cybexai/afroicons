@@ -15,6 +15,7 @@
 | --- | --- |
 | [`afroicons`](packages/afroicons) | SVG, sprite, `icons.json`, fonction `toSvg()` (JS natif) |
 | [`afroicons-react`](packages/afroicons-react) | Un composant React par icône |
+| [`afroicons-ui`](packages/afroicons-ui) | 108 icônes d'interface, compatibles `lucide-react` (mêmes noms, mêmes props) |
 
 ## Démarrage rapide · Quick start
 
@@ -92,9 +93,11 @@ Organisation du dépôt :
 
 ```
 src/icons.json              ← source unique de vérité (dessins + métadonnées)
+src/ui-icons.json           ← icônes d'interface (noms Lucide)
 scripts/build.mjs           ← génère les paquets à partir de icons.json
 packages/afroicons          ← paquet npm : SVG, sprite, toSvg()
 packages/afroicons-react    ← paquet npm : composants React
+packages/afroicons-ui       ← paquet npm : icônes d'interface compatibles lucide-react
 apps/web                    ← le site afroicons.org (React + Vite + TypeScript)
   src/lib/                  ← données, SVG, recherche, motifs, i18n, boîte à idées
   src/components/           ← en-tête, bibliothèque, fiche, atelier, vitrine, marque…

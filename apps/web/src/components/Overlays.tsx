@@ -77,7 +77,7 @@ export function Drawer() {
         <div className="dscroll" ref={scroller}>
           <div className="dtop">
             <div><h3 id="dTitle">{nm(ic)}</h3>
-              <div className="sub"><span>{a.lang === "en" ? ic.fr : ic.en}</span><span className="badge">{a.tt(cat.fr, cat.en)}</span><span className="badge">{REGNAME[ic.region][a.lang]}</span>{isNew(ic) && <span className="badge" style={{ color: "var(--a1)" }}>v{VERSION}</span>}</div>
+              <div className="sub"><span>{a.lang === "en" ? ic.fr : ic.en}</span><span className="badge">{a.tt(cat.fr, cat.en)}</span>{!ic.lucide && <span className="badge">{REGNAME[ic.region][a.lang]}</span>}{isNew(ic) && <span className="badge" style={{ color: "var(--a1)" }}>v{VERSION}</span>}</div>
             </div>
             <div className="dnav">
               <button className="ib" aria-label={a.tt("Icône précédente", "Previous icon")} title={a.tt("Précédente (←)", "Previous (←)")} onClick={() => step(-1)}><IPrev w={2.2} /></button>
@@ -106,7 +106,7 @@ export function Drawer() {
             <div className="ctxg">
               <div><span className="mbtn">{mk({ c: "#fff", w: 2 })}{a.tt("Commander", "Order")}</span></div>
               <div><div className="tabbar">{[ic, ...others.slice(0, 3)].map((x, k) => <span key={x.id} className={k === 0 ? "on" : ""}><Svg i={x} o={{ s: 20, w: 1.9 }} />{nm(x).split(" ")[0].slice(0, 9)}</span>)}</div></div>
-              <div><div className="lrow"><span className="av">{mk({ s: 22 })}</span><div><b>{nm(ic)}</b><small>{REGNAME[ic.region][a.lang]}</small></div></div></div>
+              <div><div className="lrow"><span className="av">{mk({ s: 22 })}</span><div><b>{nm(ic)}</b><small>{ic.lucide ? "afroicons-ui" : REGNAME[ic.region][a.lang]}</small></div></div></div>
               <div><span className="notif"><i>{mk({ s: 16, w: 2.2 })}</i>{a.tt("Ajouté au panier", "Added to basket")}</span></div>
             </div>
           </div>

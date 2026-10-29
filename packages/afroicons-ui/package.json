@@ -1,0 +1,21 @@
+{
+  "name": "afroicons-ui",
+  "version": "0.3.0",
+  "description": "Icônes d'interface Afroicons, compatibles lucide-react : mêmes noms, mêmes props. Les icônes pas encore redessinées viennent de Lucide.",
+  "type": "module",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": { "types": "./index.d.ts", "default": "./index.js" },
+    "./icons.json": "./icons.json",
+    "./svg/*": "./svg/*"
+  },
+  "files": ["index.js", "index.d.ts", "icons.json", "svg", "LICENSE", "README.md"],
+  "sideEffects": false,
+  "peerDependencies": { "react": ">=17", "lucide-react": ">=0.400.0" },
+  "keywords": ["react", "icons", "svg", "africa", "afroicons", "lucide", "ui"],
+  "license": "MIT",
+  "author": "THAFAM HOLDING SARL",
+  "repository": { "type": "git", "url": "https://github.com/cybexai/afroicons", "directory": "packages/afroicons-ui" },
+  "homepage": "https://afroicons.org"
+}

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { CATS, CITIES, ICONS, REGNAME, ROT_CITIES, SHOWCASE, VERSION, byId, catOf, type CityId } from "../lib/constants";
+import { AFRO, CATS, CITIES, REGNAME, ROT_CITIES, SHOWCASE, VERSION, byId, catOf, type CityId } from "../lib/constants";
 import { animateDraw, logoSvg, svgStr } from "../lib/svg";
 import { useApp, useName } from "../state";
 import { IClose, IDown, IMenu, IMoon, ISearch, ISun, Raw, Svg, T } from "./ui";
@@ -91,7 +91,7 @@ export function Nav() {
 
 function iconOfTheDay() {
   const d = new Date();
-  return ICONS[(d.getFullYear() * 372 + d.getMonth() * 31 + d.getDate()) % ICONS.length];
+  return AFRO[(d.getFullYear() * 372 + d.getMonth() * 31 + d.getDate()) % AFRO.length];
 }
 
 export function Hero() {
@@ -120,7 +120,7 @@ export function Hero() {
   return (
     <header className="hero wrap" id="top">
       <div>
-        <span className="eyebrow"><b>v{VERSION}</b><span>{a.tt(`${ICONS.length} icônes libres · dessinées à la main`, `${ICONS.length} free icons · hand-drawn`)}</span></span>
+        <span className="eyebrow"><b>v{VERSION}</b><span>{a.tt(`${AFRO.length} icônes libres · dessinées à la main`, `${AFRO.length} free icons · hand-drawn`)}</span></span>
         <button className="eyebrow iod" onClick={() => a.openIcon(iod.id)}>
           <Svg i={iod} o={{ s: 18, w: 2 }} /><span>{a.tt("Icône du jour", "Icon of the day")} : <strong style={{ color: "var(--ink)" }}>{nm(iod)}</strong></span>
         </button>
@@ -134,8 +134,8 @@ export function Hero() {
           <a className="btn" href="#atelier"><T k="cta2" /></a>
         </div>
         <div className="hstats">
-          <div><b>{ICONS.length}</b><span><T k="st1" /></span></div>
-          <div><b>{CATS.length - 1}</b><span><T k="st2" /></span></div>
+          <div><b>{AFRO.length}</b><span><T k="st1" /></span></div>
+          <div><b>{CATS.length - 2}</b><span><T k="st2" /></span></div>
           <div><b>5</b><span><T k="st3" /></span></div>
           <div><b>2</b><span><T k="st4" /></span></div>
         </div>
@@ -157,9 +157,9 @@ export function Hero() {
 
 export function Marquee() {
   const rows = useMemo(() => {
-    const half = Math.ceil(ICONS.length / 2);
-    const row = (L: typeof ICONS) => { const h = L.map((i) => svgStr(i, { s: 30, w: 1.6 })).join(""); return h + h; };
-    return [row(ICONS.slice(0, half)), row(ICONS.slice(half))];
+    const half = Math.ceil(AFRO.length / 2);
+    const row = (L: typeof AFRO) => { const h = L.map((i) => svgStr(i, { s: 30, w: 1.6 })).join(""); return h + h; };
+    return [row(AFRO.slice(0, half)), row(AFRO.slice(half))];
   }, []);
   return (
     <div className="marq" aria-hidden="true">

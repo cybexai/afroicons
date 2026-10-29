@@ -1,5 +1,10 @@
 # Journal des versions
 
+## À venir · afroicons-ui
+- Nouveau paquet **`afroicons-ui`** : 108 icônes d'interface redessinées (les P1 de NAFA ERP), compatibles `lucide-react` — mêmes noms, mêmes props, classes `lucide-*` conservées ; les autres icônes Lucide restent disponibles
+- 15 métaphores africaines : case, panier tressé, boutique, cauri, moto de livraison, taxi-brousse, moustiquaire, dashiki, marmite, bidon, gele…
+- Site : nouvelle catégorie « Interface »
+
 ## 0.3.1 — 29 octobre 2026 · audit
 **Accessibilité (0 violation axe-core, clair / sombre / mobile)**
 - Fenêtres fermées (fiche, palette, aide, sélection, menus) rendues inertes : plus de focus invisible au clavier
