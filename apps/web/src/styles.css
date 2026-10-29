@@ -239,10 +239,10 @@ section{position:relative}
 .ctabs button{padding:6px 11px;border-radius:9px;font:600 12px "JetBrains Mono";color:var(--muted)}
 .ctabs button.on{background:var(--ink);color:var(--bg)}
 .codebox{position:relative}
-.codebox pre{margin:0;background:#16120F;color:#EADFCB;border-radius:14px;padding:16px;font:12px/1.6 "JetBrains Mono",monospace;white-space:pre;max-height:220px;overflow:auto;border:1px solid #2a231d}
+.codebox pre{margin:0;background:#16120F;color:#EADFCB;border-radius:14px;padding:46px 16px 16px;font:12px/1.6 "JetBrains Mono",monospace;white-space:pre;max-height:220px;overflow:auto;border:1px solid #2a231d}
 .codebox pre .t{color:#F0A35E}.codebox pre .a{color:#9BC49A}.codebox pre .s{color:#E9C46A}
-.codebox .cp{position:absolute;right:8px;top:8px;background:#ffffff14;color:#EADFCB;border-radius:9px;padding:5px 10px;font:600 11.5px "JetBrains Mono"}
-.codebox .cp:hover{background:#ffffff26}
+.codebox .cp{position:absolute;right:9px;top:9px;z-index:1;background:#2A231D;border:1px solid #3A3029;color:#EADFCB;border-radius:9px;padding:5px 10px;font:600 11.5px "JetBrains Mono"}
+.codebox .cp:hover{background:#3A3029}
 .sim{margin-top:20px}
 .simg{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
 .simg button{aspect-ratio:1;border-radius:12px;border:1px solid var(--line);background:var(--card);display:grid;place-items:center}
