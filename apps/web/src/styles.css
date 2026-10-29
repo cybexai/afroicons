@@ -470,3 +470,9 @@ footer .fr{display:flex;align-items:center;gap:16px}
   .hint,.cmd .foot,.kbtn .kbd,.sbox .kbd,.dacts .kbd{display:none}
 }
 @media (max-width:360px){.logo .wm-t{display:none}}
+/* Mobile : le flou de la barre d'outils servait de repère aux éléments « fixed » et coinçait le panneau Personnaliser.
+   Sans flou, le panneau devient une vraie feuille en bas de l'écran. */
+@media (max-width:640px){
+  .tools{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--bg)}
+  .cpop{max-height:min(75vh,560px);overflow-y:auto;overscroll-behavior:contain;padding-bottom:calc(18px + env(safe-area-inset-bottom));box-shadow:0 -10px 60px -10px #000a;transform:translateY(16px)}
+}
