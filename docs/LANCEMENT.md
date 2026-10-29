@@ -8,7 +8,7 @@ Vérifié le 29/10/2026 : les noms `afroicons` et `afroicons-react` sont **libre
 - [ ] Remplacer `OWNER` par le compte dans `packages/*/package.json`
 - [ ] `git init && git add . && git commit -m "Afroicons v0.3.0" && git branch -M main`
 - [ ] `git remote add origin git@github.com:OWNER/afroicons.git && git push -u origin main`
-- [ ] Réglages > Pages > Source : **GitHub Actions** (le site se publie tout seul via `pages.yml`)
+- [ ] AWS Amplify > *Host web app* > GitHub > `cybexai/afroicons`, branche `main` : la configuration est lue dans `amplify.yml`, le site se republie à chaque push
 - [ ] Ajouter les topics : `icons`, `svg`, `africa`, `react`, `icon-set`
 
 ## 2. npm (10 min)
@@ -19,13 +19,9 @@ Vérifié le 29/10/2026 : les noms `afroicons` et `afroicons-react` sont **libre
 
 ## 3. Domaine : afroicons.org
 - [ ] Acheter `afroicons.org` chez un registrar (Gandi, OVH, Namecheap, Cloudflare…), et `afroicons.com` si possible pour le rediriger
-- [ ] Dans GitHub > Settings > Pages, saisir `afroicons.org` comme domaine personnalisé (le fichier `apps/web/public/CNAME` le contient aussi)
-- [ ] Chez le registrar, ajouter les enregistrements DNS :
-  - `A` @ → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-  - `AAAA` @ → `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
-  - `CNAME` www → `OWNER.github.io`
-- [ ] GitHub > Settings > Pages : vérifier le domaine, puis cocher **Enforce HTTPS**
-- [ ] Recommandé : GitHub > Settings (compte) > Pages > *Verified domains* pour empêcher toute usurpation du domaine
+- [ ] AWS Amplify > *Hosting* > *Custom domains* : ajouter `afroicons.org` (et `www`)
+- [ ] Chez le registrar, ajouter les enregistrements DNS indiqués par Amplify (ou laisser Amplify les créer si le domaine est sur Route 53)
+- [ ] Attendre la validation du certificat SSL émis par Amplify (HTTPS automatique)
 - [ ] `afroicons.com` → redirection 301 vers `https://afroicons.org`
 
 ## 4. Licence
