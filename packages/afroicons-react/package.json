@@ -11,7 +11,7 @@
   "peerDependencies": { "react": ">=17" },
   "keywords": ["react", "icons", "svg", "africa", "afroicons"],
   "license": "MIT",
-  "author": "Etonge Dannick Tchatchoua",
-  "repository": { "type": "git", "url": "https://github.com/OWNER/afroicons", "directory": "packages/afroicons-react" },
+  "author": "THAFAM HOLDING",
+  "repository": { "type": "git", "url": "https://github.com/cybexai/afroicons", "directory": "packages/afroicons-react" },
   "homepage": "https://afroicons.org"
 }

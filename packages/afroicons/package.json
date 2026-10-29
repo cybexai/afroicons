@@ -15,7 +15,7 @@
   "sideEffects": false,
   "keywords": ["icons", "svg", "africa", "afrique", "icon-set", "afroicons", "adinkra", "wax"],
   "license": "MIT",
-  "author": "Etonge Dannick Tchatchoua",
-  "repository": { "type": "git", "url": "https://github.com/OWNER/afroicons", "directory": "packages/afroicons" },
+  "author": "THAFAM HOLDING",
+  "repository": { "type": "git", "url": "https://github.com/cybexai/afroicons", "directory": "packages/afroicons" },
   "homepage": "https://afroicons.org"
 }

@@ -16,5 +16,5 @@
     "build:single": "npm run build && npm run build:single -w @afroicons/web"
   },
   "license": "MIT",
-  "author": "Etonge Dannick Tchatchoua"
+  "author": "THAFAM HOLDING"
 }

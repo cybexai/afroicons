@@ -109,4 +109,4 @@ Afroicons est un projet indépendant et communautaire, soutenu par [NAFA ERP](ht
 
 ## Licence
 
-[MIT](LICENSE) © 2026 Etonge Dannick Tchatchoua et les contributeurs d'Afroicons. Utilisation libre, y compris commerciale ; une mention est appréciée.
+[MIT](LICENSE) © 2026 THAFAM HOLDING et les contributeurs d'Afroicons. Utilisation libre, y compris commerciale ; une mention est appréciée.

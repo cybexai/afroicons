@@ -5,9 +5,8 @@ Vérifié le 29/10/2026 : les noms `afroicons` et `afroicons-react` sont **libre
 
 ## 1. GitHub (15 min)
 - [ ] Créer le dépôt public `afroicons` (compte perso ou organisation `afroicons`)
-- [ ] Remplacer `OWNER` par le compte dans `packages/*/package.json`
 - [ ] `git init && git add . && git commit -m "Afroicons v0.3.0" && git branch -M main`
-- [ ] `git remote add origin git@github.com:OWNER/afroicons.git && git push -u origin main`
+- [ ] `git remote add origin https://github.com/cybexai/afroicons.git && git push -u origin main`
 - [ ] AWS Amplify > *Host web app* > GitHub > `cybexai/afroicons`, branche `main` : la configuration est lue dans `amplify.yml`, le site se republie à chaque push
 - [ ] Ajouter les topics : `icons`, `svg`, `africa`, `react`, `icon-set`
 
