@@ -1,9 +1,41 @@
 # Contribuer à Afroicons
 
-Merci de vouloir enrichir la bibliothèque ! Deux façons d'aider :
+Merci de vouloir enrichir la bibliothèque ! Afroicons est un projet libre (licence MIT) : chacun peut proposer, dessiner, corriger et améliorer. *English summary at the end.*
 
-1. **Proposer une icône** : dans la boîte à idées du site, ou en ouvrant une *issue* « Nouvelle icône » avec le nom, la catégorie, la région et l'usage visé.
-2. **Dessiner une icône** : en suivant le guide ci-dessous puis en ouvrant une *pull request*.
+En participant, vous acceptez le [code de conduite](CODE_OF_CONDUCT.md).
+
+## Comment aider
+
+| Vous voulez… | Comment |
+| --- | --- |
+| **Proposer une icône** | Le formulaire de la [boîte à idées](https://afroicons.org/#idees), ou un ticket [« Nouvelle icône »](https://github.com/cybexai/afroicons/issues/new/choose). |
+| **Voter** | Un 👍 sur une proposition. Les plus demandées entrent dans la prochaine version. |
+| **Corriger une icône** | Un ticket « Corriger une icône » : peu lisible, inexacte, nom ou région erronés, représentation maladroite. |
+| **Dessiner une icône** | Suivez le guide ci-dessous et ouvrez une pull request. Les propositions les plus votées sont un bon point de départ. |
+| **Améliorer le site ou les paquets** | Les tickets `good first issue` sont faits pour commencer. |
+| **Partager un savoir** | Un nom local, une signification, une photo libre de droits : commentez la proposition concernée. |
+
+Pour un changement important (nouvelle catégorie, nouveau paquet, refonte du site), ouvrez d'abord une [discussion](https://github.com/cybexai/afroicons/discussions) : on en parle avant que vous y passiez du temps.
+
+## Installer le projet
+
+Node.js 20 ou plus récent.
+
+```bash
+git clone https://github.com/cybexai/afroicons.git
+cd afroicons
+npm ci
+npm run dev        # site sur http://localhost:5173
+npm test           # régénère les paquets et vérifie les icônes
+```
+
+```
+src/icons.json         ← icônes culturelles : la source unique de vérité
+src/ui-icons.json      ← icônes d'interface (noms Lucide)
+scripts/build.mjs      ← génère les paquets à partir de ces deux fichiers
+packages/              ← paquets npm générés (ne pas modifier à la main)
+apps/web/              ← le site afroicons.org (React + Vite + TypeScript)
+```
 
 ## Guide de dessin
 
@@ -19,7 +51,9 @@ Merci de vouloir enrichir la bibliothèque ! Deux façons d'aider :
 
 **Dans l'esprit :** une silhouette claire vaut mieux que des détails. Évitez les clichés (« tribal », animaux de safari seulement), les marques, les drapeaux et les reproductions d'œuvres précises. Pour un symbole culturel (adinkra, croix touarègue…), dessinez la forme traditionnelle, publique, et citez sa signification dans la description.
 
-## Ajouter une icône
+**Dessins originaux uniquement.** Ne recopiez pas les tracés d'une autre bibliothèque, même libre.
+
+## Ajouter une icône culturelle
 
 1. Ajoutez une entrée dans `src/icons.json` :
 
@@ -42,3 +76,37 @@ Merci de vouloir enrichir la bibliothèque ! Deux façons d'aider :
 
 2. `npm test` — le build régénère les paquets et vérifie votre entrée.
 3. Ouvrez la PR avec une capture de l'icône à 16, 24 et 48 px.
+
+## Ajouter une icône d'interface (`afroicons-ui`)
+
+`afroicons-ui` remplace `lucide-react` sans changer le code : chaque icône garde **exactement le nom Lucide** (`Wallet`, `ShoppingCart`…). Celles qui ne sont pas encore redessinées viennent de Lucide.
+
+Ajoutez une entrée dans `src/ui-icons.json` :
+
+```json
+{ "id": "Calculator", "fr": "Calculatrice", "en": "Calculator", "family": "Argent et paiement", "afro": null, "body": "<rect …/>" }
+```
+
+- `id` : le nom du composant Lucide, tel quel. Les tests vérifient qu'il existe dans `lucide-react`.
+- `afro` : `null` si la forme reste universelle, ou une phrase qui décrit la métaphore africaine retenue (« Le panier tressé du marché, à la place du chariot »).
+- Gardez la même idée que l'icône Lucide (une loupe pour chercher), mais **dessinez-la vous-même** : les tracés Lucide sont sous licence ISC.
+
+## Relecture
+
+- Un mainteneur relit chaque PR, en général sous une semaine.
+- Une icône est acceptée si elle respecte le guide, se lit à 16 px et représente fidèlement son sujet. Pour un sujet culturel, l'avis de personnes qui le connaissent compte autant que le dessin.
+- Les commits sont fusionnés sur `main`. Chaque version est publiée sur npm à partir d'un tag `v*`.
+
+## Licence des contributions
+
+En proposant une contribution, vous confirmez en être l'auteur (ou avoir le droit de la partager) et acceptez qu'elle soit publiée sous [licence MIT](LICENSE).
+
+## Mainteneurs
+
+Le projet est porté par **THAFAM HOLDING SARL**, qui en assure la maintenance et la publication.
+
+---
+
+## English summary
+
+Afroicons is MIT-licensed and welcomes contributions. Suggest or vote for icons on [afroicons.org](https://afroicons.org/#idees) or in the issues; draw new icons following the guide above (24 grid, 1.75 rounded stroke, `currentColor`, readable at 16 px, original drawings only) by adding an entry to `src/icons.json` (or `src/ui-icons.json` for Lucide-compatible interface icons, keeping the exact Lucide name), then run `npm test` and open a pull request with 16/24/48 px previews. For larger changes, start a discussion first. By contributing you agree to the [code of conduct](CODE_OF_CONDUCT.md) and to release your work under the MIT license.

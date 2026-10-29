@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💡 Proposer une icône depuis le site · Suggest from the website
+    url: https://afroicons.org/#idees
+    about: Le formulaire de la boîte à idées prépare la proposition pour vous.
+  - name: 💬 Questions et discussions · Questions & discussions
+    url: https://github.com/cybexai/afroicons/discussions
+    about: Une question, une idée de fonctionnalité, un retour sur le style ?
+  - name: 🔒 Signaler une faille de sécurité · Report a vulnerability
+    url: https://github.com/cybexai/afroicons/security/advisories/new
+    about: En privé, jamais dans un ticket public.

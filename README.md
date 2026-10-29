@@ -1,7 +1,12 @@
 <p align="center"><img src="docs/logo.svg" width="96" alt="Afroicons"></p>
 <h1 align="center">Afroicons</h1>
-<p align="center"><b>Des icônes libres qui racontent l'Afrique.</b><br>150 icônes SVG · grille 24 px · FR / EN · MIT</p>
+<p align="center"><b>Des icônes libres qui racontent l'Afrique.</b><br>150 icônes culturelles + 108 icônes d'interface · grille 24 px · FR / EN · open source (MIT)</p>
 <p align="center"><a href="https://afroicons.org"><b>afroicons.org</b></a></p>
+<p align="center">
+  <a href="LICENSE"><img alt="Licence MIT" src="https://img.shields.io/badge/licence-MIT-C24E2A"></a>
+  <a href="https://github.com/cybexai/afroicons/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/cybexai/afroicons/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="CONTRIBUTING.md"><img alt="Contributions bienvenues" src="https://img.shields.io/badge/contributions-bienvenues-2E6B4E"></a>
+</p>
 
 ---
 
@@ -78,12 +83,11 @@ Chaque icône porte un nom français et anglais, une catégorie, une région (`o
 - Lisible à **16 px**, cohérent jusqu'à 512 px
 - Pas de clichés, pas de marques, pas de reproductions d'œuvres
 
-Voir [CONTRIBUTING.md](CONTRIBUTING.md) pour proposer ou dessiner une icône.
 
 ## Développement
 
 ```bash
-npm install
+npm ci
 npm run dev          # site React en local (http://localhost:5173)
 npm test             # régénère les paquets et vérifie les icônes
 npm run build:web    # compile le site pour afroicons.org (apps/web/dist)
@@ -106,9 +110,22 @@ apps/web                    ← le site afroicons.org (React + Vite + TypeScript
 
 Le site consomme directement le paquet `afroicons` du dépôt : ajouter une icône dans `src/icons.json` la fait apparaître partout.
 
+## Contribuer · Contributing
+
+Afroicons est **open source** et se construit avec sa communauté. Toutes les contributions comptent, même sans savoir dessiner :
+
+- **Proposer une icône** qui manque, depuis la [boîte à idées](https://afroicons.org/#idees) ou un [ticket](https://github.com/cybexai/afroicons/issues/new/choose)
+- **Voter** avec un 👍 pour les propositions qui vous parlent
+- **Partager un savoir** : nom local, signification d'un symbole, photo libre de droits
+- **Dessiner** une icône, **corriger** un dessin, **améliorer** le site ou les paquets
+
+Le [guide de contribution](CONTRIBUTING.md) explique comment dessiner et ajouter une icône. Les questions et idées ont leur place dans les [discussions](https://github.com/cybexai/afroicons/discussions). En participant, vous acceptez le [code de conduite](CODE_OF_CONDUCT.md). Pour une faille de sécurité, voir [SECURITY.md](SECURITY.md).
+
+🇬🇧 Afroicons is open source and community-built: suggest and vote for icons, share local knowledge, draw or fix icons, or improve the site and packages. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## Soutien
 
-Afroicons est un projet indépendant et communautaire, soutenu par [NAFA ERP](https://nafaerp.com).
+Afroicons est un projet indépendant et communautaire, porté par THAFAM HOLDING SARL et soutenu par [NAFA ERP](https://nafaerp.com).
 
 ## Licence
 

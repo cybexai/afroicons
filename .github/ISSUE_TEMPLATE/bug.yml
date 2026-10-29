@@ -1,0 +1,35 @@
+name: 🐞 Bug
+description: Un problème sur le site, un paquet ou une icône · Something is broken
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: where
+    attributes:
+      label: Où ? · Where?
+      options:
+        - Site afroicons.org
+        - Paquet afroicons
+        - Paquet afroicons-react
+        - Paquet afroicons-ui
+        - Dessin d'une icône · Icon drawing
+    validations: { required: true }
+  - type: textarea
+    id: what
+    attributes:
+      label: Que se passe-t-il ? · What happens?
+      description: Ce que vous voyez, et ce que vous attendiez.
+    validations: { required: true }
+  - type: textarea
+    id: steps
+    attributes:
+      label: Étapes pour reproduire · Steps to reproduce
+      placeholder: "1. Ouvrir…\n2. Cliquer sur…"
+  - type: input
+    id: env
+    attributes:
+      label: Navigateur, appareil ou version du paquet · Browser, device or package version
+      placeholder: "Safari iOS 18, afroicons-ui 0.3.0…"
+  - type: textarea
+    id: shots
+    attributes:
+      label: Captures · Screenshots

@@ -5,6 +5,10 @@
 - 15 métaphores africaines : case, panier tressé, boutique, cauri, moto de livraison, taxi-brousse, moustiquaire, dashiki, marmite, bidon, gele…
 - Site : nouvelle catégorie « Interface »
 
+## À venir · projet open source
+- Code de conduite, politique de sécurité, guide de contribution complet (installation, icônes d'interface, relecture, licence des contributions)
+- Modèles de tickets (nouvelle icône, correction d'icône, bug) et de pull request
+
 ## 0.3.1 — 29 octobre 2026 · audit
 **Accessibilité (0 violation axe-core, clair / sombre / mobile)**
 - Fenêtres fermées (fiche, palette, aide, sélection, menus) rendues inertes : plus de focus invisible au clavier

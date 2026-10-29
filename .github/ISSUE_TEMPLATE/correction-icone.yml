@@ -1,0 +1,21 @@
+name: ✏️ Corriger une icône · Fix an icon
+description: Un dessin peu lisible, inexact ou culturellement maladroit · An icon that is unclear, wrong or culturally off
+labels: ["icône"]
+body:
+  - type: input
+    id: icon
+    attributes:
+      label: Icône · Icon
+      description: Son id ou son nom, par exemple « baobab » ou « Wallet ».
+    validations: { required: true }
+  - type: textarea
+    id: issue
+    attributes:
+      label: Qu'est-ce qui ne va pas ? · What's wrong?
+      description: Lisibilité à 16 px, forme inexacte, nom ou région erronés, représentation maladroite…
+    validations: { required: true }
+  - type: textarea
+    id: refs
+    attributes:
+      label: Références · References
+      description: Photos libres de droits, sources, usage local.
