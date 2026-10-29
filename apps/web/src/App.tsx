@@ -3,7 +3,7 @@ import { byId } from "./lib/constants";
 import { useApp } from "./state";
 import { Hero, Marquee, Nav } from "./components/Header";
 import { Library } from "./components/Library";
-import { CommandPalette, Drawer, Help, Toast, Tray, inert } from "./components/Overlays";
+import { CommandPalette, Drawer, Help, Toast, ToTop, Tray, inert } from "./components/Overlays";
 import { Brand, Footer, Manifesto, Showcase, Studio, Usage } from "./components/Sections";
 import { IdeaBox, IdeaBoundary } from "./components/IdeaBox";
 
@@ -65,6 +65,7 @@ export default function App() {
       </main>
       <Footer />
       <Tray />
+      <ToTop />
       </div>
       <Drawer />
       <CommandPalette />

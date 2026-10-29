@@ -5,7 +5,7 @@ import { norm, rank } from "../lib/search";
 import { animateDraw, cssStr, highlight, jsxSnippet, spriteStr, svgStr, svgToPng, useStr } from "../lib/svg";
 import { useApp, useName } from "../state";
 import { exportSvg } from "./Library";
-import { IClose, IGrid, INext, IPrev, IReplay, ISearch, Svg, T } from "./ui";
+import { IClose, IGrid, INext, IPrev, IReplay, ISearch, IUp, Svg, T } from "./ui";
 
 /** Rend un élément inerte (ni focus ni lecteur d'écran) quand il est caché. */
 export const inert = (on: boolean) => (on ? ({ inert: "" } as Record<string, string>) : {});
@@ -213,6 +213,28 @@ export function CommandPalette() {
         <div className="foot"><span><span className="kbd">↑↓</span><span><T k="cf1" /></span></span><span><span className="kbd">{a.tt("Entrée", "Enter")}</span><span><T k="cf2" /></span></span><span><span className="kbd">⇧ {a.tt("Entrée", "Enter")}</span><span><T k="cf3" /></span></span></div>
       </div>
     </div>
+  );
+}
+
+/* ---------------- Retour en haut ---------------- */
+export function ToTop() {
+  const a = useApp();
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const f = () => setShow(scrollY > innerHeight * 1.2);
+    f();
+    addEventListener("scroll", f, { passive: true });
+    return () => removeEventListener("scroll", f);
+  }, []);
+  const up = () => {
+    // Le focus passe en haut de page (pour le clavier), puis la page défile.
+    document.querySelector<HTMLElement>(".logo")?.focus({ preventScroll: true });
+    scrollTo({ top: 0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  };
+  return (
+    <button className={"totop" + (show ? " show" : "") + (a.sel.size ? " lift" : "")} aria-label={a.tt("Retour en haut de la page", "Back to top")} title={a.tt("Retour en haut", "Back to top")} onClick={up} tabIndex={show ? 0 : -1} aria-hidden={!show}>
+      <IUp s={20} w={2.2} />
+    </button>
   );
 }
 
