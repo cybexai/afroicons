@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { CITIES, ICONS, REGNAME, VERSION, byId, catOf, isNew, lineLike, type CityId, type Icon } from "../lib/constants";
+import { CITIES, ICONS, REGNAME, VERSION, byId, catOf, isNew, lineLike, loadFills, type CityId, type Icon } from "../lib/constants";
 import { FACTS } from "../lib/i18n";
 import { norm, rank } from "../lib/search";
 import { animateDraw, cssStr, highlight, jsxSnippet, spriteStr, svgStr, svgToPng, useStr } from "../lib/svg";
@@ -18,6 +18,7 @@ export function Drawer() {
   const [cust, setCust] = useState<CustomValue>({ style: app.style, color: app.color, bg: app.bg, stroke: app.stroke });
   const fromLibrary = () => setCust({ style: app.style, color: app.color, bg: app.bg, stroke: app.stroke });
   useEffect(fromLibrary, [app.current]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { if (cust.style === "fill") app.needFills(); }, [cust.style]); // eslint-disable-line react-hooks/exhaustive-deps
   // Dans toute la fiche, `a` porte ces réglages locaux (style, couleur, fond, trait).
   const a = { ...app, style: cust.style, color: cust.color, bg: cust.bg, stroke: cust.stroke, ink: cust.color ?? app.theme.ink, badgeBg: cust.bg ?? app.pal[0] };
   const nm = useName();
@@ -110,7 +111,7 @@ export function Drawer() {
             <summary><ISliders s={16} />{a.tt("Personnaliser", "Customise")}<small>{a.tt("pour cette icône", "for this icon")}</small><IChevron s={14} w={2.4} /></summary>
             <CustomizeFields v={cust} set={(p) => setCust((c) => ({ ...c, ...p }))} onReset={fromLibrary} />
           </details>
-          <div className="dtags">{ic.tags.map((x) => <button key={x} onClick={() => { close(); dispatchEvent(new CustomEvent("afroicons:filter", { detail: { q: x, favOnly: false } })); document.getElementById("icones")?.scrollIntoView(); }}>#{x}</button>)}</div>
+          <div className="dtags">{ic.tags.map((x) => <button key={x} onClick={() => { close(); dispatchEvent(new CustomEvent("afroicons:filter", { detail: { q: x, favOnly: false, col: ic.lucide ? "ui" : "afro" } })); document.getElementById("icones")?.scrollIntoView(); }}>#{x}</button>)}</div>
           {fact && <div className="fact"><i>?</i><div><b><T k="didu" /></b><span>{fact[a.lang === "en" ? 1 : 0]}</span></div></div>}
           <div className="dacts">
             <button className="btn p" onClick={() => a.copy(exportSvg(ic, a))}><T k="cSvg" /><span className="kbd" style={{ background: "transparent", color: "inherit", borderColor: "#fff4" }}>C</span></button>
@@ -144,12 +145,14 @@ export function Drawer() {
 
 /* ---------------- Barre de sélection ---------------- */
 export async function zipIcons(list: Icon[], a: ReturnType<typeof useApp>, name: string) {
+  if (a.style === "fill") await loadFills();
   const { default: JSZip } = await import("jszip");
   const z = new JSZip(), f = z.folder("afroicons")!;
   list.forEach((i) => f.file(`svg/${i.id}.svg`, exportSvg(i, a)));
   f.file("sprite.svg", spriteStr(list, a.stroke));
   f.file("icons.json", JSON.stringify(list.map(({ id, fr, en, cat, region, tags }) => ({ id, fr, en, cat, region, tags })), null, 2));
-  f.file("README.md", `# Afroicons v${VERSION}\n\n${list.length} icônes SVG — grille 24 px, trait ${a.stroke}, couleur currentColor.\n\n- svg/ : une icône par fichier\n- sprite.svg : toutes les icônes en <symbol>, à utiliser avec <use href="#afroicon-ID"/>\n- icons.json : noms FR/EN, catégories, régions et mots-clés\n\nhttps://afroicons.org\n`);
+  const styleName = { line: "au trait", fill: "remplies", badge: "en pastille", circle: "en cercle" }[a.style];
+  f.file("README.md", `# Afroicons v${VERSION}\n\n${list.length} icônes SVG ${styleName} — grille 24 px, trait ${a.stroke}, couleur ${a.style === "line" || a.style === "fill" ? "currentColor (celle du texte)" : a.color ?? "#FFFFFF"}${a.style === "badge" || a.style === "circle" ? `, fond ${a.badgeBg}` : ""}.\n\n- svg/ : une icône par fichier\n- sprite.svg : toutes les icônes en <symbol>, à utiliser avec <use href="#afroicon-ID"/>\n- icons.json : noms FR/EN, catégories, régions et mots-clés\n\nhttps://afroicons.org\n`);
   await a.save(name, await z.generateAsync({ type: "blob" }));
 }
 
@@ -163,7 +166,7 @@ export function Tray() {
       <b>{a.lang === "en" ? `${n} selected` : `${n} sélectionnée${n > 1 ? "s" : ""}`}</b>
       <button className="btn" onClick={() => a.copy(spriteStr(ids.map((id) => byId[id]), a.stroke))}><span className="lg"><T k="tCopy" /></span><span className="sm">Sprite</span></button>
       <button className="btn" onClick={() => { a.setPattern((p) => ({ ...p, icons: ids })); document.getElementById("atelier")?.scrollIntoView(); a.toast(a.tt("Motif créé à partir de votre sélection", "Pattern created from your selection")); }}><span className="lg"><T k="tPat" /></span><span className="sm">{a.tt("Motif", "Pattern")}</span></button>
-      {a.canDownload && <button className="btn a" onClick={() => zipIcons(ids.map((id) => byId[id]), a, `afroicons-selection-${n}.zip`)}><span className="lg"><T k="tZip" /></span><span className="sm">.zip</span></button>}
+      {a.canDownload && <button className="btn a" onClick={() => zipIcons(ids.map((id) => byId[id]), a, `afroicons-selection-${n}${a.style === "line" ? "" : "-" + a.style}.zip`)}><span className="lg"><T k="tZip" /></span><span className="sm">.zip</span></button>}
       <button className="btn" aria-label={a.tt("Vider", "Clear")} onClick={() => { a.setSel(new Set()); a.setSelecting(false); }}><IClose s={16} w={2.4} /></button>
     </aside>
   );

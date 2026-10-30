@@ -45,6 +45,11 @@ writeFileSync(join(A, "sprite.svg"),
   `<svg xmlns="http://www.w3.org/2000/svg" style="display:none">\n${icons.map((i) => `  <symbol id="afroicon-${i.id}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${STROKE}" stroke-linecap="round" stroke-linejoin="round">${i.body}</symbol>`).join("\n")}\n</svg>\n`);
 const meta = icons.map(({ id, fr, en, cat, region, tags, since, variantOf, body, fill }) => ({ id, fr, en, cat, region, tags, since, ...(variantOf ? { variantOf } : {}), body, fill }));
 writeFileSync(join(A, "icons.json"), JSON.stringify(meta, null, 1));
+// Pour le site : les versions remplies à part, chargées seulement quand on en a besoin (−17 Ko gzip au démarrage).
+const G = join(root, "apps/web/src/generated");
+mkdirSync(G, { recursive: true });
+writeFileSync(join(G, "afro.json"), JSON.stringify(meta.map(({ fill, ...m }) => m)));
+writeFileSync(join(G, "fills.json"), JSON.stringify(Object.fromEntries(meta.map((i) => [i.id, i.fill]))));
 writeFileSync(join(A, "index.js"),
 `// afroicons v${version} — généré, ne pas modifier à la main.
 export const icons = ${JSON.stringify(Object.fromEntries(meta.map((i) => [i.id, i])))};

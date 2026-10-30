@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { AFRO, ICONS, PALS, REPO, VERSION, byId } from "../lib/constants";
 import { buildTile, posterSvg, tileSvg, type PatternState } from "../lib/pattern";
 import { highlight, logoSvg, spriteStr, svgToPng } from "../lib/svg";
@@ -112,12 +112,45 @@ export function Showcase() {
 }
 
 /* ---------------- Utiliser ---------------- */
+/** Chiffres d'usage réels (installations npm du mois, étoiles GitHub) : affichés seulement s'ils sont positifs. */
+const PKGS = ["afroicons", "afroicons-react", "afroicons-ui", "afroicons-angular"];
+function UsageStats() {
+  const a = useApp();
+  const [n, setN] = useState<{ dl: number; stars: number } | null>(null);
+  useEffect(() => {
+    let off = false;
+    try { const c = JSON.parse(sessionStorage.getItem("afroicons:stats") || "null"); if (c && Date.now() - c.t < 30 * 60e3) { setN(c.v); return; } } catch { /* rien */ }
+    Promise.allSettled([
+      fetch(`https://api.npmjs.org/downloads/point/last-month/${PKGS.join(",")}`).then((r) => r.json()),
+      fetch(REPO.replace("https://github.com/", "https://api.github.com/repos/")).then((r) => r.json()),
+    ]).then(([d, g]) => {
+      if (off) return;
+      const dl = d.status === "fulfilled" ? Object.values(d.value as Record<string, { downloads?: number } | null>).reduce((t, x) => t + (x?.downloads ?? 0), 0) : 0;
+      const stars = g.status === "fulfilled" ? Number((g.value as { stargazers_count?: number }).stargazers_count) || 0 : 0;
+      const v = { dl, stars };
+      setN(v);
+      try { sessionStorage.setItem("afroicons:stats", JSON.stringify({ t: Date.now(), v })); } catch { /* rien */ }
+    });
+    return () => { off = true; };
+  }, []);
+  const fmt = (x: number) => x.toLocaleString(a.lang === "en" ? "en" : "fr");
+  return (
+    <div className="ustats">
+      <a href="https://www.npmjs.com/package/afroicons-react" target="_blank" rel="noopener">npm · v{VERSION}</a>
+      {!!n?.dl && <span>{a.tt(`${fmt(n.dl)} installations ce mois-ci`, `${fmt(n.dl)} installs this month`)}</span>}
+      <a href={REPO} target="_blank" rel="noopener">{n?.stars ? `★ ${fmt(n.stars)} ` : ""}GitHub</a>
+      <a href="/nouveautes/">{a.tt("Nouveautés", "What's new")}</a>
+      <a href="https://nafaerp.com" target="_blank" rel="noopener">{a.tt("Utilisé par NAFA ERP", "Used by NAFA ERP")}</a>
+    </div>
+  );
+}
+
 export function Usage() {
   const a = useApp();
   const svg1 = `<span style="color:#C24E2A">\n  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" …>…</svg>\n</span>`;
   return (
     <section id="utiliser">
-      <div className="shead"><div><div className="kick"><T k="k3" /></div><h2><T k="s3" /></h2></div></div>
+      <div className="shead"><div><div className="kick"><T k="k3" /></div><h2><T k="s3" /></h2></div><UsageStats /></div>
       <div className="use">
         <div className="ucard"><span className="n">A</span><h3><T k="u1" /></h3><p><T k="u1p" /></p><pre dangerouslySetInnerHTML={{ __html: highlight(svg1) }} /></div>
         <div className="ucard"><span className="n">B</span><h3><T k="u2" /></h3><p><T k="u2p" /></p><pre dangerouslySetInnerHTML={{ __html: highlight(`// npm install afroicons-react\nimport { Djembe, Baobab } from "afroicons-react";\n\n<Djembe size={32} color="#C24E2A" />\n<Baobab strokeWidth={2} />`, true) }} /></div>
@@ -181,7 +214,7 @@ export function Footer() {
     <>
       <footer className="wrap">
         <span>© 2026 THAFAM HOLDING SARL · <T k="f1" /> · <a className="ul" href="https://nafaerp.com"><T k="f2" /></a></span>
-        <span className="fr"><a className="ul" href="/icones/">{a.tt("Liste des icônes", "Icon index")}</a><a className="ul" href={`${REPO}/blob/main/CONTRIBUTING.md`}>{a.tt("Contribuer", "Contribute")}</a><a className="ul" href={REPO}>{a.tt("Code source", "Source code")}</a><span className="mono">v{VERSION} · {ICONS.length} {a.tt("icônes", "icons")}</span></span>
+        <span className="fr"><a className="ul" href="/icones/">{a.tt("Liste des icônes", "Icon index")}</a><a className="ul" href="/nouveautes/">{a.tt("Nouveautés", "What's new")}</a><a className="ul" href={`${REPO}/blob/main/CONTRIBUTING.md`}>{a.tt("Contribuer", "Contribute")}</a><a className="ul" href={REPO}>{a.tt("Code source", "Source code")}</a><span className="mono">v{VERSION} · {ICONS.length} {a.tt("icônes", "icons")}</span></span>
       </footer>
       <div className="band" />
     </>

@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { CITIES, byId, type CityId, type Icon, type Style } from "./lib/constants";
+import { CITIES, byId, loadFills, type CityId, type Icon, type Style } from "./lib/constants";
 import { EN, FR, type Lang } from "./lib/i18n";
 import { isHosted, saveFile, store, useCapability } from "./lib/platform";
 import type { PatternState } from "./lib/pattern";
@@ -34,6 +34,11 @@ function useAppState() {
   const [stroke, setStroke] = useState(1.75);
   const [size, setSize] = useState(40);
   const [style, setStyle] = useState<Style>("line");
+  // Versions remplies : chargées en arrière-plan après l'affichage, ou tout de suite si on choisit « Rempli ».
+  const [fillsReady, setFillsReady] = useState(false);
+  const needFills = useCallback(() => { loadFills().then(() => setFillsReady(true)).catch(() => {}); }, []);
+  useEffect(() => { if (style === "fill") needFills(); }, [style, needFills]);
+  useEffect(() => { const t = setTimeout(needFills, 2500); return () => clearTimeout(t); }, [needFills]);
 
   // Collections
   const [favs, setFavs] = useState<Set<string>>(() => new Set(store.get<string[]>("fav", [])));
@@ -139,7 +144,7 @@ function useAppState() {
 
   return {
     lang, setLang, t, tt, mode, setMode, city, setCity, theme, pal, ink, badgeBg,
-    color, setColor, bg, setBg, stroke, setStroke, size, setSize, style, setStyle,
+    color, setColor, bg, setBg, stroke, setStroke, size, setSize, style, setStyle, fillsReady, needFills,
     favs, toggleFav, sel, setSel, toggleSel, selecting, setSelecting,
     current, openIcon, cmdOpen, setCmdOpen, helpOpen, setHelpOpen, list, setList,
     pattern, setPattern, downloads, canDownload, toast, toastMsg, copy, save,

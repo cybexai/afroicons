@@ -1,5 +1,5 @@
 import { memo, useEffect, useMemo, useRef, useState, type KeyboardEvent } from "react";
-import { CATS, ICONS, REGS, STYLES, byId, isNew, lineLike, type Icon, type Style } from "../lib/constants";
+import { AFRO, CATS, FAMILIES, REGS, STYLES, UI, byId, isNew, lineLike, type Icon, type Style } from "../lib/constants";
 import { rank } from "../lib/search";
 import { svgStr } from "../lib/svg";
 import { useApp, useName } from "../state";
@@ -121,6 +121,9 @@ const Card = memo(function Card({ i, idx, focusIdx, fav, sel, anim, o }: CardPro
 
 export function Library() {
   const a = useApp();
+  // Deux collections : les icônes culturelles, et les icônes d'interface (afroicons-ui).
+  const [col, setCol] = useState<"afro" | "ui">(() => (/\/icones\/ui-|#ui-/.test(location.pathname + location.hash) ? "ui" : "afro"));
+  const pool = col === "ui" ? UI : AFRO;
   const [cat, setCat] = useState("all");
   const [reg, setReg] = useState("all");
   const [q, setQ] = useState("");
@@ -133,21 +136,27 @@ export function Library() {
 
   // Permet aux tags de la fiche et à la palette de piloter la recherche.
   useEffect(() => {
-    const f = (e: Event) => { const d = (e as CustomEvent).detail ?? {}; if (d.q != null) { setQ(d.q); setCat("all"); setReg("all"); } if (d.favOnly != null) setFavOnly(d.favOnly); };
+    const f = (e: Event) => { const d = (e as CustomEvent).detail ?? {}; if (d.col) setCol(d.col); if (d.q != null) { setQ(d.q); setCat("all"); setReg("all"); } if (d.favOnly != null) setFavOnly(d.favOnly); };
     addEventListener("afroicons:filter", f);
     return () => removeEventListener("afroicons:filter", f);
   }, []);
 
-  const list = useMemo(() => rank(ICONS.filter((i) => (cat === "all" || i.cat === cat) && (reg === "all" || i.region === reg) && (!favOnly || a.favs.has(i.id))), q), [cat, reg, q, favOnly, a.favs]);
+  const keep = (i: Icon) => (!favOnly || a.favs.has(i.id)) && (col === "ui" ? cat === "all" || i.family === cat : (cat === "all" || i.cat === cat) && (reg === "all" || i.region === reg));
+  const list = useMemo(() => rank(pool.filter(keep), q), [col, cat, reg, q, favOnly, a.favs]); // eslint-disable-line react-hooks/exhaustive-deps
+  // Rien ici mais des résultats dans l'autre collection : on le signale.
+  const elsewhere = useMemo(() => (q.trim() && !list.length ? rank(col === "ui" ? AFRO : UI, q).length : 0), [q, list.length, col]);
+  const switchCol = (c: "afro" | "ui") => change(() => { setCol(c); setCat("all"); setReg("all"); });
   useEffect(() => { a.setList(list); }, [list]); // eslint-disable-line react-hooks/exhaustive-deps
   const pages = Math.max(1, Math.ceil(list.length / PER));
   // Nouveau filtre : retour à la première page. Liste raccourcie (favori retiré…) : on reste dans les bornes.
-  useEffect(() => { setPage(0); }, [cat, reg, q, favOnly]);
+  useEffect(() => { setPage(0); }, [col, cat, reg, q, favOnly]);
   useEffect(() => { setPage((p) => Math.min(p, pages - 1)); }, [pages]);
   // La fiche parcourt toute la liste (← →) : la grille suit, pour que le focus revienne sur la bonne carte.
   useEffect(() => {
     const k = a.current ? list.findIndex((i) => i.id === a.current) : -1;
     if (k >= 0) setPage(Math.floor(k / PER));
+    // Icône de l'autre collection (lien direct, palette) : la grille bascule pour la montrer derrière la fiche.
+    else if (a.current && !q && !favOnly) { const other = a.current.startsWith("ui-") ? "ui" : "afro"; if (other !== col) { setCol(other); setCat("all"); setReg("all"); } }
   }, [a.current]); // eslint-disable-line react-hooks/exhaustive-deps
   // Focus demandé au clavier sur une carte d'une autre page : posé une fois la page affichée.
   useEffect(() => {
@@ -198,7 +207,7 @@ export function Library() {
         <div className="trow">
           <label className="sbox"><ISearch s={19} />
             <input id="q" type="search" aria-label={a.t("cmdLbl")} autoComplete="off" value={q} onChange={(e) => { setQ(e.target.value); setFocusIdx(-1); }} placeholder={a.tt("baobab, okada, attiéké, tresses…", "baobab, okada, fufu, braids…")} />
-            <span className="cnt">{list.length}/{ICONS.length}</span><span className="kbd">/</span>
+            <span className="cnt">{list.length}/{pool.length}</span><span className="kbd">/</span>
           </label>
           <button className={"pill" + (favOnly ? " on" : "")} aria-label={a.t("fav")} aria-pressed={favOnly} onClick={() => { change(() => setFavOnly((f) => !f)); if (!favOnly && !a.favs.size) a.toast(a.tt("Pas encore de favoris : appuyez sur F sur une icône", "No favourites yet: press F on an icon")); }}>
             <IHeart /><span className="pl"><T k="fav" /></span><small className="mono">{a.favs.size || ""}</small>
@@ -207,11 +216,15 @@ export function Library() {
           <Customize />
         </div>
         <div className="trow">
-          <div className="cats">{CATS.map((c) => {
-            const n = c.id === "all" ? ICONS.length : ICONS.filter((i) => i.cat === c.id).length;
+          <div className="seg cols" role="tablist" aria-label={a.tt("Collections", "Collections")}>
+            {([["afro", a.tt("Culturelles", "Cultural"), AFRO.length], ["ui", a.tt("Interface", "Interface"), UI.length]] as const).map(([k, l, n]) =>
+              <button key={k} role="tab" aria-selected={col === k} className={col === k ? "on" : ""} onClick={() => col !== k && switchCol(k)}>{l}<small>{n}</small></button>)}
+          </div>
+          <div className="cats">{(col === "ui" ? [CATS[0], ...FAMILIES] : CATS.filter((c) => c.id !== "interface")).map((c) => {
+            const n = c.id === "all" ? pool.length : pool.filter((i) => (col === "ui" ? i.family : i.cat) === c.id).length;
             return <button key={c.id} className={"cat" + (cat === c.id ? " on" : "")} onClick={() => change(() => setCat(c.id))}><Svg i={byId[c.ic]} o={{ s: 18, w: 2 }} />{a.tt(c.fr, c.en)}<small>{n}</small></button>;
           })}</div>
-          <div className="regs">{REGS.map((r) => <button key={r.id} className={"reg" + (reg === r.id ? " on" : "")} onClick={() => change(() => setReg(r.id))}>{a.tt(r.fr, r.en)}</button>)}</div>
+          {col === "afro" && <div className="regs">{REGS.map((r) => <button key={r.id} className={"reg" + (reg === r.id ? " on" : "")} onClick={() => change(() => setReg(r.id))}>{a.tt(r.fr, r.en)}</button>)}</div>}
         </div>
       </div>
       <div ref={grid} className={"grid" + (a.selecting || a.sel.size ? " selecting" : "")} aria-label={a.t("nav1")} style={{ ["--cell" as string]: a.size + 92 + "px" }} onKeyDown={onKey}
@@ -230,7 +243,9 @@ export function Library() {
           </div>
         </nav>
       )}
-      {!list.length && <div className="empty"><div className="big"><T k="e1" /></div><T k="e2" /></div>}
+      {!list.length && <div className="empty"><div className="big"><T k="e1" /></div>{elsewhere
+        ? <button className="btn" style={{ marginTop: 12 }} onClick={() => switchCol(col === "ui" ? "afro" : "ui")}>{a.tt(`${elsewhere} résultat${elsewhere > 1 ? "s" : ""} dans ${col === "ui" ? "les icônes culturelles" : "les icônes d'interface"}`, `${elsewhere} result${elsewhere > 1 ? "s" : ""} in ${col === "ui" ? "cultural icons" : "interface icons"}`)}</button>
+        : <T k="e2" />}</div>}
       <div className="hint">
         {[["←↑→↓", "h1"], [a.tt("Entrée", "Enter"), "h2"], ["C", "h3"], ["F", "h4"], ["X", "h5"], ["?", "h6"]].map(([kb, k]) => <span key={k}><span className="kbd">{kb}</span><span><T k={k} /></span></span>)}
       </div>

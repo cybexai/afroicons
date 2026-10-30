@@ -1,9 +1,9 @@
-import { icons as ICON_MAP } from "afroicons";
 import type { AfroiconData } from "afroicons";
+import AFRO_DATA from "../generated/afro.json";
 import UI_ICONS from "afroicons-ui/icons.json";
 
 /** Une icône du site : icône Afroicons, ou icône d'interface (paquet afroicons-ui, nom Lucide dans `lucide`). */
-export type Icon = Omit<AfroiconData, "id" | "cat" | "region" | "fill" | "variantOf"> & { id: string; cat: string; region: string; fill?: string; variantOf?: string; lucide?: string; _hay?: string; _n?: string };
+export type Icon = Omit<AfroiconData, "id" | "cat" | "region" | "fill" | "variantOf"> & { id: string; cat: string; region: string; fill?: string; variantOf?: string; lucide?: string; family?: string; _hay?: string; _n?: string };
 export type Style = "line" | "fill" | "badge" | "circle";
 /** Styles qui gardent la couleur du texte (trait et rempli), par opposition aux pastilles. */
 export const lineLike = (s: Style) => s === "line" || s === "fill";
@@ -13,11 +13,18 @@ export type CityId = keyof typeof CITIES;
 export const VERSION = __AFROICONS_VERSION__.split(".").slice(0, 2).join(".");
 const ORDER = ["nature", "faune", "musique", "symboles", "cuisine", "vie", "architecture"];
 /** Les icônes culturelles (paquets afroicons et afroicons-react). */
-export const AFRO: Icon[] = Object.values(ICON_MAP).sort((a, b) => ORDER.indexOf(a.cat) - ORDER.indexOf(b.cat));
+export const AFRO: Icon[] = (AFRO_DATA as Icon[]).sort((a, b) => ORDER.indexOf(a.cat) - ORDER.indexOf(b.cat));
+
+/** Charge (une seule fois) les versions remplies des icônes culturelles. */
+let fillsLoading: Promise<void> | null = null;
+export const loadFills = () => (fillsLoading ??= import("../generated/fills.json").then((m) => {
+  const f = m.default as Record<string, string>;
+  for (const i of AFRO) i.fill = f[i.id];
+}));
 const uiId = (n: string) => "ui-" + n.replace(/([a-z0-9])([A-Z])/g, "$1-$2").replace(/([a-zA-Z])(\d)/g, "$1-$2").toLowerCase();
 /** Les icônes d'interface (paquet afroicons-ui), placées dans la catégorie « Interface ». */
 export const UI: Icon[] = (UI_ICONS as { id: string; fr: string; en: string; family: string; afro: string | null; body: string }[]).map((u) => ({
-  id: uiId(u.id), lucide: u.id, fr: u.fr, en: u.en, cat: "interface", region: "pan", since: "ui", body: u.body,
+  id: uiId(u.id), lucide: u.id, family: u.family, fr: u.fr, en: u.en, cat: "interface", region: "pan", since: "ui", body: u.body,
   tags: [u.id, u.family, ...(u.afro ? ["afrique", ...(u.afro.toLowerCase().match(/[a-zà-ÿ]{4,}/g) ?? [])] : [])],
 }));
 export const ICONS: Icon[] = [...AFRO, ...UI];
@@ -36,6 +43,19 @@ export const CATS = [
   { id: "interface", fr: "Interface", en: "Interface", ic: "ui-layout-dashboard" },
 ] as const;
 export const catOf = (id: string) => CATS.find((c) => c.id === id) ?? CATS[0];
+
+/** Familles des icônes d'interface : les sous-filtres de la collection « Interface ». */
+export const FAMILIES = [
+  { id: "Actions", fr: "Actions", en: "Actions", ic: "ui-plus" },
+  { id: "Navigation", fr: "Navigation", en: "Navigation", ic: "ui-arrow-right" },
+  { id: "Statuts et alertes", fr: "Statuts et alertes", en: "Status & alerts", ic: "ui-alert-triangle" },
+  { id: "Documents et données", fr: "Documents et données", en: "Documents & data", ic: "ui-file-text" },
+  { id: "Communication", fr: "Communication", en: "Communication", ic: "ui-message-square" },
+  { id: "Personnes", fr: "Personnes", en: "People", ic: "ui-users" },
+  { id: "Argent et paiement", fr: "Argent et paiement", en: "Money & payments", ic: "ui-wallet" },
+  { id: "Commerce et stock", fr: "Commerce et stock", en: "Retail & stock", ic: "ui-store" },
+  { id: "Thème et météo", fr: "Thème et météo", en: "Theme & weather", ic: "ui-moon" },
+] as const;
 
 export const REGS = [
   { id: "all", fr: "Toute l'Afrique", en: "All Africa" },

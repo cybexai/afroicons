@@ -1,5 +1,11 @@
 # Journal des versions
 
+## À venir
+- Site : deux collections, **Culturelles** (162) et **Interface** (163), chacune avec ses filtres (catégories et régions, ou familles : Actions, Navigation, Argent et paiement…) ; une recherche sans résultat propose l'autre collection
+- Site : les versions remplies se chargent en arrière-plan, ou dès qu'on choisit « Rempli » (démarrage plus léger)
+- Site : page **Nouveautés** (`/nouveautes/`), chiffres d'usage réels (installations npm, étoiles GitHub) dans « Utiliser », mention « Utilisé par NAFA ERP »
+- Packs téléchargés : le style choisi est indiqué dans le nom du fichier et le README
+
 ## 0.5.0 — 30 octobre 2026 · style rempli, variantes, icônes P2
 - **Style rempli** pour les 162 icônes culturelles : `toSvg(id, { variant: "fill" })`, `<Baobab variant="fill" />`, `<afroicon variant="fill">`, fichiers `svg/fill/`, et un style « Rempli » sur le site. Généré par `scripts/fill.mjs`, puis retouché à la main
 - **12 variantes d'état** : plantain épluché, alloco, mangue en hérisson, tranche d'ananas, noix de coco ouverte, avocat coupé, cabosse ouverte, kola ouverte, arachides décortiquées, igname coupée, marmite couverte, calebasse pleine. Champ `variantOf`, et section « Variantes » dans la fiche du site
