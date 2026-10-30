@@ -3,9 +3,10 @@ import { CITIES, ICONS, REGNAME, VERSION, byId, catOf, isNew, lineLike, type Cit
 import { FACTS } from "../lib/i18n";
 import { norm, rank } from "../lib/search";
 import { animateDraw, cssStr, highlight, jsxSnippet, spriteStr, svgStr, svgToPng, useStr } from "../lib/svg";
+import { store } from "../lib/platform";
 import { useApp, useName } from "../state";
-import { exportSvg } from "./Library";
-import { IClose, IGrid, INext, IPrev, IReplay, ISearch, IUp, Svg, T } from "./ui";
+import { CustomizeFields, exportSvg } from "./Library";
+import { IChevron, IClose, IGrid, INext, IPrev, IReplay, ISearch, ISliders, IUp, Svg, T } from "./ui";
 
 /** Rend un élément inerte (ni focus ni lecteur d'écran) quand il est caché. */
 export const inert = (on: boolean) => (on ? ({ inert: "" } as Record<string, string>) : {});
@@ -19,6 +20,9 @@ export function Drawer() {
   const [tab, setTab] = useState<"svg" | "jsx" | "use" | "css">("svg");
   const [prevBg, setPrevBg] = useState("card");
   const [grid, setGrid] = useState(true);
+  // Réglages ouverts ou fermés : on retient le choix du visiteur.
+  const [custOpen, setCustOpen] = useState(() => store.get<boolean>("custOpen", false));
+  useEffect(() => { store.set("custOpen", custOpen); }, [custOpen]);
   const big = useRef<HTMLDivElement>(null);
   const scroller = useRef<HTMLDivElement>(null);
   const panel = useRef<HTMLElement>(null);
@@ -96,6 +100,10 @@ export function Drawer() {
             <div id="dBig" ref={big}><Svg key={ic.id + a.style} i={ic} o={{ s: line ? 212 : 180, c: fg, style: a.style, w: a.stroke, bg: a.badgeBg }} /></div>
           </div>
           <div className="dsizes">{[16, 20, 24, 32, 48].map((s) => <div key={s} style={{ color: a.ink }}><Svg i={ic} o={{ s, style: a.style, w: a.stroke, bg: a.badgeBg, c: line ? "currentColor" : a.color ?? "#fff" }} /><small>{s}</small></div>)}</div>
+          <details className="dcust" open={custOpen} onToggle={(e) => setCustOpen((e.target as HTMLDetailsElement).open)}>
+            <summary><ISliders s={16} />{a.tt("Personnaliser", "Customise")}<small>{a.tt("s'applique à toutes les icônes", "applies to every icon")}</small><IChevron s={14} w={2.4} /></summary>
+            <CustomizeFields inSheet />
+          </details>
           <div className="dtags">{ic.tags.map((x) => <button key={x} onClick={() => { close(); dispatchEvent(new CustomEvent("afroicons:filter", { detail: { q: x, favOnly: false } })); document.getElementById("icones")?.scrollIntoView(); }}>#{x}</button>)}</div>
           {fact && <div className="fact"><i>?</i><div><b><T k="didu" /></b><span>{fact[a.lang === "en" ? 1 : 0]}</span></div></div>}
           <div className="dacts">

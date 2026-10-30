@@ -143,9 +143,9 @@ section{position:relative}
 .custom{position:relative}
 .cpop{position:absolute;right:0;top:54px;width:330px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 24px 60px -16px #0006;opacity:0;transform:translateY(-6px);pointer-events:none;transition:.18s var(--ease);z-index:5}
 .cpop.open{opacity:1;transform:none;pointer-events:auto}
-.cpop h3{margin:0 0 8px;font:700 12px "JetBrains Mono";letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.cpop .blk{margin-bottom:16px}
-.cpop .blk:last-child{margin-bottom:0}
+.cpop h3,.dcust h3{margin:0 0 8px;font:700 12px "JetBrains Mono";letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.cpop .blk,.dcust .blk{margin-bottom:16px}
+.cpop .blk:last-child,.dcust .blk:last-child{margin-bottom:0}
 .swat{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
 .swat button{width:28px;height:28px;border-radius:9px;border:2px solid var(--card);outline:1px solid var(--line)}
 .swat button.on{outline:2.5px solid var(--ink)}
@@ -597,3 +597,12 @@ a.vote span:first-child{font-size:17px;line-height:1}
 .vars button:hover{border-color:var(--ink)}
 .vars button.on{border-color:var(--a1);box-shadow:0 0 0 2px var(--a1)}
 .vars small{font-size:11.5px;color:var(--muted);text-align:center;line-height:1.25}
+
+/* Réglages dans la fiche d'une icône */
+.dcust{margin-top:12px;border:1px solid var(--line);border-radius:16px;background:var(--card)}
+.dcust summary{list-style:none;display:flex;align-items:center;gap:8px;padding:12px 14px;cursor:pointer;font-weight:700;font-size:14px}
+.dcust summary::-webkit-details-marker{display:none}
+.dcust summary small{font-weight:500;font-size:12px;color:var(--muted);margin-left:2px}
+.dcust summary svg:last-child{margin-left:auto;transition:transform .2s}
+.dcust[open] summary svg:last-child{transform:rotate(180deg)}
+.dcust .cfields{padding:2px 14px 14px}
