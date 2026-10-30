@@ -1,7 +1,7 @@
 {
   "name": "afroicons-react",
   "version": "0.4.0",
-  "description": "Les 150 icônes Afroicons en composants React.",
+  "description": "Les 162 icônes Afroicons en composants React, au trait et remplies.",
   "type": "module",
   "main": "./index.js",
   "types": "./index.d.ts",

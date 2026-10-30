@@ -1,5 +1,5 @@
 import { memo, useEffect, useMemo, useRef, useState, type KeyboardEvent } from "react";
-import { CATS, ICONS, REGS, STYLES, byId, isNew, type Icon, type Style } from "../lib/constants";
+import { CATS, ICONS, REGS, STYLES, byId, isNew, lineLike, type Icon, type Style } from "../lib/constants";
 import { rank } from "../lib/search";
 import { svgStr } from "../lib/svg";
 import { useApp, useName } from "../state";
@@ -7,7 +7,7 @@ import { ICheck, IChevron, ICopy, IHeart, ISearch, ISelect, ISliders, Svg, T } f
 import { inert } from "./Overlays";
 
 export const exportSvg = (i: Icon, a: { style: Style; stroke: number; color: string | null; badgeBg: string }) =>
-  svgStr(i, { style: a.style, w: a.stroke, bg: a.badgeBg, cls: `afroicon afroicon-${i.id}`, c: a.style === "line" ? "currentColor" : a.color ?? "#FFFFFF" });
+  svgStr(i, { style: a.style, w: a.stroke, bg: a.badgeBg, cls: `afroicon afroicon-${i.id}`, c: lineLike(a.style) ? "currentColor" : a.color ?? "#FFFFFF" });
 
 function Customize() {
   const a = useApp();
@@ -23,30 +23,30 @@ function Customize() {
   const inks = [a.theme.ink, ...a.pal];
   const pickStyle = (s: Style) => {
     a.setStyle(s);
-    if (s !== "line" && !a.color) a.setColor("#FFFFFF");
-    if (s === "line" && a.color?.toUpperCase() === "#FFFFFF") a.setColor(null);
+    if (!lineLike(s) && !a.color) a.setColor("#FFFFFF");
+    if (lineLike(s) && a.color?.toUpperCase() === "#FFFFFF") a.setColor(null);
   };
   return (
     <div className="custom">
       <button className="pill" aria-label={a.t("cust")} aria-expanded={open} aria-haspopup="true" onClick={(e) => { e.stopPropagation(); setOpen((o) => !o); }}>
-        <span className="mic"><ISliders s={17} /></span><span className="dots"><i style={{ background: a.style === "line" ? a.ink : a.badgeBg }} /></span><span className="pl"><T k="cust" /></span><IChevron s={14} w={2.4} />
+        <span className="mic"><ISliders s={17} /></span><span className="dots"><i style={{ background: lineLike(a.style) ? a.ink : a.badgeBg }} /></span><span className="pl"><T k="cust" /></span><IChevron s={14} w={2.4} />
       </button>
       <div className={"cpop" + (open ? " open" : "")} {...inert(!open)}>
         <div className="blk"><h3><T k="pStyle" /></h3>
           <div className="styles">{STYLES.map((s) => (
             <button key={s.id} className={a.style === s.id ? "on" : ""} onClick={() => pickStyle(s.id)}>
-              <Svg i={byId.baobab} o={{ s: 30, style: s.id, c: s.id === "line" ? a.ink : "#fff", bg: a.badgeBg }} />{a.tt(s.fr, s.en)}
+              <Svg i={byId.baobab} o={{ s: 30, style: s.id, c: lineLike(s.id) ? a.ink : "#fff", bg: a.badgeBg }} />{a.tt(s.fr, s.en)}
             </button>
           ))}</div>
         </div>
         <div className="blk"><h3><T k="pCol" /></h3>
           <div className="swat">
             {inks.map((x) => <button key={x} style={{ background: x }} aria-label={a.t("pCol") + " " + x} aria-pressed={a.ink === x} className={a.ink === x ? "on" : ""} onClick={() => a.setColor(x === a.theme.ink ? null : x)} />)}
-            {a.style !== "line" && <button style={{ background: "#fff" }} aria-label={a.t("pCol") + " #FFFFFF"} className={a.color?.toUpperCase() === "#FFFFFF" ? "on" : ""} onClick={() => a.setColor("#FFFFFF")} />}
+            {!lineLike(a.style) && <button style={{ background: "#fff" }} aria-label={a.t("pCol") + " #FFFFFF"} className={a.color?.toUpperCase() === "#FFFFFF" ? "on" : ""} onClick={() => a.setColor("#FFFFFF")} />}
             <input type="color" value={a.ink.length === 7 ? a.ink : "#000000"} onChange={(e) => a.setColor(e.target.value)} title={a.tt("Couleur libre", "Custom colour")} aria-label={a.tt("Couleur libre", "Custom colour")} />
           </div>
         </div>
-        {a.style !== "line" && (
+        {!lineLike(a.style) && (
           <div className="blk"><h3><T k="pBg" /></h3>
             <div className="swat">
               {[...a.pal, a.theme.ink].map((x) => <button key={x} style={{ background: x }} aria-label={a.t("pBg") + " " + x} className={a.badgeBg === x ? "on" : ""} onClick={() => a.setBg(x)} />)}
@@ -144,7 +144,7 @@ export function Library() {
   const change = (fn: () => void) => { setAnim(true); setFocusIdx(-1); const go = () => fn(); (document as any).startViewTransition && !matchMedia("(prefers-reduced-motion: reduce)").matches ? (document as any).startViewTransition(go) : go(); };
   useEffect(() => { if (anim) { const h = setTimeout(() => setAnim(false), 900); return () => clearTimeout(h); } }, [anim, list]);
 
-  const o = { s: a.size, style: a.style, w: a.stroke, c: a.style === "line" ? "currentColor" : a.color ?? "#fff", bg: a.badgeBg };
+  const o = { s: a.size, style: a.style, w: a.stroke, c: lineLike(a.style) ? "currentColor" : a.color ?? "#fff", bg: a.badgeBg };
 
   const onKey = (e: KeyboardEvent<HTMLDivElement>) => {
     const tgt = (e.target as HTMLElement).closest<HTMLElement>(".hit");

@@ -3,11 +3,13 @@ import type { AfroiconData } from "afroicons";
 import UI_ICONS from "afroicons-ui/icons.json";
 
 /** Une icône du site : icône Afroicons, ou icône d'interface (paquet afroicons-ui, nom Lucide dans `lucide`). */
-export type Icon = Omit<AfroiconData, "id" | "cat" | "region"> & { id: string; cat: string; region: string; lucide?: string; _hay?: string; _n?: string };
-export type Style = "line" | "badge" | "circle";
+export type Icon = Omit<AfroiconData, "id" | "cat" | "region" | "fill" | "variantOf"> & { id: string; cat: string; region: string; fill?: string; variantOf?: string; lucide?: string; _hay?: string; _n?: string };
+export type Style = "line" | "fill" | "badge" | "circle";
+/** Styles qui gardent la couleur du texte (trait et rempli), par opposition aux pastilles. */
+export const lineLike = (s: Style) => s === "line" || s === "fill";
 export type CityId = keyof typeof CITIES;
 
-export const VERSION = "0.3";
+export const VERSION = "0.5";
 const ORDER = ["nature", "faune", "musique", "symboles", "cuisine", "vie", "architecture"];
 /** Les icônes culturelles (paquets afroicons et afroicons-react). */
 export const AFRO: Icon[] = Object.values(ICON_MAP).sort((a, b) => ORDER.indexOf(a.cat) - ORDER.indexOf(b.cat));
@@ -87,6 +89,7 @@ export const ROT_CITIES: { fr: string; en: string }[] = [
 ];
 export const STYLES: { id: Style; fr: string; en: string }[] = [
   { id: "line", fr: "Trait", en: "Line" },
+  { id: "fill", fr: "Rempli", en: "Filled" },
   { id: "badge", fr: "Pastille", en: "Badge" },
   { id: "circle", fr: "Cercle", en: "Circle" },
 ];

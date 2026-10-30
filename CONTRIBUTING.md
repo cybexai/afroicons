@@ -74,8 +74,11 @@ apps/web/              ← le site afroicons.org (React + Vite + TypeScript)
 - `region` : `ouest`, `centre`, `est`, `nord`, `australe` ou `pan`
 - `tags` : au moins 3 mots-clés, en français, en anglais et en termes locaux
 
-2. `npm test` — le build régénère les paquets et vérifie votre entrée.
-3. Ouvrez la PR avec une capture de l'icône à 16, 24 et 48 px.
+- `variantOf` (facultatif) : l'id de l'icône dont celle-ci est une variante d'état (`"variantOf": "plantain"` pour l'alloco)
+
+2. `node scripts/fill.mjs` — génère la version remplie (`fill`). Vérifiez-la : si le résultat est maladroit, retouchez `fill` à la main dans `src/icons.json` (aplats en blanc et découpes en noir dans le masque, sur le modèle des icônes existantes).
+3. `npm test` — le build régénère les paquets et vérifie votre entrée.
+4. Ouvrez la PR avec une capture de l'icône, au trait et remplie, à 16, 24 et 48 px.
 
 ## Ajouter une icône d'interface (`afroicons-ui`)
 

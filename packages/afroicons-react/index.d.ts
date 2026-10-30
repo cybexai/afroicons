@@ -1,5 +1,5 @@
 import type { ForwardRefExoticComponent, RefAttributes, SVGProps } from "react";
-export interface AfroiconProps extends Omit<SVGProps<SVGSVGElement>, "ref"> { size?: number | string; color?: string; strokeWidth?: number | string; title?: string; }
+export interface AfroiconProps extends Omit<SVGProps<SVGSVGElement>, "ref"> { size?: number | string; color?: string; strokeWidth?: number | string; title?: string; /** "line" (trait, par défaut) ou "fill" (rempli). */ variant?: "line" | "fill"; }
 export type Afroicon = ForwardRefExoticComponent<AfroiconProps & RefAttributes<SVGSVGElement>>;
 /** Baobab · Baobab */
 export declare const Baobab: Afroicon;
@@ -15,6 +15,8 @@ export declare const Kilimandjaro: Afroicon;
 export declare const Dunes: Afroicon;
 /** Cabosse de cacao · Cocoa pod */
 export declare const Cacao: Afroicon;
+/** Cabosse ouverte · Open cocoa pod */
+export declare const Cacaoouvert: Afroicon;
 /** Carte de l'Afrique · Africa map */
 export declare const Afrique: Afroicon;
 /** Feuille de bananier · Banana leaf */
@@ -155,12 +157,20 @@ export declare const Bogolan: Afroicon;
 export declare const Toghu: Afroicon;
 /** Calebasse · Calabash */
 export declare const Calebasse: Afroicon;
+/** Calebasse pleine · Full calabash */
+export declare const Calebassepleine: Afroicon;
 /** Mortier et pilon · Mortar & pestle */
 export declare const Pilon: Afroicon;
 /** Marmite · Cooking pot */
 export declare const Marmite: Afroicon;
+/** Marmite couverte · Covered pot */
+export declare const Marmitecouverte: Afroicon;
 /** Plantain · Plantain */
 export declare const Plantain: Afroicon;
+/** Plantain épluché · Peeled plantain */
+export declare const Plantainepluche: Afroicon;
+/** Alloco · Fried plantain */
+export declare const Alloco: Afroicon;
 /** Jebena (café) · Jebena (coffee pot) */
 export declare const Jebena: Afroicon;
 /** Foufou · Fufu */
@@ -171,18 +181,30 @@ export declare const Brochettes: Afroicon;
 export declare const Piment: Afroicon;
 /** Igname · Yam */
 export declare const Igname: Afroicon;
+/** Igname coupée · Cut yam */
+export declare const Ignamecoupee: Afroicon;
 /** Manioc · Cassava */
 export declare const Manioc: Afroicon;
 /** Ananas · Pineapple */
 export declare const Ananas: Afroicon;
+/** Tranche d'ananas · Pineapple slice */
+export declare const Ananastranche: Afroicon;
 /** Mangue · Mango */
 export declare const Mangue: Afroicon;
+/** Mangue en hérisson · Hedgehog-cut mango */
+export declare const Mangueherisson: Afroicon;
 /** Arachide · Peanut */
 export declare const Arachide: Afroicon;
+/** Arachides décortiquées · Shelled peanuts */
+export declare const Arachidedecortiquee: Afroicon;
 /** Noix de coco · Coconut */
 export declare const Coco: Afroicon;
+/** Noix de coco ouverte · Open coconut */
+export declare const Cocoouverte: Afroicon;
 /** Avocat · Avocado */
 export declare const Avocat: Afroicon;
+/** Avocat coupé · Halved avocado */
+export declare const Avocatcoupe: Afroicon;
 /** Épi de mil · Millet ear */
 export declare const Epimil: Afroicon;
 /** Gombo · Okra */
@@ -203,6 +225,8 @@ export declare const Safou: Afroicon;
 export declare const Grill: Afroicon;
 /** Noix de kola · Kola nut */
 export declare const Kola: Afroicon;
+/** Noix de kola ouverte · Split kola nut */
+export declare const Kolaouverte: Afroicon;
 /** Régime de noix de palme · Palm nut bunch */
 export declare const Noixpalme: Afroicon;
 /** Pirogue · Dugout canoe */

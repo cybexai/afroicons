@@ -1,7 +1,7 @@
 {
   "name": "afroicons",
   "version": "0.4.0",
-  "description": "150 icônes SVG libres qui racontent l'Afrique — paysages, faune, musique, symboles, cuisine, vie quotidienne, architecture.",
+  "description": "162 icônes SVG libres, au trait et remplies, qui racontent l'Afrique — paysages, faune, musique, symboles, cuisine, vie quotidienne, architecture.",
   "type": "module",
   "main": "./index.js",
   "types": "./index.d.ts",

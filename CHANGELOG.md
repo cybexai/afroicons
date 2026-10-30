@@ -1,6 +1,9 @@
 # Journal des versions
 
 ## À venir
+- **Style rempli** pour les 162 icônes culturelles : `toSvg(id, { variant: "fill" })`, `<Baobab variant="fill" />`, `<afroicon variant="fill">`, fichiers `svg/fill/`, et un style « Rempli » sur le site. Généré par `scripts/fill.mjs`, puis retouché à la main
+- **12 variantes d'état** : plantain épluché, alloco, mangue en hérisson, tranche d'ananas, noix de coco ouverte, avocat coupé, cabosse ouverte, kola ouverte, arachides décortiquées, igname coupée, marmite couverte, calebasse pleine. Champ `variantOf`, et section « Variantes » dans la fiche du site
+- Correctifs `afroicons-react` : l'icône Ngoni perdait sa rotation (les groupes SVG sont maintenant conservés) ; la prop `color` colore aussi les points
 - `afroicons-ui` et `afroicons-angular` : **55 nouvelles icônes d'interface** (les P2 de NAFA ERP), soit 163 au total. Parmi elles, 3 nouvelles métaphores africaines : `Globe` centré sur l'Afrique, `ShoppingBag` en sac de raphia tressé, `PackageCheck` en colis ficelé
 
 ## 0.4.0 — 29 octobre 2026 · nouveaux paquets

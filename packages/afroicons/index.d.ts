@@ -6,6 +6,7 @@ export type AfroiconName =
   | "kilimandjaro"
   | "dunes"
   | "cacao"
+  | "cacaoouvert"
   | "afrique"
   | "feuillebananier"
   | "cascade"
@@ -76,20 +77,30 @@ export type AfroiconName =
   | "bogolan"
   | "toghu"
   | "calebasse"
+  | "calebassepleine"
   | "pilon"
   | "marmite"
+  | "marmitecouverte"
   | "plantain"
+  | "plantainepluche"
+  | "alloco"
   | "jebena"
   | "foufou"
   | "brochettes"
   | "piment"
   | "igname"
+  | "ignamecoupee"
   | "manioc"
   | "ananas"
+  | "ananastranche"
   | "mangue"
+  | "mangueherisson"
   | "arachide"
+  | "arachidedecortiquee"
   | "coco"
+  | "cocoouverte"
   | "avocat"
+  | "avocatcoupe"
   | "epimil"
   | "gombo"
   | "bissap"
@@ -100,6 +111,7 @@ export type AfroiconName =
   | "safou"
   | "grill"
   | "kola"
+  | "kolaouverte"
   | "noixpalme"
   | "pirogue"
   | "panier"
@@ -151,10 +163,11 @@ export type AfroiconName =
   | "riad";
 export type AfroiconCategory = "nature" | "faune" | "musique" | "symboles" | "cuisine" | "vie" | "architecture";
 export type AfroiconRegion = "pan" | "ouest" | "centre" | "est" | "nord" | "australe";
-export interface AfroiconData { id: AfroiconName; fr: string; en: string; cat: AfroiconCategory; region: AfroiconRegion; tags: string[]; since: string; body: string; }
+export interface AfroiconData { id: AfroiconName; fr: string; en: string; cat: AfroiconCategory; region: AfroiconRegion; tags: string[]; since: string; /** Icône dont celle-ci est une variante (épluchée, coupée, ouverte…). */ variantOf?: AfroiconName; /** Dessin au trait. */ body: string; /** Version remplie. */ fill: string; }
 export const icons: Record<AfroiconName, AfroiconData>;
 export const names: AfroiconName[];
-export interface ToSvgOptions { size?: number | string; color?: string; strokeWidth?: number | string; className?: string; }
+export type AfroiconVariant = "line" | "fill";
+export interface ToSvgOptions { size?: number | string; color?: string; strokeWidth?: number | string; className?: string; /** "line" (trait, par défaut) ou "fill" (rempli). */ variant?: AfroiconVariant; }
 export function toSvg(name: AfroiconName, options?: ToSvgOptions): string;
 export function replace(options?: { attr?: string; root?: ParentNode }): void;
 declare const _default: { icons: typeof icons; names: typeof names; toSvg: typeof toSvg; replace: typeof replace };

@@ -153,7 +153,7 @@ section{position:relative}
 .rng{display:flex;align-items:center;gap:10px}
 .rng input{flex:1;accent-color:var(--a1)}
 .rng output{font:600 12px "JetBrains Mono";min-width:36px;text-align:right}
-.styles{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.styles{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .styles button{border:1.5px solid var(--line);border-radius:12px;padding:10px 4px 6px;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:12px;font-weight:600}
 .styles button.on{border-color:var(--ink);background:var(--bg2)}
 
@@ -590,3 +590,10 @@ a.vote span:first-child{font-size:17px;line-height:1}
 .sgrid{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:1180px){.sgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.sgrid{grid-template-columns:1fr}}
+
+/* Variantes d'une icône (épluchée, coupée, ouverte…) */
+.vars{display:flex;gap:8px;flex-wrap:wrap}
+.vars button{display:flex;flex-direction:column;align-items:center;gap:6px;width:96px;padding:10px 6px;border-radius:14px;border:1px solid var(--line);background:var(--card)}
+.vars button:hover{border-color:var(--ink)}
+.vars button.on{border-color:var(--a1);box-shadow:0 0 0 2px var(--a1)}
+.vars small{font-size:11.5px;color:var(--muted);text-align:center;line-height:1.25}

@@ -2,6 +2,7 @@
 import { createElement, forwardRef } from "react";
 export * from "lucide-react";
 
+const el = ([t, p, c], k) => createElement(t, { key: k, ...p }, ...(c ? c.map(el) : []));
 const make = (name, nodes) => {
   const C = forwardRef(function Afroicon({ color = "currentColor", size = 24, strokeWidth = 1.75, absoluteStrokeWidth, className = "", children, ...rest }, ref) {
     return createElement("svg", {
@@ -9,7 +10,7 @@ const make = (name, nodes) => {
       stroke: color, strokeWidth: absoluteStrokeWidth ? (Number(strokeWidth) * 24) / Number(size) : strokeWidth,
       strokeLinecap: "round", strokeLinejoin: "round",
       className: ["lucide", "lucide-" + name, "afroicon", className].filter(Boolean).join(" "), ...rest,
-    }, ...nodes.map(([t, p], k) => createElement(t, { key: k, ...p })), ...(Array.isArray(children) ? children : [children]));
+    }, ...nodes.map(el), ...(Array.isArray(children) ? children : [children]));
   });
   C.displayName = name;
   return C;

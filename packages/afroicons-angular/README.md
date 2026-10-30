@@ -1,6 +1,6 @@
 # afroicons-angular
 
-Les icônes [Afroicons](https://afroicons.org) pour Angular (18 et plus) : un composant autonome `<afroicon>`, les **150 icônes culturelles** et les **163 icônes d'interface** (noms Lucide, comme [`afroicons-ui`](https://www.npmjs.com/package/afroicons-ui)).
+Les icônes [Afroicons](https://afroicons.org) pour Angular (18 et plus) : un composant autonome `<afroicon>`, les **162 icônes culturelles** (au trait et remplies) et les **163 icônes d'interface** (noms Lucide, comme [`afroicons-ui`](https://www.npmjs.com/package/afroicons-ui)).
 
 ```bash
 npm install afroicons-angular
@@ -82,6 +82,7 @@ export class SharedModule {}
 | `strokeWidth` | `1.75` | Épaisseur du trait. |
 | `absoluteStrokeWidth` | `false` | Garde la même épaisseur visuelle quelle que soit la taille. |
 | `title` | | Texte alternatif. Sans titre, l'icône est décorative (`aria-hidden`). |
+| `variant` | `line` | `fill` pour la version remplie (icônes culturelles). Sans version remplie, l'icône reste au trait. |
 
 Noms des icônes : l'id Afroicons en PascalCase pour les icônes culturelles (`Baobab`, `Peigneafro`, `Taxibrousse`), le nom Lucide pour les icônes d'interface (`Wallet`, `ShoppingCart`). La liste complète est sur [afroicons.org](https://afroicons.org).
 

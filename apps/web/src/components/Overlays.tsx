@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { CITIES, ICONS, REGNAME, VERSION, byId, catOf, isNew, type CityId, type Icon } from "../lib/constants";
+import { CITIES, ICONS, REGNAME, VERSION, byId, catOf, isNew, lineLike, type CityId, type Icon } from "../lib/constants";
 import { FACTS } from "../lib/i18n";
 import { norm, rank } from "../lib/search";
 import { animateDraw, cssStr, highlight, jsxSnippet, spriteStr, svgStr, svgToPng, useStr } from "../lib/svg";
@@ -60,13 +60,15 @@ export function Drawer() {
 
   if (!ic) return <><div className="scrim" /><aside className="drawer" aria-hidden="true" {...inert(true)} /></>;
   const cat = catOf(ic.cat);
-  const line = a.style === "line";
+  const line = lineLike(a.style);
   const bgs = ["card", ...a.pal.slice(0, 3), "ink"];
   const bgVal = prevBg === "card" ? "var(--card)" : prevBg === "ink" ? "var(--ink)" : prevBg;
   const fg = !line ? a.color ?? "#fff" : prevBg === "card" ? a.ink : prevBg === "ink" ? a.theme.bg : "#fff";
-  const others = ICONS.filter((x) => x.cat === ic.cat && x.id !== ic.id);
+  const base = ic.variantOf ?? ic.id;
+  const variants = ICONS.filter((x) => x.id === base || x.variantOf === base);
+  const others = ICONS.filter((x) => x.cat === ic.cat && x.id !== ic.id && !variants.includes(x));
   const fact = FACTS[ic.id];
-  const code = { svg: exportSvg(ic, a), jsx: jsxSnippet(ic, a.stroke), use: `<!-- 1. ${a.tt("Collez le sprite une fois", "Paste the sprite once")} -->\n<!-- 2. ${a.tt("Puis", "Then")} : -->\n${useStr(ic)}`, css: cssStr(ic, a.stroke) }[tab];
+  const code = { svg: exportSvg(ic, a), jsx: jsxSnippet(ic, a.stroke, a.style === "fill" && !!ic.fill), use: `<!-- 1. ${a.tt("Collez le sprite une fois", "Paste the sprite once")} -->\n<!-- 2. ${a.tt("Puis", "Then")} : -->\n${useStr(ic)}`, css: cssStr(ic, a.stroke) }[tab];
   const mk = (o = {}) => <Svg i={ic} o={{ s: 20, w: a.stroke, ...o }} />;
   const close = () => a.openIcon(null);
 
@@ -114,6 +116,9 @@ export function Drawer() {
             <div className="ctabs" role="tablist">{(["svg", "jsx", "use", "css"] as const).map((k) => <button key={k} role="tab" aria-selected={tab === k} className={tab === k ? "on" : ""} onClick={() => setTab(k)}>{{ svg: "SVG", jsx: "React", use: "Sprite", css: "CSS" }[k]}</button>)}</div>
             <div className="codebox"><pre dangerouslySetInnerHTML={{ __html: highlight(code, tab === "css") }} /><button className="cp" onClick={() => a.copy(code)}><T k="cp" /></button></div>
           </div>
+          {variants.length > 1 && <div className="sim"><h4>{a.tt("Variantes", "Variants")}</h4>
+            <div className="vars">{variants.map((x) => <button key={x.id} className={x.id === ic.id ? "on" : ""} aria-current={x.id === ic.id ? "true" : undefined} onClick={() => a.openIcon(x.id)}><span style={{ color: a.ink }}><Svg i={x} o={{ s: 28, w: a.stroke }} /></span><small>{nm(x)}</small></button>)}</div>
+          </div>}
           <div className="sim"><h4><T k="sim" /></h4>
             <div className="simg">{others.slice(0, 12).map((x) => <button key={x.id} title={nm(x)} aria-label={nm(x)} style={{ color: a.ink }} onClick={() => a.openIcon(x.id)}><Svg i={x} o={{ s: 26, w: a.stroke }} /></button>)}</div>
           </div>

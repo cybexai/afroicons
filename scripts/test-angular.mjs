@@ -41,6 +41,11 @@ assert.match(h, /stroke-width="1"/, "absoluteStrokeWidth");
 h = await render(`@for (i of all; track i.name) { <afroicon [icon]="i" /> }`, [], { all: Object.values(afroicons) });
 assert.equal((h.match(/<svg/g) || []).length, Object.keys(afroicons).length, "toutes les icônes se rendent");
 
+// Version remplie
+h = await render(`<afroicon name="baobab" variant="fill" /><afroicon name="wallet" variant="fill" />`, [provideAfroicons({ Baobab, Wallet })]);
+assert.match(h, /<mask id="afm-baobab"/, "version remplie (masque)");
+assert.equal((h.match(/<svg/g) || []).length, 2, "sans version remplie, l'icône reste au trait");
+
 // Nom inconnu : rien, sans planter
 h = await render(`<afroicon name="inconnue" />`, [provideAfroicons({ Wallet })]);
 assert.doesNotMatch(h, /<svg/);
