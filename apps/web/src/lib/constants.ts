@@ -9,7 +9,8 @@ export type Style = "line" | "fill" | "badge" | "circle";
 export const lineLike = (s: Style) => s === "line" || s === "fill";
 export type CityId = keyof typeof CITIES;
 
-export const VERSION = "0.5";
+/** Version affichée (0.4 pour 0.4.0), lue dans package.json au build. */
+export const VERSION = __AFROICONS_VERSION__.split(".").slice(0, 2).join(".");
 const ORDER = ["nature", "faune", "musique", "symboles", "cuisine", "vie", "architecture"];
 /** Les icônes culturelles (paquets afroicons et afroicons-react). */
 export const AFRO: Icon[] = Object.values(ICON_MAP).sort((a, b) => ORDER.indexOf(a.cat) - ORDER.indexOf(b.cat));

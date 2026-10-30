@@ -474,7 +474,7 @@ footer .fr{display:flex;align-items:center;gap:16px}
 .mcities button{display:flex;align-items:center;gap:8px;padding:8px;border-radius:10px;font-size:13.5px;font-weight:500;text-align:left}
 .mcities button.on,.mcities button:hover{background:var(--bg2)}
 @media (max-width:1120px){.navlinks{display:none}.menum{display:block}}
-@media (max-width:420px){.citym,.ib.thm{display:none}.mpop .mx{display:block}nav.top{gap:8px}.navr{gap:4px}.logo{gap:8px}}
+@media (max-width:520px){.citym,.ib.thm{display:none}.mpop .mx{display:block}nav.top{gap:8px}.navr{gap:4px}.logo{gap:8px}}
 @media (hover:none){
   .hint,.cmd .foot,.kbtn .kbd,.sbox .kbd,.dacts .kbd{display:none}
 }
@@ -589,7 +589,7 @@ a.vote span:first-child{font-size:17px;line-height:1}
 /* Pistes : 3 × 3 sur grand écran, sans orphelin */
 .sgrid{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:1180px){.sgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:560px){.sgrid{grid-template-columns:1fr}}
+@media (max-width:560px){.sgrid{grid-template-columns:minmax(0,1fr)}}
 
 /* Variantes d'une icône (épluchée, coupée, ouverte…) */
 .vars{display:flex;gap:8px;flex-wrap:wrap}
