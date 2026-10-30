@@ -1,4 +1,4 @@
-// afroicons-ui v0.4.0 — généré, ne pas modifier à la main.
+// afroicons-ui v0.5.0 — généré, ne pas modifier à la main.
 export * from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 /** Noms des icônes redessinées par Afroicons (les autres viennent de lucide-react). */

@@ -1,4 +1,4 @@
-// afroicons-angular v0.4.0 — généré par scripts/build.mjs, ne pas modifier à la main.
+// afroicons-angular v0.5.0 — généré par scripts/build.mjs, ne pas modifier à la main.
 import type { AfroiconNode } from "./types";
 
 // Icônes culturelles (id Afroicons)
