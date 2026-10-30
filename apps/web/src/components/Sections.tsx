@@ -181,7 +181,7 @@ export function Footer() {
     <>
       <footer className="wrap">
         <span>© 2026 THAFAM HOLDING SARL · <T k="f1" /> · <a className="ul" href="https://nafaerp.com"><T k="f2" /></a></span>
-        <span className="fr"><a className="ul" href={`${REPO}/blob/main/CONTRIBUTING.md`}>{a.tt("Contribuer", "Contribute")}</a><a className="ul" href={REPO}>{a.tt("Code source", "Source code")}</a><span className="mono">v{VERSION} · {ICONS.length} {a.tt("icônes", "icons")}</span></span>
+        <span className="fr"><a className="ul" href="/icones/">{a.tt("Liste des icônes", "Icon index")}</a><a className="ul" href={`${REPO}/blob/main/CONTRIBUTING.md`}>{a.tt("Contribuer", "Contribute")}</a><a className="ul" href={REPO}>{a.tt("Code source", "Source code")}</a><span className="mono">v{VERSION} · {ICONS.length} {a.tt("icônes", "icons")}</span></span>
       </footer>
       <div className="band" />
     </>

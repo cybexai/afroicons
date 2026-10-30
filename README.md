@@ -111,6 +111,8 @@ apps/web                    ← le site afroicons.org (React + Vite + TypeScript
   src/state.tsx             ← état global (langue, thème, ambiance, personnalisation)
 ```
 
+Après le build, `apps/web/scripts/pages.mjs` génère une page HTML par icône (`/icones/<id>/`), la liste `/icones/` et `sitemap.xml`.
+
 Le site consomme directement le paquet `afroicons` du dépôt : ajouter une icône dans `src/icons.json` la fait apparaître partout.
 
 ## Contribuer · Contributing

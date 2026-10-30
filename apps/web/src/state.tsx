@@ -10,6 +10,9 @@ const THEME = {
   dark: { ink: "#F3EADC", bg: "#14110E", card: "#1B1713" },
 };
 
+/** Adresses de la forme /icones/<id>/ : seulement sur le vrai site (pas dans l'aperçu en un seul fichier). */
+const PRETTY_URLS = import.meta.env.MODE !== "single" && /^https?:$/.test(location.protocol);
+
 const hostDark = () => {
   const h = document.documentElement;
   return h.dataset.theme === "dark" || h.classList.contains("dark") || matchMedia("(prefers-color-scheme: dark)").matches;
@@ -126,7 +129,12 @@ function useAppState() {
   const openIcon = useCallback((id: string | null) => {
     if (id && !byId[id]) return;
     setCurrent(id);
-    try { history.replaceState(null, "", id ? "#" + id : location.pathname + location.search); } catch { /* bac à sable */ }
+    // Sur afroicons.org, chaque icône a sa propre adresse (/icones/baobab/), indexable et partageable.
+    // Ailleurs (aperçu en un seul fichier, fichier local), on garde l'ancre #baobab.
+    try {
+      if (PRETTY_URLS) history.replaceState(null, "", id ? `/icones/${id}/` : "/" + location.search);
+      else history.replaceState(null, "", id ? "#" + id : location.pathname + location.search);
+    } catch { /* bac à sable */ }
   }, []);
 
   return {

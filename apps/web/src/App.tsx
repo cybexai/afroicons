@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { byId } from "./lib/constants";
 import { useApp } from "./state";
 import { Hero, Marquee, Nav } from "./components/Header";
@@ -10,13 +10,23 @@ import { IdeaBox, IdeaBoundary } from "./components/IdeaBox";
 export default function App() {
   const a = useApp();
 
-  // Lien direct vers une icône : afroicons.org/#baobab
+  // Lien direct vers une icône : afroicons.org/icones/baobab/ (ou l'ancienne forme afroicons.org/#baobab)
   useEffect(() => {
-    const open = () => { const h = location.hash.slice(1); if (byId[h]) a.openIcon(h); };
+    const open = () => {
+      const h = location.hash.slice(1), p = location.pathname.match(/\/icones\/([a-z0-9-]+)\/?$/)?.[1];
+      if (byId[h]) a.openIcon(h); else if (p && byId[p]) a.openIcon(p);
+    };
     open();
     addEventListener("hashchange", open);
     return () => removeEventListener("hashchange", open);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Le titre de l'onglet suit l'icône ouverte (et revient au titre du site à la fermeture).
+  const siteTitle = useRef(document.title.includes("| Afroicons") ? a.tt("Afroicons — des icônes qui racontent l'Afrique", "Afroicons — icons that tell Africa's story") : document.title);
+  useEffect(() => {
+    const i = a.current ? byId[a.current] : null;
+    document.title = i ? `${a.lang === "en" ? i.en : i.fr} — ${a.tt("icône SVG gratuite", "free SVG icon")} | Afroicons` : siteTitle.current;
+  }, [a.current, a.lang]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Pas de défilement de la page derrière une fenêtre ouverte.
   const modal = !!a.current || a.cmdOpen || a.helpOpen;
