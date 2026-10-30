@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { AFRO, CATS, CITIES, REGNAME, ROT_CITIES, SHOWCASE, VERSION, byId, catOf, type CityId } from "../lib/constants";
+import { AFRO, CITIES, ICONS, UI, REGNAME, ROT_CITIES, SHOWCASE, VERSION, byId, catOf, type CityId } from "../lib/constants";
 import { animateDraw, logoSvg, svgStr } from "../lib/svg";
 import { useApp, useName } from "../state";
 import { IClose, IDown, IMenu, IMoon, ISearch, ISun, Raw, Svg, T } from "./ui";
@@ -121,7 +121,7 @@ export function Hero() {
     <header className="hero wrap" id="top">
       <div>
         <div className="eyebrows">
-        <span className="eyebrow"><b>v{VERSION}</b><span>{a.tt(`${AFRO.length} icônes libres · dessinées à la main`, `${AFRO.length} free icons · hand-drawn`)}</span></span>
+        <span className="eyebrow"><b>v{VERSION}</b><span>{a.tt(`${ICONS.length} icônes libres · culturelles et d'interface`, `${ICONS.length} free icons · cultural and interface`)}</span></span>
         <button className="eyebrow iod" onClick={() => a.openIcon(iod.id)}>
           <Svg i={iod} o={{ s: 18, w: 2 }} /><span>{a.tt("Icône du jour", "Icon of the day")} : <strong style={{ color: "var(--ink)" }}>{nm(iod)}</strong></span>
         </button>
@@ -136,10 +136,10 @@ export function Hero() {
           <a className="btn" href="#atelier"><T k="cta2" /></a>
         </div>
         <div className="hstats">
-          <div><b>{AFRO.length}</b><span><T k="st1" /></span></div>
-          <div><b>{CATS.length - 2}</b><span><T k="st2" /></span></div>
+          <div><b>{ICONS.length}</b><span><T k="st1" /></span></div>
+          <div><b>{AFRO.length}</b><span><T k="st2" /></span></div>
+          <div><b>{UI.length}</b><span><T k="st4" /></span></div>
           <div><b>5</b><span><T k="st3" /></span></div>
-          <div><b>2</b><span><T k="st4" /></span></div>
         </div>
       </div>
       <div className="stage" style={{ cursor: "pointer" }} role="button" tabIndex={0} onClick={() => a.openIcon(cur.id)} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); a.openIcon(cur.id); } }}>

@@ -10,9 +10,9 @@
 
 ---
 
-🇫🇷 **Afroicons** est une bibliothèque d'icônes dessinées à la main pour les produits africains : nos paysages, notre faune, nos instruments, nos symboles, nos plats et notre quotidien — de la moto-taxi à la tontine, de la case obus au mobile money.
+🇫🇷 **Afroicons** est une bibliothèque d'icônes dessinées avec soin pour les produits africains : nos paysages, notre faune, nos instruments, nos symboles, nos plats et notre quotidien — de la moto-taxi à la tontine, de la case obus au mobile money.
 
-🇬🇧 **Afroicons** is a hand-drawn icon library for African products: landscapes, wildlife, instruments, symbols, food and everyday life — from the moto-taxi to the tontine, from the Musgum hut to mobile money.
+🇬🇧 **Afroicons** is a carefully drawn icon library for African products: landscapes, wildlife, instruments, symbols, food and everyday life — from the moto-taxi to the tontine, from the Musgum hut to mobile money.
 
 ## Paquets · Packages
 

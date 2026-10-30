@@ -460,7 +460,10 @@ footer{margin-top:70px;border-top:1px solid var(--line);padding-top:26px;padding
 /* ===== Correctifs responsive & tactile ===== */
 html{scrollbar-gutter:stable}html.locked{overflow:hidden}
 .ul{text-decoration:underline;text-underline-offset:3px}
-footer .fr{display:flex;align-items:center;gap:16px}
+footer .fr{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+/* Laisse la place au bouton « retour en haut », fixé en bas à droite. */
+@media (min-width:641px){footer{padding-right:64px}}
+@media (max-width:640px){footer{padding-bottom:76px}}
 .regs{scrollbar-width:none}.regs::-webkit-scrollbar{display:none}
 @media (max-width:1320px){.kbtn{min-width:0}.kbtn .lbl{display:none}}
 /* Menu (sous 1120 px) */
