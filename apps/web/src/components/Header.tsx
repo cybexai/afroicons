@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { AFRO, CITIES, ICONS, UI, REGNAME, ROT_CITIES, SHOWCASE, VERSION, byId, catOf, type CityId } from "../lib/constants";
+import { AFRO, CITIES, ICONS, PAGE, UI, REGNAME, ROT_CITIES, SHOWCASE, VERSION, byId, catOf, type CityId } from "../lib/constants";
 import { animateDraw, logoSvg, svgStr } from "../lib/svg";
 import { useApp, useName } from "../state";
 import { IClose, IDown, IMenu, IMoon, ISearch, ISun, Raw, Svg, T } from "./ui";
@@ -28,7 +28,7 @@ export function Nav() {
     if (!menuOpen) return;
     const close = (e: MouseEvent) => { if (!(e.target as HTMLElement).closest(".menum")) setMenuOpen(false); };
     const esc = (e: KeyboardEvent) => { if (e.key === "Escape") setMenuOpen(false); };
-    const wide = matchMedia("(min-width: 1121px)");
+    const wide = matchMedia("(min-width: 1221px)");
     const off = () => { if (wide.matches) setMenuOpen(false); };
     document.addEventListener("click", close);
     document.addEventListener("keydown", esc);
@@ -43,14 +43,18 @@ export function Nav() {
     return () => io.disconnect();
   }, []);
   const links = [["icones", "nav1"], ["atelier", "nav2"], ["vitrine", "nav5"], ["utiliser", "nav3"], ["marque", "nav6"], ["idees", "nav7"]];
+  // Hors de l'accueil, les liens du menu ramènent aux sections de l'accueil.
+  const home = PAGE === "home", sec = (h: string) => (home ? "#" : "/#") + h;
+  const news = <a href="/nouveautes/" className={!home ? "on" : ""} aria-current={!home ? "page" : undefined}><T k="newsT" /></a>;
   const toggleMode = () => a.setMode(a.mode === "dark" ? "light" : "dark");
   const logo = logoSvg({ s: 36, door: a.pal[1], sun: a.pal[0] });
 
   return (
     <nav className={"top wrap" + (scrolled ? " scrolled" : "")}>
-      <a className="logo" href="#top" aria-label="Afroicons"><Raw className="mk" html={logo} /><span className="wm-t">Afroicons</span></a>
+      <a className="logo" href={home ? "#top" : "/"} aria-label="Afroicons"><Raw className="mk" html={logo} /><span className="wm-t">Afroicons</span></a>
       <div className="navlinks">
-        {links.map(([h, k]) => <a key={h} href={"#" + h} className={active === h ? "on" : ""} aria-current={active === h ? "location" : undefined}><T k={k} /></a>)}
+        {links.map(([h, k]) => <a key={h} href={sec(h)} className={active === h ? "on" : ""} aria-current={active === h ? "location" : undefined}><T k={k} /></a>)}
+        {news}
       </div>
       <div className="navr">
         <button className="kbtn" onClick={() => a.setCmdOpen(true)}><ISearch s={17} /><span className="lbl"><T k="cmdLbl" /></span><span className="kbd">{isMac ? "⌘K" : "Ctrl K"}</span></button>
@@ -74,7 +78,8 @@ export function Nav() {
         <div className="menum">
           <button className="ib" aria-label={a.tt("Menu", "Menu")} aria-expanded={menuOpen} aria-controls="mmenu" onClick={(e) => { e.stopPropagation(); setMenuOpen((o) => !o); }}>{menuOpen ? <IClose /> : <IMenu />}</button>
           <div id="mmenu" className={"mpop" + (menuOpen ? " open" : "")} {...inert(!menuOpen)}>
-            {links.map(([h, k]) => <a key={h} href={"#" + h} onClick={() => setMenuOpen(false)}><T k={k} /></a>)}
+            {links.map(([h, k]) => <a key={h} href={sec(h)} onClick={() => setMenuOpen(false)}><T k={k} /></a>)}
+            {news}
             <div className="mx">
               <button onClick={toggleMode}>{a.mode === "dark" ? <ISun /> : <IMoon />}{a.mode === "dark" ? a.tt("Mode clair", "Light mode") : a.tt("Mode sombre", "Dark mode")}</button>
               <div className="kick" style={{ padding: "10px 12px 4px", margin: 0 }}>{a.tt("Ambiance", "Mood")}</div>
@@ -121,7 +126,7 @@ export function Hero() {
     <header className="hero wrap" id="top">
       <div>
         <div className="eyebrows">
-        <span className="eyebrow"><b>v{VERSION}</b><span>{a.tt(`${ICONS.length} icônes libres · culturelles et d'interface`, `${ICONS.length} free icons · cultural and interface`)}</span></span>
+        <a className="eyebrow" href="/nouveautes/" title={a.tt("Voir les nouveautés", "See what's new")}><b>v{VERSION}</b><span>{a.tt(`${ICONS.length} icônes libres · culturelles et d'interface`, `${ICONS.length} free icons · cultural and interface`)}</span></a>
         <button className="eyebrow iod" onClick={() => a.openIcon(iod.id)}>
           <Svg i={iod} o={{ s: 18, w: 2 }} /><span>{a.tt("Icône du jour", "Icon of the day")} : <strong style={{ color: "var(--ink)" }}>{nm(iod)}</strong></span>
         </button>

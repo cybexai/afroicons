@@ -476,7 +476,7 @@ footer .fr{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .mcities{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:0 4px 4px}
 .mcities button{display:flex;align-items:center;gap:8px;padding:8px;border-radius:10px;font-size:13.5px;font-weight:500;text-align:left}
 .mcities button.on,.mcities button:hover{background:var(--bg2)}
-@media (max-width:1120px){.navlinks{display:none}.menum{display:block}}
+@media (max-width:1220px){.navlinks{display:none}.menum{display:block}}
 @media (max-width:520px){.citym,.ib.thm{display:none}.mpop .mx{display:block}nav.top{gap:8px}.navr{gap:4px}.logo{gap:8px}}
 @media (hover:none){
   .hint,.cmd .foot,.kbtn .kbd,.sbox .kbd,.dacts .kbd{display:none}
@@ -620,3 +620,26 @@ a.vote span:first-child{font-size:17px;line-height:1}
 .ustats{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .ustats a,.ustats span{font:600 13px "DM Sans";padding:7px 12px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
 .ustats a:hover{border-color:var(--ink)}
+
+/* Nouveautés : le journal des versions */
+.news .shead{margin-top:40px}
+.rel{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.rel>li{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;padding:24px 26px;border:1px solid var(--line);border-radius:22px;background:var(--card)}
+.rel>li.cur{border-color:var(--at)}
+.rel>li.next{border-style:dashed;background:transparent}
+.rh{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.rh b{font:800 26px "Bricolage Grotesque";letter-spacing:-.02em}
+.rh span{color:var(--muted);font-size:13.5px}
+.rh em{font:700 11px "JetBrains Mono";letter-spacing:.08em;text-transform:uppercase;font-style:normal;padding:4px 9px;border-radius:99px;background:var(--at);color:var(--bg)}
+.rel>li.next .rh em{background:var(--bg2);color:var(--ink)}
+.rb h3{font:700 19px "Bricolage Grotesque";margin:2px 0 10px}
+.md{color:var(--muted);font-size:15px;line-height:1.6}
+.md strong{color:var(--ink)}
+.md h4{font:700 15px "DM Sans";color:var(--ink);margin:16px 0 6px}
+.md p{margin:12px 0 6px}
+.md ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.md code{font:13px "JetBrains Mono";background:var(--bg2);padding:1px 6px;border-radius:6px;overflow-wrap:anywhere}
+.md a{color:var(--ink)}
+.rnote{color:var(--muted);font-size:13.5px;margin-top:14px}
+@media (max-width:760px){.rel>li{grid-template-columns:minmax(0,1fr);gap:12px;padding:20px 18px}.rh{flex-direction:row;flex-wrap:wrap;align-items:center;gap:8px 12px}.rh b{font-size:22px}}
+a.eyebrow:hover{color:var(--ink);border-color:var(--muted)}

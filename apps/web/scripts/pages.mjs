@@ -102,7 +102,7 @@ page({
   body: `<nav><a href="/">Afroicons</a></nav><h1>Toutes les icônes (${icons.length})</h1>${groups.map(([c, l]) => `<h2>${esc(CATS[c])} (${l.length})</h2><ul class="g">${l.map((i) => `<li><a href="/icones/${i.slug}/">${esc(i.fr)}</a></li>`).join("")}</ul>`).join("")}`,
 });
 
-// Page « Nouveautés » : le journal des versions (CHANGELOG.md) mis en page.
+// Page « Nouveautés » : le journal des versions (CHANGELOG.md), lisible sans JavaScript ; l'application l'affiche ensuite dans le site.
 const inline = (t) => esc(t).replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>").replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
 function markdown(md) {
   let html = "", list = false;
@@ -121,7 +121,6 @@ page({
   title: "Nouveautés — journal des versions | Afroicons",
   desc: "Toutes les versions d'Afroicons : nouvelles icônes, style rempli, variantes, paquets React, Angular et compatibles Lucide, corrections.",
   canonical: `${SITE}/nouveautes/`,
-  app: false,
   body: `<nav><a href="/">Afroicons</a> › <a href="/icones/">Toutes les icônes</a></nav><h1>Nouveautés</h1>${markdown(read("CHANGELOG.md"))}`,
 });
 

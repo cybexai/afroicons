@@ -115,3 +115,6 @@ export const STYLES: { id: Style; fr: string; en: string }[] = [
   { id: "circle", fr: "Cercle", en: "Circle" },
 ];
 export const SHOWCASE = ["baobab", "djembe", "sankofa", "mototaxi", "case", "kora", "masque", "calebasse", "elephant", "mobilemoney", "pirogue", "djenne", "musgum", "cameleon", "ananas", "taxibrousse"].filter((id) => byId[id]);
+
+/** Page affichée : l'accueil, ou le journal des versions (afroicons.org/nouveautes/). */
+export const PAGE: "home" | "news" = /^\/nouveautes\/?$/.test(location.pathname) ? "news" : "home";

@@ -1,11 +1,12 @@
 import { useEffect, useRef } from "react";
-import { byId } from "./lib/constants";
+import { PAGE, byId } from "./lib/constants";
 import { useApp } from "./state";
 import { Hero, Marquee, Nav } from "./components/Header";
 import { Library } from "./components/Library";
 import { CommandPalette, Drawer, Help, Toast, ToTop, Tray, inert } from "./components/Overlays";
 import { Brand, Footer, Manifesto, Showcase, Studio, Usage } from "./components/Sections";
 import { IdeaBox, IdeaBoundary } from "./components/IdeaBox";
+import { Changelog } from "./components/Changelog";
 
 export default function App() {
   const a = useApp();
@@ -17,12 +18,18 @@ export default function App() {
       if (byId[h]) a.openIcon(h); else if (p && byId[p]) a.openIcon(p);
     };
     open();
+    // Arrivée depuis une autre page sur une section (afroicons.org/#atelier) : on y descend une fois la page affichée.
+    const sec = location.hash.slice(1);
+    if (sec && !byId[sec]) {
+      const go = () => document.getElementById(sec)?.scrollIntoView({ behavior: "instant" });
+      if (document.readyState === "complete") setTimeout(go, 50); else addEventListener("load", () => setTimeout(go, 50), { once: true });
+    }
     addEventListener("hashchange", open);
     return () => removeEventListener("hashchange", open);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Le titre de l'onglet suit l'icône ouverte (et revient au titre du site à la fermeture).
-  const siteTitle = useRef(document.title.includes("| Afroicons") ? a.tt("Afroicons — des icônes qui racontent l'Afrique", "Afroicons — icons that tell Africa's story") : document.title);
+  const siteTitle = useRef(document.title.includes("| Afroicons") && PAGE === "home" ? a.tt("Afroicons — des icônes qui racontent l'Afrique", "Afroicons — icons that tell Africa's story") : document.title);
   useEffect(() => {
     const i = a.current ? byId[a.current] : null;
     document.title = i ? `${a.lang === "en" ? i.en : i.fr} — ${a.tt("icône SVG gratuite", "free SVG icon")} | Afroicons` : siteTitle.current;
@@ -60,19 +67,24 @@ export default function App() {
     <>
       {/* Quand une fenêtre est ouverte, la page derrière devient inerte : le focus clavier y reste enfermé. */}
       <div {...inert(modal)}>
-      <a className="skip" href="#icones">{a.tt("Aller aux icônes", "Skip to icons")}</a>
-      <Nav />
-      <Hero />
-      <Marquee />
-      <main className="wrap">
-        <Library />
-        <Studio />
-        <Showcase />
-        <Usage />
-        <Brand />
-        <IdeaBoundary><IdeaBox /></IdeaBoundary>
-        <Manifesto />
-      </main>
+      {PAGE === "news" ? <>
+        <Nav />
+        <main className="wrap"><Changelog /></main>
+      </> : <>
+        <a className="skip" href="#icones">{a.tt("Aller aux icônes", "Skip to icons")}</a>
+        <Nav />
+        <Hero />
+        <Marquee />
+        <main className="wrap">
+          <Library />
+          <Studio />
+          <Showcase />
+          <Usage />
+          <Brand />
+          <IdeaBoundary><IdeaBox /></IdeaBoundary>
+          <Manifesto />
+        </main>
+      </>}
       <Footer />
       <Tray />
       <ToTop />
