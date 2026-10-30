@@ -9,42 +9,50 @@ import { inert } from "./Overlays";
 export const exportSvg = (i: Icon, a: { style: Style; stroke: number; color: string | null; badgeBg: string }) =>
   svgStr(i, { style: a.style, w: a.stroke, bg: a.badgeBg, cls: `afroicon afroicon-${i.id}`, c: lineLike(a.style) ? "currentColor" : a.color ?? "#FFFFFF" });
 
-/** Réglages des icônes (style, couleur, fond, trait), partagés par le menu « Personnaliser » et la fiche d'une icône. */
-export function CustomizeFields({ inSheet = false }: { inSheet?: boolean }) {
+/** Réglages d'icône : style, couleur, fond de pastille, épaisseur (et taille d'aperçu dans la bibliothèque). */
+export type CustomValue = { style: Style; color: string | null; bg: string | null; stroke: number; size?: number };
+
+/**
+ * Champs de réglage, pilotés de l'extérieur : le menu « Personnaliser » les relie aux réglages du site,
+ * la fiche d'une icône à ses propres réglages (qui ne touchent que cette icône).
+ */
+export function CustomizeFields({ v, set, onReset }: { v: CustomValue; set: (p: Partial<CustomValue>) => void; onReset: () => void }) {
   const a = useApp();
+  const ink = v.color ?? a.theme.ink, badgeBg = v.bg ?? a.pal[0];
   const inks = [a.theme.ink, ...a.pal];
   const pickStyle = (s: Style) => {
-    a.setStyle(s);
-    if (!lineLike(s) && !a.color) a.setColor("#FFFFFF");
-    if (lineLike(s) && a.color?.toUpperCase() === "#FFFFFF") a.setColor(null);
+    const p: Partial<CustomValue> = { style: s };
+    if (!lineLike(s) && !v.color) p.color = "#FFFFFF";
+    if (lineLike(s) && v.color?.toUpperCase() === "#FFFFFF") p.color = null;
+    set(p);
   };
   return (
     <div className="cfields">
       <div className="blk"><h3><T k="pStyle" /></h3>
         <div className="styles">{STYLES.map((s) => (
-          <button key={s.id} className={a.style === s.id ? "on" : ""} aria-pressed={a.style === s.id} onClick={() => pickStyle(s.id)}>
-            <Svg i={byId.baobab} o={{ s: 30, style: s.id, c: lineLike(s.id) ? a.ink : "#fff", bg: a.badgeBg }} />{a.tt(s.fr, s.en)}
+          <button key={s.id} className={v.style === s.id ? "on" : ""} aria-pressed={v.style === s.id} onClick={() => pickStyle(s.id)}>
+            <Svg i={byId.baobab} o={{ s: 30, style: s.id, c: lineLike(s.id) ? ink : "#fff", bg: badgeBg }} />{a.tt(s.fr, s.en)}
           </button>
         ))}</div>
       </div>
       <div className="blk"><h3><T k="pCol" /></h3>
         <div className="swat">
-          {inks.map((x) => <button key={x} style={{ background: x }} aria-label={a.t("pCol") + " " + x} aria-pressed={a.ink === x} className={a.ink === x ? "on" : ""} onClick={() => a.setColor(x === a.theme.ink ? null : x)} />)}
-          {!lineLike(a.style) && <button style={{ background: "#fff" }} aria-label={a.t("pCol") + " #FFFFFF"} className={a.color?.toUpperCase() === "#FFFFFF" ? "on" : ""} onClick={() => a.setColor("#FFFFFF")} />}
-          <input type="color" value={a.ink.length === 7 ? a.ink : "#000000"} onChange={(e) => a.setColor(e.target.value)} title={a.tt("Couleur libre", "Custom colour")} aria-label={a.tt("Couleur libre", "Custom colour")} />
+          {inks.map((x) => <button key={x} style={{ background: x }} aria-label={a.t("pCol") + " " + x} aria-pressed={ink === x} className={ink === x ? "on" : ""} onClick={() => set({ color: x === a.theme.ink ? null : x })} />)}
+          {!lineLike(v.style) && <button style={{ background: "#fff" }} aria-label={a.t("pCol") + " #FFFFFF"} className={v.color?.toUpperCase() === "#FFFFFF" ? "on" : ""} onClick={() => set({ color: "#FFFFFF" })} />}
+          <input type="color" value={ink.length === 7 ? ink : "#000000"} onChange={(e) => set({ color: e.target.value })} title={a.tt("Couleur libre", "Custom colour")} aria-label={a.tt("Couleur libre", "Custom colour")} />
         </div>
       </div>
-      {!lineLike(a.style) && (
+      {!lineLike(v.style) && (
         <div className="blk"><h3><T k="pBg" /></h3>
           <div className="swat">
-            {[...a.pal, a.theme.ink].map((x) => <button key={x} style={{ background: x }} aria-label={a.t("pBg") + " " + x} className={a.badgeBg === x ? "on" : ""} onClick={() => a.setBg(x)} />)}
-            <input type="color" value={a.badgeBg} aria-label={a.t("pBg")} onChange={(e) => a.setBg(e.target.value)} />
+            {[...a.pal, a.theme.ink].map((x) => <button key={x} style={{ background: x }} aria-label={a.t("pBg") + " " + x} className={badgeBg === x ? "on" : ""} onClick={() => set({ bg: x })} />)}
+            <input type="color" value={badgeBg} aria-label={a.t("pBg")} onChange={(e) => set({ bg: e.target.value })} />
           </div>
         </div>
       )}
-      <div className="blk"><h3><T k="pStroke" /></h3><div className="rng"><input type="range" aria-label={a.t("pStroke")} min={1} max={2.5} step={0.25} value={a.stroke} onChange={(e) => a.setStroke(+e.target.value)} /><output>{a.stroke}</output></div></div>
-      {!inSheet && <div className="blk"><h3><T k="pSize" /></h3><div className="rng"><input type="range" aria-label={a.t("pSize")} min={24} max={64} step={4} value={a.size} onChange={(e) => a.setSize(+e.target.value)} /><output>{a.size}</output></div></div>}
-      <button className="btn sm" onClick={() => { a.setColor(null); a.setBg(null); a.setStroke(1.75); if (!inSheet) a.setSize(40); a.setStyle("line"); }}><T k="reset" /></button>
+      <div className="blk"><h3><T k="pStroke" /></h3><div className="rng"><input type="range" aria-label={a.t("pStroke")} min={1} max={2.5} step={0.25} value={v.stroke} onChange={(e) => set({ stroke: +e.target.value })} /><output>{v.stroke}</output></div></div>
+      {v.size != null && <div className="blk"><h3><T k="pSize" /></h3><div className="rng"><input type="range" aria-label={a.t("pSize")} min={24} max={64} step={4} value={v.size} onChange={(e) => set({ size: +e.target.value })} /><output>{v.size}</output></div></div>}
+      <button className="btn sm" onClick={onReset}><T k="reset" /></button>
     </div>
   );
 }
@@ -65,7 +73,12 @@ function Customize() {
       <button className="pill" aria-label={a.t("cust")} aria-expanded={open} aria-haspopup="true" onClick={(e) => { e.stopPropagation(); setOpen((o) => !o); }}>
         <span className="mic"><ISliders s={17} /></span><span className="dots"><i style={{ background: lineLike(a.style) ? a.ink : a.badgeBg }} /></span><span className="pl"><T k="cust" /></span><IChevron s={14} w={2.4} />
       </button>
-      <div className={"cpop" + (open ? " open" : "")} {...inert(!open)}><CustomizeFields /></div>
+      <div className={"cpop" + (open ? " open" : "")} {...inert(!open)}>
+        <CustomizeFields
+          v={{ style: a.style, color: a.color, bg: a.bg, stroke: a.stroke, size: a.size }}
+          set={(p) => { if (p.style) a.setStyle(p.style); if ("color" in p) a.setColor(p.color ?? null); if ("bg" in p) a.setBg(p.bg ?? null); if (p.stroke != null) a.setStroke(p.stroke); if (p.size != null) a.setSize(p.size); }}
+          onReset={() => { a.setColor(null); a.setBg(null); a.setStroke(1.75); a.setSize(40); a.setStyle("line"); }} />
+      </div>
     </div>
   );
 }

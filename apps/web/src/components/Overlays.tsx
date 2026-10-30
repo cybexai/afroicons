@@ -5,7 +5,7 @@ import { norm, rank } from "../lib/search";
 import { animateDraw, cssStr, highlight, jsxSnippet, spriteStr, svgStr, svgToPng, useStr } from "../lib/svg";
 import { store } from "../lib/platform";
 import { useApp, useName } from "../state";
-import { CustomizeFields, exportSvg } from "./Library";
+import { CustomizeFields, exportSvg, type CustomValue } from "./Library";
 import { IChevron, IClose, IGrid, INext, IPrev, IReplay, ISearch, ISliders, IUp, Svg, T } from "./ui";
 
 /** Rend un élément inerte (ni focus ni lecteur d'écran) quand il est caché. */
@@ -13,7 +13,13 @@ export const inert = (on: boolean) => (on ? ({ inert: "" } as Record<string, str
 
 /* ---------------- Fiche d'une icône ---------------- */
 export function Drawer() {
-  const a = useApp();
+  const app = useApp();
+  // Réglages propres à la fiche : ils partent de ceux de la bibliothèque, mais ne touchent que l'icône affichée.
+  const [cust, setCust] = useState<CustomValue>({ style: app.style, color: app.color, bg: app.bg, stroke: app.stroke });
+  const fromLibrary = () => setCust({ style: app.style, color: app.color, bg: app.bg, stroke: app.stroke });
+  useEffect(fromLibrary, [app.current]); // eslint-disable-line react-hooks/exhaustive-deps
+  // Dans toute la fiche, `a` porte ces réglages locaux (style, couleur, fond, trait).
+  const a = { ...app, style: cust.style, color: cust.color, bg: cust.bg, stroke: cust.stroke, ink: cust.color ?? app.theme.ink, badgeBg: cust.bg ?? app.pal[0] };
   const nm = useName();
   const i = a.current ? byId[a.current] : null;
   const [last, setLast] = useState<Icon | null>(null);
@@ -101,8 +107,8 @@ export function Drawer() {
           </div>
           <div className="dsizes">{[16, 20, 24, 32, 48].map((s) => <div key={s} style={{ color: a.ink }}><Svg i={ic} o={{ s, style: a.style, w: a.stroke, bg: a.badgeBg, c: line ? "currentColor" : a.color ?? "#fff" }} /><small>{s}</small></div>)}</div>
           <details className="dcust" open={custOpen} onToggle={(e) => setCustOpen((e.target as HTMLDetailsElement).open)}>
-            <summary><ISliders s={16} />{a.tt("Personnaliser", "Customise")}<small>{a.tt("s'applique à toutes les icônes", "applies to every icon")}</small><IChevron s={14} w={2.4} /></summary>
-            <CustomizeFields inSheet />
+            <summary><ISliders s={16} />{a.tt("Personnaliser", "Customise")}<small>{a.tt("pour cette icône", "for this icon")}</small><IChevron s={14} w={2.4} /></summary>
+            <CustomizeFields v={cust} set={(p) => setCust((c) => ({ ...c, ...p }))} onReset={fromLibrary} />
           </details>
           <div className="dtags">{ic.tags.map((x) => <button key={x} onClick={() => { close(); dispatchEvent(new CustomEvent("afroicons:filter", { detail: { q: x, favOnly: false } })); document.getElementById("icones")?.scrollIntoView(); }}>#{x}</button>)}</div>
           {fact && <div className="fact"><i>?</i><div><b><T k="didu" /></b><span>{fact[a.lang === "en" ? 1 : 0]}</span></div></div>}
