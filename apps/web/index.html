@@ -12,6 +12,8 @@
     h.dataset.mode = m;
     var c = get("city"); if (typeof c === "string" && /^[a-z]+$/.test(c)) h.dataset.city = c;
     var l = get("lang"); if (l === "fr" || l === "en") h.lang = l;
+    // Le navigateur ne replace pas la page là où on l'avait laissée : elle s'ouvre en haut (ou sur la section visée par #…).
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
   })();
 </script>
 <title>Afroicons — des icônes qui racontent l'Afrique</title>
