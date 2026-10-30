@@ -1,6 +1,6 @@
 <p align="center"><img src="docs/logo.svg" width="96" alt="Afroicons"></p>
 <h1 align="center">Afroicons</h1>
-<p align="center"><b>Des icônes libres qui racontent l'Afrique.</b><br>162 icônes culturelles, au trait et remplies, + 163 icônes d'interface · grille 24 px · FR / EN · open source (MIT)</p>
+<p align="center"><b>Des icônes libres qui racontent l'Afrique.</b><br>162 icônes culturelles, au trait et remplies, + les 54 drapeaux africains + 163 icônes d'interface · grille 24 px · FR / EN · open source (MIT)</p>
 <p align="center"><a href="https://afroicons.org"><b>afroicons.org</b></a></p>
 <p align="center">
   <a href="LICENSE"><img alt="Licence MIT" src="https://img.shields.io/badge/licence-MIT-C24E2A"></a>
@@ -74,8 +74,11 @@ replace();
 | Cuisine | 26 | foufou, plantain, safou, kola, jebena |
 | Vie quotidienne | 34 | moto-taxi, keke, mobile money, tontine, gele |
 | Architecture | 14 | Djenné, case obus, Lalibela, Grand Zimbabwe |
+| Drapeaux | 54 | les 54 États africains membres de l'ONU, aux couleurs officielles |
 
 Chaque icône porte un nom français et anglais, une catégorie, une région (`ouest`, `centre`, `est`, `nord`, `australe`, `pan`) et des mots-clés locaux (benskin, okada, matatu, attiéké…). Tout est dans `icons.json`.
+
+Les **drapeaux** (`drapeau-cameroun`, `<DrapeauCameroun />`) gardent leurs couleurs officielles, en rectangle aux coins arrondis : `color`, `strokeWidth` et `variant` ne les changent pas. Ils portent aussi le code ISO du pays (`iso: "CM"`) et son nom (`country`). Leurs emblèmes sont simplifiés pour rester lisibles à 16 px.
 
 ## Principes de dessin
 

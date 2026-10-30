@@ -2908,5 +2908,1327 @@
   "since": "0.2",
   "body": "<path d=\"M5 21V3H19V21\"/><path d=\"M8.5 21V12A4 4 0 1 1 15.5 12V21\"/><path d=\"M12 13.2V21\"/><circle cx=\"11\" cy=\"16.5\" r=\"0.55\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"13\" cy=\"16.5\" r=\"0.55\" fill=\"currentColor\" stroke=\"none\"/><path d=\"M5 5H19\"/><path d=\"M3 21H21\"/>",
   "fill": "<mask id=\"afm-riad\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><path d=\"M5 21V3H19V21Z\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M8.5 21V12A4 4 0 1 1 15.5 12V21Z\" fill=\"#000\" stroke=\"#000\"/><path d=\"M5 5H19\" fill=\"none\" stroke=\"#000\"/><path d=\"M12 13.2V21\" fill=\"none\" stroke=\"#000\"/><circle cx=\"11\" cy=\"16.5\" r=\"0.55\" fill=\"#000\" stroke=\"none\"/><circle cx=\"13\" cy=\"16.5\" r=\"0.55\" fill=\"#000\" stroke=\"none\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-riad)\"/><path d=\"M3 21H21\"/>"
+ },
+ {
+  "id": "drapeau-algerie",
+  "fr": "Drapeau de l'Algérie",
+  "en": "Flag of Algeria",
+  "cat": "drapeaux",
+  "region": "nord",
+  "tags": [
+   "drapeau",
+   "flag",
+   "algérie",
+   "algeria",
+   "dz",
+   "algérien",
+   "algerian",
+   "dzayer"
+  ],
+  "since": "0.6",
+  "iso": "DZ",
+  "country": {
+   "fr": "Algérie",
+   "en": "Algeria"
+  },
+  "body": "<clipPath id=\"afc-dz\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-dz)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"11\" height=\"15\" fill=\"#006233\"/><rect x=\"12\" y=\"4.5\" width=\"11\" height=\"15\" fill=\"#FFFFFF\"/><path d=\"M14.8 9.29A3.9 3.9 0 1 0 14.8 14.71A3.1 3.1 0 1 1 14.8 9.29Z\" fill=\"#D21034\"/><path d=\"M13.71 10.48L14.39 11.42L15.49 11.06L14.81 12L15.49 12.94L14.39 12.58L13.71 13.52L13.71 12.36L12.6 12L13.71 11.64Z\" fill=\"#D21034\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-dz\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-dz)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"11\" height=\"15\" fill=\"#006233\"/><rect x=\"12\" y=\"4.5\" width=\"11\" height=\"15\" fill=\"#FFFFFF\"/><path d=\"M14.8 9.29A3.9 3.9 0 1 0 14.8 14.71A3.1 3.1 0 1 1 14.8 9.29Z\" fill=\"#D21034\"/><path d=\"M13.71 10.48L14.39 11.42L15.49 11.06L14.81 12L15.49 12.94L14.39 12.58L13.71 13.52L13.71 12.36L12.6 12L13.71 11.64Z\" fill=\"#D21034\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-angola",
+  "fr": "Drapeau de l'Angola",
+  "en": "Flag of Angola",
+  "cat": "drapeaux",
+  "region": "centre",
+  "tags": [
+   "drapeau",
+   "flag",
+   "angola",
+   "angola",
+   "ao",
+   "angolais",
+   "angolan"
+  ],
+  "since": "0.6",
+  "iso": "AO",
+  "country": {
+   "fr": "Angola",
+   "en": "Angola"
+  },
+  "body": "<clipPath id=\"afc-ao\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ao)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"7.5\" fill=\"#CC092F\"/><rect x=\"1\" y=\"12\" width=\"22\" height=\"7.5\" fill=\"#000000\"/><path d=\"M9.36 15.3A3.6 3.6 0 1 0 15.52 9\" fill=\"none\" stroke=\"#FFCB00\" stroke-width=\"1\"/><path d=\"M9.36 9.9L14.64 15.6\" fill=\"none\" stroke=\"#FFCB00\" stroke-width=\"1\"/><path d=\"M10.46 8.9L10.75 9.8L11.7 9.8L10.93 10.35L11.22 11.25L10.46 10.7L9.7 11.25L9.99 10.35L9.22 9.8L10.17 9.8Z\" fill=\"#FFCB00\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-ao\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ao)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"7.5\" fill=\"#CC092F\"/><rect x=\"1\" y=\"12\" width=\"22\" height=\"7.5\" fill=\"#000000\"/><path d=\"M9.36 15.3A3.6 3.6 0 1 0 15.52 9\" fill=\"none\" stroke=\"#FFCB00\" stroke-width=\"1\"/><path d=\"M9.36 9.9L14.64 15.6\" fill=\"none\" stroke=\"#FFCB00\" stroke-width=\"1\"/><path d=\"M10.46 8.9L10.75 9.8L11.7 9.8L10.93 10.35L11.22 11.25L10.46 10.7L9.7 11.25L9.99 10.35L9.22 9.8L10.17 9.8Z\" fill=\"#FFCB00\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-benin",
+  "fr": "Drapeau du Bénin",
+  "en": "Flag of Benin",
+  "cat": "drapeaux",
+  "region": "ouest",
+  "tags": [
+   "drapeau",
+   "flag",
+   "bénin",
+   "benin",
+   "bj",
+   "béninois",
+   "beninese"
+  ],
+  "since": "0.6",
+  "iso": "BJ",
+  "country": {
+   "fr": "Bénin",
+   "en": "Benin"
+  },
+  "body": "<clipPath id=\"afc-bj\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-bj)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"8.8\" height=\"15\" fill=\"#008751\"/><rect x=\"9.8\" y=\"4.5\" width=\"13.2\" height=\"7.5\" fill=\"#FCD116\"/><rect x=\"9.8\" y=\"12\" width=\"13.2\" height=\"7.5\" fill=\"#E8112D\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-bj\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-bj)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"8.8\" height=\"15\" fill=\"#008751\"/><rect x=\"9.8\" y=\"4.5\" width=\"13.2\" height=\"7.5\" fill=\"#FCD116\"/><rect x=\"9.8\" y=\"12\" width=\"13.2\" height=\"7.5\" fill=\"#E8112D\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-botswana",
+  "fr": "Drapeau du Botswana",
+  "en": "Flag of Botswana",
+  "cat": "drapeaux",
+  "region": "australe",
+  "tags": [
+   "drapeau",
+   "flag",
+   "botswana",
+   "botswana",
+   "bw",
+   "botswanais",
+   "motswana"
+  ],
+  "since": "0.6",
+  "iso": "BW",
+  "country": {
+   "fr": "Botswana",
+   "en": "Botswana"
+  },
+  "body": "<clipPath id=\"afc-bw\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-bw)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5.63\" fill=\"#75AADB\"/><rect x=\"1\" y=\"10.13\" width=\"22\" height=\"0.63\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"10.75\" width=\"22\" height=\"2.5\" fill=\"#000000\"/><rect x=\"1\" y=\"13.25\" width=\"22\" height=\"0.62\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"13.88\" width=\"22\" height=\"5.63\" fill=\"#75AADB\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-bw\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-bw)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5.63\" fill=\"#75AADB\"/><rect x=\"1\" y=\"10.13\" width=\"22\" height=\"0.63\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"10.75\" width=\"22\" height=\"2.5\" fill=\"#000000\"/><rect x=\"1\" y=\"13.25\" width=\"22\" height=\"0.62\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"13.88\" width=\"22\" height=\"5.63\" fill=\"#75AADB\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-burkina-faso",
+  "fr": "Drapeau du Burkina Faso",
+  "en": "Flag of Burkina Faso",
+  "cat": "drapeaux",
+  "region": "ouest",
+  "tags": [
+   "drapeau",
+   "flag",
+   "burkina faso",
+   "burkina faso",
+   "bf",
+   "burkinabè",
+   "burkinabe",
+   "faso"
+  ],
+  "since": "0.6",
+  "iso": "BF",
+  "country": {
+   "fr": "Burkina Faso",
+   "en": "Burkina Faso"
+  },
+  "body": "<clipPath id=\"afc-bf\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-bf)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"7.5\" fill=\"#EF2B2D\"/><rect x=\"1\" y=\"12\" width=\"22\" height=\"7.5\" fill=\"#009E49\"/><path d=\"M12 9.2L12.63 11.13L14.66 11.13L13.02 12.33L13.65 14.27L12 13.07L10.35 14.27L10.98 12.33L9.34 11.13L11.37 11.13Z\" fill=\"#FCD116\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-bf\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-bf)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"7.5\" fill=\"#EF2B2D\"/><rect x=\"1\" y=\"12\" width=\"22\" height=\"7.5\" fill=\"#009E49\"/><path d=\"M12 9.2L12.63 11.13L14.66 11.13L13.02 12.33L13.65 14.27L12 13.07L10.35 14.27L10.98 12.33L9.34 11.13L11.37 11.13Z\" fill=\"#FCD116\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-burundi",
+  "fr": "Drapeau du Burundi",
+  "en": "Flag of Burundi",
+  "cat": "drapeaux",
+  "region": "est",
+  "tags": [
+   "drapeau",
+   "flag",
+   "burundi",
+   "burundi",
+   "bi",
+   "burundais",
+   "burundian"
+  ],
+  "since": "0.6",
+  "iso": "BI",
+  "country": {
+   "fr": "Burundi",
+   "en": "Burundi"
+  },
+  "body": "<clipPath id=\"afc-bi\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-bi)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" fill=\"#CE1126\"/><path d=\"M1 4.5L12 12L1 19.5Z\" fill=\"#1EB53A\"/><path d=\"M23 4.5L12 12L23 19.5Z\" fill=\"#1EB53A\"/><path d=\"M1 4.5L23 19.5\" fill=\"none\" stroke=\"#FFFFFF\" stroke-width=\"2.2\"/><path d=\"M1 19.5L23 4.5\" fill=\"none\" stroke=\"#FFFFFF\" stroke-width=\"2.2\"/><circle cx=\"12\" cy=\"12\" r=\"4\" fill=\"#FFFFFF\"/><path d=\"M12 9.35L12.26 9.95L12.91 9.87L12.53 10.4L12.91 10.93L12.26 10.85L12 11.45L11.74 10.85L11.09 10.93L11.48 10.4L11.09 9.87L11.74 9.95Z\" fill=\"#CE1126\"/><path d=\"M10.55 11.9L10.81 12.5L11.46 12.43L11.08 12.95L11.46 13.48L10.81 13.4L10.55 14L10.29 13.4L9.64 13.48L10.03 12.95L9.64 12.43L10.29 12.5Z\" fill=\"#CE1126\"/><path d=\"M13.45 11.9L13.71 12.5L14.36 12.43L13.98 12.95L14.36 13.48L13.71 13.4L13.45 14L13.19 13.4L12.54 13.48L12.93 12.95L12.54 12.43L13.19 12.5Z\" fill=\"#CE1126\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-bi\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-bi)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" fill=\"#CE1126\"/><path d=\"M1 4.5L12 12L1 19.5Z\" fill=\"#1EB53A\"/><path d=\"M23 4.5L12 12L23 19.5Z\" fill=\"#1EB53A\"/><path d=\"M1 4.5L23 19.5\" fill=\"none\" stroke=\"#FFFFFF\" stroke-width=\"2.2\"/><path d=\"M1 19.5L23 4.5\" fill=\"none\" stroke=\"#FFFFFF\" stroke-width=\"2.2\"/><circle cx=\"12\" cy=\"12\" r=\"4\" fill=\"#FFFFFF\"/><path d=\"M12 9.35L12.26 9.95L12.91 9.87L12.53 10.4L12.91 10.93L12.26 10.85L12 11.45L11.74 10.85L11.09 10.93L11.48 10.4L11.09 9.87L11.74 9.95Z\" fill=\"#CE1126\"/><path d=\"M10.55 11.9L10.81 12.5L11.46 12.43L11.08 12.95L11.46 13.48L10.81 13.4L10.55 14L10.29 13.4L9.64 13.48L10.03 12.95L9.64 12.43L10.29 12.5Z\" fill=\"#CE1126\"/><path d=\"M13.45 11.9L13.71 12.5L14.36 12.43L13.98 12.95L14.36 13.48L13.71 13.4L13.45 14L13.19 13.4L12.54 13.48L12.93 12.95L12.54 12.43L13.19 12.5Z\" fill=\"#CE1126\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-cap-vert",
+  "fr": "Drapeau du Cap-Vert",
+  "en": "Flag of Cabo Verde",
+  "cat": "drapeaux",
+  "region": "ouest",
+  "tags": [
+   "drapeau",
+   "flag",
+   "cap-vert",
+   "cabo verde",
+   "cv",
+   "cap-verdien",
+   "cape verdean",
+   "cabo verde"
+  ],
+  "since": "0.6",
+  "iso": "CV",
+  "country": {
+   "fr": "Cap-Vert",
+   "en": "Cabo Verde"
+  },
+  "body": "<clipPath id=\"afc-cv\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-cv)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"7.5\" fill=\"#003893\"/><rect x=\"1\" y=\"12\" width=\"22\" height=\"1.25\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"13.25\" width=\"22\" height=\"1.25\" fill=\"#CF2027\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"1.25\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"15.75\" width=\"22\" height=\"3.75\" fill=\"#003893\"/><path d=\"M9.25 9.53L9.42 10.04L9.96 10.04L9.52 10.36L9.69 10.88L9.25 10.56L8.81 10.88L8.98 10.36L8.54 10.04L9.08 10.04Z\" fill=\"#F7D116\"/><path d=\"M11.37 10.21L11.53 10.73L12.08 10.73L11.64 11.05L11.81 11.57L11.37 11.25L10.93 11.57L11.09 11.05L10.65 10.73L11.2 10.73Z\" fill=\"#F7D116\"/><path d=\"M12.67 12.01L12.84 12.53L13.39 12.53L12.95 12.85L13.11 13.37L12.67 13.05L12.23 13.37L12.4 12.85L11.96 12.53L12.51 12.53Z\" fill=\"#F7D116\"/><path d=\"M12.67 14.24L12.84 14.76L13.39 14.76L12.95 15.08L13.11 15.59L12.67 15.27L12.23 15.59L12.4 15.08L11.96 14.76L12.51 14.76Z\" fill=\"#F7D116\"/><path d=\"M11.37 16.04L11.53 16.56L12.08 16.56L11.64 16.88L11.81 17.39L11.37 17.07L10.93 17.39L11.09 16.88L10.65 16.56L11.2 16.56Z\" fill=\"#F7D116\"/><path d=\"M9.25 16.73L9.42 17.24L9.96 17.24L9.52 17.56L9.69 18.08L9.25 17.76L8.81 18.08L8.98 17.56L8.54 17.24L9.08 17.24Z\" fill=\"#F7D116\"/><path d=\"M7.13 16.04L7.3 16.56L7.85 16.56L7.41 16.88L7.57 17.39L7.13 17.07L6.69 17.39L6.86 16.88L6.42 16.56L6.97 16.56Z\" fill=\"#F7D116\"/><path d=\"M5.83 14.24L5.99 14.76L6.54 14.76L6.1 15.08L6.27 15.59L5.83 15.27L5.39 15.59L5.55 15.08L5.11 14.76L5.66 14.76Z\" fill=\"#F7D116\"/><path d=\"M5.83 12.01L5.99 12.53L6.54 12.53L6.1 12.85L6.27 13.37L5.83 13.05L5.39 13.37L5.55 12.85L5.11 12.53L5.66 12.53Z\" fill=\"#F7D116\"/><path d=\"M7.13 10.21L7.3 10.73L7.85 10.73L7.41 11.05L7.57 11.57L7.13 11.25L6.69 11.57L6.86 11.05L6.42 10.73L6.97 10.73Z\" fill=\"#F7D116\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-cv\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-cv)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"7.5\" fill=\"#003893\"/><rect x=\"1\" y=\"12\" width=\"22\" height=\"1.25\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"13.25\" width=\"22\" height=\"1.25\" fill=\"#CF2027\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"1.25\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"15.75\" width=\"22\" height=\"3.75\" fill=\"#003893\"/><path d=\"M9.25 9.53L9.42 10.04L9.96 10.04L9.52 10.36L9.69 10.88L9.25 10.56L8.81 10.88L8.98 10.36L8.54 10.04L9.08 10.04Z\" fill=\"#F7D116\"/><path d=\"M11.37 10.21L11.53 10.73L12.08 10.73L11.64 11.05L11.81 11.57L11.37 11.25L10.93 11.57L11.09 11.05L10.65 10.73L11.2 10.73Z\" fill=\"#F7D116\"/><path d=\"M12.67 12.01L12.84 12.53L13.39 12.53L12.95 12.85L13.11 13.37L12.67 13.05L12.23 13.37L12.4 12.85L11.96 12.53L12.51 12.53Z\" fill=\"#F7D116\"/><path d=\"M12.67 14.24L12.84 14.76L13.39 14.76L12.95 15.08L13.11 15.59L12.67 15.27L12.23 15.59L12.4 15.08L11.96 14.76L12.51 14.76Z\" fill=\"#F7D116\"/><path d=\"M11.37 16.04L11.53 16.56L12.08 16.56L11.64 16.88L11.81 17.39L11.37 17.07L10.93 17.39L11.09 16.88L10.65 16.56L11.2 16.56Z\" fill=\"#F7D116\"/><path d=\"M9.25 16.73L9.42 17.24L9.96 17.24L9.52 17.56L9.69 18.08L9.25 17.76L8.81 18.08L8.98 17.56L8.54 17.24L9.08 17.24Z\" fill=\"#F7D116\"/><path d=\"M7.13 16.04L7.3 16.56L7.85 16.56L7.41 16.88L7.57 17.39L7.13 17.07L6.69 17.39L6.86 16.88L6.42 16.56L6.97 16.56Z\" fill=\"#F7D116\"/><path d=\"M5.83 14.24L5.99 14.76L6.54 14.76L6.1 15.08L6.27 15.59L5.83 15.27L5.39 15.59L5.55 15.08L5.11 14.76L5.66 14.76Z\" fill=\"#F7D116\"/><path d=\"M5.83 12.01L5.99 12.53L6.54 12.53L6.1 12.85L6.27 13.37L5.83 13.05L5.39 13.37L5.55 12.85L5.11 12.53L5.66 12.53Z\" fill=\"#F7D116\"/><path d=\"M7.13 10.21L7.3 10.73L7.85 10.73L7.41 11.05L7.57 11.57L7.13 11.25L6.69 11.57L6.86 11.05L6.42 10.73L6.97 10.73Z\" fill=\"#F7D116\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-cameroun",
+  "fr": "Drapeau du Cameroun",
+  "en": "Flag of Cameroon",
+  "cat": "drapeaux",
+  "region": "centre",
+  "tags": [
+   "drapeau",
+   "flag",
+   "cameroun",
+   "cameroon",
+   "cm",
+   "camerounais",
+   "cameroonian",
+   "kamerun"
+  ],
+  "since": "0.6",
+  "iso": "CM",
+  "country": {
+   "fr": "Cameroun",
+   "en": "Cameroon"
+  },
+  "body": "<clipPath id=\"afc-cm\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-cm)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#007A5E\"/><rect x=\"8.33\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#CE1126\"/><rect x=\"15.67\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#FCD116\"/><path d=\"M12 9.6L12.54 11.26L14.28 11.26L12.87 12.28L13.41 13.94L12 12.92L10.59 13.94L11.13 12.28L9.72 11.26L11.46 11.26Z\" fill=\"#FCD116\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-cm\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-cm)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#007A5E\"/><rect x=\"8.33\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#CE1126\"/><rect x=\"15.67\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#FCD116\"/><path d=\"M12 9.6L12.54 11.26L14.28 11.26L12.87 12.28L13.41 13.94L12 12.92L10.59 13.94L11.13 12.28L9.72 11.26L11.46 11.26Z\" fill=\"#FCD116\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-centrafrique",
+  "fr": "Drapeau de la Centrafrique",
+  "en": "Flag of the Central African Republic",
+  "cat": "drapeaux",
+  "region": "centre",
+  "tags": [
+   "drapeau",
+   "flag",
+   "centrafrique",
+   "central african republic",
+   "cf",
+   "centrafricain",
+   "rca",
+   "car"
+  ],
+  "since": "0.6",
+  "iso": "CF",
+  "country": {
+   "fr": "Centrafrique",
+   "en": "Central African Republic"
+  },
+  "body": "<clipPath id=\"afc-cf\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-cf)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"3.75\" fill=\"#003082\"/><rect x=\"1\" y=\"8.25\" width=\"22\" height=\"3.75\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"12\" width=\"22\" height=\"3.75\" fill=\"#289728\"/><rect x=\"1\" y=\"15.75\" width=\"22\" height=\"3.75\" fill=\"#FFCE00\"/><rect x=\"10.24\" y=\"4.5\" width=\"3.52\" height=\"15\" fill=\"#D21034\"/><path d=\"M4.52 5.08L4.81 5.97L5.76 5.97L4.99 6.53L5.28 7.43L4.52 6.87L3.76 7.43L4.05 6.53L3.28 5.97L4.23 5.97Z\" fill=\"#FFCE00\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-cf\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-cf)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"3.75\" fill=\"#003082\"/><rect x=\"1\" y=\"8.25\" width=\"22\" height=\"3.75\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"12\" width=\"22\" height=\"3.75\" fill=\"#289728\"/><rect x=\"1\" y=\"15.75\" width=\"22\" height=\"3.75\" fill=\"#FFCE00\"/><rect x=\"10.24\" y=\"4.5\" width=\"3.52\" height=\"15\" fill=\"#D21034\"/><path d=\"M4.52 5.08L4.81 5.97L5.76 5.97L4.99 6.53L5.28 7.43L4.52 6.87L3.76 7.43L4.05 6.53L3.28 5.97L4.23 5.97Z\" fill=\"#FFCE00\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-tchad",
+  "fr": "Drapeau du Tchad",
+  "en": "Flag of Chad",
+  "cat": "drapeaux",
+  "region": "centre",
+  "tags": [
+   "drapeau",
+   "flag",
+   "tchad",
+   "chad",
+   "td",
+   "tchadien",
+   "chadian"
+  ],
+  "since": "0.6",
+  "iso": "TD",
+  "country": {
+   "fr": "Tchad",
+   "en": "Chad"
+  },
+  "body": "<clipPath id=\"afc-td\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-td)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#002664\"/><rect x=\"8.33\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#FECB00\"/><rect x=\"15.67\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#C60C30\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-td\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-td)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#002664\"/><rect x=\"8.33\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#FECB00\"/><rect x=\"15.67\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#C60C30\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-comores",
+  "fr": "Drapeau des Comores",
+  "en": "Flag of the Comoros",
+  "cat": "drapeaux",
+  "region": "est",
+  "tags": [
+   "drapeau",
+   "flag",
+   "comores",
+   "comoros",
+   "km",
+   "comorien",
+   "comorian",
+   "komori"
+  ],
+  "since": "0.6",
+  "iso": "KM",
+  "country": {
+   "fr": "Comores",
+   "en": "Comoros"
+  },
+  "body": "<clipPath id=\"afc-km\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-km)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"3.75\" fill=\"#FFC61E\"/><rect x=\"1\" y=\"8.25\" width=\"22\" height=\"3.75\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"12\" width=\"22\" height=\"3.75\" fill=\"#CE1126\"/><rect x=\"1\" y=\"15.75\" width=\"22\" height=\"3.75\" fill=\"#3A75C4\"/><path d=\"M1 4.5L10.24 12L1 19.5Z\" fill=\"#3D8E33\"/><path d=\"M5.96 9.66A3 3 0 1 0 5.96 14.34A2.5 2.5 0 1 1 5.96 9.66Z\" fill=\"#FFFFFF\"/><path d=\"M5.51 8.95L5.62 9.3L5.99 9.3L5.69 9.51L5.8 9.85L5.51 9.64L5.22 9.85L5.33 9.51L5.03 9.3L5.4 9.3Z\" fill=\"#FFFFFF\"/><path d=\"M5.51 10.6L5.62 10.95L5.99 10.95L5.69 11.16L5.8 11.5L5.51 11.29L5.22 11.5L5.33 11.16L5.03 10.95L5.4 10.95Z\" fill=\"#FFFFFF\"/><path d=\"M5.51 12.4L5.62 12.75L5.99 12.75L5.69 12.96L5.8 13.3L5.51 13.09L5.22 13.3L5.33 12.96L5.03 12.75L5.4 12.75Z\" fill=\"#FFFFFF\"/><path d=\"M5.51 14.05L5.62 14.4L5.99 14.4L5.69 14.61L5.8 14.95L5.51 14.74L5.22 14.95L5.33 14.61L5.03 14.4L5.4 14.4Z\" fill=\"#FFFFFF\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-km\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-km)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"3.75\" fill=\"#FFC61E\"/><rect x=\"1\" y=\"8.25\" width=\"22\" height=\"3.75\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"12\" width=\"22\" height=\"3.75\" fill=\"#CE1126\"/><rect x=\"1\" y=\"15.75\" width=\"22\" height=\"3.75\" fill=\"#3A75C4\"/><path d=\"M1 4.5L10.24 12L1 19.5Z\" fill=\"#3D8E33\"/><path d=\"M5.96 9.66A3 3 0 1 0 5.96 14.34A2.5 2.5 0 1 1 5.96 9.66Z\" fill=\"#FFFFFF\"/><path d=\"M5.51 8.95L5.62 9.3L5.99 9.3L5.69 9.51L5.8 9.85L5.51 9.64L5.22 9.85L5.33 9.51L5.03 9.3L5.4 9.3Z\" fill=\"#FFFFFF\"/><path d=\"M5.51 10.6L5.62 10.95L5.99 10.95L5.69 11.16L5.8 11.5L5.51 11.29L5.22 11.5L5.33 11.16L5.03 10.95L5.4 10.95Z\" fill=\"#FFFFFF\"/><path d=\"M5.51 12.4L5.62 12.75L5.99 12.75L5.69 12.96L5.8 13.3L5.51 13.09L5.22 13.3L5.33 12.96L5.03 12.75L5.4 12.75Z\" fill=\"#FFFFFF\"/><path d=\"M5.51 14.05L5.62 14.4L5.99 14.4L5.69 14.61L5.8 14.95L5.51 14.74L5.22 14.95L5.33 14.61L5.03 14.4L5.4 14.4Z\" fill=\"#FFFFFF\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-congo",
+  "fr": "Drapeau du Congo",
+  "en": "Flag of the Republic of the Congo",
+  "cat": "drapeaux",
+  "region": "centre",
+  "tags": [
+   "drapeau",
+   "flag",
+   "congo",
+   "republic of the congo",
+   "cg",
+   "congolais",
+   "brazzaville",
+   "congolese"
+  ],
+  "since": "0.6",
+  "iso": "CG",
+  "country": {
+   "fr": "Congo",
+   "en": "Republic of the Congo"
+  },
+  "body": "<clipPath id=\"afc-cg\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-cg)\" stroke=\"none\"><path d=\"M1 4.5L23 4.5L1 19.5Z\" fill=\"#009543\"/><path d=\"M23 4.5L23 19.5L1 19.5Z\" fill=\"#DC241F\"/><path d=\"M0.15 23.59L27.11 5.21L23.85 0.41L-3.11 18.79Z\" fill=\"#FBDE4A\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-cg\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-cg)\" stroke=\"none\"><path d=\"M1 4.5L23 4.5L1 19.5Z\" fill=\"#009543\"/><path d=\"M23 4.5L23 19.5L1 19.5Z\" fill=\"#DC241F\"/><path d=\"M0.15 23.59L27.11 5.21L23.85 0.41L-3.11 18.79Z\" fill=\"#FBDE4A\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-rd-congo",
+  "fr": "Drapeau de la RD Congo",
+  "en": "Flag of the DR Congo",
+  "cat": "drapeaux",
+  "region": "centre",
+  "tags": [
+   "drapeau",
+   "flag",
+   "rd congo",
+   "dr congo",
+   "cd",
+   "congolais",
+   "kinshasa",
+   "rdc",
+   "drc"
+  ],
+  "since": "0.6",
+  "iso": "CD",
+  "country": {
+   "fr": "RD Congo",
+   "en": "DR Congo"
+  },
+  "body": "<clipPath id=\"afc-cd\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-cd)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" fill=\"#007FFF\"/><path d=\"M-0.01 23.34L26.94 4.96L24.01 0.66L-2.94 19.04Z\" fill=\"#F7D618\"/><path d=\"M-0.44 22.72L26.52 4.34L24.44 1.28L-2.52 19.66Z\" fill=\"#CE1021\"/><path d=\"M4.74 5.85L5.28 7.51L7.02 7.51L5.61 8.53L6.15 10.19L4.74 9.17L3.33 10.19L3.87 8.53L2.46 7.51L4.2 7.51Z\" fill=\"#F7D618\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-cd\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-cd)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" fill=\"#007FFF\"/><path d=\"M-0.01 23.34L26.94 4.96L24.01 0.66L-2.94 19.04Z\" fill=\"#F7D618\"/><path d=\"M-0.44 22.72L26.52 4.34L24.44 1.28L-2.52 19.66Z\" fill=\"#CE1021\"/><path d=\"M4.74 5.85L5.28 7.51L7.02 7.51L5.61 8.53L6.15 10.19L4.74 9.17L3.33 10.19L3.87 8.53L2.46 7.51L4.2 7.51Z\" fill=\"#F7D618\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-cote-d-ivoire",
+  "fr": "Drapeau de la Côte d'Ivoire",
+  "en": "Flag of Côte d'Ivoire",
+  "cat": "drapeaux",
+  "region": "ouest",
+  "tags": [
+   "drapeau",
+   "flag",
+   "côte d'ivoire",
+   "côte d'ivoire",
+   "ci",
+   "ivoirien",
+   "ivorian",
+   "ivory coast"
+  ],
+  "since": "0.6",
+  "iso": "CI",
+  "country": {
+   "fr": "Côte d'Ivoire",
+   "en": "Côte d'Ivoire"
+  },
+  "body": "<clipPath id=\"afc-ci\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ci)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#F77F00\"/><rect x=\"8.33\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#FFFFFF\"/><rect x=\"15.67\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#009E60\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-ci\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ci)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#F77F00\"/><rect x=\"8.33\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#FFFFFF\"/><rect x=\"15.67\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#009E60\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-djibouti",
+  "fr": "Drapeau de Djibouti",
+  "en": "Flag of Djibouti",
+  "cat": "drapeaux",
+  "region": "est",
+  "tags": [
+   "drapeau",
+   "flag",
+   "djibouti",
+   "djibouti",
+   "dj",
+   "djiboutien",
+   "djiboutian"
+  ],
+  "since": "0.6",
+  "iso": "DJ",
+  "country": {
+   "fr": "Djibouti",
+   "en": "Djibouti"
+  },
+  "body": "<clipPath id=\"afc-dj\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-dj)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"7.5\" fill=\"#6AB2E7\"/><rect x=\"1\" y=\"12\" width=\"22\" height=\"7.5\" fill=\"#12AD2B\"/><path d=\"M1 4.5L11.12 12L1 19.5Z\" fill=\"#FFFFFF\"/><path d=\"M4.08 10.3L4.46 11.47L5.7 11.47L4.7 12.2L5.08 13.38L4.08 12.65L3.08 13.38L3.46 12.2L2.46 11.47L3.7 11.47Z\" fill=\"#D7141A\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-dj\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-dj)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"7.5\" fill=\"#6AB2E7\"/><rect x=\"1\" y=\"12\" width=\"22\" height=\"7.5\" fill=\"#12AD2B\"/><path d=\"M1 4.5L11.12 12L1 19.5Z\" fill=\"#FFFFFF\"/><path d=\"M4.08 10.3L4.46 11.47L5.7 11.47L4.7 12.2L5.08 13.38L4.08 12.65L3.08 13.38L3.46 12.2L2.46 11.47L3.7 11.47Z\" fill=\"#D7141A\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-egypte",
+  "fr": "Drapeau de l'Égypte",
+  "en": "Flag of Egypt",
+  "cat": "drapeaux",
+  "region": "nord",
+  "tags": [
+   "drapeau",
+   "flag",
+   "égypte",
+   "egypt",
+   "eg",
+   "égyptien",
+   "egyptian",
+   "misr"
+  ],
+  "since": "0.6",
+  "iso": "EG",
+  "country": {
+   "fr": "Égypte",
+   "en": "Egypt"
+  },
+  "body": "<clipPath id=\"afc-eg\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-eg)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5\" fill=\"#CE1126\"/><rect x=\"1\" y=\"9.5\" width=\"22\" height=\"5\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"5\" fill=\"#000000\"/><path d=\"M10 10.6L12 11.2L14 10.6L13.3 12.4L12.6 12.2V13.6H11.4V12.2L10.7 12.4Z\" fill=\"#C09300\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-eg\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-eg)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5\" fill=\"#CE1126\"/><rect x=\"1\" y=\"9.5\" width=\"22\" height=\"5\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"5\" fill=\"#000000\"/><path d=\"M10 10.6L12 11.2L14 10.6L13.3 12.4L12.6 12.2V13.6H11.4V12.2L10.7 12.4Z\" fill=\"#C09300\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-guinee-equatoriale",
+  "fr": "Drapeau de la Guinée équatoriale",
+  "en": "Flag of Equatorial Guinea",
+  "cat": "drapeaux",
+  "region": "centre",
+  "tags": [
+   "drapeau",
+   "flag",
+   "guinée équatoriale",
+   "equatorial guinea",
+   "gq",
+   "équato-guinéen",
+   "equatoguinean"
+  ],
+  "since": "0.6",
+  "iso": "GQ",
+  "country": {
+   "fr": "Guinée équatoriale",
+   "en": "Equatorial Guinea"
+  },
+  "body": "<clipPath id=\"afc-gq\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-gq)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5\" fill=\"#3E9A00\"/><rect x=\"1\" y=\"9.5\" width=\"22\" height=\"5\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"5\" fill=\"#E32118\"/><path d=\"M1 4.5L5.84 12L1 19.5Z\" fill=\"#0073CE\"/><path d=\"M11.2 10.6H12.8V12.4A.8 .8 0 0 1 11.2 12.4Z\" fill=\"#A7A7A7\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-gq\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-gq)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5\" fill=\"#3E9A00\"/><rect x=\"1\" y=\"9.5\" width=\"22\" height=\"5\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"5\" fill=\"#E32118\"/><path d=\"M1 4.5L5.84 12L1 19.5Z\" fill=\"#0073CE\"/><path d=\"M11.2 10.6H12.8V12.4A.8 .8 0 0 1 11.2 12.4Z\" fill=\"#A7A7A7\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-erythree",
+  "fr": "Drapeau de l'Érythrée",
+  "en": "Flag of Eritrea",
+  "cat": "drapeaux",
+  "region": "est",
+  "tags": [
+   "drapeau",
+   "flag",
+   "érythrée",
+   "eritrea",
+   "er",
+   "érythréen",
+   "eritrean"
+  ],
+  "since": "0.6",
+  "iso": "ER",
+  "country": {
+   "fr": "Érythrée",
+   "en": "Eritrea"
+  },
+  "body": "<clipPath id=\"afc-er\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-er)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"7.5\" fill=\"#12AD2B\"/><rect x=\"1\" y=\"12\" width=\"22\" height=\"7.5\" fill=\"#4189DD\"/><path d=\"M1 4.5L23 12L1 19.5Z\" fill=\"#EA0437\"/><circle cx=\"5.84\" cy=\"12\" r=\"2.7\" fill=\"none\" stroke=\"#FFC726\" stroke-width=\"0.7\"/><path d=\"M5.84 10.2L5.84 14.4\" fill=\"none\" stroke=\"#FFC726\" stroke-width=\"0.6\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-er\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-er)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"7.5\" fill=\"#12AD2B\"/><rect x=\"1\" y=\"12\" width=\"22\" height=\"7.5\" fill=\"#4189DD\"/><path d=\"M1 4.5L23 12L1 19.5Z\" fill=\"#EA0437\"/><circle cx=\"5.84\" cy=\"12\" r=\"2.7\" fill=\"none\" stroke=\"#FFC726\" stroke-width=\"0.7\"/><path d=\"M5.84 10.2L5.84 14.4\" fill=\"none\" stroke=\"#FFC726\" stroke-width=\"0.6\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-eswatini",
+  "fr": "Drapeau de l'Eswatini",
+  "en": "Flag of Eswatini",
+  "cat": "drapeaux",
+  "region": "australe",
+  "tags": [
+   "drapeau",
+   "flag",
+   "eswatini",
+   "eswatini",
+   "sz",
+   "swazi",
+   "swaziland",
+   "eswatini"
+  ],
+  "since": "0.6",
+  "iso": "SZ",
+  "country": {
+   "fr": "Eswatini",
+   "en": "Eswatini"
+  },
+  "body": "<clipPath id=\"afc-sz\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-sz)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"2.81\" fill=\"#3E5EB9\"/><rect x=\"1\" y=\"7.31\" width=\"22\" height=\"0.94\" fill=\"#FFD900\"/><rect x=\"1\" y=\"8.25\" width=\"22\" height=\"7.5\" fill=\"#B10C0C\"/><rect x=\"1\" y=\"15.75\" width=\"22\" height=\"0.94\" fill=\"#FFD900\"/><rect x=\"1\" y=\"16.69\" width=\"22\" height=\"2.81\" fill=\"#3E5EB9\"/><path d=\"M4.96 12L19.04 12\" fill=\"none\" stroke=\"#FFD900\" stroke-width=\"0.5\"/><ellipse cx=\"12\" cy=\"12\" rx=\"4.6\" ry=\"2.4\" fill=\"#FFFFFF\"/><path d=\"M12 9.6A4.6 2.4 0 0 1 12 14.4Z\" fill=\"#000000\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-sz\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-sz)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"2.81\" fill=\"#3E5EB9\"/><rect x=\"1\" y=\"7.31\" width=\"22\" height=\"0.94\" fill=\"#FFD900\"/><rect x=\"1\" y=\"8.25\" width=\"22\" height=\"7.5\" fill=\"#B10C0C\"/><rect x=\"1\" y=\"15.75\" width=\"22\" height=\"0.94\" fill=\"#FFD900\"/><rect x=\"1\" y=\"16.69\" width=\"22\" height=\"2.81\" fill=\"#3E5EB9\"/><path d=\"M4.96 12L19.04 12\" fill=\"none\" stroke=\"#FFD900\" stroke-width=\"0.5\"/><ellipse cx=\"12\" cy=\"12\" rx=\"4.6\" ry=\"2.4\" fill=\"#FFFFFF\"/><path d=\"M12 9.6A4.6 2.4 0 0 1 12 14.4Z\" fill=\"#000000\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-ethiopie",
+  "fr": "Drapeau de l'Éthiopie",
+  "en": "Flag of Ethiopia",
+  "cat": "drapeaux",
+  "region": "est",
+  "tags": [
+   "drapeau",
+   "flag",
+   "éthiopie",
+   "ethiopia",
+   "et",
+   "éthiopien",
+   "ethiopian",
+   "abyssinie"
+  ],
+  "since": "0.6",
+  "iso": "ET",
+  "country": {
+   "fr": "Éthiopie",
+   "en": "Ethiopia"
+  },
+  "body": "<clipPath id=\"afc-et\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-et)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5\" fill=\"#078930\"/><rect x=\"1\" y=\"9.5\" width=\"22\" height=\"5\" fill=\"#FCDD09\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"5\" fill=\"#DA121A\"/><circle cx=\"12\" cy=\"12\" r=\"4.3\" fill=\"#0F47AF\"/><path d=\"M12 9.3L13.76 14.73L9.15 11.37L14.85 11.37L10.24 14.73Z\" fill=\"none\" stroke=\"#FCDD09\" stroke-width=\"0.6\" stroke-linejoin=\"miter\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-et\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-et)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5\" fill=\"#078930\"/><rect x=\"1\" y=\"9.5\" width=\"22\" height=\"5\" fill=\"#FCDD09\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"5\" fill=\"#DA121A\"/><circle cx=\"12\" cy=\"12\" r=\"4.3\" fill=\"#0F47AF\"/><path d=\"M12 9.3L13.76 14.73L9.15 11.37L14.85 11.37L10.24 14.73Z\" fill=\"none\" stroke=\"#FCDD09\" stroke-width=\"0.6\" stroke-linejoin=\"miter\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-gabon",
+  "fr": "Drapeau du Gabon",
+  "en": "Flag of Gabon",
+  "cat": "drapeaux",
+  "region": "centre",
+  "tags": [
+   "drapeau",
+   "flag",
+   "gabon",
+   "gabon",
+   "ga",
+   "gabonais",
+   "gabonese"
+  ],
+  "since": "0.6",
+  "iso": "GA",
+  "country": {
+   "fr": "Gabon",
+   "en": "Gabon"
+  },
+  "body": "<clipPath id=\"afc-ga\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ga)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5\" fill=\"#009E60\"/><rect x=\"1\" y=\"9.5\" width=\"22\" height=\"5\" fill=\"#FCD116\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"5\" fill=\"#3A75C4\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-ga\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ga)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5\" fill=\"#009E60\"/><rect x=\"1\" y=\"9.5\" width=\"22\" height=\"5\" fill=\"#FCD116\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"5\" fill=\"#3A75C4\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-gambie",
+  "fr": "Drapeau de la Gambie",
+  "en": "Flag of the Gambia",
+  "cat": "drapeaux",
+  "region": "ouest",
+  "tags": [
+   "drapeau",
+   "flag",
+   "gambie",
+   "the gambia",
+   "gm",
+   "gambien",
+   "gambian"
+  ],
+  "since": "0.6",
+  "iso": "GM",
+  "country": {
+   "fr": "Gambie",
+   "en": "The Gambia"
+  },
+  "body": "<clipPath id=\"afc-gm\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-gm)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5\" fill=\"#CE1126\"/><rect x=\"1\" y=\"9.5\" width=\"22\" height=\"0.83\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"10.33\" width=\"22\" height=\"3.33\" fill=\"#0C1C8C\"/><rect x=\"1\" y=\"13.67\" width=\"22\" height=\"0.83\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"5\" fill=\"#3A7728\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-gm\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-gm)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5\" fill=\"#CE1126\"/><rect x=\"1\" y=\"9.5\" width=\"22\" height=\"0.83\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"10.33\" width=\"22\" height=\"3.33\" fill=\"#0C1C8C\"/><rect x=\"1\" y=\"13.67\" width=\"22\" height=\"0.83\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"5\" fill=\"#3A7728\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-ghana",
+  "fr": "Drapeau du Ghana",
+  "en": "Flag of Ghana",
+  "cat": "drapeaux",
+  "region": "ouest",
+  "tags": [
+   "drapeau",
+   "flag",
+   "ghana",
+   "ghana",
+   "gh",
+   "ghanéen",
+   "ghanaian"
+  ],
+  "since": "0.6",
+  "iso": "GH",
+  "country": {
+   "fr": "Ghana",
+   "en": "Ghana"
+  },
+  "body": "<clipPath id=\"afc-gh\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-gh)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5\" fill=\"#CE1126\"/><rect x=\"1\" y=\"9.5\" width=\"22\" height=\"5\" fill=\"#FCD116\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"5\" fill=\"#006B3F\"/><path d=\"M12 9.5L12.56 11.23L14.38 11.23L12.91 12.3L13.47 14.02L12 12.96L10.53 14.02L11.09 12.3L9.62 11.23L11.44 11.23Z\" fill=\"#000000\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-gh\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-gh)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5\" fill=\"#CE1126\"/><rect x=\"1\" y=\"9.5\" width=\"22\" height=\"5\" fill=\"#FCD116\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"5\" fill=\"#006B3F\"/><path d=\"M12 9.5L12.56 11.23L14.38 11.23L12.91 12.3L13.47 14.02L12 12.96L10.53 14.02L11.09 12.3L9.62 11.23L11.44 11.23Z\" fill=\"#000000\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-guinee",
+  "fr": "Drapeau de la Guinée",
+  "en": "Flag of Guinea",
+  "cat": "drapeaux",
+  "region": "ouest",
+  "tags": [
+   "drapeau",
+   "flag",
+   "guinée",
+   "guinea",
+   "gn",
+   "guinéen",
+   "guinean",
+   "conakry"
+  ],
+  "since": "0.6",
+  "iso": "GN",
+  "country": {
+   "fr": "Guinée",
+   "en": "Guinea"
+  },
+  "body": "<clipPath id=\"afc-gn\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-gn)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#CE1126\"/><rect x=\"8.33\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#FCD116\"/><rect x=\"15.67\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#009460\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-gn\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-gn)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#CE1126\"/><rect x=\"8.33\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#FCD116\"/><rect x=\"15.67\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#009460\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-guinee-bissau",
+  "fr": "Drapeau de la Guinée-Bissau",
+  "en": "Flag of Guinea-Bissau",
+  "cat": "drapeaux",
+  "region": "ouest",
+  "tags": [
+   "drapeau",
+   "flag",
+   "guinée-bissau",
+   "guinea-bissau",
+   "gw",
+   "bissau-guinéen",
+   "bissau-guinean"
+  ],
+  "since": "0.6",
+  "iso": "GW",
+  "country": {
+   "fr": "Guinée-Bissau",
+   "en": "Guinea-Bissau"
+  },
+  "body": "<clipPath id=\"afc-gw\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-gw)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#CE1126\"/><rect x=\"8.33\" y=\"4.5\" width=\"14.67\" height=\"7.5\" fill=\"#FCD116\"/><rect x=\"8.33\" y=\"12\" width=\"14.67\" height=\"7.5\" fill=\"#009E49\"/><path d=\"M4.67 9.8L5.16 11.32L6.76 11.32L5.47 12.26L5.96 13.78L4.67 12.84L3.37 13.78L3.87 12.26L2.57 11.32L4.17 11.32Z\" fill=\"#000000\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-gw\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-gw)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#CE1126\"/><rect x=\"8.33\" y=\"4.5\" width=\"14.67\" height=\"7.5\" fill=\"#FCD116\"/><rect x=\"8.33\" y=\"12\" width=\"14.67\" height=\"7.5\" fill=\"#009E49\"/><path d=\"M4.67 9.8L5.16 11.32L6.76 11.32L5.47 12.26L5.96 13.78L4.67 12.84L3.37 13.78L3.87 12.26L2.57 11.32L4.17 11.32Z\" fill=\"#000000\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-kenya",
+  "fr": "Drapeau du Kenya",
+  "en": "Flag of Kenya",
+  "cat": "drapeaux",
+  "region": "est",
+  "tags": [
+   "drapeau",
+   "flag",
+   "kenya",
+   "kenya",
+   "ke",
+   "kényan",
+   "kenyan",
+   "maasai"
+  ],
+  "since": "0.6",
+  "iso": "KE",
+  "country": {
+   "fr": "Kenya",
+   "en": "Kenya"
+  },
+  "body": "<clipPath id=\"afc-ke\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ke)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"4.5\" fill=\"#000000\"/><rect x=\"1\" y=\"9\" width=\"22\" height=\"0.75\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"9.75\" width=\"22\" height=\"4.5\" fill=\"#BB0000\"/><rect x=\"1\" y=\"14.25\" width=\"22\" height=\"0.75\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"15\" width=\"22\" height=\"4.5\" fill=\"#006600\"/><path d=\"M9.36 17.4L14.64 6.6\" fill=\"none\" stroke=\"#FFFFFF\" stroke-width=\"0.5\"/><path d=\"M14.64 17.4L9.36 6.6\" fill=\"none\" stroke=\"#FFFFFF\" stroke-width=\"0.5\"/><ellipse cx=\"12\" cy=\"12\" rx=\"2.1\" ry=\"4.9\" fill=\"#000000\"/><ellipse cx=\"12\" cy=\"12\" rx=\"1.05\" ry=\"4.9\" fill=\"#BB0000\"/><ellipse cx=\"12\" cy=\"12\" rx=\".35\" ry=\"1.3\" fill=\"#FFFFFF\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-ke\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ke)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"4.5\" fill=\"#000000\"/><rect x=\"1\" y=\"9\" width=\"22\" height=\"0.75\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"9.75\" width=\"22\" height=\"4.5\" fill=\"#BB0000\"/><rect x=\"1\" y=\"14.25\" width=\"22\" height=\"0.75\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"15\" width=\"22\" height=\"4.5\" fill=\"#006600\"/><path d=\"M9.36 17.4L14.64 6.6\" fill=\"none\" stroke=\"#FFFFFF\" stroke-width=\"0.5\"/><path d=\"M14.64 17.4L9.36 6.6\" fill=\"none\" stroke=\"#FFFFFF\" stroke-width=\"0.5\"/><ellipse cx=\"12\" cy=\"12\" rx=\"2.1\" ry=\"4.9\" fill=\"#000000\"/><ellipse cx=\"12\" cy=\"12\" rx=\"1.05\" ry=\"4.9\" fill=\"#BB0000\"/><ellipse cx=\"12\" cy=\"12\" rx=\".35\" ry=\"1.3\" fill=\"#FFFFFF\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-lesotho",
+  "fr": "Drapeau du Lesotho",
+  "en": "Flag of Lesotho",
+  "cat": "drapeaux",
+  "region": "australe",
+  "tags": [
+   "drapeau",
+   "flag",
+   "lesotho",
+   "lesotho",
+   "ls",
+   "lesothan",
+   "basotho",
+   "mokorotlo"
+  ],
+  "since": "0.6",
+  "iso": "LS",
+  "country": {
+   "fr": "Lesotho",
+   "en": "Lesotho"
+  },
+  "body": "<clipPath id=\"afc-ls\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ls)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"4.5\" fill=\"#00209F\"/><rect x=\"1\" y=\"9\" width=\"22\" height=\"6\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"15\" width=\"22\" height=\"4.5\" fill=\"#009543\"/><path d=\"M9.3 13.3H14.7L12 9.6Z\" fill=\"#000000\"/><path d=\"M8.8 13.3Q12 14.4 15.2 13.3\" fill=\"none\" stroke=\"#000000\" stroke-width=\".6\"/><circle cx=\"12\" cy=\"9.3\" r=\".45\" fill=\"#000000\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-ls\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ls)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"4.5\" fill=\"#00209F\"/><rect x=\"1\" y=\"9\" width=\"22\" height=\"6\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"15\" width=\"22\" height=\"4.5\" fill=\"#009543\"/><path d=\"M9.3 13.3H14.7L12 9.6Z\" fill=\"#000000\"/><path d=\"M8.8 13.3Q12 14.4 15.2 13.3\" fill=\"none\" stroke=\"#000000\" stroke-width=\".6\"/><circle cx=\"12\" cy=\"9.3\" r=\".45\" fill=\"#000000\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-liberia",
+  "fr": "Drapeau du Liberia",
+  "en": "Flag of Liberia",
+  "cat": "drapeaux",
+  "region": "ouest",
+  "tags": [
+   "drapeau",
+   "flag",
+   "liberia",
+   "liberia",
+   "lr",
+   "libérien",
+   "liberian",
+   "lone star"
+  ],
+  "since": "0.6",
+  "iso": "LR",
+  "country": {
+   "fr": "Liberia",
+   "en": "Liberia"
+  },
+  "body": "<clipPath id=\"afc-lr\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-lr)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"1.36\" fill=\"#BF0A30\"/><rect x=\"1\" y=\"5.86\" width=\"22\" height=\"1.36\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"7.23\" width=\"22\" height=\"1.36\" fill=\"#BF0A30\"/><rect x=\"1\" y=\"8.59\" width=\"22\" height=\"1.36\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"9.95\" width=\"22\" height=\"1.36\" fill=\"#BF0A30\"/><rect x=\"1\" y=\"11.32\" width=\"22\" height=\"1.36\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"12.68\" width=\"22\" height=\"1.36\" fill=\"#BF0A30\"/><rect x=\"1\" y=\"14.05\" width=\"22\" height=\"1.36\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"15.41\" width=\"22\" height=\"1.36\" fill=\"#BF0A30\"/><rect x=\"1\" y=\"16.77\" width=\"22\" height=\"1.36\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"18.14\" width=\"22\" height=\"1.36\" fill=\"#BF0A30\"/><rect x=\"1\" y=\"4.5\" width=\"6.82\" height=\"6.82\" fill=\"#002868\"/><path d=\"M4.41 5.61L4.93 7.2L6.6 7.2L5.24 8.18L5.76 9.77L4.41 8.79L3.06 9.77L3.57 8.18L2.22 7.2L3.89 7.2Z\" fill=\"#FFFFFF\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-lr\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-lr)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"1.36\" fill=\"#BF0A30\"/><rect x=\"1\" y=\"5.86\" width=\"22\" height=\"1.36\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"7.23\" width=\"22\" height=\"1.36\" fill=\"#BF0A30\"/><rect x=\"1\" y=\"8.59\" width=\"22\" height=\"1.36\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"9.95\" width=\"22\" height=\"1.36\" fill=\"#BF0A30\"/><rect x=\"1\" y=\"11.32\" width=\"22\" height=\"1.36\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"12.68\" width=\"22\" height=\"1.36\" fill=\"#BF0A30\"/><rect x=\"1\" y=\"14.05\" width=\"22\" height=\"1.36\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"15.41\" width=\"22\" height=\"1.36\" fill=\"#BF0A30\"/><rect x=\"1\" y=\"16.77\" width=\"22\" height=\"1.36\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"18.14\" width=\"22\" height=\"1.36\" fill=\"#BF0A30\"/><rect x=\"1\" y=\"4.5\" width=\"6.82\" height=\"6.82\" fill=\"#002868\"/><path d=\"M4.41 5.61L4.93 7.2L6.6 7.2L5.24 8.18L5.76 9.77L4.41 8.79L3.06 9.77L3.57 8.18L2.22 7.2L3.89 7.2Z\" fill=\"#FFFFFF\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-libye",
+  "fr": "Drapeau de la Libye",
+  "en": "Flag of Libya",
+  "cat": "drapeaux",
+  "region": "nord",
+  "tags": [
+   "drapeau",
+   "flag",
+   "libye",
+   "libya",
+   "ly",
+   "libyen",
+   "libyan"
+  ],
+  "since": "0.6",
+  "iso": "LY",
+  "country": {
+   "fr": "Libye",
+   "en": "Libya"
+  },
+  "body": "<clipPath id=\"afc-ly\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ly)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"3.75\" fill=\"#E70013\"/><rect x=\"1\" y=\"8.25\" width=\"22\" height=\"7.5\" fill=\"#000000\"/><rect x=\"1\" y=\"15.75\" width=\"22\" height=\"3.75\" fill=\"#239E46\"/><path d=\"M12.93 10A2.7 2.7 0 1 0 12.93 14A2.2 2.2 0 1 1 12.93 10Z\" fill=\"#FFFFFF\"/><path d=\"M12.9 11.05L13.33 11.64L14.02 11.41L13.59 12L14.02 12.59L13.33 12.36L12.9 12.95L12.9 12.22L12.21 12L12.9 11.78Z\" fill=\"#FFFFFF\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-ly\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ly)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"3.75\" fill=\"#E70013\"/><rect x=\"1\" y=\"8.25\" width=\"22\" height=\"7.5\" fill=\"#000000\"/><rect x=\"1\" y=\"15.75\" width=\"22\" height=\"3.75\" fill=\"#239E46\"/><path d=\"M12.93 10A2.7 2.7 0 1 0 12.93 14A2.2 2.2 0 1 1 12.93 10Z\" fill=\"#FFFFFF\"/><path d=\"M12.9 11.05L13.33 11.64L14.02 11.41L13.59 12L14.02 12.59L13.33 12.36L12.9 12.95L12.9 12.22L12.21 12L12.9 11.78Z\" fill=\"#FFFFFF\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-madagascar",
+  "fr": "Drapeau de Madagascar",
+  "en": "Flag of Madagascar",
+  "cat": "drapeaux",
+  "region": "est",
+  "tags": [
+   "drapeau",
+   "flag",
+   "madagascar",
+   "madagascar",
+   "mg",
+   "malgache",
+   "malagasy"
+  ],
+  "since": "0.6",
+  "iso": "MG",
+  "country": {
+   "fr": "Madagascar",
+   "en": "Madagascar"
+  },
+  "body": "<clipPath id=\"afc-mg\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-mg)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#FFFFFF\"/><rect x=\"8.33\" y=\"4.5\" width=\"14.67\" height=\"7.5\" fill=\"#FC3D32\"/><rect x=\"8.33\" y=\"12\" width=\"14.67\" height=\"7.5\" fill=\"#007E3A\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-mg\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-mg)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#FFFFFF\"/><rect x=\"8.33\" y=\"4.5\" width=\"14.67\" height=\"7.5\" fill=\"#FC3D32\"/><rect x=\"8.33\" y=\"12\" width=\"14.67\" height=\"7.5\" fill=\"#007E3A\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-malawi",
+  "fr": "Drapeau du Malawi",
+  "en": "Flag of Malawi",
+  "cat": "drapeaux",
+  "region": "australe",
+  "tags": [
+   "drapeau",
+   "flag",
+   "malawi",
+   "malawi",
+   "mw",
+   "malawite",
+   "malawian"
+  ],
+  "since": "0.6",
+  "iso": "MW",
+  "country": {
+   "fr": "Malawi",
+   "en": "Malawi"
+  },
+  "body": "<clipPath id=\"afc-mw\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-mw)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5\" fill=\"#000000\"/><rect x=\"1\" y=\"9.5\" width=\"22\" height=\"5\" fill=\"#CE1126\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"5\" fill=\"#339E35\"/><clipPath id=\"afs-mw\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5\"/></clipPath><g clip-path=\"url(#afs-mw)\"><path d=\"M12 6.3L12.45 7.24L13.22 6.54L13.28 7.58L14.26 7.24L13.92 8.22L14.96 8.28L14.26 9.05L15.2 9.5L14.26 9.95L14.96 10.72L13.92 10.78L14.26 11.76L13.28 11.42L13.22 12.46L12.45 11.76L12 12.7L11.55 11.76L10.78 12.46L10.72 11.42L9.74 11.76L10.08 10.78L9.04 10.72L9.74 9.95L8.8 9.5L9.74 9.05L9.04 8.28L10.08 8.22L9.74 7.24L10.72 7.58L10.78 6.54L11.55 7.24Z\" fill=\"#CE1126\"/><circle cx=\"12\" cy=\"9.5\" r=\"1.9\" fill=\"#CE1126\"/></g></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-mw\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-mw)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5\" fill=\"#000000\"/><rect x=\"1\" y=\"9.5\" width=\"22\" height=\"5\" fill=\"#CE1126\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"5\" fill=\"#339E35\"/><clipPath id=\"afs-mw\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5\"/></clipPath><g clip-path=\"url(#afs-mw)\"><path d=\"M12 6.3L12.45 7.24L13.22 6.54L13.28 7.58L14.26 7.24L13.92 8.22L14.96 8.28L14.26 9.05L15.2 9.5L14.26 9.95L14.96 10.72L13.92 10.78L14.26 11.76L13.28 11.42L13.22 12.46L12.45 11.76L12 12.7L11.55 11.76L10.78 12.46L10.72 11.42L9.74 11.76L10.08 10.78L9.04 10.72L9.74 9.95L8.8 9.5L9.74 9.05L9.04 8.28L10.08 8.22L9.74 7.24L10.72 7.58L10.78 6.54L11.55 7.24Z\" fill=\"#CE1126\"/><circle cx=\"12\" cy=\"9.5\" r=\"1.9\" fill=\"#CE1126\"/></g></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-mali",
+  "fr": "Drapeau du Mali",
+  "en": "Flag of Mali",
+  "cat": "drapeaux",
+  "region": "ouest",
+  "tags": [
+   "drapeau",
+   "flag",
+   "mali",
+   "mali",
+   "ml",
+   "malien",
+   "malian"
+  ],
+  "since": "0.6",
+  "iso": "ML",
+  "country": {
+   "fr": "Mali",
+   "en": "Mali"
+  },
+  "body": "<clipPath id=\"afc-ml\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ml)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#14B53A\"/><rect x=\"8.33\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#FCD116\"/><rect x=\"15.67\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#CE1126\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-ml\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ml)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#14B53A\"/><rect x=\"8.33\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#FCD116\"/><rect x=\"15.67\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#CE1126\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-mauritanie",
+  "fr": "Drapeau de la Mauritanie",
+  "en": "Flag of Mauritania",
+  "cat": "drapeaux",
+  "region": "ouest",
+  "tags": [
+   "drapeau",
+   "flag",
+   "mauritanie",
+   "mauritania",
+   "mr",
+   "mauritanien",
+   "mauritanian"
+  ],
+  "since": "0.6",
+  "iso": "MR",
+  "country": {
+   "fr": "Mauritanie",
+   "en": "Mauritania"
+  },
+  "body": "<clipPath id=\"afc-mr\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-mr)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"2.25\" fill=\"#D01C1F\"/><rect x=\"1\" y=\"6.75\" width=\"22\" height=\"10.5\" fill=\"#00A95C\"/><rect x=\"1\" y=\"17.25\" width=\"22\" height=\"2.25\" fill=\"#D01C1F\"/><path d=\"M9.19 10.5A3.6 3.6 0 1 0 14.81 10.5A3 3 0 1 1 9.19 10.5Z\" fill=\"#FFD700\"/><path d=\"M12 8.6L12.29 9.5L13.24 9.5L12.47 10.05L12.76 10.95L12 10.4L11.24 10.95L11.53 10.05L10.76 9.5L11.71 9.5Z\" fill=\"#FFD700\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-mr\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-mr)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"2.25\" fill=\"#D01C1F\"/><rect x=\"1\" y=\"6.75\" width=\"22\" height=\"10.5\" fill=\"#00A95C\"/><rect x=\"1\" y=\"17.25\" width=\"22\" height=\"2.25\" fill=\"#D01C1F\"/><path d=\"M9.19 10.5A3.6 3.6 0 1 0 14.81 10.5A3 3 0 1 1 9.19 10.5Z\" fill=\"#FFD700\"/><path d=\"M12 8.6L12.29 9.5L13.24 9.5L12.47 10.05L12.76 10.95L12 10.4L11.24 10.95L11.53 10.05L10.76 9.5L11.71 9.5Z\" fill=\"#FFD700\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-maurice",
+  "fr": "Drapeau de Maurice",
+  "en": "Flag of Mauritius",
+  "cat": "drapeaux",
+  "region": "est",
+  "tags": [
+   "drapeau",
+   "flag",
+   "maurice",
+   "mauritius",
+   "mu",
+   "mauricien",
+   "mauritian"
+  ],
+  "since": "0.6",
+  "iso": "MU",
+  "country": {
+   "fr": "Maurice",
+   "en": "Mauritius"
+  },
+  "body": "<clipPath id=\"afc-mu\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-mu)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"3.75\" fill=\"#EA2839\"/><rect x=\"1\" y=\"8.25\" width=\"22\" height=\"3.75\" fill=\"#1A206D\"/><rect x=\"1\" y=\"12\" width=\"22\" height=\"3.75\" fill=\"#FFD500\"/><rect x=\"1\" y=\"15.75\" width=\"22\" height=\"3.75\" fill=\"#00A551\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-mu\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-mu)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"3.75\" fill=\"#EA2839\"/><rect x=\"1\" y=\"8.25\" width=\"22\" height=\"3.75\" fill=\"#1A206D\"/><rect x=\"1\" y=\"12\" width=\"22\" height=\"3.75\" fill=\"#FFD500\"/><rect x=\"1\" y=\"15.75\" width=\"22\" height=\"3.75\" fill=\"#00A551\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-maroc",
+  "fr": "Drapeau du Maroc",
+  "en": "Flag of Morocco",
+  "cat": "drapeaux",
+  "region": "nord",
+  "tags": [
+   "drapeau",
+   "flag",
+   "maroc",
+   "morocco",
+   "ma",
+   "marocain",
+   "moroccan",
+   "maghreb"
+  ],
+  "since": "0.6",
+  "iso": "MA",
+  "country": {
+   "fr": "Maroc",
+   "en": "Morocco"
+  },
+  "body": "<clipPath id=\"afc-ma\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ma)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" fill=\"#C1272D\"/><path d=\"M12 8.85L14.12 15.36L8.58 11.34L15.42 11.34L9.88 15.36Z\" fill=\"none\" stroke=\"#006233\" stroke-width=\"0.8\" stroke-linejoin=\"miter\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-ma\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ma)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" fill=\"#C1272D\"/><path d=\"M12 8.85L14.12 15.36L8.58 11.34L15.42 11.34L9.88 15.36Z\" fill=\"none\" stroke=\"#006233\" stroke-width=\"0.8\" stroke-linejoin=\"miter\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-mozambique",
+  "fr": "Drapeau du Mozambique",
+  "en": "Flag of Mozambique",
+  "cat": "drapeaux",
+  "region": "australe",
+  "tags": [
+   "drapeau",
+   "flag",
+   "mozambique",
+   "mozambique",
+   "mz",
+   "mozambicain",
+   "mozambican"
+  ],
+  "since": "0.6",
+  "iso": "MZ",
+  "country": {
+   "fr": "Mozambique",
+   "en": "Mozambique"
+  },
+  "body": "<clipPath id=\"afc-mz\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-mz)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"4.5\" fill=\"#007168\"/><rect x=\"1\" y=\"9\" width=\"22\" height=\"0.75\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"9.75\" width=\"22\" height=\"4.5\" fill=\"#000000\"/><rect x=\"1\" y=\"14.25\" width=\"22\" height=\"0.75\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"15\" width=\"22\" height=\"4.5\" fill=\"#FCE100\"/><path d=\"M1 4.5L11.12 12L1 19.5Z\" fill=\"#D21034\"/><path d=\"M4.41 9.4L4.99 11.2L6.88 11.2L5.35 12.31L5.94 14.1L4.41 12.99L2.88 14.1L3.47 12.31L1.94 11.2L3.83 11.2Z\" fill=\"#FCE100\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-mz\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-mz)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"4.5\" fill=\"#007168\"/><rect x=\"1\" y=\"9\" width=\"22\" height=\"0.75\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"9.75\" width=\"22\" height=\"4.5\" fill=\"#000000\"/><rect x=\"1\" y=\"14.25\" width=\"22\" height=\"0.75\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"15\" width=\"22\" height=\"4.5\" fill=\"#FCE100\"/><path d=\"M1 4.5L11.12 12L1 19.5Z\" fill=\"#D21034\"/><path d=\"M4.41 9.4L4.99 11.2L6.88 11.2L5.35 12.31L5.94 14.1L4.41 12.99L2.88 14.1L3.47 12.31L1.94 11.2L3.83 11.2Z\" fill=\"#FCE100\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-namibie",
+  "fr": "Drapeau de la Namibie",
+  "en": "Flag of Namibia",
+  "cat": "drapeaux",
+  "region": "australe",
+  "tags": [
+   "drapeau",
+   "flag",
+   "namibie",
+   "namibia",
+   "na",
+   "namibien",
+   "namibian"
+  ],
+  "since": "0.6",
+  "iso": "NA",
+  "country": {
+   "fr": "Namibie",
+   "en": "Namibia"
+  },
+  "body": "<clipPath id=\"afc-na\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-na)\" stroke=\"none\"><path d=\"M1 4.5L23 4.5L1 19.5Z\" fill=\"#003580\"/><path d=\"M23 4.5L23 19.5L1 19.5Z\" fill=\"#009543\"/><path d=\"M0.15 23.59L27.11 5.21L23.85 0.41L-3.11 18.79Z\" fill=\"#FFFFFF\"/><path d=\"M-0.3 22.93L26.66 4.55L24.3 1.07L-2.66 19.45Z\" fill=\"#D21034\"/><path d=\"M5.4 6.3L5.85 7.03L6.6 6.62L6.62 7.48L7.48 7.5L7.07 8.25L7.8 8.7L7.07 9.15L7.48 9.9L6.62 9.92L6.6 10.78L5.85 10.37L5.4 11.1L4.95 10.37L4.2 10.78L4.18 9.92L3.32 9.9L3.73 9.15L3 8.7L3.73 8.25L3.32 7.5L4.18 7.48L4.2 6.62L4.95 7.03Z\" fill=\"#FFCE00\"/><circle cx=\"5.4\" cy=\"8.7\" r=\"1.3\" fill=\"#FFCE00\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-na\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-na)\" stroke=\"none\"><path d=\"M1 4.5L23 4.5L1 19.5Z\" fill=\"#003580\"/><path d=\"M23 4.5L23 19.5L1 19.5Z\" fill=\"#009543\"/><path d=\"M0.15 23.59L27.11 5.21L23.85 0.41L-3.11 18.79Z\" fill=\"#FFFFFF\"/><path d=\"M-0.3 22.93L26.66 4.55L24.3 1.07L-2.66 19.45Z\" fill=\"#D21034\"/><path d=\"M5.4 6.3L5.85 7.03L6.6 6.62L6.62 7.48L7.48 7.5L7.07 8.25L7.8 8.7L7.07 9.15L7.48 9.9L6.62 9.92L6.6 10.78L5.85 10.37L5.4 11.1L4.95 10.37L4.2 10.78L4.18 9.92L3.32 9.9L3.73 9.15L3 8.7L3.73 8.25L3.32 7.5L4.18 7.48L4.2 6.62L4.95 7.03Z\" fill=\"#FFCE00\"/><circle cx=\"5.4\" cy=\"8.7\" r=\"1.3\" fill=\"#FFCE00\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-niger",
+  "fr": "Drapeau du Niger",
+  "en": "Flag of Niger",
+  "cat": "drapeaux",
+  "region": "ouest",
+  "tags": [
+   "drapeau",
+   "flag",
+   "niger",
+   "niger",
+   "ne",
+   "nigérien",
+   "nigerien"
+  ],
+  "since": "0.6",
+  "iso": "NE",
+  "country": {
+   "fr": "Niger",
+   "en": "Niger"
+  },
+  "body": "<clipPath id=\"afc-ne\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ne)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5\" fill=\"#E05206\"/><rect x=\"1\" y=\"9.5\" width=\"22\" height=\"5\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"5\" fill=\"#0DB02B\"/><circle cx=\"12\" cy=\"12\" r=\"1.9\" fill=\"#E05206\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-ne\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ne)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5\" fill=\"#E05206\"/><rect x=\"1\" y=\"9.5\" width=\"22\" height=\"5\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"5\" fill=\"#0DB02B\"/><circle cx=\"12\" cy=\"12\" r=\"1.9\" fill=\"#E05206\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-nigeria",
+  "fr": "Drapeau du Nigeria",
+  "en": "Flag of Nigeria",
+  "cat": "drapeaux",
+  "region": "ouest",
+  "tags": [
+   "drapeau",
+   "flag",
+   "nigeria",
+   "nigeria",
+   "ng",
+   "nigérian",
+   "nigerian",
+   "naija"
+  ],
+  "since": "0.6",
+  "iso": "NG",
+  "country": {
+   "fr": "Nigeria",
+   "en": "Nigeria"
+  },
+  "body": "<clipPath id=\"afc-ng\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ng)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#008751\"/><rect x=\"8.33\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#FFFFFF\"/><rect x=\"15.67\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#008751\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-ng\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ng)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#008751\"/><rect x=\"8.33\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#FFFFFF\"/><rect x=\"15.67\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#008751\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-ouganda",
+  "fr": "Drapeau de l'Ouganda",
+  "en": "Flag of Uganda",
+  "cat": "drapeaux",
+  "region": "est",
+  "tags": [
+   "drapeau",
+   "flag",
+   "ouganda",
+   "uganda",
+   "ug",
+   "ougandais",
+   "ugandan"
+  ],
+  "since": "0.6",
+  "iso": "UG",
+  "country": {
+   "fr": "Ouganda",
+   "en": "Uganda"
+  },
+  "body": "<clipPath id=\"afc-ug\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ug)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"2.5\" fill=\"#000000\"/><rect x=\"1\" y=\"7\" width=\"22\" height=\"2.5\" fill=\"#FCDC04\"/><rect x=\"1\" y=\"9.5\" width=\"22\" height=\"2.5\" fill=\"#D90000\"/><rect x=\"1\" y=\"12\" width=\"22\" height=\"2.5\" fill=\"#000000\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"2.5\" fill=\"#FCDC04\"/><rect x=\"1\" y=\"17\" width=\"22\" height=\"2.5\" fill=\"#D90000\"/><circle cx=\"12\" cy=\"12\" r=\"3.6\" fill=\"#FFFFFF\"/><path d=\"M11 14.4L11.6 12.6Q10.4 11.6 11.4 10.4L12.2 9.8L12.4 9\" fill=\"none\" stroke=\"#000000\" stroke-width=\".7\"/><ellipse cx=\"12.2\" cy=\"12.4\" rx=\"1.1\" ry=\"1.5\" fill=\"#9CA6AD\"/><circle cx=\"12.6\" cy=\"9\" r=\".55\" fill=\"#000000\"/><circle cx=\"12.9\" cy=\"8.4\" r=\".35\" fill=\"#FCDC04\"/><path d=\"M12.9 9.2L13.8 9.4\" stroke=\"#D90000\" stroke-width=\".4\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-ug\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ug)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"2.5\" fill=\"#000000\"/><rect x=\"1\" y=\"7\" width=\"22\" height=\"2.5\" fill=\"#FCDC04\"/><rect x=\"1\" y=\"9.5\" width=\"22\" height=\"2.5\" fill=\"#D90000\"/><rect x=\"1\" y=\"12\" width=\"22\" height=\"2.5\" fill=\"#000000\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"2.5\" fill=\"#FCDC04\"/><rect x=\"1\" y=\"17\" width=\"22\" height=\"2.5\" fill=\"#D90000\"/><circle cx=\"12\" cy=\"12\" r=\"3.6\" fill=\"#FFFFFF\"/><path d=\"M11 14.4L11.6 12.6Q10.4 11.6 11.4 10.4L12.2 9.8L12.4 9\" fill=\"none\" stroke=\"#000000\" stroke-width=\".7\"/><ellipse cx=\"12.2\" cy=\"12.4\" rx=\"1.1\" ry=\"1.5\" fill=\"#9CA6AD\"/><circle cx=\"12.6\" cy=\"9\" r=\".55\" fill=\"#000000\"/><circle cx=\"12.9\" cy=\"8.4\" r=\".35\" fill=\"#FCDC04\"/><path d=\"M12.9 9.2L13.8 9.4\" stroke=\"#D90000\" stroke-width=\".4\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-rwanda",
+  "fr": "Drapeau du Rwanda",
+  "en": "Flag of Rwanda",
+  "cat": "drapeaux",
+  "region": "est",
+  "tags": [
+   "drapeau",
+   "flag",
+   "rwanda",
+   "rwanda",
+   "rw",
+   "rwandais",
+   "rwandan"
+  ],
+  "since": "0.6",
+  "iso": "RW",
+  "country": {
+   "fr": "Rwanda",
+   "en": "Rwanda"
+  },
+  "body": "<clipPath id=\"afc-rw\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-rw)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"7.5\" fill=\"#00A1DE\"/><rect x=\"1\" y=\"12\" width=\"22\" height=\"3.75\" fill=\"#FAD201\"/><rect x=\"1\" y=\"15.75\" width=\"22\" height=\"3.75\" fill=\"#20603D\"/><path d=\"M19.92 6.2L20.13 6.83L20.49 6.27L20.53 6.94L21.02 6.49L20.88 7.14L21.48 6.84L21.18 7.44L21.83 7.3L21.38 7.79L22.05 7.83L21.49 8.19L22.12 8.4L21.49 8.61L22.05 8.97L21.38 9.01L21.83 9.5L21.18 9.36L21.48 9.96L20.88 9.66L21.02 10.31L20.53 9.86L20.49 10.53L20.13 9.97L19.92 10.6L19.71 9.97L19.35 10.53L19.31 9.86L18.82 10.31L18.96 9.66L18.36 9.96L18.66 9.36L18.01 9.5L18.46 9.01L17.79 8.97L18.35 8.61L17.72 8.4L18.35 8.19L17.79 7.83L18.46 7.79L18.01 7.3L18.66 7.44L18.36 6.84L18.96 7.14L18.82 6.49L19.31 6.94L19.35 6.27L19.71 6.83Z\" fill=\"#E5BE01\"/><circle cx=\"19.92\" cy=\"8.4\" r=\"1.2\" fill=\"#E5BE01\"/><circle cx=\"19.92\" cy=\"8.4\" r=\"1.15\" fill=\"none\" stroke=\"#00A1DE\" stroke-width=\"0.3\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-rw\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-rw)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"7.5\" fill=\"#00A1DE\"/><rect x=\"1\" y=\"12\" width=\"22\" height=\"3.75\" fill=\"#FAD201\"/><rect x=\"1\" y=\"15.75\" width=\"22\" height=\"3.75\" fill=\"#20603D\"/><path d=\"M19.92 6.2L20.13 6.83L20.49 6.27L20.53 6.94L21.02 6.49L20.88 7.14L21.48 6.84L21.18 7.44L21.83 7.3L21.38 7.79L22.05 7.83L21.49 8.19L22.12 8.4L21.49 8.61L22.05 8.97L21.38 9.01L21.83 9.5L21.18 9.36L21.48 9.96L20.88 9.66L21.02 10.31L20.53 9.86L20.49 10.53L20.13 9.97L19.92 10.6L19.71 9.97L19.35 10.53L19.31 9.86L18.82 10.31L18.96 9.66L18.36 9.96L18.66 9.36L18.01 9.5L18.46 9.01L17.79 8.97L18.35 8.61L17.72 8.4L18.35 8.19L17.79 7.83L18.46 7.79L18.01 7.3L18.66 7.44L18.36 6.84L18.96 7.14L18.82 6.49L19.31 6.94L19.35 6.27L19.71 6.83Z\" fill=\"#E5BE01\"/><circle cx=\"19.92\" cy=\"8.4\" r=\"1.2\" fill=\"#E5BE01\"/><circle cx=\"19.92\" cy=\"8.4\" r=\"1.15\" fill=\"none\" stroke=\"#00A1DE\" stroke-width=\"0.3\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-sao-tome-et-principe",
+  "fr": "Drapeau de Sao Tomé-et-Principe",
+  "en": "Flag of São Tomé and Príncipe",
+  "cat": "drapeaux",
+  "region": "centre",
+  "tags": [
+   "drapeau",
+   "flag",
+   "sao tomé-et-principe",
+   "são tomé and príncipe",
+   "st",
+   "santoméen",
+   "sao tome",
+   "principe"
+  ],
+  "since": "0.6",
+  "iso": "ST",
+  "country": {
+   "fr": "Sao Tomé-et-Principe",
+   "en": "São Tomé and Príncipe"
+  },
+  "body": "<clipPath id=\"afc-st\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-st)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"4.29\" fill=\"#12AD2B\"/><rect x=\"1\" y=\"8.79\" width=\"22\" height=\"6.43\" fill=\"#FFCE00\"/><rect x=\"1\" y=\"15.21\" width=\"22\" height=\"4.29\" fill=\"#12AD2B\"/><path d=\"M1 4.5L6.5 12L1 19.5Z\" fill=\"#D21034\"/><path d=\"M12 10.3L12.38 11.47L13.62 11.47L12.62 12.2L13 13.38L12 12.65L11 13.38L11.38 12.2L10.38 11.47L11.62 11.47Z\" fill=\"#000000\"/><path d=\"M17.06 10.3L17.44 11.47L18.68 11.47L17.68 12.2L18.06 13.38L17.06 12.65L16.06 13.38L16.44 12.2L15.44 11.47L16.68 11.47Z\" fill=\"#000000\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-st\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-st)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"4.29\" fill=\"#12AD2B\"/><rect x=\"1\" y=\"8.79\" width=\"22\" height=\"6.43\" fill=\"#FFCE00\"/><rect x=\"1\" y=\"15.21\" width=\"22\" height=\"4.29\" fill=\"#12AD2B\"/><path d=\"M1 4.5L6.5 12L1 19.5Z\" fill=\"#D21034\"/><path d=\"M12 10.3L12.38 11.47L13.62 11.47L12.62 12.2L13 13.38L12 12.65L11 13.38L11.38 12.2L10.38 11.47L11.62 11.47Z\" fill=\"#000000\"/><path d=\"M17.06 10.3L17.44 11.47L18.68 11.47L17.68 12.2L18.06 13.38L17.06 12.65L16.06 13.38L16.44 12.2L15.44 11.47L16.68 11.47Z\" fill=\"#000000\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-senegal",
+  "fr": "Drapeau du Sénégal",
+  "en": "Flag of Senegal",
+  "cat": "drapeaux",
+  "region": "ouest",
+  "tags": [
+   "drapeau",
+   "flag",
+   "sénégal",
+   "senegal",
+   "sn",
+   "sénégalais",
+   "senegalese",
+   "teranga"
+  ],
+  "since": "0.6",
+  "iso": "SN",
+  "country": {
+   "fr": "Sénégal",
+   "en": "Senegal"
+  },
+  "body": "<clipPath id=\"afc-sn\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-sn)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#00853F\"/><rect x=\"8.33\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#FDEF42\"/><rect x=\"15.67\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#E31B23\"/><path d=\"M12 9.8L12.49 11.32L14.09 11.32L12.8 12.26L13.29 13.78L12 12.84L10.71 13.78L11.2 12.26L9.91 11.32L11.51 11.32Z\" fill=\"#00853F\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-sn\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-sn)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#00853F\"/><rect x=\"8.33\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#FDEF42\"/><rect x=\"15.67\" y=\"4.5\" width=\"7.33\" height=\"15\" fill=\"#E31B23\"/><path d=\"M12 9.8L12.49 11.32L14.09 11.32L12.8 12.26L13.29 13.78L12 12.84L10.71 13.78L11.2 12.26L9.91 11.32L11.51 11.32Z\" fill=\"#00853F\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-seychelles",
+  "fr": "Drapeau des Seychelles",
+  "en": "Flag of the Seychelles",
+  "cat": "drapeaux",
+  "region": "est",
+  "tags": [
+   "drapeau",
+   "flag",
+   "seychelles",
+   "seychelles",
+   "sc",
+   "seychellois",
+   "seychelles"
+  ],
+  "since": "0.6",
+  "iso": "SC",
+  "country": {
+   "fr": "Seychelles",
+   "en": "Seychelles"
+  },
+  "body": "<clipPath id=\"afc-sc\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-sc)\" stroke=\"none\"><path d=\"M1 19.5L1 4.5L8.33 4.5Z\" fill=\"#003F87\"/><path d=\"M1 19.5L8.33 4.5L15.67 4.5Z\" fill=\"#FCD856\"/><path d=\"M1 19.5L15.67 4.5L23 4.5L23 9.5Z\" fill=\"#D62828\"/><path d=\"M1 19.5L23 9.5L23 14.5Z\" fill=\"#FFFFFF\"/><path d=\"M1 19.5L23 14.5L23 19.5Z\" fill=\"#007A3D\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-sc\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-sc)\" stroke=\"none\"><path d=\"M1 19.5L1 4.5L8.33 4.5Z\" fill=\"#003F87\"/><path d=\"M1 19.5L8.33 4.5L15.67 4.5Z\" fill=\"#FCD856\"/><path d=\"M1 19.5L15.67 4.5L23 4.5L23 9.5Z\" fill=\"#D62828\"/><path d=\"M1 19.5L23 9.5L23 14.5Z\" fill=\"#FFFFFF\"/><path d=\"M1 19.5L23 14.5L23 19.5Z\" fill=\"#007A3D\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-sierra-leone",
+  "fr": "Drapeau de la Sierra Leone",
+  "en": "Flag of Sierra Leone",
+  "cat": "drapeaux",
+  "region": "ouest",
+  "tags": [
+   "drapeau",
+   "flag",
+   "sierra leone",
+   "sierra leone",
+   "sl",
+   "sierraléonais",
+   "sierra leonean",
+   "salone"
+  ],
+  "since": "0.6",
+  "iso": "SL",
+  "country": {
+   "fr": "Sierra Leone",
+   "en": "Sierra Leone"
+  },
+  "body": "<clipPath id=\"afc-sl\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-sl)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5\" fill=\"#1EB53A\"/><rect x=\"1\" y=\"9.5\" width=\"22\" height=\"5\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"5\" fill=\"#0072C6\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-sl\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-sl)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5\" fill=\"#1EB53A\"/><rect x=\"1\" y=\"9.5\" width=\"22\" height=\"5\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"5\" fill=\"#0072C6\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-somalie",
+  "fr": "Drapeau de la Somalie",
+  "en": "Flag of Somalia",
+  "cat": "drapeaux",
+  "region": "est",
+  "tags": [
+   "drapeau",
+   "flag",
+   "somalie",
+   "somalia",
+   "so",
+   "somalien",
+   "somali"
+  ],
+  "since": "0.6",
+  "iso": "SO",
+  "country": {
+   "fr": "Somalie",
+   "en": "Somalia"
+  },
+  "body": "<clipPath id=\"afc-so\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-so)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" fill=\"#4189DD\"/><path d=\"M12 8.7L12.81 11.19L15.42 11.19L13.31 12.72L14.12 15.21L12 13.68L9.88 15.21L10.69 12.72L8.58 11.19L11.19 11.19Z\" fill=\"#FFFFFF\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-so\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-so)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" fill=\"#4189DD\"/><path d=\"M12 8.7L12.81 11.19L15.42 11.19L13.31 12.72L14.12 15.21L12 13.68L9.88 15.21L10.69 12.72L8.58 11.19L11.19 11.19Z\" fill=\"#FFFFFF\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-afrique-du-sud",
+  "fr": "Drapeau de l'Afrique du Sud",
+  "en": "Flag of South Africa",
+  "cat": "drapeaux",
+  "region": "australe",
+  "tags": [
+   "drapeau",
+   "flag",
+   "afrique du sud",
+   "south africa",
+   "za",
+   "sud-africain",
+   "south african",
+   "rainbow nation",
+   "mzansi"
+  ],
+  "since": "0.6",
+  "iso": "ZA",
+  "country": {
+   "fr": "Afrique du Sud",
+   "en": "South Africa"
+  },
+  "body": "<clipPath id=\"afc-za\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-za)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"7.5\" fill=\"#E03C31\"/><rect x=\"1\" y=\"12\" width=\"22\" height=\"7.5\" fill=\"#001489\"/><path d=\"M1 4.5L10.5 12L1 19.5M10.5 12H23\" fill=\"none\" stroke=\"#FFFFFF\" stroke-width=\"5.4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/><path d=\"M1 4.5L10.5 12L1 19.5M10.5 12H23\" fill=\"none\" stroke=\"#007749\" stroke-width=\"3.2\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/><path d=\"M1 6.6L7.9 12L1 17.4Z\" fill=\"#FFB81C\"/><path d=\"M1 7.9L6.25 12L1 16.1Z\" fill=\"#000000\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-za\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-za)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"7.5\" fill=\"#E03C31\"/><rect x=\"1\" y=\"12\" width=\"22\" height=\"7.5\" fill=\"#001489\"/><path d=\"M1 4.5L10.5 12L1 19.5M10.5 12H23\" fill=\"none\" stroke=\"#FFFFFF\" stroke-width=\"5.4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/><path d=\"M1 4.5L10.5 12L1 19.5M10.5 12H23\" fill=\"none\" stroke=\"#007749\" stroke-width=\"3.2\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\"/><path d=\"M1 6.6L7.9 12L1 17.4Z\" fill=\"#FFB81C\"/><path d=\"M1 7.9L6.25 12L1 16.1Z\" fill=\"#000000\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-soudan-du-sud",
+  "fr": "Drapeau du Soudan du Sud",
+  "en": "Flag of South Sudan",
+  "cat": "drapeaux",
+  "region": "est",
+  "tags": [
+   "drapeau",
+   "flag",
+   "soudan du sud",
+   "south sudan",
+   "ss",
+   "sud-soudanais",
+   "south sudanese"
+  ],
+  "since": "0.6",
+  "iso": "SS",
+  "country": {
+   "fr": "Soudan du Sud",
+   "en": "South Sudan"
+  },
+  "body": "<clipPath id=\"afc-ss\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ss)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"4.5\" fill=\"#000000\"/><rect x=\"1\" y=\"9\" width=\"22\" height=\"0.75\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"9.75\" width=\"22\" height=\"4.5\" fill=\"#DA121A\"/><rect x=\"1\" y=\"14.25\" width=\"22\" height=\"0.75\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"15\" width=\"22\" height=\"4.5\" fill=\"#078930\"/><path d=\"M1 4.5L9.36 12L1 19.5Z\" fill=\"#0F47AF\"/><path d=\"M3.53 10.2L3.93 11.44L5.24 11.44L4.18 12.21L4.59 13.46L3.53 12.69L2.47 13.46L2.88 12.21L1.82 11.44L3.13 11.44Z\" fill=\"#FCDD09\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-ss\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-ss)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"4.5\" fill=\"#000000\"/><rect x=\"1\" y=\"9\" width=\"22\" height=\"0.75\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"9.75\" width=\"22\" height=\"4.5\" fill=\"#DA121A\"/><rect x=\"1\" y=\"14.25\" width=\"22\" height=\"0.75\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"15\" width=\"22\" height=\"4.5\" fill=\"#078930\"/><path d=\"M1 4.5L9.36 12L1 19.5Z\" fill=\"#0F47AF\"/><path d=\"M3.53 10.2L3.93 11.44L5.24 11.44L4.18 12.21L4.59 13.46L3.53 12.69L2.47 13.46L2.88 12.21L1.82 11.44L3.13 11.44Z\" fill=\"#FCDD09\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-soudan",
+  "fr": "Drapeau du Soudan",
+  "en": "Flag of Sudan",
+  "cat": "drapeaux",
+  "region": "nord",
+  "tags": [
+   "drapeau",
+   "flag",
+   "soudan",
+   "sudan",
+   "sd",
+   "soudanais",
+   "sudanese",
+   "khartoum"
+  ],
+  "since": "0.6",
+  "iso": "SD",
+  "country": {
+   "fr": "Soudan",
+   "en": "Sudan"
+  },
+  "body": "<clipPath id=\"afc-sd\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-sd)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5\" fill=\"#D21034\"/><rect x=\"1\" y=\"9.5\" width=\"22\" height=\"5\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"5\" fill=\"#000000\"/><path d=\"M1 4.5L8.33 12L1 19.5Z\" fill=\"#007229\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-sd\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-sd)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"5\" fill=\"#D21034\"/><rect x=\"1\" y=\"9.5\" width=\"22\" height=\"5\" fill=\"#FFFFFF\"/><rect x=\"1\" y=\"14.5\" width=\"22\" height=\"5\" fill=\"#000000\"/><path d=\"M1 4.5L8.33 12L1 19.5Z\" fill=\"#007229\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-tanzanie",
+  "fr": "Drapeau de la Tanzanie",
+  "en": "Flag of Tanzania",
+  "cat": "drapeaux",
+  "region": "est",
+  "tags": [
+   "drapeau",
+   "flag",
+   "tanzanie",
+   "tanzania",
+   "tz",
+   "tanzanien",
+   "tanzanian",
+   "zanzibar"
+  ],
+  "since": "0.6",
+  "iso": "TZ",
+  "country": {
+   "fr": "Tanzanie",
+   "en": "Tanzania"
+  },
+  "body": "<clipPath id=\"afc-tz\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-tz)\" stroke=\"none\"><path d=\"M1 4.5L23 4.5L1 19.5Z\" fill=\"#1EB53A\"/><path d=\"M23 4.5L23 19.5L1 19.5Z\" fill=\"#00A3DD\"/><path d=\"M0.27 23.75L27.23 5.37L23.73 0.25L-3.23 18.63Z\" fill=\"#FCD116\"/><path d=\"M-0.24 23.01L26.72 4.63L24.24 0.99L-2.72 19.37Z\" fill=\"#000000\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-tz\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-tz)\" stroke=\"none\"><path d=\"M1 4.5L23 4.5L1 19.5Z\" fill=\"#1EB53A\"/><path d=\"M23 4.5L23 19.5L1 19.5Z\" fill=\"#00A3DD\"/><path d=\"M0.27 23.75L27.23 5.37L23.73 0.25L-3.23 18.63Z\" fill=\"#FCD116\"/><path d=\"M-0.24 23.01L26.72 4.63L24.24 0.99L-2.72 19.37Z\" fill=\"#000000\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-togo",
+  "fr": "Drapeau du Togo",
+  "en": "Flag of Togo",
+  "cat": "drapeaux",
+  "region": "ouest",
+  "tags": [
+   "drapeau",
+   "flag",
+   "togo",
+   "togo",
+   "tg",
+   "togolais",
+   "togolese"
+  ],
+  "since": "0.6",
+  "iso": "TG",
+  "country": {
+   "fr": "Togo",
+   "en": "Togo"
+  },
+  "body": "<clipPath id=\"afc-tg\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-tg)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"3\" fill=\"#006A4E\"/><rect x=\"1\" y=\"7.5\" width=\"22\" height=\"3\" fill=\"#FFCE00\"/><rect x=\"1\" y=\"10.5\" width=\"22\" height=\"3\" fill=\"#006A4E\"/><rect x=\"1\" y=\"13.5\" width=\"22\" height=\"3\" fill=\"#FFCE00\"/><rect x=\"1\" y=\"16.5\" width=\"22\" height=\"3\" fill=\"#006A4E\"/><rect x=\"1\" y=\"4.5\" width=\"9\" height=\"9\" fill=\"#D21034\"/><path d=\"M5.5 6.4L6.08 8.2L7.97 8.2L6.44 9.31L7.03 11.1L5.5 9.99L3.97 11.1L4.56 9.31L3.03 8.2L4.92 8.2Z\" fill=\"#FFFFFF\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-tg\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-tg)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"3\" fill=\"#006A4E\"/><rect x=\"1\" y=\"7.5\" width=\"22\" height=\"3\" fill=\"#FFCE00\"/><rect x=\"1\" y=\"10.5\" width=\"22\" height=\"3\" fill=\"#006A4E\"/><rect x=\"1\" y=\"13.5\" width=\"22\" height=\"3\" fill=\"#FFCE00\"/><rect x=\"1\" y=\"16.5\" width=\"22\" height=\"3\" fill=\"#006A4E\"/><rect x=\"1\" y=\"4.5\" width=\"9\" height=\"9\" fill=\"#D21034\"/><path d=\"M5.5 6.4L6.08 8.2L7.97 8.2L6.44 9.31L7.03 11.1L5.5 9.99L3.97 11.1L4.56 9.31L3.03 8.2L4.92 8.2Z\" fill=\"#FFFFFF\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-tunisie",
+  "fr": "Drapeau de la Tunisie",
+  "en": "Flag of Tunisia",
+  "cat": "drapeaux",
+  "region": "nord",
+  "tags": [
+   "drapeau",
+   "flag",
+   "tunisie",
+   "tunisia",
+   "tn",
+   "tunisien",
+   "tunisian"
+  ],
+  "since": "0.6",
+  "iso": "TN",
+  "country": {
+   "fr": "Tunisie",
+   "en": "Tunisia"
+  },
+  "body": "<clipPath id=\"afc-tn\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-tn)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" fill=\"#E70013\"/><circle cx=\"12\" cy=\"12\" r=\"4.4\" fill=\"#FFFFFF\"/><path d=\"M13.99 9.62A3.4 3.4 0 1 0 13.99 14.38A2.75 2.75 0 1 1 13.99 9.62Z\" fill=\"#E70013\"/><path d=\"M12.5 10.48L13.18 11.42L14.28 11.06L13.6 12L14.28 12.94L13.18 12.58L12.5 13.52L12.5 12.36L11.39 12L12.5 11.64Z\" fill=\"#E70013\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-tn\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-tn)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" fill=\"#E70013\"/><circle cx=\"12\" cy=\"12\" r=\"4.4\" fill=\"#FFFFFF\"/><path d=\"M13.99 9.62A3.4 3.4 0 1 0 13.99 14.38A2.75 2.75 0 1 1 13.99 9.62Z\" fill=\"#E70013\"/><path d=\"M12.5 10.48L13.18 11.42L14.28 11.06L13.6 12L14.28 12.94L13.18 12.58L12.5 13.52L12.5 12.36L11.39 12L12.5 11.64Z\" fill=\"#E70013\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-zambie",
+  "fr": "Drapeau de la Zambie",
+  "en": "Flag of Zambia",
+  "cat": "drapeaux",
+  "region": "australe",
+  "tags": [
+   "drapeau",
+   "flag",
+   "zambie",
+   "zambia",
+   "zm",
+   "zambien",
+   "zambian"
+  ],
+  "since": "0.6",
+  "iso": "ZM",
+  "country": {
+   "fr": "Zambie",
+   "en": "Zambia"
+  },
+  "body": "<clipPath id=\"afc-zm\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-zm)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" fill=\"#198A00\"/><rect x=\"14.42\" y=\"10.13\" width=\"2.86\" height=\"9.38\" fill=\"#DE2010\"/><rect x=\"17.28\" y=\"10.13\" width=\"2.86\" height=\"9.38\" fill=\"#000000\"/><rect x=\"20.14\" y=\"10.13\" width=\"2.86\" height=\"9.38\" fill=\"#EF7D00\"/><path d=\"M15.6 8.4Q17.8 9.6 19.3 8.6Q20.8 9.6 23 8.4\" fill=\"none\" stroke=\"#EF7D00\" stroke-width=\".9\"/><circle cx=\"19.3\" cy=\"9.3\" r=\".55\" fill=\"#EF7D00\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-zm\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-zm)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" fill=\"#198A00\"/><rect x=\"14.42\" y=\"10.13\" width=\"2.86\" height=\"9.38\" fill=\"#DE2010\"/><rect x=\"17.28\" y=\"10.13\" width=\"2.86\" height=\"9.38\" fill=\"#000000\"/><rect x=\"20.14\" y=\"10.13\" width=\"2.86\" height=\"9.38\" fill=\"#EF7D00\"/><path d=\"M15.6 8.4Q17.8 9.6 19.3 8.6Q20.8 9.6 23 8.4\" fill=\"none\" stroke=\"#EF7D00\" stroke-width=\".9\"/><circle cx=\"19.3\" cy=\"9.3\" r=\".55\" fill=\"#EF7D00\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
+ },
+ {
+  "id": "drapeau-zimbabwe",
+  "fr": "Drapeau du Zimbabwe",
+  "en": "Flag of Zimbabwe",
+  "cat": "drapeaux",
+  "region": "australe",
+  "tags": [
+   "drapeau",
+   "flag",
+   "zimbabwe",
+   "zimbabwe",
+   "zw",
+   "zimbabwéen",
+   "zimbabwean"
+  ],
+  "since": "0.6",
+  "iso": "ZW",
+  "country": {
+   "fr": "Zimbabwe",
+   "en": "Zimbabwe"
+  },
+  "body": "<clipPath id=\"afc-zw\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-zw)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"2.14\" fill=\"#006400\"/><rect x=\"1\" y=\"6.64\" width=\"22\" height=\"2.14\" fill=\"#FFD200\"/><rect x=\"1\" y=\"8.79\" width=\"22\" height=\"2.14\" fill=\"#D40000\"/><rect x=\"1\" y=\"10.93\" width=\"22\" height=\"2.14\" fill=\"#000000\"/><rect x=\"1\" y=\"13.07\" width=\"22\" height=\"2.14\" fill=\"#D40000\"/><rect x=\"1\" y=\"15.21\" width=\"22\" height=\"2.14\" fill=\"#FFD200\"/><rect x=\"1\" y=\"17.36\" width=\"22\" height=\"2.14\" fill=\"#006400\"/><path d=\"M1 4.5L10.9 12L1 19.5Z\" fill=\"#000000\"/><path d=\"M1 5.55L9.91 12L1 18.45Z\" fill=\"#FFFFFF\"/><path d=\"M3.86 9.9L4.33 11.35L5.86 11.35L4.62 12.25L5.09 13.7L3.86 12.8L2.63 13.7L3.1 12.25L1.86 11.35L3.39 11.35Z\" fill=\"#D40000\"/><path d=\"M3.5 10.8H4.7L5.1 13.4H3.9Z\" fill=\"#FFD200\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>",
+  "fill": "<clipPath id=\"afc-zw\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"15\" rx=\"2\"/></clipPath><g clip-path=\"url(#afc-zw)\" stroke=\"none\"><rect x=\"1\" y=\"4.5\" width=\"22\" height=\"2.14\" fill=\"#006400\"/><rect x=\"1\" y=\"6.64\" width=\"22\" height=\"2.14\" fill=\"#FFD200\"/><rect x=\"1\" y=\"8.79\" width=\"22\" height=\"2.14\" fill=\"#D40000\"/><rect x=\"1\" y=\"10.93\" width=\"22\" height=\"2.14\" fill=\"#000000\"/><rect x=\"1\" y=\"13.07\" width=\"22\" height=\"2.14\" fill=\"#D40000\"/><rect x=\"1\" y=\"15.21\" width=\"22\" height=\"2.14\" fill=\"#FFD200\"/><rect x=\"1\" y=\"17.36\" width=\"22\" height=\"2.14\" fill=\"#006400\"/><path d=\"M1 4.5L10.9 12L1 19.5Z\" fill=\"#000000\"/><path d=\"M1 5.55L9.91 12L1 18.45Z\" fill=\"#FFFFFF\"/><path d=\"M3.86 9.9L4.33 11.35L5.86 11.35L4.62 12.25L5.09 13.7L3.86 12.8L2.63 13.7L3.1 12.25L1.86 11.35L3.39 11.35Z\" fill=\"#D40000\"/><path d=\"M3.5 10.8H4.7L5.1 13.4H3.9Z\" fill=\"#FFD200\"/></g><rect x=\"1.25\" y=\"4.75\" width=\"21.5\" height=\"14.5\" rx=\"1.75\" fill=\"none\" stroke=\"#000000\" stroke-opacity=\".14\" stroke-width=\".5\"/>"
  }
 ]

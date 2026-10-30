@@ -1,10 +1,11 @@
-// Génère les paquets à partir de src/icons.json (source unique de vérité).
+// Génère les paquets à partir de src/icons.json et src/flags.json (sources uniques de vérité).
 import { readFileSync, writeFileSync, mkdirSync, rmSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const icons = JSON.parse(readFileSync(join(root, "src/icons.json"), "utf8"));
+// Icônes culturelles, puis drapeaux (générés par scripts/flags.mjs ; en couleur, leur version remplie est la même).
+const icons = [...JSON.parse(readFileSync(join(root, "src/icons.json"), "utf8")), ...JSON.parse(readFileSync(join(root, "src/flags.json"), "utf8"))];
 const version = JSON.parse(readFileSync(join(root, "package.json"), "utf8")).version;
 const STROKE = 1.75;
 const pascal = (id) => id.replace(/(^|[-_])(\w)/g, (_, a, b) => b.toUpperCase());
@@ -43,13 +44,13 @@ for (const i of icons) {
 }
 writeFileSync(join(A, "sprite.svg"),
   `<svg xmlns="http://www.w3.org/2000/svg" style="display:none">\n${icons.map((i) => `  <symbol id="afroicon-${i.id}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${STROKE}" stroke-linecap="round" stroke-linejoin="round">${i.body}</symbol>`).join("\n")}\n</svg>\n`);
-const meta = icons.map(({ id, fr, en, cat, region, tags, since, variantOf, body, fill }) => ({ id, fr, en, cat, region, tags, since, ...(variantOf ? { variantOf } : {}), body, fill }));
+const meta = icons.map(({ id, fr, en, cat, region, tags, since, variantOf, iso, country, body, fill }) => ({ id, fr, en, cat, region, tags, since, ...(variantOf ? { variantOf } : {}), ...(iso ? { iso, country } : {}), body, fill }));
 writeFileSync(join(A, "icons.json"), JSON.stringify(meta, null, 1));
 // Pour le site : les versions remplies à part, chargées seulement quand on en a besoin (−17 Ko gzip au démarrage).
 const G = join(root, "apps/web/src/generated");
 mkdirSync(G, { recursive: true });
 writeFileSync(join(G, "afro.json"), JSON.stringify(meta.map(({ fill, ...m }) => m)));
-writeFileSync(join(G, "fills.json"), JSON.stringify(Object.fromEntries(meta.map((i) => [i.id, i.fill]))));
+writeFileSync(join(G, "fills.json"), JSON.stringify(Object.fromEntries(meta.filter((i) => i.fill !== i.body).map((i) => [i.id, i.fill]))));
 writeFileSync(join(A, "index.js"),
 `// afroicons v${version} — généré, ne pas modifier à la main.
 export const icons = ${JSON.stringify(Object.fromEntries(meta.map((i) => [i.id, i])))};
@@ -79,9 +80,9 @@ export default { icons, names, toSvg, replace };
 `);
 writeFileSync(join(A, "index.d.ts"),
 `export type AfroiconName =\n${icons.map((i) => `  | "${i.id}"`).join("\n")};
-export type AfroiconCategory = "nature" | "faune" | "musique" | "symboles" | "cuisine" | "vie" | "architecture";
+export type AfroiconCategory = "nature" | "faune" | "musique" | "symboles" | "cuisine" | "vie" | "architecture" | "drapeaux";
 export type AfroiconRegion = "pan" | "ouest" | "centre" | "est" | "nord" | "australe";
-export interface AfroiconData { id: AfroiconName; fr: string; en: string; cat: AfroiconCategory; region: AfroiconRegion; tags: string[]; since: string; /** Icône dont celle-ci est une variante (épluchée, coupée, ouverte…). */ variantOf?: AfroiconName; /** Dessin au trait. */ body: string; /** Version remplie. */ fill: string; }
+export interface AfroiconData { id: AfroiconName; fr: string; en: string; cat: AfroiconCategory; region: AfroiconRegion; tags: string[]; since: string; /** Icône dont celle-ci est une variante (épluchée, coupée, ouverte…). */ variantOf?: AfroiconName; /** Drapeaux : code ISO du pays et son nom. */ iso?: string; country?: { fr: string; en: string }; /** Dessin au trait. */ body: string; /** Version remplie. */ fill: string; }
 export const icons: Record<AfroiconName, AfroiconData>;
 export const names: AfroiconName[];
 export type AfroiconVariant = "line" | "fill";
@@ -123,7 +124,7 @@ for (const i of icons) {
 }
 writeFileSync(join(Rd, "index.js"), js);
 writeFileSync(join(Rd, "index.d.ts"), dts);
-console.log(`✔ ${icons.length} icônes → packages/afroicons, packages/afroicons-react`);
+console.log(`✔ ${icons.length} icônes (dont ${icons.filter((i) => i.iso).length} drapeaux) → packages/afroicons, packages/afroicons-react`);
 
 /* ---------- afroicons-ui (icônes d'interface, compatibles lucide-react) ---------- */
 // Mêmes noms et mêmes props que lucide-react : on remplace l'import, rien d'autre.

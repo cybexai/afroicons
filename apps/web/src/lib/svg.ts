@@ -1,4 +1,4 @@
-import type { Icon, Style } from "./constants";
+import { isFlag, type Icon, type Style } from "./constants";
 
 export type SvgOpts = { s?: number; c?: string; w?: number; style?: Style; bg?: string; cls?: string };
 
@@ -7,6 +7,8 @@ export function svgStr(i: Icon, o: SvgOpts = {}): string {
   const s = o.s ?? 24, c = o.c ?? "currentColor", w = o.w ?? 1.75, st = o.style ?? "line", bg = o.bg ?? "#C24E2A";
   const cls = o.cls ? ` class="${o.cls}"` : "";
   const head = `<svg xmlns="http://www.w3.org/2000/svg"${cls} width="${s}" height="${s}" viewBox="0 0 24 24" fill="none"`;
+  // Drapeau : toujours tel quel, aux couleurs officielles.
+  if (isFlag(i)) return `${head}>${i.body}</svg>`;
   // Trait ou rempli : la couleur passe aussi par color, pour les points et les aplats (currentColor).
   if (st === "line" || st === "fill") return `${head} stroke="${c}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round" color="${c}">${st === "fill" ? i.fill ?? i.body : i.body}</svg>`;
   const k = 0.64;
@@ -18,6 +20,7 @@ export function svgStr(i: Icon, o: SvgOpts = {}): string {
 export const pascal = (id: string) => id.replace(/(^|[-_])(\w)/g, (_, _a, b) => b.toUpperCase());
 
 export function jsxSnippet(i: Icon, stroke: number, fill = false) {
+  if (isFlag(i)) return `// npm install afroicons-react\nimport { ${pascal(i.id)} } from "afroicons-react";\n\n<${pascal(i.id)} size={24} title="${i.country?.fr ?? i.fr}" />\n\n// Aux couleurs officielles : color, strokeWidth et variant ne changent pas un drapeau.`;
   if (i.lucide) return `// npm install afroicons-ui lucide-react\n// Mêmes noms que lucide-react : remplacez simplement l'import.\nimport { ${i.lucide} } from "afroicons-ui";\n\n<${i.lucide} size={24} strokeWidth={${stroke}} />`;
   return `import { ${pascal(i.id)} } from "afroicons-react";\n\n<${pascal(i.id)} size={24} ${fill ? 'variant="fill"' : `strokeWidth={${stroke}}`} />\n\n// ou, sans dépendance :\nexport function ${pascal(i.id)}({ size = 24, color = "currentColor", strokeWidth = ${stroke}, ...props }) {\n  return (\n    <svg width={size} height={size} viewBox="0 0 24 24" fill="none"\n      stroke={color} strokeWidth={strokeWidth}\n      strokeLinecap="round" strokeLinejoin="round" {...props}>\n      ${i.body.replace(/stroke-width/g, "strokeWidth")}\n    </svg>\n  );\n}`;
 }
@@ -31,6 +34,8 @@ export const useStr = (i: Icon) => `<svg width="24" height="24"><use href="#afro
 
 export function cssStr(i: Icon, stroke: number) {
   const u = encodeURIComponent(svgStr(i, { c: "#000", w: stroke }));
+  // En couleur : image de fond, et non un masque (qui ne garderait que la silhouette).
+  if (isFlag(i)) return `.afroicon-${i.id} {\n  width: 24px; height: 24px;\n  background: url("data:image/svg+xml,${u}") center/contain no-repeat;\n}`;
   return `.afroicon-${i.id} {\n  width: 24px; height: 24px;\n  background: currentColor;\n  -webkit-mask: url("data:image/svg+xml,${u}") center/contain no-repeat;\n          mask: url("data:image/svg+xml,${u}") center/contain no-repeat;\n}`;
 }
 
@@ -68,6 +73,7 @@ export function logoSvg(o: { s?: number; bg?: string; fg?: string; door?: string
 export function animateDraw(el: SVGSVGElement | null) {
   if (!el) return;
   el.classList.remove("draw");
+  if (el.querySelector("clipPath")) return; // drapeau : rien à tracer
   el.querySelectorAll<SVGGeometryElement>("path,circle,ellipse,rect").forEach((p, k) => {
     if (p.getAttribute("fill") === "currentColor") return;
     let L = 60;

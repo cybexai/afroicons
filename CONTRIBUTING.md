@@ -49,7 +49,7 @@ apps/web/              ← le site afroicons.org (React + Vite + TypeScript)
 | Éléments | `path`, `circle`, `ellipse`, `rect` — pas de texte, pas d'images, pas de dégradés |
 | Lisibilité | doit se reconnaître à 16 px |
 
-**Dans l'esprit :** une silhouette claire vaut mieux que des détails. Évitez les clichés (« tribal », animaux de safari seulement), les marques, les drapeaux et les reproductions d'œuvres précises. Pour un symbole culturel (adinkra, croix touarègue…), dessinez la forme traditionnelle, publique, et citez sa signification dans la description.
+**Dans l'esprit :** une silhouette claire vaut mieux que des détails. Évitez les clichés (« tribal », animaux de safari seulement), les marques et les reproductions d'œuvres précises. Pour un symbole culturel (adinkra, croix touarègue…), dessinez la forme traditionnelle, publique, et citez sa signification dans la description.
 
 **Dessins originaux uniquement.** Ne recopiez pas les tracés d'une autre bibliothèque, même libre.
 
@@ -79,6 +79,10 @@ apps/web/              ← le site afroicons.org (React + Vite + TypeScript)
 2. `node scripts/fill.mjs` — génère la version remplie (`fill`). Vérifiez-la : si le résultat est maladroit, retouchez `fill` à la main dans `src/icons.json` (aplats en blanc et découpes en noir dans le masque, sur le modèle des icônes existantes).
 3. `npm test` — le build régénère les paquets et vérifie votre entrée.
 4. Ouvrez la PR avec une capture de l'icône, au trait et remplie, à 16, 24 et 48 px.
+
+## Corriger un drapeau
+
+Les 54 drapeaux sont décrits dans `scripts/flags.mjs` (bandes, étoiles, croissants…, en coordonnées de 0 à 1) : modifiez-y le drapeau, puis `node scripts/flags.mjs` régénère `src/flags.json`. Couleurs officielles uniquement, emblèmes simplifiés pour rester lisibles à 16 px.
 
 ## Ajouter une icône d'interface (`afroicons-ui`)
 

@@ -4,6 +4,8 @@ import UI_ICONS from "afroicons-ui/icons.json";
 
 /** Une icône du site : icône Afroicons, ou icône d'interface (paquet afroicons-ui, nom Lucide dans `lucide`). */
 export type Icon = Omit<AfroiconData, "id" | "cat" | "region" | "fill" | "variantOf"> & { id: string; cat: string; region: string; fill?: string; variantOf?: string; lucide?: string; family?: string; _hay?: string; _n?: string };
+/** Les drapeaux gardent leurs couleurs officielles : ni couleur, ni style, ni épaisseur ne s'y appliquent. */
+export const isFlag = (i: Icon) => i.cat === "drapeaux";
 export type Style = "line" | "fill" | "badge" | "circle";
 /** Styles qui gardent la couleur du texte (trait et rempli), par opposition aux pastilles. */
 export const lineLike = (s: Style) => s === "line" || s === "fill";
@@ -13,7 +15,9 @@ export type CityId = keyof typeof CITIES;
 export const VERSION = __AFROICONS_VERSION__.split(".").slice(0, 2).join(".");
 const ORDER = ["nature", "faune", "musique", "symboles", "cuisine", "vie", "architecture"];
 /** Les icônes culturelles (paquets afroicons et afroicons-react). */
-export const AFRO: Icon[] = (AFRO_DATA as Icon[]).sort((a, b) => ORDER.indexOf(a.cat) - ORDER.indexOf(b.cat));
+export const AFRO: Icon[] = (AFRO_DATA as Icon[]).filter((i) => !isFlag(i)).sort((a, b) => ORDER.indexOf(a.cat) - ORDER.indexOf(b.cat));
+/** Les drapeaux des 54 pays, par ordre alphabétique (même paquets ; leur version remplie est la même). */
+export const FLAGS: Icon[] = (AFRO_DATA as Icon[]).filter(isFlag).map((i) => ({ ...i, fill: i.body })).sort((a, b) => a.country!.fr.localeCompare(b.country!.fr, "fr"));
 
 /** Charge (une seule fois) les versions remplies des icônes culturelles. */
 let fillsLoading: Promise<void> | null = null;
@@ -27,7 +31,9 @@ export const UI: Icon[] = (UI_ICONS as { id: string; fr: string; en: string; fam
   id: uiId(u.id), lucide: u.id, family: u.family, fr: u.fr, en: u.en, cat: "interface", region: "pan", since: "ui", body: u.body,
   tags: [u.id, u.family, ...(u.afro ? ["afrique", ...(u.afro.toLowerCase().match(/[a-zà-ÿ]{4,}/g) ?? [])] : [])],
 }));
-export const ICONS: Icon[] = [...AFRO, ...UI];
+export const ICONS: Icon[] = [...AFRO, ...FLAGS, ...UI];
+export type Collection = "afro" | "flags" | "ui";
+export const colOf = (id: string): Collection => (id.startsWith("ui-") ? "ui" : id.startsWith("drapeau-") ? "flags" : "afro");
 export const byId: Record<string, Icon> = Object.fromEntries(ICONS.map((i) => [i.id, i]));
 export const isNew = (i: Icon) => i.since === VERSION;
 
@@ -41,6 +47,7 @@ export const CATS = [
   { id: "vie", fr: "Vie quotidienne", en: "Daily life", ic: "mototaxi" },
   { id: "architecture", fr: "Architecture", en: "Architecture", ic: "case" },
   { id: "interface", fr: "Interface", en: "Interface", ic: "ui-layout-dashboard" },
+  { id: "drapeaux", fr: "Drapeaux", en: "Flags", ic: "drapeau-cameroun" },
 ] as const;
 export const catOf = (id: string) => CATS.find((c) => c.id === id) ?? CATS[0];
 

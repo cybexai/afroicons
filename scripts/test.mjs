@@ -7,9 +7,9 @@ assert.ok(names.length >= 150, "au moins 150 icônes");
 assert.equal(new Set(names).size, names.length, "ids uniques");
 for (const n of names) {
   const i = icons[n];
-  assert.match(n, /^[a-z0-9]+$/, `id valide: ${n}`);
+  assert.match(n, i.cat === "drapeaux" ? /^drapeau-[a-z0-9]+(-[a-z0-9]+)*$/ : /^[a-z0-9]+$/, `id valide: ${n}`);
   assert.ok(i.fr && i.en, `noms FR/EN: ${n}`);
-  assert.ok(["nature","faune","musique","symboles","cuisine","vie","architecture"].includes(i.cat), `catégorie: ${n}`);
+  assert.ok(["nature","faune","musique","symboles","cuisine","vie","architecture","drapeaux"].includes(i.cat), `catégorie: ${n}`);
   assert.ok(i.tags.length >= 3, `mots-clés: ${n}`);
   assert.ok(toSvg(n).startsWith("<svg") && toSvg(n).endsWith("</svg>"), `svg: ${n}`);
   if (i.variantOf) assert.ok(icons[i.variantOf] && !icons[i.variantOf].variantOf, `variante d'une icône de base : ${n}`);
@@ -22,7 +22,17 @@ for (const n of names) {
   if (icons[n].fill.includes("<mask")) assert.ok(icons[n].fill.includes(`id="afm-${n}"`) && icons[n].fill.includes(`url(#afm-${n})`), `masque nommé : ${n}`);
 }
 assert.match(toSvg("baobab", { size: 32, color: "#C24E2A" }), /width="32".*stroke="#C24E2A"/);
-console.log(`✔ ${names.length} icônes vérifiées, au trait et remplies`);
+// Drapeaux : les 54 États membres de l'ONU, chacun avec son code ISO et un découpage nommé (coins arrondis).
+const flags = names.filter((n) => icons[n].cat === "drapeaux");
+assert.equal(flags.length, 54, "54 drapeaux");
+assert.equal(new Set(flags.map((n) => icons[n].iso)).size, 54, "codes ISO uniques");
+for (const n of flags) {
+  const i = icons[n], id = `afc-${i.iso.toLowerCase()}`;
+  assert.ok(i.body.includes(`<clipPath id="${id}">`) && i.body.includes(`url(#${id})`), `découpage nommé : ${n}`);
+  assert.ok(!i.body.includes("currentColor"), `couleurs officielles : ${n}`);
+  assert.equal(i.fill, i.body, `version remplie identique : ${n}`);
+}
+console.log(`✔ ${names.length} icônes vérifiées, au trait et remplies, dont ${flags.length} drapeaux`);
 
 // ---------- afroicons-ui : compatibilité lucide-react ----------
 import { createElement } from "react";
@@ -52,6 +62,7 @@ console.log(`✔ ${drawn.length} icônes d'interface vérifiées (compatibles lu
 const R = await import("../packages/afroicons-react/index.js");
 assert.match(html(R.Ngoni), /<g transform="rotate\(-35 12 12\)"><ellipse/, "groupe transformé conservé (ngoni)");
 assert.match(html(R.Arachide, { color: "#C24E2A" }), /<svg[^>]*color="#C24E2A"/, "couleur transmise aux points");
+assert.match(html(R.DrapeauCameroun), /<clipPath id="afc-cm"><rect[^>]*><\/rect><\/clipPath><g clip-path="url\(#afc-cm\)"/, "drapeau : découpage conservé en React");
 for (const n of names) {
   const h = html(R[n.replace(/(^|[-_])(\w)/g, (_, a, b) => b.toUpperCase())], { variant: "fill" });
   assert.ok(h.includes("afroicon-fill") && (h.includes("<mask") || h.includes('fill="currentColor"') || h.includes("stroke-width")), `React rempli : ${n}`);

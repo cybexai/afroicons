@@ -325,3 +325,111 @@ export declare const Ndebele: Afroicon;
 export declare const Ville: Afroicon;
 /** Porte de riad · Riad door */
 export declare const Riad: Afroicon;
+/** Drapeau de l'Algérie · Flag of Algeria */
+export declare const DrapeauAlgerie: Afroicon;
+/** Drapeau de l'Angola · Flag of Angola */
+export declare const DrapeauAngola: Afroicon;
+/** Drapeau du Bénin · Flag of Benin */
+export declare const DrapeauBenin: Afroicon;
+/** Drapeau du Botswana · Flag of Botswana */
+export declare const DrapeauBotswana: Afroicon;
+/** Drapeau du Burkina Faso · Flag of Burkina Faso */
+export declare const DrapeauBurkinaFaso: Afroicon;
+/** Drapeau du Burundi · Flag of Burundi */
+export declare const DrapeauBurundi: Afroicon;
+/** Drapeau du Cap-Vert · Flag of Cabo Verde */
+export declare const DrapeauCapVert: Afroicon;
+/** Drapeau du Cameroun · Flag of Cameroon */
+export declare const DrapeauCameroun: Afroicon;
+/** Drapeau de la Centrafrique · Flag of the Central African Republic */
+export declare const DrapeauCentrafrique: Afroicon;
+/** Drapeau du Tchad · Flag of Chad */
+export declare const DrapeauTchad: Afroicon;
+/** Drapeau des Comores · Flag of the Comoros */
+export declare const DrapeauComores: Afroicon;
+/** Drapeau du Congo · Flag of the Republic of the Congo */
+export declare const DrapeauCongo: Afroicon;
+/** Drapeau de la RD Congo · Flag of the DR Congo */
+export declare const DrapeauRdCongo: Afroicon;
+/** Drapeau de la Côte d'Ivoire · Flag of Côte d'Ivoire */
+export declare const DrapeauCoteDIvoire: Afroicon;
+/** Drapeau de Djibouti · Flag of Djibouti */
+export declare const DrapeauDjibouti: Afroicon;
+/** Drapeau de l'Égypte · Flag of Egypt */
+export declare const DrapeauEgypte: Afroicon;
+/** Drapeau de la Guinée équatoriale · Flag of Equatorial Guinea */
+export declare const DrapeauGuineeEquatoriale: Afroicon;
+/** Drapeau de l'Érythrée · Flag of Eritrea */
+export declare const DrapeauErythree: Afroicon;
+/** Drapeau de l'Eswatini · Flag of Eswatini */
+export declare const DrapeauEswatini: Afroicon;
+/** Drapeau de l'Éthiopie · Flag of Ethiopia */
+export declare const DrapeauEthiopie: Afroicon;
+/** Drapeau du Gabon · Flag of Gabon */
+export declare const DrapeauGabon: Afroicon;
+/** Drapeau de la Gambie · Flag of the Gambia */
+export declare const DrapeauGambie: Afroicon;
+/** Drapeau du Ghana · Flag of Ghana */
+export declare const DrapeauGhana: Afroicon;
+/** Drapeau de la Guinée · Flag of Guinea */
+export declare const DrapeauGuinee: Afroicon;
+/** Drapeau de la Guinée-Bissau · Flag of Guinea-Bissau */
+export declare const DrapeauGuineeBissau: Afroicon;
+/** Drapeau du Kenya · Flag of Kenya */
+export declare const DrapeauKenya: Afroicon;
+/** Drapeau du Lesotho · Flag of Lesotho */
+export declare const DrapeauLesotho: Afroicon;
+/** Drapeau du Liberia · Flag of Liberia */
+export declare const DrapeauLiberia: Afroicon;
+/** Drapeau de la Libye · Flag of Libya */
+export declare const DrapeauLibye: Afroicon;
+/** Drapeau de Madagascar · Flag of Madagascar */
+export declare const DrapeauMadagascar: Afroicon;
+/** Drapeau du Malawi · Flag of Malawi */
+export declare const DrapeauMalawi: Afroicon;
+/** Drapeau du Mali · Flag of Mali */
+export declare const DrapeauMali: Afroicon;
+/** Drapeau de la Mauritanie · Flag of Mauritania */
+export declare const DrapeauMauritanie: Afroicon;
+/** Drapeau de Maurice · Flag of Mauritius */
+export declare const DrapeauMaurice: Afroicon;
+/** Drapeau du Maroc · Flag of Morocco */
+export declare const DrapeauMaroc: Afroicon;
+/** Drapeau du Mozambique · Flag of Mozambique */
+export declare const DrapeauMozambique: Afroicon;
+/** Drapeau de la Namibie · Flag of Namibia */
+export declare const DrapeauNamibie: Afroicon;
+/** Drapeau du Niger · Flag of Niger */
+export declare const DrapeauNiger: Afroicon;
+/** Drapeau du Nigeria · Flag of Nigeria */
+export declare const DrapeauNigeria: Afroicon;
+/** Drapeau de l'Ouganda · Flag of Uganda */
+export declare const DrapeauOuganda: Afroicon;
+/** Drapeau du Rwanda · Flag of Rwanda */
+export declare const DrapeauRwanda: Afroicon;
+/** Drapeau de Sao Tomé-et-Principe · Flag of São Tomé and Príncipe */
+export declare const DrapeauSaoTomeEtPrincipe: Afroicon;
+/** Drapeau du Sénégal · Flag of Senegal */
+export declare const DrapeauSenegal: Afroicon;
+/** Drapeau des Seychelles · Flag of the Seychelles */
+export declare const DrapeauSeychelles: Afroicon;
+/** Drapeau de la Sierra Leone · Flag of Sierra Leone */
+export declare const DrapeauSierraLeone: Afroicon;
+/** Drapeau de la Somalie · Flag of Somalia */
+export declare const DrapeauSomalie: Afroicon;
+/** Drapeau de l'Afrique du Sud · Flag of South Africa */
+export declare const DrapeauAfriqueDuSud: Afroicon;
+/** Drapeau du Soudan du Sud · Flag of South Sudan */
+export declare const DrapeauSoudanDuSud: Afroicon;
+/** Drapeau du Soudan · Flag of Sudan */
+export declare const DrapeauSoudan: Afroicon;
+/** Drapeau de la Tanzanie · Flag of Tanzania */
+export declare const DrapeauTanzanie: Afroicon;
+/** Drapeau du Togo · Flag of Togo */
+export declare const DrapeauTogo: Afroicon;
+/** Drapeau de la Tunisie · Flag of Tunisia */
+export declare const DrapeauTunisie: Afroicon;
+/** Drapeau de la Zambie · Flag of Zambia */
+export declare const DrapeauZambie: Afroicon;
+/** Drapeau du Zimbabwe · Flag of Zimbabwe */
+export declare const DrapeauZimbabwe: Afroicon;

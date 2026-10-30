@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { CITIES, ICONS, REGNAME, VERSION, byId, catOf, isNew, lineLike, loadFills, type CityId, type Icon } from "../lib/constants";
+import { CITIES, ICONS, REGNAME, VERSION, byId, catOf, colOf, isFlag, isNew, lineLike, loadFills, type CityId, type Icon } from "../lib/constants";
 import { FACTS } from "../lib/i18n";
 import { norm, rank } from "../lib/search";
 import { animateDraw, cssStr, highlight, jsxSnippet, spriteStr, svgStr, svgToPng, useStr } from "../lib/svg";
@@ -107,11 +107,11 @@ export function Drawer() {
             <div id="dBig" ref={big}><Svg key={ic.id + a.style} i={ic} o={{ s: line ? 212 : 180, c: fg, style: a.style, w: a.stroke, bg: a.badgeBg }} /></div>
           </div>
           <div className="dsizes">{[16, 20, 24, 32, 48].map((s) => <div key={s} style={{ color: a.ink }}><Svg i={ic} o={{ s, style: a.style, w: a.stroke, bg: a.badgeBg, c: line ? "currentColor" : a.color ?? "#fff" }} /><small>{s}</small></div>)}</div>
-          <details className="dcust" open={custOpen} onToggle={(e) => setCustOpen((e.target as HTMLDetailsElement).open)}>
+          {!isFlag(ic) && <details className="dcust" open={custOpen} onToggle={(e) => setCustOpen((e.target as HTMLDetailsElement).open)}>
             <summary><ISliders s={16} />{a.tt("Personnaliser", "Customise")}<small>{a.tt("pour cette icône", "for this icon")}</small><IChevron s={14} w={2.4} /></summary>
             <CustomizeFields v={cust} set={(p) => setCust((c) => ({ ...c, ...p }))} onReset={fromLibrary} />
-          </details>
-          <div className="dtags">{ic.tags.map((x) => <button key={x} onClick={() => { close(); dispatchEvent(new CustomEvent("afroicons:filter", { detail: { q: x, favOnly: false, col: ic.lucide ? "ui" : "afro" } })); document.getElementById("icones")?.scrollIntoView(); }}>#{x}</button>)}</div>
+          </details>}
+          <div className="dtags">{ic.tags.map((x) => <button key={x} onClick={() => { close(); dispatchEvent(new CustomEvent("afroicons:filter", { detail: { q: x, favOnly: false, col: colOf(ic.id) } })); document.getElementById("icones")?.scrollIntoView(); }}>#{x}</button>)}</div>
           {fact && <div className="fact"><i>?</i><div><b><T k="didu" /></b><span>{fact[a.lang === "en" ? 1 : 0]}</span></div></div>}
           <div className="dacts">
             <button className="btn p" onClick={() => a.copy(exportSvg(ic, a))}><T k="cSvg" /><span className="kbd" style={{ background: "transparent", color: "inherit", borderColor: "#fff4" }}>C</span></button>
@@ -122,7 +122,7 @@ export function Drawer() {
           <div className="ctx"><h4><T k="ctx" /></h4>
             <div className="ctxg">
               <div><span className="mbtn">{mk({ c: "#fff", w: 2 })}{a.tt("Commander", "Order")}</span></div>
-              <div><div className="tabbar">{[ic, ...others.slice(0, 3)].map((x, k) => <span key={x.id} className={k === 0 ? "on" : ""}><Svg i={x} o={{ s: 20, w: 1.9 }} />{nm(x).split(" ")[0].slice(0, 9)}</span>)}</div></div>
+              <div><div className="tabbar">{[ic, ...others.slice(0, 3)].map((x, k) => <span key={x.id} className={k === 0 ? "on" : ""}><Svg i={x} o={{ s: 20, w: 1.9 }} />{(isFlag(x) ? x.country![a.lang] : nm(x)).split(" ")[0].slice(0, 9)}</span>)}</div></div>
               <div><div className="lrow"><span className="av">{mk({ s: 22 })}</span><div><b>{nm(ic)}</b><small>{ic.lucide ? "afroicons-ui" : REGNAME[ic.region][a.lang]}</small></div></div></div>
               <div><span className="notif"><i>{mk({ s: 16, w: 2.2 })}</i>{a.tt("Ajouté au panier", "Added to basket")}</span></div>
             </div>
