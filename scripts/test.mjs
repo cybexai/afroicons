@@ -40,7 +40,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 const ui = await import("../packages/afroicons-ui/index.js");
 const lucide = await import("lucide-react");
 const drawn = ui.afroiconNames;
-assert.ok(drawn.length >= 163, "au moins 163 icônes d'interface");
+assert.ok(drawn.length >= 177, "au moins 177 icônes d'interface");
 assert.equal(new Set(drawn).size, drawn.length, "noms d'interface uniques");
 const html = (C, p = {}) => renderToStaticMarkup(createElement(C, p));
 for (const n of drawn) {

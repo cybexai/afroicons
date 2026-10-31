@@ -6,6 +6,7 @@
 - Site : page **Nouveautés** (`/nouveautes/`), chiffres d'usage réels (installations npm, étoiles GitHub) dans « Utiliser », mention « Utilisé par NAFA ERP »
 - Packs téléchargés : le style choisi est indiqué dans le nom du fichier et le README
 - **Les 54 drapeaux africains** (États membres de l'ONU), aux couleurs officielles, en rectangle aux coins arrondis : `toSvg("drapeau-cameroun")`, `<DrapeauCameroun />`, `<afroicon name="drapeau-cameroun">`. Code ISO et nom du pays dans `icons.json`. Sur le site, une collection « Drapeaux » filtrable par région, et une page par drapeau
+- `afroicons-ui` et `afroicons-angular` : **14 nouvelles icônes d'interface** pour SYSIGAPE, soit 177 au total : `Menu`, `PanelLeftOpen`, `PanelLeftClose`, `MoreVertical`, `Sun`, `Hourglass`, `ClipboardX`, `PiggyBank` (tirelire en terre cuite), `Folder`, `Tractor` (la daba, houe du paysan), `Building`, `UserCog`, `Quote`, `MailCheck`. Correspondance complète dans `docs/integrations/sysigape.md`
 - Site : la page **Nouveautés** prend le style du site, avec son lien dans le menu et sur le badge de version ; l'accueil compte toutes les icônes (325 : 162 culturelles, 163 d'interface)
 
 ## 0.5.0 — 30 octobre 2026 · style rempli, variantes, icônes P2

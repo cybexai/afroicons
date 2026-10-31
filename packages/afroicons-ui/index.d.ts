@@ -655,3 +655,59 @@ export declare const LucideShoppingBag: LucideIcon;
 export declare const PackageCheck: LucideIcon;
 export declare const PackageCheckIcon: LucideIcon;
 export declare const LucidePackageCheck: LucideIcon;
+/** Menu · Menu */
+export declare const Menu: LucideIcon;
+export declare const MenuIcon: LucideIcon;
+export declare const LucideMenu: LucideIcon;
+/** Déplier le panneau · Open side panel */
+export declare const PanelLeftOpen: LucideIcon;
+export declare const PanelLeftOpenIcon: LucideIcon;
+export declare const LucidePanelLeftOpen: LucideIcon;
+/** Replier le panneau · Close side panel */
+export declare const PanelLeftClose: LucideIcon;
+export declare const PanelLeftCloseIcon: LucideIcon;
+export declare const LucidePanelLeftClose: LucideIcon;
+/** Plus d'options · More options */
+export declare const MoreVertical: LucideIcon;
+export declare const MoreVerticalIcon: LucideIcon;
+export declare const LucideMoreVertical: LucideIcon;
+/** Soleil, mode clair · Sun, light mode */
+export declare const Sun: LucideIcon;
+export declare const SunIcon: LucideIcon;
+export declare const LucideSun: LucideIcon;
+/** En attente · Pending */
+export declare const Hourglass: LucideIcon;
+export declare const HourglassIcon: LucideIcon;
+export declare const LucideHourglass: LucideIcon;
+/** Aucun élément · Nothing here */
+export declare const ClipboardX: LucideIcon;
+export declare const ClipboardXIcon: LucideIcon;
+export declare const LucideClipboardX: LucideIcon;
+/** Épargne, enveloppe · Savings, budget — La tirelire en terre cuite, qu'on casse quand elle est pleine, à la place du cochon. */
+export declare const PiggyBank: LucideIcon;
+export declare const PiggyBankIcon: LucideIcon;
+export declare const LucidePiggyBank: LucideIcon;
+/** Dossier · Folder */
+export declare const Folder: LucideIcon;
+export declare const FolderIcon: LucideIcon;
+export declare const LucideFolder: LucideIcon;
+/** Agriculture · Agriculture — La daba, la houe du paysan, à la place du tracteur. */
+export declare const Tractor: LucideIcon;
+export declare const TractorIcon: LucideIcon;
+export declare const LucideTractor: LucideIcon;
+/** Grande entreprise · Large company */
+export declare const Building: LucideIcon;
+export declare const BuildingIcon: LucideIcon;
+export declare const LucideBuilding: LucideIcon;
+/** Gestion des utilisateurs · User management */
+export declare const UserCog: LucideIcon;
+export declare const UserCogIcon: LucideIcon;
+export declare const LucideUserCog: LucideIcon;
+/** Citation · Quote */
+export declare const Quote: LucideIcon;
+export declare const QuoteIcon: LucideIcon;
+export declare const LucideQuote: LucideIcon;
+/** E-mail envoyé · Email sent */
+export declare const MailCheck: LucideIcon;
+export declare const MailCheckIcon: LucideIcon;
+export declare const LucideMailCheck: LucideIcon;

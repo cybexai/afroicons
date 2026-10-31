@@ -1302,5 +1302,117 @@
   "family": "Commerce et stock",
   "afro": "Le colis ficelé, validé.",
   "body": "<path d=\"M20.5 11.5V7.5L12 3.5L3.5 7.5V16.5L12 20.5L13 20\"/><path d=\"M3.5 7.5L12 11.5L20.5 7.5M12 11.5V20.5\"/><path d=\"M7.8 5.5L16.2 9.5V12\"/><path d=\"M15 17.5L17 19.5L21 15.5\"/>"
+ },
+ {
+  "id": "Menu",
+  "fr": "Menu",
+  "en": "Menu",
+  "family": "Navigation",
+  "afro": null,
+  "body": "<path d=\"M4 6.5H20M4 12H20M4 17.5H14\"/>"
+ },
+ {
+  "id": "PanelLeftOpen",
+  "fr": "Déplier le panneau",
+  "en": "Open side panel",
+  "family": "Navigation",
+  "afro": null,
+  "body": "<rect x=\"3\" y=\"4\" width=\"18\" height=\"16\" rx=\"2.5\"/><path d=\"M9 4V20\"/><path d=\"M13 9.5L15.5 12L13 14.5\"/>"
+ },
+ {
+  "id": "PanelLeftClose",
+  "fr": "Replier le panneau",
+  "en": "Close side panel",
+  "family": "Navigation",
+  "afro": null,
+  "body": "<rect x=\"3\" y=\"4\" width=\"18\" height=\"16\" rx=\"2.5\"/><path d=\"M9 4V20\"/><path d=\"M15.5 9.5L13 12L15.5 14.5\"/>"
+ },
+ {
+  "id": "MoreVertical",
+  "fr": "Plus d'options",
+  "en": "More options",
+  "family": "Actions",
+  "afro": null,
+  "body": "<circle cx=\"12\" cy=\"5.5\" r=\"1.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"12\" cy=\"12\" r=\"1.5\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"12\" cy=\"18.5\" r=\"1.5\" fill=\"currentColor\" stroke=\"none\"/>"
+ },
+ {
+  "id": "Sun",
+  "fr": "Soleil, mode clair",
+  "en": "Sun, light mode",
+  "family": "Thème et météo",
+  "afro": null,
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2.5V4.5M12 19.5V21.5M2.5 12H4.5M19.5 12H21.5M5.3 5.3L6.7 6.7M17.3 17.3L18.7 18.7M5.3 18.7L6.7 17.3M17.3 6.7L18.7 5.3\"/>"
+ },
+ {
+  "id": "Hourglass",
+  "fr": "En attente",
+  "en": "Pending",
+  "family": "Statuts et alertes",
+  "afro": null,
+  "body": "<path d=\"M6 3H18M6 21H18\"/><path d=\"M7.5 3V6.5C7.5 9 12 10.5 12 12S7.5 15 7.5 17.5V21M16.5 3V6.5C16.5 9 12 10.5 12 12S16.5 15 16.5 17.5V21\"/><path d=\"M9.5 19L12 17.3L14.5 19\"/>"
+ },
+ {
+  "id": "ClipboardX",
+  "fr": "Aucun élément",
+  "en": "Nothing here",
+  "family": "Statuts et alertes",
+  "afro": null,
+  "body": "<rect x=\"5\" y=\"4.5\" width=\"14\" height=\"16.5\" rx=\"2\"/><rect x=\"9\" y=\"3\" width=\"6\" height=\"3\" rx=\"1\"/><path d=\"M9.8 11.3L14.2 15.7M14.2 11.3L9.8 15.7\"/>"
+ },
+ {
+  "id": "PiggyBank",
+  "fr": "Épargne, enveloppe",
+  "en": "Savings, budget",
+  "family": "Argent et paiement",
+  "afro": "La tirelire en terre cuite, qu'on casse quand elle est pleine, à la place du cochon.",
+  "body": "<path d=\"M9 4.5H15\"/><path d=\"M9.5 4.5V6.8C6.3 8 4 10.6 4 13.8C4 17.7 7.6 20.5 12 20.5S20 17.7 20 13.8C20 10.6 17.7 8 14.5 6.8V4.5\"/><path d=\"M10.5 10.5H13.5\"/><path d=\"M5.2 16Q12 18.2 18.8 16\"/>"
+ },
+ {
+  "id": "Folder",
+  "fr": "Dossier",
+  "en": "Folder",
+  "family": "Documents et données",
+  "afro": null,
+  "body": "<path d=\"M3.5 7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V17.5C20.5 18.6 19.6 19.5 18.5 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5Z\"/><path d=\"M3.5 10.2H20.5\"/>"
+ },
+ {
+  "id": "Tractor",
+  "fr": "Agriculture",
+  "en": "Agriculture",
+  "family": "Commerce et stock",
+  "afro": "La daba, la houe du paysan, à la place du tracteur.",
+  "body": "<path d=\"M4 20.5L13.5 7\"/><path d=\"M11.6 5.4C13.6 3.6 16.6 3.5 18.6 5.2L14.3 9.3Z\"/><path d=\"M18 20.5V15.8\"/><path d=\"M18 17.6C18 15.9 19.3 14.8 21 14.8C21 16.5 19.7 17.6 18 17.6Z\"/><path d=\"M18 16.6C18 14.9 16.7 13.8 15 13.8C15 15.5 16.3 16.6 18 16.6Z\"/><path d=\"M13 20.5H21.5\"/>"
+ },
+ {
+  "id": "Building",
+  "fr": "Grande entreprise",
+  "en": "Large company",
+  "family": "Commerce et stock",
+  "afro": null,
+  "body": "<rect x=\"5.5\" y=\"3\" width=\"13\" height=\"18\" rx=\"1.5\"/><path d=\"M9 7H10M14 7H15M9 10.5H10M14 10.5H15M9 14H10M14 14H15\"/><path d=\"M10.5 21V17.5H13.5V21\"/>"
+ },
+ {
+  "id": "UserCog",
+  "fr": "Gestion des utilisateurs",
+  "en": "User management",
+  "family": "Personnes",
+  "afro": null,
+  "body": "<circle cx=\"9\" cy=\"7.5\" r=\"3.5\"/><path d=\"M3 20C3 16.6 5.7 14 9 14C10.1 14 11.2 14.3 12 14.8\"/><circle cx=\"17.5\" cy=\"17\" r=\"2.3\"/><path d=\"M19.8 17L20.9 17M18.65 18.99L19.2 19.94M16.35 18.99L15.8 19.94M15.2 17L14.1 17M16.35 15.01L15.8 14.06M18.65 15.01L19.2 14.06\"/>"
+ },
+ {
+  "id": "Quote",
+  "fr": "Citation",
+  "en": "Quote",
+  "family": "Communication",
+  "afro": null,
+  "body": "<path d=\"M4 12H9V17.5H4Z\"/><path d=\"M4 12C4 9 5.5 7 8.5 6\"/><path d=\"M13.5 12H18.5V17.5H13.5Z\"/><path d=\"M13.5 12C13.5 9 15 7 18 6\"/>"
+ },
+ {
+  "id": "MailCheck",
+  "fr": "E-mail envoyé",
+  "en": "Email sent",
+  "family": "Communication",
+  "afro": null,
+  "body": "<path d=\"M20.5 12V7.5C20.5 6.1 19.4 5 18 5H6C4.6 5 3.5 6.1 3.5 7.5V16.5C3.5 17.9 4.6 19 6 19H12.5\"/><path d=\"M4 7.5L12 13L20 7.5\"/><path d=\"M15 17.5L17 19.5L21 15.5\"/>"
  }
 ]
