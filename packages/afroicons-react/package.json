@@ -1,7 +1,7 @@
 {
   "name": "afroicons-react",
   "version": "0.5.0",
-  "description": "Les 162 icônes Afroicons en composants React, au trait et remplies.",
+  "description": "Les 162 icônes Afroicons et les 54 drapeaux africains en composants React, au trait et remplies.",
   "type": "module",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -9,7 +9,7 @@
   "files": ["index.js", "index.d.ts", "LICENSE", "README.md"],
   "sideEffects": false,
   "peerDependencies": { "react": ">=17" },
-  "keywords": ["react", "icons", "svg", "africa", "afroicons"],
+  "keywords": ["react", "icons", "svg", "africa", "afroicons", "flags"],
   "license": "MIT",
   "author": "THAFAM HOLDING SARL",
   "repository": { "type": "git", "url": "https://github.com/cybexai/afroicons", "directory": "packages/afroicons-react" },

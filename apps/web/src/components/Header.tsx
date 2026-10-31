@@ -126,7 +126,7 @@ export function Hero() {
     <header className="hero wrap" id="top">
       <div>
         <div className="eyebrows">
-        <a className="eyebrow" href="/nouveautes/" title={a.tt("Voir les nouveautés", "See what's new")}><b>v{VERSION}</b><span>{a.tt(`${ICONS.length} icônes libres · dont les ${FLAGS.length} drapeaux africains`, `${ICONS.length} free icons · incl. all ${FLAGS.length} African flags`)}</span></a>
+        <a className="eyebrow" href="/nouveautes/" title={a.tt("Voir les nouveautés", "See what's new")}><b>v{VERSION}</b><span>{a.tt(`${ICONS.length} icônes libres · ${FLAGS.length} drapeaux`, `${ICONS.length} free icons · ${FLAGS.length} flags`)}</span></a>
         <button className="eyebrow iod" onClick={() => a.openIcon(iod.id)}>
           <Svg i={iod} o={{ s: 18, w: 2 }} /><span>{a.tt("Icône du jour", "Icon of the day")} : <strong style={{ color: "var(--ink)" }}>{nm(iod)}</strong></span>
         </button>

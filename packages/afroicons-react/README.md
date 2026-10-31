@@ -1,13 +1,13 @@
 # afroicons-react
 
-Les 162 icônes [Afroicons](https://afroicons.org) en composants React.
+Les 162 icônes [Afroicons](https://afroicons.org) et les 54 drapeaux africains en composants React.
 
 ```bash
 npm install afroicons-react
 ```
 
 ```jsx
-import { Baobab, Mobilemoney, Mototaxi } from "afroicons-react";
+import { Baobab, Mobilemoney, Mototaxi, DrapeauCameroun } from "afroicons-react";
 
 <Baobab />
 <Mobilemoney size={20} color="#22305C" />

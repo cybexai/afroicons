@@ -20,7 +20,7 @@
 | --- | --- |
 | [`afroicons`](packages/afroicons) | SVG, sprite, `icons.json`, fonction `toSvg()` (JS natif) |
 | [`afroicons-react`](packages/afroicons-react) | Un composant React par icône |
-| [`afroicons-ui`](packages/afroicons-ui) | 163 icônes d'interface, compatibles `lucide-react` (mêmes noms, mêmes props) |
+| [`afroicons-ui`](packages/afroicons-ui) | 177 icônes d'interface, compatibles `lucide-react` (mêmes noms, mêmes props) |
 | [`afroicons-angular`](packages/afroicons-angular) | Composant Angular autonome `<afroicon>`, toutes les icônes |
 
 ## Démarrage rapide · Quick start

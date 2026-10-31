@@ -32,7 +32,7 @@ export default function App() {
   const siteTitle = useRef(document.title.includes("| Afroicons") && PAGE === "home" ? a.tt("Afroicons — des icônes qui racontent l'Afrique", "Afroicons — icons that tell Africa's story") : document.title);
   useEffect(() => {
     const i = a.current ? byId[a.current] : null;
-    document.title = i ? `${a.lang === "en" ? i.en : i.fr} — ${a.tt("icône SVG gratuite", "free SVG icon")} | Afroicons` : siteTitle.current;
+    document.title = i ? `${a.lang === "en" ? i.en : i.fr} — ${i.cat === "drapeaux" ? a.tt("SVG gratuit, couleurs officielles", "free SVG, official colours") : a.tt("icône SVG gratuite", "free SVG icon")} | Afroicons` : siteTitle.current;
   }, [a.current, a.lang]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Pas de défilement de la page derrière une fenêtre ouverte.

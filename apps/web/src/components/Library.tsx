@@ -176,7 +176,14 @@ export function Library() {
     setAnim(true); setFocusIdx(-1); setPage(p);
     requestAnimationFrame(() => grid.current?.scrollIntoView({ block: "start", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }));
   };
-  const change = (fn: () => void) => { setAnim(true); setFocusIdx(-1); const go = () => fn(); (document as any).startViewTransition && !matchMedia("(prefers-reduced-motion: reduce)").matches ? (document as any).startViewTransition(go) : go(); };
+  const change = (fn: () => void) => {
+    setAnim(true); setFocusIdx(-1);
+    const vt = (document as any).startViewTransition;
+    if (!vt || matchMedia("(prefers-reduced-motion: reduce)").matches) return fn();
+    // Une transition interrompue par la suivante (clics rapides) n'est pas une erreur.
+    const t = vt.call(document, fn);
+    t.ready?.catch(() => {}); t.finished?.catch(() => {}); t.updateCallbackDone?.catch(() => {});
+  };
   useEffect(() => { if (anim) { const h = setTimeout(() => setAnim(false), 900); return () => clearTimeout(h); } }, [anim, list]);
 
   const o = { s: a.size, style: a.style, w: a.stroke, c: lineLike(a.style) ? "currentColor" : a.color ?? "#fff", bg: a.badgeBg };

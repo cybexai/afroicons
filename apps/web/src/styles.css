@@ -614,7 +614,8 @@ a.vote span:first-child{font-size:17px;line-height:1}
 .seg.cols{flex:none;height:36px}
 .seg.cols button{display:flex;align-items:center;gap:6px;padding:0 12px;font-size:13px}
 .seg.cols small{font:600 11px "JetBrains Mono";opacity:.6}
-@media (max-width:640px){.seg.cols{align-self:flex-start}}
+@media (max-width:640px){.seg.cols{align-self:stretch;min-width:0}.seg.cols button{flex:1;justify-content:center;padding:0 6px;gap:4px;min-width:0}}
+@media (max-width:380px){.seg.cols button{font-size:12px}.seg.cols small{font-size:10px}}
 
 /* Chiffres d'usage (section Utiliser) */
 .ustats{display:flex;gap:8px;flex-wrap:wrap;align-items:center}

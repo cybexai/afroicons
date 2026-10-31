@@ -1,6 +1,6 @@
 # afroicons-angular
 
-Les icônes [Afroicons](https://afroicons.org) pour Angular (18 et plus) : un composant autonome `<afroicon>`, les **162 icônes culturelles** (au trait et remplies) et les **163 icônes d'interface** (noms Lucide, comme [`afroicons-ui`](https://www.npmjs.com/package/afroicons-ui)).
+Les icônes [Afroicons](https://afroicons.org) pour Angular (18 et plus) : un composant autonome `<afroicon>`, les **162 icônes culturelles** (au trait et remplies), les **54 drapeaux africains** et les **177 icônes d'interface** (noms Lucide, comme [`afroicons-ui`](https://www.npmjs.com/package/afroicons-ui)).
 
 ```bash
 npm install afroicons-angular
