@@ -5,7 +5,7 @@
   "keywords": ["angular", "icons", "svg", "africa", "afroicons", "lucide", "flags"],
   "license": "MIT",
   "author": "THAFAM HOLDING SARL",
-  "repository": { "type": "git", "url": "https://github.com/cybexai/afroicons", "directory": "packages/afroicons-angular" },
+  "repository": { "type": "git", "url": "git+https://github.com/cybexai/afroicons.git", "directory": "packages/afroicons-angular" },
   "homepage": "https://afroicons.org",
   "sideEffects": false,
   "scripts": { "build": "ng-packagr -p ng-package.json" },

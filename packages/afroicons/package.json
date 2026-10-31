@@ -16,6 +16,6 @@
   "keywords": ["icons", "svg", "africa", "afrique", "icon-set", "afroicons", "adinkra", "wax", "flags", "drapeaux"],
   "license": "MIT",
   "author": "THAFAM HOLDING SARL",
-  "repository": { "type": "git", "url": "https://github.com/cybexai/afroicons", "directory": "packages/afroicons" },
+  "repository": { "type": "git", "url": "git+https://github.com/cybexai/afroicons.git", "directory": "packages/afroicons" },
   "homepage": "https://afroicons.org"
 }

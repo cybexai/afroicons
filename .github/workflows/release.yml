@@ -1,5 +1,7 @@
-# Publie les quatre paquets sur npm quand on pousse un tag v*, ex. : git tag v0.3.0 && git push --tags
-# Prérequis : un secret NPM_TOKEN (npm > Access Tokens > Granular, droit "publish") dans les réglages du dépôt.
+# Publie les quatre paquets sur npm quand on pousse un tag v*, ex. : git tag v0.7.0 && git push origin v0.7.0
+# Publication de confiance (trusted publishing) : npm reconnaît ce workflow par OIDC, sans jeton à stocker.
+# Prérequis, une fois par paquet sur npmjs.com : Settings > Trusted Publisher > GitHub Actions,
+# organisation « cybexai », dépôt « afroicons », workflow « release.yml ».
 name: Release
 on:
   push:
@@ -10,21 +12,20 @@ jobs:
     permissions: { contents: read, id-token: write }
     steps:
       - uses: actions/checkout@v4
+      # Node 24 embarque npm 11, nécessaire à la publication de confiance (npm 11.5.1 ou plus récent).
       - uses: actions/setup-node@v4
-        with: { node-version: 20, cache: npm, registry-url: "https://registry.npmjs.org" }
+        with: { node-version: 24, cache: npm, registry-url: "https://registry.npmjs.org" }
+      - run: npm --version
       - run: npm ci
       - run: cp LICENSE packages/afroicons-angular/
       - run: npm test
       - run: cp LICENSE packages/afroicons/ && cp LICENSE packages/afroicons-react/ && cp LICENSE packages/afroicons-ui/
-      - run: npm publish --provenance --access public
+      # Provenance ajoutée automatiquement par la publication de confiance.
+      - run: npm publish --access public
         working-directory: packages/afroicons
-        env: { NODE_AUTH_TOKEN: "${{ secrets.NPM_TOKEN }}" }
-      - run: npm publish --provenance --access public
+      - run: npm publish --access public
         working-directory: packages/afroicons-react
-        env: { NODE_AUTH_TOKEN: "${{ secrets.NPM_TOKEN }}" }
-      - run: npm publish --provenance --access public
+      - run: npm publish --access public
         working-directory: packages/afroicons-ui
-        env: { NODE_AUTH_TOKEN: "${{ secrets.NPM_TOKEN }}" }
-      - run: npm publish --provenance --access public
+      - run: npm publish --access public
         working-directory: packages/afroicons-angular/dist
-        env: { NODE_AUTH_TOKEN: "${{ secrets.NPM_TOKEN }}" }

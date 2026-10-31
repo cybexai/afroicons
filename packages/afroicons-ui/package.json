@@ -16,6 +16,6 @@
   "keywords": ["react", "icons", "svg", "africa", "afroicons", "lucide", "ui"],
   "license": "MIT",
   "author": "THAFAM HOLDING SARL",
-  "repository": { "type": "git", "url": "https://github.com/cybexai/afroicons", "directory": "packages/afroicons-ui" },
+  "repository": { "type": "git", "url": "git+https://github.com/cybexai/afroicons.git", "directory": "packages/afroicons-ui" },
   "homepage": "https://afroicons.org"
 }
