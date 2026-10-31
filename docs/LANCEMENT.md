@@ -12,8 +12,8 @@ Vérifié le 29/10/2026 : les noms `afroicons` et `afroicons-react` sont **libre
 
 ## 2. npm (10 min)
 - [ ] Créer un compte sur npmjs.com, activer la double authentification
-- [ ] Créer un token *Granular* avec le droit « publish » et l'ajouter dans GitHub > Settings > Secrets > `NPM_TOKEN`
-- [ ] `git tag v0.3.0 && git push --tags` : le workflow `release.yml` teste puis publie les deux paquets
+- [ ] Pour chacun des 4 paquets : *Settings > Trusted Publisher > GitHub Actions*, organisation `cybexai`, dépôt `afroicons`, workflow `release.yml` (publication de confiance : aucun jeton à stocker)
+- [ ] `git tag v0.7.0 && git push origin v0.7.0` : le workflow `release.yml` teste puis publie les quatre paquets
 - [ ] Ou, en local : `npm test`, puis `npm publish --access public` dans chaque dossier `packages/*`
 
 ## 3. Domaine : afroicons.org
