@@ -19,6 +19,9 @@ export type CustomValue = { style: Style; color: string | null; bg: string | nul
 export function CustomizeFields({ v, set, onReset }: { v: CustomValue; set: (p: Partial<CustomValue>) => void; onReset: () => void }) {
   const a = useApp();
   const ink = v.color ?? a.theme.ink, badgeBg = v.bg ?? a.pal[0];
+  // Aperçus « Trait » et « Rempli » : en style pastille, la couleur choisie (souvent blanche) est celle du dessin
+  // sur la pastille ; ils prennent donc la couleur du texte, sinon ils disparaissent sur le fond.
+  const lineInk = lineLike(v.style) ? ink : a.theme.ink;
   const inks = [a.theme.ink, ...a.pal];
   const pickStyle = (s: Style) => {
     const p: Partial<CustomValue> = { style: s };
@@ -31,7 +34,7 @@ export function CustomizeFields({ v, set, onReset }: { v: CustomValue; set: (p: 
       <div className="blk"><h3><T k="pStyle" /></h3>
         <div className="styles">{STYLES.map((s) => (
           <button key={s.id} className={v.style === s.id ? "on" : ""} aria-pressed={v.style === s.id} onClick={() => pickStyle(s.id)}>
-            <Svg i={byId.baobab} o={{ s: 30, style: s.id, c: lineLike(s.id) ? ink : "#fff", bg: badgeBg }} />{a.tt(s.fr, s.en)}
+            <Svg i={byId.baobab} o={{ s: 30, style: s.id, c: lineLike(s.id) ? lineInk : "#fff", bg: badgeBg }} />{a.tt(s.fr, s.en)}
           </button>
         ))}</div>
       </div>
