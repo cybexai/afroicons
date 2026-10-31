@@ -11,6 +11,7 @@ for (const n of names) {
   assert.ok(i.fr && i.en, `noms FR/EN: ${n}`);
   assert.ok(["nature","faune","musique","symboles","cuisine","vie","architecture","drapeaux"].includes(i.cat), `catégorie: ${n}`);
   assert.ok(i.tags.length >= 3, `mots-clés: ${n}`);
+  assert.equal(new Set(i.tags.map((t) => t.toLowerCase())).size, i.tags.length, `mots-clés sans doublon: ${n}`);
   assert.ok(toSvg(n).startsWith("<svg") && toSvg(n).endsWith("</svg>"), `svg: ${n}`);
   if (i.variantOf) assert.ok(icons[i.variantOf] && !icons[i.variantOf].variantOf, `variante d'une icône de base : ${n}`);
 }

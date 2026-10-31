@@ -29,7 +29,8 @@ const uiId = (n: string) => "ui-" + n.replace(/([a-z0-9])([A-Z])/g, "$1-$2").rep
 /** Les icônes d'interface (paquet afroicons-ui), placées dans la catégorie « Interface ». */
 export const UI: Icon[] = (UI_ICONS as { id: string; fr: string; en: string; family: string; afro: string | null; body: string }[]).map((u) => ({
   id: uiId(u.id), lucide: u.id, family: u.family, fr: u.fr, en: u.en, cat: "interface", region: "pan", since: "ui", body: u.body,
-  tags: [u.id, u.family, ...(u.afro ? ["afrique", ...(u.afro.toLowerCase().match(/[a-zà-ÿ]{4,}/g) ?? [])] : [])],
+  // Sans doublon : les mots-clés servent de clé aux étiquettes de la fiche.
+  tags: [...new Set([u.id, u.family, ...(u.afro ? ["afrique", ...(u.afro.toLowerCase().match(/[a-zà-ÿ]{4,}/g) ?? [])] : [])])],
 }));
 export const ICONS: Icon[] = [...AFRO, ...FLAGS, ...UI];
 export type Collection = "afro" | "flags" | "ui";

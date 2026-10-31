@@ -72,6 +72,9 @@ export function Drawer() {
   if (!ic) return <><div className="scrim" /><aside className="drawer" aria-hidden="true" {...inert(true)} /></>;
   const cat = catOf(ic.cat);
   const line = lineLike(a.style);
+  // Icônes au trait de la fiche (variantes, même famille) : en style pastille, la couleur choisie est celle du
+  // dessin sur la pastille (souvent blanche) ; elles prennent donc la couleur du texte.
+  const lineInk = line ? a.ink : app.theme.ink;
   const bgs = ["card", ...a.pal.slice(0, 3), "ink"];
   const bgVal = prevBg === "card" ? "var(--card)" : prevBg === "ink" ? "var(--ink)" : prevBg;
   const fg = !line ? a.color ?? "#fff" : prevBg === "card" ? a.ink : prevBg === "ink" ? a.theme.bg : "#fff";
@@ -122,7 +125,7 @@ export function Drawer() {
           <div className="ctx"><h4><T k="ctx" /></h4>
             <div className="ctxg">
               <div><span className="mbtn">{mk({ c: "#fff", w: 2 })}{a.tt("Commander", "Order")}</span></div>
-              <div><div className="tabbar">{[ic, ...others.slice(0, 3)].map((x, k) => <span key={x.id} className={k === 0 ? "on" : ""}><Svg i={x} o={{ s: 20, w: 1.9 }} />{(isFlag(x) ? x.country![a.lang] : nm(x)).split(" ")[0].slice(0, 9)}</span>)}</div></div>
+              <div><div className="tabbar">{[ic, ...others.slice(0, 3)].map((x, k) => <span key={x.id} className={k === 0 ? "on" : ""}><Svg i={x} o={{ s: 20, w: 1.9 }} /><small>{(isFlag(x) ? x.country![a.lang] : nm(x)).split(" ")[0]}</small></span>)}</div></div>
               <div><div className="lrow"><span className="av">{mk({ s: 22 })}</span><div><b>{nm(ic)}</b><small>{ic.lucide ? "afroicons-ui" : REGNAME[ic.region][a.lang]}</small></div></div></div>
               <div><span className="notif"><i>{mk({ s: 16, w: 2.2 })}</i>{a.tt("Ajouté au panier", "Added to basket")}</span></div>
             </div>
@@ -132,10 +135,10 @@ export function Drawer() {
             <div className="codebox"><pre dangerouslySetInnerHTML={{ __html: highlight(code, tab === "css") }} /><button className="cp" onClick={() => a.copy(code)}><T k="cp" /></button></div>
           </div>
           {variants.length > 1 && <div className="sim"><h4>{a.tt("Variantes", "Variants")}</h4>
-            <div className="vars">{variants.map((x) => <button key={x.id} className={x.id === ic.id ? "on" : ""} aria-current={x.id === ic.id ? "true" : undefined} onClick={() => a.openIcon(x.id)}><span style={{ color: a.ink }}><Svg i={x} o={{ s: 28, w: a.stroke }} /></span><small>{nm(x)}</small></button>)}</div>
+            <div className="vars">{variants.map((x) => <button key={x.id} className={x.id === ic.id ? "on" : ""} aria-current={x.id === ic.id ? "true" : undefined} onClick={() => a.openIcon(x.id)}><span style={{ color: lineInk }}><Svg i={x} o={{ s: 28, w: a.stroke }} /></span><small>{nm(x)}</small></button>)}</div>
           </div>}
           <div className="sim"><h4><T k="sim" /></h4>
-            <div className="simg">{others.slice(0, 12).map((x) => <button key={x.id} title={nm(x)} aria-label={nm(x)} style={{ color: a.ink }} onClick={() => a.openIcon(x.id)}><Svg i={x} o={{ s: 26, w: a.stroke }} /></button>)}</div>
+            <div className="simg">{others.slice(0, 12).map((x) => <button key={x.id} title={nm(x)} aria-label={nm(x)} style={{ color: lineInk }} onClick={() => a.openIcon(x.id)}><Svg i={x} o={{ s: 26, w: a.stroke }} /></button>)}</div>
           </div>
         </div>
       </aside>

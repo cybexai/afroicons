@@ -227,7 +227,8 @@ section{position:relative}
 .ctxg>div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;align-items:center;justify-content:center;min-height:96px}
 .mbtn{display:inline-flex;align-items:center;gap:8px;background:var(--a1s);color:#fff;padding:10px 16px;border-radius:12px;font-weight:700;font-size:14px}
 .tabbar{display:flex;gap:4px;background:var(--bg2);border-radius:14px;padding:6px;width:100%;justify-content:space-around}
-.tabbar span{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9.5px;color:var(--muted);padding:4px 6px;border-radius:9px}
+.tabbar span{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9.5px;color:var(--muted);padding:4px 3px;border-radius:9px;flex:1 1 0;min-width:0}
+.tabbar small{font-size:inherit;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tabbar span.on{color:var(--a1);background:var(--card)}
 .lrow{display:flex;align-items:center;gap:10px;width:100%}
 .lrow .av{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:color-mix(in srgb,var(--a4) 16%,transparent);color:var(--a4);flex:none}

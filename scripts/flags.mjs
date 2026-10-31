@@ -164,7 +164,7 @@ const slug = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().rep
 const flags = F.map(([iso, fr, en, region, tags, shapes]) => {
   const id = "drapeau-" + slug(fr);
   const body = `<g stroke="none" stroke-linecap="butt">${shapes}</g>${OUTLINE}`;
-  return { id, iso: iso.toUpperCase(), fr: `Drapeau ${de(fr)}`, en: `Flag of ${en.startsWith("The ") || /^(DR|Central|Republic|Seychelles|Comoros)/.test(en) ? "the " + en.replace(/^The /, "") : en}`, country: { fr, en }, cat: "drapeaux", region, tags: ["drapeau", "flag", fr.toLowerCase(), en.toLowerCase(), iso, ...tags], since: "0.6", body, fill: body };
+  return { id, iso: iso.toUpperCase(), fr: `Drapeau ${de(fr)}`, en: `Flag of ${en.startsWith("The ") || /^(DR|Central|Republic|Seychelles|Comoros)/.test(en) ? "the " + en.replace(/^The /, "") : en}`, country: { fr, en }, cat: "drapeaux", region, tags: [...new Set(["drapeau", "flag", fr.toLowerCase(), en.toLowerCase(), iso, ...tags])], since: "0.6", body, fill: body };
 });
 
 /** « du Cameroun », « de la Tunisie », « de l'Algérie », « des Comores »… */

@@ -2944,7 +2944,6 @@
    "drapeau",
    "flag",
    "angola",
-   "angola",
    "ao",
    "angolais",
    "angolan"
@@ -2992,7 +2991,6 @@
    "drapeau",
    "flag",
    "botswana",
-   "botswana",
    "bw",
    "botswanais",
    "motswana"
@@ -3015,7 +3013,6 @@
   "tags": [
    "drapeau",
    "flag",
-   "burkina faso",
    "burkina faso",
    "bf",
    "burkinabè",
@@ -3040,7 +3037,6 @@
   "tags": [
    "drapeau",
    "flag",
-   "burundi",
    "burundi",
    "bi",
    "burundais",
@@ -3068,8 +3064,7 @@
    "cabo verde",
    "cv",
    "cap-verdien",
-   "cape verdean",
-   "cabo verde"
+   "cape verdean"
   ],
   "since": "0.6",
   "iso": "CV",
@@ -3240,7 +3235,6 @@
    "drapeau",
    "flag",
    "côte d'ivoire",
-   "côte d'ivoire",
    "ci",
    "ivoirien",
    "ivorian",
@@ -3264,7 +3258,6 @@
   "tags": [
    "drapeau",
    "flag",
-   "djibouti",
    "djibouti",
    "dj",
    "djiboutien",
@@ -3362,11 +3355,9 @@
    "drapeau",
    "flag",
    "eswatini",
-   "eswatini",
    "sz",
    "swazi",
-   "swaziland",
-   "eswatini"
+   "swaziland"
   ],
   "since": "0.6",
   "iso": "SZ",
@@ -3411,7 +3402,6 @@
   "tags": [
    "drapeau",
    "flag",
-   "gabon",
    "gabon",
    "ga",
    "gabonais",
@@ -3459,7 +3449,6 @@
   "tags": [
    "drapeau",
    "flag",
-   "ghana",
    "ghana",
    "gh",
    "ghanéen",
@@ -3533,7 +3522,6 @@
    "drapeau",
    "flag",
    "kenya",
-   "kenya",
    "ke",
    "kényan",
    "kenyan",
@@ -3558,7 +3546,6 @@
    "drapeau",
    "flag",
    "lesotho",
-   "lesotho",
    "ls",
    "lesothan",
    "basotho",
@@ -3582,7 +3569,6 @@
   "tags": [
    "drapeau",
    "flag",
-   "liberia",
    "liberia",
    "lr",
    "libérien",
@@ -3632,7 +3618,6 @@
    "drapeau",
    "flag",
    "madagascar",
-   "madagascar",
    "mg",
    "malgache",
    "malagasy"
@@ -3656,7 +3641,6 @@
    "drapeau",
    "flag",
    "malawi",
-   "malawi",
    "mw",
    "malawite",
    "malawian"
@@ -3679,7 +3663,6 @@
   "tags": [
    "drapeau",
    "flag",
-   "mali",
    "mali",
    "ml",
    "malien",
@@ -3777,7 +3760,6 @@
    "drapeau",
    "flag",
    "mozambique",
-   "mozambique",
    "mz",
    "mozambicain",
    "mozambican"
@@ -3825,7 +3807,6 @@
    "drapeau",
    "flag",
    "niger",
-   "niger",
    "ne",
    "nigérien",
    "nigerien"
@@ -3848,7 +3829,6 @@
   "tags": [
    "drapeau",
    "flag",
-   "nigeria",
    "nigeria",
    "ng",
    "nigérian",
@@ -3897,7 +3877,6 @@
   "tags": [
    "drapeau",
    "flag",
-   "rwanda",
    "rwanda",
    "rw",
    "rwandais",
@@ -3972,10 +3951,8 @@
    "drapeau",
    "flag",
    "seychelles",
-   "seychelles",
    "sc",
-   "seychellois",
-   "seychelles"
+   "seychellois"
   ],
   "since": "0.6",
   "iso": "SC",
@@ -3995,7 +3972,6 @@
   "tags": [
    "drapeau",
    "flag",
-   "sierra leone",
    "sierra leone",
    "sl",
    "sierraléonais",
@@ -4145,7 +4121,6 @@
    "drapeau",
    "flag",
    "togo",
-   "togo",
    "tg",
    "togolais",
    "togolese"
@@ -4216,7 +4191,6 @@
   "tags": [
    "drapeau",
    "flag",
-   "zimbabwe",
    "zimbabwe",
    "zw",
    "zimbabwéen",
