@@ -1,5 +1,4 @@
 import CHANGELOG from "../../../../CHANGELOG.md?raw";
-import { VERSION } from "../lib/constants";
 import { useApp } from "../state";
 import { T } from "./ui";
 
@@ -39,7 +38,7 @@ export function Changelog() {
       </div></div>
       <ol className="rel">
         {RELEASES.map((r) => {
-          const next = !/^\d/.test(r.version), cur = r.version === VERSION;
+          const next = !/^\d/.test(r.version), cur = r.version === __AFROICONS_VERSION__;
           return (
             <li key={r.version} className={next ? "next" : cur ? "cur" : ""}>
               <div className="rh">

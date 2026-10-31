@@ -143,13 +143,14 @@ export function Library() {
   }, []);
 
   const keep = (i: Icon) => (!favOnly || a.favs.has(i.id)) && (col === "ui" ? cat === "all" || i.family === cat : (cat === "all" || i.cat === cat) && (reg === "all" || i.region === reg));
-  const list = useMemo(() => rank(pool.filter(keep), q), [col, cat, reg, q, favOnly, a.favs]); // eslint-disable-line react-hooks/exhaustive-deps
+  // Les favoris rassemblent les trois collections : le compteur du bouton ♥ et la grille disent la même chose.
+  const list = useMemo(() => rank(favOnly ? [...AFRO, ...FLAGS, ...UI].filter((i) => a.favs.has(i.id)) : pool.filter(keep), q), [col, cat, reg, q, favOnly, a.favs]); // eslint-disable-line react-hooks/exhaustive-deps
   // Rien ici mais des résultats dans l'autre collection : on le signale.
   const elsewhere = useMemo(() => {
-    if (!q.trim() || list.length) return null;
+    if (!q.trim() || list.length || favOnly) return null;
     for (const c of (["afro", "flags", "ui"] as const).filter((c) => c !== col)) { const n = rank(POOLS[c], q).length; if (n) return { c, n }; }
     return null;
-  }, [q, list.length, col]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [q, list.length, col, favOnly]); // eslint-disable-line react-hooks/exhaustive-deps
   const switchCol = (c: Collection) => change(() => { setCol(c); setCat("all"); setReg("all"); });
   useEffect(() => { a.setList(list); }, [list]); // eslint-disable-line react-hooks/exhaustive-deps
   const pages = Math.max(1, Math.ceil(list.length / PER));
@@ -162,7 +163,7 @@ export function Library() {
     if (k >= 0) setPage(Math.floor(k / PER));
     // Icône de l'autre collection (lien direct, palette) : la grille bascule pour la montrer derrière la fiche.
     else if (a.current && !q && !favOnly) { const other = colOf(a.current); if (other !== col) { setCol(other); setCat("all"); setReg("all"); } }
-  }, [a.current]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [a.current, col]); // eslint-disable-line react-hooks/exhaustive-deps
   // Focus demandé au clavier sur une carte d'une autre page : posé une fois la page affichée.
   useEffect(() => {
     if (pendingFocus.current == null) return;
@@ -180,8 +181,12 @@ export function Library() {
     setAnim(true); setFocusIdx(-1);
     const vt = (document as any).startViewTransition;
     if (!vt || matchMedia("(prefers-reduced-motion: reduce)").matches) return fn();
-    // Une transition interrompue par la suivante (clics rapides) n'est pas une erreur.
-    const t = vt.call(document, fn);
+    // Le changement s'applique une seule fois : par la transition, ou après 250 ms si elle ne démarre pas
+    // (onglet en arrière-plan, page qui ne se dessine pas). Une transition interrompue n'est pas une erreur.
+    let done = false;
+    const run = () => { if (!done) { done = true; fn(); } };
+    const t = vt.call(document, run);
+    setTimeout(run, 250);
     t.ready?.catch(() => {}); t.finished?.catch(() => {}); t.updateCallbackDone?.catch(() => {});
   };
   useEffect(() => { if (anim) { const h = setTimeout(() => setAnim(false), 900); return () => clearTimeout(h); } }, [anim, list]);
@@ -219,7 +224,7 @@ export function Library() {
         <div className="trow">
           <label className="sbox"><ISearch s={19} />
             <input id="q" type="search" aria-label={a.t("cmdLbl")} autoComplete="off" value={q} onChange={(e) => { setQ(e.target.value); setFocusIdx(-1); }} placeholder={a.tt("baobab, okada, attiéké, tresses…", "baobab, okada, fufu, braids…")} />
-            <span className="cnt">{list.length}/{pool.length}</span><span className="kbd">/</span>
+            <span className="cnt">{list.length}/{favOnly ? a.favs.size : pool.length}</span><span className="kbd">/</span>
           </label>
           <button className={"pill" + (favOnly ? " on" : "")} aria-label={a.t("fav")} aria-pressed={favOnly} onClick={() => { change(() => setFavOnly((f) => !f)); if (!favOnly && !a.favs.size) a.toast(a.tt("Pas encore de favoris : appuyez sur F sur une icône", "No favourites yet: press F on an icon")); }}>
             <IHeart /><span className="pl"><T k="fav" /></span><small className="mono">{a.favs.size || ""}</small>

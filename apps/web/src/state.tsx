@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { CITIES, byId, loadFills, type CityId, type Icon, type Style } from "./lib/constants";
+import { CITIES, PAGE, byId, loadFills, type CityId, type Icon, type Style } from "./lib/constants";
 import { EN, FR, type Lang } from "./lib/i18n";
 import { isHosted, saveFile, store, useCapability } from "./lib/platform";
 import type { PatternState } from "./lib/pattern";
@@ -137,6 +137,8 @@ function useAppState() {
     // Sur afroicons.org, chaque icône a sa propre adresse (/icones/baobab/), indexable et partageable.
     // Ailleurs (aperçu en un seul fichier, fichier local), on garde l'ancre #baobab.
     try {
+      // Hors de l'accueil (page Nouveautés), l'adresse de la page ne change pas.
+      if (PAGE !== "home") return;
       if (PRETTY_URLS) history.replaceState(null, "", id ? `/icones/${id}/` : "/" + location.search);
       else history.replaceState(null, "", id ? "#" + id : location.pathname + location.search);
     } catch { /* bac à sable */ }

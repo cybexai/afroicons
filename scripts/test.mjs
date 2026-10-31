@@ -22,13 +22,15 @@ for (const n of names) {
   if (icons[n].fill.includes("<mask")) assert.ok(icons[n].fill.includes(`id="afm-${n}"`) && icons[n].fill.includes(`url(#afm-${n})`), `masque nommé : ${n}`);
 }
 assert.match(toSvg("baobab", { size: 32, color: "#C24E2A" }), /width="32".*stroke="#C24E2A"/);
-// Drapeaux : les 54 États membres de l'ONU, chacun avec son code ISO et un découpage nommé (coins arrondis).
+// Drapeaux : les 54 États membres de l'ONU, chacun avec son code ISO, sans identifiant SVG
+// (un clipPath ou un masque nommé casse l'affichage quand sa première copie est cachée : sprite, menu fermé).
 const flags = names.filter((n) => icons[n].cat === "drapeaux");
 assert.equal(flags.length, 54, "54 drapeaux");
 assert.equal(new Set(flags.map((n) => icons[n].iso)).size, 54, "codes ISO uniques");
 for (const n of flags) {
-  const i = icons[n], id = `afc-${i.iso.toLowerCase()}`;
-  assert.ok(i.body.includes(`<clipPath id="${id}">`) && i.body.includes(`url(#${id})`), `découpage nommé : ${n}`);
+  const i = icons[n];
+  assert.doesNotMatch(i.body, /\bid="|url\(#|<clipPath|<mask/, `sans identifiant : ${n}`);
+  for (const [, x, y] of i.body.matchAll(/[ML](-?[\d.]+) (-?[\d.]+)/g)) assert.ok(+x >= 0.99 && +x <= 23.01 && +y >= 4.49 && +y <= 19.51, `dans le cadre : ${n} (${x} ${y})`);
   assert.ok(!i.body.includes("currentColor"), `couleurs officielles : ${n}`);
   assert.equal(i.fill, i.body, `version remplie identique : ${n}`);
 }
@@ -62,7 +64,7 @@ console.log(`✔ ${drawn.length} icônes d'interface vérifiées (compatibles lu
 const R = await import("../packages/afroicons-react/index.js");
 assert.match(html(R.Ngoni), /<g transform="rotate\(-35 12 12\)"><ellipse/, "groupe transformé conservé (ngoni)");
 assert.match(html(R.Arachide, { color: "#C24E2A" }), /<svg[^>]*color="#C24E2A"/, "couleur transmise aux points");
-assert.match(html(R.DrapeauCameroun), /<clipPath id="afc-cm"><rect[^>]*><\/rect><\/clipPath><g clip-path="url\(#afc-cm\)"/, "drapeau : découpage conservé en React");
+assert.match(html(R.DrapeauCameroun, { title: "Cameroun" }), /<svg[^>]*role="img"[^>]*><title>Cameroun<\/title><g stroke="none" stroke-linecap="butt"><path d="[^"]+" fill="#007A5E"/, "drapeau en React, avec titre accessible");
 for (const n of names) {
   const h = html(R[n.replace(/(^|[-_])(\w)/g, (_, a, b) => b.toUpperCase())], { variant: "fill" });
   assert.ok(h.includes("afroicon-fill") && (h.includes("<mask") || h.includes('fill="currentColor"') || h.includes("stroke-width")), `React rempli : ${n}`);
