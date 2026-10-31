@@ -1,13 +1,20 @@
 # Journal des versions
 
-## À venir
-- Site : deux collections, **Culturelles** (162) et **Interface** (163), chacune avec ses filtres (catégories et régions, ou familles : Actions, Navigation, Argent et paiement…) ; une recherche sans résultat propose l'autre collection
-- Site : les versions remplies se chargent en arrière-plan, ou dès qu'on choisit « Rempli » (démarrage plus léger)
-- Site : page **Nouveautés** (`/nouveautes/`), chiffres d'usage réels (installations npm, étoiles GitHub) dans « Utiliser », mention « Utilisé par NAFA ERP »
+## 0.6.0 — 31 octobre 2026 · drapeaux africains, icônes SYSIGAPE
+
+### Paquets
+- **Les 54 drapeaux africains** (États membres de l'ONU), aux couleurs officielles, en rectangle aux coins arrondis : `toSvg("drapeau-cameroun")`, `<DrapeauCameroun />`, `<afroicon name="drapeau-cameroun">`. Code ISO (`iso`) et nom du pays (`country`) dans `icons.json`. Sans identifiant SVG : un drapeau s'affiche correctement même répété, dans un sprite caché ou un menu fermé. Emblèmes simplifiés pour rester lisibles à 16 px ; générés par `scripts/flags.mjs`
+- `afroicons-ui` et `afroicons-angular` : **14 nouvelles icônes d'interface** pour SYSIGAPE, soit 177 au total : `Menu`, `PanelLeftOpen`, `PanelLeftClose`, `MoreVertical`, `Sun`, `Hourglass`, `ClipboardX`, `PiggyBank` (tirelire en terre cuite), `Folder`, `Tractor` (la daba, houe du paysan), `Building`, `UserCog`, `Quote`, `MailCheck`. Correspondance complète avec Material UI et Ant Design dans `docs/integrations/sysigape.md`
+
+### Site
+- Trois collections : **Culturelles** (162), **Drapeaux** (54) et **Interface** (177), chacune avec ses filtres (catégories et régions, régions, ou familles) ; une recherche sans résultat propose la collection qui en a ; les favoris rassemblent les trois
+- Une page par icône et par drapeau (393), la liste complète et le plan du site ; nouvelle image de partage
+- Page **Nouveautés** (`/nouveautes/`) au style du site, avec son lien dans le menu et sur le badge de version
+- Chiffres d'usage réels (installations npm, étoiles GitHub) dans « Utiliser », mention « Utilisé par NAFA ERP »
+- La fiche d'une icône a ses propres réglages ; les versions remplies se chargent en arrière-plan (démarrage plus léger)
 - Packs téléchargés : le style choisi est indiqué dans le nom du fichier et le README
-- **Les 54 drapeaux africains** (États membres de l'ONU), aux couleurs officielles, en rectangle aux coins arrondis : `toSvg("drapeau-cameroun")`, `<DrapeauCameroun />`, `<afroicon name="drapeau-cameroun">`. Code ISO et nom du pays dans `icons.json`. Sur le site, une collection « Drapeaux » filtrable par région, et une page par drapeau
-- `afroicons-ui` et `afroicons-angular` : **14 nouvelles icônes d'interface** pour SYSIGAPE, soit 177 au total : `Menu`, `PanelLeftOpen`, `PanelLeftClose`, `MoreVertical`, `Sun`, `Hourglass`, `ClipboardX`, `PiggyBank` (tirelire en terre cuite), `Folder`, `Tractor` (la daba, houe du paysan), `Building`, `UserCog`, `Quote`, `MailCheck`. Correspondance complète dans `docs/integrations/sysigape.md`
-- Site : la page **Nouveautés** prend le style du site, avec son lien dans le menu et sur le badge de version ; l'accueil compte toutes les icônes (325 : 162 culturelles, 163 d'interface)
+- Corrections : la page s'ouvre toujours en haut ; onglets des collections sur les téléphones de 320 px ; l'adresse de la page Nouveautés ne change plus quand on y ouvre une icône ; plus d'erreur en console quand on change vite de filtre
+- Tests de non-régression du site à chaque build (`apps/web/scripts/check.mjs`)
 
 ## 0.5.0 — 30 octobre 2026 · style rempli, variantes, icônes P2
 - **Style rempli** pour les 162 icônes culturelles : `toSvg(id, { variant: "fill" })`, `<Baobab variant="fill" />`, `<afroicon variant="fill">`, fichiers `svg/fill/`, et un style « Rempli » sur le site. Généré par `scripts/fill.mjs`, puis retouché à la main
