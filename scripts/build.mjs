@@ -118,8 +118,9 @@ let dts = `import type { ForwardRefExoticComponent, RefAttributes, SVGProps } fr
 export interface AfroiconProps extends Omit<SVGProps<SVGSVGElement>, "ref"> { size?: number | string; color?: string; strokeWidth?: number | string; title?: string; /** "line" (trait, par défaut) ou "fill" (rempli). */ variant?: "line" | "fill"; }
 export type Afroicon = ForwardRefExoticComponent<AfroiconProps & RefAttributes<SVGSVGElement>>;
 `;
+// /*#__PURE__*/ : sans lui, les bundlers gardent les 216 icônes même si on n'en importe qu'une ("sideEffects": false ne suffit pas).
 for (const i of icons) {
-  js += `export const ${pascal(i.id)} = make("${i.id}", ${JSON.stringify(toJsxChildren(i.body))}, ${JSON.stringify(toJsxChildren(i.fill))});\n`;
+  js += `export const ${pascal(i.id)} = /*#__PURE__*/ make("${i.id}", ${JSON.stringify(toJsxChildren(i.body))}, ${JSON.stringify(toJsxChildren(i.fill))});\n`;
   dts += `/** ${i.fr} · ${i.en} */\nexport declare const ${pascal(i.id)}: Afroicon;\n`;
 }
 writeFileSync(join(Rd, "index.js"), js);

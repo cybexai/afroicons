@@ -1,6 +1,7 @@
 # Journal des versions
 
 ## À venir
+- `afroicons-react` : **vraiment tree-shakable**. Chaque icône est marquée `/*#__PURE__*/` ; une application qui importe une seule icône n'embarque plus les 216 (webpack 5 en production : 29,3 Ko → 0,8 Ko gzip)
 - Deux nouveaux paquets : **`afroicons-mui`** et **`afroicons-antd`** remplacent `@mui/icons-material` et `@ant-design/icons` en changeant seulement l'import. 1 655 noms Material UI et 303 noms Ant Design, variantes comprises, redessinés au trait Afroicons ; mêmes props (`fontSize`, `color`, `sx` ; `spin`, `rotate`, `className`) ; les autres icônes viennent du paquet d'origine
 - Site : onglets « MUI » et « Ant » dans la fiche des icônes d'interface, et leurs noms sur chaque page
 - Fiche : aperçus, icônes de la même famille et barre « En contexte » corrigés en style pastille ; mots-clés sans doublon
