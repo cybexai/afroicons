@@ -15,6 +15,18 @@ const read = (p) => readFileSync(join(repo, p), "utf8");
 const afro = JSON.parse(read("packages/afroicons/icons.json"));
 const ui = JSON.parse(read("packages/afroicons-ui/icons.json"));
 const COMPAT = JSON.parse(read("src/compat.json"));
+// Noms réellement exportés par afroicons-antd (toutes les icônes Ant Design n'ont pas de variante Filled ou TwoTone).
+const ANT_NAMES = Object.entries(JSON.parse(read("packages/afroicons-antd/compat.json"))).reduce((m, [n, id]) => ((m[id] ??= []).push(n), m), {});
+function equivalents(id) {
+  const mui = COMPAT[id]?.mui ?? [], ant = ANT_NAMES[id] ?? [];
+  if (!mui.length && !ant.length) return "";
+  const code = (l) => l.map((n) => `<code>${n}</code>`).join(", ");
+  const parts = [];
+  if (mui.length) parts.push(`Material UI (<code>afroicons-mui</code>) : ${code(mui)}, et leurs variantes Outlined, Rounded, Sharp et TwoTone.`);
+  if (ant.length) parts.push(`Ant Design (<code>afroicons-antd</code>) : ${code(ant)}.`);
+  const who = [mui.length && "à MUI (Material-UI SAS)", ant.length && "au groupe Ant"].filter(Boolean).join(" ni ");
+  return `<h2>Équivalents ${[mui.length && "Material UI", ant.length && "Ant Design"].filter(Boolean).join(" et ")}</h2><p>${parts.join(" ")} Projet${mui.length && ant.length ? "s" : ""} indépendant${mui.length && ant.length ? "s" : ""}, non affilié${mui.length && ant.length ? "s" : ""} ${who} : les noms sont cités pour indiquer la compatibilité, les dessins sont originaux.</p>`;
+}
 const i18n = read("apps/web/src/lib/i18n.ts");
 const factsStart = i18n.indexOf("{", i18n.indexOf("export const FACTS"));
 let depth = 0, factsEnd = factsStart;
@@ -86,7 +98,7 @@ for (const i of icons) {
 ${i.afro ? `<p>${esc(i.afro)}</p>` : ""}
 ${fact ? `<h2>Le saviez-vous ?</h2><p>${esc(fact[0])}</p><p lang="en">${esc(fact[1])}</p>` : ""}
 <p>Mots-clés : ${i.tags.map((t) => esc(t)).join(", ")}</p>
-${i.lucide && COMPAT[i.lucide] && (COMPAT[i.lucide].mui.length || COMPAT[i.lucide].antd.length) ? `<h2>Équivalents Material UI et Ant Design</h2><p>${COMPAT[i.lucide].mui.length ? `Material UI (<code>afroicons-mui</code>) : ${COMPAT[i.lucide].mui.map((n) => `<code>${n}</code>`).join(", ")}, et leurs variantes Outlined, Rounded, Sharp et TwoTone. ` : ""}${COMPAT[i.lucide].antd.length ? `Ant Design (<code>afroicons-antd</code>) : ${COMPAT[i.lucide].antd.map((n) => `<code>${n}Outlined</code>`).join(", ")}, et leurs variantes Filled et TwoTone.` : ""} Projets indépendants, non affiliés à MUI (Material-UI SAS) ni au groupe Ant : leurs noms sont cités pour indiquer la compatibilité, les dessins sont originaux.</p>` : ""}
+${i.lucide ? equivalents(i.lucide) : ""}
 <h2>Utiliser cette icône</h2><pre><code>${esc(code)}</code></pre>
 <p>Icône libre et gratuite, licence MIT, utilisation commerciale comprise. <a href="/#${i.slug}">Personnaliser et télécharger sur afroicons.org</a></p>
 ${variants.length ? `<h2>Variantes</h2>${links(variants)}` : ""}

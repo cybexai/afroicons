@@ -113,7 +113,7 @@ export function Showcase() {
 
 /* ---------------- Utiliser ---------------- */
 /** Chiffres d'usage réels (installations npm du mois, étoiles GitHub) : affichés seulement s'ils sont positifs. */
-const PKGS = ["afroicons", "afroicons-react", "afroicons-ui", "afroicons-angular"];
+const PKGS = ["afroicons", "afroicons-react", "afroicons-ui", "afroicons-angular", "afroicons-mui", "afroicons-antd"];
 function UsageStats() {
   const a = useApp();
   const [n, setN] = useState<{ dl: number; stars: number } | null>(null);

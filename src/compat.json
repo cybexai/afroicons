@@ -141,9 +141,7 @@
    "Replay",
    "RestartAlt"
   ],
-  "antd": [
-   "Redo"
-  ]
+  "antd": []
  },
  "History": {
   "mui": [
@@ -351,8 +349,7 @@
    "NotificationsNone"
   ],
   "antd": [
-   "Bell",
-   "Notification"
+   "Bell"
   ]
  },
  "CloudOff": {

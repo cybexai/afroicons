@@ -99,8 +99,18 @@ assert.match(hm, /<svg class="MuiSvgIcon-root MuiSvgIcon-colorError MuiSvgIcon-f
 assert.match(hm, /<title>Supprimer<\/title>/, "Material UI : titleAccess");
 for (const n of M.afroiconNames) assert.match(strip(html(M[n])), new RegExp(`data-testid="${n}Icon"><g fill="none"`), `Material UI : rendu ${n}`);
 let ha = html(A.PlusOutlined, { spin: true, rotate: 90, className: "x", style: { fontSize: 20 } });
-assert.match(ha, /^<span role="img" aria-label="plus" style="font-size:20px" class="anticon anticon-spin anticon-plus x"><svg[^>]*class="anticon-spin" style="[^"]*rotate\(90deg\)"[^>]*viewBox="0 0 24 24" data-icon="plus"/, "Ant Design : anticon, spin, rotate, style");
-for (const n of A.afroiconNames) assert.match(html(A[n]), /^<span role="img" aria-label="[a-z0-9-]+" class="anticon anticon-[a-z0-9-]+"><svg/, `Ant Design : rendu ${n}`);
+assert.match(ha, /^<span role="img" aria-label="plus" style="font-size:20px" class="anticon anticon-plus anticon-spin x"><svg[^>]*style="[^"]*rotate\(90deg\)"[^>]*viewBox="0 0 24 24" data-icon="plus"/, "Ant Design : anticon, spin, rotate, style");
+assert.doesNotMatch(ha.slice(ha.indexOf("<svg")), /anticon-spin/, "Ant Design : spin sur le seul <span>, comme l'original (sinon rotation doublée)");
+assert.doesNotMatch(html(A.PlusOutlined), /<svg[^>]* class=""/, "Ant Design : pas de class vide sur le <svg>");
+assert.match(html(A.LoadingOutlined), /class="anticon anticon-loading anticon-spin"/, "Ant Design : « loading » tourne d'office, comme l'original");
+assert.doesNotMatch(html(A.LoadingOutlined, { spin: false }), /anticon-spin/, "Ant Design : spin={false} l'arrête");
+// Next.js App Router : composants client, comme les originaux ; un fichier de types par import direct.
+const { readFileSync: rf, existsSync: ex } = await import("node:fs");
+for (const [dir, names] of [["afroicons-mui", M.afroiconNames], ["afroicons-antd", A.afroiconNames]]) {
+  assert.ok(rf(new URL(`../packages/${dir}/afro.js`, import.meta.url), "utf8").startsWith('"use client";'), `${dir} : "use client"`);
+  for (const n of names) assert.ok(ex(new URL(`../packages/${dir}/icons/${n}.d.ts`, import.meta.url)), `${dir} : types de ${n}`);
+}
+for (const n of A.afroiconNames) assert.match(html(A[n]), /^<span role="img" aria-label="[a-z0-9-]+" class="anticon anticon-[a-z0-9-]+( anticon-spin)?"><svg/, `Ant Design : rendu ${n}`);
 assert.match(html(A.EyeFilled, { twoToneColor: "#f00" }), /aria-label="eye"/, "Ant Design : twoToneColor accepté sans attribut parasite");
 assert.doesNotMatch(html(A.EyeFilled, { twoToneColor: "#f00" }), /twotonecolor|twoToneColor/i);
 console.log(`✔ afroicons-mui : ${M.afroiconNames.length} noms Material UI ; afroicons-antd : ${A.afroiconNames.length} noms Ant Design`);

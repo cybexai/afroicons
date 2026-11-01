@@ -1,8 +1,8 @@
-// afroicons-antd v0.6.0 — généré, ne pas modifier à la main.
+// afroicons-antd v0.6.1 — généré, ne pas modifier à la main.
 export * from "@ant-design/icons";
 export { default } from "@ant-design/icons";
 import type { ForwardRefExoticComponent, RefAttributes } from "react";
-import type { AntdIconProps } from "@ant-design/icons/lib/components/AntdIcon";
+import type { AntdIconProps } from "@ant-design/icons/lib/components/AntdIcon.js";
 type AfroIcon = ForwardRefExoticComponent<Omit<AntdIconProps, "ref"> & RefAttributes<HTMLSpanElement>>;
 /** Noms redessinés par Afroicons (les autres viennent de @ant-design/icons). */
 export declare const afroiconNames: readonly string[];
@@ -72,8 +72,6 @@ export declare const EyeTwoTone: AfroIcon;
 export declare const ReloadOutlined: AfroIcon;
 /** Actualiser · Refresh (Afroicons RefreshCw) */
 export declare const SyncOutlined: AfroIcon;
-/** Annuler · Undo (Afroicons RotateCcw) */
-export declare const RedoOutlined: AfroIcon;
 /** Historique · History (Afroicons History) */
 export declare const HistoryOutlined: AfroIcon;
 /** Historique · History (Afroicons History) */
@@ -168,12 +166,6 @@ export declare const BellOutlined: AfroIcon;
 export declare const BellFilled: AfroIcon;
 /** Notifications · Notifications (Afroicons Bell) */
 export declare const BellTwoTone: AfroIcon;
-/** Notifications · Notifications (Afroicons Bell) */
-export declare const NotificationOutlined: AfroIcon;
-/** Notifications · Notifications (Afroicons Bell) */
-export declare const NotificationFilled: AfroIcon;
-/** Notifications · Notifications (Afroicons Bell) */
-export declare const NotificationTwoTone: AfroIcon;
 /** Performance · Gauge (Afroicons Gauge) */
 export declare const DashboardOutlined: AfroIcon;
 /** Performance · Gauge (Afroicons Gauge) */

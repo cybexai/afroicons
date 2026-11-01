@@ -8,11 +8,13 @@
   "types": "./index.d.ts",
   "exports": {
     ".": { "types": "./index.d.ts", "default": "./index.js" },
+    "./package.json": "./package.json",
     "./compat.json": "./compat.json",
-    "./*": { "types": "./deep.d.ts", "default": "./icons/*.js" }
+    "./*": { "types": "./icons/*.d.ts", "default": "./icons/*.js" }
   },
+  "typesVersions": { "*": { "index.d.ts": ["index.d.ts"], "*": ["icons/*.d.ts"] } },
   "sideEffects": false,
-  "files": ["index.js", "index.d.ts", "afro.js", "deep.d.ts", "compat.json", "icons", "README.md", "LICENSE"],
+  "files": ["index.js", "index.d.ts", "afro.js", "compat.json", "icons", "README.md", "LICENSE"],
   "peerDependencies": { "@mui/icons-material": ">=5", "@mui/material": ">=5", "react": ">=17" },
   "keywords": ["react", "icons", "svg", "africa", "afroicons", "mui", "material-ui", "material-icons"],
   "license": "MIT",

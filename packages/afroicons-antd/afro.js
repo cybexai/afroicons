@@ -1,4 +1,5 @@
-// afroicons-antd v0.6.0 — généré, ne pas modifier à la main.
+"use client";
+// afroicons-antd v0.6.1 — généré, ne pas modifier à la main.
 import { createElement as h, forwardRef } from "react";
 import AntIcon from "@ant-design/icons";
 // Bundlers : le composant ; Node (module CommonJS) : l'objet du module, qui le porte en default.
@@ -8,9 +9,10 @@ const kebab = (s) => s.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
 // Le trait Afroicons dans une icône Ant Design : mêmes props (className, style, spin, rotate, onClick…), classe anticon.
 const make = (nodes, name) => {
   const label = kebab(name.replace(/(Outlined|Filled|TwoTone)$/, ""));
-  const Svg = (p) => h("svg", { ...p, viewBox: "0 0 24 24", "data-icon": label, ...{ fill: "none", stroke: "currentColor", strokeWidth: 1.75, strokeLinecap: "round", strokeLinejoin: "round" } }, ...nodes.map(el));
-  const C = forwardRef(function AfroIcon({ twoToneColor, className, ...props }, ref) {
-    return h(Icon, { ref, role: "img", "aria-label": label, ...props, className: className ? "anticon-" + label + " " + className : "anticon-" + label, component: Svg });
+  const Svg = ({ className, ...p }) => h("svg", { ...p, className: className || undefined, viewBox: "0 0 24 24", "data-icon": label, ...{ fill: "none", stroke: "currentColor", strokeWidth: 1.75, strokeLinecap: "round", strokeLinejoin: "round" } }, ...nodes.map(el));
+  // spin sur le seul <span>, comme les icônes d'origine (Icon le mettrait aussi sur le <svg> : rotation doublée) ; « loading » tourne d'office.
+  const C = forwardRef(function AfroIcon({ twoToneColor, className, spin = label === "loading", ...props }, ref) {
+    return h(Icon, { ref, role: "img", "aria-label": label, ...props, className: ["anticon-" + label, spin && "anticon-spin", className].filter(Boolean).join(" "), component: Svg });
   });
   C.displayName = name;
   return C;
@@ -29,7 +31,6 @@ const nCopy = [["rect",{"x":"8.5","y":"8.5","width":"12","height":"12","rx":"2.5
 const nSearch = [["circle",{"cx":"10.5","cy":"10.5","r":"6.5"}],["path",{"d":"M15.3 15.3L20.5 20.5"}]];
 const nEye = [["path",{"d":"M2.5 12C4.6 7.8 8 5.5 12 5.5S19.4 7.8 21.5 12C19.4 16.2 16 18.5 12 18.5S4.6 16.2 2.5 12Z"}],["circle",{"cx":"12","cy":"12","r":"3"}]];
 const nRefreshCw = [["path",{"d":"M20 11A8 8 0 0 0 5.6 6.6L3.5 8.5"}],["path",{"d":"M3.5 4V8.5H8"}],["path",{"d":"M4 13A8 8 0 0 0 18.4 17.4L20.5 15.5"}],["path",{"d":"M20.5 20V15.5H16"}]];
-const nRotateCcw = [["path",{"d":"M4 12A8 8 0 1 0 6.6 6.1L4 8.5"}],["path",{"d":"M4 4V8.5H8.5"}]];
 const nHistory = [["path",{"d":"M3.5 12A8.5 8.5 0 1 0 6 6L3.5 8.5"}],["path",{"d":"M3.5 4V8.5H8"}],["path",{"d":"M12 8V12.5L15 14.5"}]];
 const nSend = [["path",{"d":"M20.5 3.5L10.5 13.5"}],["path",{"d":"M20.5 3.5L14.3 20.5L10.5 13.5L3.5 9.7Z"}]];
 const nLogIn = [["path",{"d":"M14 4H18C19.1 4 20 4.9 20 6V18C20 19.1 19.1 20 18 20H14"}],["path",{"d":"M3.5 12H14.5M10 7.5L14.5 12L10 16.5"}]];
@@ -173,7 +174,6 @@ export const EyeFilled = /*#__PURE__*/ make(nEye, "EyeFilled");
 export const EyeTwoTone = /*#__PURE__*/ make(nEye, "EyeTwoTone");
 export const ReloadOutlined = /*#__PURE__*/ make(nRefreshCw, "ReloadOutlined");
 export const SyncOutlined = /*#__PURE__*/ make(nRefreshCw, "SyncOutlined");
-export const RedoOutlined = /*#__PURE__*/ make(nRotateCcw, "RedoOutlined");
 export const HistoryOutlined = /*#__PURE__*/ make(nHistory, "HistoryOutlined");
 export const FieldTimeOutlined = /*#__PURE__*/ make(nHistory, "FieldTimeOutlined");
 export const SendOutlined = /*#__PURE__*/ make(nSend, "SendOutlined");
@@ -221,9 +221,6 @@ export const SafetyCertificateTwoTone = /*#__PURE__*/ make(nShieldCheck, "Safety
 export const BellOutlined = /*#__PURE__*/ make(nBell, "BellOutlined");
 export const BellFilled = /*#__PURE__*/ make(nBell, "BellFilled");
 export const BellTwoTone = /*#__PURE__*/ make(nBell, "BellTwoTone");
-export const NotificationOutlined = /*#__PURE__*/ make(nBell, "NotificationOutlined");
-export const NotificationFilled = /*#__PURE__*/ make(nBell, "NotificationFilled");
-export const NotificationTwoTone = /*#__PURE__*/ make(nBell, "NotificationTwoTone");
 export const DashboardOutlined = /*#__PURE__*/ make(nGauge, "DashboardOutlined");
 export const DashboardFilled = /*#__PURE__*/ make(nGauge, "DashboardFilled");
 export const DashboardTwoTone = /*#__PURE__*/ make(nGauge, "DashboardTwoTone");
