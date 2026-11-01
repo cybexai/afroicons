@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { CITIES, ICONS, REGNAME, VERSION, byId, catOf, colOf, isFlag, isNew, lineLike, loadFills, type CityId, type Icon } from "../lib/constants";
+import { CITIES, COMPAT_NAMES, ICONS, REGNAME, VERSION, byId, catOf, colOf, isFlag, isNew, lineLike, loadFills, type CityId, type Icon } from "../lib/constants";
 import { FACTS } from "../lib/i18n";
 import { norm, rank } from "../lib/search";
-import { animateDraw, cssStr, highlight, jsxSnippet, spriteStr, svgStr, svgToPng, useStr } from "../lib/svg";
+import { animateDraw, compatSnippet, cssStr, highlight, jsxSnippet, spriteStr, svgStr, svgToPng, useStr } from "../lib/svg";
 import { store } from "../lib/platform";
 import { useApp, useName } from "../state";
 import { CustomizeFields, exportSvg, type CustomValue } from "./Library";
@@ -24,7 +24,7 @@ export function Drawer() {
   const nm = useName();
   const i = a.current ? byId[a.current] : null;
   const [last, setLast] = useState<Icon | null>(null);
-  const [tab, setTab] = useState<"svg" | "jsx" | "use" | "css">("svg");
+  const [tab, setTab] = useState<"svg" | "jsx" | "use" | "css" | "mui" | "antd">("svg");
   const [prevBg, setPrevBg] = useState("card");
   const [grid, setGrid] = useState(true);
   // Réglages ouverts ou fermés : on retient le choix du visiteur.
@@ -82,7 +82,11 @@ export function Drawer() {
   const variants = ICONS.filter((x) => x.id === base || x.variantOf === base);
   const others = ICONS.filter((x) => x.cat === ic.cat && x.id !== ic.id && !variants.includes(x));
   const fact = FACTS[ic.id];
-  const code = { svg: exportSvg(ic, a), jsx: jsxSnippet(ic, a.stroke, a.style === "fill" && !!ic.fill), use: `<!-- 1. ${a.tt("Collez le sprite une fois", "Paste the sprite once")} -->\n<!-- 2. ${a.tt("Puis", "Then")} : -->\n${useStr(ic)}`, css: cssStr(ic, a.stroke) }[tab];
+  const cn = ic.lucide ? COMPAT_NAMES[ic.lucide] : undefined;
+  // Onglets Material UI et Ant Design : seulement pour les icônes d'interface qui ont un équivalent.
+  const tabs = (["svg", "jsx", "use", "css", ...(cn?.mui.length ? ["mui"] : []), ...(cn?.antd.length ? ["antd"] : [])] as const) as readonly ("svg" | "jsx" | "use" | "css" | "mui" | "antd")[];
+  const cur = tabs.includes(tab) ? tab : "svg";
+  const code = { svg: () => exportSvg(ic, a), jsx: () => jsxSnippet(ic, a.stroke, a.style === "fill" && !!ic.fill), use: () => `<!-- 1. ${a.tt("Collez le sprite une fois", "Paste the sprite once")} -->\n<!-- 2. ${a.tt("Puis", "Then")} : -->\n${useStr(ic)}`, css: () => cssStr(ic, a.stroke), mui: () => compatSnippet(ic, "mui", cn?.mui ?? []), antd: () => compatSnippet(ic, "antd", cn?.antd ?? []) }[cur]();
   const mk = (o = {}) => <Svg i={ic} o={{ s: 20, w: a.stroke, ...o }} />;
   const close = () => a.openIcon(null);
 
@@ -131,8 +135,8 @@ export function Drawer() {
             </div>
           </div>
           <div className="code"><h4><T k="code" /></h4>
-            <div className="ctabs" role="tablist">{(["svg", "jsx", "use", "css"] as const).map((k) => <button key={k} role="tab" aria-selected={tab === k} className={tab === k ? "on" : ""} onClick={() => setTab(k)}>{{ svg: "SVG", jsx: "React", use: "Sprite", css: "CSS" }[k]}</button>)}</div>
-            <div className="codebox"><pre dangerouslySetInnerHTML={{ __html: highlight(code, tab === "css") }} /><button className="cp" onClick={() => a.copy(code)}><T k="cp" /></button></div>
+            <div className="ctabs" role="tablist">{tabs.map((k) => <button key={k} role="tab" aria-selected={cur === k} className={cur === k ? "on" : ""} onClick={() => setTab(k)}>{{ svg: "SVG", jsx: "React", use: "Sprite", css: "CSS", mui: "MUI", antd: "Ant" }[k]}</button>)}</div>
+            <div className="codebox"><pre dangerouslySetInnerHTML={{ __html: highlight(code, cur === "css") }} /><button className="cp" onClick={() => a.copy(code)}><T k="cp" /></button></div>
           </div>
           {variants.length > 1 && <div className="sim"><h4>{a.tt("Variantes", "Variants")}</h4>
             <div className="vars">{variants.map((x) => <button key={x.id} className={x.id === ic.id ? "on" : ""} aria-current={x.id === ic.id ? "true" : undefined} onClick={() => a.openIcon(x.id)}><span style={{ color: lineInk }}><Svg i={x} o={{ s: 28, w: a.stroke }} /></span><small>{nm(x)}</small></button>)}</div>

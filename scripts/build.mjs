@@ -1,5 +1,5 @@
 // Génère les paquets à partir de src/icons.json et src/flags.json (sources uniques de vérité).
-import { readFileSync, writeFileSync, mkdirSync, rmSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, rmSync, readdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -181,3 +181,55 @@ for (const i of ui) ng += `/** ${i.fr} · ${i.en} */\nexport const ${i.id}: Afro
 ng += `\n/** Toutes les icônes : provideAfroicons(afroicons). Pratique, mais tout entre dans le bundle. */\nexport const afroicons = { ${[...icons.map((i) => pascal(i.id)), ...ui.map((i) => i.id)].join(", ")} } as const;\n`;
 writeFileSync(NG, ng);
 console.log(`✔ ${icons.length + ui.length} icônes → packages/afroicons-angular`);
+
+/* ---------- afroicons-mui et afroicons-antd : remplaçants de @mui/icons-material et @ant-design/icons ---------- */
+// Les icônes d'interface sous leurs noms Material UI et Ant Design (src/compat.json : noms de base ; toutes les
+// variantes existantes sont ajoutées). On remplace l'import, rien d'autre ; les icônes pas encore redessinées
+// viennent du paquet d'origine.
+const compat = JSON.parse(readFileSync(join(root, "src/compat.json"), "utf8"));
+const uiById = Object.fromEntries(ui.map((i) => [i.id, i]));
+const pkgNames = (dir, re) => { try { return new Set(readdirSync(join(root, "node_modules", dir)).filter((f) => re.test(f)).map((f) => f.replace(/\.js$/, ""))); } catch { return null; } };
+// Noms existants dans les paquets d'origine (installés pour le développement) ; sinon, la liste déjà générée.
+const MUI_ALL = pkgNames("@mui/icons-material/esm", /^[A-Z]\w*\.js$/), ANT_ALL = pkgNames("@ant-design/icons/es/icons", /^[A-Z]\w*\.js$/);
+function aliases(kind) {
+  const out = [], seen = new Set();
+  for (const [id, v] of Object.entries(compat)) for (const b of v[kind]) {
+    const cands = kind === "mui" ? [b, b + "Outlined", b + "Rounded", b + "Sharp", b + "TwoTone"] : [b + "Outlined", b + "Filled", b + "TwoTone"];
+    const all = kind === "mui" ? MUI_ALL : ANT_ALL;
+    for (const n of cands) if ((all ? all.has(n) : true) && !seen.has(n)) { seen.add(n); out.push([n, id]); }
+  }
+  return out;
+}
+const used = (list) => [...new Set(list.map(([, id]) => id))];
+function compatPackage(dir, kind, head, makeSrc, dts, deepDts) {
+  const P = join(root, "packages", dir), list = aliases(kind);
+  if (!list.length) throw new Error(`${dir} : aucun nom (paquet d'origine absent ?)`);
+  rmSync(join(P, "icons"), { recursive: true, force: true });
+  mkdirSync(join(P, "icons"), { recursive: true });
+  let afro = `// ${dir} v${version} — généré, ne pas modifier à la main.\n${head}\n`;
+  for (const id of used(list)) afro += `const n${id} = ${JSON.stringify(toJsxChildren(uiById[id].body))};\n`;
+  for (const [n, id] of list) {
+    afro += `export const ${n} = /*#__PURE__*/ ${makeSrc(n, id)};\n`;
+    writeFileSync(join(P, "icons", `${n}.js`), `export { ${n} as default } from "../afro.js";\n`);
+  }
+  writeFileSync(join(P, "afro.js"), afro);
+  const from = kind === "mui" ? "@mui/icons-material" : "@ant-design/icons";
+  writeFileSync(join(P, "index.js"), `// ${dir} v${version} — généré, ne pas modifier à la main.\nexport * from "${from}";\nexport { ${list.map(([n]) => n).join(", ")} } from "./afro.js";\n` +
+    (kind === "antd" ? `export { default } from "${from}";\n` : "") + `/** Noms redessinés par Afroicons (les autres viennent de ${from}). */\nexport const afroiconNames = ${JSON.stringify(list.map(([n]) => n))};\n`);
+  writeFileSync(join(P, "index.d.ts"), `// ${dir} v${version} — généré, ne pas modifier à la main.\nexport * from "${from}";\n${kind === "antd" ? `export { default } from "${from}";\n` : ""}${dts}\n/** Noms redessinés par Afroicons (les autres viennent de ${from}). */\nexport declare const afroiconNames: readonly string[];\n` +
+    list.map(([n, id]) => `/** ${uiById[id].fr} · ${uiById[id].en} (Afroicons ${id}) */\nexport declare const ${n}: AfroIcon;\n`).join(""));
+  writeFileSync(join(P, "deep.d.ts"), deepDts);
+  writeFileSync(join(P, "compat.json"), JSON.stringify(Object.fromEntries(list), null, 1) + "\n");
+  console.log(`✔ ${list.length} noms ${kind === "mui" ? "Material UI" : "Ant Design"} (${used(list).length} icônes) → packages/${dir}`);
+}
+const svgG = `{ fill: "none", stroke: "currentColor", strokeWidth: ${STROKE}, strokeLinecap: "round", strokeLinejoin: "round" }`;
+compatPackage("afroicons-mui", "mui",
+  `import { createElement as h } from "react";\nimport { createSvgIcon } from "@mui/material";\nconst el = ([t, p, c], k) => h(t, { key: k, ...p }, ...(c ? c.map(el) : []));\n// Le trait Afroicons dans un SvgIcon Material UI : mêmes props (fontSize, color, htmlColor, sx, titleAccess…).\nconst make = (nodes, name) => createSvgIcon(h("g", ${svgG}, ...nodes.map(el)), name);`,
+  (n, id) => `make(n${id}, ${JSON.stringify(n)})`,
+  `import type { SvgIconComponent } from "@mui/icons-material";\ntype AfroIcon = SvgIconComponent;`,
+  `import type { SvgIconComponent } from "@mui/icons-material";\ndeclare const Icon: SvgIconComponent;\nexport default Icon;\n`);
+compatPackage("afroicons-antd", "antd",
+  `import { createElement as h, forwardRef } from "react";\nimport AntIcon from "@ant-design/icons";\n// Bundlers : le composant ; Node (module CommonJS) : l'objet du module, qui le porte en default.\nconst Icon = AntIcon && AntIcon.$$typeof ? AntIcon : AntIcon.default;\nconst el = ([t, p, c], k) => h(t, { key: k, ...p }, ...(c ? c.map(el) : []));\nconst kebab = (s) => s.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();\n// Le trait Afroicons dans une icône Ant Design : mêmes props (className, style, spin, rotate, onClick…), classe anticon.\nconst make = (nodes, name) => {\n  const label = kebab(name.replace(/(Outlined|Filled|TwoTone)$/, ""));\n  const Svg = (p) => h("svg", { ...p, viewBox: "0 0 24 24", "data-icon": label, ...${svgG} }, ...nodes.map(el));\n  const C = forwardRef(function AfroIcon({ twoToneColor, className, ...props }, ref) {\n    return h(Icon, { ref, role: "img", "aria-label": label, ...props, className: className ? "anticon-" + label + " " + className : "anticon-" + label, component: Svg });\n  });\n  C.displayName = name;\n  return C;\n};`,
+  (n, id) => `make(n${id}, ${JSON.stringify(n)})`,
+  `import type { ForwardRefExoticComponent, RefAttributes } from "react";\nimport type { AntdIconProps } from "@ant-design/icons/lib/components/AntdIcon";\ntype AfroIcon = ForwardRefExoticComponent<Omit<AntdIconProps, "ref"> & RefAttributes<HTMLSpanElement>>;`,
+  `import type { ForwardRefExoticComponent, RefAttributes } from "react";\nimport type { AntdIconProps } from "@ant-design/icons/lib/components/AntdIcon";\ndeclare const Icon: ForwardRefExoticComponent<Omit<AntdIconProps, "ref"> & RefAttributes<HTMLSpanElement>>;\nexport default Icon;\n`);

@@ -1,6 +1,9 @@
 import type { AfroiconData } from "afroicons";
 import AFRO_DATA from "../generated/afro.json";
 import UI_ICONS from "afroicons-ui/icons.json";
+import COMPAT from "../../../../src/compat.json";
+/** Noms Material UI et Ant Design de chaque icône d'interface (paquets afroicons-mui et afroicons-antd). */
+export const COMPAT_NAMES = COMPAT as Record<string, { mui: string[]; antd: string[] }>;
 
 /** Une icône du site : icône Afroicons, ou icône d'interface (paquet afroicons-ui, nom Lucide dans `lucide`). */
 export type Icon = Omit<AfroiconData, "id" | "cat" | "region" | "fill" | "variantOf"> & { id: string; cat: string; region: string; fill?: string; variantOf?: string; lucide?: string; family?: string; _hay?: string; _n?: string };

@@ -1,4 +1,4 @@
-# Publie les quatre paquets sur npm quand on pousse un tag v*, ex. : git tag v0.7.0 && git push origin v0.7.0
+# Publie les six paquets sur npm quand on pousse un tag v*, ex. : git tag v0.7.0 && git push origin v0.7.0
 # Publication de confiance (trusted publishing) : npm reconnaît ce workflow par OIDC, sans jeton à stocker.
 # Prérequis, une fois par paquet sur npmjs.com : Settings > Trusted Publisher > GitHub Actions,
 # organisation « cybexai », dépôt « afroicons », workflow « release.yml ».
@@ -29,3 +29,8 @@ jobs:
         working-directory: packages/afroicons-ui
       - run: npm publish --access public
         working-directory: packages/afroicons-angular/dist
+      - run: cp LICENSE packages/afroicons-mui/ && cp LICENSE packages/afroicons-antd/
+      - run: npm publish --access public
+        working-directory: packages/afroicons-mui
+      - run: npm publish --access public
+        working-directory: packages/afroicons-antd

@@ -5,3 +5,6 @@ dist/
 dist-single/
 .claude/
 apps/web/src/generated/
+# Fichiers d'import direct générés par scripts/build.mjs (un par nom Material UI / Ant Design)
+packages/afroicons-mui/icons/
+packages/afroicons-antd/icons/

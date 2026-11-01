@@ -14,6 +14,7 @@ const read = (p) => readFileSync(join(repo, p), "utf8");
 
 const afro = JSON.parse(read("packages/afroicons/icons.json"));
 const ui = JSON.parse(read("packages/afroicons-ui/icons.json"));
+const COMPAT = JSON.parse(read("src/compat.json"));
 const i18n = read("apps/web/src/lib/i18n.ts");
 const factsStart = i18n.indexOf("{", i18n.indexOf("export const FACTS"));
 let depth = 0, factsEnd = factsStart;
@@ -85,6 +86,7 @@ for (const i of icons) {
 ${i.afro ? `<p>${esc(i.afro)}</p>` : ""}
 ${fact ? `<h2>Le saviez-vous ?</h2><p>${esc(fact[0])}</p><p lang="en">${esc(fact[1])}</p>` : ""}
 <p>Mots-clés : ${i.tags.map((t) => esc(t)).join(", ")}</p>
+${i.lucide && COMPAT[i.lucide] && (COMPAT[i.lucide].mui.length || COMPAT[i.lucide].antd.length) ? `<h2>Équivalents Material UI et Ant Design</h2><p>${COMPAT[i.lucide].mui.length ? `Material UI (<code>afroicons-mui</code>) : ${COMPAT[i.lucide].mui.map((n) => `<code>${n}</code>`).join(", ")}, et leurs variantes Outlined, Rounded, Sharp et TwoTone. ` : ""}${COMPAT[i.lucide].antd.length ? `Ant Design (<code>afroicons-antd</code>) : ${COMPAT[i.lucide].antd.map((n) => `<code>${n}Outlined</code>`).join(", ")}, et leurs variantes Filled et TwoTone.` : ""}</p>` : ""}
 <h2>Utiliser cette icône</h2><pre><code>${esc(code)}</code></pre>
 <p>Icône libre et gratuite, licence MIT, utilisation commerciale comprise. <a href="/#${i.slug}">Personnaliser et télécharger sur afroicons.org</a></p>
 ${variants.length ? `<h2>Variantes</h2>${links(variants)}` : ""}

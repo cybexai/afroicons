@@ -25,6 +25,17 @@ export function jsxSnippet(i: Icon, stroke: number, fill = false) {
   return `import { ${pascal(i.id)} } from "afroicons-react";\n\n<${pascal(i.id)} size={24} ${fill ? 'variant="fill"' : `strokeWidth={${stroke}}`} />\n\n// ou, sans dépendance :\nexport function ${pascal(i.id)}({ size = 24, color = "currentColor", strokeWidth = ${stroke}, ...props }) {\n  return (\n    <svg width={size} height={size} viewBox="0 0 24 24" fill="none"\n      stroke={color} strokeWidth={strokeWidth}\n      strokeLinecap="round" strokeLinejoin="round" {...props}>\n      ${i.body.replace(/stroke-width/g, "strokeWidth")}\n    </svg>\n  );\n}`;
 }
 
+/** Noms Material UI et Ant Design d'une icône d'interface (src/compat.json : noms de base). */
+export function compatSnippet(i: Icon, kind: "mui" | "antd", names: string[]) {
+  if (!names.length) return "";
+  if (kind === "mui") {
+    const n = names[0] + "Outlined";
+    return `// npm install afroicons-mui @mui/material @mui/icons-material\n// Mêmes noms et mêmes props que @mui/icons-material : remplacez l'import.\nimport { ${names[0]}, ${n} } from "afroicons-mui";\n// ou : import ${n} from "afroicons-mui/${n}";\n\n<${n} fontSize="small" color="primary" />\n\n// Noms Material UI de cette icône (et leurs variantes Outlined, Rounded, Sharp, TwoTone) :\n// ${names.join(", ")}`;
+  }
+  const n = names[0] + "Outlined";
+  return `// npm install afroicons-antd @ant-design/icons\n// Mêmes noms et mêmes props que @ant-design/icons : remplacez l'import.\nimport { ${n} } from "afroicons-antd";\n// ou : import ${n} from "afroicons-antd/${n}";\n\n<${n} style={{ fontSize: 16 }} />\n\n// Noms Ant Design de cette icône (variantes Outlined, Filled, TwoTone) :\n// ${names.join(", ")}`;
+}
+
 export const spriteStr = (list: Icon[], stroke: number) =>
   `<svg xmlns="http://www.w3.org/2000/svg" style="display:none">\n${list
     .map((i) => `  <symbol id="afroicon-${i.id}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${stroke}" stroke-linecap="round" stroke-linejoin="round">${i.body}</symbol>`)

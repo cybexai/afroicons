@@ -1,5 +1,10 @@
 # Journal des versions
 
+## À venir
+- Deux nouveaux paquets : **`afroicons-mui`** et **`afroicons-antd`** remplacent `@mui/icons-material` et `@ant-design/icons` en changeant seulement l'import. 1 655 noms Material UI et 303 noms Ant Design, variantes comprises, redessinés au trait Afroicons ; mêmes props (`fontSize`, `color`, `sx` ; `spin`, `rotate`, `className`) ; les autres icônes viennent du paquet d'origine
+- Site : onglets « MUI » et « Ant » dans la fiche des icônes d'interface, et leurs noms sur chaque page
+- Fiche : aperçus, icônes de la même famille et barre « En contexte » corrigés en style pastille ; mots-clés sans doublon
+
 ## 0.6.0 — 31 octobre 2026 · drapeaux africains, icônes SYSIGAPE
 
 ### Paquets

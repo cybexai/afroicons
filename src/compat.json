@@ -1,0 +1,1484 @@
+{
+ "Plus": {
+  "mui": [
+   "Add"
+  ],
+  "antd": [
+   "Plus"
+  ]
+ },
+ "X": {
+  "mui": [
+   "Close",
+   "Clear"
+  ],
+  "antd": [
+   "Close"
+  ]
+ },
+ "Check": {
+  "mui": [
+   "Check",
+   "Done"
+  ],
+  "antd": [
+   "Check"
+  ]
+ },
+ "CheckCircle2": {
+  "mui": [
+   "CheckCircle",
+   "TaskAlt"
+  ],
+  "antd": [
+   "CheckCircle"
+  ]
+ },
+ "CheckCircle": {
+  "mui": [
+   "CheckCircleOutline"
+  ],
+  "antd": []
+ },
+ "Trash2": {
+  "mui": [
+   "Delete",
+   "DeleteOutline",
+   "DeleteForever"
+  ],
+  "antd": [
+   "Delete"
+  ]
+ },
+ "Pencil": {
+  "mui": [
+   "Edit",
+   "Create",
+   "ModeEdit"
+  ],
+  "antd": [
+   "Edit"
+  ]
+ },
+ "PenLine": {
+  "mui": [
+   "EditNote",
+   "DriveFileRenameOutline",
+   "BorderColor"
+  ],
+  "antd": [
+   "Form",
+   "Highlight"
+  ]
+ },
+ "Printer": {
+  "mui": [
+   "Print"
+  ],
+  "antd": [
+   "Printer"
+  ]
+ },
+ "Download": {
+  "mui": [
+   "Download",
+   "FileDownload",
+   "GetApp"
+  ],
+  "antd": [
+   "Download",
+   "CloudDownload"
+  ]
+ },
+ "Save": {
+  "mui": [
+   "Save"
+  ],
+  "antd": [
+   "Save"
+  ]
+ },
+ "Copy": {
+  "mui": [
+   "ContentCopy",
+   "FileCopy"
+  ],
+  "antd": [
+   "Copy"
+  ]
+ },
+ "Search": {
+  "mui": [
+   "Search"
+  ],
+  "antd": [
+   "Search"
+  ]
+ },
+ "Eye": {
+  "mui": [
+   "Visibility",
+   "RemoveRedEye"
+  ],
+  "antd": [
+   "Eye"
+  ]
+ },
+ "RefreshCw": {
+  "mui": [
+   "Refresh",
+   "Autorenew",
+   "Sync",
+   "Cached"
+  ],
+  "antd": [
+   "Reload",
+   "Sync"
+  ]
+ },
+ "RotateCcw": {
+  "mui": [
+   "Replay",
+   "RestartAlt"
+  ],
+  "antd": [
+   "Redo"
+  ]
+ },
+ "History": {
+  "mui": [
+   "History",
+   "Restore"
+  ],
+  "antd": [
+   "History",
+   "FieldTime"
+  ]
+ },
+ "Send": {
+  "mui": [
+   "Send"
+  ],
+  "antd": [
+   "Send"
+  ]
+ },
+ "LogIn": {
+  "mui": [
+   "Login"
+  ],
+  "antd": [
+   "Login"
+  ]
+ },
+ "SlidersHorizontal": {
+  "mui": [
+   "Tune"
+  ],
+  "antd": [
+   "Sliders",
+   "Control"
+  ]
+ },
+ "Loader2": {
+  "mui": [],
+  "antd": [
+   "Loading",
+   "Loading3Quarters"
+  ]
+ },
+ "Zap": {
+  "mui": [
+   "Bolt",
+   "FlashOn",
+   "ElectricBolt"
+  ],
+  "antd": [
+   "Thunderbolt"
+  ]
+ },
+ "Sparkles": {
+  "mui": [
+   "AutoAwesome"
+  ],
+  "antd": []
+ },
+ "Fingerprint": {
+  "mui": [
+   "Fingerprint"
+  ],
+  "antd": []
+ },
+ "ArrowLeft": {
+  "mui": [
+   "ArrowBack",
+   "West",
+   "KeyboardBackspace"
+  ],
+  "antd": [
+   "ArrowLeft"
+  ]
+ },
+ "ArrowRight": {
+  "mui": [
+   "ArrowForward",
+   "East"
+  ],
+  "antd": [
+   "ArrowRight"
+  ]
+ },
+ "ChevronDown": {
+  "mui": [
+   "ExpandMore",
+   "KeyboardArrowDown"
+  ],
+  "antd": [
+   "Down"
+  ]
+ },
+ "ChevronRight": {
+  "mui": [
+   "ChevronRight",
+   "NavigateNext",
+   "KeyboardArrowRight",
+   "ArrowForwardIos"
+  ],
+  "antd": [
+   "Right"
+  ]
+ },
+ "Home": {
+  "mui": [
+   "Home"
+  ],
+  "antd": [
+   "Home"
+  ]
+ },
+ "LayoutDashboard": {
+  "mui": [
+   "Dashboard",
+   "SpaceDashboard"
+  ],
+  "antd": [
+   "Layout"
+  ]
+ },
+ "Workflow": {
+  "mui": [
+   "AccountTree",
+   "Schema"
+  ],
+  "antd": [
+   "Apartment",
+   "Partition",
+   "Branches"
+  ]
+ },
+ "ListTree": {
+  "mui": [],
+  "antd": [
+   "Cluster"
+  ]
+ },
+ "FolderKanban": {
+  "mui": [],
+  "antd": [
+   "Project"
+  ]
+ },
+ "Keyboard": {
+  "mui": [
+   "Keyboard"
+  ],
+  "antd": []
+ },
+ "AlertTriangle": {
+  "mui": [
+   "Warning",
+   "ReportProblem",
+   "WarningAmber"
+  ],
+  "antd": [
+   "Warning"
+  ]
+ },
+ "Clock": {
+  "mui": [
+   "Schedule",
+   "AccessTime",
+   "AccessTimeFilled"
+  ],
+  "antd": [
+   "ClockCircle"
+  ]
+ },
+ "Timer": {
+  "mui": [
+   "Timer",
+   "AvTimer"
+  ],
+  "antd": []
+ },
+ "Lock": {
+  "mui": [
+   "Lock",
+   "Https"
+  ],
+  "antd": [
+   "Lock"
+  ]
+ },
+ "ShieldCheck": {
+  "mui": [
+   "VerifiedUser",
+   "GppGood"
+  ],
+  "antd": [
+   "SafetyCertificate"
+  ]
+ },
+ "BadgeCheck": {
+  "mui": [
+   "Verified"
+  ],
+  "antd": []
+ },
+ "Bell": {
+  "mui": [
+   "Notifications",
+   "NotificationsNone"
+  ],
+  "antd": [
+   "Bell",
+   "Notification"
+  ]
+ },
+ "CloudOff": {
+  "mui": [
+   "CloudOff"
+  ],
+  "antd": []
+ },
+ "Gauge": {
+  "mui": [
+   "Speed"
+  ],
+  "antd": [
+   "Dashboard"
+  ]
+ },
+ "Award": {
+  "mui": [
+   "EmojiEvents",
+   "MilitaryTech",
+   "WorkspacePremium"
+  ],
+  "antd": [
+   "Trophy"
+  ]
+ },
+ "Crown": {
+  "mui": [],
+  "antd": [
+   "Crown"
+  ]
+ },
+ "FileText": {
+  "mui": [
+   "Description",
+   "Article",
+   "InsertDriveFile",
+   "PictureAsPdf"
+  ],
+  "antd": [
+   "FileText",
+   "File",
+   "FilePdf"
+  ]
+ },
+ "FileInput": {
+  "mui": [
+   "FileOpen",
+   "UploadFile"
+  ],
+  "antd": [
+   "Import",
+   "FileAdd"
+  ]
+ },
+ "FileSearch": {
+  "mui": [
+   "FindInPage"
+  ],
+  "antd": [
+   "FileSearch"
+  ]
+ },
+ "FileBarChart": {
+  "mui": [
+   "Assessment",
+   "Summarize"
+  ],
+  "antd": []
+ },
+ "ClipboardList": {
+  "mui": [
+   "Assignment",
+   "ContentPaste"
+  ],
+  "antd": [
+   "Profile"
+  ]
+ },
+ "ClipboardCheck": {
+  "mui": [
+   "AssignmentTurnedIn",
+   "FactCheck"
+  ],
+  "antd": [
+   "FileDone",
+   "Audit"
+  ]
+ },
+ "BarChart3": {
+  "mui": [
+   "BarChart",
+   "Leaderboard",
+   "Equalizer",
+   "InsertChart"
+  ],
+  "antd": [
+   "BarChart"
+  ]
+ },
+ "TrendingUp": {
+  "mui": [
+   "TrendingUp"
+  ],
+  "antd": [
+   "Rise"
+  ]
+ },
+ "TrendingDown": {
+  "mui": [
+   "TrendingDown"
+  ],
+  "antd": [
+   "Fall"
+  ]
+ },
+ "BookOpen": {
+  "mui": [
+   "MenuBook",
+   "AutoStories"
+  ],
+  "antd": [
+   "Read"
+  ]
+ },
+ "BookText": {
+  "mui": [
+   "Book",
+   "LibraryBooks"
+  ],
+  "antd": [
+   "Book"
+  ]
+ },
+ "BookLock": {
+  "mui": [],
+  "antd": []
+ },
+ "CalendarClock": {
+  "mui": [
+   "EditCalendar"
+  ],
+  "antd": []
+ },
+ "CalendarCheck": {
+  "mui": [
+   "EventAvailable"
+  ],
+  "antd": [
+   "CarryOut"
+  ]
+ },
+ "Mail": {
+  "mui": [
+   "Email",
+   "Mail",
+   "MailOutline"
+  ],
+  "antd": [
+   "Mail"
+  ]
+ },
+ "MessageSquare": {
+  "mui": [
+   "Message",
+   "Chat",
+   "Comment",
+   "Sms",
+   "Textsms",
+   "MapsUgc",
+   "Feedback"
+  ],
+  "antd": [
+   "Message",
+   "Comment"
+  ]
+ },
+ "Smartphone": {
+  "mui": [
+   "Smartphone",
+   "PhoneAndroid",
+   "PhoneIphone",
+   "StayCurrentPortrait"
+  ],
+  "antd": [
+   "Mobile"
+  ]
+ },
+ "Headphones": {
+  "mui": [
+   "Headphones",
+   "Headset",
+   "HeadsetMic",
+   "SupportAgent"
+  ],
+  "antd": [
+   "CustomerService"
+  ]
+ },
+ "LifeBuoy": {
+  "mui": [
+   "Support"
+  ],
+  "antd": []
+ },
+ "Plug": {
+  "mui": [
+   "Power",
+   "ElectricalServices"
+  ],
+  "antd": [
+   "Api"
+  ]
+ },
+ "Brain": {
+  "mui": [
+   "Psychology"
+  ],
+  "antd": [
+   "Robot"
+  ]
+ },
+ "Palette": {
+  "mui": [
+   "Palette",
+   "ColorLens"
+  ],
+  "antd": [
+   "BgColors"
+  ]
+ },
+ "Users": {
+  "mui": [
+   "People",
+   "Group",
+   "Groups"
+  ],
+  "antd": [
+   "Team"
+  ]
+ },
+ "UsersRound": {
+  "mui": [
+   "PeopleAlt",
+   "SupervisorAccount"
+  ],
+  "antd": []
+ },
+ "UserCircle": {
+  "mui": [
+   "AccountCircle"
+  ],
+  "antd": []
+ },
+ "UserCheck": {
+  "mui": [
+   "HowToReg"
+  ],
+  "antd": []
+ },
+ "UserX": {
+  "mui": [
+   "PersonOff",
+   "PersonRemove"
+  ],
+  "antd": [
+   "UserDelete"
+  ]
+ },
+ "GraduationCap": {
+  "mui": [
+   "School"
+  ],
+  "antd": []
+ },
+ "Briefcase": {
+  "mui": [
+   "Work",
+   "BusinessCenter"
+  ],
+  "antd": []
+ },
+ "Stethoscope": {
+  "mui": [
+   "MedicalServices",
+   "LocalHospital"
+  ],
+  "antd": []
+ },
+ "Pill": {
+  "mui": [
+   "Medication",
+   "LocalPharmacy"
+  ],
+  "antd": [
+   "MedicineBox"
+  ]
+ },
+ "HardHat": {
+  "mui": [
+   "Engineering",
+   "Construction"
+  ],
+  "antd": []
+ },
+ "ChefHat": {
+  "mui": [
+   "SoupKitchen"
+  ],
+  "antd": []
+ },
+ "Wallet": {
+  "mui": [
+   "AccountBalanceWallet",
+   "Wallet"
+  ],
+  "antd": [
+   "Wallet"
+  ]
+ },
+ "Coins": {
+  "mui": [
+   "Toll"
+  ],
+  "antd": []
+ },
+ "Banknote": {
+  "mui": [
+   "Payments",
+   "Money"
+  ],
+  "antd": []
+ },
+ "DollarSign": {
+  "mui": [
+   "AttachMoney",
+   "MonetizationOn",
+   "Paid"
+  ],
+  "antd": [
+   "Dollar"
+  ]
+ },
+ "HandCoins": {
+  "mui": [],
+  "antd": [
+   "MoneyCollect"
+  ]
+ },
+ "Receipt": {
+  "mui": [
+   "Receipt"
+  ],
+  "antd": []
+ },
+ "ReceiptText": {
+  "mui": [
+   "ReceiptLong"
+  ],
+  "antd": [
+   "AccountBook"
+  ]
+ },
+ "Percent": {
+  "mui": [
+   "Percent",
+   "Discount"
+  ],
+  "antd": [
+   "Percentage"
+  ]
+ },
+ "Tag": {
+  "mui": [
+   "LocalOffer",
+   "Sell",
+   "Label"
+  ],
+  "antd": [
+   "Tag",
+   "Tags"
+  ]
+ },
+ "Landmark": {
+  "mui": [
+   "AccountBalance"
+  ],
+  "antd": [
+   "Bank"
+  ]
+ },
+ "ShoppingCart": {
+  "mui": [
+   "ShoppingCart",
+   "PointOfSale"
+  ],
+  "antd": [
+   "ShoppingCart"
+  ]
+ },
+ "Store": {
+  "mui": [
+   "Store",
+   "Storefront"
+  ],
+  "antd": [
+   "Shop"
+  ]
+ },
+ "Package": {
+  "mui": [
+   "Inventory2"
+  ],
+  "antd": [
+   "Gift"
+  ]
+ },
+ "Boxes": {
+  "mui": [
+   "Inventory"
+  ],
+  "antd": []
+ },
+ "Warehouse": {
+  "mui": [
+   "Warehouse"
+  ],
+  "antd": []
+ },
+ "Truck": {
+  "mui": [
+   "LocalShipping",
+   "DeliveryDining"
+  ],
+  "antd": []
+ },
+ "Bus": {
+  "mui": [
+   "DirectionsBus",
+   "AirportShuttle"
+  ],
+  "antd": []
+ },
+ "Car": {
+  "mui": [
+   "DirectionsCar",
+   "LocalTaxi"
+  ],
+  "antd": [
+   "Car"
+  ]
+ },
+ "Fuel": {
+  "mui": [
+   "LocalGasStation"
+  ],
+  "antd": []
+ },
+ "Ticket": {
+  "mui": [
+   "ConfirmationNumber",
+   "LocalActivity"
+  ],
+  "antd": []
+ },
+ "Building2": {
+  "mui": [
+   "Business",
+   "Domain"
+  ],
+  "antd": []
+ },
+ "Factory": {
+  "mui": [
+   "Factory",
+   "PrecisionManufacturing"
+  ],
+  "antd": []
+ },
+ "KeyRound": {
+  "mui": [
+   "Key",
+   "VpnKey"
+  ],
+  "antd": [
+   "Key"
+  ]
+ },
+ "BedDouble": {
+  "mui": [
+   "Hotel",
+   "Bed",
+   "KingBed"
+  ],
+  "antd": []
+ },
+ "Shirt": {
+  "mui": [
+   "DryCleaning",
+   "Checkroom"
+  ],
+  "antd": [
+   "Skin"
+  ]
+ },
+ "UtensilsCrossed": {
+  "mui": [
+   "Restaurant",
+   "RestaurantMenu"
+  ],
+  "antd": []
+ },
+ "CakeSlice": {
+  "mui": [
+   "Cake",
+   "BakeryDining"
+  ],
+  "antd": []
+ },
+ "Sprout": {
+  "mui": [
+   "Grass",
+   "Spa"
+  ],
+  "antd": []
+ },
+ "Settings": {
+  "mui": [
+   "Settings"
+  ],
+  "antd": [
+   "Setting"
+  ]
+ },
+ "Cog": {
+  "mui": [
+   "SettingsSuggest"
+  ],
+  "antd": []
+ },
+ "AlertCircle": {
+  "mui": [
+   "Error",
+   "ErrorOutline",
+   "ReportGmailerrorred"
+  ],
+  "antd": [
+   "ExclamationCircle",
+   "Exclamation"
+  ]
+ },
+ "Info": {
+  "mui": [
+   "Info"
+  ],
+  "antd": [
+   "InfoCircle",
+   "Info"
+  ]
+ },
+ "HelpCircle": {
+  "mui": [
+   "Help",
+   "HelpOutline"
+  ],
+  "antd": [
+   "QuestionCircle",
+   "Question"
+  ]
+ },
+ "XCircle": {
+  "mui": [
+   "Cancel",
+   "HighlightOff"
+  ],
+  "antd": [
+   "CloseCircle"
+  ]
+ },
+ "Ban": {
+  "mui": [
+   "Block",
+   "DoNotDisturb"
+  ],
+  "antd": [
+   "Stop"
+  ]
+ },
+ "Shield": {
+  "mui": [
+   "Shield",
+   "Security"
+  ],
+  "antd": [
+   "Safety"
+  ]
+ },
+ "ShieldAlert": {
+  "mui": [
+   "GppMaybe",
+   "GppBad"
+  ],
+  "antd": []
+ },
+ "Activity": {
+  "mui": [
+   "MonitorHeart"
+  ],
+  "antd": [
+   "LineChart"
+  ]
+ },
+ "BellRing": {
+  "mui": [
+   "NotificationsActive"
+  ],
+  "antd": []
+ },
+ "Cloud": {
+  "mui": [
+   "Cloud",
+   "CloudQueue",
+   "CloudDone"
+  ],
+  "antd": [
+   "Cloud"
+  ]
+ },
+ "WifiOff": {
+  "mui": [
+   "WifiOff",
+   "SignalWifiOff"
+  ],
+  "antd": [
+   "Disconnect"
+  ]
+ },
+ "Rocket": {
+  "mui": [
+   "RocketLaunch",
+   "Rocket"
+  ],
+  "antd": [
+   "Rocket"
+  ]
+ },
+ "Lightbulb": {
+  "mui": [
+   "Lightbulb",
+   "EmojiObjects",
+   "TipsAndUpdates"
+  ],
+  "antd": [
+   "Bulb"
+  ]
+ },
+ "Globe": {
+  "mui": [
+   "Public",
+   "Language"
+  ],
+  "antd": [
+   "Global"
+  ]
+ },
+ "Phone": {
+  "mui": [
+   "Phone",
+   "Call",
+   "LocalPhone"
+  ],
+  "antd": [
+   "Phone"
+  ]
+ },
+ "MessageCircle": {
+  "mui": [
+   "ChatBubble",
+   "Forum"
+  ],
+  "antd": [
+   "Wechat"
+  ]
+ },
+ "Inbox": {
+  "mui": [
+   "Inbox",
+   "MoveToInbox"
+  ],
+  "antd": [
+   "Inbox"
+  ]
+ },
+ "Camera": {
+  "mui": [
+   "PhotoCamera",
+   "CameraAlt"
+  ],
+  "antd": [
+   "Camera"
+  ]
+ },
+ "Monitor": {
+  "mui": [
+   "Monitor",
+   "DesktopWindows",
+   "Computer",
+   "Tv"
+  ],
+  "antd": [
+   "Desktop",
+   "Laptop"
+  ]
+ },
+ "Minus": {
+  "mui": [
+   "Remove",
+   "HorizontalRule"
+  ],
+  "antd": [
+   "Minus"
+  ]
+ },
+ "Edit2": {
+  "mui": [
+   "ModeEditOutline"
+  ],
+  "antd": []
+ },
+ "Upload": {
+  "mui": [
+   "Upload",
+   "FileUpload",
+   "CloudUpload",
+   "Publish"
+  ],
+  "antd": [
+   "Upload",
+   "CloudUpload"
+  ]
+ },
+ "EyeOff": {
+  "mui": [
+   "VisibilityOff"
+  ],
+  "antd": [
+   "EyeInvisible"
+  ]
+ },
+ "Star": {
+  "mui": [
+   "Star",
+   "StarBorder",
+   "Grade"
+  ],
+  "antd": [
+   "Star"
+  ]
+ },
+ "Link2": {
+  "mui": [
+   "Link",
+   "InsertLink"
+  ],
+  "antd": [
+   "Link"
+  ]
+ },
+ "Share2": {
+  "mui": [
+   "Share"
+  ],
+  "antd": [
+   "ShareAlt"
+  ]
+ },
+ "Paperclip": {
+  "mui": [
+   "AttachFile",
+   "Attachment"
+  ],
+  "antd": [
+   "PaperClip"
+  ]
+ },
+ "Play": {
+  "mui": [
+   "PlayArrow"
+  ],
+  "antd": [
+   "CaretRight"
+  ]
+ },
+ "ScanLine": {
+  "mui": [
+   "QrCodeScanner",
+   "DocumentScanner",
+   "CropFree"
+  ],
+  "antd": [
+   "Scan"
+  ]
+ },
+ "Settings2": {
+  "mui": [],
+  "antd": []
+ },
+ "Wrench": {
+  "mui": [
+   "Build",
+   "Handyman"
+  ],
+  "antd": [
+   "Tool"
+  ]
+ },
+ "Handshake": {
+  "mui": [
+   "Handshake"
+  ],
+  "antd": []
+ },
+ "ChevronUp": {
+  "mui": [
+   "ExpandLess",
+   "KeyboardArrowUp"
+  ],
+  "antd": [
+   "Up"
+  ]
+ },
+ "ChevronLeft": {
+  "mui": [
+   "ChevronLeft",
+   "NavigateBefore",
+   "KeyboardArrowLeft",
+   "ArrowBackIos",
+   "ArrowBackIosNew"
+  ],
+  "antd": [
+   "Left"
+  ]
+ },
+ "ExternalLink": {
+  "mui": [
+   "OpenInNew",
+   "Launch"
+  ],
+  "antd": [
+   "Export"
+  ]
+ },
+ "LogOut": {
+  "mui": [
+   "Logout",
+   "ExitToApp"
+  ],
+  "antd": [
+   "Logout"
+  ]
+ },
+ "MapPin": {
+  "mui": [
+   "Place",
+   "LocationOn",
+   "Room"
+  ],
+  "antd": [
+   "Environment"
+  ]
+ },
+ "Undo2": {
+  "mui": [
+   "Undo",
+   "Reply"
+  ],
+  "antd": [
+   "Undo",
+   "Rollback"
+  ]
+ },
+ "CreditCard": {
+  "mui": [
+   "CreditCard",
+   "Payment"
+  ],
+  "antd": [
+   "CreditCard"
+  ]
+ },
+ "Calculator": {
+  "mui": [
+   "Calculate"
+  ],
+  "antd": [
+   "Calculator"
+  ]
+ },
+ "Scale": {
+  "mui": [
+   "Balance"
+  ],
+  "antd": []
+ },
+ "User": {
+  "mui": [
+   "Person",
+   "PersonOutline"
+  ],
+  "antd": [
+   "User"
+  ]
+ },
+ "UserPlus": {
+  "mui": [
+   "PersonAdd",
+   "PersonAddAlt"
+  ],
+  "antd": [
+   "UserAdd"
+  ]
+ },
+ "Moon": {
+  "mui": [
+   "DarkMode",
+   "Bedtime",
+   "NightsStay"
+  ],
+  "antd": [
+   "Moon"
+  ]
+ },
+ "Calendar": {
+  "mui": [
+   "CalendarToday",
+   "CalendarMonth",
+   "Event"
+  ],
+  "antd": [
+   "Calendar"
+  ]
+ },
+ "CalendarDays": {
+  "mui": [
+   "EventNote",
+   "CalendarViewMonth"
+  ],
+  "antd": [
+   "Schedule"
+  ]
+ },
+ "CalendarRange": {
+  "mui": [
+   "DateRange"
+  ],
+  "antd": []
+ },
+ "FileSpreadsheet": {
+  "mui": [
+   "TableChart",
+   "GridOn"
+  ],
+  "antd": [
+   "FileExcel",
+   "Table"
+  ]
+ },
+ "Layers": {
+  "mui": [
+   "Layers"
+  ],
+  "antd": []
+ },
+ "LayoutGrid": {
+  "mui": [
+   "GridView",
+   "Apps",
+   "Window",
+   "ViewModule"
+  ],
+  "antd": [
+   "Appstore",
+   "Windows"
+  ]
+ },
+ "BookMarked": {
+  "mui": [
+   "Bookmark",
+   "BookmarkBorder",
+   "Bookmarks"
+  ],
+  "antd": []
+ },
+ "Database": {
+  "mui": [
+   "Storage"
+  ],
+  "antd": [
+   "Database"
+  ]
+ },
+ "HardDrive": {
+  "mui": [
+   "Dns"
+  ],
+  "antd": [
+   "Hdd"
+  ]
+ },
+ "ShoppingBag": {
+  "mui": [
+   "ShoppingBag",
+   "LocalMall"
+  ],
+  "antd": [
+   "Shopping"
+  ]
+ },
+ "PackageCheck": {
+  "mui": [],
+  "antd": []
+ },
+ "Menu": {
+  "mui": [
+   "Menu"
+  ],
+  "antd": [
+   "Menu"
+  ]
+ },
+ "PanelLeftOpen": {
+  "mui": [
+   "ViewSidebar"
+  ],
+  "antd": [
+   "MenuUnfold"
+  ]
+ },
+ "PanelLeftClose": {
+  "mui": [
+   "MenuOpen"
+  ],
+  "antd": [
+   "MenuFold"
+  ]
+ },
+ "MoreVertical": {
+  "mui": [
+   "MoreVert"
+  ],
+  "antd": [
+   "More"
+  ]
+ },
+ "Sun": {
+  "mui": [
+   "LightMode",
+   "WbSunny"
+  ],
+  "antd": [
+   "Sun"
+  ]
+ },
+ "Hourglass": {
+  "mui": [
+   "HourglassEmpty",
+   "HourglassTop",
+   "HourglassBottom",
+   "PendingActions"
+  ],
+  "antd": [
+   "Hourglass"
+  ]
+ },
+ "ClipboardX": {
+  "mui": [
+   "ContentPasteOff"
+  ],
+  "antd": []
+ },
+ "PiggyBank": {
+  "mui": [
+   "Savings"
+  ],
+  "antd": []
+ },
+ "Folder": {
+  "mui": [
+   "Folder",
+   "FolderOpen"
+  ],
+  "antd": [
+   "Folder",
+   "FolderOpen"
+  ]
+ },
+ "Tractor": {
+  "mui": [
+   "Agriculture"
+  ],
+  "antd": []
+ },
+ "Building": {
+  "mui": [
+   "Apartment",
+   "CorporateFare",
+   "LocationCity"
+  ],
+  "antd": []
+ },
+ "UserCog": {
+  "mui": [
+   "ManageAccounts"
+  ],
+  "antd": []
+ },
+ "Quote": {
+  "mui": [
+   "FormatQuote"
+  ],
+  "antd": []
+ },
+ "MailCheck": {
+  "mui": [
+   "MarkEmailRead"
+  ],
+  "antd": []
+ }
+}

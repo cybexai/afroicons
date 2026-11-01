@@ -1,0 +1,22 @@
+{
+  "name": "afroicons-mui",
+  "version": "0.6.0",
+  "description": "Les icônes Afroicons sous les noms de @mui/icons-material : mêmes noms, mêmes props (fontSize, color, sx). Remplacez l'import ; les icônes pas encore redessinées viennent de Material UI.",
+  "type": "module",
+  "main": "./index.js",
+  "module": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": { "types": "./index.d.ts", "default": "./index.js" },
+    "./compat.json": "./compat.json",
+    "./*": { "types": "./deep.d.ts", "default": "./icons/*.js" }
+  },
+  "sideEffects": false,
+  "files": ["index.js", "index.d.ts", "afro.js", "deep.d.ts", "compat.json", "icons", "README.md", "LICENSE"],
+  "peerDependencies": { "@mui/icons-material": ">=5", "@mui/material": ">=5", "react": ">=17" },
+  "keywords": ["react", "icons", "svg", "africa", "afroicons", "mui", "material-ui", "material-icons"],
+  "license": "MIT",
+  "author": "THAFAM HOLDING SARL",
+  "repository": { "type": "git", "url": "git+https://github.com/cybexai/afroicons.git", "directory": "packages/afroicons-mui" },
+  "homepage": "https://afroicons.org"
+}

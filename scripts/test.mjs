@@ -71,3 +71,36 @@ for (const n of names) {
   assert.ok(h.includes("afroicon-fill") && (h.includes("<mask") || h.includes('fill="currentColor"') || h.includes("stroke-width")), `React rempli : ${n}`);
 }
 console.log(`✔ afroicons-react : ${names.length} icônes au trait et remplies`);
+
+// ---------- afroicons-mui et afroicons-antd : compatibilité @mui/icons-material et @ant-design/icons ----------
+const M = await import("../packages/afroicons-mui/index.js"), OM = await import("@mui/icons-material");
+const A = await import("../packages/afroicons-antd/index.js"), OA = await import("@ant-design/icons");
+const compat = (await import("../src/compat.json", { with: { type: "json" } })).default;
+for (const [mod, orig, names, label] of [[M, OM, M.afroiconNames, "Material UI"], [A, OA, A.afroiconNames, "Ant Design"]]) {
+  assert.equal(new Set(names).size, names.length, `${label} : noms uniques`);
+  for (const n of names) {
+    assert.ok(orig[n], `${label} : nom existant ${n}`);
+    assert.notEqual(mod[n], orig[n], `${label} : redessinée ${n}`);
+    assert.equal((await import(`../packages/${label === "Material UI" ? "afroicons-mui" : "afroicons-antd"}/icons/${n}.js`)).default, mod[n], `${label} : import direct ${n}`);
+  }
+}
+assert.equal(M.AcUnit, OM.AcUnit, "Material UI : les icônes non redessinées viennent de @mui/icons-material");
+assert.equal(A.AlipayOutlined, OA.AlipayOutlined, "Ant Design : les icônes non redessinées viennent de @ant-design/icons");
+for (const [id, v] of Object.entries(compat)) {
+  assert.ok(ui.afroiconNames.includes(id), `correspondance : ${id} est une icône d'interface`);
+  // Le site montre « Nom » et « NomOutlined » en exemple : ils doivent exister.
+  if (v.mui[0]) assert.ok(M[v.mui[0]] !== OM[v.mui[0]] && M[v.mui[0] + "Outlined"] !== OM[v.mui[0] + "Outlined"], `exemple Material UI : ${id}`);
+  if (v.antd[0]) assert.ok(A[v.antd[0] + "Outlined"] !== OA[v.antd[0] + "Outlined"], `exemple Ant Design : ${id}`);
+}
+// Rendu : mêmes classes et mêmes props que les originaux, trait Afroicons.
+const strip = (s) => s.replace(/<style[^>]*>.*?<\/style>/g, "");
+let hm = strip(html(M.DeleteOutlined, { fontSize: "small", color: "error", titleAccess: "Supprimer" }));
+assert.match(hm, /<svg class="MuiSvgIcon-root MuiSvgIcon-colorError MuiSvgIcon-fontSizeSmall[^"]*"[^>]*viewBox="0 0 24 24" data-testid="DeleteOutlinedIcon"><g fill="none" stroke="currentColor" stroke-width="1.75"/, "Material UI : SvgIcon, fontSize, color");
+assert.match(hm, /<title>Supprimer<\/title>/, "Material UI : titleAccess");
+for (const n of M.afroiconNames) assert.match(strip(html(M[n])), new RegExp(`data-testid="${n}Icon"><g fill="none"`), `Material UI : rendu ${n}`);
+let ha = html(A.PlusOutlined, { spin: true, rotate: 90, className: "x", style: { fontSize: 20 } });
+assert.match(ha, /^<span role="img" aria-label="plus" style="font-size:20px" class="anticon anticon-spin anticon-plus x"><svg[^>]*class="anticon-spin" style="[^"]*rotate\(90deg\)"[^>]*viewBox="0 0 24 24" data-icon="plus"/, "Ant Design : anticon, spin, rotate, style");
+for (const n of A.afroiconNames) assert.match(html(A[n]), /^<span role="img" aria-label="[a-z0-9-]+" class="anticon anticon-[a-z0-9-]+"><svg/, `Ant Design : rendu ${n}`);
+assert.match(html(A.EyeFilled, { twoToneColor: "#f00" }), /aria-label="eye"/, "Ant Design : twoToneColor accepté sans attribut parasite");
+assert.doesNotMatch(html(A.EyeFilled, { twoToneColor: "#f00" }), /twotonecolor|twoToneColor/i);
+console.log(`✔ afroicons-mui : ${M.afroiconNames.length} noms Material UI ; afroicons-antd : ${A.afroiconNames.length} noms Ant Design`);

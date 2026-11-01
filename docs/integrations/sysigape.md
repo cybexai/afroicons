@@ -11,6 +11,23 @@ import { ShieldCheck, PiggyBank, Landmark } from "afroicons-ui"; // noms Lucide
 import { DrapeauCameroun } from "afroicons-react";               // n° 60
 ```
 
+**Le plus simple : garder les noms actuels.** `afroicons-mui` et `afroicons-antd` reprennent les noms et les props de `@mui/icons-material` et `@ant-design/icons` : il suffit de changer l'import, sans toucher au JSX.
+
+```bash
+npm install afroicons-mui afroicons-antd
+```
+
+```tsx
+// Avant
+import { PlusOutlined, DeleteFilled } from "@ant-design/icons";
+import CloseIcon from "@mui/icons-material/Close";
+// Après
+import { PlusOutlined, DeleteFilled } from "afroicons-antd";
+import CloseIcon from "afroicons-mui/Close";
+```
+
+Tous les noms utilisés par SYSIGAPE sont redessinés, sauf `WindowsOutlined` (logo, rendu en grille), `ProfileFilled` (rendu en liste) et `WechatFilled` (rendu en bulles de discussion), qui suivent leur dessin d'origine plutôt que leur usage dans SYSIGAPE.
+
 Les deux visuels de marque restent à part :
 - **n° 60, drapeau du Cameroun** (sélecteur de langue) : `<DrapeauCameroun />` d'`afroicons-react`, aux couleurs officielles.
 - **n° 61, illustration « validé »** : c'est une illustration, pas une icône ; elle reste telle quelle.

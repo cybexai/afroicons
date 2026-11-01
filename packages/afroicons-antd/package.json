@@ -1,0 +1,22 @@
+{
+  "name": "afroicons-antd",
+  "version": "0.6.0",
+  "description": "Les icônes Afroicons sous les noms de @ant-design/icons : mêmes noms, mêmes props (className, style, spin, rotate). Remplacez l'import ; les icônes pas encore redessinées viennent d'Ant Design.",
+  "type": "module",
+  "main": "./index.js",
+  "module": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": { "types": "./index.d.ts", "default": "./index.js" },
+    "./compat.json": "./compat.json",
+    "./*": { "types": "./deep.d.ts", "default": "./icons/*.js" }
+  },
+  "sideEffects": false,
+  "files": ["index.js", "index.d.ts", "afro.js", "deep.d.ts", "compat.json", "icons", "README.md", "LICENSE"],
+  "peerDependencies": { "@ant-design/icons": ">=5", "react": ">=17" },
+  "keywords": ["react", "icons", "svg", "africa", "afroicons", "antd", "ant-design", "ant-design-icons"],
+  "license": "MIT",
+  "author": "THAFAM HOLDING SARL",
+  "repository": { "type": "git", "url": "git+https://github.com/cybexai/afroicons.git", "directory": "packages/afroicons-antd" },
+  "homepage": "https://afroicons.org"
+}
