@@ -1,6 +1,6 @@
 <p align="center"><img src="docs/logo.svg" width="96" alt="Afroicons"></p>
 <h1 align="center">Afroicons</h1>
-<p align="center"><b>Des icônes libres qui racontent l'Afrique.</b><br>162 icônes culturelles, au trait et remplies, + les 54 drapeaux africains + 148 emojis + 177 icônes d'interface · grille 24 px · FR / EN · open source (MIT)</p>
+<p align="center"><b>Des icônes libres qui racontent l'Afrique.</b><br>162 icônes culturelles, au trait et remplies, + les 54 drapeaux africains + 206 emojis + 177 icônes d'interface · grille 24 px · FR / EN · open source (MIT)</p>
 <p align="center"><a href="https://afroicons.org"><b>afroicons.org</b></a></p>
 <p align="center">
   <a href="LICENSE"><img alt="Licence MIT" src="https://img.shields.io/badge/licence-MIT-C24E2A"></a>
@@ -79,7 +79,7 @@ replace();
 | Vie quotidienne | 34 | moto-taxi, keke, mobile money, tontine, gele |
 | Architecture | 14 | Djenné, case obus, Lalibela, Grand Zimbabwe |
 | Drapeaux | 54 | les 54 États africains membres de l'ONU, aux couleurs officielles |
-| Emojis | 148 | 100 emojis Unicode redessinés (😀 👍 ❤️ 🐘 🍌…) et 48 emojis africains originaux (femme au gele, attiéké, djembé, moto-taxi…) |
+| Emojis | 206 | 100 emojis Unicode redessinés (😀 👍 ❤️ 🐘 🍌…) et 106 emojis africains originaux : peuples et tenues (massaï, touareg, peule, amazighe, habesha, ndebele, zoulou, wolof…), villages et architectures (Djenné, Lalibela, Tiébélé, Musgum, Ganvié…), cultures et objets (kanaga, tête d'Ife, mbira, cérémonie du café…), cuisine |
 
 Chaque icône porte un nom français et anglais, une catégorie, une région (`ouest`, `centre`, `est`, `nord`, `australe`, `pan`) et des mots-clés locaux (benskin, okada, matatu, attiéké…). Tout est dans `icons.json`.
 

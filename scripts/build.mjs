@@ -94,7 +94,7 @@ writeFileSync(join(A, "index.d.ts"),
 export type AfroiconCategory = "nature" | "faune" | "musique" | "symboles" | "cuisine" | "vie" | "architecture" | "drapeaux" | "emojis";
 /** Teinte de peau Unicode d'un emoji (🏻 à 🏿). Par défaut : "medium-dark". */
 export type AfroiconTone = "light" | "medium-light" | "medium" | "medium-dark" | "dark";
-export type AfroiconEmojiGroup = "visages" | "mains" | "personnes" | "coeurs" | "nature" | "nourriture" | "objets";
+export type AfroiconEmojiGroup = "visages" | "mains" | "personnes" | "coeurs" | "nature" | "nourriture" | "objets" | "lieux";
 export type AfroiconRegion = "pan" | "ouest" | "centre" | "est" | "nord" | "australe";
 export interface AfroiconData { id: AfroiconName; fr: string; en: string; cat: AfroiconCategory; region: AfroiconRegion; tags: string[]; since: string; /** Icône dont celle-ci est une variante (épluchée, coupée, ouverte…). */ variantOf?: AfroiconName; /** Drapeaux : code ISO du pays et son nom. */ iso?: string; country?: { fr: string; en: string }; /** Emojis : caractère Unicode équivalent (null pour un emoji africain original), groupe, et teinte de peau réglable. */ char?: string | null; group?: AfroiconEmojiGroup; tone?: boolean; /** Dessin au trait. */ body: string; /** Version remplie. */ fill: string; }
 export const icons: Record<AfroiconName, AfroiconData>;

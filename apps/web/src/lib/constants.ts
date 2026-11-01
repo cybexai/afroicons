@@ -27,7 +27,8 @@ export const TONE_LIST: { id: Tone; fr: string; en: string; mod: string }[] = [
 export const EGROUPS = [
   { id: "visages", fr: "Visages", en: "Faces" }, { id: "mains", fr: "Mains", en: "Hands" }, { id: "personnes", fr: "Personnes", en: "People" },
   { id: "coeurs", fr: "Cœurs et symboles", en: "Hearts & symbols" }, { id: "nature", fr: "Nature", en: "Nature" },
-  { id: "nourriture", fr: "Nourriture", en: "Food" }, { id: "objets", fr: "Objets", en: "Objects" },
+  { id: "nourriture", fr: "Nourriture", en: "Food" }, { id: "objets", fr: "Objets et cultures", en: "Objects & cultures" },
+  { id: "lieux", fr: "Villages et lieux", en: "Villages & places" },
 ] as const;
 /** Codes Unicode d'un emoji : « U+1F44D ». */
 export const codepoints = (s: string) => [...s].filter((c) => c !== "\uFE0F").map((c) => "U+" + c.codePointAt(0)!.toString(16).toUpperCase()).join(" ");
@@ -58,7 +59,7 @@ export const UI: Icon[] = (UI_ICONS as { id: string; fr: string; en: string; fam
   tags: [...new Set([u.id, u.family, ...(u.afro ? ["afrique", ...(u.afro.toLowerCase().match(/[a-zà-ÿ]{4,}/g) ?? [])] : [])])],
 }));
 /** Les emojis : d'abord les africains originaux, puis les Unicode, par groupe. */
-const GORDER = ["visages", "mains", "personnes", "coeurs", "nature", "nourriture", "objets"];
+const GORDER = ["visages", "mains", "personnes", "coeurs", "nature", "nourriture", "objets", "lieux"];
 export const EMOJIS: Icon[] = (AFRO_DATA as Icon[]).filter(isEmoji).map((i) => ({ ...i, fill: i.body })).sort((a, b) => GORDER.indexOf(a.group!) - GORDER.indexOf(b.group!));
 export const ICONS: Icon[] = [...AFRO, ...FLAGS, ...EMOJIS, ...UI];
 export type Collection = "afro" | "flags" | "emojis" | "ui";

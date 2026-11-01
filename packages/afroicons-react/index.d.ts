@@ -505,6 +505,122 @@ export declare const EmojiBeignets: Afroicon;
 export declare const EmojiMafe: Afroicon;
 /** Ndolè · Ndolé */
 export declare const EmojiNdole: Afroicon;
+/** Masque kanaga · Kanaga mask */
+export declare const EmojiMasqueKanaga: Afroicon;
+/** Masque éléphant bamiléké · Bamileke elephant mask */
+export declare const EmojiMasqueElephantBamileke: Afroicon;
+/** Tête d'Ife · Ife head */
+export declare const EmojiTeteIfe: Afroicon;
+/** Bouclier massaï · Maasai shield */
+export declare const EmojiBouclierMassai: Afroicon;
+/** Bouclier zoulou · Zulu shield */
+export declare const EmojiBouclierZoulou: Afroicon;
+/** Croix d'Agadez · Agadez cross */
+export declare const EmojiCroixAgadez: Afroicon;
+/** Tambour parlant · Talking drum */
+export declare const EmojiTambourParlant: Afroicon;
+/** Mbira · Mbira */
+export declare const EmojiMbira: Afroicon;
+/** Valiha · Valiha */
+export declare const EmojiValiha: Afroicon;
+/** Balafon · Balafon */
+export declare const EmojiBalafon: Afroicon;
+/** Cérémonie du café · Coffee ceremony */
+export declare const EmojiCeremonieCafe: Afroicon;
+/** Fantasia · Fantasia */
+export declare const EmojiFantasia: Afroicon;
+/** Cavalier du durbar · Durbar horseman */
+export declare const EmojiCavalierDurbar: Afroicon;
+/** Mascarade egungun · Egungun masquerade */
+export declare const EmojiMascaradeEgungun: Afroicon;
+/** Tabouret ashanti · Ashanti stool */
+export declare const EmojiTabouretAshanti: Afroicon;
+/** Collier de perles massaï · Maasai beaded collar */
+export declare const EmojiCollierPerlesMassai: Afroicon;
+/** Chapeau basotho · Basotho hat */
+export declare const EmojiChapeauBasotho: Afroicon;
+/** Bogolan · Bogolan mud cloth */
+export declare const EmojiTissuBogolan: Afroicon;
+/** Kanga · Kanga */
+export declare const EmojiTissuKanga: Afroicon;
+/** Jarre en terre cuite · Clay water jar */
+export declare const EmojiJarrePoterie: Afroicon;
+/** Femme massaï · Maasai woman */
+export declare const EmojiFemmeMassai: Afroicon;
+/** Guerrier massaï · Maasai warrior */
+export declare const EmojiGuerrierMassai: Afroicon;
+/** Homme touareg au tagelmust · Tuareg man in a tagelmust */
+export declare const EmojiHommeTouareg: Afroicon;
+/** Femme peule · Fulani woman */
+export declare const EmojiFemmePeule: Afroicon;
+/** Femme amazighe · Amazigh woman */
+export declare const EmojiFemmeAmazighe: Afroicon;
+/** Femme en habesha kemis · Woman in a habesha kemis */
+export declare const EmojiFemmeHabesha: Afroicon;
+/** Femme ndébélé · Ndebele woman */
+export declare const EmojiFemmeNdebele: Afroicon;
+/** Homme zoulou · Zulu man */
+export declare const EmojiHommeZoulou: Afroicon;
+/** Femme zouloue à l'isicholo · Zulu woman wearing an isicholo */
+export declare const EmojiFemmeZouloueIsicholo: Afroicon;
+/** Femme xhosa à l'iqhiya · Xhosa woman wearing an iqhiya */
+export declare const EmojiFemmeXhosa: Afroicon;
+/** Homme swahili en kanzu et kofia · Swahili man in kanzu and kofia */
+export declare const EmojiHommeSwahili: Afroicon;
+/** Femme somalie au garbasaar · Somali woman in a garbasaar */
+export declare const EmojiFemmeSomalie: Afroicon;
+/** Femme wolof en grand boubou · Wolof woman in a grand boubou */
+export declare const EmojiFemmeWolof: Afroicon;
+/** Homme haoussa en babban riga · Hausa man in babban riga */
+export declare const EmojiHommeHaoussa: Afroicon;
+/** Femme malgache au lamba · Malagasy woman in a lamba */
+export declare const EmojiFemmeMalgache: Afroicon;
+/** Femme congolaise en liputa · Congolese woman in liputa */
+export declare const EmojiFemmeCongolaiseLiputa: Afroicon;
+/** Danseur dogon au masque kanaga · Dogon dancer with a Kanaga mask */
+export declare const EmojiDanseurDogonKanaga: Afroicon;
+/** Danseur au masque éléphant bamiléké · Bamileke elephant mask dancer */
+export declare const EmojiDanseurElephantBamileke: Afroicon;
+/** Maison ndébélé · Ndebele house */
+export declare const EmojiMaisonNdebele: Afroicon;
+/** Grenier dogon · Dogon granary */
+export declare const EmojiGrenierDogon: Afroicon;
+/** Toguna dogon · Dogon toguna */
+export declare const EmojiTogunaDogon: Afroicon;
+/** Case obus musgum · Musgum shell hut */
+export declare const EmojiCaseObusMusgum: Afroicon;
+/** Maisons peintes de Tiébélé · Tiébélé painted houses */
+export declare const EmojiMaisonsTiebele: Afroicon;
+/** Grande mosquée de Djenné · Great Mosque of Djenné */
+export declare const EmojiMosqueeDjenne: Afroicon;
+/** Église Saint-Georges de Lalibela · Church of St George, Lalibela */
+export declare const EmojiEgliseLalibela: Afroicon;
+/** Hutte zouloue · Zulu beehive hut */
+export declare const EmojiHutteZouloue: Afroicon;
+/** Manyatta massaï · Maasai manyatta */
+export declare const EmojiManyattaMassai: Afroicon;
+/** Chefferie bamiléké · Bamileke chiefdom house */
+export declare const EmojiChefferieBamileke: Afroicon;
+/** Porte swahilie · Swahili carved door */
+export declare const EmojiPorteSwahilie: Afroicon;
+/** Ksar amazigh · Amazigh ksar */
+export declare const EmojiKsarAmazigh: Afroicon;
+/** Grand Zimbabwe · Great Zimbabwe */
+export declare const EmojiGrandZimbabwe: Afroicon;
+/** Tata somba · Tata somba */
+export declare const EmojiTataSomba: Afroicon;
+/** Maison nubienne · Nubian house */
+export declare const EmojiMaisonNubienne: Afroicon;
+/** Village de Ganvié sur pilotis · Ganvié stilt village */
+export declare const EmojiGanviePilotis: Afroicon;
+/** Pyramides de Méroé · Meroë pyramids */
+export declare const EmojiPyramidesMeroe: Afroicon;
+/** Pyramides de Gizeh · Pyramids of Giza */
+export declare const EmojiPyramidesGizeh: Afroicon;
+/** Tente touarègue · Tuareg tent */
+export declare const EmojiTenteTouaregue: Afroicon;
+/** Rondavel basotho · Basotho rondavel */
+export declare const EmojiRondavelBasotho: Afroicon;
 /** Pouce levé · Thumbs up */
 export declare const EmojiPouceLeve: Afroicon;
 /** Pouce baissé · Thumbs down */

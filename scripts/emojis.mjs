@@ -7,7 +7,7 @@
 //   { slug, fr, en, char, group, tags, tone, body }
 // - slug : identifiant en français, minuscules et tirets (« visage-souriant ») ; l'id final est « emoji-<slug> »
 // - char : l'emoji Unicode équivalent (« 😀 »), ou null pour un emoji africain original
-// - group : visages, mains, personnes, coeurs, nature, nourriture, objets
+// - group : visages, mains, personnes, coeurs, nature, nourriture, objets, lieux (villages et architectures)
 // - tone : true si le dessin utilise la peau (SKIN / SKIN_SHADE) : il existe alors dans les 5 teintes Unicode
 import { readdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -16,7 +16,7 @@ import { SKIN, SKIN_SHADE, sheet } from "./emojis/lib.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const dir = join(root, "scripts/emojis");
-const GROUPS = ["visages", "mains", "personnes", "coeurs", "nature", "nourriture", "objets"];
+const GROUPS = ["visages", "mains", "personnes", "coeurs", "nature", "nourriture", "objets", "lieux"];
 const all = [];
 for (const f of readdirSync(dir).filter((f) => f.endsWith(".mjs") && f !== "lib.mjs").sort()) {
   const list = (await import(pathToFileURL(join(dir, f)).href)).default;
