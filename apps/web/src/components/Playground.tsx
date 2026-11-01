@@ -335,6 +335,8 @@ export function Playground() {
         cust={custom[pick] ?? {}}
         setCust={(p) => setCustom((m) => { const n = cleanCust({ ...m[pick], ...p }); const o = { ...m }; if (n) o[pick] = n; else delete o[pick]; return o; })}
         resetCust={() => setCustom((m) => { const o = { ...m }; delete o[pick]; return o; })}
+        total={Object.keys(custom).length}
+        resetAll={() => { setCustom({}); a.toast(a.tt("Toutes les personnalisations sont effacées", "All customisations cleared")); }}
         applyAll={() => { const cu = custom[pick]; if (!cu) return; setCustom(Object.fromEntries(Object.keys(BASE).map((k) => [k, cu]))); a.toast(a.tt("Appliqué à toutes les icônes", "Applied to every icon")); }} />}
 
       <div className="code pgcode" onClick={(e) => e.stopPropagation()}>
@@ -359,9 +361,9 @@ const COLS: { id: Collection | "all"; fr: string; en: string; list: Icon[] }[] =
 ];
 type PickerProps = {
   onClose: () => void; onPick: (id: string) => void; current: string; tab: "swap" | "edit"; setTab: (t: "swap" | "edit") => void;
-  cfg: Cfg; preview: JSX.Element; cust: Cust; setCust: (p: Partial<Cust>) => void; resetCust: () => void; applyAll: () => void;
+  cfg: Cfg; preview: JSX.Element; cust: Cust; setCust: (p: Partial<Cust>) => void; resetCust: () => void; applyAll: () => void; resetAll: () => void; total: number;
 };
-function Picker({ onClose, onPick, current, tab, setTab, cfg, preview, cust, setCust, resetCust, applyAll }: PickerProps) {
+function Picker({ onClose, onPick, current, tab, setTab, cfg, preview, cust, setCust, resetCust, applyAll, resetAll, total }: PickerProps) {
   const a = useApp();
   const icon = byId[current];
   const [q, setQ] = useState("");
@@ -378,7 +380,7 @@ function Picker({ onClose, onPick, current, tab, setTab, cfg, preview, cust, set
           <span>{a.lang === "en" ? icon?.en : icon?.fr}</span>
           <button className="ib" aria-label={a.tt("Fermer", "Close")} onClick={onClose}><IClose /></button>
         </div>
-        {tab === "edit" ? <Customize icon={icon} cfg={cfg} preview={preview} cust={cust} set={setCust} reset={resetCust} applyAll={applyAll} /> : <>
+        {tab === "edit" ? <Customize icon={icon} cfg={cfg} preview={preview} cust={cust} set={setCust} reset={resetCust} applyAll={applyAll} resetAll={resetAll} total={total} /> : <>
         <div className="pgpickh"><label className="sbox"><ISearch s={18} /><input autoFocus value={q} onChange={(e) => setQ(e.target.value)} onKeyDown={(e) => e.key === "Enter" && list[0] && onPick(list[0].id)} placeholder={a.tt("Chercher : panier, cauri, bell…", "Search: basket, cowrie, bell…")} /></label></div>
         <div className="pgchips pgpickc">{COLS.map((c) => <button key={c.id} className={"cat" + (col === c.id ? " on" : "")} onClick={() => setCol(c.id)}>{a.tt(c.fr, c.en)}</button>)}</div>
         <div className="pgpickg">{list.length ? list.map((i) => <button key={i.id} className={i.id === current ? "on" : ""} title={a.lang === "en" ? i.en : i.fr} onClick={() => onPick(i.id)}><Svg i={i} o={{ s: 24 }} /><small>{a.lang === "en" ? i.en : i.fr}</small></button>) : <p className="pgnote">{a.tt("Aucune icône trouvée.", "No icon found.")}</p>}</div>
@@ -391,7 +393,7 @@ function Picker({ onClose, onPick, current, tab, setTab, cfg, preview, cust, set
 /** Réglages propres à une icône : ils s'appliquent tout de suite dans la maquette, derrière la fenêtre. */
 const INKS = ["#1F1A15", "#FFFFFF", "#C24E2A", "#E3A22F", "#22305C", "#2E6B4E", "#7B4BA8", "#0F766E"];
 const BGS = ["#C24E2A", "#E3A22F", "#22305C", "#2E6B4E", "#0F766E", "#1F1A15", "#F6F2EA", "#FCE9DF"];
-function Customize({ icon, cfg, preview, cust, set, reset, applyAll }: { icon?: Icon; cfg: Cfg; preview: JSX.Element; cust: Cust; set: (p: Partial<Cust>) => void; reset: () => void; applyAll: () => void }) {
+function Customize({ icon, cfg, preview, cust, set, reset, applyAll, resetAll, total }: { icon?: Icon; cfg: Cfg; preview: JSX.Element; cust: Cust; set: (p: Partial<Cust>) => void; reset: () => void; applyAll: () => void; resetAll: () => void; total: number }) {
   const a = useApp();
   const color = !!icon && isColor(icon), n = Object.keys(cust).length;
   const Swatch = ({ list, value, on, auto }: { list: string[]; value?: string; on: (v?: string) => void; auto?: string }) => (
@@ -422,7 +424,8 @@ function Customize({ icon, cfg, preview, cust, set, reset, applyAll }: { icon?: 
         </div></div>
         <div className="pgacts">
           <button className="btn" disabled={!n} onClick={applyAll}>{a.tt("Appliquer à toutes", "Apply to all")}</button>
-          <button className="btn" disabled={!n} onClick={reset}>{a.tt("Réinitialiser", "Reset")}</button>
+          <button className="btn" disabled={!n} onClick={reset}>{a.tt("Réinitialiser cette icône", "Reset this icon")}</button>
+          <button className="btn pgall" disabled={!total} onClick={resetAll}>{a.tt("Tout réinitialiser : toutes les icônes", "Reset all: every icon")}</button>
         </div>
         <small className="pgnote">{a.tt("Les changements s'appliquent tout de suite dans la maquette et dans le code.", "Changes apply right away to the mockup and the code.")}</small>
       </div>

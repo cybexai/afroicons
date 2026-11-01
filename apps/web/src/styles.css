@@ -795,3 +795,4 @@ a.eyebrow:hover{color:var(--ink);border-color:var(--muted)}
 .pgcf .btn:disabled{opacity:.45;cursor:default;transform:none;box-shadow:none}
 @media (max-width:560px){.pgcust{grid-template-columns:minmax(0,1fr)}.pgprev{width:120px;justify-self:center}}
 .pgveil.light{background:rgba(20,17,14,.06)}
+.pgacts .pgall{grid-column:1/-1}
