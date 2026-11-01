@@ -406,7 +406,7 @@ export declare const StopFilled: AfroIcon;
 export declare const StopTwoTone: AfroIcon;
 /** Sécurité · Security (Afroicons Shield) */
 export declare const SafetyOutlined: AfroIcon;
-/** Activité · Activity (Afroicons Activity) */
+/** Suivi d'activité · Activity (Afroicons Activity) */
 export declare const LineChartOutlined: AfroIcon;
 /** En ligne · Cloud (Afroicons Cloud) */
 export declare const CloudOutlined: AfroIcon;

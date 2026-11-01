@@ -1,6 +1,6 @@
 # afroicons
 
-162 icônes SVG libres qui racontent l'Afrique, au trait et remplies, et les 54 drapeaux africains aux couleurs officielles. Grille 24 px, trait 1,75, `currentColor`.
+364 icônes SVG libres qui racontent l'Afrique, au trait et remplies, les 54 drapeaux africains et 372 emojis aux couleurs officielles. Grille 24 px, trait 1,75, `currentColor`.
 
 ```bash
 npm install afroicons

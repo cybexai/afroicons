@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { CITIES, COMPAT_NAMES, EGROUPS, ICONS, REGNAME, TONES, TONE_LIST, VERSION, byId, catOf, codepoints, colOf, isColor, isEmoji, isFlag, isNew, lineLike, loadFills, type CityId, type Icon } from "../lib/constants";
 import { FACTS } from "../lib/i18n";
 import { norm, rank } from "../lib/search";
-import { animateDraw, compatSnippet, cssStr, highlight, jsxSnippet, spriteStr, svgStr, svgToPng, useStr } from "../lib/svg";
+import { animateDraw, compatSnippet, cssStr, highlight, jsxSnippet, ngSnippet, spriteStr, svgStr, svgToPng, useStr } from "../lib/svg";
 import { store } from "../lib/platform";
 import { useApp, useName } from "../state";
 import { CustomizeFields, exportSvg, type CustomValue } from "./Library";
@@ -24,7 +24,7 @@ export function Drawer() {
   const nm = useName();
   const i = a.current ? byId[a.current] : null;
   const [last, setLast] = useState<Icon | null>(null);
-  const [tab, setTab] = useState<"svg" | "jsx" | "use" | "css" | "mui" | "antd">("svg");
+  const [tab, setTab] = useState<"svg" | "jsx" | "ng" | "use" | "css" | "mui" | "antd">("svg");
   const [prevBg, setPrevBg] = useState("card");
   const [grid, setGrid] = useState(true);
   // Réglages ouverts ou fermés : on retient le choix du visiteur.
@@ -85,9 +85,9 @@ export function Drawer() {
   const fact = FACTS[ic.id];
   const cn = ic.lucide ? COMPAT_NAMES[ic.lucide] : undefined;
   // Onglets Material UI et Ant Design : seulement pour les icônes d'interface qui ont un équivalent.
-  const tabs = (["svg", "jsx", "use", "css", ...(cn?.mui.length ? ["mui"] : []), ...(cn?.antd.length ? ["antd"] : [])] as const) as readonly ("svg" | "jsx" | "use" | "css" | "mui" | "antd")[];
+  const tabs = (["svg", "jsx", "ng", "use", "css", ...(cn?.mui.length ? ["mui"] : []), ...(cn?.antd.length ? ["antd"] : [])] as const) as readonly ("svg" | "jsx" | "ng" | "use" | "css" | "mui" | "antd")[];
   const cur = tabs.includes(tab) ? tab : "svg";
-  const code = { svg: () => exportSvg(ic, a), jsx: () => jsxSnippet(ic, a.stroke, a.style === "fill" && !!ic.fill, app.tone), use: () => `<!-- 1. ${a.tt("Collez le sprite une fois", "Paste the sprite once")} -->\n<!-- 2. ${a.tt("Puis", "Then")} : -->\n${useStr(ic)}`, css: () => cssStr(ic, a.stroke), mui: () => compatSnippet(ic, "mui", cn?.mui ?? []), antd: () => compatSnippet(ic, "antd", cn?.antd ?? []) }[cur]();
+  const code = { svg: () => exportSvg(ic, a), jsx: () => jsxSnippet(ic, a.stroke, a.style === "fill" && !!ic.fill, app.tone), ng: () => ngSnippet(ic, a.stroke, a.style === "fill" && !!ic.fill, app.tone), use: () => `<!-- 1. ${a.tt("Collez le sprite une fois", "Paste the sprite once")} -->\n<!-- 2. ${a.tt("Puis", "Then")} : -->\n${useStr(ic)}`, css: () => cssStr(ic, a.stroke), mui: () => compatSnippet(ic, "mui", cn?.mui ?? []), antd: () => compatSnippet(ic, "antd", cn?.antd ?? []) }[cur]();
   const mk = (o = {}) => <Svg i={ic} o={{ s: 20, w: a.stroke, ...o }} />;
   const close = () => a.openIcon(null);
 
@@ -115,6 +115,7 @@ export function Drawer() {
             <div id="dBig" ref={big}><Svg key={ic.id + a.style} i={ic} o={{ s: line ? 212 : 180, c: fg, style: a.style, w: a.stroke, bg: a.badgeBg }} /></div>
           </div>
           <div className="dsizes">{[16, 20, 24, 32, 48].map((s) => <div key={s} style={{ color: a.ink }}><Svg i={ic} o={{ s, style: a.style, w: a.stroke, bg: a.badgeBg, c: line ? "currentColor" : a.color ?? "#fff" }} /><small>{s}</small></div>)}</div>
+          {(() => { const twin = ic.emoji ?? ic.icon; return twin && byId[twin] ? <button className="btn sm dtwin" onClick={() => a.openIcon(twin)}><Svg i={byId[twin]} o={{ s: 20 }} />{ic.emoji ? a.tt("Voir l'emoji", "See the emoji") : a.tt("Voir l'icône au trait", "See the line icon")}</button> : null; })()}
           {ic.tone && <div className="dtone">{a.tt("Teinte de peau", "Skin tone")}<span className="tones" role="radiogroup" aria-label={a.tt("Teinte de peau", "Skin tone")}>{TONE_LIST.map((t) => <button key={t.id} role="radio" aria-checked={app.tone === t.id} aria-label={a.tt(t.fr, t.en)} title={a.tt(t.fr, t.en) + (ic.char ? " " + ic.char + t.mod : "")} className={app.tone === t.id ? "on" : ""} style={{ background: TONES[t.id][0] }} onClick={() => app.setTone(t.id)} />)}</span></div>}
           {!isColor(ic) && <details className="dcust" open={custOpen} onToggle={(e) => setCustOpen((e.target as HTMLDetailsElement).open)}>
             <summary><ISliders s={16} />{a.tt("Personnaliser", "Customise")}<small>{a.tt("pour cette icône", "for this icon")}</small><IChevron s={14} w={2.4} /></summary>
@@ -137,7 +138,7 @@ export function Drawer() {
             </div>
           </div>
           <div className="code"><h4><T k="code" /></h4>
-            <div className="ctabs" role="tablist">{tabs.map((k) => <button key={k} role="tab" aria-selected={cur === k} className={cur === k ? "on" : ""} onClick={() => setTab(k)}>{{ svg: "SVG", jsx: "React", use: "Sprite", css: "CSS", mui: "MUI", antd: "Ant" }[k]}</button>)}</div>
+            <div className="ctabs" role="tablist">{tabs.map((k) => <button key={k} role="tab" aria-selected={cur === k} className={cur === k ? "on" : ""} onClick={() => setTab(k)}>{{ svg: "SVG", jsx: "React", ng: "Angular", use: "Sprite", css: "CSS", mui: "MUI", antd: "Ant" }[k]}</button>)}</div>
             <div className="codebox"><pre dangerouslySetInnerHTML={{ __html: highlight(code, cur === "css") }} /><button className="cp" onClick={() => a.copy(code)}><T k="cp" /></button></div>
           </div>
           {variants.length > 1 && <div className="sim"><h4>{a.tt("Variantes", "Variants")}</h4>

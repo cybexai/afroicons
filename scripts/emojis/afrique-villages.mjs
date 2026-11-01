@@ -18,44 +18,47 @@ const THATCH = C.ocreLight, THATCH_LINE = C.ocre;
 
 const maisonNdebele = [
   ground(),
-  path("M2.6 20.8V9.4H6.4V6.6H17.6V9.4H21.4V20.8Z", C.white),
-  // frise du pignon
-  path("M8 9.4L9.6 7.6L11.2 9.4L12.8 7.6L14.4 9.4L16 7.6", "none", { c: O, w: 1 }),
-  path("M8 9.4H16", "none", { c: O, w: 1 }),
-  // panneaux géométriques
-  rect(3.8, 10.8, 5, 8.8, 0.3, C.bleu, { w: 1.2 }),
-  path("M6.3 11.8L8 15.2L6.3 18.6L4.6 15.2Z", C.jaune, { w: 1 }),
-  rect(15.2, 10.8, 5, 8.8, 0.3, C.rouge, { w: 1.2 }),
-  path("M17.7 11.8L19.4 15.2L17.7 18.6L16 15.2Z", C.vertLight, { w: 1 }),
-  path("M10 10.8H14L12 13.4Z", C.jaune, { w: 1 }),
-  rect(10.2, 14.4, 3.6, 6.4, 0.4, C.marron),
-  path("M2.6 20.8V9.4H6.4V6.6H17.6V9.4H21.4V20.8Z", "none", { w: 1.2 }),
+  // grand mur blanc, pignon à gradins
+  path("M2.4 21V8.8H8V6.6H10V5.2H14V6.6H16V8.8H21.6V21Z", C.white),
+  // frise de triangles cernés de noir
+  ...[0, 1, 2, 3, 4].map((i) => path(`M${3.6 + i * 3.4} 12L${5.3 + i * 3.4} 9.8L${7 + i * 3.4} 12Z`, [C.jaune, C.rouge, C.bleu][i % 3], { w: 0.9 })),
+  // panneaux géométriques cernés de noir, couleurs primaires
+  rect(3.6, 13.4, 5, 6.4, 0.2, C.bleu),
+  path("M6.1 14.6L7.4 16.6L6.1 18.6L4.8 16.6Z", C.jaune, { w: 0.9 }),
+  rect(15.4, 13.4, 5, 6.4, 0.2, C.rouge),
+  path("M17.9 14.6L19.2 16.6L17.9 18.6L16.6 16.6Z", C.jaune, { w: 0.9 }),
+  rect(10.3, 13.4, 3.4, 7.6, 0.2, C.vertLight),
+  path("M2.4 21V8.8H8V6.6H10V5.2H14V6.6H16V8.8H21.6V21Z", "none"),
 ].join("");
 
 const hutteZouloue = [
   ground(),
-  path("M2.6 21Q2.2 10.4 8 6.4Q12 3.8 16 6.4Q21.8 10.4 21.4 21Q12 22.6 2.6 21Z", THATCH),
-  // cordes de liage (arceaux) et tressage
-  line("M4 15.4Q12 12.6 20 15.4M5.6 10.4Q12 8 18.4 10.4M3 19.2Q12 17 21 19.2", THATCH_LINE, 0.8),
-  line("M8 6.6Q6.4 13 6.8 21.4M12 4.6V22M16 6.6Q17.6 13 17.2 21.4", THATCH_LINE, 0.8),
-  path("M8.8 21.6V19.4Q8.8 16.4 12 16.4Q15.2 16.4 15.2 19.4V21.6Q12 22 8.8 21.6Z", C.marron),
-  path("M8.2 19.6Q8.4 15.6 12 15.6Q15.6 15.6 15.8 19.6", "none", { c: C.bois, w: 1.2 }),
-  circle(12, 4.4, 1, C.ocre, { w: 0.9 }),
+  // ruche d'herbe jusqu'au sol, sans mur
+  path("M2.4 21.2Q1.8 12.4 6 7.8Q9 4.2 12 4.2Q15 4.2 18 7.8Q22.2 12.4 21.6 21.2Q12 22.6 2.4 21.2Z", THATCH),
+  // filet de cordes tressé (losanges)
+  line("M3 16.6Q7 9.4 12.4 4.4M3.4 20.8Q8.4 12 16.6 6.4M7.6 21.8Q12.4 14.2 19.8 9.8M13 22Q16.4 16.6 21.2 14.4", THATCH_LINE, 0.8),
+  line("M21 16.6Q17 9.4 11.6 4.4M20.6 20.8Q15.6 12 7.4 6.4M16.4 21.8Q11.6 14.2 4.2 9.8M11 22Q7.6 16.6 2.8 14.4", THATCH_LINE, 0.8),
+  path("M9.8 21.6V19.8Q9.8 17.6 12 17.6Q14.2 17.6 14.2 19.8V21.6Q12 21.9 9.8 21.6Z", C.marron),
+  circle(12, 4.2, 0.9, C.ocre, { w: 0.9 }),
 ].join("");
 
+const STONE_LIGHT = "#D3C8B0";
+const stoneRow = (y, x0, n, w) => Array.from({ length: n }, (_, i) => rect(x0 + i * w, y, w - 0.3, 2.4, 0.7, i % 2 ? STONE : STONE_LIGHT, { c: STONE_DARK, w: 0.6 })).join("");
 const rondavelBasotho = [
   ground(),
-  path("M5 12.4V20.6Q12 22.4 19 20.6V12.4Z", STONE),
-  line("M5 15.2Q12 16.8 19 15.2M5 18Q12 19.6 19 18", STONE_DARK, 0.8),
-  line("M8 13.4V15.8M13.4 14V16.2M17 13.4V15.4M6.6 16.4V18.6M11 16.8V19M15.6 16.6V18.8M9 19.2V21.2M14 19.4V21.4", STONE_DARK, 0.8),
-  path("M10.4 21.6V17.6H13.6V21.6Q12 21.9 10.4 21.6Z", C.marron),
-  // toit conique de chaume
-  path("M12 4.8Q16 8.6 21.4 13.2Q12 16.2 2.6 13.2Q8 8.6 12 4.8Z", THATCH),
-  line("M12 5L7 14.4M12 5L9.6 15M12 5V15.2M12 5L14.4 15M12 5L17 14.4", THATCH_LINE, 0.8),
-  // faîtage en forme de mokorotlo
-  path("M12 0.9L14.2 5.4Q12 6.2 9.8 5.4Z", C.ocre, { w: 1 }),
-  path("M10.4 4.2Q12 4.8 13.6 4.2", "none", { c: O, w: 0.8 }),
-  circle(12, 1.2, 0.7, C.ocre, { w: 0.8 }),
+  // mur rond en pierre grise
+  path("M4.4 11.6V20.6Q12 22.6 19.6 20.6V11.6Z", STONE),
+  stoneRow(12.4, 4.6, 5, 3), stoneRow(15.2, 6.1, 4, 3), rect(4.6, 15.2, 1.2, 2.4, 0.5, STONE, { c: STONE_DARK, w: 0.6 }), rect(18.1, 15.2, 1.3, 2.4, 0.5, STONE_LIGHT, { c: STONE_DARK, w: 0.6 }), stoneRow(18, 4.6, 5, 3),
+  path("M4.4 11.6V20.6Q12 22.6 19.6 20.6V11.6", "none"),
+  path("M10.4 21.6V16.8H13.6V21.6Q12 21.9 10.4 21.6Z", C.bois),
+  // toit de chaume bas, large débord
+  path("M12 6.6Q17.4 9.2 22.4 12.6Q12 15.2 1.6 12.6Q6.6 9.2 12 6.6Z", THATCH),
+  line("M12 6.8L5.6 13.6M12 6.8L9 14.2M12 6.8V14.4M12 6.8L15 14.2M12 6.8L18.4 13.6", THATCH_LINE, 0.8),
+  // faîtage en chapeau mokorotlo
+  path("M12 2.2L14.6 6.8Q12 7.8 9.4 6.8Z", C.ocre),
+  line("M10.6 4.8Q12 5.4 13.4 4.8", C.marron, 0.8),
+  ellipse(12, 7, 3.4, 0.9, C.ocre, { w: 0.9 }),
+  path("M11.2 2.4Q11 0.8 12 0.8Q13 0.8 12.8 2.4Z", C.ocre, { w: 0.8 }),
 ].join("");
 
 const grandZimbabwe = [
@@ -75,16 +78,18 @@ const grandZimbabwe = [
 
 const grenierDogon = [
   ground(),
-  // socle de pierres
-  ellipse(8.6, 20.2, 1.6, 1.1, C.gris), ellipse(12, 20.4, 1.6, 1.1, C.gris), ellipse(15.4, 20.2, 1.6, 1.1, C.gris),
-  path("M7.6 19.4L8.2 10.4H15.8L16.4 19.4Z", BANCO),
-  line("M10 11.6Q9.6 15 10 18.6M14 11.6Q14.4 15 14 18.6", BANCO_DARK, 0.7),
-  rect(10.4, 12.6, 3.2, 3.8, 0.3, C.bois),
-  line("M11.2 13.6V15.4M12.8 13.6V15.4M10.4 14.5H13.6", C.marron, 0.7),
-  // chapeau de paille conique
-  path("M12 1.8Q14.6 5.4 19.6 11.2Q12 13.4 4.4 11.2Q9.4 5.4 12 1.8Z", THATCH),
-  line("M12 2.2L8 12M12 2.2L10.6 12.4M12 2.2L13.4 12.4M12 2.2L16 12", THATCH_LINE, 0.8),
-  line("M5 11.6L4.4 12.8M7.4 12.2L7 13.4M16.6 12.2L17 13.4M19 11.6L19.6 12.8", THATCH_LINE, 0.9),
+  // socle bas de pierres
+  path("M6.8 21.2V18.2H17.2V21.2Z", STONE),
+  line("M6.8 19.7H17.2M9.2 18.2V19.7M12.2 18.2V19.7M15.2 18.2V19.7M7.8 19.7V21.2M10.6 19.7V21.2M13.6 19.7V21.2M16.2 19.7V21.2", STONE_DARK, 0.7),
+  // tour carrée étroite en banco
+  path("M8.4 18.2L8.8 8.6H15.2L15.6 18.2Z", BANCO),
+  line("M9.8 9.8V11.4M14.2 10.4V12M9.6 15V16.8M14.4 15.4V17", BANCO_DARK, 0.7),
+  // petite porte de bois sculptée
+  rect(10.4, 11.4, 3.2, 3.6, 0.3, C.bois),
+  line("M11.2 12.4H12.8M11.2 13.2H12.8M11.2 14H12.8", C.marron, 0.6),
+  // petit chapeau de paille pointu
+  path("M12 2L16.4 9Q12 10 7.6 9Z", THATCH),
+  line("M12 2.4L10 9.4M12 2.4V9.6M12 2.4L14 9.4", THATCH_LINE, 0.8),
 ].join("");
 
 const togunaDogon = [
@@ -134,40 +139,42 @@ const mosqueeDjenne = [
   line("M2.4 18H3.2M20.8 18H21.6M6 18H6.8M17.2 18H18", C.ink, 1),
 ].join("");
 
+const tataTower = (x, top, r = 3.2) =>
+  path(`M${x - r} 21V${top}Q${x} ${top + 1} ${x + r} ${top}V21Q${x} 22 ${x - r} 21Z`, BANCO)
+  + line(`M${x - r} ${top + 4.4}Q${x} ${top + 5.4} ${x + r} ${top + 4.4}`, BANCO_DARK, 0.7)
+  // chapeau de paille bas et large, arrondi (pas de flèche)
+  + path(`M${x - r - 0.6} ${top + 0.2}Q${x - r} ${top - 3} ${x} ${top - 3}Q${x + r} ${top - 3} ${x + r + 0.6} ${top + 0.2}Q${x} ${top + 1.6} ${x - r - 0.6} ${top + 0.2}Z`, THATCH)
+  + line(`M${x - r * 0.45} ${top - 1.8}L${x - r * 0.6} ${top + 0.4}M${x + r * 0.45} ${top - 1.8}L${x + r * 0.6} ${top + 0.4}`, THATCH_LINE, 0.7);
 const tataSomba = [
   ground(),
-  // mur bas et étage-terrasse
-  path("M5.2 20.8V12.4H18.8V20.8Z", BANCO),
-  path("M8.4 12.4V9.4H15.6V12.4Z", BANCO),
-  line("M8 9.4H16", O, 1.2),
-  line("M5.2 15.4H18.8M5.2 18.2H18.8", BANCO_DARK, 0.7),
-  path("M10.6 20.8V17.2Q10.6 15.6 12 15.6Q13.4 15.6 13.4 17.2V20.8Z", C.marron),
-  // tourelles-greniers aux chapeaux de paille
-  ...[[4.6, 0], [19.4, 1]].map(([x]) =>
-    path(`M${x - 2.4} 21V9.6H${x + 2.4}V21Q${x} 21.8 ${x - 2.4} 21Z`, BANCO)
-    + line(`M${x - 2.4} 13.4Q${x} 14.2 ${x + 2.4} 13.4M${x - 2.4} 17.2Q${x} 18 ${x + 2.4} 17.2`, BANCO_DARK, 0.7)
-    + path(`M${x} 3.6Q${x + 1.6} 6.4 ${x + 3.4} 9.8Q${x} 11 ${x - 3.4} 9.8Q${x - 1.6} 6.4 ${x} 3.6Z`, THATCH)
-    + line(`M${x} 4L${x - 1.6} 10.4M${x} 4V10.6M${x} 4L${x + 1.6} 10.4`, THATCH_LINE, 0.8)),
-  // petite tourelle de l'étage
-  path("M10.4 9.6V6.8H13.6V9.6Z", BANCO, { w: 1 }),
-  path("M12 2.8Q13.2 4.6 14.6 6.9Q12 7.8 9.4 6.9Q10.8 4.6 12 2.8Z", THATCH, { w: 1 }),
+  // étage-terrasse au toit plat portant un grenier rond
+  path("M7.6 13.4V9.6H16.4V13.4Z", BANCO),
+  line("M7.2 9.6H16.8", O, 1.2),
+  tataTower(12, 7.4, 2),
+  // mur d'enceinte lisse entre les tours
+  path("M5 21V13.2H19V21Z", BANCO),
+  line("M5 16.6Q12 17.4 19 16.6", BANCO_DARK, 0.7),
+  path("M10.6 21V18Q10.6 16.4 12 16.4Q13.4 16.4 13.4 18V21Z", C.marron),
+  // tours rondes en terre lissée
+  tataTower(4.8, 11.2), tataTower(19.2, 11.2),
 ].join("");
 
+const BAM_ROOF = "#C9963F";
+const bamPost = (x) => rect(x, 10.6, 2.6, 10.6, 0.3, C.ink, { w: 0.9 })
+  + [12.4, 15, 17.6].map((y) => path(`M${x + 1.3} ${y - 1.1}L${x + 2.2} ${y}L${x + 1.3} ${y + 1.1}L${x + 0.4} ${y}Z`, C.rouge, { c: C.white, w: 0.6 })).join("")
+  + line(`M${x + 0.3} 13.7H${x + 2.3}M${x + 0.3} 16.3H${x + 2.3}M${x + 0.3} 18.9H${x + 2.3}`, C.white, 0.6);
 const chefferieBamileke = [
   ground(),
-  path("M4.6 20.8V12.6H19.4V20.8Z", C.bois),
-  line("M6 13V20.6M7.4 13V20.6M16.6 13V20.6M18 13V20.6", C.marron, 0.6),
+  // corps carré haut, façade de bambou
+  path("M5.4 21.2V10.6H18.6V21.2Z", C.bois),
+  line("M6.6 11.4V20.8M7.6 11.4V20.8M16.4 11.4V20.8M17.4 11.4V20.8", C.marron, 0.6),
   // poteaux sculptés encadrant la porte
-  rect(8.4, 12.6, 1.8, 8.4, 0.3, C.marron, { w: 0.9 }),
-  rect(13.8, 12.6, 1.8, 8.4, 0.3, C.marron, { w: 0.9 }),
-  line("M8.6 14.2L9.3 15L10 14.2M8.6 16.4L9.3 17.2L10 16.4M8.6 18.6L9.3 19.4L10 18.6M14 14.2L14.7 15L15.4 14.2M14 16.4L14.7 17.2L15.4 16.4M14 18.6L14.7 19.4L15.4 18.6", C.ocreLight, 0.7),
-  path("M10.2 21V15H13.8V21Z", C.ink, { w: 0.9 }),
-  circle(12, 17.2, 0.9, C.rouge, { w: 0.6 }),
-  // très haut toit conique de chaume
-  path("M12 1Q14.8 6.4 20.6 12.8Q12 14.4 3.4 12.8Q9.2 6.4 12 1Z", THATCH),
-  line("M12 1.4L7.8 13.4M12 1.4L10.6 13.8M12 1.4L13.4 13.8M12 1.4L16.2 13.4", THATCH_LINE, 0.8),
-  line("M7.4 7.6Q12 8.8 16.6 7.6", THATCH_LINE, 0.8),
-  line("M4.2 13L3.6 14.2M6.8 13.6L6.4 14.8M17.2 13.6L17.6 14.8M19.8 13L20.4 14.2", THATCH_LINE, 0.9),
+  bamPost(8.2), bamPost(13.2),
+  path("M10.8 21.2V13.4H13.2V21.2Z", C.marron, { w: 0.9 }),
+  // très haut toit conique, très pentu
+  path("M12 0.6L19.4 10.4Q12 11.8 4.6 10.4Z", BAM_ROOF),
+  line("M12 1L8.4 10.8M12 1L10.6 11.2M12 1V11.3M12 1L13.4 11.2M12 1L15.6 10.8", C.bois, 0.7),
+  line("M8.4 6Q12 6.8 15.6 6", C.bois, 0.8),
 ].join("");
 
 const ganvie = [
@@ -193,18 +200,22 @@ const ganvie = [
 
 /* ---------------- Afrique de l'Est ---------------- */
 
+const fence = (d) => thick(d, C.bois, 0.9);
 const manyatta = [
-  ground(C.sable),
-  // maisons basses et oblongues en terre et bouse, toit arrondi presque plat
-  path("M2 19.4V13.6Q2 10.6 5.4 10.4H9.6Q13 10.6 13 13.6V19.4Z", DUNG),
-  line("M3.2 12.8Q7.4 11.6 11.8 12.8", "#7F6850", 0.7),
-  path("M5.6 19.4V16.4Q5.6 15.2 6.8 15.2Q8 15.2 8 16.4V19.4Z", C.marron, { w: 0.9 }),
-  path("M12.2 19.4V14.8Q12.2 12.2 15.2 12H18.8Q22 12.2 22 14.8V19.4Z", DUNG),
-  line("M13.4 14Q17 13 20.8 14", "#7F6850", 0.7),
-  path("M16.4 19.4V17Q16.4 16 17.4 16Q18.4 16 18.4 17V19.4Z", C.marron, { w: 0.9 }),
-  // clôture d'épineux (enkang)
-  thick("M1.8 20.4Q4 18.4 6.4 20Q8.6 18.2 11 19.8Q13.4 18.2 15.8 19.8Q18.2 18.2 20.4 20Q21.6 19.4 22.2 20", C.bois, 1.2),
-  line("M3.2 19.2L2.6 18.2M4.6 19L5 17.8M7.6 19.2L7.2 18M9.6 18.9L10 17.8M12.2 19.1L11.8 18M14.4 18.9L14.8 17.8M17 19.1L16.6 18M19 18.9L19.4 17.8M21.2 19.4L21.6 18.4", O, 0.8),
+  ground(C.sable, 1.6),
+  // clôture d'épineux à l'arrière
+  fence("M2.6 15.2Q12 9.4 21.4 15.2"),
+  line("M4 13.8L3.6 11.8M7 12.2L7 10.2M17 12.2L17 10.2M20 13.8L20.4 11.8M5.4 12.8L6.4 11.2M18.6 12.8L17.6 11.2", C.marron, 0.9),
+  // huttes basses en dôme (terre et bouse)
+  path("M2.6 19.4Q2.6 12.6 8 12.4Q13.2 12.6 13.2 19.4Z", DUNG),
+  line("M4 15.6Q8 13.8 12 15.6", "#7F6850", 0.7),
+  path("M6.6 19.4V17.6Q6.6 16.4 7.9 16.4Q9.2 16.4 9.2 17.6V19.4Z", C.marron, { w: 0.9 }),
+  path("M11.4 19.6Q11.4 11.6 16.6 11.4Q21.6 11.6 21.6 19.6Z", DUNG),
+  line("M12.8 14.8Q16.6 13 20.2 14.8", "#7F6850", 0.7),
+  path("M15.4 19.6V17.8Q15.4 16.6 16.7 16.6Q18 16.6 18 17.8V19.6Z", C.marron, { w: 0.9 }),
+  // clôture de branches au premier plan (enkang)
+  fence("M1.6 19.2Q12 23.8 22.4 19.2"),
+  line("M3 20.2L2.2 18.2M3 20.2L4 18.4M7.2 21.6L6.6 19.6M7.2 21.6L8.2 19.8M12 22.2V20.2M12 22.2L13 20.4M16.8 21.6L17.4 19.6M16.8 21.6L15.8 19.8M21 20.2L21.8 18.2M21 20.2L20 18.4", C.marron, 0.9),
 ].join("");
 
 const porteSwahilie = [
@@ -224,17 +235,20 @@ const porteSwahilie = [
   circle(12, 15, 0.8, C.ocreLight, { w: 0.6 }),
 ].join("");
 
+const ROCK = "#D9A673", ROCK_1 = "#BF7D4F", ROCK_2 = "#9C5C36", CH_WALL = "#B0663C", CH_ROOF = "#ECC28E";
 const egliseLalibela = [
-  // roche environnante
-  rect(1.5, 1.5, 21, 21, 4, C.terre),
-  // fosse creusée
-  rect(3.8, 3.8, 16.4, 16.4, 1.4, C.terreDark),
-  path("M4.4 4.4H19.6L18.4 5.8H5.8V18.4L4.4 19.6Z", C.marron, false),
-  // croix vue d'en haut (toit)
-  path("M9.4 5.4H14.6V9.4H18.6V14.6H14.6V18.6H9.4V14.6H5.4V9.4H9.4Z", "#D9925E"),
-  path("M10.4 7H13.6V10.4H17V13.6H13.6V17H10.4V13.6H7V10.4H10.4Z", "none", { c: C.terreDark, w: 0.8 }),
-  path("M11.2 8.8H12.8V11.2H15.2V12.8H12.8V15.2H11.2V12.8H8.8V11.2H11.2Z", "none", { c: C.terreDark, w: 0.8 }),
-  rect(1.5, 1.5, 21, 21, 4, "none"),
+  // plateau de roche environnant
+  path("M1.8 6.2Q1.4 2.8 4 2.4L8 1.8Q12 2.6 16 1.6L20.2 2.2Q22.8 2.8 22.4 6.4L22.8 12.4Q22.2 16 22.6 19.4Q22.4 22.2 19.6 22L12 22.4L4.4 22Q1.6 22 1.6 19.2L1.2 12.8Z", ROCK),
+  line("M2.2 2.8L2.6 1.4M3 2.6L3.8 1.4M21.4 2.4L21.8 1.2", C.vert, 0.8),
+  // tranchée taillée à gradins : paroi du fond et côtés visibles
+  rect(3.2, 3.4, 17.6, 17.6, 0.4, ROCK_1),
+  path("M4.8 21V5.2H19.2V21", ROCK_2, { c: O, w: 0.7 }),
+  // église en croix taillée dans la masse (faces avant visibles)
+  path("M9.6 4.2H14.4V7.6H18.4V16.2H14.4V20H9.6V16.2H5.6V7.6H9.6Z", CH_WALL),
+  path("M9.6 4.2H14.4V7.6H18.4V12.2H14.4V16H9.6V12.2H5.6V7.6H9.6Z", CH_ROOF),
+  path("M11 5.8H13V9H16.8V10.8H13V14.4H11V10.8H7.2V9H11Z", "none", { c: ROCK_1, w: 0.7 }),
+  rect(11.3, 17.4, 1.4, 1.8, 0.6, ROCK_2, false),
+  rect(7.2, 13.6, 1.2, 1.4, 0.5, ROCK_2, false), rect(15.6, 13.6, 1.2, 1.4, 0.5, ROCK_2, false),
 ].join("");
 
 /* ---------------- Afrique du Nord et Sahara ---------------- */

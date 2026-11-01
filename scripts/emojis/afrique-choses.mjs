@@ -37,34 +37,43 @@ const kilimandjaro = [
   path("M19 21V18.4M19 19.5L17.9 18.5M19 19.5L20.1 18.5", "none", { c: C.vert, w: 0.8 }),
 ].join("");
 
+const OKAPI = "#4E2A20", OKAPI_FACE = "#E9D6B8";
+const okLeg = (x, top) => rect(x, top, 1.8, 21.4 - top, 0.8, C.white)
+  + line(`M${x} ${top + 1.4}H${x + 1.8}M${x} ${top + 2.8}H${x + 1.8}M${x} ${top + 4.2}H${x + 1.8}`, OKAPI, 0.9)
+  + rect(x, 20.2, 1.8, 1.4, 0.6, C.noir, { w: 0.8 });
 const okapi = [
-  // pattes rayées (blanc et brun)
-  ...[6.6, 8.8, 15, 17.2].map((x) => rect(x, 13.4, 1.7, 8, 0.8, C.cream) + rect(x, 20.2, 1.7, 1.6, 0.6, C.noir, { w: 0.8 })),
-  line("M6.6 16.2H8.3M6.6 18.2H8.3M8.8 16.2H10.5M8.8 18.2H10.5M15 16.2H16.7M15 18.2H16.7M17.2 16.2H18.9M17.2 18.2H18.9", O, 0.8),
-  path("M5.6 10Q11.5 8 18.5 9Q20.7 9.8 20.2 12.6Q19.6 15.2 16.4 15.2H8.2Q5.6 15.2 5.4 12.6Z", C.marron),
-  line("M16.2 10.6V14.4M17.8 10.2V14.4M19.3 10.8V13.6", C.cream, 0.9),
-  line("M20.2 10.6Q21.6 11.6 21.4 13.6", O, 0.9),
-  path("M5.4 12L3.6 6.4L6.6 5.4L8.6 10.2Z", C.marron),
-  path("M2.2 5.8Q3.6 3.6 6.8 4.4L7.2 6Q5.4 7.4 3.2 8.2Q1.6 8.4 1.4 7.2Q1.3 6.4 2.2 5.8Z", C.marron),
-  path("M1.4 7.2Q1.6 8.4 3.2 8.2Q2.8 6.8 2.2 5.8Q1.3 6.4 1.4 7.2Z", C.sable, { w: 0.8 }),
-  ellipse(6.6, 3.2, 0.9, 1.7, C.marron),
-  ellipse(6.6, 3.4, 0.4, 1, C.sable, false),
-  eye(4.6, 5.8),
+  okLeg(6.2, 13.6), okLeg(8.6, 14), okLeg(15.2, 14), okLeg(17.6, 13.8),
+  line("M20.4 11.4Q21.8 12.6 21.4 15", O, 0.9),
+  // corps velours sombre, croupe rayée de blanc à l'horizontale
+  path("M5.8 9.8Q11.6 8.4 17.6 9.6Q20.8 10.4 20.6 13.2Q20.2 15.8 17.2 15.8H8Q5.4 15.6 5.4 12.6Z", OKAPI),
+  line("M16.4 11.4H19.4M16 13H20M16.4 14.6H19.4", C.white, 0.9),
+  // cou et tête de girafe
+  path("M5.4 12.2L4 6.4L7.2 5.4L9 10Z", OKAPI),
+  path("M1.6 7.8Q2.2 4.8 6.2 4.4Q7.6 4.6 7.8 6.2Q6 8.4 3.4 9.4Q1.4 9.6 1.6 7.8Z", OKAPI),
+  path("M1.6 7.8Q1.4 9.6 3.4 9.4Q5.2 8.8 6.2 7.6Q4.8 6.6 3 6.4Q1.8 6.8 1.6 7.8Z", OKAPI_FACE, { w: 0.8 }),
+  // ossicônes et grandes oreilles
+  thick("M4.8 4.6L4.6 2.8M6 4.4L6.2 2.6", OKAPI, 0.7),
+  g("rotate(35 8.2 4.2)", ellipse(8.2, 4.2, 1, 2.1, OKAPI), ellipse(8.2, 4.4, 0.45, 1.3, OKAPI_FACE, false)),
+  eye(4.6, 5.9),
 ].join("");
 
-const scales = (y, x0, n, col) => line(`M${x0} ${y}` + "q1.5 1.9 3 0".repeat(n), col, 0.9);
+const PANGO = "#A0663A", PANGO_LIGHT = "#C68A52", PANGO_SKIN = "#E3C9A6";
+const plateS = (x, y, s, fill) => path(`M${x - 1.5 * s} ${y - 0.9 * s}Q${x} ${y - 1.6 * s} ${x + 1.5 * s} ${y - 0.9 * s}Q${x + 1.4 * s} ${y + 0.9 * s} ${x} ${y + 1.7 * s}Q${x - 1.4 * s} ${y + 0.9 * s} ${x - 1.5 * s} ${y - 0.9 * s}Z`, fill, { w: 0.75 });
 const pangolin = [
-  path("M3.6 15.8Q4.4 8.6 10.8 8Q16.4 7.6 18.8 11.8Q20.6 15.2 22.6 19.6Q19.8 20.4 17.6 17.8Q15.8 18.6 13.8 18.6H7.2Q4 18.6 3.6 15.8Z", C.bois),
-  scales(10.6, 7.6, 3, C.marron),
-  scales(13.4, 5.2, 4, C.marron),
-  scales(16.2, 5.6, 4, C.marron),
-  line("M18.4 13.2q1 1.4 1.6 1.2M19.6 16q0.9 1.2 1.6 1.2", C.marron, 0.9),
-  line("M9 9.6q0.6 0.8 1.2 0.4M12.4 9.6q0.6 0.8 1.2 0.4", C.ocreLight, 0.7),
-  path("M5 13.4Q2.4 14.2 1.4 17.4Q3.8 18.6 6 17Z", C.sable),
-  eye(3.8, 15.2),
-  rect(7, 17.6, 1.8, 2.8, 0.8, C.sable),
-  rect(13.4, 17.6, 1.8, 2.8, 0.8, C.sable),
-  line("M6 17.6Q11 18.8 17.4 17.8", O, W),
+  // longue queue effilée qui retombe au sol
+  path("M14.4 9.8Q19.8 10.4 21.6 15.6Q22.6 18.6 22.6 21.4Q20.8 19.2 19 17.4Q17 15.6 14 15.8Z", PANGO),
+  // petite tête pointue et pattes
+  path("M6.2 11.8Q3.6 13.2 1.4 16.2Q3.8 17.4 6.8 16.2Z", PANGO_SKIN),
+  rect(6.8, 15.6, 2, 4.4, 0.8, PANGO_SKIN), rect(12.2, 15.8, 2, 4.2, 0.8, PANGO_SKIN),
+  line("M6.8 20.2L6.2 21M8.8 20.2L9.4 21M12.2 20.2L11.6 21M14.2 20.2L14.8 21", O, 0.8),
+  // corps allongé
+  path("M5 15Q5 8.8 10.4 7.6Q15 7 16.8 10.4Q18 13.2 16.8 16.4Q12.6 17.6 8 17.2Q5 16.8 5 15Z", PANGO),
+  // écailles imbriquées : rangées du bas d'abord, la rangée du dessus recouvre la suivante
+  ...[[7.2, 15.2], [10.2, 15.6], [13.2, 15.6], [15.8, 15]].map(([x, y]) => plateS(x, y, 0.85, PANGO)),
+  ...[[6.6, 12.6], [9.6, 12.8], [12.6, 12.8], [15.4, 12.4]].map(([x, y]) => plateS(x, y, 0.95, PANGO_LIGHT)),
+  ...[[8.6, 10], [11.6, 9.8], [14.4, 10]].map(([x, y]) => plateS(x, y, 0.95, PANGO)),
+  ...[[17.6, 12], [19.4, 14.2], [20.6, 16.8], [21.6, 19.2]].map(([x, y], i) => plateS(x, y, 0.8 - i * 0.12, i % 2 ? PANGO : PANGO_LIGHT)),
+  eye(4.2, 14.4),
 ].join("");
 
 const cameleon = [
@@ -81,39 +90,49 @@ const cameleon = [
 ].join("");
 
 const calao = [
-  thick("M8 20.2H22.4", C.bois, 1.4),
-  path("M16.4 21.6L18.6 22.8L21.2 22.4L19.4 19.6Z", C.white),
-  path("M12.6 9.6Q10.6 15 13.2 19.4Q16 21.4 19.6 20.2Q21 15 18 9.4Z", C.noir),
-  path("M13.2 12.2Q12.6 16 14.4 18.4Q15.6 16 15.2 12Z", C.white, { w: 0.8 }),
-  circle(15.2, 7, 3.6, C.noir),
-  path("M12 6.4Q6.6 6 1.8 11Q7 9.8 12.2 9.4Z", C.ocreLight),
-  path("M12 6.6Q9 3.6 5.2 5.8Q4.8 6.6 5.6 7Q8.8 5.8 11.8 7.6Z", C.ocre),
-  line("M5.2 5.8Q4.6 7.4 6 7.6", C.terre, 0.8),
-  path("M12.2 9.4Q7 9.8 1.8 11Q6.8 10.6 12 10.4", "none", { w: 0.8 }),
-  circle(14.8, 6.8, 1.1, C.ocreLight, { w: 0.7 }),
-  eye(14.8, 6.8, 0.5),
+  thick("M7.4 20.2H22.4", C.bois, 1.4),
+  // queue blanche barrée de noir
+  path("M15.6 17.2Q17.6 20.8 20.6 22.8L22.6 21.2Q20.8 18.6 18.8 15.6Z", C.white),
+  line("M18.4 20.4L20.6 18.6", O, 1.2),
+  path("M12.6 10Q10.4 15.4 13 19.2Q15.8 21.2 19.2 19.6Q20.6 14.6 17.8 9.8Z", C.noir),
+  // bande alaire blanche
+  path("M12.2 14.2Q15.6 13 19.2 14.4L19.2 16.4Q15.6 15 12.4 16.2Z", C.white, { w: 0.9 }),
+  circle(15.6, 7.8, 3.4, C.noir),
+  // grand bec courbe et énorme casque par-dessus
+  path("M12.8 7.8Q7.2 7.6 1.8 12.8Q7.6 10.6 13 10.6Z", C.ocreLight),
+  path("M13.4 7.6Q13 2.6 8.2 2.4Q4.6 2.4 3.6 5.6Q3.6 7.4 5.4 7.8Q9.2 6.8 13 8.6Z", C.orange),
+  line("M5.6 4.4Q8.8 3.4 11.6 5.2", C.terre, 0.9),
+  circle(15.4, 7.6, 1.15, C.rouge, { w: 0.7 }),
+  eye(15.4, 7.6, 0.5),
 ].join("");
 
-const GOR = "#2E2A28", GOR_FACE = "#5E5650";
+const GOR = "#2E2A28", GOR_FACE = "#9A928A", GOR_CHEST = "#6E6760", GOR_NOSE = "#5A524C";
 const gorille = [
-  path("M12 2Q18.6 2 19.8 8.6Q21.8 10.8 20.6 14Q20 20.8 12 21.2Q4 20.8 3.4 14Q2.2 10.8 4.2 8.6Q5.4 2 12 2Z", GOR),
-  ellipse(3.2, 12.4, 1.2, 1.6, GOR_FACE),
-  ellipse(20.8, 12.4, 1.2, 1.6, GOR_FACE),
-  path("M12 8.2Q17.4 6.6 17.8 10.6Q18.2 13.4 16.6 15.6Q15.6 19.4 12 19.4Q8.4 19.4 7.4 15.6Q5.8 13.4 6.2 10.6Q6.6 6.6 12 8.2Z", GOR_FACE),
-  path("M6.6 10.2Q9 7.8 12 9.6Q15 7.8 17.4 10.2Q15 9.8 12 11Q9 9.8 6.6 10.2Z", GOR),
-  circle(9.4, 11.6, 0.9, C.marron, { w: 0.6 }), circle(14.6, 11.6, 0.9, C.marron, { w: 0.6 }),
-  eye(9.4, 11.7, 0.45), eye(14.6, 11.7, 0.45),
-  path("M10 14.8Q10.2 12.6 12 12.6Q13.8 12.6 14 14.8Q12 15.8 10 14.8Z", "#4A433E", { w: 0.8 }),
-  eye(11.1, 14.6, 0.45), eye(12.9, 14.6, 0.45),
-  line("M9.6 17.2Q12 18.2 14.4 17.2", O, 0.9),
+  // épaules et poitrine plus claire
+  path("M1.6 23Q1.6 16 7.6 15.4H16.4Q22.4 16 22.4 23Z", GOR),
+  path("M8.2 23Q8.2 19 12 18.6Q15.8 19 15.8 23Z", GOR_CHEST, { w: 0.9 }),
+  // tête à crête sagittale
+  path("M12 1.6Q15.6 1.6 17.8 5Q20.4 7.8 19.6 11.6Q19.4 18.4 12 19Q4.6 18.4 4.4 11.6Q3.6 7.8 6.2 5Q8.4 1.6 12 1.6Z", GOR),
+  ellipse(4.2, 11.4, 1.1, 1.5, GOR_FACE, { w: 0.9 }), ellipse(19.8, 11.4, 1.1, 1.5, GOR_FACE, { w: 0.9 }),
+  // visage gris clair
+  path("M12 7.4Q17.2 6.2 17.6 10.2Q18 13 16.4 15.4Q15.2 18.2 12 18.2Q8.8 18.2 7.6 15.4Q6 13 6.4 10.2Q6.8 6.2 12 7.4Z", GOR_FACE),
+  // arcade sourcilière marquée
+  path("M5.8 10.2Q8.4 6.8 12 8.8Q15.6 6.8 18.2 10.2Q15.2 9.8 12 11.2Q8.8 9.8 5.8 10.2Z", GOR),
+  circle(9.4, 11.8, 0.95, C.white, { w: 0.6 }), circle(14.6, 11.8, 0.95, C.white, { w: 0.6 }),
+  eye(9.5, 11.9, 0.55), eye(14.5, 11.9, 0.55),
+  // gros nez et narines
+  path("M9.6 15.2Q9.4 12.4 12 12.4Q14.6 12.4 14.4 15.2Q12 16.4 9.6 15.2Z", GOR_NOSE, { w: 0.9 }),
+  ellipse(11, 14.6, 0.75, 0.55, O, false), ellipse(13, 14.6, 0.75, 0.55, O, false),
+  line("M9.8 17Q12 17.8 14.2 17", O, 0.9),
 ].join("");
 
 const zebre = [
   path("M14.6 3.4Q19.6 3 21.2 9L22.6 21.6H13.6L12.6 16.8Q9.4 19 6.2 20.6Q3.6 21.4 2.8 19.6Q2.4 17.8 4.4 16.6L11 7Q12.2 3.8 14.6 3.4Z", C.white),
   line("M10.2 9.6Q11.8 10.6 12.8 10M8.6 12Q10.8 13.6 12.8 13M6.8 14.6Q9 16.2 11.4 15.8", O, 1),
   line("M14.4 9.6Q16.8 8.6 19.2 10M14 12.6Q17 11.6 19.8 13.2M13.8 15.6Q17 14.6 20.4 16.4M14 18.6Q17.4 17.6 20.8 19.4", O, 1),
-  path("M14.2 3.4Q19.6 2.4 21.4 8.8L22.8 21.6H21L19.4 9.4Q18 5.6 14.4 5Z", C.noir),
-  line("M15.6 3.6L16.2 2.4M17.6 4L18.6 3M19.2 5.4L20.4 4.8", O, 0.9),
+  // crinière dressée : bande lisse, rayée comme le pelage
+  path("M14.4 3.2Q19.8 2 21.8 8.6L23 21.6H21.2L19.6 9.2Q18.2 5.4 14.6 4.8Z", C.noir),
+  line("M17.2 3.6L16.6 4.9M19.4 5L18.4 5.9M20.9 7.6L19.6 8.2M21.6 10.8L20.2 11.2M22 14.2L20.6 14.4M22.3 17.6L20.9 17.7", C.white, 0.7),
   path("M13.4 5L12.6 1.6L15.6 4.2Z", C.white),
   path("M4.4 16.6Q2.4 17.8 2.8 19.6Q3.6 21.4 6.2 20.6Q6.4 18 4.4 16.6Z", C.noir, { w: 0.9 }),
   eye(11.6, 8.4, 0.65),
@@ -154,31 +173,44 @@ const djembe = [
   ellipse(10.4, 4.1, 2.6, 0.7, C.cream, false),
 ].join("");
 
-const tacks = [0, 40, 80, 120, 160, 200, 240, 280, 320].map((a) => {
-  const r = (a * Math.PI) / 180;
-  return [12 + Math.cos(r) * 5.9, 16 + Math.sin(r) * 5.9];
+const tacks = Array.from({ length: 12 }, (_, k) => {
+  const r = (k * 30 * Math.PI) / 180;
+  return [12 + Math.cos(r) * 6.15, 16 + Math.sin(r) * 6.15];
 });
-const kora = g("rotate(-12 12 13)",
-  thick("M8.4 11.4V8.6M15.6 11.4V8.6", C.bois, 0.8),
-  rect(11.3, 0.6, 1.4, 12, 0.7, C.bois),
-  line("M11.3 2.4H12.7M11.3 3.9H12.7M11.3 5.4H12.7M11.3 6.9H12.7M11.3 8.4H12.7", C.terre, 0.8),
-  circle(12, 16, 6.6, C.ocre),
-  circle(12, 16, 5.2, C.sable),
+// cordes : du chevalet (vu de face, encoches en ligne) jusqu'au manche, en éventail
+const koraStrings = [0, 1, 2, 3, 4, 5].map((i) => `M${9.6 + i * 0.96} 14.2L${i < 3 ? 11.4 : 12.6} ${2.4 + (i < 3 ? i : 5 - i) * 2.4}`).join("");
+const kora = g("rotate(-16 12 12)",
+  thick("M7.8 14V8.4M16.2 14V8.4", C.bois, 0.9),
+  rect(11.35, 1.2, 1.3, 12, 0.65, C.bois),
+  circle(12, 16, 6.8, C.ocre),
+  circle(12, 16, 5.5, C.sable),
   dots(tacks, 0.35, O),
-  line("M10.9 12.4L11.3 2.4M10.1 12.6L11.3 3.9M9.3 12.9L11.3 5.4M8.6 13.4L11.3 6.9M13.1 12.4L12.7 2.4M13.9 12.6L12.7 3.9M14.7 12.9L12.7 5.4M15.4 13.4L12.7 6.9", C.white, 0.45),
-  rect(10.6, 12, 2.8, 5.6, 0.6, C.bois, { w: 0.9 }),
-  line("M11.2 13.6H12.8M11.2 15H12.8M11.2 16.4H12.8", O, 0.5),
+  line(koraStrings, O, 0.5),
+  rect(9, 14, 6, 1.6, 0.6, C.bois, { w: 0.9 }),
+  line("M9.6 21.2Q12 22.4 14.4 21.2", O, 0.8),
 );
 
+// Masque portrait baoulé (Côte d'Ivoire) : visage allongé, coiffure à trois coques, sourcils en arc, yeux mi-clos.
 const masque = [
-  path("M12 1.4Q18 1.8 18 9Q18 16 14.6 20.4Q13.2 22.6 12 22.6Q10.8 22.6 9.4 20.4Q6 16 6 9Q6 1.8 12 1.4Z", C.bois),
-  line("M8.2 4.6L9.4 3.4L10.6 4.6L11.8 3.4L13 4.6L14.2 3.4L15.4 4.6", C.ocreLight, 0.9),
-  path("M7.2 9Q9.4 6.6 12 9.4Q14.6 6.6 16.8 9Q14.6 8.6 12 10.8Q9.4 8.6 7.2 9Z", C.marron, { w: 0.8 }),
-  path("M8 11.4Q9.5 10.2 11 11.4Q9.5 12.2 8 11.4Z", O, false),
-  path("M13 11.4Q14.5 10.2 16 11.4Q14.5 12.2 13 11.4Z", O, false),
-  path("M11.4 10.6L11 15.4Q12 16.2 13 15.4L12.6 10.6", C.bois, { w: 0.9 }),
-  ellipse(12, 18.4, 1.2, 0.8, C.terreDark, { w: 0.8 }),
-  line("M7.8 13.4L8.6 15.6M8.8 13.2L9.4 15M15.2 13.2L14.6 15M16.2 13.4L15.4 15.6", C.ocreLight, 0.8),
+  // coiffure en crête (trois coques striées)
+  circle(7.9, 5.2, 2, C.marron), circle(16.1, 5.2, 2, C.marron), circle(12, 3.6, 2.6, C.marron),
+  line("M6.6 4.4Q7.9 3.4 9.2 4.4M14.8 4.4Q16.1 3.4 17.4 4.4M10.2 2.6Q12 1.4 13.8 2.6", C.bois, 0.7),
+  // visage allongé
+  path("M12 5.2Q16.8 5.2 16.8 10.8Q16.6 16.4 14.2 20.2Q13.2 22.4 12 22.4Q10.8 22.4 9.8 20.2Q7.4 16.4 7.2 10.8Q7.2 5.2 12 5.2Z", C.bois),
+  // front : bandeau de la coiffure
+  path("M7.3 9Q7.4 5.2 12 5.2Q16.6 5.2 16.7 9Q12 7 7.3 9Z", C.marron),
+  line("M8.4 7.4Q12 6 15.6 7.4", C.bois, 0.6),
+  // sourcils en arc qui se rejoignent sur l'arête du nez
+  line("M8 11.8Q8.8 9.4 11 10.4Q11.8 11 12 12.4M16 11.8Q15.2 9.4 13 10.4Q12.2 11 12 12.4", O, 1),
+  // yeux mi-clos
+  path("M8.6 12.9Q9.8 12 11 12.9Q9.8 13.6 8.6 12.9Z", O, { w: 0.6 }),
+  path("M13 12.9Q14.2 12 15.4 12.9Q14.2 13.6 13 12.9Z", O, { w: 0.6 }),
+  // long nez fin, petite bouche avancée
+  line("M12 12.4V16.2", O, 0.9),
+  path("M11 16.4Q12 15.6 13 16.4Q12 17 11 16.4Z", C.bois, { w: 0.8 }),
+  ellipse(12, 18.8, 0.95, 0.8, C.terreDark, { w: 0.8 }),
+  // scarifications aux tempes
+  line("M8 14.2V15.4M8.9 14.6V15.8M16 14.2V15.4M15.1 14.6V15.8", C.marron, 0.7),
 ].join("");
 
 const calebasse = [
@@ -327,29 +359,35 @@ const sankofa = [
 
 /* ---------------- nourriture ---------------- */
 
-const grains = (pts) => dots(pts, 0.32, C.sable);
-const attieke = [
-  plate(),
-  path("M3.4 15.4Q3.6 10.6 8 10Q11.8 9.8 12.4 13.6Q12.2 17 7.8 17.4Q3.8 17.4 3.4 15.4Z", C.cream),
-  grains([[5.2, 13.6], [6.6, 12], [8.2, 11.2], [9.6, 12.6], [7.4, 14.2], [5.6, 15.6], [9, 15.4], [10.8, 14.2], [10.4, 11.8], [6.6, 16.4], [8.4, 13.2]]),
-  path("M11.2 14.2Q14.2 10.4 19.4 11.4L21.6 9.4L21.4 13.8L20.4 13.4Q16 17.8 11.2 14.2Z", C.bois),
-  path("M11.2 14.2Q14 13.2 20.4 13.4Q16 17.8 11.2 14.2Z", C.ocre, false),
-  line("M14 11.6L15.4 15.2M16.4 11.2L17.6 14.8M18.4 11.4L19.2 13.8", C.marron, 0.8),
-  eye(12.8, 13.4, 0.5),
-  circle(6, 18.2, 1.8, C.rouge, { w: 0.9 }), circle(6, 18.2, 1, C.rose, false),
-  ellipse(10, 18.8, 1.7, 1, "none", { c: C.violet, w: 0.8 }),
-  ellipse(14, 18.4, 1.5, 0.9, "none", { c: C.violet, w: 0.8 }),
-  path("M16.8 17.8L19.6 16.4", "none", { c: C.vert, w: 1.1 }),
-].join("");
+// Assiette vue de 3/4 haut : la nourriture occupe presque toute la hauteur.
+const plate34 = (food) => ellipse(12, 15.4, 10.4, 6.2, C.white) + ellipse(12, 15.2, 7.6, 4.2, C.grisLight, false) + food;
+const grains = (pts) => dots(pts, 0.4, C.sable);
+const attieke = plate34([
+  path("M3.4 16.2Q2.6 9.4 7.4 6.2Q11.4 4 14.6 7Q17.4 10 16.4 14.6Q15 18.6 9.6 18.8Q4.2 18.8 3.4 16.2Z", C.cream),
+  grains([[6, 9.6], [8.8, 7.6], [11.6, 8.2], [5.4, 13.2], [8, 11.6], [10.8, 11], [13.6, 10.6], [6.8, 16], [9.4, 14.4], [12.2, 13.8]]),
+  g("rotate(-20 15.6 14.8)",
+    path("M8.8 14.8Q11.8 11.4 17 11.8Q19.6 12.2 20.8 13.6L22.6 11.6V18L20.8 16Q19.2 17.8 16.4 18Q11.6 18.2 8.8 14.8Z", C.bois),
+    path("M8.8 14.8Q14 15.4 20.8 16Q19.2 17.8 16.4 18Q11.6 18.2 8.8 14.8Z", C.ocre, false),
+    path("M8.8 14.8Q11.8 11.4 17 11.8Q19.6 12.2 20.8 13.6L22.6 11.6V18L20.8 16Q19.2 17.8 16.4 18Q11.6 18.2 8.8 14.8Z", "none"),
+    line("M13.2 12.4L14.4 17.4M16 12L17.2 17.4M18.6 12.6L19.4 16.4", C.marron, 0.9),
+    line("M11.6 12.8Q12.4 14.8 11.6 17", O, 0.8),
+    eye(10.4, 14.2, 0.55)),
+].join(""));
 
 const plantain = (x, y, rot, rx = 2.2, ry = 1.3) => g(`rotate(${rot} ${x} ${y})`, ellipse(x, y, rx, ry, C.orange, { w: 0.9 }), ellipse(x, y - 0.1, rx * 0.66, ry * 0.55, C.ocreLight, false));
-const jollof = [
-  plate(),
-  path("M3.6 15.6Q3.2 10.8 8.4 9.8Q13.6 9 15.2 12.8Q16 16.6 10.6 17.6Q4.6 18.2 3.6 15.6Z", RICE),
-  line("M5.6 13.4L6.4 13.2M7.4 11.6L8.2 11.6M9.8 11L10.6 11.2M12.4 12L13 12.4M8.6 14.2L9.4 14.2M11.2 13.6L12 13.8M6.4 15.6L7.2 15.6M10.2 16L11 15.8M13.4 14.6L14 14.8", C.ocreLight, 0.7),
-  dots([[7, 12.8], [11.4, 12.2], [9.2, 15.4], [12.8, 15.6]], 0.45, C.vertLight),
-  plantain(16.6, 16.4, -25), plantain(18.4, 14.2, -40), plantain(13.8, 17.8, -10),
-].join("");
+const jollof = plate34([
+  path("M3.4 15.8Q3 8.4 8.8 6Q13.4 4.6 16.6 8Q19.6 11.2 18.6 15.4Q16.8 18.8 11 18.8Q4.6 18.8 3.4 15.8Z", RICE),
+  line("M6 11.4L6.9 11.2M8.6 8.6L9.5 8.6M11.8 7.8L12.6 8.2M14.6 9.8L15.2 10.4M7.4 14.4L8.3 14.4M10.6 11.6L11.5 11.8M13.6 12.8L14.4 13.2M5.4 16L6.3 16M10 16.4L10.9 16.2M16 15L16.6 15.4", C.ocreLight, 0.8),
+  dots([[7.6, 10.6], [12.6, 10.4], [9.2, 13.6], [15.6, 12.2], [12.2, 15.8]], 0.6, C.vertLight),
+  plantain(18.4, 16.6, -25, 2.8, 1.7), plantain(14.6, 18.4, -6, 2.8, 1.7),
+].join(""));
+
+const alloco = plate34([
+  plantain(6.8, 16.4, 15, 3, 1.8), plantain(12, 17.2, -8, 3, 1.8), plantain(17.2, 16.2, -20, 3, 1.8),
+  plantain(9.2, 13, -25, 3, 1.8), plantain(14.8, 12.8, 20, 3, 1.8),
+  plantain(11.8, 9.4, 5, 3, 1.8),
+].join(""));
+
 
 const foufou = [
   path("M8.4 9.4H22.4Q22.2 15.6 15.4 15.6Q8.6 15.6 8.4 9.4Z", C.terre),
@@ -365,15 +403,6 @@ const foufou = [
   line("M5 18.4Q7.8 19.6 10.8 18.2", C.sable, 0.8),
 ].join("");
 
-const alloco = [
-  plate(),
-  plantain(6.4, 15.4, 20, 2.4, 1.5), plantain(10, 16.8, -15, 2.4, 1.5), plantain(9.2, 13.6, 35, 2.4, 1.5),
-  plantain(13.4, 14, -30, 2.4, 1.5), plantain(12.6, 11.6, 10, 2.4, 1.5), plantain(7.6, 11.8, -20, 2.4, 1.5),
-  ellipse(17.6, 15.6, 3, 1.8, C.white),
-  ellipse(17.6, 15.3, 2.2, 1.1, C.rouge, { w: 0.7 }),
-  dots([[17, 15], [18.2, 15.4]], 0.3, C.ocreLight),
-  ellipse(15.8, 18.8, 1.4, 0.8, "none", { c: C.violet, w: 0.8 }),
-].join("");
 
 const SUYA = "#7A3A1E";
 const chunk = (x, y) => rect(x - 1.4, y - 1.2, 2.8, 2.4, 0.9, SUYA, { w: 0.9 }) + dots([[x - 0.5, y - 0.4], [x + 0.6, y + 0.3], [x - 0.2, y + 0.6]], 0.28, C.orange);
@@ -388,17 +417,17 @@ const suya = [
 ].join("");
 
 const INJ = "#E3CC9C", INJ_HOLE = "#C2A26E";
+// Plateau d'injera vu de haut : ragoûts en couronne sur le bord, centre nu et alvéolé (sans disposition de visage).
+const wat = (x, y, fill, extra = "") => path(`M${x - 2.4} ${y + 0.2}Q${x - 2.2} ${y - 2} ${x} ${y - 2}Q${x + 2.4} ${y - 1.8} ${x + 2.3} ${y + 0.4}Q${x + 2} ${y + 2} ${x - 0.2} ${y + 1.9}Q${x - 2.4} ${y + 1.8} ${x - 2.4} ${y + 0.2}Z`, fill, { w: 0.9 }) + extra;
 const injera = [
-  ellipse(12, 13.4, 10.6, 7.6, INJ),
-  dots([[4.4, 12], [5.6, 15.6], [7.6, 18.2], [11, 19.6], [15.6, 19], [18.6, 17], [20, 13.6], [18.8, 9.6], [15.6, 7], [11.4, 6.6], [7.2, 7.6], [4.8, 9.6], [9.2, 15.2], [14.8, 15.6]], 0.35, INJ_HOLE),
-  path("M9 9.8Q11.8 8 14.6 9.6Q15.6 12 12.6 13Q9.4 13.2 9 9.8Z", C.terreDark, { w: 0.9 }),
-  ellipse(11.8, 10.6, 1.3, 0.9, C.white, { w: 0.6 }), circle(11.8, 10.6, 0.45, C.jaune, false),
-  path("M5.2 12.2Q6.2 10 8.6 10.6Q9.6 12.8 7.4 13.8Q5.4 14 5.2 12.2Z", C.orange, { w: 0.9 }),
-  path("M15.6 11.4Q17.6 9.6 19.4 11.2Q19.6 13.6 17.4 14Q15.4 13.6 15.6 11.4Z", C.vert, { w: 0.9 }),
-  line("M16.4 12.4L17.6 11.4M17.4 13L18.6 11.8", C.vertLight, 0.6),
-  path("M10.6 15Q12.2 13.8 13.8 15Q13.2 16.8 12 16.8Q10.6 16.6 10.6 15Z", C.cream, { w: 0.9 }),
-  g("rotate(-8 7 18.4)", rect(4.4, 17.2, 5.4, 2.4, 1.2, INJ, { w: 0.9 }), ellipse(8.6, 18.4, 0.9, 1.1, INJ_HOLE, { w: 0.7 })),
-  g("rotate(8 17 18.4)", rect(14.2, 17.2, 5.4, 2.4, 1.2, INJ, { w: 0.9 }), ellipse(15.4, 18.4, 0.9, 1.1, INJ_HOLE, { w: 0.7 })),
+  ellipse(12, 12.4, 10.6, 9.4, INJ),
+  dots([[9.6, 10.2], [12.4, 9.4], [14.6, 11], [10.4, 13.2], [13.2, 12.8], [11.8, 15.4], [14.6, 14.6], [9, 15.4], [8.4, 12], [15.8, 9], [12, 6.2], [17.6, 18.4], [6.4, 6.4], [3.4, 13.4], [20.8, 10.4]], 0.4, INJ_HOLE),
+  wat(9.2, 5.4, C.terreDark, ellipse(9.4, 5.2, 1, 0.75, C.white, { w: 0.6 }) + circle(9.4, 5.2, 0.38, C.jaune, false)),
+  wat(17.6, 7.6, C.orange),
+  wat(18.6, 14.8, C.vert, line("M17.6 14.6L18.8 13.8M18.6 15.6L19.8 14.6", C.vertLight, 0.6)),
+  wat(12.6, 19.2, C.cream),
+  wat(5.6, 16.6, C.ocre),
+  wat(4.8, 9.6, C.terre),
 ].join("");
 
 const bissap = [
@@ -467,13 +496,15 @@ const mafe = [
 const shrimp = (x, y, flip = 1) => line(`M${x} ${y}q${1.6 * flip} -1.6 ${2.8 * flip} 0q0.4 1.4 -${0.6 * flip} 1.8`, O, 2.4) + line(`M${x} ${y}q${1.6 * flip} -1.6 ${2.8 * flip} 0q0.4 1.4 -${0.6 * flip} 1.8`, "#F08A5D", 1.2);
 const ndole = [
   bowl(C.white, [
-    ellipse(12, 12.5, 8.5, 2.8, LEAF_DARK),
-    line("M5.4 11.8L6.8 11.2M9 12.2L10.4 11.6M12.8 12.4L14 11.8M16.4 12.2L17.8 11.6M11.4 10.4L12.4 10", C.vertLight, 0.7),
-    shrimp(5.8, 11.2), shrimp(17.8, 11, -1), shrimp(10.8, 10.2),
-    dots([[9.4, 12.4], [14.6, 10.8], [15.4, 12.4], [7.6, 12.4]], 0.45, "#D9B27A"),
+    // dôme de feuilles amères (vert sombre), quelques crevettes et arachides en accent
+    path("M3.8 12.8Q4 8.6 7.8 8Q9.8 5.6 12.6 6.4Q15.8 5.8 17 8.2Q20.2 8.8 20.2 12.8Z", LEAF_DARK),
+    line("M6 10.6L7.2 9.8M9.4 8.8L10.4 8.2M13 7.8L14.2 7.4M16.4 9.6L17.6 9.2M7.6 12L8.8 11.4M11.4 10.6L12.6 10M15 11.6L16.2 11M18.4 11.8L19.2 11.2", C.vertLight, 0.8),
+    g("translate(13.4 9.4) scale(0.62)", shrimp(0, 0)),
+    g("translate(8.6 11.8) scale(0.62)", shrimp(0, 0, -1)),
+    dots([[10.4, 7.6], [15.2, 9.4], [6.2, 12.2], [18.6, 10.4]], 0.4, "#D9B27A"),
   ].join("")),
   line("M4.6 15.6Q12 17.2 19.4 15.6", C.bleu, 0.9),
-  line("M8.6 8.2Q7.8 6.4 8.8 4.8M15.4 8.2Q14.6 6.4 15.6 4.8", C.gris, 0.8),
+  line("M8.6 5.2Q7.8 3.8 8.8 2.4M15.4 5.2Q14.6 3.8 15.6 2.4", C.gris, 0.8),
 ].join("");
 
 /* ---------------- entrées ---------------- */
@@ -494,7 +525,7 @@ export default [
 
   E("djembe", "Djembé", "Djembe", "objets", ["djembé", "djembe", "tambour", "drum", "musique", "music", "mali", "guinée"], djembe),
   E("kora", "Kora", "Kora", "objets", ["kora", "harpe", "harp", "griot", "musique", "music", "mali", "sénégal", "gambie"], kora),
-  E("masque", "Masque africain", "African mask", "objets", ["masque", "mask", "bois", "wood", "sculpture", "art", "côte d'ivoire", "gabon"], masque),
+  E("masque", "Masque africain", "African mask", "objets", ["masque", "mask", "bois", "wood", "sculpture", "art", "côte d'ivoire", "gabon", "baoulé", "baule", "masque portrait", "portrait mask"], masque),
   E("calebasse", "Calebasse", "Calabash", "objets", ["calebasse", "calabash", "gourde", "gourd", "pyrogravure", "récipient"], calebasse),
   E("cauri", "Cauri", "Cowrie shell", "objets", ["cauri", "cowrie", "coquillage", "shell", "monnaie", "divination"], cauri),
   E("case", "Case", "Hut", "objets", ["case", "hut", "maison", "house", "village", "paille", "thatch", "banco"], kase),

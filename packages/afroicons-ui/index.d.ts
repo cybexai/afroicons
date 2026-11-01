@@ -115,7 +115,7 @@ export declare const LucideChevronDown: LucideIcon;
 export declare const ChevronRight: LucideIcon;
 export declare const ChevronRightIcon: LucideIcon;
 export declare const LucideChevronRight: LucideIcon;
-/** Accueil · Home — La case : un toit de chaume conique, une porte arrondie. */
+/** Accueil · Home — La case : un toit pointu et une porte arrondie. */
 export declare const Home: LucideIcon;
 export declare const HomeIcon: LucideIcon;
 export declare const LucideHome: LucideIcon;
@@ -295,7 +295,7 @@ export declare const LucideUserX: LucideIcon;
 export declare const GraduationCap: LucideIcon;
 export declare const GraduationCapIcon: LucideIcon;
 export declare const LucideGraduationCap: LucideIcon;
-/** Activité · Business */
+/** Porte-documents · Briefcase */
 export declare const Briefcase: LucideIcon;
 export declare const BriefcaseIcon: LucideIcon;
 export declare const LucideBriefcase: LucideIcon;
@@ -327,7 +327,7 @@ export declare const LucideCoins: LucideIcon;
 export declare const Banknote: LucideIcon;
 export declare const BanknoteIcon: LucideIcon;
 export declare const LucideBanknote: LucideIcon;
-/** Argent · Money — Le cauri, coquillage qui servait de monnaie, à la place du signe dollar. */
+/** Argent · Money — Une pièce frappée d'un cauri, le coquillage qui servait de monnaie. */
 export declare const DollarSign: LucideIcon;
 export declare const DollarSignIcon: LucideIcon;
 export declare const LucideDollarSign: LucideIcon;
@@ -355,7 +355,7 @@ export declare const LucideTag: LucideIcon;
 export declare const Landmark: LucideIcon;
 export declare const LandmarkIcon: LucideIcon;
 export declare const LucideLandmark: LucideIcon;
-/** Caisse et ventes · Sales — Le panier tressé du marché, à la place du chariot. */
+/** Caisse et ventes · Sales — Le panier tressé du marché, monté sur roulettes, à la place du chariot. */
 export declare const ShoppingCart: LucideIcon;
 export declare const ShoppingCartIcon: LucideIcon;
 export declare const LucideShoppingCart: LucideIcon;
@@ -383,7 +383,7 @@ export declare const LucideTruck: LucideIcon;
 export declare const Bus: LucideIcon;
 export declare const BusIcon: LucideIcon;
 export declare const LucideBus: LucideIcon;
-/** Véhicule · Vehicle — Un taxi avec galerie de toit. */
+/** Véhicule · Vehicle */
 export declare const Car: LucideIcon;
 export declare const CarIcon: LucideIcon;
 export declare const LucideCar: LucideIcon;
@@ -415,7 +415,7 @@ export declare const LucideBedDouble: LucideIcon;
 export declare const Shirt: LucideIcon;
 export declare const ShirtIcon: LucideIcon;
 export declare const LucideShirt: LucideIcon;
-/** Restaurant · Restaurant — La marmite sur son feu, qui fume. */
+/** Restaurant · Restaurant — La marmite et sa louche, à la place des couverts. */
 export declare const UtensilsCrossed: LucideIcon;
 export declare const UtensilsCrossedIcon: LucideIcon;
 export declare const LucideUtensilsCrossed: LucideIcon;
@@ -423,7 +423,7 @@ export declare const LucideUtensilsCrossed: LucideIcon;
 export declare const CakeSlice: LucideIcon;
 export declare const CakeSliceIcon: LucideIcon;
 export declare const LucideCakeSlice: LucideIcon;
-/** Agriculture · Farming */
+/** Pousse · Sprout */
 export declare const Sprout: LucideIcon;
 export declare const SproutIcon: LucideIcon;
 export declare const LucideSprout: LucideIcon;
@@ -463,7 +463,7 @@ export declare const LucideShield: LucideIcon;
 export declare const ShieldAlert: LucideIcon;
 export declare const ShieldAlertIcon: LucideIcon;
 export declare const LucideShieldAlert: LucideIcon;
-/** Activité · Activity */
+/** Suivi d'activité · Activity */
 export declare const Activity: LucideIcon;
 export declare const ActivityIcon: LucideIcon;
 export declare const LucideActivity: LucideIcon;
@@ -691,7 +691,7 @@ export declare const LucidePiggyBank: LucideIcon;
 export declare const Folder: LucideIcon;
 export declare const FolderIcon: LucideIcon;
 export declare const LucideFolder: LucideIcon;
-/** Agriculture · Agriculture — La daba, la houe du paysan, à la place du tracteur. */
+/** Agriculture · Agriculture */
 export declare const Tractor: LucideIcon;
 export declare const TractorIcon: LucideIcon;
 export declare const LucideTractor: LucideIcon;

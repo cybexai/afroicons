@@ -33,8 +33,8 @@ let depth = 0, factsEnd = factsStart;
 for (; factsEnd < i18n.length; factsEnd++) { if (i18n[factsEnd] === "{") depth++; if (i18n[factsEnd] === "}" && !--depth) break; }
 const FACTS = JSON.parse(i18n.slice(factsStart, factsEnd + 1));
 
-const CATS = { nature: "Nature & paysages", faune: "Faune", musique: "Musique & arts", symboles: "Symboles & textiles", cuisine: "Cuisine", vie: "Vie quotidienne", architecture: "Architecture", drapeaux: "Drapeaux", emojis: "Emojis", interface: "Interface" };
-const EGROUP = { visages: "visages", mains: "mains", personnes: "personnes", coeurs: "cœurs et symboles", nature: "nature", nourriture: "nourriture", objets: "objets et cultures", lieux: "villages et lieux" };
+const CATS = { nature: "Nature & paysages", faune: "Faune", musique: "Musique & arts", symboles: "Symboles & textiles", cuisine: "Cuisine", vie: "Vie quotidienne", architecture: "Architecture", personnes: "Peuples et tenues", drapeaux: "Drapeaux", emojis: "Emojis", interface: "Interface" };
+const EGROUP = { visages: "visages", mains: "mains", personnes: "personnes", coeurs: "cœurs et symboles", animaux: "animaux", nature: "nature", fruits: "fruits et légumes", nourriture: "nourriture", boissons: "boissons", objets: "objets et cultures", lieux: "villages et lieux" };
 const REG = { pan: "toute l'Afrique", ouest: "Afrique de l'Ouest", centre: "Afrique centrale", est: "Afrique de l'Est", nord: "Afrique du Nord", australe: "Afrique australe" };
 const pascal = (id) => id.replace(/(^|[-_])(\w)/g, (_, a, b) => b.toUpperCase());
 const kebab = (n) => n.replace(/([a-z0-9])([A-Z])/g, "$1-$2").replace(/([a-zA-Z])(\d)/g, "$1-$2").toLowerCase();
@@ -105,6 +105,7 @@ ${fact ? `<h2>Le saviez-vous ?</h2><p>${esc(fact[0])}</p><p lang="en">${esc(fact
 <p>Mots-clés : ${i.tags.map((t) => esc(t)).join(", ")}</p>
 ${i.lucide ? equivalents(i.lucide) : ""}
 <h2>Utiliser cette icône</h2><pre><code>${esc(code)}</code></pre>
+<p>Angular :</p><pre><code>${esc(`npm install afroicons-angular\n\nimport { AfroiconComponent, provideAfroicons, ${i.lucide ?? pascal(i.id)} } from "afroicons-angular";\n\nproviders: [provideAfroicons({ ${i.lucide ?? pascal(i.id)} })]\n\n<afroicon name="${i.lucide ?? i.slug}"${i.tone ? ' tone="light"' : ""} />`)}</code></pre>
 <p>Icône libre et gratuite, licence MIT, utilisation commerciale comprise. <a href="/#${i.slug}">Personnaliser et télécharger sur afroicons.org</a></p>
 ${variants.length ? `<h2>Variantes</h2>${links(variants)}` : ""}
 <h2>Dans la même famille</h2>${links(similar)}`,

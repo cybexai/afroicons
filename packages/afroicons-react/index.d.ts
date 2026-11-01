@@ -325,6 +325,410 @@ export declare const Ndebele: Afroicon;
 export declare const Ville: Afroicon;
 /** Porte de riad · Riad door */
 export declare const Riad: Afroicon;
+/** Femme massaï · Maasai woman */
+export declare const Femmemassai: Afroicon;
+/** Guerrier massaï · Maasai warrior */
+export declare const Guerriermassai: Afroicon;
+/** Homme touareg au tagelmust · Tuareg man in a tagelmust */
+export declare const Hommetouareg: Afroicon;
+/** Femme peule · Fulani woman */
+export declare const Femmepeule: Afroicon;
+/** Femme amazighe · Amazigh woman */
+export declare const Femmeamazighe: Afroicon;
+/** Femme en habesha kemis · Woman in a habesha kemis */
+export declare const Femmehabesha: Afroicon;
+/** Femme ndébélé · Ndebele woman */
+export declare const Femmendebele: Afroicon;
+/** Homme zoulou · Zulu man */
+export declare const Hommezoulou: Afroicon;
+/** Femme zouloue à l'isicholo · Zulu woman wearing an isicholo */
+export declare const Femmezouloueisicholo: Afroicon;
+/** Femme xhosa à l'iqhiya · Xhosa woman wearing an iqhiya */
+export declare const Femmexhosa: Afroicon;
+/** Homme swahili en kanzu et kofia · Swahili man in kanzu and kofia */
+export declare const Hommeswahili: Afroicon;
+/** Femme somalie au garbasaar · Somali woman in a garbasaar */
+export declare const Femmesomalie: Afroicon;
+/** Femme wolof en grand boubou · Wolof woman in a grand boubou */
+export declare const Femmewolof: Afroicon;
+/** Homme haoussa en babban riga · Hausa man in babban riga */
+export declare const Hommehaoussa: Afroicon;
+/** Femme malgache au lamba · Malagasy woman in a lamba */
+export declare const Femmemalgache: Afroicon;
+/** Femme congolaise en liputa · Congolese woman in liputa */
+export declare const Femmecongolaiseliputa: Afroicon;
+/** Danseur dogon au masque kanaga · Dogon dancer with a Kanaga mask */
+export declare const Danseurdogonkanaga: Afroicon;
+/** Danseur au masque éléphant bamiléké · Bamileke elephant mask dancer */
+export declare const Danseurelephantbamileke: Afroicon;
+/** Homme en agbada et fila · Man in agbada and fila */
+export declare const Hommeagbada: Afroicon;
+/** Femme en kente · Woman in kente */
+export declare const Femmekente: Afroicon;
+/** Homme au kufi · Man wearing a kufi */
+export declare const Hommekufi: Afroicon;
+/** Grand-mère au foulard · Grandmother in a headscarf */
+export declare const Grandmerefoulard: Afroicon;
+/** Enfant aux nœuds bantous · Child with Bantu knots */
+export declare const Enfantnoeudsbantous: Afroicon;
+/** Conducteur de moto-taxi · Motorbike taxi driver */
+export declare const Conducteurmototaxi: Afroicon;
+/** Mariée en tenue traditionnelle · Bride in traditional attire */
+export declare const Marieetraditionnelle: Afroicon;
+/** Chef traditionnel · Traditional chief */
+export declare const Cheftraditionnel: Afroicon;
+/** Griot avec sa kora · Griot with a kora */
+export declare const Griotkora: Afroicon;
+/** Toguna dogon · Dogon toguna */
+export declare const Togunadogon: Afroicon;
+/** Maisons peintes de Tiébélé · Tiébélé painted houses */
+export declare const Maisonstiebele: Afroicon;
+/** Hutte zouloue · Zulu beehive hut */
+export declare const Huttezouloue: Afroicon;
+/** Manyatta massaï · Maasai manyatta */
+export declare const Manyattamassai: Afroicon;
+/** Porte swahilie · Swahili carved door */
+export declare const Porteswahilie: Afroicon;
+/** Maison nubienne · Nubian house */
+export declare const Maisonnubienne: Afroicon;
+/** Village de Ganvié sur pilotis · Ganvié stilt village */
+export declare const Ganviepilotis: Afroicon;
+/** Pyramides de Méroé · Meroë pyramids */
+export declare const Pyramidesmeroe: Afroicon;
+/** Tente touarègue · Tuareg tent */
+export declare const Tentetouaregue: Afroicon;
+/** Montagne de la Table · Table Mountain */
+export declare const Montagnedelatable: Afroicon;
+/** Mangrove · Mangrove */
+export declare const Mangrove: Afroicon;
+/** Forêt du Congo · Congo rainforest */
+export declare const Foretcongo: Afroicon;
+/** Fromager · Kapok tree */
+export declare const Fromager: Afroicon;
+/** Lac Victoria · Lake Victoria */
+export declare const Lacvictoria: Afroicon;
+/** Arbre feuillu · Deciduous tree */
+export declare const Arbrefeuillu: Afroicon;
+/** Fleur de cerisier · Cherry blossom */
+export declare const Fleurdecerisier: Afroicon;
+/** Tournesol · Sunflower */
+export declare const Tournesol: Afroicon;
+/** Soleil · Sun */
+export declare const Soleil: Afroicon;
+/** Globe Afrique-Europe · Globe showing Europe-Africa */
+export declare const Globeafriqueeurope: Afroicon;
+/** Attiéké au poisson · Attiéké with fish */
+export declare const Attieke: Afroicon;
+/** Riz jollof · Jollof rice */
+export declare const Jollof: Afroicon;
+/** Injera · Injera */
+export declare const Injera: Afroicon;
+/** Mafé · Maafe peanut stew */
+export declare const Mafe: Afroicon;
+/** Ndolè · Ndolé */
+export declare const Ndole: Afroicon;
+/** Ugali et sukuma wiki · Ugali and sukuma wiki */
+export declare const Ugalisukuma: Afroicon;
+/** Nyama choma · Nyama choma */
+export declare const Nyamachoma: Afroicon;
+/** Pilau · Pilau rice */
+export declare const Pilau: Afroicon;
+/** Chapati · Chapati */
+export declare const Chapati: Afroicon;
+/** Mandazi · Mandazi */
+export declare const Mandazi: Afroicon;
+/** Sambusa · Sambusa */
+export declare const Sambusa: Afroicon;
+/** Matoke · Matoke */
+export declare const Matoke: Afroicon;
+/** Rolex · Rolex */
+export declare const Rolex: Afroicon;
+/** Doro wat · Doro wat */
+export declare const Dorowat: Afroicon;
+/** Couscous · Couscous */
+export declare const Couscous: Afroicon;
+/** Harira · Harira */
+export declare const Harira: Afroicon;
+/** Msemen · Msemen */
+export declare const Msemen: Afroicon;
+/** Pastilla · Pastilla */
+export declare const Pastilla: Afroicon;
+/** Koshari · Koshari */
+export declare const Koshari: Afroicon;
+/** Ful medames · Ful medames */
+export declare const Fulmedames: Afroicon;
+/** Brik · Brik */
+export declare const Brik: Afroicon;
+/** Braai et boerewors · Braai and boerewors */
+export declare const Braaiboerewors: Afroicon;
+/** Bobotie · Bobotie */
+export declare const Bobotie: Afroicon;
+/** Bunny chow · Bunny chow */
+export declare const Bunnychow: Afroicon;
+/** Pap et chakalaka · Pap and chakalaka */
+export declare const Papchakalaka: Afroicon;
+/** Poulet peri-peri · Peri-peri chicken */
+export declare const Pouletperiperi: Afroicon;
+/** Romazava · Romazava */
+export declare const Romazava: Afroicon;
+/** Mofo gasy · Mofo gasy */
+export declare const Mofogasy: Afroicon;
+/** Thiéboudienne · Thieboudienne */
+export declare const Thieboudienne: Afroicon;
+/** Yassa poulet · Chicken yassa */
+export declare const Yassapoulet: Afroicon;
+/** Poulet DG · Poulet DG */
+export declare const Pouletdg: Afroicon;
+/** Soupe egusi · Egusi soup */
+export declare const Soupeegusi: Afroicon;
+/** Eba · Eba */
+export declare const Eba: Afroicon;
+/** Kedjenou · Kedjenou */
+export declare const Kedjenou: Afroicon;
+/** Waakye · Waakye */
+export declare const Waakye: Afroicon;
+/** Banku et tilapia · Banku and tilapia */
+export declare const Bankutilapia: Afroicon;
+/** Akara · Akara */
+export declare const Akara: Afroicon;
+/** Moin-moin · Moin moin */
+export declare const Moinmoin: Afroicon;
+/** Fataya · Fataya */
+export declare const Fataya: Afroicon;
+/** Dibi · Dibi */
+export declare const Dibi: Afroicon;
+/** Tô sauce gombo · Tô with okra sauce */
+export declare const Tosaucegombo: Afroicon;
+/** Riz gras · Riz gras */
+export declare const Rizgras: Afroicon;
+/** Koki · Koki */
+export declare const Koki: Afroicon;
+/** Pondu · Pondu */
+export declare const Pondu: Afroicon;
+/** Poulet moambé · Moambe chicken */
+export declare const Pouletmoambe: Afroicon;
+/** Chikwangue · Chikwangue */
+export declare const Chikwangue: Afroicon;
+/** Mbongo tchobi · Mbongo tchobi */
+export declare const Mbongotchobi: Afroicon;
+/** Maïs grillé · Grilled corn */
+export declare const Maisgrille: Afroicon;
+/** Boli · Boli */
+export declare const Boli: Afroicon;
+/** Bol de riz · Cooked rice */
+export declare const Bolderiz: Afroicon;
+/** Pain · Bread */
+export declare const Pain: Afroicon;
+/** Cuisse de poulet · Poultry leg */
+export declare const Cuissedepoulet: Afroicon;
+/** Jus de gingembre · Ginger juice */
+export declare const Jusdegingembre: Afroicon;
+/** Bouye · Baobab juice */
+export declare const Bouye: Afroicon;
+/** Dolo · Dolo millet beer */
+export declare const Dolo: Afroicon;
+/** Tej · Tej honey wine */
+export declare const Tej: Afroicon;
+/** Kounou · Kunu */
+export declare const Kunu: Afroicon;
+/** Rooibos · Rooibos tea */
+export declare const Rooibos: Afroicon;
+/** Umqombothi · Umqombothi */
+export declare const Umqombothi: Afroicon;
+/** Chapman · Chapman */
+export declare const Chapman: Afroicon;
+/** Jus de tamarin · Tamarind juice */
+export declare const Jusdetamarin: Afroicon;
+/** Kinkéliba · Kinkeliba tea */
+export declare const Kinkeliba: Afroicon;
+/** Eau en sachet · Sachet water */
+export declare const Eauensachet: Afroicon;
+/** Jus de canne · Sugarcane juice */
+export declare const Jusdecanne: Afroicon;
+/** Fura da nono · Fura da nono */
+export declare const Furadanono: Afroicon;
+/** Jus de corossol · Soursop juice */
+export declare const Jusdecorossol: Afroicon;
+/** Bière de banane · Banana beer */
+export declare const Bieredebanane: Afroicon;
+/** Dégué · Dégué */
+export declare const Degue: Afroicon;
+/** Café Touba · Touba coffee */
+export declare const Cafetouba: Afroicon;
+/** Boisson chaude · Hot beverage */
+export declare const Tassedecafe: Afroicon;
+/** Gye Nyame · Gye Nyame */
+export declare const Gyenyame: Afroicon;
+/** Nyame Dua · Nyame Dua */
+export declare const Nyamedua: Afroicon;
+/** Œil Oudjat · Eye of Horus */
+export declare const Oeiloudjat: Afroicon;
+/** Croix copte éthiopienne · Ethiopian Coptic cross */
+export declare const Croixcopte: Afroicon;
+/** Papaye · Papaya */
+export declare const Papaye: Afroicon;
+/** Corossol · Soursop */
+export declare const Corossol: Afroicon;
+/** Goyave · Guava */
+export declare const Goyave: Afroicon;
+/** Fruit de la passion · Passion fruit */
+export declare const Fruitpassion: Afroicon;
+/** Pain de singe · Baobab fruit */
+export declare const Paindesinge: Afroicon;
+/** Tamarin · Tamarind */
+export declare const Tamarin: Afroicon;
+/** Néré · African locust bean */
+export declare const Nere: Afroicon;
+/** Karité · Shea */
+export declare const Karite: Afroicon;
+/** Canne à sucre · Sugarcane */
+export declare const Cannesucre: Afroicon;
+/** Figue de Barbarie · Prickly pear */
+export declare const Figuebarbarie: Afroicon;
+/** Citron vert · Lime */
+export declare const Citronvert: Afroicon;
+/** Pomme de cajou · Cashew apple */
+export declare const Pommecajou: Afroicon;
+/** Jacquier · Jackfruit */
+export declare const Jacquier: Afroicon;
+/** Litchi · Lychee */
+export declare const Litchi: Afroicon;
+/** Patate douce · Sweet potato */
+export declare const Patatedouce: Afroicon;
+/** Macabo · Cocoyam */
+export declare const Macabo: Afroicon;
+/** Aubergine africaine · Garden egg */
+export declare const Aubergineafricaine: Afroicon;
+/** Dattes · Dates */
+export declare const Dattes: Afroicon;
+/** Pastèque · Watermelon */
+export declare const Pasteque: Afroicon;
+/** Masque éléphant bamiléké · Bamileke elephant mask */
+export declare const Masqueelephantbamileke: Afroicon;
+/** Tête d'Ife · Ife head */
+export declare const Teteife: Afroicon;
+/** Bouclier massaï · Maasai shield */
+export declare const Boucliermassai: Afroicon;
+/** Bouclier zoulou · Zulu shield */
+export declare const Bouclierzoulou: Afroicon;
+/** Valiha · Valiha */
+export declare const Valiha: Afroicon;
+/** Fantasia · Fantasia */
+export declare const Fantasia: Afroicon;
+/** Cavalier du durbar · Durbar horseman */
+export declare const Cavalierdurbar: Afroicon;
+/** Mascarade egungun · Egungun masquerade */
+export declare const Mascaradeegungun: Afroicon;
+/** Chapeau basotho · Basotho hat */
+export declare const Chapeaubasotho: Afroicon;
+/** Kanga · Kanga */
+export declare const Tissukanga: Afroicon;
+/** Cotillon · Party popper */
+export declare const Cotillon: Afroicon;
+/** Cadeau · Wrapped gift */
+export declare const Cadeau: Afroicon;
+/** Téléphone portable · Mobile phone */
+export declare const Telephoneportable: Afroicon;
+/** Sac d'argent · Money bag */
+export declare const Sacdargent: Afroicon;
+/** Tambour et baguettes · Drum with sticks */
+export declare const Tambouretbaguettes: Afroicon;
+/** Note de musique · Musical note */
+export declare const Notedemusique: Afroicon;
+/** Maison · House */
+export declare const Maison: Afroicon;
+/** Voiture · Car */
+export declare const Voiture: Afroicon;
+/** Avion · Airplane */
+export declare const Avion: Afroicon;
+/** Punaise · Round pushpin */
+export declare const Punaiseronde: Afroicon;
+/** Ampoule · Light bulb */
+export declare const Ampoule: Afroicon;
+/** Toque de diplômé · Graduation cap */
+export declare const Toquedediplome: Afroicon;
+/** Réveil · Alarm clock */
+export declare const Reveil: Afroicon;
+/** Chaise en plastique · Plastic chair */
+export declare const Chaiseplastique: Afroicon;
+/** Bassine émaillée · Enamel basin */
+export declare const Bassineemaillee: Afroicon;
+/** Fourneau à charbon · Charcoal stove */
+export declare const Fourneaucharbon: Afroicon;
+/** Balai de nervures · Palm-rib broom */
+export declare const Balaidenervures: Afroicon;
+/** Charrette à âne · Donkey cart */
+export declare const Charretteaane: Afroicon;
+/** Groupe électrogène · Generator */
+export declare const Groupeelectrogene: Afroicon;
+/** Seau et gobelet · Bucket and cup */
+export declare const Seauetgobelet: Afroicon;
+/** Pagnes pliés · Folded wax cloths */
+export declare const Pagneplie: Afroicon;
+/** Léopard · Leopard */
+export declare const Leopard: Afroicon;
+/** Flamant rose · Flamingo */
+export declare const Flamantrose: Afroicon;
+/** Colobe guéréza · Colobus monkey */
+export declare const Singe: Afroicon;
+/** Phacochère · Warthog */
+export declare const Phacochere: Afroicon;
+/** Buffle d'Afrique · African buffalo */
+export declare const Buffle: Afroicon;
+/** Vache Ankole · Ankole cattle */
+export declare const Vacheankole: Afroicon;
+/** Âne · Donkey */
+export declare const Ane: Afroicon;
+/** Hyène tachetée · Spotted hyena */
+export declare const Hyene: Afroicon;
+/** Suricate · Meerkat */
+export declare const Suricate: Afroicon;
+/** Pintade · Guineafowl */
+export declare const Pintade: Afroicon;
+/** Impala · Impala */
+export declare const Impala: Afroicon;
+/** Krar · Krar */
+export declare const Krar: Afroicon;
+/** Masenqo · Masenqo */
+export declare const Masenqo: Afroicon;
+/** Begena · Begena */
+export declare const Begena: Afroicon;
+/** Oud · Oud */
+export declare const Oud: Afroicon;
+/** Guembri · Guembri */
+export declare const Guembri: Afroicon;
+/** Imzad · Imzad */
+export declare const Imzad: Afroicon;
+/** Goje · Goje */
+export declare const Goje: Afroicon;
+/** Akonting · Akonting */
+export declare const Akonting: Afroicon;
+/** Mvet · Mvet */
+export declare const Mvet: Afroicon;
+/** Sabar · Sabar */
+export declare const Sabar: Afroicon;
+/** Dunun · Dunun */
+export declare const Dunun: Afroicon;
+/** Udu · Udu */
+export declare const Udu: Afroicon;
+/** Ngoma · Ngoma */
+export declare const Ngoma: Afroicon;
+/** Atumpan · Atumpan */
+export declare const Atumpan: Afroicon;
+/** Bendir · Bendir */
+export declare const Bendir: Afroicon;
+/** Darbouka · Darbuka */
+export declare const Darbouka: Afroicon;
+/** Qraqeb · Qraqeb */
+export declare const Qraqeb: Afroicon;
+/** Kayamba · Kayamba */
+export declare const Kayamba: Afroicon;
+/** Kakaki · Kakaki */
+export declare const Kakaki: Afroicon;
+/** Algaita · Algaita */
+export declare const Algaita: Afroicon;
+/** Timbila · Timbila */
+export declare const Timbila: Afroicon;
 /** Drapeau de l'Algérie · Flag of Algeria */
 export declare const DrapeauAlgerie: Afroicon;
 /** Drapeau de l'Angola · Flag of Angola */
@@ -349,7 +753,7 @@ export declare const DrapeauTchad: Afroicon;
 export declare const DrapeauComores: Afroicon;
 /** Drapeau du Congo · Flag of the Republic of the Congo */
 export declare const DrapeauCongo: Afroicon;
-/** Drapeau de la RD Congo · Flag of the DR Congo */
+/** Drapeau de la RD Congo · Flag of the Democratic Republic of the Congo */
 export declare const DrapeauRdCongo: Afroicon;
 /** Drapeau de la Côte d'Ivoire · Flag of Côte d'Ivoire */
 export declare const DrapeauCoteDIvoire: Afroicon;
@@ -621,6 +1025,122 @@ export declare const EmojiPyramidesGizeh: Afroicon;
 export declare const EmojiTenteTouaregue: Afroicon;
 /** Rondavel basotho · Basotho rondavel */
 export declare const EmojiRondavelBasotho: Afroicon;
+/** Hippopotame · Hippopotamus */
+export declare const EmojiHippopotame: Afroicon;
+/** Rhinocéros · Rhinoceros */
+export declare const EmojiRhinoceros: Afroicon;
+/** Crocodile du Nil · Nile crocodile */
+export declare const EmojiCrocodile: Afroicon;
+/** Léopard · Leopard */
+export declare const EmojiLeopard: Afroicon;
+/** Dromadaire · Dromedary camel */
+export declare const EmojiDromadaire: Afroicon;
+/** Flamant rose · Flamingo */
+export declare const EmojiFlamantRose: Afroicon;
+/** Perroquet gris du Gabon · African grey parrot */
+export declare const EmojiPerroquetGris: Afroicon;
+/** Colobe guéréza · Colobus monkey */
+export declare const EmojiSinge: Afroicon;
+/** Phacochère · Warthog */
+export declare const EmojiPhacochere: Afroicon;
+/** Buffle d'Afrique · African buffalo */
+export declare const EmojiBuffle: Afroicon;
+/** Vache Ankole · Ankole cattle */
+export declare const EmojiVacheAnkole: Afroicon;
+/** Chèvre naine · West African dwarf goat */
+export declare const EmojiChevre: Afroicon;
+/** Âne · Donkey */
+export declare const EmojiAne: Afroicon;
+/** Hyène tachetée · Spotted hyena */
+export declare const EmojiHyene: Afroicon;
+/** Suricate · Meerkat */
+export declare const EmojiSuricate: Afroicon;
+/** Pintade · Guineafowl */
+export declare const EmojiPintade: Afroicon;
+/** Impala · Impala */
+export declare const EmojiImpala: Afroicon;
+/** Autruche · Ostrich */
+export declare const EmojiAutruche: Afroicon;
+/** Jus de gingembre · Ginger juice */
+export declare const EmojiJusDeGingembre: Afroicon;
+/** Bouye · Baobab juice */
+export declare const EmojiBouye: Afroicon;
+/** Dolo · Dolo millet beer */
+export declare const EmojiDolo: Afroicon;
+/** Tej · Tej honey wine */
+export declare const EmojiTej: Afroicon;
+/** Kounou · Kunu */
+export declare const EmojiKunu: Afroicon;
+/** Ataya · Ataya tea */
+export declare const EmojiAtaya: Afroicon;
+/** Rooibos · Rooibos tea */
+export declare const EmojiRooibos: Afroicon;
+/** Umqombothi · Umqombothi */
+export declare const EmojiUmqombothi: Afroicon;
+/** Chapman · Chapman */
+export declare const EmojiChapman: Afroicon;
+/** Jus de tamarin · Tamarind juice */
+export declare const EmojiJusDeTamarin: Afroicon;
+/** Kinkéliba · Kinkeliba tea */
+export declare const EmojiKinkeliba: Afroicon;
+/** Eau en sachet · Sachet water */
+export declare const EmojiEauEnSachet: Afroicon;
+/** Jus de canne · Sugarcane juice */
+export declare const EmojiJusDeCanne: Afroicon;
+/** Fura da nono · Fura da nono */
+export declare const EmojiFuraDaNono: Afroicon;
+/** Jus de corossol · Soursop juice */
+export declare const EmojiJusDeCorossol: Afroicon;
+/** Bière de banane · Banana beer */
+export declare const EmojiBiereDeBanane: Afroicon;
+/** Safou · African pear (safou) */
+export declare const EmojiSafou: Afroicon;
+/** Corossol · Soursop */
+export declare const EmojiCorossol: Afroicon;
+/** Papaye · Papaya */
+export declare const EmojiPapaye: Afroicon;
+/** Goyave · Guava */
+export declare const EmojiGoyave: Afroicon;
+/** Fruit de la passion · Passion fruit */
+export declare const EmojiFruitDeLaPassion: Afroicon;
+/** Pain de singe · Baobab fruit */
+export declare const EmojiPainDeSinge: Afroicon;
+/** Tamarin · Tamarind */
+export declare const EmojiTamarin: Afroicon;
+/** Néré · African locust bean */
+export declare const EmojiNere: Afroicon;
+/** Karité · Shea */
+export declare const EmojiKarite: Afroicon;
+/** Régime de noix de palme · Palm nut bunch */
+export declare const EmojiRegimeNoixDePalme: Afroicon;
+/** Canne à sucre · Sugarcane */
+export declare const EmojiCanneASucre: Afroicon;
+/** Figue de Barbarie · Prickly pear */
+export declare const EmojiFigueDeBarbarie: Afroicon;
+/** Citron vert · Lime */
+export declare const EmojiCitronVert: Afroicon;
+/** Pomme de cajou · Cashew apple */
+export declare const EmojiPommeDeCajou: Afroicon;
+/** Jacquier · Jackfruit */
+export declare const EmojiJacquier: Afroicon;
+/** Litchi · Lychee */
+export declare const EmojiLitchi: Afroicon;
+/** Plantain · Plantain */
+export declare const EmojiPlantain: Afroicon;
+/** Igname · Yam */
+export declare const EmojiIgname: Afroicon;
+/** Manioc · Cassava */
+export declare const EmojiManioc: Afroicon;
+/** Patate douce · Sweet potato */
+export declare const EmojiPatateDouce: Afroicon;
+/** Macabo · Cocoyam */
+export declare const EmojiMacabo: Afroicon;
+/** Arachides en coque · Peanuts in shell */
+export declare const EmojiArachidesEnCoque: Afroicon;
+/** Aubergine africaine · Garden egg */
+export declare const EmojiAubergineAfricaine: Afroicon;
+/** Gombo · Okra */
+export declare const EmojiGombo: Afroicon;
 /** Pouce levé · Thumbs up */
 export declare const EmojiPouceLeve: Afroicon;
 /** Pouce baissé · Thumbs down */
@@ -677,6 +1197,186 @@ export declare const EmojiMarieeTraditionnelle: Afroicon;
 export declare const EmojiChefTraditionnel: Afroicon;
 /** Griot avec sa kora · Griot with a kora */
 export declare const EmojiGriotKora: Afroicon;
+/** Ngoni · Ngoni */
+export declare const EmojiNgoni: Afroicon;
+/** Krar · Krar */
+export declare const EmojiKrar: Afroicon;
+/** Masenqo · Masenqo */
+export declare const EmojiMasenqo: Afroicon;
+/** Begena · Begena */
+export declare const EmojiBegena: Afroicon;
+/** Oud · Oud */
+export declare const EmojiOud: Afroicon;
+/** Guembri · Guembri */
+export declare const EmojiGuembri: Afroicon;
+/** Imzad · Imzad */
+export declare const EmojiImzad: Afroicon;
+/** Goje · Goje */
+export declare const EmojiGoje: Afroicon;
+/** Akonting · Akonting */
+export declare const EmojiAkonting: Afroicon;
+/** Mvet · Mvet */
+export declare const EmojiMvet: Afroicon;
+/** Sabar · Sabar */
+export declare const EmojiSabar: Afroicon;
+/** Dunun · Dunun */
+export declare const EmojiDunun: Afroicon;
+/** Udu · Udu */
+export declare const EmojiUdu: Afroicon;
+/** Ngoma · Ngoma */
+export declare const EmojiNgoma: Afroicon;
+/** Atumpan · Atumpan */
+export declare const EmojiAtumpan: Afroicon;
+/** Bendir · Bendir */
+export declare const EmojiBendir: Afroicon;
+/** Darbouka · Darbuka */
+export declare const EmojiDarbouka: Afroicon;
+/** Gankogui · Gankogui */
+export declare const EmojiGankogui: Afroicon;
+/** Qraqeb · Qraqeb */
+export declare const EmojiQraqeb: Afroicon;
+/** Shékéré · Shekere */
+export declare const EmojiShekere: Afroicon;
+/** Kayamba · Kayamba */
+export declare const EmojiKayamba: Afroicon;
+/** Kakaki · Kakaki */
+export declare const EmojiKakaki: Afroicon;
+/** Algaita · Algaita */
+export declare const EmojiAlgaita: Afroicon;
+/** Timbila · Timbila */
+export declare const EmojiTimbila: Afroicon;
+/** Chutes Victoria · Victoria Falls */
+export declare const EmojiChutesVictoria: Afroicon;
+/** Montagne de la Table · Table Mountain */
+export declare const EmojiMontagneDeLaTable: Afroicon;
+/** Dunes du Sahara · Sahara dunes */
+export declare const EmojiDunesSahara: Afroicon;
+/** Oasis · Oasis */
+export declare const EmojiOasis: Afroicon;
+/** Mangrove · Mangrove */
+export declare const EmojiMangrove: Afroicon;
+/** Forêt du Congo · Congo rainforest */
+export declare const EmojiForetCongo: Afroicon;
+/** Savane et acacia · Savanna with acacia */
+export declare const EmojiSavaneAcacia: Afroicon;
+/** Fromager · Kapok tree */
+export declare const EmojiFromager: Afroicon;
+/** Lac Victoria · Lake Victoria */
+export declare const EmojiLacVictoria: Afroicon;
+/** Gye Nyame · Gye Nyame */
+export declare const EmojiGyeNyame: Afroicon;
+/** Dwennimmen · Dwennimmen */
+export declare const EmojiDwennimmen: Afroicon;
+/** Nyame Dua · Nyame Dua */
+export declare const EmojiNyameDua: Afroicon;
+/** Ânkh · Ankh */
+export declare const EmojiAnkh: Afroicon;
+/** Œil Oudjat · Eye of Horus */
+export declare const EmojiOeilOudjat: Afroicon;
+/** Croix copte éthiopienne · Ethiopian Coptic cross */
+export declare const EmojiCroixCopte: Afroicon;
+/** Main de Fatma (khamsa) · Hamsa hand (khamsa) */
+export declare const EmojiMainKhamsa: Afroicon;
+/** Ugali et sukuma wiki · Ugali and sukuma wiki */
+export declare const EmojiUgaliSukuma: Afroicon;
+/** Nyama choma · Nyama choma */
+export declare const EmojiNyamaChoma: Afroicon;
+/** Pilau · Pilau rice */
+export declare const EmojiPilau: Afroicon;
+/** Chapati · Chapati */
+export declare const EmojiChapati: Afroicon;
+/** Mandazi · Mandazi */
+export declare const EmojiMandazi: Afroicon;
+/** Sambusa · Sambusa */
+export declare const EmojiSambusa: Afroicon;
+/** Matoke · Matoke */
+export declare const EmojiMatoke: Afroicon;
+/** Rolex · Rolex */
+export declare const EmojiRolex: Afroicon;
+/** Doro wat · Doro wat */
+export declare const EmojiDoroWat: Afroicon;
+/** Couscous · Couscous */
+export declare const EmojiCouscous: Afroicon;
+/** Tajine · Tagine */
+export declare const EmojiTajinePlat: Afroicon;
+/** Harira · Harira */
+export declare const EmojiHarira: Afroicon;
+/** Msemen · Msemen */
+export declare const EmojiMsemen: Afroicon;
+/** Pastilla · Pastilla */
+export declare const EmojiPastilla: Afroicon;
+/** Thé à la menthe · Mint tea */
+export declare const EmojiTheALaMenthe: Afroicon;
+/** Koshari · Koshari */
+export declare const EmojiKoshari: Afroicon;
+/** Ful medames · Ful medames */
+export declare const EmojiFulMedames: Afroicon;
+/** Brik · Brik */
+export declare const EmojiBrik: Afroicon;
+/** Dattes · Dates */
+export declare const EmojiDattes: Afroicon;
+/** Braai et boerewors · Braai and boerewors */
+export declare const EmojiBraaiBoerewors: Afroicon;
+/** Bobotie · Bobotie */
+export declare const EmojiBobotie: Afroicon;
+/** Bunny chow · Bunny chow */
+export declare const EmojiBunnyChow: Afroicon;
+/** Pap et chakalaka · Pap and chakalaka */
+export declare const EmojiPapChakalaka: Afroicon;
+/** Poulet peri-peri · Peri-peri chicken */
+export declare const EmojiPouletPeriPeri: Afroicon;
+/** Romazava · Romazava */
+export declare const EmojiRomazava: Afroicon;
+/** Mofo gasy · Mofo gasy */
+export declare const EmojiMofoGasy: Afroicon;
+/** Thiéboudienne · Thieboudienne */
+export declare const EmojiThieboudienne: Afroicon;
+/** Yassa poulet · Chicken yassa */
+export declare const EmojiYassaPoulet: Afroicon;
+/** Poulet DG · Poulet DG */
+export declare const EmojiPouletDg: Afroicon;
+/** Soupe egusi · Egusi soup */
+export declare const EmojiSoupeEgusi: Afroicon;
+/** Eba · Eba */
+export declare const EmojiEba: Afroicon;
+/** Kedjenou · Kedjenou */
+export declare const EmojiKedjenou: Afroicon;
+/** Waakye · Waakye */
+export declare const EmojiWaakye: Afroicon;
+/** Banku et tilapia · Banku and tilapia */
+export declare const EmojiBankuTilapia: Afroicon;
+/** Akara · Akara */
+export declare const EmojiAkara: Afroicon;
+/** Moin-moin · Moin moin */
+export declare const EmojiMoinMoin: Afroicon;
+/** Fataya · Fataya */
+export declare const EmojiFataya: Afroicon;
+/** Dibi · Dibi */
+export declare const EmojiDibi: Afroicon;
+/** Tô sauce gombo · Tô with okra sauce */
+export declare const EmojiToSauceGombo: Afroicon;
+/** Riz gras · Riz gras */
+export declare const EmojiRizGras: Afroicon;
+/** Poisson braisé · Braised fish */
+export declare const EmojiPoissonBraise: Afroicon;
+/** Koki · Koki */
+export declare const EmojiKoki: Afroicon;
+/** Pondu · Pondu */
+export declare const EmojiPondu: Afroicon;
+/** Poulet moambé · Moambe chicken */
+export declare const EmojiPouletMoambe: Afroicon;
+/** Chikwangue · Chikwangue */
+export declare const EmojiChikwangue: Afroicon;
+/** Mbongo tchobi · Mbongo tchobi */
+export declare const EmojiMbongoTchobi: Afroicon;
+/** Maïs grillé · Grilled corn */
+export declare const EmojiMaisGrille: Afroicon;
+/** Boli · Boli */
+export declare const EmojiBoli: Afroicon;
+/** Dégué · Dégué */
+export declare const EmojiDegue: Afroicon;
+/** Café Touba · Touba coffee */
+export declare const EmojiCafeTouba: Afroicon;
 /** Arbre feuillu · Deciduous tree */
 export declare const EmojiArbreFeuillu: Afroicon;
 /** Palmier · Palm tree */
@@ -753,6 +1453,42 @@ export declare const EmojiAmpoule: Afroicon;
 export declare const EmojiToqueDeDiplome: Afroicon;
 /** Réveil · Alarm clock */
 export declare const EmojiReveil: Afroicon;
+/** Chaise en plastique · Plastic chair */
+export declare const EmojiChaisePlastique: Afroicon;
+/** Bidon jaune · Yellow jerrycan */
+export declare const EmojiBidonJaune: Afroicon;
+/** Bassine émaillée · Enamel basin */
+export declare const EmojiBassineEmaillee: Afroicon;
+/** Mortier et pilon · Mortar and pestle */
+export declare const EmojiMortierPilon: Afroicon;
+/** Fourneau à charbon · Charcoal stove */
+export declare const EmojiFourneauCharbon: Afroicon;
+/** Lampe-tempête · Hurricane lantern */
+export declare const EmojiLampeTempete: Afroicon;
+/** Radio transistor · Transistor radio */
+export declare const EmojiRadioTransistor: Afroicon;
+/** Balai de nervures · Palm-rib broom */
+export declare const EmojiBalaiDeNervures: Afroicon;
+/** Panier tressé · Woven basket */
+export declare const EmojiPanierTresse: Afroicon;
+/** Tuk-tuk · Tuk-tuk */
+export declare const EmojiTukTuk: Afroicon;
+/** Matatu · Matatu */
+export declare const EmojiMatatu: Afroicon;
+/** Charrette à âne · Donkey cart */
+export declare const EmojiCharretteAAne: Afroicon;
+/** Pousse-pousse · Handcart */
+export declare const EmojiPoussePousse: Afroicon;
+/** Étal de marché · Market stall */
+export declare const EmojiEtalDeMarche: Afroicon;
+/** Groupe électrogène · Generator */
+export declare const EmojiGroupeElectrogene: Afroicon;
+/** Seau et gobelet · Bucket and cup */
+export declare const EmojiSeauEtGobelet: Afroicon;
+/** Pagnes pliés · Folded wax cloths */
+export declare const EmojiPagnePlie: Afroicon;
+/** Machine à coudre · Sewing machine */
+export declare const EmojiMachineACoudre: Afroicon;
 /** Visage souriant · Grinning face */
 export declare const EmojiVisageSouriant: Afroicon;
 /** Visage souriant aux yeux rieurs · Grinning face with smiling eyes */

@@ -7,14 +7,14 @@ import COMPAT from "../../../../src/compat.json";
 export const COMPAT_NAMES = COMPAT as Record<string, { mui: string[]; antd: string[] }>;
 
 /** Une icône du site : icône Afroicons, ou icône d'interface (paquet afroicons-ui, nom Lucide dans `lucide`). */
-export type Icon = Omit<AfroiconData, "id" | "cat" | "region" | "fill" | "variantOf" | "group"> & { group?: string; id: string; cat: string; region: string; fill?: string; variantOf?: string; lucide?: string; family?: string; _hay?: string; _n?: string };
+export type Icon = Omit<AfroiconData, "id" | "cat" | "region" | "fill" | "variantOf" | "group" | "icon" | "emoji"> & { group?: string; icon?: string; emoji?: string; id: string; cat: string; region: string; fill?: string; variantOf?: string; lucide?: string; family?: string; _hay?: string; _n?: string };
 /** Les drapeaux gardent leurs couleurs officielles : ni couleur, ni style, ni épaisseur ne s'y appliquent. */
 export const isFlag = (i: Icon) => i.cat === "drapeaux";
 /** Les emojis aussi sont en couleur ; ceux qui ont une teinte de peau (tone) existent dans les 5 teintes Unicode. */
 export const isEmoji = (i: Icon) => i.cat === "emojis";
 export const isColor = (i: Icon) => isFlag(i) || isEmoji(i);
 export type Tone = "light" | "medium-light" | "medium" | "medium-dark" | "dark";
-export const TONES = TONES_DATA.tones as Record<Tone, [string, string]>;
+export const TONES = TONES_DATA.tones as Record<Tone, [string, string, string]>;
 export const DEFAULT_TONE = TONES_DATA.def as Tone;
 export const TONE_LIST: { id: Tone; fr: string; en: string; mod: string }[] = [
   { id: "light", fr: "Claire", en: "Light", mod: "\u{1F3FB}" },
@@ -26,8 +26,9 @@ export const TONE_LIST: { id: Tone; fr: string; en: string; mod: string }[] = [
 /** Groupes d'emojis : les sous-filtres de la collection « Emojis ». */
 export const EGROUPS = [
   { id: "visages", fr: "Visages", en: "Faces" }, { id: "mains", fr: "Mains", en: "Hands" }, { id: "personnes", fr: "Personnes", en: "People" },
-  { id: "coeurs", fr: "Cœurs et symboles", en: "Hearts & symbols" }, { id: "nature", fr: "Nature", en: "Nature" },
-  { id: "nourriture", fr: "Nourriture", en: "Food" }, { id: "objets", fr: "Objets et cultures", en: "Objects & cultures" },
+  { id: "coeurs", fr: "Cœurs et symboles", en: "Hearts & symbols" }, { id: "animaux", fr: "Animaux", en: "Animals" }, { id: "nature", fr: "Nature", en: "Nature" },
+  { id: "fruits", fr: "Fruits et légumes", en: "Fruits & vegetables" },
+  { id: "nourriture", fr: "Nourriture", en: "Food" }, { id: "boissons", fr: "Boissons", en: "Drinks" }, { id: "objets", fr: "Objets et cultures", en: "Objects & cultures" },
   { id: "lieux", fr: "Villages et lieux", en: "Villages & places" },
 ] as const;
 /** Codes Unicode d'un emoji : « U+1F44D ». */
@@ -39,7 +40,7 @@ export type CityId = keyof typeof CITIES;
 
 /** Version affichée (0.4 pour 0.4.0), lue dans package.json au build. */
 export const VERSION = __AFROICONS_VERSION__.split(".").slice(0, 2).join(".");
-const ORDER = ["nature", "faune", "musique", "symboles", "cuisine", "vie", "architecture"];
+const ORDER = ["nature", "faune", "musique", "symboles", "cuisine", "vie", "architecture", "personnes"];
 /** Les icônes culturelles (paquets afroicons et afroicons-react). */
 export const AFRO: Icon[] = (AFRO_DATA as Icon[]).filter((i) => !isColor(i)).sort((a, b) => ORDER.indexOf(a.cat) - ORDER.indexOf(b.cat));
 /** Les drapeaux des 54 pays, par ordre alphabétique (même paquets ; leur version remplie est la même). */
@@ -59,7 +60,7 @@ export const UI: Icon[] = (UI_ICONS as { id: string; fr: string; en: string; fam
   tags: [...new Set([u.id, u.family, ...(u.afro ? ["afrique", ...(u.afro.toLowerCase().match(/[a-zà-ÿ]{4,}/g) ?? [])] : [])])],
 }));
 /** Les emojis : d'abord les africains originaux, puis les Unicode, par groupe. */
-const GORDER = ["visages", "mains", "personnes", "coeurs", "nature", "nourriture", "objets", "lieux"];
+const GORDER = ["visages", "mains", "personnes", "coeurs", "animaux", "nature", "fruits", "nourriture", "boissons", "objets", "lieux"];
 export const EMOJIS: Icon[] = (AFRO_DATA as Icon[]).filter(isEmoji).map((i) => ({ ...i, fill: i.body })).sort((a, b) => GORDER.indexOf(a.group!) - GORDER.indexOf(b.group!));
 export const ICONS: Icon[] = [...AFRO, ...FLAGS, ...EMOJIS, ...UI];
 export type Collection = "afro" | "flags" | "emojis" | "ui";
@@ -76,6 +77,7 @@ export const CATS = [
   { id: "cuisine", fr: "Cuisine", en: "Food", ic: "marmite" },
   { id: "vie", fr: "Vie quotidienne", en: "Daily life", ic: "mototaxi" },
   { id: "architecture", fr: "Architecture", en: "Architecture", ic: "case" },
+  { id: "personnes", fr: "Peuples et tenues", en: "Peoples & attire", ic: "tresses" },
   { id: "interface", fr: "Interface", en: "Interface", ic: "ui-layout-dashboard" },
   { id: "drapeaux", fr: "Drapeaux", en: "Flags", ic: "drapeau-cameroun" },
   { id: "emojis", fr: "Emojis", en: "Emojis", ic: "drapeau-cameroun" },

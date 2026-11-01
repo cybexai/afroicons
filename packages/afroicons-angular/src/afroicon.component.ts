@@ -66,8 +66,8 @@ export class AfroiconComponent implements OnChanges {
       this.r.appendChild(svg, t);
     } else this.r.setAttribute(svg, "aria-hidden", "true");
     const t = icon.tone && this.tone && this.tone !== "medium-dark" ? AFROICON_TONES[this.tone] : undefined;
-    const [d0, d1] = AFROICON_TONES["medium-dark"];
-    this.skin = t ? { [d0]: t[0], [d1]: t[1] } : undefined;
+    const [d0, d1, d2] = AFROICON_TONES["medium-dark"];
+    this.skin = t ? { [d0]: t[0], [d1]: t[1], [d2]: t[2] } : undefined;
     const nodes = this.variant === "fill" && icon.fill ? icon.fill : icon.nodes;
     for (const n of nodes) this.r.appendChild(svg, this.build(n));
     this.r.appendChild(host, svg);

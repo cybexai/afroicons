@@ -1,7 +1,7 @@
 {
   "name": "afroicons-react",
   "version": "0.6.1",
-  "description": "Les 162 icônes Afroicons et les 54 drapeaux africains en composants React, au trait et remplies.",
+  "description": "Les 364 icônes Afroicons, les 54 drapeaux africains et 372 emojis en composants React.",
   "type": "module",
   "main": "./index.js",
   "types": "./index.d.ts",

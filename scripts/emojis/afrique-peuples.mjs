@@ -68,9 +68,13 @@ const people = [
       collar: ellipse(12, 17.6, 7.6, 4.5, C.rouge, { w: 0.9 }) + ellipse(12, 17.4, 6.2, 3.6, C.white, { w: 0.7 }) +
         ellipse(12, 17.2, 4.9, 2.8, C.bleu, { w: 0.7 }) + ellipse(12, 17, 3.7, 2, C.vert, { w: 0.7 }) +
         WAX(arcPts(12, 17.6, 6.9, 4.05, 15, 165, 9), C.white, 0.35) + WAX(arcPts(12, 17.2, 4.3, 2.4, 25, 155, 5), C.ocreLight, 0.3),
-      top: path("M7.5 9.4Q7.2 4.7 12 4.7Q16.8 4.7 16.5 9.4Q14.8 6.8 12 6.8Q9.2 6.8 7.5 9.4Z", C.noir) +
-        beads([[7.3, 11.9], [7.2, 13.1], [7.3, 14.3]], [C.rouge, C.white, C.bleu], 0.5) +
-        beads([[16.7, 11.9], [16.8, 13.1], [16.7, 14.3]], [C.rouge, C.white, C.bleu], 0.5),
+      // tête rasée (ombre de cheveux très courts), bandeau perlé sur le front, pendants perlés aux tempes, grands disques d'oreilles
+      top: path("M7.5 8.4Q7.6 4.8 12 4.8Q16.4 4.8 16.5 8.4Q14.6 6.4 12 6.4Q9.4 6.4 7.5 8.4Z", "rgba(31,26,21,0.55)", false) +
+        path("M7.4 8.6Q12 5.8 16.6 8.6L16.5 9.8Q12 7.1 7.5 9.8Z", C.rouge, { w: 0.7 }) +
+        WAX(quadPts([8.2, 8.7], [12, 6.4], [15.8, 8.7], 7, 0.05), C.white, 0.3) +
+        beads([[7.8, 10.6], [7.8, 11.7]], [C.bleu, C.white], 0.42) + beads([[16.2, 10.6], [16.2, 11.7]], [C.bleu, C.white], 0.42) +
+        circle(7.1, 13.6, 1.35, C.white, { w: 0.7 }) + circle(7.1, 13.6, 0.65, C.rouge, false) +
+        circle(16.9, 13.6, 1.35, C.white, { w: 0.7 }) + circle(16.9, 13.6, 0.65, C.rouge, false),
     }),
   },
   {
@@ -207,11 +211,14 @@ const people = [
     tags: ["swahili", "kanzu", "kofia", "kenya", "tanzanie", "zanzibar", "lamu", "homme"],
     body: bust({
       cloth: C.white,
-      collar: bandV(3.5, 8.8, C.indigo) + bandV(15.2, 20.5, C.indigo) + line("M8.8 17.4V23M15.2 17.4V23", O, 0.8) + outline +
-        line("M10.4 16.9Q12 18.2 13.6 16.9", C.ocre, 0.7) + line("M12 17.8V20.6", C.marron, 0.6) + ellipse(12, 21.1, 0.45, 0.65, C.marron, { w: 0.5 }),
-      top: path("M7.4 8.6V4.4Q7.4 3.4 8.4 3.4H15.6Q16.6 3.4 16.6 4.4V8.6Q12 7.6 7.4 8.6Z", C.white) +
-        line("M7.8 6.8L8.9 5.2L10 6.8L11.1 5.2L12.2 6.8L13.3 5.2L14.4 6.8L15.5 5.2L16.4 6.4", C.vert, 0.6) +
-        WAX([[8.9, 4.3], [11.1, 4.3], [13.3, 4.3], [15.5, 4.3]], C.terre, 0.3) + line("M7.6 7.8Q12 7 16.4 7.8", C.ocre, 0.5),
+      // kanzu blanc entier : col brodé, plastron brodé, pompon (kikwasa) ; kofia plate brodée
+      collar: line("M10.2 16.9Q12 18.4 13.8 16.9", C.ocre, 0.8) + line("M12 18.2V23", C.ocre, 0.6) +
+        WAX([[11.4, 19.2], [12.6, 19.2], [11.4, 20.6], [12.6, 20.6], [11.4, 22], [12.6, 22]], C.ocre, 0.25) +
+        line("M13.2 17.8L14.2 20.6", C.marron, 0.6) + ellipse(14.4, 21.2, 0.45, 0.7, C.marron, { w: 0.5 }) +
+        line("M6.2 19.4Q7.2 21 6.8 23M17.8 19.4Q16.8 21 17.2 23", C.grisLight, 0.6),
+      top: path("M7.4 8.6V6Q7.4 5 8.4 5H15.6Q16.6 5 16.6 6V8.6Q12 7.6 7.4 8.6Z", C.white) +
+        line("M7.9 7.6L8.8 6.4L9.7 7.6L10.6 6.4L11.5 7.6L12.4 6.4L13.3 7.6L14.2 6.4L15.1 7.6L16 6.4", C.vert, 0.5) +
+        WAX([[8.8, 5.7], [10.6, 5.7], [12.4, 5.7], [14.2, 5.7], [16, 5.7]], C.terre, 0.25) + line("M7.6 8Q12 7.2 16.4 8", C.ocre, 0.5),
     }),
   },
   {
@@ -296,17 +303,29 @@ const people = [
   {
     slug: "danseur-elephant-bamileke", fr: "Danseur au masque éléphant bamiléké", en: "Bamileke elephant mask dancer",
     tags: ["bamiléké", "bamileke", "cameroun", "cameroon", "masque éléphant", "elephant mask", "perles", "beads", "kuosi", "ndop"],
+    // masque éléphant (kuosi) : cagoule entièrement perlée (fond bleu, triangles et losanges blancs, rouges, noirs),
+    // oreilles en larges rabats carrés ornés de disques perlés, longue bande perlée (la trompe) jusqu'à la poitrine,
+    // petits trous pour les yeux ; dessous, la tunique indigo en ndop.
     body: [
       path(CLOTH, C.indigo),
-      line("M5.2 19.8H18.8M4.2 21.8H19.8", C.white, 0.5), line("M7.4 17.4V23M16.6 17.4V23", C.white, 0.5), outline,
-      circle(4.9, 8.8, 3.5, C.noir), circle(4.9, 8.8, 2.2, C.rouge, { w: 0.6 }), circle(4.9, 8.8, 1, C.white, { w: 0.6 }),
-      circle(19.1, 8.8, 3.5, C.noir), circle(19.1, 8.8, 2.2, C.rouge, { w: 0.6 }), circle(19.1, 8.8, 1, C.white, { w: 0.6 }),
-      path("M7 13Q6.4 3 12 2.8Q17.6 3 17 13Q12 15.2 7 13Z", C.noir),
-      [9.2, 12, 14.8].map((x) => tri(x, 3.9, 0.9, C.bleu)).join("") + [10.6, 13.4].map((x) => tri(x, 3.9, 0.9, C.rouge, true)).join(""),
-      [8.2, 15.8].map((x) => tri(x, 10.8, 0.75, C.bleu) + tri(x, 6.4, 0.6, C.white)).join(""),
-      circle(9.6, 8.4, 1.4, C.white, { w: 0.7 }), circle(14.4, 8.4, 1.4, C.white, { w: 0.7 }), circle(9.6, 8.4, 0.6, C.noir, false), circle(14.4, 8.4, 0.6, C.noir, false),
-      path("M10.4 10.6H13.6L13.2 23H10.8Z", C.noir),
-      [11.6, 15, 18.4].map((y, i) => tri(12, y, 0.95, [C.rouge, C.bleu, C.rouge][i])).join("") + [13.4, 16.8, 20.2].map((y) => tri(12, y, 0.85, C.white, true)).join(""),
+      line("M5.2 19.8H18.8M4.2 21.8H19.8", C.white, 0.5), line("M7.4 17.4V23M16.6 17.4V23", C.white, 0.5),
+      WAX([[5.6, 20.8], [18.4, 20.8], [9, 18.6], [15, 18.6]], C.white, 0.35), outline,
+      ...[false, true].map((m) => {
+        const ear = path("M7.2 5.4H3.6Q2.4 5.4 2.4 6.6V13.6Q2.4 14.8 3.6 14.8H7.2Z", C.bleu) +
+          circle(4.8, 10.1, 1.75, C.rouge, { w: 0.6 }) + circle(4.8, 10.1, 0.85, C.white, { w: 0.5 }) + circle(4.8, 10.1, 0.3, C.noir, false) +
+          tri(4.8, 6.1, 0.6, C.white) + tri(4.8, 12.7, 0.6, C.white, true) + line("M2.9 6.6V13.6", C.white, 0.4);
+        return m ? g("matrix(-1 0 0 1 24 0)", ear) : ear;
+      }),
+      path("M6.8 14.6V6.6Q6.8 2.6 12 2.6Q17.2 2.6 17.2 6.6V14.6Q12 16 6.8 14.6Z", C.bleu),
+      [8.4, 10.2, 12, 13.8, 15.6].map((x, i) => tri(x, 3.9, 0.75, i % 2 ? C.rouge : C.white, i % 2 === 1)).join(""),
+      line("M7.4 5.9Q12 4.6 16.6 5.9", C.noir, 0.7),
+      [7.8, 16.2].map((x) => path(`M${x} 10.2L${r2(x + 0.9)} 11.6L${x} 13L${r2(x - 0.9)} 11.6Z`, C.white, { w: 0.5 }) + circle(x, 11.6, 0.3, C.rouge, false)).join(""),
+      ellipse(9.8, 8.3, 1.1, 0.8, C.rouge, { w: 0.6 }), ellipse(14.2, 8.3, 1.1, 0.8, C.rouge, { w: 0.6 }),
+      ellipse(9.8, 8.3, 0.6, 0.35, C.noir, false), ellipse(14.2, 8.3, 0.6, 0.35, C.noir, false),
+      WAX([[8.2, 7.2], [11.4, 7.2], [12.6, 7.2], [15.8, 7.2]], C.white, 0.28),
+      path("M10.3 9.6H13.7V22Q13.7 22.8 12.9 22.8H11.1Q10.3 22.8 10.3 22Z", C.bleu),
+      [11, 14.2, 17.4, 20.6].map((y, i) => path(`M12 ${y}L${13.1} ${r2(y + 1.2)}L12 ${r2(y + 2.4)}L${10.9} ${r2(y + 1.2)}Z`, [C.white, C.rouge, C.white, C.rouge][i], { w: 0.5 })).join(""),
+      [13.4, 16.6, 19.8].map((y) => line(`M10.6 ${y}H13.4`, C.noir, 0.6)).join(""),
     ].join(""),
   },
 ];

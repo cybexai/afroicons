@@ -1394,25 +1394,25 @@ export declare const SchoolRounded: AfroIcon;
 export declare const SchoolSharp: AfroIcon;
 /** Formation · Training (Afroicons GraduationCap) */
 export declare const SchoolTwoTone: AfroIcon;
-/** Activité · Business (Afroicons Briefcase) */
+/** Porte-documents · Briefcase (Afroicons Briefcase) */
 export declare const Work: AfroIcon;
-/** Activité · Business (Afroicons Briefcase) */
+/** Porte-documents · Briefcase (Afroicons Briefcase) */
 export declare const WorkOutlined: AfroIcon;
-/** Activité · Business (Afroicons Briefcase) */
+/** Porte-documents · Briefcase (Afroicons Briefcase) */
 export declare const WorkRounded: AfroIcon;
-/** Activité · Business (Afroicons Briefcase) */
+/** Porte-documents · Briefcase (Afroicons Briefcase) */
 export declare const WorkSharp: AfroIcon;
-/** Activité · Business (Afroicons Briefcase) */
+/** Porte-documents · Briefcase (Afroicons Briefcase) */
 export declare const WorkTwoTone: AfroIcon;
-/** Activité · Business (Afroicons Briefcase) */
+/** Porte-documents · Briefcase (Afroicons Briefcase) */
 export declare const BusinessCenter: AfroIcon;
-/** Activité · Business (Afroicons Briefcase) */
+/** Porte-documents · Briefcase (Afroicons Briefcase) */
 export declare const BusinessCenterOutlined: AfroIcon;
-/** Activité · Business (Afroicons Briefcase) */
+/** Porte-documents · Briefcase (Afroicons Briefcase) */
 export declare const BusinessCenterRounded: AfroIcon;
-/** Activité · Business (Afroicons Briefcase) */
+/** Porte-documents · Briefcase (Afroicons Briefcase) */
 export declare const BusinessCenterSharp: AfroIcon;
-/** Activité · Business (Afroicons Briefcase) */
+/** Porte-documents · Briefcase (Afroicons Briefcase) */
 export declare const BusinessCenterTwoTone: AfroIcon;
 /** Santé · Health (Afroicons Stethoscope) */
 export declare const MedicalServices: AfroIcon;
@@ -1954,25 +1954,25 @@ export declare const BakeryDiningRounded: AfroIcon;
 export declare const BakeryDiningSharp: AfroIcon;
 /** Pâtisserie · Bakery (Afroicons CakeSlice) */
 export declare const BakeryDiningTwoTone: AfroIcon;
-/** Agriculture · Farming (Afroicons Sprout) */
+/** Pousse · Sprout (Afroicons Sprout) */
 export declare const Grass: AfroIcon;
-/** Agriculture · Farming (Afroicons Sprout) */
+/** Pousse · Sprout (Afroicons Sprout) */
 export declare const GrassOutlined: AfroIcon;
-/** Agriculture · Farming (Afroicons Sprout) */
+/** Pousse · Sprout (Afroicons Sprout) */
 export declare const GrassRounded: AfroIcon;
-/** Agriculture · Farming (Afroicons Sprout) */
+/** Pousse · Sprout (Afroicons Sprout) */
 export declare const GrassSharp: AfroIcon;
-/** Agriculture · Farming (Afroicons Sprout) */
+/** Pousse · Sprout (Afroicons Sprout) */
 export declare const GrassTwoTone: AfroIcon;
-/** Agriculture · Farming (Afroicons Sprout) */
+/** Pousse · Sprout (Afroicons Sprout) */
 export declare const Spa: AfroIcon;
-/** Agriculture · Farming (Afroicons Sprout) */
+/** Pousse · Sprout (Afroicons Sprout) */
 export declare const SpaOutlined: AfroIcon;
-/** Agriculture · Farming (Afroicons Sprout) */
+/** Pousse · Sprout (Afroicons Sprout) */
 export declare const SpaRounded: AfroIcon;
-/** Agriculture · Farming (Afroicons Sprout) */
+/** Pousse · Sprout (Afroicons Sprout) */
 export declare const SpaSharp: AfroIcon;
-/** Agriculture · Farming (Afroicons Sprout) */
+/** Pousse · Sprout (Afroicons Sprout) */
 export declare const SpaTwoTone: AfroIcon;
 /** Paramètres · Settings (Afroicons Settings) */
 export declare const Settings: AfroIcon;
@@ -2134,15 +2134,15 @@ export declare const GppBadRounded: AfroIcon;
 export declare const GppBadSharp: AfroIcon;
 /** Risque · Risk (Afroicons ShieldAlert) */
 export declare const GppBadTwoTone: AfroIcon;
-/** Activité · Activity (Afroicons Activity) */
+/** Suivi d'activité · Activity (Afroicons Activity) */
 export declare const MonitorHeart: AfroIcon;
-/** Activité · Activity (Afroicons Activity) */
+/** Suivi d'activité · Activity (Afroicons Activity) */
 export declare const MonitorHeartOutlined: AfroIcon;
-/** Activité · Activity (Afroicons Activity) */
+/** Suivi d'activité · Activity (Afroicons Activity) */
 export declare const MonitorHeartRounded: AfroIcon;
-/** Activité · Activity (Afroicons Activity) */
+/** Suivi d'activité · Activity (Afroicons Activity) */
 export declare const MonitorHeartSharp: AfroIcon;
-/** Activité · Activity (Afroicons Activity) */
+/** Suivi d'activité · Activity (Afroicons Activity) */
 export declare const MonitorHeartTwoTone: AfroIcon;
 /** Rappel · Reminder (Afroicons BellRing) */
 export declare const NotificationsActive: AfroIcon;

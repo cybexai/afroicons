@@ -251,21 +251,23 @@ const cavalierDurbar = [
 ].join("");
 
 // Mascarade egungun (Yoruba) : silhouette entièrement couverte d'étoffes en couches, filet perlé à la place du visage.
-const panels = (y, h, x0, n, w, cols) => Array.from({ length: n }, (_, i) => {
-  const x = x0 + i * w;
-  return path(`M${x} ${y}H${x + w}V${y + h - 0.8}L${x + w / 2} ${y + h}L${x} ${y + h - 0.8}Z`, cols[i % cols.length], { w: 0.8 });
+// Pans d'étoffe qui rayonnent depuis la tête et s'évasent vers le bas (pointe arrondie au bout).
+const lappets = (ty, tx0, tx1, by, bx0, bx1, cols) => cols.map((col, i, a) => {
+  const n = a.length, t0 = tx0 + ((tx1 - tx0) * i) / n, t1 = tx0 + ((tx1 - tx0) * (i + 1)) / n;
+  const b0 = bx0 + ((bx1 - bx0) * i) / n, b1 = bx0 + ((bx1 - bx0) * (i + 1)) / n, bend = (b0 + b1) / 2 - 12;
+  return path(`M${t0} ${ty}L${t1} ${ty}Q${(t1 + b1) / 2 + bend * 0.12} ${(ty + by) / 2} ${b1} ${by}Q${(b0 + b1) / 2} ${by + 1.6} ${b0} ${by}Q${(t0 + b0) / 2 + bend * 0.12} ${(ty + by) / 2} ${t0} ${ty}Z`, col, { w: 0.8 });
 }).join("");
 const mascaradeEgungun = [
-  panels(15, 7.6, 2.2, 7, 2.8, [C.rouge, C.indigo, C.ocreLight, C.vert]),
-  line("M2.6 17.4H21.4", C.white, 0.7),
-  panels(10.2, 6.2, 4.2, 6, 2.6, [C.ocreLight, C.violet, C.rouge]),
-  line("M4.6 12.6H19.4", C.noir, 0.6),
-  dots([[5.5, 14.6], [8.1, 14.6], [10.7, 14.6], [13.3, 14.6], [15.9, 14.6], [18.5, 14.6]], 0.4, C.white),
-  path("M7.2 10.6Q7 3.2 12 2.6Q17 3.2 16.8 10.6Z", C.indigo),
-  rect(8.6, 5.8, 6.8, 4.2, 0.8, C.noir, { w: 0.8 }),
-  line("M9.2 7H14.8M9.2 8.2H14.8M9.2 9.4H14.8M10 6V10M11.3 6V10M12.7 6V10M14 6V10", C.grisLight, 0.4),
-  path("M9.8 3.6L12 0.9L14.2 3.6Z", C.rouge, { w: 0.8 }),
-  dots([[9, 4.6], [12, 3.8], [15, 4.6]], 0.42, C.ocreLight),
+  // longue robe de pans colorés, très évasée au sol
+  lappets(8, 8.4, 15.6, 20.6, 1.6, 22.4, [C.rouge, C.indigo, C.ocreLight, C.vert, C.rouge, C.violet, C.ocreLight, C.indigo]),
+  // second rang plus court par-dessus
+  lappets(8, 8.8, 15.2, 14.6, 4.6, 19.4, [C.ocreLight, C.violet, C.rouge, C.vert, C.ocreLight, C.rouge]),
+  dots([[6.4, 14.4], [9.2, 15.2], [12, 15.5], [14.8, 15.2], [17.6, 14.4]], 0.4, C.white),
+  // tête arrondie, filet perlé à la place du visage, petite crête
+  path("M8 9.6Q7.8 3.2 12 3Q16.2 3.2 16 9.6Q12 10.8 8 9.6Z", C.indigo),
+  rect(9.2, 5.2, 5.6, 3.8, 1, C.noir, { w: 0.8 }),
+  line("M9.6 6.4H14.4M9.6 7.7H14.4M10.6 5.4V8.8M12 5.4V8.8M13.4 5.4V8.8", C.grisLight, 0.4),
+  path("M10.8 3.4Q11.2 1 12 0.9Q12.8 1 13.2 3.4Z", C.rouge, { w: 0.8 }),
 ].join("");
 
 /* ---------------- objets du quotidien ---------------- */

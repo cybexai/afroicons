@@ -70,7 +70,7 @@ apps/web/              ← le site afroicons.org (React + Vite + TypeScript)
 ```
 
 - `id` : minuscules et chiffres seulement, sans accents ni tirets
-- `cat` : `nature`, `faune`, `musique`, `symboles`, `cuisine`, `vie`, `architecture`
+- `cat` : `nature`, `faune`, `musique`, `symboles`, `cuisine`, `vie`, `architecture`, `personnes`
 - `region` : `ouest`, `centre`, `est`, `nord`, `australe` ou `pan`
 - `tags` : au moins 3 mots-clés, en français, en anglais et en termes locaux
 

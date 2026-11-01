@@ -9,7 +9,7 @@ for (const n of names) {
   const i = icons[n];
   assert.match(n, i.cat === "drapeaux" ? /^drapeau-[a-z0-9]+(-[a-z0-9]+)*$/ : i.cat === "emojis" ? /^emoji-[a-z0-9]+(-[a-z0-9]+)*$/ : /^[a-z0-9]+$/, `id valide: ${n}`);
   assert.ok(i.fr && i.en, `noms FR/EN: ${n}`);
-  assert.ok(["nature","faune","musique","symboles","cuisine","vie","architecture","drapeaux","emojis"].includes(i.cat), `catégorie: ${n}`);
+  assert.ok(["nature","faune","musique","symboles","cuisine","vie","architecture","personnes","drapeaux","emojis"].includes(i.cat), `catégorie: ${n}`);
   assert.ok(i.tags.length >= 3, `mots-clés: ${n}`);
   assert.equal(new Set(i.tags.map((t) => t.toLowerCase())).size, i.tags.length, `mots-clés sans doublon: ${n}`);
   assert.ok(toSvg(n).startsWith("<svg") && toSvg(n).endsWith("</svg>"), `svg: ${n}`);
@@ -23,6 +23,17 @@ for (const n of names) {
   if (icons[n].fill.includes("<mask")) assert.ok(icons[n].fill.includes(`id="afm-${n}"`) && icons[n].fill.includes(`url(#afm-${n})`), `masque nommé : ${n}`);
 }
 assert.match(toSvg("baobab", { size: 32, color: "#C24E2A" }), /width="32".*stroke="#C24E2A"/);
+// Lien icône ↔ emoji : chaque lien pointe vers un emoji existant, un emoji n'a qu'une icône, et le lien est réciproque.
+{ const linked = names.filter((n) => icons[n].emoji); const seenE = new Set();
+  for (const n of linked) { const e = icons[n].emoji; assert.ok(icons[e]?.cat === "emojis", `lien vers un emoji : ${n}`); assert.ok(!seenE.has(e), `un seul lien par emoji : ${e}`); seenE.add(e); assert.equal(icons[e].icon, n, `lien réciproque : ${e}`); }
+  console.log(`✔ ${linked.length} icônes reliées à leur emoji`); }
+// Règles de dessin des icônes au trait (audit qualité) : trait 1,75 partout, pas de petit cercle creux (il laisse un trou d'épingle).
+const lineIcons = [...names.filter((n) => !["drapeaux", "emojis"].includes(icons[n].cat)).map((n) => [n, icons[n].body]), ...(await import("../src/ui-icons.json", { with: { type: "json" } })).default.map((u) => ["ui-" + u.id, u.body])];
+for (const [n, b] of lineIcons) {
+  assert.doesNotMatch(b, /stroke-width=/, `trait 1,75 sans épaisseur forcée : ${n}`);
+  assert.doesNotMatch(b + (icons[n]?.fill ?? ""), /NaN|undefined|Infinity/, `coordonnées valides : ${n}`);
+  for (const [, at] of b.matchAll(/<circle([^>]*)\/>/g)) { const r = +(/\br="([\d.]+)"/.exec(at)?.[1]); assert.ok(r >= 1.2 || /fill="currentColor"/.test(at), `cercle creux trop petit (r=${r}) : ${n}`); }
+}
 // Drapeaux : les 54 États membres de l'ONU, chacun avec son code ISO, sans identifiant SVG
 // (un clipPath ou un masque nommé casse l'affichage quand sa première copie est cachée : sprite, menu fermé).
 const flags = names.filter((n) => icons[n].cat === "drapeaux");
@@ -66,6 +77,7 @@ const lucide = await import("lucide-react");
 const drawn = ui.afroiconNames;
 assert.ok(drawn.length >= 177, "au moins 177 icônes d'interface");
 assert.equal(new Set(drawn).size, drawn.length, "noms d'interface uniques");
+{ const uiData = (await import("../src/ui-icons.json", { with: { type: "json" } })).default; assert.equal(new Set(uiData.map((u) => u.fr)).size, uiData.length, "noms français d'interface uniques"); }
 const html = (C, p = {}) => renderToStaticMarkup(createElement(C, p));
 for (const n of drawn) {
   assert.ok(lucide[n], `nom Lucide existant : ${n}`);

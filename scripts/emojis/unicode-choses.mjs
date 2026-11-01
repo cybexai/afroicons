@@ -26,6 +26,48 @@ function football() {
   return out.join("");
 }
 
+
+/* ---------- mangue ---------- */
+// Haricot allongé et incliné ; zones à plat vert → jaune → orange → rouge (découpe par disques convexes, sans clipPath).
+const clipConvex = (pts, clip) => {
+  let poly = pts;
+  for (let i = 0; i < clip.length && poly.length; i++) {
+    const [ax, ay] = clip[i], [bx, by] = clip[(i + 1) % clip.length];
+    const side = ([x, y]) => (bx - ax) * (y - ay) - (by - ay) * (x - ax);
+    const out = [];
+    for (let j = 0; j < poly.length; j++) {
+      const p = poly[j], q = poly[(j + 1) % poly.length], sp = side(p), sq = side(q);
+      if (sp >= 0) out.push(p);
+      if ((sp >= 0) !== (sq >= 0)) { const u = sp / (sp - sq); out.push([p[0] + u * (q[0] - p[0]), p[1] + u * (q[1] - p[1])]); }
+    }
+    poly = out;
+  }
+  return poly;
+};
+const disc = (cx, cy, r) => Array.from({ length: 48 }, (_, k) => pt(cx, cy, r, (k * 360) / 48));
+const poly = (pts) => `M${pts.map(([x, y]) => `${r2(x)} ${r2(y)}`).join("L")}Z`;
+function mangue() {
+  const pts = [];
+  for (let k = 0; k < 64; k++) {
+    const t = (k / 64) * 2 * Math.PI, c = Math.cos(t), s = Math.sin(t);
+    let y = 12.6 + 6.4 * s;
+    if (s < 0) y += 1.6 * Math.exp(-((c - 0.1) ** 2) / 0.12) * -s; // creux du haricot, côté haut
+    pts.push([12 + 9.2 * c, y]);
+  }
+  const zone = (cx, cy, r, fill) => path(poly(clipConvex(pts, disc(cx, cy, r))), fill, false);
+  return g("rotate(-38 12 12.6)",
+    path(poly(pts), C.jaune, false),
+    zone(23, 8.6, 11.4, C.orange),
+    zone(23.4, 8, 7.6, C.rouge),
+    zone(0.4, 16.6, 8.6, "#6FAE45"),
+    path(poly(pts), "none"),
+    path("M6.6 10.4Q8.8 8.6 11.8 8.8", "none", { c: C.white, w: 1.1 }),
+    line("M20.8 11.2L22.8 10.4", C.marron, 1.4),
+    path("M22.2 10.6Q22.6 7.2 19.4 6Q18.2 9.2 22.2 10.6Z", C.feuille, { w: 0.9 }),
+  );
+}
+const BREAD = "#D9953F", BREAD_DARK = "#A8662A";
+
 /* ---------- lion ---------- */
 function lion() {
   const mane = [];
@@ -155,7 +197,7 @@ const list = [
     tags: ["globe", "terre", "earth", "monde", "world", "afrique", "africa"],
     body: [
       circle(12, 12, 10, C.eau),
-      path("M8.2 7.4Q8 5.6 9.6 4.8Q10.6 3.2 12.8 3.4L15.4 3.2Q17.8 4.2 17.6 6.2Q16.2 7.2 14.8 6.8L13.2 7.6Q12 6.8 11 7.6Q9.4 8.2 8.2 7.4Z", C.feuille, { w: 0.9 }),
+      path("M8.4 7.2Q8.2 4.8 10.6 4.2Q13.4 3 16.2 4.2Q17.8 5.4 16.6 6.8Q13.8 7.2 12.2 6.8Q10.2 7.8 8.4 7.2Z", C.feuille, { w: 0.9 }),
       path("M15.8 8.6Q17.8 8.2 19.4 9Q20 10.8 18.4 11.8Q16.8 10.6 15.8 8.6Z", C.ocreLight, { w: 0.9 }),
       path("M5.6 10Q7.4 8.4 10.2 8.8L12.6 8.6Q13.8 9.8 15.2 10L17.2 11.6Q16.8 13 15.8 13.8Q15.4 15.8 14.4 17.4Q13.4 19.6 12.2 19.8Q11.4 18.2 11.4 16.2Q11.2 14.4 10.2 13.6Q8 13.6 6.6 12.6Q5.2 11.4 5.6 10Z", C.feuille, { w: 0.9 }),
       path("M6.6 10.6Q8 9.4 10.2 9.6L12.8 9.6Q13.8 10.4 15.2 10.8Q12.4 12.2 9.4 11.8Q7.4 11.6 6.6 10.6Z", C.ocreLight, false),
@@ -216,15 +258,7 @@ const list = [
   {
     slug: "mangue", fr: "Mangue", en: "Mango", char: "🥭", group: "nourriture",
     tags: ["mangue", "mango", "fruit", "tropical", "embe", "été"],
-    body: [
-      path("M7.6 6.6Q12.4 4.2 17.4 8.2Q21.4 12.6 18.8 18Q15.8 22 10.8 20.8Q4.8 19 4.2 13Q3.8 8.6 7.6 6.6Z", C.orange),
-      path("M5.6 13.6Q6 18.6 11 19.8Q8 16.8 8.2 12.4Q7.6 10.4 5.6 13.6Z", C.ocreLight, false),
-      path("M13.6 7Q17.6 7.6 19.2 11.6Q16.8 9.2 13.6 7Z", C.rouge, false),
-      path("M7.6 6.6Q12.4 4.2 17.4 8.2Q21.4 12.6 18.8 18Q15.8 22 10.8 20.8Q4.8 19 4.2 13Q3.8 8.6 7.6 6.6Z", "none"),
-      line("M8.8 6.2L8 3.4", C.marron, 1.3),
-      path("M8.2 3.8Q11.4 1.2 15 3.2Q11.6 5.6 8.2 3.8Z", C.feuille),
-      path("M15.6 10.6Q17.4 11.8 17.6 14", "none", { c: C.white, w: 1.1 }),
-    ].join(""),
+    body: mangue(),
   },
   {
     slug: "ananas", fr: "Ananas", en: "Pineapple", char: "🍍", group: "nourriture",
@@ -315,10 +349,10 @@ const list = [
     slug: "pain", fr: "Pain", en: "Bread", char: "🍞", group: "nourriture",
     tags: ["pain", "bread", "boulangerie", "bakery", "petit-déjeuner", "breakfast"],
     body: [
-      path("M4.6 12.4H19.4V19.4Q19.4 20.6 18.2 20.6H5.8Q4.6 20.6 4.6 19.4Z", C.ocreLight),
-      path("M3.2 11.6Q2.6 5.4 12 5.4Q21.4 5.4 20.8 11.6Q20.6 13.2 19 13.2H5Q3.4 13.2 3.2 11.6Z", C.bois),
-      line("M7.4 8.4L8.8 10.4M11.2 7.6L12.6 9.6M15 8.4L16.4 10.4", C.marron, 1),
-      path("M5.8 15.6V18.6", "none", { c: C.white, w: 1.1 }),
+      path("M2.8 18.2Q2.2 9.4 12 8.4Q21.8 9.4 21.2 18.2Q21 20 19.2 20H4.8Q3 20 2.8 18.2Z", BREAD),
+      path("M4.6 17.6Q4.4 11.6 9.6 10.4", "none", { c: C.ocreLight, w: 1.1 }),
+      line("M7 12.4L9.2 15.8M11 11.2L13.2 14.6M15 11.6L17.2 15", BREAD_DARK, 1.6),
+      line("M7.4 12.6L9 15.2M11.4 11.4L13 14M15.4 11.8L17 14.4", C.ocreLight, 0.6),
     ].join(""),
   },
   {

@@ -96,6 +96,8 @@ const hoist = (tip, c) => poly([[0, 0], [tip, 0.5], [0, 1]], c);
 /** Le « Y » de l'Afrique du Sud : deux bras depuis les coins du mât, réunis au tiers, puis une bande jusqu'au battant. */
 const J = [(10.5 - X0) / W, 0.5];
 const ySA = (w, c, ext) => bar([0, 0], J, w, c, ext) + bar([0, 1], J, w, c, ext) + bar(J, [1, 0.5], w, c, 3);
+/** Rayons droits autour d'un centre (px) : n rayons de ra à rb, à partir de l'angle a0 (degrés). */
+const rays = (cx, cy, ra, rb, n, a0, c, w) => `<path d="${Array.from({ length: n }, (_, k) => { const a = ((a0 + (360 * k) / n) * Math.PI) / 180; return `M${r2(cx + ra * Math.cos(a))} ${r2(cy + ra * Math.sin(a))}L${r2(cx + rb * Math.cos(a))} ${r2(cy + rb * Math.sin(a))}`; }).join("")}" fill="none" stroke="${c}" stroke-width="${w}"/>`;
 const line = (pts, c, w) => `<path d="M${pts.map(pt).join("L")}" fill="none" stroke="${c}" stroke-width="${w}"/>`;
 
 /* ---------- les 54 drapeaux ---------- */
@@ -113,14 +115,14 @@ const F = [
   ["td", "Tchad", "Chad", "centre", ["tchadien", "chadian"], vs(["#002664", "#FECB00", "#C60C30"])],
   ["km", "Comores", "Comoros", "est", ["comorien", "comorian", "komori"], hs(["#FFC61E", "#FFFFFF", "#CE1126", "#3A75C4"]) + hoist(0.42, "#3D8E33") + crescent(0.14, 0.5, 3, 2.5, 1, 0, "#FFFFFF") + [0.33, 0.44, 0.56, 0.67].map((v) => star(0.205, v, 0.5, "#FFFFFF")).join("")],
   ["cg", "Congo", "Republic of the Congo", "centre", ["congolais", "brazzaville", "congolese"], upperLeft("#009543") + lowerRight("#DC241F") + diag(2.9, "#FBDE4A")],
-  ["cd", "RD Congo", "DR Congo", "centre", ["congolais", "kinshasa", "rdc", "drc"], fill("#007FFF") + diag(2.6, "#F7D618") + diag(1.85, "#CE1021") + star(0.17, 0.25, 2.4, "#F7D618")],
+  ["cd", "RD Congo", "Democratic Republic of the Congo", "centre", ["congolais", "kinshasa", "rdc", "drc"], fill("#007FFF") + diag(2.6, "#F7D618") + diag(1.85, "#CE1021") + star(0.17, 0.25, 2.4, "#F7D618")],
   ["ci", "Côte d'Ivoire", "Côte d'Ivoire", "ouest", ["ivoirien", "ivorian", "ivory coast"], vs(["#F77F00", "#FFFFFF", "#009E60"])],
   ["dj", "Djibouti", "Djibouti", "est", ["djiboutien", "djiboutian"], hs(["#6AB2E7", "#12AD2B"]) + hoist(0.46, "#FFFFFF") + star(0.14, 0.5, 1.7, "#D7141A")],
   ["eg", "Égypte", "Egypt", "nord", ["égyptien", "egyptian", "misr"], hs(["#CE1126", "#FFFFFF", "#000000"]) + `<path d="M10 10.6L12 11.2L14 10.6L13.3 12.4L12.6 12.2V13.6H11.4V12.2L10.7 12.4Z" fill="#C09300"/>`],
   ["gq", "Guinée équatoriale", "Equatorial Guinea", "centre", ["équato-guinéen", "equatoguinean"], hs(["#3E9A00", "#FFFFFF", "#E32118"]) + hoist(0.22, "#0073CE") + `<path d="M11.2 10.6H12.8V12.4A.8 .8 0 0 1 11.2 12.4Z" fill="#A7A7A7"/>`],
   ["er", "Érythrée", "Eritrea", "est", ["érythréen", "eritrean"], hs(["#12AD2B", "#4189DD"]) + poly([[0, 0], [1, 0.5], [0, 1]], "#EA0437") + ring(0.22, 0.5, 2.7, "#FFC726", 0.7) + line([[0.22, 0.38], [0.22, 0.66]], "#FFC726", 0.6)],
-  ["sz", "Eswatini", "Eswatini", "australe", ["swazi", "swaziland", "eswatini"], hs(["#3E5EB9", "#FFD900", "#B10C0C", "#FFD900", "#3E5EB9"], [3, 1, 8, 1, 3]) + line([[0.18, 0.5], [0.82, 0.5]], "#FFD900", 0.5) + `<ellipse cx="12" cy="12" rx="4.6" ry="2.4" fill="#FFFFFF"/><path d="M12 9.6A4.6 2.4 0 0 1 12 14.4Z" fill="#000000"/>`],
-  ["et", "Éthiopie", "Ethiopia", "est", ["éthiopien", "ethiopian", "abyssinie"], hs(["#078930", "#FCDD09", "#DA121A"]) + circle(0.5, 0.5, 4.3, "#0F47AF") + pentagram(0.5, 0.52, 3, "#FCDD09", 0.6)],
+  ["sz", "Eswatini", "Eswatini", "australe", ["swazi", "swaziland", "eswatini"], hs(["#3E5EB9", "#FFD900", "#B10C0C", "#FFD900", "#3E5EB9"], [3, 1, 8, 1, 3]) + line([[0.18, 0.5], [0.82, 0.5]], "#FFD900", 0.5) + `<ellipse cx="12" cy="12" rx="4.6" ry="2.4" fill="#FFFFFF"/><path d="M12 9.6A4.6 2.4 0 0 0 12 14.4Z" fill="#000000"/>`],
+  ["et", "Éthiopie", "Ethiopia", "est", ["éthiopien", "ethiopian", "abyssinie"], hs(["#078930", "#FCDD09", "#DA121A"]) + circle(0.5, 0.5, 4.3, "#0F47AF") + pentagram(0.5, 0.52, 3, "#FCDD09", 0.6) + rays(12, 12.3, 1.7, 3.5, 5, -54, "#FCDD09", 0.45)],
   ["ga", "Gabon", "Gabon", "centre", ["gabonais", "gabonese"], hs(["#009E60", "#FCD116", "#3A75C4"])],
   ["gm", "Gambie", "The Gambia", "ouest", ["gambien", "gambian"], hs(["#CE1126", "#FFFFFF", "#0C1C8C", "#FFFFFF", "#3A7728"], [6, 1, 4, 1, 6])],
   ["gh", "Ghana", "Ghana", "ouest", ["ghanéen", "ghanaian"], hs(["#CE1126", "#FCD116", "#006B3F"]) + star(0.5, 0.5, 2.5, "#000000")],
@@ -136,11 +138,11 @@ const F = [
   ["mr", "Mauritanie", "Mauritania", "ouest", ["mauritanien", "mauritanian"], hs(["#D01C1F", "#00A95C", "#D01C1F"], [3, 14, 3]) + crescent(0.5, 0.55, 3.6, 3, 1.2, -90, "#FFD700") + star(0.5, 0.36, 1.3, "#FFD700")],
   ["mu", "Maurice", "Mauritius", "est", ["mauricien", "mauritian"], hs(["#EA2839", "#1A206D", "#FFD500", "#00A551"])],
   ["ma", "Maroc", "Morocco", "nord", ["marocain", "moroccan", "maghreb"], fill("#C1272D") + pentagram(0.5, 0.53, 3.6, "#006233", 0.8)],
-  ["mz", "Mozambique", "Mozambique", "australe", ["mozambicain", "mozambican"], hs(["#007168", "#FFFFFF", "#000000", "#FFFFFF", "#FCE100"], [6, 1, 6, 1, 6]) + hoist(0.46, "#D21034") + star(0.155, 0.5, 2.6, "#FCE100")],
-  ["na", "Namibie", "Namibia", "australe", ["namibien", "namibian"], upperLeft("#003580") + lowerRight("#009543") + diag(2.9, "#FFFFFF") + diag(2.1, "#D21034") + sun(0.2, 0.28, 2.4, "#FFCE00", 12, 1.3)],
+  ["mz", "Mozambique", "Mozambique", "australe", ["mozambicain", "mozambican"], hs(["#007168", "#FFFFFF", "#000000", "#FFFFFF", "#FCE100"], [6, 1, 6, 1, 6]) + hoist(0.46, "#D21034") + star(0.155, 0.5, 2.6, "#FCE100") + `<path d="M3.2 12.4Q4.1 12 4.4 12.5Q4.7 12 5.6 12.4V13.5Q4.7 13.1 4.4 13.6Q4.1 13.1 3.2 13.5Z" fill="#FFFFFF" stroke="#000000" stroke-width=".2"/><path d="M3.1 10.6L5.8 13.6M5.7 10.6L3 13.6" fill="none" stroke="#000000" stroke-width=".4"/>`],
+  ["na", "Namibie", "Namibia", "australe", ["namibien", "namibian"], upperLeft("#003580") + lowerRight("#009543") + diag(2.9, "#FFFFFF") + diag(2.1, "#D21034") + sun(0.2, 0.28, 2.4, "#FFCE00", 12, 1.3) + ring(0.2, 0.28, 1.5, "#003580", 0.35)],
   ["ne", "Niger", "Niger", "ouest", ["nigérien", "nigerien"], hs(["#E05206", "#FFFFFF", "#0DB02B"]) + circle(0.5, 0.5, 1.9, "#E05206")],
   ["ng", "Nigeria", "Nigeria", "ouest", ["nigérian", "nigerian", "naija"], vs(["#008751", "#FFFFFF", "#008751"])],
-  ["ug", "Ouganda", "Uganda", "est", ["ougandais", "ugandan"], hs(["#000000", "#FCDC04", "#D90000", "#000000", "#FCDC04", "#D90000"]) + circle(0.5, 0.5, 3.6, "#FFFFFF") + `<path d="M11 14.4L11.6 12.6Q10.4 11.6 11.4 10.4L12.2 9.8L12.4 9" fill="none" stroke="#000000" stroke-width=".7"/><ellipse cx="12.2" cy="12.4" rx="1.1" ry="1.5" fill="#9CA6AD"/><circle cx="12.6" cy="9" r=".55" fill="#000000"/><circle cx="12.9" cy="8.4" r=".35" fill="#FCDC04"/><path d="M12.9 9.2L13.8 9.4" stroke="#D90000" stroke-width=".4"/>`],
+  ["ug", "Ouganda", "Uganda", "est", ["ougandais", "ugandan"], hs(["#000000", "#FCDC04", "#D90000", "#000000", "#FCDC04", "#D90000"]) + circle(0.5, 0.5, 3.6, "#FFFFFF") + `<g transform="matrix(-1 0 0 1 24 0)"><path d="M11 14.4L11.6 12.6Q10.4 11.6 11.4 10.4L12.2 9.8L12.4 9" fill="none" stroke="#000000" stroke-width=".7"/><ellipse cx="12.2" cy="12.4" rx="1.1" ry="1.5" fill="#9CA6AD"/><circle cx="12.6" cy="9" r=".55" fill="#000000"/><circle cx="12.9" cy="8.4" r=".35" fill="#FCDC04"/><path d="M12.9 9.2L13.8 9.4" stroke="#D90000" stroke-width=".4"/></g>`],
   ["rw", "Rwanda", "Rwanda", "est", ["rwandais", "rwandan"], hs(["#00A1DE", "#FAD201", "#20603D"], [2, 1, 1]) + sun(0.86, 0.26, 2.2, "#E5BE01", 24, 1.2) + ring(0.86, 0.26, 1.15, "#00A1DE", 0.3)],
   ["st", "Sao Tomé-et-Principe", "São Tomé and Príncipe", "centre", ["santoméen", "sao tome", "principe"], hs(["#12AD2B", "#FFCE00", "#12AD2B"], [2, 3, 2]) + hoist(0.25, "#D21034") + star(0.5, 0.5, 1.7, "#000000") + star(0.73, 0.5, 1.7, "#000000")],
   ["sn", "Sénégal", "Senegal", "ouest", ["sénégalais", "senegalese", "teranga"], vs(["#00853F", "#FDEF42", "#E31B23"]) + star(0.5, 0.5, 2.2, "#00853F")],
@@ -154,7 +156,7 @@ const F = [
   ["tg", "Togo", "Togo", "ouest", ["togolais", "togolese"], hs(["#006A4E", "#FFCE00", "#006A4E", "#FFCE00", "#006A4E"]) + rect(0, 0, 9 / W, 0.6, "#D21034") + star(4.5 / W, 0.3, 2.6, "#FFFFFF")],
   ["tn", "Tunisie", "Tunisia", "nord", ["tunisien", "tunisian"], fill("#E70013") + circle(0.5, 0.5, 4.4, "#FFFFFF") + crescent(0.48, 0.5, 3.4, 2.75, 1.05, 0, "#E70013") + star(0.545, 0.5, 1.6, "#E70013", { rot: -18 })],
   ["zm", "Zambie", "Zambia", "australe", ["zambien", "zambian"], fill("#198A00") + rect(0.61, 0.375, 0.74, 1, "#DE2010") + rect(0.74, 0.375, 0.87, 1, "#000000") + rect(0.87, 0.375, 1, 1, "#EF7D00") + `<path d="M15.6 8.4Q17.8 9.6 19.3 8.6Q20.8 9.6 23 8.4" fill="none" stroke="#EF7D00" stroke-width=".9"/><circle cx="19.3" cy="9.3" r=".55" fill="#EF7D00"/>`],
-  ["zw", "Zimbabwe", "Zimbabwe", "australe", ["zimbabwéen", "zimbabwean"], hs(["#006400", "#FFD200", "#D40000", "#000000", "#D40000", "#FFD200", "#006400"]) + hoist(0.45, "#000000") + poly([[0, 0.07], [0.405, 0.5], [0, 0.93]], "#FFFFFF") + star(0.13, 0.5, 2.1, "#D40000") + `<path d="M3.5 10.8H4.7L5.1 13.4H3.9Z" fill="#FFD200"/>`],
+  ["zw", "Zimbabwe", "Zimbabwe", "australe", ["zimbabwéen", "zimbabwean"], hs(["#006400", "#FFD200", "#D40000", "#000000", "#D40000", "#FFD200", "#006400"]) + hoist(0.45, "#000000") + poly([[0, 0.07], [0.405, 0.5], [0, 0.93]], "#FFFFFF") + star(0.13, 0.5, 2.1, "#D40000") + `<path d="M3.4 10.4H4.5L4.9 13.5H3.8Z" fill="#FFD200"/>`],
 ];
 
 // Les drapeaux à fond blanc ou très clair gardent un fin liseré pour se détacher d'un fond clair.
@@ -164,7 +166,7 @@ const slug = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().rep
 const flags = F.map(([iso, fr, en, region, tags, shapes]) => {
   const id = "drapeau-" + slug(fr);
   const body = `<g stroke="none" stroke-linecap="butt">${shapes}</g>${OUTLINE}`;
-  return { id, iso: iso.toUpperCase(), fr: `Drapeau ${de(fr)}`, en: `Flag of ${en.startsWith("The ") || /^(DR|Central|Republic|Seychelles|Comoros)/.test(en) ? "the " + en.replace(/^The /, "") : en}`, country: { fr, en }, cat: "drapeaux", region, tags: [...new Set(["drapeau", "flag", fr.toLowerCase(), en.toLowerCase(), iso, ...tags])], since: "0.6", body, fill: body };
+  return { id, iso: iso.toUpperCase(), fr: `Drapeau ${de(fr)}`, en: `Flag of ${en.startsWith("The ") || /^(DR|Democratic|Central|Republic|Seychelles|Comoros)/.test(en) ? "the " + en.replace(/^The /, "") : en}`, country: { fr, en }, cat: "drapeaux", region, tags: [...new Set(["drapeau", "flag", fr.toLowerCase(), en.toLowerCase(), iso, ...tags])], since: "0.6", body, fill: body };
 });
 
 /** « du Cameroun », « de la Tunisie », « de l'Algérie », « des Comores »… */

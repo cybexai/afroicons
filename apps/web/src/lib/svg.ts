@@ -4,7 +4,7 @@ export type SvgOpts = { s?: number; c?: string; w?: number; style?: Style; bg?: 
 /** Teinte de peau d'un emoji : remplace la peau par défaut par celle choisie. */
 export const skin = (body: string, tone?: Tone) => {
   const t = tone && tone !== DEFAULT_TONE && TONES[tone], d = TONES[DEFAULT_TONE];
-  return t ? body.replaceAll(d[0], t[0]).replaceAll(d[1], t[1]) : body;
+  return t ? body.replaceAll(d[0], t[0]).replaceAll(d[1], t[1]).replaceAll(d[2], t[2]) : body;
 };
 
 /** Construit le SVG d'une icône (trait, pastille ou cercle) sous forme de chaîne. */
@@ -29,6 +29,17 @@ export function jsxSnippet(i: Icon, stroke: number, fill = false, tone?: Tone) {
   if (i.cat === "drapeaux") return `// npm install afroicons-react\nimport { ${pascal(i.id)} } from "afroicons-react";\n\n<${pascal(i.id)} size={24} title="${i.country?.fr ?? i.fr}" />\n\n// Aux couleurs officielles : color, strokeWidth et variant ne changent pas un drapeau.`;
   if (i.lucide) return `// npm install afroicons-ui lucide-react\n// Mêmes noms que lucide-react : remplacez simplement l'import.\nimport { ${i.lucide} } from "afroicons-ui";\n\n<${i.lucide} size={24} strokeWidth={${stroke}} />`;
   return `import { ${pascal(i.id)} } from "afroicons-react";\n\n<${pascal(i.id)} size={24} ${fill ? 'variant="fill"' : `strokeWidth={${stroke}}`} />\n\n// ou, sans dépendance :\nexport function ${pascal(i.id)}({ size = 24, color = "currentColor", strokeWidth = ${stroke}, ...props }) {\n  return (\n    <svg width={size} height={size} viewBox="0 0 24 24" fill="none"\n      stroke={color} strokeWidth={strokeWidth}\n      strokeLinecap="round" strokeLinejoin="round" {...props}>\n      ${i.body.replace(/stroke-width/g, "strokeWidth")}\n    </svg>\n  );\n}`;
+}
+
+/** Angular (afroicons-angular) : la constante à déclarer et le composant <afroicon>. */
+export function ngSnippet(i: Icon, stroke: number, fill = false, tone?: Tone) {
+  const c = i.lucide ?? pascal(i.id), name = i.lucide ?? i.id;
+  const attrs = [`name="${name}"`, `[size]="${isEmoji(i) ? 32 : 24}"`];
+  if (!isColor(i) && stroke !== 1.75) attrs.push(`[strokeWidth]="${stroke}"`);
+  if (fill && !isColor(i) && !i.lucide) attrs.push(`variant="fill"`);
+  if (i.tone) attrs.push(`tone="${tone ?? DEFAULT_TONE}"`);
+  if (isColor(i)) attrs.push(`title="${i.fr}"`);
+  return `// npm install afroicons-angular\nimport { AfroiconComponent, provideAfroicons, ${c} } from "afroicons-angular";\n\n// app.config.ts : seules les icônes déclarées entrent dans le bundle\nproviders: [provideAfroicons({ ${c} })]\n\n// composant : imports: [AfroiconComponent]\n<afroicon ${attrs.join(" ")} />${i.tone ? `\n\n// tone : light, medium-light, medium, medium-dark (par défaut), dark` : ""}`;
 }
 
 /** Noms Material UI et Ant Design d'une icône d'interface (src/compat.json : noms de base). */

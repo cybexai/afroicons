@@ -1,62 +1,103 @@
 // Emojis « mains » (Unicode) et « personnes » (originaux africains) d'Afroicons.
 // Dessins originaux : couleur à plat, contour brun arrondi, peau en SKIN / SKIN_SHADE (5 teintes au build).
-import { O, W, C, SKIN, SKIN_SHADE, path, circle, ellipse, rect, line, g, bust, handOpen } from "./lib.mjs";
+// Mains : chaque main est une silhouette fusionnée (un seul contour d'épaisseur W, comme les visages) ;
+// les séparations des doigts, les plis et les jointures sont tracés en SKIN_LINE, jamais en contour foncé.
+import { O, W, C, SKIN, SKIN_SHADE, SKIN_LINE, path, circle, ellipse, rect, line, g, bust } from "./lib.mjs";
 
 /* ---------- outils locaux ---------- */
 const r2 = (v) => Math.round(v * 100) / 100;
+const SW = 2.4; // largeur d'un doigt
 /** Doigt (ou bras) en « tube » : trait épais de peau bordé de contour. */
-const tube = (d, sw = 2.3, fill = SKIN) =>
+const tube = (d, sw = SW, fill = SKIN) =>
   `<path d="${d}" fill="none" stroke="${O}" stroke-width="${r2(sw + 2 * W)}" stroke-linecap="round" stroke-linejoin="round"/>` +
   `<path d="${d}" fill="none" stroke="${fill}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>`;
+/** Pièces d'une silhouette : T = doigt (tube), S = surface pleine. */
+const T = (d, sw = SW) => ({ d, sw }), S = (d) => ({ d });
+/** Silhouette fusionnée : tous les contours d'abord, la peau ensuite → un seul contour, sans doublure là où les pièces se chevauchent. */
+const merged = (parts, fill = SKIN) =>
+  parts.map((p) => p.sw
+    ? `<path d="${p.d}" fill="none" stroke="${O}" stroke-width="${r2(p.sw + 2 * W)}" stroke-linecap="round" stroke-linejoin="round"/>`
+    : `<path d="${p.d}" fill="${O}" stroke="${O}" stroke-width="${r2(2 * W)}" stroke-linejoin="round"/>`).join("") +
+  parts.map((p) => p.sw
+    ? `<path d="${p.d}" fill="none" stroke="${fill}" stroke-width="${p.sw}" stroke-linecap="round" stroke-linejoin="round"/>`
+    : `<path d="${p.d}" fill="${fill}" stroke="none"/>`).join("");
+/** Rectangle arrondi en tracé (pour les silhouettes). */
+const rr = (x, y, w, h, r) => `M${r2(x + r)} ${y}H${r2(x + w - r)}A${r} ${r} 0 0 1 ${r2(x + w)} ${r2(y + r)}V${r2(y + h - r)}A${r} ${r} 0 0 1 ${r2(x + w - r)} ${r2(y + h)}H${r2(x + r)}A${r} ${r} 0 0 1 ${x} ${r2(y + h - r)}V${r2(y + r)}A${r} ${r} 0 0 1 ${r2(x + r)} ${y}Z`;
+/** Trait de détail sur la peau (séparation des doigts, pli, jointure). */
+const sl = (d, w = 0.7) => line(d, SKIN_LINE, w);
 const dot = (x, y, r = 0.6, c = O) => circle(x, y, r, c, false);
-/** Poignet de vêtement en wax (petits points). */
-const cuff = (x, y, w, h, fill = C.indigo, spot = C.ocre) => {
-  const dots = [];
-  for (let i = 0; i < Math.floor(w / 2); i++) dots.push(circle(r2(x + 1.1 + i * 2 + (w - 2 * Math.floor(w / 2)) / 2), r2(y + h / 2), 0.45, spot, false));
-  return rect(x, y, w, h, 0.9, fill) + dots.join("");
+/** Poignet de vêtement en wax : bande fine et claire, petits points. */
+const cuff = (x, y, w, h = 2.4, fill = C.ciel, spot = C.indigoLight) => {
+  const n = Math.floor(w / 2), dots = [];
+  for (let i = 0; i < n; i++) dots.push(circle(r2(x + 1 + i * 2 + (w - 2 * n) / 2), r2(y + h / 2), 0.4, spot, false));
+  return rect(x, y, w, h, 0.8, fill) + dots.join("");
+};
+/** Poignet vertical (bras horizontal). */
+const cuffV = (x, y, w, h, fill = C.ciel, spot = C.indigoLight) => {
+  const n = Math.floor(h / 2), dots = [];
+  for (let i = 0; i < n; i++) dots.push(circle(r2(x + w / 2), r2(y + 1 + i * 2 + (h - 2 * n) / 2), 0.4, spot, false));
+  return rect(x, y, w, h, 0.8, fill) + dots.join("");
 };
 const mirror = (...kids) => g("matrix(-1 0 0 1 24 0)", ...kids);
 /** Traits de mouvement (courts). */
 const motion = (...ds) => ds.map((d) => line(d, O, 1)).join("");
 
-/* ---------- main de face (paume vers nous, pouce à gauche) ---------- */
+/* ---------- main ouverte (paume vers nous, doigts écartés) : ✋ 👋 🙌 ---------- */
+const PALM = "M7.6 13.2Q7.6 11 9.6 11H15Q17.2 11 17.2 13.4V16.2Q17.2 20.6 12.8 20.6H11.8Q8.8 20.6 7.8 17.8Z";
+const openHand = () =>
+  merged([
+    T("M9.4 12.6L7.8 5.2"), T("M11.8 12L11.8 3.6"), T("M14 12.2L15.4 4.6"), T("M15.8 13.2L18.3 7.8", 2.2),
+    T("M9 17.2L5 12.8", 2.6), S(PALM),
+  ]) + sl("M10.3 10.4L10.6 12.2M13 10.2L12.9 12.2M15.3 10.9L15 12.6") + sl("M9.6 16.6Q10.8 15 10.2 13.4", 0.6);
+
+/* ---------- main de face (paume vers nous, pouce à gauche) : ✌️ ☝️ 🤞 👉 ---------- */
 // fingers : { index, middle, ring, pinky } → [x, y] du bout du doigt levé, ou absent = replié sur la paume.
-// thumb : "out" (écarté), "across" (posé sur les doigts repliés), ou un tracé.
-const BASE = { index: 8.9, middle: 11.2, ring: 13.4, pinky: 15.4 };
-function front({ fingers = {}, thumb = "out", cuffColor = C.indigo, order = ["pinky", "ring", "middle", "index"] } = {}) {
-  const out = [];
-  for (const f of order) if (Array.isArray(fingers[f])) {
-    const [x, y] = fingers[f];
-    out.push(tube(`M${BASE[f]} 13.5L${x} ${y}`));
+// thumb : "out" (écarté), "across" (posé sur les doigts repliés), ou un tracé. over : doigts dessinés par-dessus (croisés).
+const BASE = { index: 8.9, middle: 11.2, ring: 13.4, pinky: 15.6 };
+function front({ fingers = {}, thumb = "out", cuffColor = C.ciel, over = [] } = {}) {
+  const parts = [], folded = [];
+  for (const f of ["index", "middle", "ring", "pinky"]) {
+    if (Array.isArray(fingers[f])) { if (!over.includes(f)) parts.push(T(`M${BASE[f]} 13L${fingers[f][0]} ${fingers[f][1]}`)); }
+    else if (!fingers[f]) folded.push(f);
   }
-  out.push(path("M7.4 12.2Q7.4 10.8 8.8 10.8H15.4Q16.8 10.8 16.8 12.2V16.4Q16.8 20.4 12.6 20.4H11.4Q7.4 20.4 7.4 16.6Z", SKIN));
-  for (const f of ["index", "middle", "ring", "pinky"]) if (!fingers[f]) out.push(rect(r2(BASE[f] - 1.15), 10.2, 2.3, 4.3, 1.15, SKIN));
-  if (thumb === "out") out.push(tube("M8.4 17.6L5 13.4", 2.5));
-  else if (thumb === "across") out.push(tube("M8.2 18.2Q9.4 15.6 13.4 15", 2.5));
-  else if (thumb) out.push(tube(thumb, 2.5));
-  out.push(cuff(7.8, 19.6, 8.6, 3.2, cuffColor));
+  parts.push(S("M7.4 12.4Q7.4 11 8.8 11H15.6Q17 11 17 12.4V16.4Q17 20.4 12.8 20.4H11.4Q7.4 20.4 7.4 16.6Z"));
+  for (const f of folded) parts.push(S(rr(r2(BASE[f] - 1.2), 10, 2.4, 4.4, 1.2)));
+  if (thumb === "out") parts.push(T("M8.4 17.6L5 13.4", 2.6));
+  const out = [merged(parts)];
+  // jointures des doigts repliés
+  const all = ["index", "middle", "ring", "pinky"];
+  for (let i = 0; i < 3; i++) if (folded.includes(all[i]) && folded.includes(all[i + 1])) {
+    const x = r2((BASE[all[i]] + BASE[all[i + 1]]) / 2);
+    out.push(sl(`M${x} 10.6V12.6`));
+  }
+  for (const f of over) out.push(merged([T(`M${BASE[f]} 13L${fingers[f][0]} ${fingers[f][1]}`)]));
+  if (thumb === "across") out.push(merged([T("M8.2 18.2Q9.4 15.6 13.6 15", 2.5)]));
+  else if (thumb && thumb !== "out") out.push(merged([T(thumb, 2.5)]));
+  out.push(cuff(7.8, 19.6, 8.6, 2.4, cuffColor));
   return out.join("");
 }
 
 /* ---------- poing (dos des doigts vers nous) ---------- */
 const fistPath = "M6 16V7A1.5 1.5 0 0 1 9 7A1.5 1.5 0 0 1 12 7A1.5 1.5 0 0 1 15 7A1.5 1.5 0 0 1 18 7V15.4Q18 19 14 19H10Q6 19 6 16Z";
 const fist = (cuffColor = C.terre) =>
-  path(fistPath, SKIN) +
-  line("M9 7V10.6M12 7V10.6M15 7V10.6", O, 0.9) +
-  tube("M7.4 13.6Q10.6 12.4 14.6 12.8", 2.6) +
-  cuff(7.4, 18.4, 9.2, 3.6, cuffColor);
+  merged([S(fistPath)]) +
+  sl("M9 6.6V10.4M12 6.6V10.4M15 6.6V10.4", 0.8) + sl("M7.6 9.4H8.4M10.6 9.4H11.4M13.6 9.4H14.4M16.6 9.4H17.2", 0.6) +
+  merged([T("M7.4 13.6Q10.6 12.4 14.6 12.8", 2.6)]) +
+  cuff(7.4, 18.2, 9.2, 2.6, cuffColor);
 
 /* ---------- pouce levé (poing de profil) ---------- */
-const thumbUp = (cuffColor = C.vert) =>
-  tube("M10 11.5L10.8 4", 3.2) +
-  path("M8 10.2H16.6A1.35 1.35 0 0 1 16.6 12.9A1.35 1.35 0 0 1 16.6 15.6A1.35 1.35 0 0 1 16.6 18.3A1.35 1.35 0 0 1 16.6 21H10Q8 21 8 19Z", SKIN) +
-  line("M16.6 12.9H13.2M16.6 15.6H13.2M16.6 18.3H13.6", O, 0.9) +
-  cuff(4.4, 10.6, 3.8, 10, cuffColor);
+const thumbUp = (cuffColor = C.vertLight) =>
+  merged([
+    T("M10 11.5L10.8 4", 3.2),
+    S("M8 10.2H16.6A1.35 1.35 0 0 1 16.6 12.9A1.35 1.35 0 0 1 16.6 15.6A1.35 1.35 0 0 1 16.6 18.3A1.35 1.35 0 0 1 16.6 21H10Q8 21 8 19Z"),
+  ]) +
+  sl("M16.4 12.9H13.2M16.4 15.6H13.2M16.4 18.3H13.6", 0.8) + sl("M9.4 10.6Q10.6 11.2 12 10.6", 0.6) +
+  cuffV(5.2, 10.6, 3, 10, cuffColor);
 
-/* ---------- main « moufle » (doigts serrés) pour 👏 🙏 ---------- */
+/* ---------- main « moufle » (doigts serrés) pour 👏 ---------- */
 const mitten = (fill = SKIN) =>
-  path("M8 13.4V6Q8 3.6 10.4 3.6H12.6Q15 3.6 15 6V15.4Q15 20.4 11.2 20.4Q8.4 20.4 7 17.8L4.9 13.9A1.25 1.25 0 0 1 7 12.6Z", fill) +
-  line("M10.3 4V8.6M12.6 3.8V8.6", O, 0.8);
+  merged([S("M8 13.4V6Q8 3.6 10.4 3.6H12.6Q15 3.6 15 6V15.4Q15 20.4 11.2 20.4Q8.4 20.4 7 17.8L4.9 13.9A1.25 1.25 0 0 1 7 12.6Z")], fill) +
+  sl("M10.3 4V8.6M12.6 3.8V8.6");
 
 /* ---------- personnes : petits accessoires ---------- */
 const earring = (x = 7.6, y = 12.4, c = C.ocre) => circle(x, y, 0.8, c, { w: 0.7 });
@@ -72,7 +113,15 @@ const SHOULDERS = "M3.6 23V20.4Q3.6 17.2 8.4 16.6H15.6Q20.4 17.2 20.4 20.4V23Z";
 const scaled = (tr, k, svg) => g(tr, svg.replace(/stroke-width="([\d.]+)"/g, (_, w) => `stroke-width="${r2(w / k)}"`));
 const shrink = (k, ...kids) => g(`translate(12 23) scale(${k}) translate(-12 -23)`, ...kids);
 
+
 /* ---------- mains ---------- */
+/** Miroir gauche ↔ droite d'un tracé en commandes absolues M L Q C (x → 24 − x). */
+const mx = (d) => d.replace(/([MLQC])([^MLQCZHVA]*)/g, (_, c, nums) => c + nums.trim().split(/[\s,]+/).map((v, i) => (i % 2 === 0 ? r2(24 - Number(v)) : v)).join(" "));
+const heartHalf = {
+  fingers: "M5.6 16.2Q2.4 12.4 3.4 8.6Q4.6 4.6 8.4 4.8Q10.9 5.1 12 8.2",
+  thumb: "M8.4 17.2Q10.4 18.4 12 20.6",
+  hand: "M2.8 21V17.4Q2.8 14 5.8 14Q8.8 14.2 9.2 17.6L9.4 21Z",
+};
 const hands = [
   {
     slug: "pouce-leve", fr: "Pouce levé", en: "Thumbs up", char: "👍",
@@ -82,7 +131,7 @@ const hands = [
   {
     slug: "pouce-baisse", fr: "Pouce baissé", en: "Thumbs down", char: "👎",
     tags: ["pouce", "thumbs down", "non", "dislike", "pas d'accord"],
-    body: g("rotate(180 12 12)", g("translate(0.6 0)", thumbUp(C.terre))),
+    body: g("rotate(180 12 12)", g("translate(0.6 0)", thumbUp(C.orange))),
   },
   {
     slug: "applaudissements", fr: "Applaudissements", en: "Clapping hands", char: "👏",
@@ -94,40 +143,46 @@ const hands = [
     slug: "mains-jointes", fr: "Mains jointes", en: "Folded hands", char: "🙏",
     tags: ["prière", "pray", "merci", "thank you", "s'il vous plaît", "amen"],
     body: [false, true].map((m) => {
-      const half = path("M12 2.6Q9.8 3.2 9.2 6.4L7.8 13.6Q7.4 15.6 6 17.2L9.4 20.4Q11.2 18.8 12 17.6Z", SKIN) +
-        line("M10.6 12.2Q10.2 14.6 11.2 16.4", O, 0.8) + cuff(4.4, 17.4, 4.4, 3.4, C.indigo);
+      const half = merged([S("M12 2.6Q9.8 3.2 9.2 6.4L7.8 13.6Q7.4 15.6 6 17.2L9.4 20.4Q11.2 18.8 12 17.6Z")]) +
+        sl("M10.6 12.2Q10.2 14.6 11.2 16.4") + g("rotate(42 6.6 19)", cuff(4.2, 17.8, 4.8, 2.4));
       return m ? mirror(half) : half;
     }).join(""),
   },
   {
     slug: "salut-main", fr: "Main qui salue", en: "Waving hand", char: "👋",
     tags: ["salut", "wave", "bonjour", "au revoir", "hello", "bye"],
-    body: g("rotate(-20 12 20)", handOpen()) + motion("M2.6 9.4Q2 7 3 5", "M4.6 4.4Q5.6 2.6 7.4 2", "M19.8 15.6Q21.6 15 22.2 13", "M19.6 19.2Q21.8 18.8 22.6 17.4"),
+    body: g("rotate(-20 12 20)", openHand()) + motion("M2.6 9.4Q2 7 3 5", "M4.6 4.4Q5.6 2.6 7.4 2", "M19.8 15.6Q21.6 15 22.2 13", "M19.6 19.2Q21.8 18.8 22.6 17.4"),
   },
   {
     slug: "signe-victoire", fr: "Signe de la victoire", en: "Victory hand", char: "✌️",
     tags: ["victoire", "victory", "paix", "peace", "v"],
-    body: front({ fingers: { index: [7.2, 3.6], middle: [14, 3] }, thumb: "across" }),
+    body: front({ fingers: { index: [6.8, 3.6], middle: [14.2, 3] }, thumb: "across" }),
   },
   {
     slug: "ok-main", fr: "Main OK", en: "OK hand", char: "👌",
     tags: ["ok", "parfait", "perfect", "d'accord", "nickel"],
-    body: tube("M7.4 12.6A3.4 3.4 0 1 1 10 6.4", 2.3) +
-      front({ fingers: { index: "hide", middle: [11.4, 3.2], ring: [14.6, 3.8], pinky: [18, 6] }, thumb: false, order: ["middle", "ring", "pinky"] }) +
-      tube("M8.2 17.4Q5.6 15.6 5.4 12.4", 2.5),
+    body: merged([
+      T("M4.3 8A3.5 3.5 0 1 0 11.3 8A3.5 3.5 0 1 0 4.3 8", 2),
+      T("M11.2 12.8Q10.9 11.4 10.4 10.4", 2.2),
+      T("M12.8 12.4L13.4 3.4"), T("M14.8 12.6L16.8 4.6"), T("M16.6 13.6L19.4 8.2", 2.2),
+      T("M9.8 17.6Q6 15.6 5.4 10.6", 2.4),
+      S("M9.4 13.6Q9.4 11.4 11.4 11.4H15.8Q18 11.4 18 13.6V16.4Q18 20.8 13.6 20.8H12.6Q9.8 20.8 8.8 18Z"),
+    ])+ sl("M14.1 10.4L14 12.4M16 11L15.7 12.8") + sl("M10.4 16.8Q11.4 15.2 10.8 13.6", 0.6) +
+      cuff(9, 19.8, 8.6, 2.4),
   },
   {
     slug: "biceps", fr: "Biceps", en: "Flexed biceps", char: "💪",
     tags: ["force", "strong", "muscle", "biceps", "courage", "puissance"],
-    body: path("M2.6 21.4V15.6Q4.6 11.2 9.4 10.6Q12.8 10.4 13.6 13L13.4 9.6L18.6 8.6Q21 15.8 20.4 18.4Q19.8 21.4 16 21.4Z", SKIN) +
-      line("M6.6 13.6Q9.6 12.4 11.8 14.4", SKIN_SHADE, 1) + line("M13.6 13Q14.2 16 13.2 17.6", O, 0.9) +
-      rect(12.6, 2.2, 7.2, 8, 3, SKIN) + [3.4, 5.6, 7.8].map((y) => rect(10.8, y, 4.4, 2.2, 1.1, SKIN)).join("") + line("M15.2 2.6Q17.4 4 17.4 6.6", O, 0.9) +
-      cuff(1.4, 15, 3.6, 7, C.terre),
+    body: merged([S("M2.6 21.4V15.6Q4.6 11.2 9.4 10.6Q12.8 10.4 13.6 13L13.4 9.6L18.6 8.6Q21 15.8 20.4 18.4Q19.8 21.4 16 21.4Z")]) +
+      sl("M6.6 13.6Q9.6 12.4 11.8 14.4", 0.9) + sl("M13.6 13Q14.2 16 13.2 17.6", 0.8) +
+      merged([S(rr(12.6, 2.2, 7.2, 8, 3)), ...[3.4, 5.6, 7.8].map((y) => S(rr(10.8, y, 4.4, 2.2, 1.1)))]) +
+      sl("M11.4 5.6H14.2M11.4 7.8H14.2") + sl("M15.2 2.8Q17.4 4 17.4 6.6", 0.8) +
+      cuffV(1.6, 15, 2.8, 7, C.orange),
   },
   {
     slug: "main-levee", fr: "Main levée", en: "Raised hand", char: "✋",
     tags: ["main", "stop", "hand", "lever la main", "high five"],
-    body: handOpen() + cuff(7.6, 19.6, 8.8, 3.2, C.indigo),
+    body: openHand() + cuff(8, 19.8, 8.8, 2.4),
   },
   {
     slug: "index-droite", fr: "Index vers la droite", en: "Backhand index pointing right", char: "👉",
@@ -137,28 +192,39 @@ const hands = [
   {
     slug: "index-leve", fr: "Index levé", en: "Index pointing up", char: "☝️",
     tags: ["index", "pointer", "attention", "un", "point up", "idée"],
-    body: front({ fingers: { index: [9.4, 2.6] }, thumb: "across", cuffColor: C.vert }),
+    body: front({ fingers: { index: [9.4, 2.6] }, thumb: "across", cuffColor: C.vertLight }),
   },
   {
     slug: "doigts-croises", fr: "Doigts croisés", en: "Crossed fingers", char: "🤞",
     tags: ["chance", "luck", "espoir", "fingers crossed", "souhait"],
-    body: front({ fingers: { middle: [9.8, 3.2], index: [13.6, 3.6] }, thumb: "across", order: ["middle", "index"], cuffColor: C.terre }),
+    body: front({ fingers: { middle: [9.6, 3.2], index: [13.8, 3.6] }, over: ["index"], thumb: "across", cuffColor: C.orange }),
   },
   {
     slug: "mains-levees", fr: "Mains levées", en: "Raising hands", char: "🙌",
     tags: ["hourra", "celebrate", "joie", "fête", "louange", "hooray"],
-    body: scaled("translate(-1.8 7.4) scale(0.68)", 0.68, g("rotate(-8 12 20)", handOpen(), cuff(7.6, 19.6, 8.8, 3.2, C.indigo))) +
-      scaled("translate(9.5 7.4) scale(0.68)", 0.68, mirror(g("rotate(-8 12 20)", handOpen(), cuff(7.6, 19.6, 8.8, 3.2, C.indigo)))) +
-      motion("M3.6 6.4L2.6 4.8", "M6.6 5L6.8 3.2", "M9.4 6.2L10.2 4.8", "M20.4 6.4L21.4 4.8", "M17.4 5L17.2 3.2", "M14.6 6.2L13.8 4.8"),
+    body: [false, true].map((m) => {
+      // main plus petite dessinée à l'échelle 1 (le contour reste W) : doigts longs, séparés par des traits SKIN_LINE
+      const F = [[4.3, 14.8, 2.3, 6.2], [6, 14.4, 4.9, 4.9], [7.7, 14.4, 7.6, 5.4], [9.3, 15, 9.9, 8]];
+      const sep = F.slice(0, 3).map(([a, b, c, d], i) => {
+        const [e, f, h, k] = F[i + 1];
+        return `M${r2((c + h) / 2 + 0.15)} ${r2((d + k) / 2 + 2.2)}L${r2((a + e) / 2)} ${r2((b + f) / 2 - 0.6)}`;
+      }).join("");
+      const half = merged([
+        ...F.map(([a, b, c, d]) => T(`M${a} ${b}L${c} ${d}`, 1.9)), T("M4.4 18.6L1.8 15.2", 2),
+        S("M3.2 15.6Q3.2 13.8 4.8 13.8H9.2Q10.8 13.8 10.8 15.6V17.6Q10.8 21 7.6 21H7Q4.8 21 4 19Z"),
+      ]) + sl(sep, 0.6) + cuff(3.8, 20.2, 6.6, 2.2) +
+        motion("M2.6 3.6L1.8 2.2", "M5.6 2.2V0.9", "M8.8 3L9.6 1.8");
+      return m ? mirror(half) : half;
+    }).join(""),
   },
   {
     slug: "mains-coeur", fr: "Mains en cœur", en: "Heart hands", char: "🫶",
     tags: ["cœur", "heart", "amour", "love", "merci", "soutien"],
-    body: [false, true].map((m) => {
-      const half = tube("M5.4 15Q2 10.4 4.4 6.6Q7 3.4 10 5.4Q11.4 6.4 12 8.4", 2.4) +
-        path("M3 14.6Q4.8 12.4 7.4 13.6Q9.4 14.8 8.6 18.6L7.8 21.8H3.4Z", SKIN) + tube("M7.8 17.4Q10.4 18.4 12 20.4", 2.2);
-      return m ? mirror(half) : half;
-    }).join("") + path("M12 16.2L9.4 13.4A1.5 1.5 0 0 1 12 11.4A1.5 1.5 0 0 1 14.6 13.4Z", C.rouge, { w: 0.8 }),
+    body: merged([
+      T(heartHalf.fingers, 2), T(mx(heartHalf.fingers), 2), T(heartHalf.thumb, 2.1), T(mx(heartHalf.thumb), 2.1),
+      S(heartHalf.hand), S(mx(heartHalf.hand)),
+    ]) + sl("M12 7.2V9.2M12 19.6V21.4") + sl("M4.6 16.6Q5.8 15.8 7.2 16.4" + mx("M4.6 16.6Q5.8 15.8 7.2 16.4"), 0.6) +
+      cuff(2.4, 20.4, 7.4, 2.4) + cuff(14.2, 20.4, 7.4, 2.4),
   },
   {
     slug: "poing-leve", fr: "Poing levé", en: "Raised fist", char: "✊",
@@ -168,16 +234,17 @@ const hands = [
   {
     slug: "poignee-de-main", fr: "Poignée de main", en: "Handshake", char: "🤝",
     tags: ["accord", "handshake", "deal", "partenariat", "salutation", "paix"],
-    body: g("translate(0 1.2)", path("M4.4 10.4L11 10Q14.6 10.2 15.8 12.6L16.8 15.4Q16.8 17.8 14 17.8L4.4 17.8Z", SKIN) +
-      path("M19.6 6.8L13.2 8Q10 8.8 9.2 11.6L9 13L19.6 14.2Z", SKIN) +
-      [9.6, 11.6, 13.6, 15.6].map((x, i) => tube(`M${r2(x + 0.8)} 11.8L${x} ${r2(17 - Math.abs(i - 1.5) * 0.4)}`, 1.9)).join("") +
-      tube("M6.4 11.8Q8.6 9 12.4 8.8", 2.3) +
-      cuff(1.2, 10, 3.4, 8.2, C.indigo) + cuff(19.4, 6.2, 3.4, 8.2, C.terre)),
+    body: g("translate(0 1.2)", merged([S("M4.4 10.4L11 10Q14.6 10.2 15.8 12.6L16.8 15.4Q16.8 17.8 14 17.8L4.4 17.8Z")]) +
+      merged([S("M19.6 6.8L13.2 8Q10 8.8 9.2 11.6L9 13L19.6 14.2Z")]) +
+      merged([9.6, 11.6, 13.6, 15.6].map((x, i) => T(`M${r2(x + 0.8)} 11.8L${x} ${r2(17 - Math.abs(i - 1.5) * 0.4)}`, 1.9))) +
+      sl([10.6, 12.6, 14.6].map((x) => `M${r2(x + 0.75)} 13L${r2(x + 0.15)} 16.4`).join("")) +
+      merged([T("M6.4 11.8Q8.6 9 12.4 8.8", 2.3)]) +
+      cuffV(1.6, 10, 2.8, 8.2) + cuffV(19.6, 6.2, 2.8, 8.2, C.orange)),
   },
 ];
 
 /* ---------- personnes (originaux africains) ---------- */
-const WAX = (spots, c = C.terre) => spots.map(([x, y]) => circle(x, y, 0.55, c, false)).join("");
+const WAX = (spots, c = C.terre, r = 0.55) => spots.map(([x, y]) => circle(x, y, r, c, false)).join("");
 const people = [
   {
     slug: "femme-gele", fr: "Femme au gele", en: "Woman wearing a gele",
@@ -193,13 +260,16 @@ const people = [
   },
   {
     slug: "homme-agbada", fr: "Homme en agbada et fila", en: "Man in agbada and fila",
-    tags: ["agbada", "boubou", "fila", "yoruba", "homme", "grand boubou", "nigeria"],
+    tags: ["agbada", "boubou", "fila", "yoruba", "homme", "grand boubou", "nigeria", "damas"],
     body: bust({
-      cloth: C.indigo,
-      collar: path("M9.2 16.8L12 21.2L14.8 16.8", "none", { c: C.ocre, w: 1 }) + path("M7.6 17.4Q12 24 16.4 17.4", "none", { c: C.ocre, w: 0.8 }) + dot(12, 19.4, 0.5, C.ocre),
+      cloth: C.sable,
+      collar: WAX([[6.4, 20.4], [17.6, 20.4], [5.2, 22.2], [18.8, 22.2]], C.bois, 0.45) +
+        path("M9.2 16.8L12 21.2L14.8 16.8", "none", { c: C.terre, w: 1 }) + path("M7.6 17.4Q12 24 16.4 17.4", "none", { c: C.terre, w: 0.8 }) + dot(12, 19.4, 0.5, C.terre),
       hair: path("M7.4 10.6Q7 6 12 5.6Q17 6 16.6 10.6Z", C.noir),
-      top: path("M7.2 8.6Q6.8 3.4 12.4 3.2Q17.4 3.2 19 5.8Q19.4 7.2 17.6 7.6L16.8 8.8Q12 7 7.2 8.6Z", C.ocre) +
-        path("M7.2 8.6Q12 7 16.8 8.8L16.6 10Q12 8.2 7.3 9.8Z", C.terre, { w: 0.8 }) + line("M10 4.2L9.4 7.8M13.2 3.6L13 7.8M16 4.4L15.6 8", C.terre, 0.6),
+      // fila indigo « abeti aja » : le haut se replie et retombe sur le côté
+      top: path("M7.2 8.7Q6.6 4.4 10 3.4Q14.6 2.2 18 4.2Q19.8 5.4 19 7L17.4 7.6L16.8 8.9Q12 7.1 7.2 8.7Z", C.indigoLight) +
+        line("M9.6 3.8Q13.6 4.6 18.2 6.6", C.indigo, 0.9) + WAX([[9.4, 6.6], [12, 6], [14.6, 6.6], [11, 4.6]], C.ciel, 0.38) +
+        path("M7.2 8.7Q12 7.1 16.8 8.9L16.6 10Q12 8.3 7.3 9.8Z", C.indigo, { w: 0.8 }),
     }),
   },
   {
@@ -236,12 +306,15 @@ const people = [
   },
   {
     slug: "homme-kufi", fr: "Homme au kufi", en: "Man wearing a kufi",
-    tags: ["kufi", "bonnet", "cap", "homme", "dashiki", "afrique de l'ouest"],
+    tags: ["kufi", "bonnet", "cap", "homme", "dashiki", "afrique de l'ouest", "tricot", "boubou"],
     body: bust({
-      cloth: C.vert,
-      collar: path("M9.4 16.8L12 20.2L14.6 16.8", "none", { c: C.ocreLight, w: 1.1 }) + line("M8.4 17.2L12 21.6L15.6 17.2", C.ocre, 0.7),
-      top: path("M7.4 8.8V6.2Q7.4 3.4 12 3.4Q16.6 3.4 16.6 6.2V8.8Q12 7.4 7.4 8.8Z", C.cream) +
-        path("M7.4 7.2Q12 5.8 16.6 7.2", "none", { c: C.terre, w: 0.8 }) + beads([[9, 5.2], [11, 4.9], [13, 4.9], [15, 5.2]], C.terre, 0.35) +
+      cloth: C.orange,
+      collar: path("M9.2 16.8L12 20.6L14.8 16.8", "none", { c: C.indigo, w: 1.2 }) + line("M8.2 17.2L12 22L15.8 17.2", C.ocreLight, 0.7) +
+        WAX([[6.6, 20.6], [17.4, 20.6], [12, 22.4]], C.indigo),
+      // kufi tricoté : calotte ronde couverte de rangées de mailles (points)
+      top: path("M7.3 8.9V6.4Q7.3 3.2 12 3.2Q16.7 3.2 16.7 6.4V8.9Q12 7.5 7.3 8.9Z", C.ocreLight) +
+        [[4.6, [9.4, 10.7, 12, 13.3, 14.6], C.terre], [6, [8.6, 9.9, 11.2, 12.8, 14.1, 15.4], C.vert], [7.4, [8.2, 9.6, 11, 13, 14.4, 15.8], C.terre]]
+          .map(([y, xs, c]) => xs.map((x) => circle(x, y, 0.38, c, false)).join("")).join("") +
         path("M7.6 11.6Q8.2 15.6 12 15.6Q15.8 15.6 16.4 11.6Q15.6 13.8 12 14.2Q8.4 13.8 7.6 11.6Z", C.noir, { w: 0.8 }),
     }),
   },
@@ -275,8 +348,10 @@ const people = [
     tags: ["maman", "mother", "bébé", "baby", "pagne", "porter au dos", "famille"],
     body: bust({
       cloth: C.indigo,
-      hair: circle(17.6, 9.6, 3, SKIN) + path("M14.8 8.4Q15.4 6.4 17.6 6.4Q19.8 6.4 20.4 8.4Q18 7.6 14.8 8.4Z", C.noir, { w: 0.8 }) + dot(18.6, 9.6, 0.45) +
-        path("M14 13.6Q17.8 10.8 21 13.2Q22.2 15.8 20.8 18.4Q17 17.2 14 17.8Z", C.ocre) + WAX([[18.6, 14.2], [20.4, 16.2]], C.terre),
+      // bébé : tête bien détachée de la mère et du pagne (liseré clair du bonnet et ourlet blanc du porte-bébé)
+      hair: circle(18, 8.8, 3.9, C.cream, false) + circle(18, 8.8, 2.9, SKIN) + path("M15.2 7.8Q15.6 5.8 18 5.8Q20.4 5.8 20.8 7.8Q18 7 15.2 7.8Z", C.noir, { w: 0.8 }) +
+        dot(19.1, 9, 0.45) + line("M18.4 10.6Q19 11 19.6 10.6", O, 0.6) +
+        path("M14 14Q17.8 11.6 21.2 13.4Q22.4 16 21 18.6Q17 17.4 14 18Z", C.ocre) + line("M14.6 13.9Q17.8 12 20.8 13.6", C.white, 0.9) + WAX([[18.6, 15], [20.4, 16.6]], C.terre),
       collar: path("M4.6 19.4Q11 15.8 20.2 17.4L20.6 19.2Q11.6 17.6 5 21.2Z", C.ocre) + WAX([[8.4, 18.6], [12.4, 17.6], [16.6, 17.8]], C.terre) +
         path("M9.4 18.4L8.2 21.6L10 21.2L10.8 18Z", C.ocre, { w: 0.8 }),
       top: path("M7.2 9.4Q6.6 4.2 12 4Q17.4 4.2 16.8 9.4Q14.6 7.4 12 7.4Q9.4 7.4 7.2 9.4Z", C.terre) + path("M12.6 4.2Q14 2 15.6 3.2Q15.2 4.6 13.2 5Z", C.terre, { w: 0.8 }) + earring(7.4, 12.6),

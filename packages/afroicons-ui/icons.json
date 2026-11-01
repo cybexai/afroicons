@@ -228,8 +228,8 @@
   "fr": "Accueil",
   "en": "Home",
   "family": "Navigation",
-  "afro": "La case : un toit de chaume conique, une porte arrondie.",
-  "body": "<path d=\"M2.5 11L12 3.5L21.5 11Z\"/><path d=\"M12 3.5L9 11M12 3.5L15 11\"/><path d=\"M5 11V20H19V11\"/><path d=\"M10 20V16A2 2 0 0 1 14 16V20\"/><path d=\"M3 20H21\"/>"
+  "afro": "La case : un toit pointu et une porte arrondie.",
+  "body": "<path d=\"M2.5 11.5L12 3L21.5 11.5Z\"/><path d=\"M5 11.5V20.5H19V11.5\"/><path d=\"M10 20.5V16.5A2 2 0 0 1 14 16.5V20.5\"/>"
  },
  {
   "id": "LayoutDashboard",
@@ -453,7 +453,7 @@
   "en": "Locked ledger",
   "family": "Documents et données",
   "afro": null,
-  "body": "<path d=\"M4.5 19V5C4.5 3.9 5.4 3 6.5 3H19.5V13\"/><path d=\"M4.5 19C4.5 17.9 5.4 17 6.5 17H11M4.5 19C4.5 20.1 5.4 21 6.5 21H11\"/><rect x=\"13.5\" y=\"16.5\" width=\"7\" height=\"5\" rx=\"1\"/><path d=\"M15 16.5V15A2 2 0 0 1 19 15V16.5\"/>"
+  "body": "<path d=\"M4.5 19V5C4.5 3.9 5.4 3 6.5 3H19.5V17H6.5C5.4 17 4.5 17.9 4.5 19S5.4 21 6.5 21H19.5V17\"/><rect x=\"9.5\" y=\"9.5\" width=\"6\" height=\"4.5\" rx=\"1\"/><path d=\"M11 9.5V8A1.5 1.5 0 0 1 14 8V9.5\"/>"
  },
  {
   "id": "CalendarClock",
@@ -525,7 +525,7 @@
   "en": "Assistant",
   "family": "Personnes",
   "afro": null,
-  "body": "<path d=\"M12 5C11 3.6 8.6 3.6 7.8 5.4C5.8 5.4 4.6 7.4 5.4 9.2C3.8 10.2 3.8 12.6 5.4 13.6C4.8 15.6 6.2 17.6 8.2 17.4C8.8 19.4 11 20 12 18.6\"/><path d=\"M12 5C13 3.6 15.4 3.6 16.2 5.4C18.2 5.4 19.4 7.4 18.6 9.2C20.2 10.2 20.2 12.6 18.6 13.6C19.2 15.6 17.8 17.6 15.8 17.4C15.2 19.4 13 20 12 18.6\"/><path d=\"M12 5V18.6M8.6 9.5C9.6 9.6 10.4 10.4 10.4 11.4M15.4 9.5C14.4 9.6 13.6 10.4 13.6 11.4\"/>"
+  "body": "<path d=\"M11 4.8C10 3.8 8.2 3.7 7.2 5.2C5.2 5.4 4 7.4 4.6 9.4C3.3 10.6 3.3 13.4 4.8 14.6C4.8 17.2 7 19 9.4 18.6C9.9 19.4 10.4 19.7 11 19.6Z\"/><path d=\"M13 4.8C14 3.8 15.8 3.7 16.8 5.2C18.8 5.4 20 7.4 19.4 9.4C20.7 10.6 20.7 13.4 19.2 14.6C19.2 17.2 17 19 14.6 18.6C14.1 19.4 13.6 19.7 13 19.6Z\"/><path d=\"M7.4 10.4C8.4 10.6 9 11.4 9 12.4M16.6 10.4C15.6 10.6 15 11.4 15 12.4\"/>"
  },
  {
   "id": "Palette",
@@ -541,7 +541,7 @@
   "en": "Team",
   "family": "Personnes",
   "afro": "Deux personnes, dont une coiffée d'un gele (foulard noué).",
-  "body": "<path d=\"M5.2 10.4C4.7 7 6.5 4.8 8.8 4.8S12.9 7 12.4 10.4Z\"/><path d=\"M10.8 5.2C11.4 3.4 13.1 2.6 14.6 3.2C13.9 4.3 13 5.2 12 6\"/><path d=\"M6 10.4C6 12.6 7.2 14 8.8 14S11.6 12.6 11.6 10.4\"/><path d=\"M2.5 20.5C2.5 17.7 5.3 15.8 8.8 15.8S15 17.7 15 20.5\"/><path d=\"M17.4 14.8C19.8 15.1 21.5 17.1 21.5 19.8\"/><circle cx=\"17.4\" cy=\"9.8\" r=\"2.5\"/>"
+  "body": "<circle cx=\"9\" cy=\"9.5\" r=\"3.3\"/><path d=\"M5.8 8.6C5.6 5.6 7.4 4 9.4 4.1C11.4 4.2 12.6 5.8 12.3 8.4\"/><circle cx=\"12.6\" cy=\"4.6\" r=\"1.1\" fill=\"currentColor\" stroke=\"none\"/><path d=\"M3 20.5C3 17.2 5.7 15 9 15S15 17.2 15 20.5\"/><path d=\"M15.5 6.4A3.2 3.2 0 0 1 15.9 12.5\"/><path d=\"M17.5 15C19.6 15.6 21 17.6 21 20.2\"/>"
  },
  {
   "id": "UsersRound",
@@ -585,8 +585,8 @@
  },
  {
   "id": "Briefcase",
-  "fr": "Activité",
-  "en": "Business",
+  "fr": "Porte-documents",
+  "en": "Briefcase",
   "family": "Commerce et stock",
   "afro": null,
   "body": "<rect x=\"3\" y=\"7\" width=\"18\" height=\"13\" rx=\"2.5\"/><path d=\"M8.5 7V5.5C8.5 4.4 9.4 3.5 10.5 3.5H13.5C14.6 3.5 15.5 4.4 15.5 5.5V7\"/><path d=\"M3 12.5H21\"/><path d=\"M11 12.5V14.5H13V12.5\"/>"
@@ -637,7 +637,7 @@
   "en": "Coins",
   "family": "Argent et paiement",
   "afro": null,
-  "body": "<ellipse cx=\"9\" cy=\"6.5\" rx=\"6\" ry=\"2.8\"/><path d=\"M3 6.5V11.2C3 12.7 5.7 14 9 14\"/><path d=\"M3 11.2V15.8C3 17.3 5.7 18.6 9 18.6\"/><path d=\"M15 6.5V8.5\"/><circle cx=\"15.5\" cy=\"15\" r=\"5.5\"/><path d=\"M15.5 12.8V17.2\"/>"
+  "body": "<ellipse cx=\"9\" cy=\"6.5\" rx=\"6\" ry=\"2.8\"/><path d=\"M3 6.5V11.2C3 12.7 5.7 14 9 14\"/><path d=\"M3 11.2V15.8C3 17.3 5.7 18.6 9 18.6\"/><path d=\"M15 6.5V8.5\"/><circle cx=\"15.5\" cy=\"15\" r=\"5.5\"/><circle cx=\"15.5\" cy=\"15\" r=\"2.6\"/>"
  },
  {
   "id": "Banknote",
@@ -645,15 +645,15 @@
   "en": "Banknote",
   "family": "Statuts et alertes",
   "afro": null,
-  "body": "<rect x=\"2.5\" y=\"6\" width=\"19\" height=\"12\" rx=\"2\"/><circle cx=\"12\" cy=\"12\" r=\"2.8\"/><path d=\"M6 9.5V14.5M18 9.5V14.5\"/>"
+  "body": "<rect x=\"2.5\" y=\"6\" width=\"19\" height=\"12\" rx=\"2\"/><circle cx=\"12\" cy=\"12\" r=\"2.8\"/><circle cx=\"6\" cy=\"9.5\" r=\"1\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"18\" cy=\"14.5\" r=\"1\" fill=\"currentColor\" stroke=\"none\"/>"
  },
  {
   "id": "DollarSign",
   "fr": "Argent",
   "en": "Money",
   "family": "Argent et paiement",
-  "afro": "Le cauri, coquillage qui servait de monnaie, à la place du signe dollar.",
-  "body": "<path d=\"M12 3C16.4 3 19 7 19 12S16.4 21 12 21S5 17 5 12S7.6 3 12 3Z\"/><path d=\"M12 6C11 9 11 15 12 18\"/><path d=\"M10.3 8.2H11.4M10 10.7H11.1M10 13.3H11.1M10.3 15.8H11.4M12.6 8.2H13.7M12.9 10.7H14M12.9 13.3H14M12.6 15.8H13.7\"/>"
+  "afro": "Une pièce frappée d'un cauri, le coquillage qui servait de monnaie.",
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><ellipse cx=\"12\" cy=\"12\" rx=\"3.3\" ry=\"5\"/><path d=\"M12 8.6C11.5 10.6 11.5 13.4 12 15.4\"/>"
  },
  {
   "id": "HandCoins",
@@ -661,7 +661,7 @@
   "en": "Collect",
   "family": "Actions",
   "afro": "Une main qui reçoit un cauri.",
-  "body": "<path d=\"M2.5 14.5H6L10.5 17H14.2C15.1 17 15.8 16.3 15.8 15.4S15.1 13.8 14.2 13.8H10.5\"/><path d=\"M15.8 15.6L19.6 13.4C20.4 13 21.3 13.3 21.6 14.1S21.4 15.7 20.7 16.1L14.5 20H9L6 18.5H2.5\"/><ellipse cx=\"14.5\" cy=\"7\" rx=\"3\" ry=\"3.8\"/><path d=\"M14.5 4.6C14 6.2 14 7.8 14.5 9.4\"/>"
+  "body": "<path d=\"M2.5 14.5H6L10.5 17H14.2C15.1 17 15.8 16.3 15.8 15.4S15.1 13.8 14.2 13.8H10.5\"/><path d=\"M15.8 15.6L19.6 13.4C20.4 13 21.3 13.3 21.6 14.1S21.4 15.7 20.7 16.1L14.5 20H9L6 18.5H2.5\"/><ellipse cx=\"14\" cy=\"6.8\" rx=\"3.4\" ry=\"4.4\"/><path d=\"M14 4C13.5 5.8 13.5 7.8 14 9.6\"/>"
  },
  {
   "id": "Receipt",
@@ -669,7 +669,7 @@
   "en": "Receipt",
   "family": "Argent et paiement",
   "afro": null,
-  "body": "<path d=\"M6 3H18V21L15.6 19.4L13.8 21L12 19.4L10.2 21L8.4 19.4L6 21Z\"/><path d=\"M9 8H15M9 11.5H15M9 15H12.5\"/>"
+  "body": "<path d=\"M6 3H18V21L15.6 19.4L13.8 21L12 19.4L10.2 21L8.4 19.4L6 21Z\"/><path d=\"M9 7.5H15M9 11H15\"/><circle cx=\"12\" cy=\"15\" r=\"1.8\"/>"
  },
  {
   "id": "ReceiptText",
@@ -708,8 +708,8 @@
   "fr": "Caisse et ventes",
   "en": "Sales",
   "family": "Commerce et stock",
-  "afro": "Le panier tressé du marché, à la place du chariot.",
-  "body": "<path d=\"M3.5 9.5H20.5L18.6 19.2C18.4 20.2 17.6 20.8 16.6 20.8H7.4C6.4 20.8 5.6 20.2 5.4 19.2Z\"/><path d=\"M7.5 9.5C7.5 4.8 16.5 4.8 16.5 9.5\"/><path d=\"M9.3 12.5L9.8 17.8M12 12.5V17.8M14.7 12.5L14.2 17.8\"/>"
+  "afro": "Le panier tressé du marché, monté sur roulettes, à la place du chariot.",
+  "body": "<path d=\"M3.5 8H20.5L18.8 16C18.6 16.9 17.9 17.5 17 17.5H7C6.1 17.5 5.4 16.9 5.2 16Z\"/><path d=\"M7.5 8C7.5 3.4 16.5 3.4 16.5 8\"/><path d=\"M10 11V14.5M14 11V14.5\"/><circle cx=\"8.5\" cy=\"20.2\" r=\"1.3\"/><circle cx=\"15.5\" cy=\"20.2\" r=\"1.3\"/>"
  },
  {
   "id": "Store",
@@ -749,7 +749,7 @@
   "en": "Delivery",
   "family": "Commerce et stock",
   "afro": "La moto de livraison, caisse à l'arrière.",
-  "body": "<circle cx=\"5\" cy=\"17.5\" r=\"2.7\"/><circle cx=\"19\" cy=\"17.5\" r=\"2.7\"/><path d=\"M5 17.5L7.8 12.5H13.6L19 17.5\"/><path d=\"M13.6 12.5L15.2 7.6M14.1 7.6H17.4\"/><path d=\"M9.8 17.5H13.4L12.6 14.6H10.4Z\"/><path d=\"M2.6 5.8H9.4V10.6H2.6Z\"/><path d=\"M9.4 10.6L10.2 12.5\"/>"
+  "body": "<circle cx=\"5.5\" cy=\"17\" r=\"2.8\"/><circle cx=\"18.5\" cy=\"17\" r=\"2.8\"/><path d=\"M5.5 17L8.5 12.5H15L18.5 17\"/><path d=\"M15 12.5L16.2 8.5H18.5\"/><rect x=\"3\" y=\"5\" width=\"8\" height=\"7.5\" rx=\"1\"/>"
  },
  {
   "id": "Bus",
@@ -757,15 +757,15 @@
   "en": "Travel",
   "family": "Commerce et stock",
   "afro": "Le taxi-brousse, bagages sur le toit.",
-  "body": "<path d=\"M4.7 16.5H2.5V9C2.5 8.1 3.1 7.5 4 7.5H16.6C17.5 7.5 18.2 8 18.6 8.8L21 13.4C21.3 14 21.5 14.8 21.5 15.5V16.5H19.3M8.3 16.5H15.7\"/><circle cx=\"6.5\" cy=\"17\" r=\"1.8\"/><circle cx=\"17.5\" cy=\"17\" r=\"1.8\"/><path d=\"M4.6 9.8H10.4V12.6H4.6ZM12 9.8H16.4L17.8 12.6H12Z\"/><path d=\"M4 5.5H16.5M5.2 5.5V7.5M15.3 5.5V7.5\"/><path d=\"M6.8 5.5V3.5H13.2V5.5\"/>"
+  "body": "<path d=\"M5.2 17H3.5C2.9 17 2.5 16.6 2.5 16V8C2.5 7.2 3.2 6.5 4 6.5H20C20.8 6.5 21.5 7.2 21.5 8V16C21.5 16.6 21.1 17 20.5 17H18.8M8.8 17H15.2\"/><path d=\"M4.5 9H19.5V12.5H4.5ZM9.5 9V12.5M14.5 9V12.5\"/><circle cx=\"7\" cy=\"17.2\" r=\"1.8\"/><circle cx=\"17\" cy=\"17.2\" r=\"1.8\"/><path d=\"M5.5 6.5V4H11V6.5M13 6.5V4.8H17.5V6.5\"/>"
  },
  {
   "id": "Car",
   "fr": "Véhicule",
   "en": "Vehicle",
   "family": "Commerce et stock",
-  "afro": "Un taxi avec galerie de toit.",
-  "body": "<path d=\"M5 16.5H3.5V12.8C3.5 12 4 11.4 4.7 11.2L6.8 7.4C7.2 6.6 8 6.2 8.8 6.2H15.2C16 6.2 16.8 6.6 17.2 7.4L19.3 11.2C20 11.4 20.5 12 20.5 12.8V16.5H19\"/><path d=\"M9 16.5H15\"/><path d=\"M5 11.2H19\"/><path d=\"M8.5 4H15.5M9.5 4V6.2M14.5 4V6.2\"/><circle cx=\"7\" cy=\"16.8\" r=\"2\"/><circle cx=\"17\" cy=\"16.8\" r=\"2\"/>"
+  "afro": null,
+  "body": "<path d=\"M5 17H3.5V13.3C3.5 12.5 4 11.9 4.7 11.7L6.8 8C7.2 7.3 8 6.8 8.8 6.8H15.2C16 6.8 16.8 7.3 17.2 8L19.3 11.7C20 11.9 20.5 12.5 20.5 13.3V17H19\"/><path d=\"M9 17H15\"/><path d=\"M5 11.7H19\"/><circle cx=\"7\" cy=\"17.2\" r=\"2\"/><circle cx=\"17\" cy=\"17.2\" r=\"2\"/>"
  },
  {
   "id": "Fuel",
@@ -773,7 +773,7 @@
   "en": "Fuel",
   "family": "Commerce et stock",
   "afro": "Le bidon (jerrican), forme familière du carburant au détail.",
-  "body": "<rect x=\"4.5\" y=\"6\" width=\"14\" height=\"15.5\" rx=\"2.5\"/><path d=\"M7 6V3.5H11.5V6\"/><path d=\"M15 6L16.6 3H19\"/><path d=\"M8 10.5L15 17.5M15 10.5L8 17.5\"/>"
+  "body": "<rect x=\"4.5\" y=\"7\" width=\"14\" height=\"14.5\" rx=\"2.5\"/><path d=\"M7.5 7V4H11.5V7\"/><path d=\"M15 7L16.6 4H19\"/><path d=\"M11.5 10.8C13.4 13 14 14.2 14 15.4A2.5 2.5 0 0 1 9 15.4C9 14.2 9.6 13 11.5 10.8Z\"/>"
  },
  {
   "id": "Ticket",
@@ -813,7 +813,7 @@
   "en": "Lodging",
   "family": "Commerce et stock",
   "afro": "Le lit sous sa moustiquaire.",
-  "body": "<path d=\"M3.5 20V14.5C3.5 13.4 4.4 12.5 5.5 12.5H18.5C19.6 12.5 20.5 13.4 20.5 14.5V20\"/><path d=\"M3.5 17H20.5\"/><path d=\"M7 12.5V11.2C7 10.5 7.5 10 8.2 10H10.3C11 10 11.5 10.5 11.5 11.2V12.5M12.5 12.5V11.2C12.5 10.5 13 10 13.7 10H15.8C16.5 10 17 10.5 17 11.2V12.5\"/><path d=\"M3.8 12.4C5.2 7.4 9 3.4 12 2.6C15 3.4 18.8 7.4 20.2 12.4\"/>"
+  "body": "<path d=\"M4.5 13.5V10.5C4.5 9.7 5.2 9 6 9H18C18.8 9 19.5 9.7 19.5 10.5V13.5\"/><path d=\"M3 13.5H21V18H3Z\"/><path d=\"M4 18V20.5M20 18V20.5\"/><path d=\"M7.5 13.5V12H11V13.5M13 13.5V12H16.5V13.5\"/><path d=\"M5.5 6.5Q12 1.8 18.5 6.5\"/>"
  },
  {
   "id": "Shirt",
@@ -828,8 +828,8 @@
   "fr": "Restaurant",
   "en": "Restaurant",
   "family": "Commerce et stock",
-  "afro": "La marmite sur son feu, qui fume.",
-  "body": "<path d=\"M4.5 10H19.5C19.5 15.5 16.5 18.3 12 18.3S4.5 15.5 4.5 10Z\"/><path d=\"M3 10H21M4.9 12.2H3.2M19.1 12.2H20.8\"/><path d=\"M8 18L7 21M16 18L17 21\"/><path d=\"M10 7C9.3 6.2 10.7 5.3 10 4.4M14 7C13.3 6.2 14.7 5.3 14 4.4\"/>"
+  "afro": "La marmite et sa louche, à la place des couverts.",
+  "body": "<path d=\"M4.5 11H19.5C19.5 16 16.5 19.5 12 19.5S4.5 16 4.5 11Z\"/><path d=\"M3 11H21\"/><path d=\"M13.5 11L18 3.5\"/><path d=\"M9 8C8.3 7.2 9.7 6.3 9 5.4\"/>"
  },
  {
   "id": "CakeSlice",
@@ -841,8 +841,8 @@
  },
  {
   "id": "Sprout",
-  "fr": "Agriculture",
-  "en": "Farming",
+  "fr": "Pousse",
+  "en": "Sprout",
   "family": "Commerce et stock",
   "afro": null,
   "body": "<path d=\"M12 21V11\"/><path d=\"M12 13C12 9 9.5 6.5 4.5 6.5C4.5 11 7 13 12 13Z\"/><path d=\"M12 11C12 7 14.5 4 19.5 4C19.5 8.5 17 11 12 11Z\"/><path d=\"M8 21H16\"/>"
@@ -921,7 +921,7 @@
  },
  {
   "id": "Activity",
-  "fr": "Activité",
+  "fr": "Suivi d'activité",
   "en": "Activity",
   "family": "Statuts et alertes",
   "afro": null,
@@ -957,7 +957,7 @@
   "en": "Launch",
   "family": "Statuts et alertes",
   "afro": null,
-  "body": "<path d=\"M12 15.5L8.5 12C9.6 8 12.6 4.4 19.5 4.5C19.6 11.4 16 14.4 12 15.5Z\"/><path d=\"M8.5 12L5 11.5L7.2 8.8C8 8.4 9 8.4 10 8.6\"/><path d=\"M12 15.5L12.5 19L15.2 16.8C15.6 16 15.6 15 15.4 14\"/><path d=\"M6.2 17.8C5.3 18.7 5 20.1 5 21C5.9 21 7.3 20.7 8.2 19.8\"/><circle cx=\"15.3\" cy=\"8.7\" r=\"1.6\"/>"
+  "body": "<path d=\"M11.5 16.2L7.8 12.5C9 8 12.3 4 19.8 4.2C20 11.7 16 15 11.5 16.2Z\"/><path d=\"M7.8 12.5L4 12L6.4 9C7.3 8.5 8.4 8.5 9.5 8.8\"/><path d=\"M11.5 16.2L12 20L15 17.6C15.5 16.7 15.5 15.6 15.2 14.5\"/><path d=\"M6.8 17.2L3.8 20.2\"/><circle cx=\"15.4\" cy=\"8.6\" r=\"1.7\"/>"
  },
  {
   "id": "Lightbulb",
@@ -973,7 +973,7 @@
   "en": "Language and web",
   "family": "Communication",
   "afro": "Un globe centré sur l'Afrique.",
-  "body": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M8.69 6.44H14.39L15.68 8.55L17.34 10.02L15.5 11.68L15.31 14.26L13.29 17.57L12.37 18.49L11.45 16.46L11.26 13.7L10.34 12.23L7.77 11.68L7.03 9.47Z\"/><circle cx=\"17.1\" cy=\"15.1\" r=\"0.75\" fill=\"currentColor\" stroke=\"none\"/>"
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M8.5 3.7C5.6 7.8 5.6 16.2 8.5 20.3\"/><path d=\"M10.5 7H15.5L17.5 9.5L16 12L15.5 15L13.5 18L12.5 15L12 12.5L10 11.5L9.5 9Z\"/><circle cx=\"17.6\" cy=\"15.2\" r=\"0.75\" fill=\"currentColor\" stroke=\"none\"/>"
  },
  {
   "id": "Phone",
@@ -1117,7 +1117,7 @@
   "en": "Partnership",
   "family": "Actions",
   "afro": null,
-  "body": "<path d=\"M2.5 7.5L6 6.5L11 9\"/><path d=\"M21.5 7.5L17.5 6.5L14.5 6.5L9.6 10.6C9 11.1 9 12 9.6 12.5C10.1 13 10.9 13 11.4 12.5L13.6 10.6\"/><path d=\"M13.6 10.6L18.6 15.2\"/><path d=\"M21.5 15L18.6 15.2L13.2 19.6C12.6 20.1 11.7 20 11.2 19.4L5.2 13.4L2.5 13.2\"/><path d=\"M9.2 16.6L11.2 18.6M11.4 14.8L13.6 17\"/>"
+  "body": "<path d=\"M2.5 10L6 8.5L10.5 9.5\"/><path d=\"M21.5 10L18 8.5H14L9.8 11.6C9.2 12.1 9.2 13 9.8 13.5C10.4 14 11.2 14 11.8 13.5L14 11.8L18.5 15.2\"/><path d=\"M2.5 15H5.5L11 19.2C11.6 19.7 12.5 19.6 13 19L18.5 15.2H21.5\"/>"
  },
  {
   "id": "ChevronUp",
@@ -1293,7 +1293,7 @@
   "en": "Shopping",
   "family": "Commerce et stock",
   "afro": "Le sac de marché en raphia tressé.",
-  "body": "<path d=\"M4.5 8.5H19.5L18.6 19.4C18.5 20.3 17.8 21 16.9 21H7.1C6.2 21 5.5 20.3 5.4 19.4Z\"/><path d=\"M8.5 8.5V7A3.5 3.5 0 0 1 15.5 7V8.5\"/><path d=\"M6 13.5L8.2 11.5L10.4 13.5L12.6 11.5L14.8 13.5L17 11.5\"/><path d=\"M6.4 17L8.4 15.2L10.4 17L12.4 15.2L14.4 17L16.4 15.2\"/>"
+  "body": "<path d=\"M5 9H19L20 19.5C20.1 20.3 19.5 21 18.7 21H5.3C4.5 21 3.9 20.3 4 19.5Z\"/><path d=\"M7.5 9C7.5 4.6 10.5 4.6 10.5 9M13.5 9C13.5 4.6 16.5 4.6 16.5 9\"/><path d=\"M6.5 15L8.5 13.2L10.5 15L12.5 13.2L14.5 15L16.5 13.2\"/>"
  },
  {
   "id": "PackageCheck",
@@ -1309,7 +1309,7 @@
   "en": "Menu",
   "family": "Navigation",
   "afro": null,
-  "body": "<path d=\"M4 6.5H20M4 12H20M4 17.5H14\"/>"
+  "body": "<path d=\"M4 6.5H20M4 12H20M4 17.5H20\"/>"
  },
  {
   "id": "PanelLeftOpen",
@@ -1365,7 +1365,7 @@
   "en": "Savings, budget",
   "family": "Argent et paiement",
   "afro": "La tirelire en terre cuite, qu'on casse quand elle est pleine, à la place du cochon.",
-  "body": "<path d=\"M9 4.5H15\"/><path d=\"M9.5 4.5V6.8C6.3 8 4 10.6 4 13.8C4 17.7 7.6 20.5 12 20.5S20 17.7 20 13.8C20 10.6 17.7 8 14.5 6.8V4.5\"/><path d=\"M10.5 10.5H13.5\"/><path d=\"M5.2 16Q12 18.2 18.8 16\"/>"
+  "body": "<path d=\"M7 10C4.9 11.1 3.5 12.9 3.5 15C3.5 18 7.3 19.8 12 19.8S20.5 18 20.5 15C20.5 12.9 19.1 11.1 17 10Z\"/><path d=\"M9.5 19.8V21.3H14.5V19.8\"/><path d=\"M10 10H14\"/><circle cx=\"12\" cy=\"5\" r=\"2.6\"/><path d=\"M12 3.9V6.1\"/>"
  },
  {
   "id": "Folder",
@@ -1380,8 +1380,8 @@
   "fr": "Agriculture",
   "en": "Agriculture",
   "family": "Commerce et stock",
-  "afro": "La daba, la houe du paysan, à la place du tracteur.",
-  "body": "<path d=\"M4 20.5L13.5 7\"/><path d=\"M11.6 5.4C13.6 3.6 16.6 3.5 18.6 5.2L14.3 9.3Z\"/><path d=\"M18 20.5V15.8\"/><path d=\"M18 17.6C18 15.9 19.3 14.8 21 14.8C21 16.5 19.7 17.6 18 17.6Z\"/><path d=\"M18 16.6C18 14.9 16.7 13.8 15 13.8C15 15.5 16.3 16.6 18 16.6Z\"/><path d=\"M13 20.5H21.5\"/>"
+  "afro": null,
+  "body": "<circle cx=\"7.5\" cy=\"16\" r=\"4.5\"/><circle cx=\"18\" cy=\"18\" r=\"2.5\"/><path d=\"M4.5 12.6V5H10.5L12 11.5H19C19.8 11.5 20.5 12.2 20.5 13V15.8\"/><path d=\"M12 18H15.5\"/><path d=\"M16.5 11.5V8\"/><circle cx=\"7.5\" cy=\"16\" r=\"1\" fill=\"currentColor\" stroke=\"none\"/>"
  },
  {
   "id": "Building",

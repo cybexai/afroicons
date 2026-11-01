@@ -16,9 +16,11 @@ export const C = {
 export const FACE = C.jaune, FACE_SHADE = C.jauneShade;
 /** Peau : teinte par défaut « foncée » (Unicode medium-dark 🏾). Le build substitue ces deux couleurs exactes. */
 export const SKIN = "#8D5A3B", SKIN_SHADE = "#6F4429";
+/** Traits de détail posés sur la peau (doigts, nez, rides) : plus clairs que la peau sur la teinte la plus foncée, pour rester visibles. */
+export const SKIN_LINE = "#5B3A26";
 export const TONES = {
-  light: ["#F3D0B5", "#DDAE8E"], "medium-light": ["#E2AE84", "#C78F62"], medium: ["#C08354", "#A0663B"],
-  "medium-dark": [SKIN, SKIN_SHADE], dark: ["#5A3824", "#3F2617"],
+  light: ["#F3D0B5", "#DDAE8E", "#B07A5E"], "medium-light": ["#E2AE84", "#C78F62", "#9E6B47"], medium: ["#C08354", "#A0663B", "#7C5131"],
+  "medium-dark": [SKIN, SKIN_SHADE, SKIN_LINE], dark: ["#5A3824", "#3F2617", "#9A6B4F"],
 };
 export const DEFAULT_TONE = "medium-dark";
 export const TONE_MODIFIERS = { light: "\u{1F3FB}", "medium-light": "\u{1F3FC}", medium: "\u{1F3FD}", "medium-dark": "\u{1F3FE}", dark: "\u{1F3FF}" };

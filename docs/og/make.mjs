@@ -6,7 +6,7 @@ const here = dirname(fileURLToPath(import.meta.url)), root = join(here, "../..")
 const afro = JSON.parse(readFileSync(join(root, "packages/afroicons/icons.json"), "utf8"));
 const ui = JSON.parse(readFileSync(join(root, "packages/afroicons-ui/icons.json"), "utf8"));
 const by = Object.fromEntries(afro.map((i) => [i.id, i]));
-const total = afro.length + ui.length, flags = afro.filter((i) => i.cat === "drapeaux").length;
+const total = afro.length + ui.length, flags = afro.filter((i) => i.cat === "drapeaux").length, emojis = afro.filter((i) => i.cat === "emojis").length;
 const C = ["#C24E2A", "#E3A22F", "#22305C", "#2E6B4E"];
 const tiles = ["baobab", "djembe", "sankofa", "mototaxi", "drapeau-cameroun", "musgum", "calebasse", "elephant", "mobilemoney", "foufou", "case", "masque"];
 const svg = (i) => i.cat === "drapeaux"
@@ -25,7 +25,7 @@ p{font-size:25px;line-height:1.45;color:#6B6052;margin:0 0 20px}
 .t.f{background:#fff}.mit{position:absolute;right:56px;bottom:30px;background:#1F1A15;color:#FBF5EA;font:600 16px "JetBrains Mono";letter-spacing:.08em;padding:11px 16px;border-radius:10px}
 </style></head><body><div class="l"><div class="logo">${logo}</div>
 <h1>Des icônes qui racontent <b>l'Afrique.</b></h1>
-<p>${total} icônes libres, au trait et remplies,<br>dont les ${flags} drapeaux africains.</p>
+<p>${total} icônes et emojis libres :<br>${emojis} emojis, les ${flags} drapeaux africains…</p>
 <div class="chips"><span>React</span><span>Angular</span><span>SVG</span><span>FR · EN</span></div></div>
 <div class="url">afroicons.org</div>
 <div class="g">${tiles.map((id, k) => `<div class="t${by[id].cat === "drapeaux" ? " f" : ""}" style="background:${by[id].cat === "drapeaux" ? "#fff" : C[k % 4]}">${svg(by[id])}</div>`).join("")}</div>

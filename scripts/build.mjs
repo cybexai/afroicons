@@ -10,7 +10,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const readJson = (f) => { try { return JSON.parse(readFileSync(join(root, f), "utf8")); } catch { return []; } };
 const icons = [...JSON.parse(readFileSync(join(root, "src/icons.json"), "utf8")), ...JSON.parse(readFileSync(join(root, "src/flags.json"), "utf8")), ...readJson("src/emojis.json")];
 const { TONES, DEFAULT_TONE } = await import("./emojis/lib.mjs");
-const [SK0, SK1] = TONES[DEFAULT_TONE];
+const [SK0, SK1, SK2] = TONES[DEFAULT_TONE];
 const version = JSON.parse(readFileSync(join(root, "package.json"), "utf8")).version;
 const STROKE = 1.75;
 const pascal = (id) => id.replace(/(^|[-_])(\w)/g, (_, a, b) => b.toUpperCase());
@@ -49,7 +49,9 @@ for (const i of icons) {
 }
 writeFileSync(join(A, "sprite.svg"),
   `<svg xmlns="http://www.w3.org/2000/svg" style="display:none">\n${icons.map((i) => `  <symbol id="afroicon-${i.id}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${STROKE}" stroke-linecap="round" stroke-linejoin="round">${i.body}</symbol>`).join("\n")}\n</svg>\n`);
-const meta = icons.map(({ id, fr, en, cat, region, tags, since, variantOf, iso, country, char, group, tone, body, fill }) => ({ id, fr, en, cat, region, tags, since, ...(variantOf ? { variantOf } : {}), ...(iso ? { iso, country } : {}), ...(cat === "emojis" ? { char, group, tone } : {}), body, fill }));
+// Lien icône ↔ emoji : une icône culturelle peut porter « emoji » (son équivalent en couleur) ; l'emoji reçoit « icon ».
+const iconOf = Object.fromEntries(icons.filter((i) => i.emoji).map((i) => [i.emoji, i.id]));
+const meta = icons.map(({ id, fr, en, cat, region, tags, since, variantOf, iso, country, char, group, tone, emoji, body, fill }) => ({ id, fr, en, cat, region, tags, since, ...(variantOf ? { variantOf } : {}), ...(iso ? { iso, country } : {}), ...(cat === "emojis" ? { char, group, tone, ...(iconOf[id] ? { icon: iconOf[id] } : {}) } : {}), ...(emoji ? { emoji } : {}), body, fill }));
 writeFileSync(join(A, "icons.json"), JSON.stringify(meta, null, 1));
 // Pour le site : les versions remplies à part, chargées seulement quand on en a besoin (−17 Ko gzip au démarrage).
 const G = join(root, "apps/web/src/generated");
@@ -65,7 +67,7 @@ export const names = Object.keys(icons);
 /** Teintes de peau Unicode des emojis (option tone) : [peau, ombre]. */
 export const tones = ${JSON.stringify(TONES)};
 export const defaultTone = "${DEFAULT_TONE}";
-const skin = (s, tone) => { const t = tone && tone !== defaultTone && tones[tone]; return t ? s.replaceAll("${SK0}", t[0]).replaceAll("${SK1}", t[1]) : s; };
+const skin = (s, tone) => { const t = tone && tone !== defaultTone && tones[tone]; return t ? s.replaceAll("${SK0}", t[0]).replaceAll("${SK1}", t[1]).replaceAll("${SK2}", t[2]) : s; };
 
 /** Renvoie le SVG d'une icône sous forme de chaîne. variant : "line" (trait, par défaut) ou "fill" (rempli) ; tone : teinte de peau d'un emoji. */
 export function toSvg(name, { size = 24, color = "currentColor", strokeWidth = ${STROKE}, className = "", variant = "line", tone } = {}) {
@@ -91,19 +93,20 @@ export default { icons, names, tones, defaultTone, toSvg, replace };
 `);
 writeFileSync(join(A, "index.d.ts"),
 `export type AfroiconName =\n${icons.map((i) => `  | "${i.id}"`).join("\n")};
-export type AfroiconCategory = "nature" | "faune" | "musique" | "symboles" | "cuisine" | "vie" | "architecture" | "drapeaux" | "emojis";
+export type AfroiconCategory = "nature" | "faune" | "musique" | "symboles" | "cuisine" | "vie" | "architecture" | "personnes" | "drapeaux" | "emojis";
 /** Teinte de peau Unicode d'un emoji (🏻 à 🏿). Par défaut : "medium-dark". */
 export type AfroiconTone = "light" | "medium-light" | "medium" | "medium-dark" | "dark";
-export type AfroiconEmojiGroup = "visages" | "mains" | "personnes" | "coeurs" | "nature" | "nourriture" | "objets" | "lieux";
+export type AfroiconEmojiGroup = "visages" | "mains" | "personnes" | "coeurs" | "animaux" | "nature" | "fruits" | "nourriture" | "boissons" | "objets" | "lieux";
 export type AfroiconRegion = "pan" | "ouest" | "centre" | "est" | "nord" | "australe";
-export interface AfroiconData { id: AfroiconName; fr: string; en: string; cat: AfroiconCategory; region: AfroiconRegion; tags: string[]; since: string; /** Icône dont celle-ci est une variante (épluchée, coupée, ouverte…). */ variantOf?: AfroiconName; /** Drapeaux : code ISO du pays et son nom. */ iso?: string; country?: { fr: string; en: string }; /** Emojis : caractère Unicode équivalent (null pour un emoji africain original), groupe, et teinte de peau réglable. */ char?: string | null; group?: AfroiconEmojiGroup; tone?: boolean; /** Dessin au trait. */ body: string; /** Version remplie. */ fill: string; }
+export interface AfroiconData { id: AfroiconName; fr: string; en: string; cat: AfroiconCategory; region: AfroiconRegion; tags: string[]; since: string; /** Icône dont celle-ci est une variante (épluchée, coupée, ouverte…). */ variantOf?: AfroiconName; /** Drapeaux : code ISO du pays et son nom. */ iso?: string; country?: { fr: string; en: string }; /** Emojis : caractère Unicode équivalent (null pour un emoji africain original), groupe, et teinte de peau réglable. */ char?: string | null; group?: AfroiconEmojiGroup; tone?: boolean; /** Icône au trait équivalente (pour un emoji) ou emoji équivalent (pour une icône). */ icon?: AfroiconName; emoji?: AfroiconName; /** Dessin au trait. */ body: string; /** Version remplie. */ fill: string; }
 export const icons: Record<AfroiconName, AfroiconData>;
 export const names: AfroiconName[];
 export type AfroiconVariant = "line" | "fill";
 export interface ToSvgOptions { size?: number | string; color?: string; strokeWidth?: number | string; className?: string; /** "line" (trait, par défaut) ou "fill" (rempli). */ variant?: AfroiconVariant; /** Emojis : teinte de peau. */ tone?: AfroiconTone; }
 export function toSvg(name: AfroiconName, options?: ToSvgOptions): string;
 export function replace(options?: { attr?: string; root?: ParentNode }): void;
-export const tones: Record<AfroiconTone, [string, string]>;
+/** [peau, ombre, traits de détail] de chaque teinte. */
+export const tones: Record<AfroiconTone, [string, string, string]>;
 export const defaultTone: AfroiconTone;
 declare const _default: { icons: typeof icons; names: typeof names; tones: typeof tones; defaultTone: typeof defaultTone; toSvg: typeof toSvg; replace: typeof replace };
 export default _default;
@@ -117,7 +120,7 @@ import { createElement, forwardRef } from "react";
 const el = ([t, p, c], k) => createElement(t, { key: k, ...p }, ...(c ? c.map(el) : []));
 // Teintes de peau des emojis : [peau, ombre] ; le dessin utilise la teinte par défaut, remplacée à la volée.
 const TONES = ${JSON.stringify(TONES)};
-const recolor = (nodes, t) => nodes.map(([tag, p, c]) => [tag, Object.fromEntries(Object.entries(p).map(([k, v]) => [k, v === "${SK0}" ? t[0] : v === "${SK1}" ? t[1] : v])), c && recolor(c, t)]);
+const recolor = (nodes, t) => nodes.map(([tag, p, c]) => [tag, Object.fromEntries(Object.entries(p).map(([k, v]) => [k, v === "${SK0}" ? t[0] : v === "${SK1}" ? t[1] : v === "${SK2}" ? t[2] : v])), c && recolor(c, t)]);
 const make = (name, nodes, fill, toned) => {
   const C = forwardRef(function Afroicon({ size = 24, color = "currentColor", strokeWidth = ${STROKE}, variant = "line", tone, className = "", title, children, ...rest }, ref) {
     const fv = variant === "fill", f = fv && fill;

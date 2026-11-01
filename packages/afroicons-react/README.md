@@ -1,6 +1,6 @@
 # afroicons-react
 
-Les 162 icônes [Afroicons](https://afroicons.org) et les 54 drapeaux africains en composants React.
+Les 364 icônes [Afroicons](https://afroicons.org), les 54 drapeaux africains et les 372 emojis en composants React.
 
 ```bash
 npm install afroicons-react
