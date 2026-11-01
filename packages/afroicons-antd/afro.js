@@ -1,5 +1,5 @@
 "use client";
-// afroicons-antd v0.6.1 — généré, ne pas modifier à la main.
+// afroicons-antd v0.7.0 — généré, ne pas modifier à la main.
 import { createElement as h, forwardRef } from "react";
 import AntIcon from "@ant-design/icons";
 // Bundlers : le composant ; Node (module CommonJS) : l'objet du module, qui le porte en default.

@@ -1,6 +1,6 @@
 {
   "name": "afroicons",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "description": "364 icônes SVG libres, au trait et remplies, les 54 drapeaux africains et 372 emojis, qui racontent l'Afrique — paysages, faune, musique, symboles, cuisine, vie quotidienne, architecture, peuples.",
   "type": "module",
   "main": "./index.js",

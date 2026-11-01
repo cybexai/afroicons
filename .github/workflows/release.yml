@@ -20,17 +20,18 @@ jobs:
       - run: cp LICENSE packages/afroicons-angular/
       - run: npm test
       - run: cp LICENSE packages/afroicons/ && cp LICENSE packages/afroicons-react/ && cp LICENSE packages/afroicons-ui/
-      # Provenance ajoutée automatiquement par la publication de confiance.
-      - run: npm publish --access public
+      # Provenance ajoutée automatiquement par la publication de confiance. Une version déjà publiée
+      # (première publication faite à la main, relance du workflow) n'arrête pas la suite.
+      - run: npm publish --access public || npm view "$(node -p 'require("./package.json").name')@$(node -p 'require("./package.json").version')" version
         working-directory: packages/afroicons
-      - run: npm publish --access public
+      - run: npm publish --access public || npm view "$(node -p 'require("./package.json").name')@$(node -p 'require("./package.json").version')" version
         working-directory: packages/afroicons-react
-      - run: npm publish --access public
+      - run: npm publish --access public || npm view "$(node -p 'require("./package.json").name')@$(node -p 'require("./package.json").version')" version
         working-directory: packages/afroicons-ui
-      - run: npm publish --access public
+      - run: npm publish --access public || npm view "$(node -p 'require("./package.json").name')@$(node -p 'require("./package.json").version')" version
         working-directory: packages/afroicons-angular/dist
       - run: cp LICENSE packages/afroicons-mui/ && cp LICENSE packages/afroicons-antd/
-      - run: npm publish --access public
+      - run: npm publish --access public || npm view "$(node -p 'require("./package.json").name')@$(node -p 'require("./package.json").version')" version
         working-directory: packages/afroicons-mui
-      - run: npm publish --access public
+      - run: npm publish --access public || npm view "$(node -p 'require("./package.json").name')@$(node -p 'require("./package.json").version')" version
         working-directory: packages/afroicons-antd

@@ -1,13 +1,14 @@
 # Journal des versions
 
-## À venir
+## 0.7.0 — 1er novembre 2026 · emojis africains, paquets MUI et Ant Design, audit qualité
 - **372 emojis** : 119 emojis Unicode redessinés dans le style Afroicons (visages, mains, cœurs, nature, nourriture, objets) et 253 emojis africains originaux : peuples et tenues des cinq régions, villages et architectures, 86 plats de tout le continent (thiéboudienne, poulet DG, egusi, kédjénou, couscous, koshari, doro wat, ugali, bunny chow, romazava…), 22 boissons (bissap, gnamakoudji, bouye, ataya, tej, dolo, rooibos…), fruits et légumes (safou, corossol, pain de singe, néré, karité…), animaux, 31 instruments de musique (krar, oud, guembri, sabar, dunun, mbira, kakaki…), vie quotidienne (chaise en plastique, bassine émaillée, fourneau à charbon…), paysages et symboles (Gye Nyame, ankh, croix copte…). Couleur à plat et contour ; les 30 visages et les mains dans les 5 teintes de peau Unicode, foncée par défaut (`tone`), avec des traits de détail lisibles sur chaque teinte. Dans `afroicons`, `afroicons-react` et `afroicons-angular` (`emoji-pouce-leve`, `<EmojiPouceLeve tone="light" />`) ; sur le site, une collection « Emojis » en 11 groupes, filtrable par origine, avec un choix de teinte
 - **202 nouvelles icônes culturelles au trait** (364 au total), équivalentes des emojis africains, et une nouvelle catégorie « Peuples et tenues ». Icône et emoji sont reliés (`emoji` / `icon`) ; la fiche passe de l'un à l'autre
 - `afroicons-react` : **vraiment tree-shakable**. Chaque icône est marquée `/*#__PURE__*/` ; une application qui importe une seule icône n'embarque plus les 216 (webpack 5 en production : 29,3 Ko → 0,8 Ko gzip)
 - Deux nouveaux paquets : **`afroicons-mui`** et **`afroicons-antd`** remplacent `@mui/icons-material` et `@ant-design/icons` en changeant seulement l'import. 1 655 noms Material UI et 299 noms Ant Design, variantes comprises, redessinés au trait Afroicons ; mêmes props (`fontSize`, `color`, `sx` ; `spin`, `rotate`, `className`) ; les autres icônes viennent du paquet d'origine
 - Site : onglets « Angular », « MUI » et « Ant » dans la fiche, et leurs noms sur chaque page
 - Audit qualité : 23 icônes d'interface redessinées (métaphores qui décorent sans remplacer l'objet : DollarSign, Tractor, PiggyBank, BedDouble…), 26 icônes culturelles refaites et 23 versions remplies reconstruites, 6 drapeaux corrigés (Eswatini, Mozambique, Ouganda, Zimbabwe, Éthiopie, Namibie), emojis recadrés et retouchés ; nouvelles règles testées (trait 1,75, pas de petit cercle creux, coordonnées valides, noms uniques)
-- Fiche : aperçus, icônes de la même famille et barre « En contexte » corrigés en style pastille ; mots-clés sans doublon
+- Fiche : aperçus de style à l'image de l'icône ouverte, icônes de la même famille et barre « En contexte » corrigées en style pastille ; mots-clés sans doublon
+- Site : section « Utiliser » avec Angular, JavaScript (Vue, Svelte…) et les remplaçants Lucide/MUI/Ant ; bandeau d'icônes à vitesse constante
 
 ## 0.6.0 — 31 octobre 2026 · drapeaux africains, icônes SYSIGAPE
 

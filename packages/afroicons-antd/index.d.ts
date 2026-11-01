@@ -1,4 +1,4 @@
-// afroicons-antd v0.6.1 — généré, ne pas modifier à la main.
+// afroicons-antd v0.7.0 — généré, ne pas modifier à la main.
 export * from "@ant-design/icons";
 export { default } from "@ant-design/icons";
 import type { ForwardRefExoticComponent, RefAttributes } from "react";
