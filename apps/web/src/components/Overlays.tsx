@@ -30,6 +30,8 @@ export function Drawer() {
   // Réglages ouverts ou fermés : on retient le choix du visiteur.
   const [custOpen, setCustOpen] = useState(() => store.get<boolean>("custOpen", false));
   useEffect(() => { store.set("custOpen", custOpen); }, [custOpen]);
+  // Réglages ouverts : on charge les versions remplies, pour que l'aperçu « Rempli » soit juste.
+  useEffect(() => { if (custOpen && app.current) app.needFills(); }, [custOpen, app.current]); // eslint-disable-line react-hooks/exhaustive-deps
   const big = useRef<HTMLDivElement>(null);
   const scroller = useRef<HTMLDivElement>(null);
   const panel = useRef<HTMLElement>(null);
@@ -119,7 +121,7 @@ export function Drawer() {
           {ic.tone && <div className="dtone">{a.tt("Teinte de peau", "Skin tone")}<span className="tones" role="radiogroup" aria-label={a.tt("Teinte de peau", "Skin tone")}>{TONE_LIST.map((t) => <button key={t.id} role="radio" aria-checked={app.tone === t.id} aria-label={a.tt(t.fr, t.en)} title={a.tt(t.fr, t.en) + (ic.char ? " " + ic.char + t.mod : "")} className={app.tone === t.id ? "on" : ""} style={{ background: TONES[t.id][0] }} onClick={() => app.setTone(t.id)} />)}</span></div>}
           {!isColor(ic) && <details className="dcust" open={custOpen} onToggle={(e) => setCustOpen((e.target as HTMLDetailsElement).open)}>
             <summary><ISliders s={16} />{a.tt("Personnaliser", "Customise")}<small>{a.tt("pour cette icône", "for this icon")}</small><IChevron s={14} w={2.4} /></summary>
-            <CustomizeFields v={cust} set={(p) => setCust((c) => ({ ...c, ...p }))} onReset={fromLibrary} />
+            <CustomizeFields v={cust} set={(p) => setCust((c) => ({ ...c, ...p }))} onReset={fromLibrary} preview={ic} />
           </details>}
           <div className="dtags">{ic.tags.map((x) => <button key={x} onClick={() => { close(); dispatchEvent(new CustomEvent("afroicons:filter", { detail: { q: x, favOnly: false, col: colOf(ic.id) } })); document.getElementById("icones")?.scrollIntoView(); }}>#{x}</button>)}</div>
           {fact && <div className="fact"><i>?</i><div><b><T k="didu" /></b><span>{fact[a.lang === "en" ? 1 : 0]}</span></div></div>}

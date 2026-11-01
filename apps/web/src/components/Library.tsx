@@ -16,7 +16,7 @@ export type CustomValue = { style: Style; color: string | null; bg: string | nul
  * Champs de réglage, pilotés de l'extérieur : le menu « Personnaliser » les relie aux réglages du site,
  * la fiche d'une icône à ses propres réglages (qui ne touchent que cette icône).
  */
-export function CustomizeFields({ v, set, onReset }: { v: CustomValue; set: (p: Partial<CustomValue>) => void; onReset: () => void }) {
+export function CustomizeFields({ v, set, onReset, preview }: { v: CustomValue; set: (p: Partial<CustomValue>) => void; onReset: () => void; preview?: Icon }) {
   const a = useApp();
   const ink = v.color ?? a.theme.ink, badgeBg = v.bg ?? a.pal[0];
   // Aperçus « Trait » et « Rempli » : en style pastille, la couleur choisie (souvent blanche) est celle du dessin
@@ -34,7 +34,7 @@ export function CustomizeFields({ v, set, onReset }: { v: CustomValue; set: (p: 
       <div className="blk"><h3><T k="pStyle" /></h3>
         <div className="styles">{STYLES.map((s) => (
           <button key={s.id} className={v.style === s.id ? "on" : ""} aria-pressed={v.style === s.id} onClick={() => pickStyle(s.id)}>
-            <Svg i={byId.baobab} o={{ s: 30, style: s.id, c: lineLike(s.id) ? lineInk : "#fff", bg: badgeBg }} />{a.tt(s.fr, s.en)}
+            <Svg i={preview ?? byId.baobab} o={{ s: 30, style: s.id, c: lineLike(s.id) ? lineInk : "#fff", bg: badgeBg }} />{a.tt(s.fr, s.en)}
           </button>
         ))}</div>
       </div>
