@@ -42,8 +42,13 @@ const FONTS: { id: string; n: string; css: string }[] = [
   { id: "mono", n: "Mono", css: '"JetBrains Mono",ui-monospace,monospace' },
 ];
 type View = "all" | "web" | "mobile" | "site";
-type Cfg = { primary: string; dark: boolean; radius: number; size: number; stroke: number; style: Style; tint: "text" | "primary"; name: string; font: string };
-const DEF: Cfg = { primary: "#C24E2A", dark: false, radius: 12, size: 20, stroke: 1.75, style: "line", tint: "text", name: "NAFA ERP", font: "dm" };
+// Les appareils autour des maquettes : forme du téléphone, et cadre de l'application web et du site vitrine.
+type Phone = "iphone" | "android" | "classic";
+type Desk = "laptop" | "monitor" | "browser" | "tablet";
+const PHONES: { id: Phone; fr: string; en: string }[] = [{ id: "iphone", fr: "iPhone", en: "iPhone" }, { id: "android", fr: "Android", en: "Android" }, { id: "classic", fr: "Classique", en: "Classic" }];
+const DESKS: { id: Desk; fr: string; en: string }[] = [{ id: "laptop", fr: "Portable", en: "Laptop" }, { id: "monitor", fr: "Écran", en: "Monitor" }, { id: "browser", fr: "Navigateur", en: "Browser" }, { id: "tablet", fr: "Tablette", en: "Tablet" }];
+type Cfg = { primary: string; dark: boolean; radius: number; size: number; stroke: number; style: Style; tint: "text" | "primary"; name: string; font: string; phone: Phone; desk: Desk };
+const DEF: Cfg = { primary: "#C24E2A", dark: false, radius: 12, size: 20, stroke: 1.75, style: "line", tint: "text", name: "NAFA ERP", font: "dm", phone: "iphone", desk: "laptop" };
 /** Personnalisation d'une icône d'emplacement ; un champ absent reprend le réglage général. */
 type Cust = { style?: "line" | "fill"; color?: string; scale?: number; stroke?: number; shape?: "round" | "circle"; bg?: string; rot?: number; flip?: boolean; tone?: Tone };
 type Custs = Record<string, Cust>;
@@ -76,6 +81,8 @@ function dec(h: string): Saved | null {
     const cfg = { ...DEF };
     for (const k of Object.keys(DEF) as (keyof Cfg)[]) if (o.c?.[k] != null && typeof o.c[k] === typeof DEF[k]) (cfg as any)[k] = o.c[k];
     if (!["line", "fill"].includes(cfg.style)) cfg.style = "line";
+    if (!PHONES.some((x) => x.id === cfg.phone)) cfg.phone = DEF.phone;
+    if (!DESKS.some((x) => x.id === cfg.desk)) cfg.desk = DEF.desk;
     cfg.name = cfg.name === "Kola" ? DEF.name : cfg.name.slice(0, 24);
     return { cfg, slots, preset: PRESETS.some((p) => p.id === o.p) ? o.p : "erp", custom: cleanCusts(o.u) };
   } catch { return null; }
@@ -140,6 +147,26 @@ export function Playground() {
     const label = a.tt("Remplacer ou personnaliser : ", "Swap or customise: ") + (a.lang === "en" ? i.en : i.fr);
     return <button type="button" className={"pgi" + (pick === k ? " on" : "") + (custom[k] ? " cu" : "")} title={label} aria-label={label} onClick={(e) => { e.stopPropagation(); setPick(k); }}>{paint(k, s, c)}</button>;
   };
+
+  /** Un téléphone (forme choisie) autour d'un écran de maquette. */
+  const phone = (cls: string, body: JSX.Element) => (
+    <div className={"phone pgphone ph-" + cfg.phone + " " + cls}><div className="screen pgscreen">
+      {cfg.phone === "iphone" && <div className="notch" />}{cfg.phone === "android" && <div className="punch" />}
+      <div className="sb">{cfg.phone === "android" ? <><span>12:30</span><span>4G ▮</span></> : <><span>9:41</span><span>●●● 4G</span></>}</div>
+      {body}
+    </div></div>
+  );
+  /** Un ordinateur, un écran, une fenêtre de navigateur ou une tablette autour d'une page web. */
+  const desk = (cls: string, path: string, body: JSX.Element) => (
+    <div className={"dv dv-" + cfg.desk + " " + cls}>
+      <div className="dv-lid"><div className="dv-scr">
+        <div className="dv-bar"><i /><i /><i /><span>🔒 {(cfg.name || DEF.name).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "app"}.app{path}</span></div>
+        {body}
+      </div></div>
+      {cfg.desk === "laptop" && <div className="dv-base" />}
+      {cfg.desk === "monitor" && <div className="dv-stand"><i /><b /></div>}
+    </div>
+  );
 
   /** Un bouton de maquette : cliquer n'importe où dessus change son icône. */
   const B = ({ k, ghost, wide, after, children }: { k: string; ghost?: boolean; wide?: boolean; after?: boolean; children: string }) => {
@@ -240,6 +267,9 @@ export function Playground() {
           <label className="pgfield"><span>{a.tt("Police", "Font")}</span><select value={cfg.font} onChange={(e) => set({ font: e.target.value })}>{FONTS.map((f) => <option key={f.id} value={f.id}>{f.n}</option>)}</select></label>
           <div className="pgfield"><span>{a.tt("Mode", "Mode")}</span><div className="seg"><button className={!cfg.dark ? "on" : ""} onClick={() => set({ dark: false })}>{a.tt("Clair", "Light")}</button><button className={cfg.dark ? "on" : ""} onClick={() => set({ dark: true })}>{a.tt("Sombre", "Dark")}</button></div></div>
           <label className="rng"><span>{a.tt("Arrondi", "Radius")}</span><input type="range" min={0} max={24} step={2} value={cfg.radius} onChange={(e) => set({ radius: +e.target.value })} /><output>{cfg.radius}</output></label>
+          <h3>{a.tt("Appareils", "Devices")}</h3>
+          <div className="pgfield"><span>{a.tt("Mobile", "Phone")}</span><div className="pgchips pgdesks">{PHONES.map((x) => <button key={x.id} className={"cat" + (cfg.phone === x.id ? " on" : "")} onClick={() => set({ phone: x.id })}>{a.tt(x.fr, x.en)}</button>)}</div></div>
+          <div className="pgfield"><span>{a.tt("Web", "Web")}</span><div className="pgchips pgdesks">{DESKS.map((x) => <button key={x.id} className={"cat" + (cfg.desk === x.id ? " on" : "")} onClick={() => set({ desk: x.id })}>{a.tt(x.fr, x.en)}</button>)}</div></div>
           <h3>{a.tt("Icônes", "Icons")}</h3>
           <label className="rng"><span>{a.tt("Taille", "Size")}</span><input type="range" min={14} max={32} step={2} value={cfg.size} onChange={(e) => set({ size: +e.target.value })} /><output>{cfg.size}</output></label>
           <label className="rng"><span>{a.tt("Trait", "Stroke")}</span><input type="range" min={1} max={2.5} step={0.25} value={cfg.stroke} onChange={(e) => set({ stroke: +e.target.value })} /><output>{cfg.stroke}</output></label>
@@ -264,7 +294,7 @@ export function Playground() {
             <button className="btn" onClick={(e) => { e.stopPropagation(); setFlash(true); setTimeout(() => setFlash(false), 2400); }}>{a.tt("Les montrer", "Show them")}</button>
           </div>
           <div className={"pgstage v-" + view + (flash ? " flash" : "")} style={vars}>
-            {show("web") && <div className="pgweb">
+            {show("web") && desk("dv-web", "/tableau-de-bord", <div className="pgweb">
               <header className="pgnav"><span className="pglogo"><I k="logo" s={cfg.size + 4} c={cfg.primary} />{cfg.name || DEF.name}</span>
                 <span className="pgsearch"><I k="search" s={cfg.size - 2} c="var(--pmuted)" /><span>{a.tt("Rechercher…", "Search…")}</span></span>
                 <span className="pgnavr"><span className="pgbadge"><I k="bell" /><i>3</i></span><I k="user" s={cfg.size + 4} /></span>
@@ -283,25 +313,24 @@ export function Playground() {
                   <div className="pgform"><span className="pginput"><I k="l3" s={cfg.size - 2} c="var(--pmuted)" /><span>+237 6 70 00 00 00</span></span><span className="pginput"><I k="l4" s={cfg.size - 2} c="var(--pmuted)" /><span>Douala, Akwa</span></span></div>
                 </main>
               </div>
-            </div>}
+            </div>)}
 
-            {show("mobile") && <div className="phone pgphone"><div className="screen pgscreen">
-              <div className="notch" /><div className="sb"><span>9:41</span><span>●●● 4G</span></div>
+            {show("mobile") && phone("pg-ph1", <>
               <div className="pgpbar"><I k="menu" /><b>{cfg.name || DEF.name}</b><span className="pgbadge"><I k="bell" /><i>3</i></span></div>
               <div className="pglist">{(["l1", "l2", "l3", "l4"] as const).map((k) => <div key={k} className="pgli"><span className="pgkic"><I k={k} c={cfg.primary} /></span><div><b>{nm(k)}</b><small>{a.tt("Il y a 2 h", "2 h ago")}</small></div></div>)}</div>
               <span className="pgfab"><I k="fab" c="#fff" s={cfg.size + 2} /></span>
               {/* Barre d'onglets : libellés courts fixes, comme une vraie application (le nom des icônes serait coupé). */}
               <nav className="tabb pgtabs">{(["t1", "t2", "t3", "t4", "t5"] as const).map((k, n) => <span key={k} className={n === 0 ? "on" : ""}><I k={k} c={n === 0 ? cfg.primary : undefined} />{[a.tt("Accueil", "Home"), a.tt("Ventes", "Sales"), "Wallet", "Messages", a.tt("Profil", "Profile")][n]}</span>)}</nav>
-            </div></div>}
+            </>)}
 
-            {show("mobile") && <div className="pgpay">
+            {show("mobile") && phone("pg-ph2", <div className="pgpay">
               <b className="pgpayt">{a.tt("Paiement", "Checkout")}</b>
               <div className="pgpayam"><small>{a.tt("Total à payer", "Total due")}</small><b>15 000 FCFA</b></div>
               {([["p1", "Mobile money", "Orange · MTN · Wave"], ["p2", a.tt("Carte bancaire", "Bank card"), "Visa · Mastercard"], ["p3", a.tt("Virement", "Bank transfer"), "BICEC · Ecobank"]] as const).map(([k, t, s], n) => (
                 <div key={k} className={"pgopt" + (n === 0 ? " on" : "")}><span className="pgkic"><I k={k} c={cfg.primary} /></span><div><b>{t}</b><small>{s}</small></div><i className="pgradio" /></div>
               ))}
               <B k="lock" wide>{a.tt("Payer 15 000 FCFA", "Pay 15,000 FCFA")}</B>
-            </div>}
+            </div>)}
 
             {show("web") && <div className="pgalerts">
               {([["n1", "ok", a.tt("Paiement reçu", "Payment received"), a.tt("Awa Diallo a payé 15 000 FCFA.", "Awa Diallo paid 15,000 FCFA.")], ["n2", "wait", a.tt("Stock bas", "Low stock"), a.tt("Plus que 4 sacs de riz en réserve.", "Only 4 bags of rice left.")], ["n3", "info", a.tt("Mise à jour", "Update"), a.tt("La version 2.1 est disponible.", "Version 2.1 is available.")]] as const).map(([k, cls, t, s]) => (
@@ -310,14 +339,14 @@ export function Playground() {
               <div className="pgempty"><span className="pgfic"><I k="e1" s={cfg.size + 20} c={cfg.primary} /></span><b>{a.tt("Aucune commande pour l'instant", "No orders yet")}</b><small>{a.tt("Vos premières ventes apparaîtront ici.", "Your first sales will show up here.")}</small><B k="e2">{a.tt("Créer une commande", "Create an order")}</B></div>
             </div>}
 
-            {show("site") && <div className="pgsite">
+            {show("site") && desk("dv-site", "", <div className="pgsite">
               <div className="pghero"><span className="pglogo"><I k="logo" s={cfg.size + 4} c={cfg.primary} />{cfg.name || DEF.name}</span>
                 <h3>{a.tt("La gestion simple, pensée pour l'Afrique", "Simple management, designed for Africa")}</h3>
                 <p>{a.tt("Ventes, stock et paiements mobiles dans une seule application.", "Sales, stock and mobile payments in one app.")}</p>
                 <B k="go" after>{a.tt("Commencer", "Get started")}</B>
               </div>
               <div className="pgfeat">{(["f1", "f2", "f3"] as const).map((k) => <div key={k}><span className="pgfic"><I k={k} s={cfg.size + 12} c={cfg.primary} /></span><b>{nm(k)}</b><small>{a.tt("Une phrase qui présente la fonctionnalité.", "A sentence introducing the feature.")}</small></div>)}</div>
-            </div>}
+            </div>)}
           </div>
 
           {/* Lisibilité : les icônes utilisées aux tailles courantes, sur fond clair et sombre. */}
