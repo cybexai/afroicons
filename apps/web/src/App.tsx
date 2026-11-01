@@ -7,6 +7,7 @@ import { CommandPalette, Drawer, Help, Toast, ToTop, Tray, inert } from "./compo
 import { Brand, Footer, Manifesto, Showcase, Studio, Usage } from "./components/Sections";
 import { IdeaBox, IdeaBoundary } from "./components/IdeaBox";
 import { Changelog } from "./components/Changelog";
+import { Playground } from "./components/Playground";
 import { ToneContext } from "./components/ui";
 
 export default function App() {
@@ -68,9 +69,9 @@ export default function App() {
     <ToneContext.Provider value={a.tone}>
       {/* Quand une fenêtre est ouverte, la page derrière devient inerte : le focus clavier y reste enfermé. */}
       <div {...inert(modal)}>
-      {PAGE === "news" ? <>
+      {PAGE !== "home" ? <>
         <Nav />
-        <main className="wrap"><Changelog /></main>
+        <main className="wrap">{PAGE === "news" ? <Changelog /> : <Playground />}</main>
       </> : <>
         <a className="skip" href="#icones">{a.tt("Aller aux icônes", "Skip to icons")}</a>
         <Nav />

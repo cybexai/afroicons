@@ -45,7 +45,8 @@ export function Nav() {
   const links = [["icones", "nav1"], ["atelier", "nav2"], ["vitrine", "nav5"], ["utiliser", "nav3"], ["marque", "nav6"], ["idees", "nav7"]];
   // Hors de l'accueil, les liens du menu ramènent aux sections de l'accueil.
   const home = PAGE === "home", sec = (h: string) => (home ? "#" : "/#") + h;
-  const news = <a href="/nouveautes/" className={!home ? "on" : ""} aria-current={!home ? "page" : undefined}><T k="newsT" /></a>;
+  const news = <a href="/nouveautes/" className={PAGE === "news" ? "on" : ""} aria-current={PAGE === "news" ? "page" : undefined}><T k="newsT" /></a>;
+  const play = <a href="/playground/" className={PAGE === "playground" ? "on" : ""} aria-current={PAGE === "playground" ? "page" : undefined}>{a.tt("Bac à sable", "Playground")}</a>;
   const toggleMode = () => a.setMode(a.mode === "dark" ? "light" : "dark");
   const logo = logoSvg({ s: 36, door: a.pal[1], sun: a.pal[0] });
 
@@ -54,6 +55,7 @@ export function Nav() {
       <a className="logo" href={home ? "#top" : "/"} aria-label="Afroicons"><Raw className="mk" html={logo} /><span className="wm-t">Afroicons</span></a>
       <div className="navlinks">
         {links.map(([h, k]) => <a key={h} href={sec(h)} className={active === h ? "on" : ""} aria-current={active === h ? "location" : undefined}><T k={k} /></a>)}
+        {play}
         {news}
       </div>
       <div className="navr">
@@ -79,6 +81,7 @@ export function Nav() {
           <button className="ib" aria-label={a.tt("Menu", "Menu")} aria-expanded={menuOpen} aria-controls="mmenu" onClick={(e) => { e.stopPropagation(); setMenuOpen((o) => !o); }}>{menuOpen ? <IClose /> : <IMenu />}</button>
           <div id="mmenu" className={"mpop" + (menuOpen ? " open" : "")} {...inert(!menuOpen)}>
             {links.map(([h, k]) => <a key={h} href={sec(h)} onClick={() => setMenuOpen(false)}><T k={k} /></a>)}
+            {play}
             {news}
             <div className="mx">
               <button onClick={toggleMode}>{a.mode === "dark" ? <ISun /> : <IMoon />}{a.mode === "dark" ? a.tt("Mode clair", "Light mode") : a.tt("Mode sombre", "Dark mode")}</button>

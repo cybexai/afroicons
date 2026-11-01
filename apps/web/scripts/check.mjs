@@ -51,8 +51,10 @@ const versions = [...readFileSync(join(repo, "CHANGELOG.md"), "utf8").matchAll(/
 for (const v of versions) assert.ok(news.includes(`<h2>${v}`), `nouveautés : ${v}`);
 assert.match(news, /<script type="module"/, "nouveautés : l'application se charge par-dessus");
 const locs = [...read("sitemap.xml").matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
-assert.equal(locs.length, total + 3, "plan du site : toutes les pages");
+const play = read("playground/index.html");
+assert.ok(play.includes('<link rel="canonical" href="https://afroicons.org/playground/">') && /<script type="module"/.test(play), "bac à sable : page et application");
+assert.equal(locs.length, total + 4, "plan du site : toutes les pages");
 assert.equal(new Set(locs).size, locs.length, "plan du site : sans doublon");
 assert.ok(locs.every((l) => l.startsWith("https://afroicons.org/")), "plan du site : domaine canonique");
 
-console.log(`✔ site : ${total} pages d'icônes (dont ${flags} drapeaux), liste, nouveautés et plan du site vérifiés`);
+console.log(`✔ site : ${total} pages d'icônes (dont ${flags} drapeaux), liste, nouveautés, bac à sable et plan du site vérifiés`);

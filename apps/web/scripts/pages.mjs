@@ -146,7 +146,16 @@ page({
   body: `<nav><a href="/">Afroicons</a> › <a href="/icones/">Toutes les icônes</a></nav><h1>Nouveautés</h1>${markdown(read("CHANGELOG.md"))}`,
 });
 
+// Page « Bac à sable » : l'application l'affiche ; le contenu statique la décrit pour les moteurs de recherche.
+page({
+  path: "playground",
+  title: "Bac à sable — essayez les icônes dans votre interface | Afroicons",
+  desc: "Testez les icônes Afroicons dans une application web, une application mobile et une page vitrine : couleur, taille, épaisseur du trait, mode sombre. Puis copiez le code React, Angular ou HTML.",
+  canonical: `${SITE}/playground/`,
+  body: `<nav><a href="/">Afroicons</a> › <a href="/icones/">Toutes les icônes</a></nav><h1>Bac à sable</h1><p>Essayez les icônes Afroicons dans des interfaces réalistes (application web, application mobile, page vitrine), réglez couleur, taille, épaisseur et mode sombre comme sur votre site, remplacez chaque icône en un clic, puis copiez le code React, Angular ou HTML des icônes utilisées.</p>`,
+});
+
 const today = new Date().toISOString().slice(0, 10);
 const entry = (loc, prio) => `  <url><loc>${loc}</loc><lastmod>${today}</lastmod><priority>${prio}</priority></url>`;
-writeFileSync(join(dist, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[entry(`${SITE}/`, "1.0"), entry(`${SITE}/icones/`, "0.8"), entry(`${SITE}/nouveautes/`, "0.5"), ...icons.map((i) => entry(url(i), "0.6"))].join("\n")}\n</urlset>\n`);
-console.log(`✔ ${icons.length} pages d'icônes, la liste, les nouveautés et le plan du site (${icons.length + 3} adresses)`);
+writeFileSync(join(dist, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[entry(`${SITE}/`, "1.0"), entry(`${SITE}/icones/`, "0.8"), entry(`${SITE}/nouveautes/`, "0.5"), entry(`${SITE}/playground/`, "0.6"), ...icons.map((i) => entry(url(i), "0.6"))].join("\n")}\n</urlset>\n`);
+console.log(`✔ ${icons.length} pages d'icônes, la liste, les nouveautés et le plan du site (${icons.length + 4} adresses)`);
