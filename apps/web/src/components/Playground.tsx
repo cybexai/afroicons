@@ -1,5 +1,5 @@
 import { createElement, useEffect, useMemo, useState, type ComponentType, type CSSProperties } from "react";
-import { AFRO, EMOJIS, FLAGS, ICONS, UI, byId, colOf, isColor, type Collection, type Icon, type Style } from "../lib/constants";
+import { AFRO, DEFAULT_TONE, EMOJIS, FLAGS, ICONS, TONE_LIST, TONES, UI, byId, colOf, isColor, type Collection, type Icon, type Style, type Tone } from "../lib/constants";
 import { store } from "../lib/platform";
 import { rank } from "../lib/search";
 import { highlight, pascal } from "../lib/svg";
@@ -44,10 +44,30 @@ const FONTS: { id: string; n: string; css: string }[] = [
 type View = "all" | "web" | "mobile" | "site";
 type Cfg = { primary: string; dark: boolean; radius: number; size: number; stroke: number; style: Style; tint: "text" | "primary"; name: string; font: string };
 const DEF: Cfg = { primary: "#C24E2A", dark: false, radius: 12, size: 20, stroke: 1.75, style: "line", tint: "text", name: "NAFA ERP", font: "dm" };
-type Saved = { cfg: Cfg; slots: Slots; preset: string };
+/** Personnalisation d'une icône d'emplacement ; un champ absent reprend le réglage général. */
+type Cust = { style?: "line" | "fill"; color?: string; scale?: number; stroke?: number; shape?: "round" | "circle"; bg?: string; rot?: number; flip?: boolean; tone?: Tone };
+type Custs = Record<string, Cust>;
+type Saved = { cfg: Cfg; slots: Slots; preset: string; custom?: Custs };
+const HEX = /^#[0-9a-f]{6}$/i;
+// Seuls les champs connus et bien formés sont repris (lien partagé ou réglages anciens).
+function cleanCust(o: any): Cust | null {
+  if (!o || typeof o !== "object") return null;
+  const c: Cust = {};
+  if (o.style === "line" || o.style === "fill") c.style = o.style;
+  if (HEX.test(o.color ?? "")) c.color = o.color;
+  if (typeof o.scale === "number" && o.scale >= 0.5 && o.scale <= 3) c.scale = o.scale;
+  if (typeof o.stroke === "number" && o.stroke >= 0.5 && o.stroke <= 3) c.stroke = o.stroke;
+  if (o.shape === "round" || o.shape === "circle") c.shape = o.shape;
+  if (HEX.test(o.bg ?? "")) c.bg = o.bg;
+  if ([90, 180, 270].includes(o.rot)) c.rot = o.rot;
+  if (o.flip === true) c.flip = true;
+  if (o.tone in TONES) c.tone = o.tone;
+  return Object.keys(c).length ? c : null;
+}
+const cleanCusts = (o: any): Custs => Object.fromEntries(Object.entries(o ?? {}).filter(([k]) => k in BASE).map(([k, v]) => [k, cleanCust(v)]).filter(([, v]) => v)) as Custs;
 
 // Lien partageable : les réglages et les icônes choisies, encodés dans l'ancre de l'adresse.
-const enc = (s: Saved) => btoa(unescape(encodeURIComponent(JSON.stringify({ c: s.cfg, p: s.preset, s: Object.fromEntries(Object.entries(s.slots).filter(([k, v]) => v !== BASE[k])) })))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+const enc = (s: Saved) => btoa(unescape(encodeURIComponent(JSON.stringify({ c: s.cfg, p: s.preset, s: Object.fromEntries(Object.entries(s.slots).filter(([k, v]) => v !== BASE[k])), u: s.custom })))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
 function dec(h: string): Saved | null {
   try {
     const o = JSON.parse(decodeURIComponent(escape(atob(h.replace(/-/g, "+").replace(/_/g, "/")))));
@@ -57,7 +77,7 @@ function dec(h: string): Saved | null {
     for (const k of Object.keys(DEF) as (keyof Cfg)[]) if (o.c?.[k] != null && typeof o.c[k] === typeof DEF[k]) (cfg as any)[k] = o.c[k];
     if (!["line", "fill"].includes(cfg.style)) cfg.style = "line";
     cfg.name = cfg.name === "Kola" ? DEF.name : cfg.name.slice(0, 24);
-    return { cfg, slots, preset: PRESETS.some((p) => p.id === o.p) ? o.p : "erp" };
+    return { cfg, slots, preset: PRESETS.some((p) => p.id === o.p) ? o.p : "erp", custom: cleanCusts(o.u) };
   } catch { return null; }
 }
 const initial = (): Saved => {
@@ -70,6 +90,8 @@ export function Playground() {
   const [init] = useState(initial);
   const [preset, setPreset] = useState(init.preset);
   const [slots, setSlots] = useState<Slots>({ ...BASE, ...init.slots });
+  const [custom, setCustom] = useState<Custs>(() => cleanCusts(init.custom));
+  const [dtab, setDtab] = useState<"swap" | "edit">("swap"); // onglet de la fenêtre d'icône, gardé d'une ouverture à l'autre
   const [cfg, setCfg] = useState<Cfg>({ ...DEF, ...init.cfg });
   const [pick, setPick] = useState<string | null>(null);
   const [view, setView] = useState<View>("all");
@@ -82,14 +104,14 @@ export function Playground() {
   // Comparaison avec Lucide : chargée seulement à la demande (paquet volumineux).
   useEffect(() => { if (lucide && !L) import("lucide-react").then((m) => setL(m as unknown as Record<string, ComponentType<any>>)).catch(() => setLucide(false)); }, [lucide, L]);
   // Les réglages restent d'une visite à l'autre ; l'ancre de l'adresse les suit (lien partageable).
-  const saved: Saved = { cfg, slots, preset };
+  const saved: Saved = { cfg, slots, preset, custom };
   const hash = enc(saved);
   useEffect(() => {
     store.set("playground", saved);
     try { history.replaceState(null, "", location.pathname + location.search + "#" + hash); } catch { /* bac à sable */ }
   }, [hash]); // eslint-disable-line react-hooks/exhaustive-deps
   const choosePreset = (id: string) => { setPreset(id); setSlots({ ...BASE, ...PRESETS.find((p) => p.id === id)!.slots } as Slots); };
-  const reset = () => { setPreset("erp"); setSlots({ ...BASE }); setCfg(DEF); a.toast(a.tt("Réglages par défaut rétablis", "Defaults restored")); };
+  const reset = () => { setPreset("erp"); setSlots({ ...BASE }); setCfg(DEF); setCustom({}); a.toast(a.tt("Réglages par défaut rétablis", "Defaults restored")); };
   const share = () => a.copy(location.origin + location.pathname + "#" + hash, a.tt("Lien copié : il ouvre le bac à sable avec vos réglages", "Link copied: it opens the playground with your settings"));
   // Une icône culturelle au hasard dans chaque emplacement « africain » (logo, paiement, vitrine, état vide).
   const surprise = () => {
@@ -102,16 +124,21 @@ export function Playground() {
   const vars = { "--pp": cfg.primary, "--pink": ink, "--pbg": bg, "--psurf": surface, "--pmuted": muted, "--pline": line, "--prad": cfg.radius + "px", fontFamily: font } as CSSProperties;
   const nm = (k: string) => { const i = byId[slots[k]]; return i ? (a.lang === "en" ? i.en : i.fr) : ""; };
 
-  /** Une icône d'emplacement : cliquable pour la remplacer. */
+  /** Le dessin d'une icône d'emplacement, avec sa personnalisation (couleur, taille, fond, rotation…). */
+  const paint = (k: string, s: number, c?: string) => {
+    const i = byId[slots[k]] ?? byId[BASE[k]], cu = custom[k] ?? {};
+    const size = Math.round(s * (cu.scale ?? 1)), w = cu.stroke ?? cfg.stroke;
+    const color = cu.color ?? c ?? (cfg.tint === "primary" ? cfg.primary : "currentColor");
+    const Lc = lucide && L && i.lucide ? L[i.lucide] : null;
+    const transform = [cu.rot && `rotate(${cu.rot}deg)`, cu.flip && "scaleX(-1)"].filter(Boolean).join(" ") || undefined;
+    const svg = <span className="pgdraw" style={{ color, transform }}>{Lc ? createElement(Lc, { size, strokeWidth: w }) : <Svg i={i} o={{ s: size, w, style: cu.style ?? cfg.style, c: "currentColor", tone: cu.tone }} />}</span>;
+    return cu.shape ? <span className="pgshape" style={{ background: cu.bg ?? cfg.primary, padding: Math.round(size * 0.28), borderRadius: cu.shape === "circle" ? "50%" : Math.round(size * 0.32) }}>{svg}</span> : svg;
+  };
+  /** Une icône d'emplacement : cliquable pour la remplacer ou la personnaliser. */
   const I = ({ k, s = cfg.size, c }: { k: string; s?: number; c?: string }) => {
     const i = byId[slots[k]] ?? byId[BASE[k]];
-    const color = c ?? (cfg.tint === "primary" ? cfg.primary : "currentColor");
-    const Lc = lucide && L && i.lucide ? L[i.lucide] : null;
-    return (
-      <button type="button" className={"pgi" + (pick === k ? " on" : "")} title={a.tt("Changer d'icône : ", "Change icon: ") + (a.lang === "en" ? i.en : i.fr)} aria-label={a.tt("Changer d'icône : ", "Change icon: ") + (a.lang === "en" ? i.en : i.fr)} onClick={(e) => { e.stopPropagation(); setPick(k); }} style={{ color }}>
-        {Lc ? createElement(Lc, { size: s, strokeWidth: cfg.stroke }) : <Svg i={i} o={{ s, w: cfg.stroke, style: cfg.style, c: "currentColor" }} />}
-      </button>
-    );
+    const label = a.tt("Remplacer ou personnaliser : ", "Swap or customise: ") + (a.lang === "en" ? i.en : i.fr);
+    return <button type="button" className={"pgi" + (pick === k ? " on" : "") + (custom[k] ? " cu" : "")} title={label} aria-label={label} onClick={(e) => { e.stopPropagation(); setPick(k); }}>{paint(k, s, c)}</button>;
   };
 
   /** Un bouton de maquette : cliquer n'importe où dessus change son icône. */
@@ -123,6 +150,39 @@ export function Playground() {
   const used = useMemo(() => [...new Set(Object.values(slots))].map((id) => byId[id]).filter(Boolean) as Icon[], [slots]);
   const code = useMemo(() => {
     const uiI = used.filter((i) => i.lucide), afro = used.filter((i) => !i.lucide);
+    const cust = Object.entries(custom).filter(([k]) => byId[slots[k]]).map(([k, cu]) => ({ k, cu, i: byId[slots[k]] }));
+    const tf = (cu: Cust) => [cu.rot && `rotate(${cu.rot}deg)`, cu.flip && "scaleX(-1)"].filter(Boolean).join(" ");
+    const box = (cu: Cust) => { const sz = Math.round(cfg.size * (cu.scale ?? 1)); return { pad: Math.round(sz * 0.28), rad: cu.shape === "circle" ? "50%" : Math.round(sz * 0.32) + "px", bg: cu.bg ?? cfg.primary }; };
+    const jsx = ({ i, cu }: { i: Icon; cu: Cust }) => {
+      const n = i.lucide ?? pascal(i.id), p = [isColor(i) ? `size={${Math.round(cfg.size * (cu.scale ?? 1))}}` : "{...icon}"];
+      if (!isColor(i)) {
+        if (cu.scale) p.push(`size={${Math.round(cfg.size * cu.scale)}}`);
+        if (cu.stroke) p.push(`strokeWidth={${cu.stroke}}`);
+        if (cu.color) p.push(`color="${cu.color}"`);
+        if (!i.lucide && (cu.style ?? cfg.style) === "fill") p.push('variant="fill"');
+      }
+      if (cu.tone) p.push(`tone="${cu.tone}"`);
+      if (tf(cu)) p.push(`style={{ transform: "${tf(cu)}" }}`);
+      const el = `<${n} ${p.join(" ")} />`;
+      if (!cu.shape) return [el];
+      const b = box(cu);
+      return [`<span style={{ display: "inline-flex", padding: ${b.pad}, borderRadius: "${b.rad}", background: "${b.bg}" }}>`, `  ${el}`, `</span>`];
+    };
+    const ng = ({ i, cu }: { i: Icon; cu: Cust }) => {
+      const p = [`name="${i.lucide ?? i.id}"`, `[size]="${Math.round(cfg.size * (cu.scale ?? 1))}"`];
+      if (!isColor(i)) {
+        p.push(`[strokeWidth]="${cu.stroke ?? cfg.stroke}"`);
+        if (cu.color) p.push(`color="${cu.color}"`);
+        if (!i.lucide && (cu.style ?? cfg.style) === "fill") p.push('variant="fill"');
+      }
+      if (cu.tone) p.push(`tone="${cu.tone}"`);
+      if (tf(cu)) p.push(`style="transform: ${tf(cu)}"`);
+      const el = `<afroicon ${p.join(" ")} />`;
+      if (!cu.shape) return [el];
+      const b = box(cu);
+      return [`<span style="display: inline-flex; padding: ${b.pad}px; border-radius: ${b.rad}; background: ${b.bg}">`, `  ${el}`, `</span>`];
+    };
+    const custLines = (f: typeof jsx) => cust.length ? ["", `// Icônes personnalisées (${cust.length})`, ...cust.flatMap((x) => f(x))] : [];
     const fill = cfg.style === "fill" ? ' variant="fill"' : "";
     // Une ligne si elle tient, sinon plusieurs noms par ligne (≈ 72 caractères).
     const wrap = (pre: string, names: string[], post: string) => {
@@ -140,6 +200,7 @@ export function Playground() {
       `const icon = { size: ${cfg.size}, strokeWidth: ${cfg.stroke} };`, "",
       ...uiI.map((i) => `<${i.lucide} {...icon} />`),
       ...afro.map((i) => `<${pascal(i.id)} ${isColor(i) ? `size={${cfg.size}}` : `{...icon}${fill}`} />`),
+      ...custLines(jsx),
     ].filter((x) => x !== null).join("\n");
     if (tab === "angular") {
       const names = used.map((i) => i.lucide ?? pascal(i.id));
@@ -147,6 +208,7 @@ export function Playground() {
         `// app.config.ts : seules les icônes déclarées entrent dans le bundle`, wrap("providers: [provideAfroicons({ ", names, " })]"), "",
         `// composant : imports: [AfroiconComponent]`,
         ...used.map((i) => `<afroicon name="${i.lucide ?? i.id}" [size]="${cfg.size}"${isColor(i) ? "" : ` [strokeWidth]="${cfg.stroke}"`}${!i.lucide && !isColor(i) && cfg.style === "fill" ? ' variant="fill"' : ""} />`),
+        ...custLines(ng).map((l) => l.replace(/^\/\/ (.*)$/, "<!-- $1 -->")),
       ].join("\n");
     }
     if (tab === "css") return [
@@ -156,7 +218,7 @@ export function Playground() {
     return [`<!-- npm install afroicons -->`, `<script type="module">`, `  import { replace } from "afroicons";`, `  replace();`, `</script>`, "",
       ...afro.map((i) => `<i data-afroicon="${i.id}" data-size="${cfg.size}"${isColor(i) ? "" : ` data-stroke="${cfg.stroke}"`}${cfg.style === "fill" && !isColor(i) ? ' data-variant="fill"' : ""}></i>`),
       ...(uiI.length ? ["", `<!-- Icônes d'interface (${uiI.map((i) => i.lucide).join(", ")}) :`, `     afroicons-ui pour React, afroicons-angular pour Angular,`, `     ou le SVG de chaque fiche sur afroicons.org -->`] : [])].join("\n");
-  }, [used, cfg, tab, ink, bg, surface, muted, line]);
+  }, [used, cfg, tab, ink, bg, surface, muted, line, custom, slots]);
   const download = () => zipIcons(used, { ...a, style: cfg.style, stroke: cfg.stroke, color: null } as typeof a, `afroicons-${cfg.name.toLowerCase().replace(/[^a-z0-9]+/g, "-") || "app"}-${used.length}.zip`);
   const show = (v: View) => view === "all" || view === v;
 
@@ -198,7 +260,7 @@ export function Playground() {
           </div>
           <div className="pghint">
             <span className="pghic" aria-hidden="true">↻</span>
-            <p><b>{a.tt("Toutes les icônes ci-dessous sont modifiables.", "Every icon below can be changed.")}</b> {a.tt("Cliquez sur une icône (dans un bouton, le menu, une liste…) pour en choisir une autre dans la bibliothèque.", "Click an icon (in a button, the menu, a list…) to pick another one from the library.")}</p>
+            <p><b>{a.tt("Toutes les icônes ci-dessous sont modifiables.", "Every icon below can be changed.")}</b> {a.tt("Cliquez sur une icône (dans un bouton, le menu, une liste…) pour la remplacer, ou pour la personnaliser : couleur, taille, fond, rotation…", "Click an icon (in a button, the menu, a list…) to swap it, or to customise it: colour, size, background, rotation…")}</p>
             <button className="btn" onClick={(e) => { e.stopPropagation(); setFlash(true); setTimeout(() => setFlash(false), 2400); }}>{a.tt("Les montrer", "Show them")}</button>
           </div>
           <div className={"pgstage v-" + view + (flash ? " flash" : "")} style={vars}>
@@ -268,7 +330,12 @@ export function Playground() {
         </div>
       </div>
 
-      {pick && <Picker onClose={() => setPick(null)} onPick={(id) => { setSlots((s) => ({ ...s, [pick]: id })); setPick(null); }} current={slots[pick]} />}
+      {pick && <Picker onClose={() => setPick(null)} onPick={(id) => { setSlots((s) => ({ ...s, [pick]: id })); setPick(null); }} current={slots[pick]}
+        tab={dtab} setTab={setDtab} cfg={cfg} preview={<div className="pgprev" style={vars}>{paint(pick, 56)}</div>}
+        cust={custom[pick] ?? {}}
+        setCust={(p) => setCustom((m) => { const n = cleanCust({ ...m[pick], ...p }); const o = { ...m }; if (n) o[pick] = n; else delete o[pick]; return o; })}
+        resetCust={() => setCustom((m) => { const o = { ...m }; delete o[pick]; return o; })}
+        applyAll={() => { const cu = custom[pick]; if (!cu) return; setCustom(Object.fromEntries(Object.keys(BASE).map((k) => [k, cu]))); a.toast(a.tt("Appliqué à toutes les icônes", "Applied to every icon")); }} />}
 
       <div className="code pgcode" onClick={(e) => e.stopPropagation()}>
         <div className="pgcodeh">
@@ -290,20 +357,75 @@ const COLS: { id: Collection | "all"; fr: string; en: string; list: Icon[] }[] =
   { id: "emojis", fr: "Emojis", en: "Emojis", list: EMOJIS },
   { id: "flags", fr: "Drapeaux", en: "Flags", list: FLAGS },
 ];
-function Picker({ onClose, onPick, current }: { onClose: () => void; onPick: (id: string) => void; current: string }) {
+type PickerProps = {
+  onClose: () => void; onPick: (id: string) => void; current: string; tab: "swap" | "edit"; setTab: (t: "swap" | "edit") => void;
+  cfg: Cfg; preview: JSX.Element; cust: Cust; setCust: (p: Partial<Cust>) => void; resetCust: () => void; applyAll: () => void;
+};
+function Picker({ onClose, onPick, current, tab, setTab, cfg, preview, cust, setCust, resetCust, applyAll }: PickerProps) {
   const a = useApp();
+  const icon = byId[current];
   const [q, setQ] = useState("");
   const [col, setCol] = useState<Collection | "all">(colOf(current));
   const list = useMemo(() => rank(COLS.find((c) => c.id === col)!.list, q).slice(0, 72), [q, col]);
   useEffect(() => { const f = (e: KeyboardEvent) => e.key === "Escape" && onClose(); addEventListener("keydown", f); return () => removeEventListener("keydown", f); }, [onClose]);
   return (
     <>
-      <div className="pgveil" onClick={onClose} />
-      <div className="pgpick" role="dialog" aria-modal="true" aria-label={a.tt("Choisir une icône", "Choose an icon")} onClick={(e) => e.stopPropagation()}>
-        <div className="pgpickh"><label className="sbox"><ISearch s={18} /><input autoFocus value={q} onChange={(e) => setQ(e.target.value)} onKeyDown={(e) => e.key === "Enter" && list[0] && onPick(list[0].id)} placeholder={a.tt("Chercher : panier, cauri, bell…", "Search: basket, cowrie, bell…")} /></label><button className="ib" aria-label={a.tt("Fermer", "Close")} onClick={onClose}><IClose /></button></div>
+      <div className={"pgveil" + (tab === "edit" ? " light" : "")} onClick={onClose} />
+      <div className={"pgpick" + (tab === "edit" ? " edit" : "")} role="dialog" aria-modal="true" aria-label={a.tt("Remplacer ou personnaliser l'icône", "Swap or customise the icon")} onClick={(e) => e.stopPropagation()}>
+        <div className="pgpickt" role="tablist">
+          <button role="tab" aria-selected={tab === "swap"} className={tab === "swap" ? "on" : ""} onClick={() => setTab("swap")}>{a.tt("Remplacer", "Swap")}</button>
+          <button role="tab" aria-selected={tab === "edit"} className={tab === "edit" ? "on" : ""} onClick={() => setTab("edit")}>{a.tt("Personnaliser", "Customise")}{Object.keys(cust).length ? <i className="pgdot" /> : null}</button>
+          <span>{a.lang === "en" ? icon?.en : icon?.fr}</span>
+          <button className="ib" aria-label={a.tt("Fermer", "Close")} onClick={onClose}><IClose /></button>
+        </div>
+        {tab === "edit" ? <Customize icon={icon} cfg={cfg} preview={preview} cust={cust} set={setCust} reset={resetCust} applyAll={applyAll} /> : <>
+        <div className="pgpickh"><label className="sbox"><ISearch s={18} /><input autoFocus value={q} onChange={(e) => setQ(e.target.value)} onKeyDown={(e) => e.key === "Enter" && list[0] && onPick(list[0].id)} placeholder={a.tt("Chercher : panier, cauri, bell…", "Search: basket, cowrie, bell…")} /></label></div>
         <div className="pgchips pgpickc">{COLS.map((c) => <button key={c.id} className={"cat" + (col === c.id ? " on" : "")} onClick={() => setCol(c.id)}>{a.tt(c.fr, c.en)}</button>)}</div>
         <div className="pgpickg">{list.length ? list.map((i) => <button key={i.id} className={i.id === current ? "on" : ""} title={a.lang === "en" ? i.en : i.fr} onClick={() => onPick(i.id)}><Svg i={i} o={{ s: 24 }} /><small>{a.lang === "en" ? i.en : i.fr}</small></button>) : <p className="pgnote">{a.tt("Aucune icône trouvée.", "No icon found.")}</p>}</div>
+        </>}
       </div>
     </>
+  );
+}
+
+/** Réglages propres à une icône : ils s'appliquent tout de suite dans la maquette, derrière la fenêtre. */
+const INKS = ["#1F1A15", "#FFFFFF", "#C24E2A", "#E3A22F", "#22305C", "#2E6B4E", "#7B4BA8", "#0F766E"];
+const BGS = ["#C24E2A", "#E3A22F", "#22305C", "#2E6B4E", "#0F766E", "#1F1A15", "#F6F2EA", "#FCE9DF"];
+function Customize({ icon, cfg, preview, cust, set, reset, applyAll }: { icon?: Icon; cfg: Cfg; preview: JSX.Element; cust: Cust; set: (p: Partial<Cust>) => void; reset: () => void; applyAll: () => void }) {
+  const a = useApp();
+  const color = !!icon && isColor(icon), n = Object.keys(cust).length;
+  const Swatch = ({ list, value, on, auto }: { list: string[]; value?: string; on: (v?: string) => void; auto?: string }) => (
+    <div className="swat pgswat2">
+      {auto && <button className={"pgauto" + (!value ? " on" : "")} onClick={() => on(undefined)}>{auto}</button>}
+      {list.map((c) => <button key={c} aria-label={c} className={value?.toLowerCase() === c.toLowerCase() ? "on" : ""} style={{ background: c }} onClick={() => on(c)} />)}
+      <label className={"pgcustom" + (value && !list.some((c) => c.toLowerCase() === value.toLowerCase()) ? " on" : "")} title={a.tt("Couleur libre", "Custom colour")}><input type="color" value={value ?? "#C24E2A"} aria-label={a.tt("Couleur libre", "Custom colour")} onChange={(e) => on(e.target.value)} /></label>
+    </div>
+  );
+  return (
+    <div className="pgcust">
+      {preview}
+      <div className="pgcf">
+        {!color && <div className="pgfield"><span>Style</span><div className="seg"><button className={(cust.style ?? cfg.style) === "line" ? "on" : ""} onClick={() => set({ style: "line" })}>{a.tt("Trait", "Line")}</button><button className={(cust.style ?? cfg.style) === "fill" ? "on" : ""} onClick={() => set({ style: "fill" })}>{a.tt("Rempli", "Filled")}</button></div></div>}
+        {!color && <div className="pgrow2"><span>{a.tt("Couleur", "Colour")}</span><Swatch list={INKS} value={cust.color} auto={a.tt("Auto", "Auto")} on={(v) => set({ color: v })} /></div>}
+        {icon?.tone && <div className="pgrow2"><span>{a.tt("Teinte", "Tone")}</span><div className="pgtones">{TONE_LIST.map((t) => <button key={t.id} title={a.tt(t.fr, t.en)} aria-label={a.tt(t.fr, t.en)} className={(cust.tone ?? DEFAULT_TONE) === t.id ? "on" : ""} style={{ background: TONES[t.id][0] }} onClick={() => set({ tone: t.id === DEFAULT_TONE ? undefined : t.id })} />)}</div></div>}
+        <label className="rng"><span>{a.tt("Taille", "Size")}</span><input type="range" min={0.5} max={2.5} step={0.25} value={cust.scale ?? 1} onChange={(e) => set({ scale: +e.target.value === 1 ? undefined : +e.target.value })} /><output>{Math.round((cust.scale ?? 1) * 100)} %</output></label>
+        {!color && <label className="rng"><span>{a.tt("Trait", "Stroke")}</span><input type="range" min={1} max={2.5} step={0.25} value={cust.stroke ?? cfg.stroke} onChange={(e) => set({ stroke: +e.target.value === cfg.stroke ? undefined : +e.target.value })} /><output>{cust.stroke ?? cfg.stroke}</output></label>}
+        <div className="pgfield"><span>{a.tt("Fond", "Background")}</span><div className="seg">
+          <button className={!cust.shape ? "on" : ""} onClick={() => set({ shape: undefined, bg: undefined })}>{a.tt("Aucun", "None")}</button>
+          <button className={cust.shape === "round" ? "on" : ""} onClick={() => set({ shape: "round", ...(!cust.color && !color && { color: "#FFFFFF" }) })}>{a.tt("Carré", "Square")}</button>
+          <button className={cust.shape === "circle" ? "on" : ""} onClick={() => set({ shape: "circle", ...(!cust.color && !color && { color: "#FFFFFF" }) })}>{a.tt("Rond", "Round")}</button>
+        </div></div>
+        {cust.shape && <div className="pgrow2"><span>{a.tt("Couleur du fond", "Background colour")}</span><Swatch list={BGS} value={cust.bg ?? cfg.primary} on={(v) => set({ bg: v })} /></div>}
+        <div className="pgfield"><span>{a.tt("Rotation", "Rotate")}</span><div className="seg">
+          {[0, 90, 180, 270].map((d) => <button key={d} className={(cust.rot ?? 0) === d ? "on" : ""} onClick={() => set({ rot: d || undefined })}>{d}°</button>)}
+          <button className={cust.flip ? "on" : ""} aria-pressed={!!cust.flip} title={a.tt("Miroir", "Mirror")} onClick={() => set({ flip: cust.flip ? undefined : true })}>⇋</button>
+        </div></div>
+        <div className="pgacts">
+          <button className="btn" disabled={!n} onClick={applyAll}>{a.tt("Appliquer à toutes", "Apply to all")}</button>
+          <button className="btn" disabled={!n} onClick={reset}>{a.tt("Réinitialiser", "Reset")}</button>
+        </div>
+        <small className="pgnote">{a.tt("Les changements s'appliquent tout de suite dans la maquette et dans le code.", "Changes apply right away to the mockup and the code.")}</small>
+      </div>
+    </div>
   );
 }
