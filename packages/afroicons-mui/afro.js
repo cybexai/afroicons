@@ -1,5 +1,5 @@
 "use client";
-// afroicons-mui v0.7.0 — généré, ne pas modifier à la main.
+// afroicons-mui v0.8.0 — généré, ne pas modifier à la main.
 import { createElement as h } from "react";
 import { createSvgIcon } from "@mui/material";
 const el = ([t, p, c], k) => h(t, { key: k, ...p }, ...(c ? c.map(el) : []));
