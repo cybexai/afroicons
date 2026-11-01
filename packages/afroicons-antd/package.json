@@ -1,7 +1,7 @@
 {
   "name": "afroicons-antd",
   "version": "0.6.0",
-  "description": "Les icônes Afroicons sous les noms de @ant-design/icons : mêmes noms, mêmes props (className, style, spin, rotate). Remplacez l'import ; les icônes pas encore redessinées viennent d'Ant Design.",
+  "description": "Les icônes Afroicons sous les noms de @ant-design/icons : mêmes noms, mêmes props (className, style, spin, rotate). Remplacez l'import ; les icônes pas encore redessinées viennent d'Ant Design. Projet indépendant, non affilié au groupe Ant.",
   "type": "module",
   "main": "./index.js",
   "module": "./index.js",

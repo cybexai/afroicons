@@ -1,7 +1,7 @@
 {
   "name": "afroicons-mui",
   "version": "0.6.0",
-  "description": "Les icônes Afroicons sous les noms de @mui/icons-material : mêmes noms, mêmes props (fontSize, color, sx). Remplacez l'import ; les icônes pas encore redessinées viennent de Material UI.",
+  "description": "Les icônes Afroicons sous les noms de @mui/icons-material : mêmes noms, mêmes props (fontSize, color, sx). Remplacez l'import ; les icônes pas encore redessinées viennent de Material UI. Projet indépendant, non affilié à MUI (Material-UI SAS).",
   "type": "module",
   "main": "./index.js",
   "module": "./index.js",

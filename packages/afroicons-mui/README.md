@@ -31,6 +31,8 @@ import CloseIcon from "afroicons-mui/Close";
 
 L'import direct (`afroicons-mui/Close`) existe pour les noms redessinés ; pour les autres, gardez `@mui/icons-material/…`.
 
-## Licence
+## Licence et marques
 
-MIT © THAFAM HOLDING SARL. Les noms d'icônes sont ceux de Material UI ; les dessins sont originaux.
+MIT © THAFAM HOLDING SARL. Les dessins sont originaux : aucun tracé de Material UI n'est repris ; seuls les noms d'icônes le sont, pour la compatibilité.
+
+**Projet indépendant, non affilié à MUI (Material-UI SAS) ni approuvé par elle.** MUI et Material UI sont des marques de leur propriétaire, citées uniquement pour indiquer la compatibilité.

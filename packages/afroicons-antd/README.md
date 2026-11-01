@@ -29,6 +29,8 @@ import EyeOutlined from "afroicons-antd/EyeOutlined";
 
 `afroiconNames` donne la liste des noms redessinés ; `afroicons-antd/compat.json` associe chaque nom à son icône Afroicons. `twoToneColor` est accepté mais sans effet : les icônes Afroicons sont au trait.
 
-## Licence
+## Licence et marques
 
-MIT © THAFAM HOLDING SARL. Les noms d'icônes sont ceux d'Ant Design ; les dessins sont originaux.
+MIT © THAFAM HOLDING SARL. Les dessins sont originaux : aucun tracé d'Ant Design n'est repris ; seuls les noms d'icônes le sont, pour la compatibilité.
+
+**Projet indépendant, non affilié au groupe Ant ni approuvé par lui.** Ant Design est une marque de son propriétaire, citée uniquement pour indiquer la compatibilité.

@@ -25,6 +25,8 @@
 | [`afroicons-antd`](packages/afroicons-antd) | les mêmes icônes sous les noms de `@ant-design/icons` (303 noms, mêmes props) |
 | [`afroicons-angular`](packages/afroicons-angular) | Composant Angular autonome `<afroicon>`, toutes les icônes |
 
+`afroicons-mui` et `afroicons-antd` sont des projets indépendants, non affiliés à MUI (Material-UI SAS) ni au groupe Ant ; MUI, Material UI et Ant Design sont des marques de leurs propriétaires, citées uniquement pour indiquer la compatibilité. Les dessins sont originaux.
+
 ## Démarrage rapide · Quick start
 
 ```bash

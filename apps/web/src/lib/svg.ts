@@ -30,10 +30,10 @@ export function compatSnippet(i: Icon, kind: "mui" | "antd", names: string[]) {
   if (!names.length) return "";
   if (kind === "mui") {
     const n = names[0] + "Outlined";
-    return `// npm install afroicons-mui @mui/material @mui/icons-material\n// Mêmes noms et mêmes props que @mui/icons-material : remplacez l'import.\nimport { ${names[0]}, ${n} } from "afroicons-mui";\n// ou : import ${n} from "afroicons-mui/${n}";\n\n<${n} fontSize="small" color="primary" />\n\n// Noms Material UI de cette icône (et leurs variantes Outlined, Rounded, Sharp, TwoTone) :\n// ${names.join(", ")}`;
+    return `// npm install afroicons-mui @mui/material @mui/icons-material\n// Mêmes noms et mêmes props que @mui/icons-material : remplacez l'import.\nimport { ${names[0]}, ${n} } from "afroicons-mui";\n// ou : import ${n} from "afroicons-mui/${n}";\n\n<${n} fontSize="small" color="primary" />\n\n// Noms Material UI de cette icône (et leurs variantes Outlined, Rounded, Sharp, TwoTone) :\n// ${names.join(", ")}\n\n// Projet indépendant, non affilié à MUI (Material-UI SAS). Dessins originaux.`;
   }
   const n = names[0] + "Outlined";
-  return `// npm install afroicons-antd @ant-design/icons\n// Mêmes noms et mêmes props que @ant-design/icons : remplacez l'import.\nimport { ${n} } from "afroicons-antd";\n// ou : import ${n} from "afroicons-antd/${n}";\n\n<${n} style={{ fontSize: 16 }} />\n\n// Noms Ant Design de cette icône (variantes Outlined, Filled, TwoTone) :\n// ${names.join(", ")}`;
+  return `// npm install afroicons-antd @ant-design/icons\n// Mêmes noms et mêmes props que @ant-design/icons : remplacez l'import.\nimport { ${n} } from "afroicons-antd";\n// ou : import ${n} from "afroicons-antd/${n}";\n\n<${n} style={{ fontSize: 16 }} />\n\n// Noms Ant Design de cette icône (variantes Outlined, Filled, TwoTone) :\n// ${names.join(", ")}\n\n// Projet indépendant, non affilié au groupe Ant. Dessins originaux.`;
 }
 
 export const spriteStr = (list: Icon[], stroke: number) =>
