@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { CITIES, COMPAT_NAMES, ICONS, REGNAME, VERSION, byId, catOf, colOf, isFlag, isNew, lineLike, loadFills, type CityId, type Icon } from "../lib/constants";
+import { CITIES, COMPAT_NAMES, EGROUPS, ICONS, REGNAME, TONES, TONE_LIST, VERSION, byId, catOf, codepoints, colOf, isColor, isEmoji, isFlag, isNew, lineLike, loadFills, type CityId, type Icon } from "../lib/constants";
 import { FACTS } from "../lib/i18n";
 import { norm, rank } from "../lib/search";
 import { animateDraw, compatSnippet, cssStr, highlight, jsxSnippet, spriteStr, svgStr, svgToPng, useStr } from "../lib/svg";
@@ -37,7 +37,7 @@ export function Drawer() {
   useEffect(() => { if (i) setLast(i); }, [i]);
   const ic = i ?? last;
 
-  useEffect(() => { if (i && a.style === "line") animateDraw(big.current?.querySelector("svg") ?? null); }, [i?.id]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { if (i && a.style === "line" && !isColor(i)) animateDraw(big.current?.querySelector("svg") ?? null); }, [i?.id]); // eslint-disable-line react-hooks/exhaustive-deps
   // Focus : on entre dans la fiche à l'ouverture, on revient où l'on était à la fermeture.
   useEffect(() => {
     if (i) {
@@ -80,13 +80,14 @@ export function Drawer() {
   const fg = !line ? a.color ?? "#fff" : prevBg === "card" ? a.ink : prevBg === "ink" ? a.theme.bg : "#fff";
   const base = ic.variantOf ?? ic.id;
   const variants = ICONS.filter((x) => x.id === base || x.variantOf === base);
-  const others = ICONS.filter((x) => x.cat === ic.cat && x.id !== ic.id && !variants.includes(x));
+  // Même famille : même catégorie (même groupe pour un emoji).
+  const others = ICONS.filter((x) => x.cat === ic.cat && (!isEmoji(ic) || x.group === ic.group) && x.id !== ic.id && !variants.includes(x));
   const fact = FACTS[ic.id];
   const cn = ic.lucide ? COMPAT_NAMES[ic.lucide] : undefined;
   // Onglets Material UI et Ant Design : seulement pour les icônes d'interface qui ont un équivalent.
   const tabs = (["svg", "jsx", "use", "css", ...(cn?.mui.length ? ["mui"] : []), ...(cn?.antd.length ? ["antd"] : [])] as const) as readonly ("svg" | "jsx" | "use" | "css" | "mui" | "antd")[];
   const cur = tabs.includes(tab) ? tab : "svg";
-  const code = { svg: () => exportSvg(ic, a), jsx: () => jsxSnippet(ic, a.stroke, a.style === "fill" && !!ic.fill), use: () => `<!-- 1. ${a.tt("Collez le sprite une fois", "Paste the sprite once")} -->\n<!-- 2. ${a.tt("Puis", "Then")} : -->\n${useStr(ic)}`, css: () => cssStr(ic, a.stroke), mui: () => compatSnippet(ic, "mui", cn?.mui ?? []), antd: () => compatSnippet(ic, "antd", cn?.antd ?? []) }[cur]();
+  const code = { svg: () => exportSvg(ic, a), jsx: () => jsxSnippet(ic, a.stroke, a.style === "fill" && !!ic.fill, app.tone), use: () => `<!-- 1. ${a.tt("Collez le sprite une fois", "Paste the sprite once")} -->\n<!-- 2. ${a.tt("Puis", "Then")} : -->\n${useStr(ic)}`, css: () => cssStr(ic, a.stroke), mui: () => compatSnippet(ic, "mui", cn?.mui ?? []), antd: () => compatSnippet(ic, "antd", cn?.antd ?? []) }[cur]();
   const mk = (o = {}) => <Svg i={ic} o={{ s: 20, w: a.stroke, ...o }} />;
   const close = () => a.openIcon(null);
 
@@ -97,7 +98,7 @@ export function Drawer() {
         <div className="dscroll" ref={scroller}>
           <div className="dtop">
             <div><h3 id="dTitle">{nm(ic)}</h3>
-              <div className="sub"><span>{a.lang === "en" ? ic.fr : ic.en}</span><span className="badge">{a.tt(cat.fr, cat.en)}</span>{!ic.lucide && <span className="badge">{REGNAME[ic.region][a.lang]}</span>}{isNew(ic) && <span className="badge" style={{ color: "var(--a1)" }}>v{VERSION}</span>}</div>
+              <div className="sub"><span>{a.lang === "en" ? ic.fr : ic.en}</span><span className="badge">{a.tt(cat.fr, cat.en)}</span>{isEmoji(ic) ? <span className="badge">{ic.char ? <><span className="echar">{ic.char}</span> {codepoints(ic.char)}</> : a.tt("Emoji africain original", "Original African emoji")}</span> : !ic.lucide && <span className="badge">{REGNAME[ic.region][a.lang]}</span>}{isEmoji(ic) && <span className="badge">{a.tt(EGROUPS.find((g) => g.id === ic.group)?.fr ?? "", EGROUPS.find((g) => g.id === ic.group)?.en ?? "")}</span>}{isNew(ic) && <span className="badge" style={{ color: "var(--a1)" }}>v{VERSION}</span>}</div>
             </div>
             <div className="dnav">
               <button className="ib" aria-label={a.tt("Icône précédente", "Previous icon")} title={a.tt("Précédente (←)", "Previous (←)")} onClick={() => step(-1)}><IPrev w={2.2} /></button>
@@ -114,7 +115,8 @@ export function Drawer() {
             <div id="dBig" ref={big}><Svg key={ic.id + a.style} i={ic} o={{ s: line ? 212 : 180, c: fg, style: a.style, w: a.stroke, bg: a.badgeBg }} /></div>
           </div>
           <div className="dsizes">{[16, 20, 24, 32, 48].map((s) => <div key={s} style={{ color: a.ink }}><Svg i={ic} o={{ s, style: a.style, w: a.stroke, bg: a.badgeBg, c: line ? "currentColor" : a.color ?? "#fff" }} /><small>{s}</small></div>)}</div>
-          {!isFlag(ic) && <details className="dcust" open={custOpen} onToggle={(e) => setCustOpen((e.target as HTMLDetailsElement).open)}>
+          {ic.tone && <div className="dtone">{a.tt("Teinte de peau", "Skin tone")}<span className="tones" role="radiogroup" aria-label={a.tt("Teinte de peau", "Skin tone")}>{TONE_LIST.map((t) => <button key={t.id} role="radio" aria-checked={app.tone === t.id} aria-label={a.tt(t.fr, t.en)} title={a.tt(t.fr, t.en) + (ic.char ? " " + ic.char + t.mod : "")} className={app.tone === t.id ? "on" : ""} style={{ background: TONES[t.id][0] }} onClick={() => app.setTone(t.id)} />)}</span></div>}
+          {!isColor(ic) && <details className="dcust" open={custOpen} onToggle={(e) => setCustOpen((e.target as HTMLDetailsElement).open)}>
             <summary><ISliders s={16} />{a.tt("Personnaliser", "Customise")}<small>{a.tt("pour cette icône", "for this icon")}</small><IChevron s={14} w={2.4} /></summary>
             <CustomizeFields v={cust} set={(p) => setCust((c) => ({ ...c, ...p }))} onReset={fromLibrary} />
           </details>}
@@ -124,7 +126,7 @@ export function Drawer() {
             <button className="btn p" onClick={() => a.copy(exportSvg(ic, a))}><T k="cSvg" /><span className="kbd" style={{ background: "transparent", color: "inherit", borderColor: "#fff4" }}>C</span></button>
             <button className="btn" onClick={() => a.toggleFav(ic.id)}>{a.favs.has(ic.id) ? a.t("remFav") : a.t("addFav")}</button>
             {a.canDownload && <button className="btn a" onClick={() => a.save(`afroicon-${ic.id}.svg`, exportSvg(ic, a))}><T k="dSvg" /></button>}
-            {a.canDownload && <button className="btn" onClick={async () => a.save(`afroicon-${ic.id}.png`, await svgToPng(svgStr(ic, { s: 512, style: a.style, w: a.stroke, bg: a.badgeBg, c: line ? a.ink : a.color ?? "#fff" }), 512, 512))}><T k="dPng" /></button>}
+            {a.canDownload && <button className="btn" onClick={async () => a.save(`afroicon-${ic.id}.png`, await svgToPng(svgStr(ic, { s: 512, style: a.style, w: a.stroke, bg: a.badgeBg, c: line ? a.ink : a.color ?? "#fff", tone: app.tone }), 512, 512))}><T k="dPng" /></button>}
           </div>
           <div className="ctx"><h4><T k="ctx" /></h4>
             <div className="ctxg">

@@ -33,7 +33,8 @@ let depth = 0, factsEnd = factsStart;
 for (; factsEnd < i18n.length; factsEnd++) { if (i18n[factsEnd] === "{") depth++; if (i18n[factsEnd] === "}" && !--depth) break; }
 const FACTS = JSON.parse(i18n.slice(factsStart, factsEnd + 1));
 
-const CATS = { nature: "Nature & paysages", faune: "Faune", musique: "Musique & arts", symboles: "Symboles & textiles", cuisine: "Cuisine", vie: "Vie quotidienne", architecture: "Architecture", drapeaux: "Drapeaux", interface: "Interface" };
+const CATS = { nature: "Nature & paysages", faune: "Faune", musique: "Musique & arts", symboles: "Symboles & textiles", cuisine: "Cuisine", vie: "Vie quotidienne", architecture: "Architecture", drapeaux: "Drapeaux", emojis: "Emojis", interface: "Interface" };
+const EGROUP = { visages: "visages", mains: "mains", personnes: "personnes", coeurs: "cœurs et symboles", nature: "nature", nourriture: "nourriture", objets: "objets" };
 const REG = { pan: "toute l'Afrique", ouest: "Afrique de l'Ouest", centre: "Afrique centrale", est: "Afrique de l'Est", nord: "Afrique du Nord", australe: "Afrique australe" };
 const pascal = (id) => id.replace(/(^|[-_])(\w)/g, (_, a, b) => b.toUpperCase());
 const kebab = (n) => n.replace(/([a-z0-9])([A-Z])/g, "$1-$2").replace(/([a-zA-Z])(\d)/g, "$1-$2").toLowerCase();
@@ -50,13 +51,17 @@ const draw = (i, body, size = 120, idSuffix = "") =>
   `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" color="currentColor" role="img" aria-label="${esc(i.fr)}">${idSuffix ? body.replaceAll(`afm-${i.slug}"`, `afm-${i.slug}${idSuffix}"`).replaceAll(`#afm-${i.slug})`, `#afm-${i.slug}${idSuffix})`) : body}</svg>`;
 
 function describe(i) {
+  if (i.cat === "emojis") return `Emoji ${i.char ? `${i.char} ` : "africain original "}« ${i.fr} » (${i.en}) en SVG, dessiné dans le style Afroicons${i.tone ? ", dans les 5 teintes de peau Unicode" : ""}. Gratuit pour React, Angular et HTML, licence MIT.`;
   if (i.iso) return `${i.fr} (${i.iso}) en SVG, aux couleurs officielles. Icône gratuite pour React, Angular et HTML, lisible dès 16 px. ${REG[i.region][0].toUpperCase() + REG[i.region].slice(1)}. Licence MIT.`;
   if (i.lucide) return `Icône SVG « ${i.fr} » (${i.en}) dans le style Afroicons, compatible Lucide : remplacez l'import de lucide-react par afroicons-ui.${i.afro ? " " + i.afro : ""} Libre et gratuite, licence MIT.`;
   const fact = FACTS[i.id]?.[0];
   return `Icône SVG « ${i.fr} » (${i.en}), ${CATS[i.cat].toLowerCase()}, ${REG[i.region] ?? "Afrique"}. Au trait ou remplie, pour React, Angular et HTML. Libre et gratuite, licence MIT.${fact ? " " + fact : ""}`.slice(0, 300);
 }
 
-const template = readFileSync(join(dist, "index.html"), "utf8");
+// Les compteurs de l'accueil (description, partage) sont calculés ici : ils suivent les icônes ajoutées.
+const counts = { __TOTAL__: icons.length, __FLAGS__: icons.filter((i) => i.iso).length, __EMOJIS__: icons.filter((i) => i.cat === "emojis").length };
+const template = readFileSync(join(dist, "index.html"), "utf8").replace(/__(TOTAL|FLAGS|EMOJIS)__/g, (m) => counts[m]);
+writeFileSync(join(dist, "index.html"), template);
 function page({ path, title, desc, canonical, body, app = true }) {
   const depth = path.split("/").filter(Boolean).length;
   const up = "../".repeat(depth);
@@ -80,20 +85,20 @@ const nav = `<nav><a href="/">Afroicons</a> › <a href="/icones/">Toutes les ic
 for (const i of icons) {
   const base = i.variantOf ? bySlug[i.variantOf] : i;
   const variants = icons.filter((x) => x.slug === base.slug || x.variantOf === base.slug).filter((x) => x.slug !== i.slug);
-  const similar = icons.filter((x) => x.cat === i.cat && x.slug !== i.slug && !variants.includes(x)).slice(0, 12);
+  const similar = icons.filter((x) => x.cat === i.cat && (i.cat !== "emojis" || x.group === i.group) && x.slug !== i.slug && !variants.includes(x)).slice(0, 12);
   const fact = FACTS[i.id];
   const code = i.lucide
     ? `npm install afroicons-ui lucide-react\n\nimport { ${i.lucide} } from "afroicons-ui";\n\n<${i.lucide} size={24} />`
-    : `npm install afroicons-react\n\nimport { ${pascal(i.id)} } from "afroicons-react";\n\n<${pascal(i.id)} size={24} />${i.iso ? "" : `\n<${pascal(i.id)} variant="fill" />`}`;
+    : `npm install afroicons-react\n\nimport { ${pascal(i.id)} } from "afroicons-react";\n\n<${pascal(i.id)} size={24} />${i.iso || i.cat === "emojis" ? "" : `\n<${pascal(i.id)} variant="fill" />`}${i.tone ? `\n<${pascal(i.id)} tone="light" />  // light, medium-light, medium, medium-dark (par défaut), dark` : ""}`;
   const links = (list) => `<ul class="g">${list.map((x) => `<li><a href="/icones/${x.slug}/">${esc(x.fr)}</a></li>`).join("")}</ul>`;
   page({
     path: `icones/${i.slug}`,
-    title: i.iso ? `${i.fr} — SVG gratuit, couleurs officielles | Afroicons` : `${i.fr} — icône SVG gratuite${i.lucide ? " compatible Lucide" : ""} | Afroicons`,
+    title: i.cat === "emojis" ? `${i.char ? i.char + " " : ""}${i.fr} — emoji SVG gratuit | Afroicons` : i.iso ? `${i.fr} — SVG gratuit, couleurs officielles | Afroicons` : `${i.fr} — icône SVG gratuite${i.lucide ? " compatible Lucide" : ""} | Afroicons`,
     desc: describe(i),
     canonical: url(i),
     body: `${nav}
 <h1>${esc(i.fr)}</h1>
-<p>${esc(i.en)} · ${esc(CATS[i.cat])}${i.region ? " · " + esc(REG[i.region]) : ""}${i.lucide ? ` · nom Lucide : <code>${esc(i.lucide)}</code>` : ""}</p>
+<p>${esc(i.en)} · ${esc(CATS[i.cat])}${i.cat === "emojis" ? ` · ${EGROUP[i.group]}${i.char ? ` · ${i.char} (${[...i.char].filter((c) => c !== "\uFE0F").map((c) => "U+" + c.codePointAt(0).toString(16).toUpperCase()).join(" ")})` : " · emoji africain original"}` : i.region ? " · " + esc(REG[i.region]) : ""}${i.lucide ? ` · nom Lucide : <code>${esc(i.lucide)}</code>` : ""}</p>
 <p>${draw(i, i.body)} ${i.fill && i.fill !== i.body ? draw(i, i.fill, 120, "-p") : ""}</p>
 ${i.afro ? `<p>${esc(i.afro)}</p>` : ""}
 ${fact ? `<h2>Le saviez-vous ?</h2><p>${esc(fact[0])}</p><p lang="en">${esc(fact[1])}</p>` : ""}

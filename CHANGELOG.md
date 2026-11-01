@@ -1,6 +1,7 @@
 # Journal des versions
 
 ## À venir
+- **148 emojis** : 100 emojis Unicode redessinés dans le style Afroicons (visages, mains, cœurs, nature, nourriture, objets) et 48 emojis africains originaux (femme au gele, homme en agbada, griot, attiéké, jollof, foufou, djembé, kora, moto-taxi, taxi-brousse, mobile money, baobab…). Couleur à plat et contour ; visages et mains dans les 5 teintes de peau Unicode, foncée par défaut (`tone`). Dans `afroicons`, `afroicons-react` et `afroicons-angular` (`emoji-pouce-leve`, `<EmojiPouceLeve tone="light" />`) ; sur le site, une collection « Emojis » filtrable par groupe et par origine, avec un choix de teinte, et une page par emoji. On les trouve aussi en tapant l'emoji lui-même (🐘)
 - `afroicons-react` : **vraiment tree-shakable**. Chaque icône est marquée `/*#__PURE__*/` ; une application qui importe une seule icône n'embarque plus les 216 (webpack 5 en production : 29,3 Ko → 0,8 Ko gzip)
 - Deux nouveaux paquets : **`afroicons-mui`** et **`afroicons-antd`** remplacent `@mui/icons-material` et `@ant-design/icons` en changeant seulement l'import. 1 655 noms Material UI et 299 noms Ant Design, variantes comprises, redessinés au trait Afroicons ; mêmes props (`fontSize`, `color`, `sx` ; `spin`, `rotate`, `className`) ; les autres icônes viennent du paquet d'origine
 - Site : onglets « MUI » et « Ant » dans la fiche des icônes d'interface, et leurs noms sur chaque page

@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { CITIES, PAGE, byId, loadFills, type CityId, type Icon, type Style } from "./lib/constants";
+import { CITIES, DEFAULT_TONE, PAGE, TONES, byId, loadFills, type CityId, type Icon, type Style, type Tone } from "./lib/constants";
 import { EN, FR, type Lang } from "./lib/i18n";
 import { isHosted, saveFile, store, useCapability } from "./lib/platform";
 import type { PatternState } from "./lib/pattern";
@@ -34,6 +34,9 @@ function useAppState() {
   const [stroke, setStroke] = useState(1.75);
   const [size, setSize] = useState(40);
   const [style, setStyle] = useState<Style>("line");
+  // Teinte de peau des emojis, retenue d'une visite à l'autre.
+  const [tone, _setTone] = useState<Tone>(() => { const t = store.get<string>("tone", DEFAULT_TONE); return t in TONES ? (t as Tone) : DEFAULT_TONE; });
+  const setTone = useCallback((t: Tone) => { store.set("tone", t); _setTone(t); }, []);
   // Versions remplies : chargées en arrière-plan après l'affichage, ou tout de suite si on choisit « Rempli ».
   const [fillsReady, setFillsReady] = useState(false);
   const needFills = useCallback(() => { loadFills().then(() => setFillsReady(true)).catch(() => {}); }, []);
@@ -146,7 +149,7 @@ function useAppState() {
 
   return {
     lang, setLang, t, tt, mode, setMode, city, setCity, theme, pal, ink, badgeBg,
-    color, setColor, bg, setBg, stroke, setStroke, size, setSize, style, setStyle, fillsReady, needFills,
+    color, setColor, bg, setBg, stroke, setStroke, size, setSize, style, setStyle, tone, setTone, fillsReady, needFills,
     favs, toggleFav, sel, setSel, toggleSel, selecting, setSelecting,
     current, openIcon, cmdOpen, setCmdOpen, helpOpen, setHelpOpen, list, setList,
     pattern, setPattern, downloads, canDownload, toast, toastMsg, copy, save,

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, ElementRef, Input, Renderer2, inject, isDevMode, type OnChanges } from "@angular/core";
 import { AFROICONS } from "./provide";
-import { iconKey, type AfroiconElement, type AfroiconNode, type AfroiconVariant } from "./types";
+import { AFROICON_TONES, iconKey, type AfroiconElement, type AfroiconNode, type AfroiconTone, type AfroiconVariant } from "./types";
 
 const SVG_NS = "http://www.w3.org/2000/svg";
 
@@ -12,6 +12,7 @@ const SVG_NS = "http://www.w3.org/2000/svg";
  * <afroicon [icon]="Wallet" [size]="20" color="#C24E2A" />
  * <afroicon name="mototaxi" title="Livraison" />   <!-- title : icône annoncée aux lecteurs d'écran -->
  * <afroicon name="baobab" variant="fill" />        <!-- version remplie (icônes culturelles) -->
+ * <afroicon name="emoji-pouce-leve" tone="light" /> <!-- teinte de peau d'un emoji -->
  * ```
  * Le SVG est construit élément par élément (Renderer2), sans innerHTML.
  */
@@ -36,6 +37,9 @@ export class AfroiconComponent implements OnChanges {
   @Input() title?: string;
   /** « line » (trait, par défaut) ou « fill » (rempli). Sans version remplie, l'icône reste au trait. */
   @Input() variant: AfroiconVariant = "line";
+  /** Emojis : teinte de peau Unicode (par défaut « medium-dark »). Sans effet sur les autres icônes. */
+  @Input() tone?: AfroiconTone;
+  private skin?: Record<string, string>;
 
   private readonly el = inject<ElementRef<HTMLElement>>(ElementRef);
   private readonly r = inject(Renderer2);
@@ -61,6 +65,9 @@ export class AfroiconComponent implements OnChanges {
       this.r.appendChild(t, this.r.createText(this.title));
       this.r.appendChild(svg, t);
     } else this.r.setAttribute(svg, "aria-hidden", "true");
+    const t = icon.tone && this.tone && this.tone !== "medium-dark" ? AFROICON_TONES[this.tone] : undefined;
+    const [d0, d1] = AFROICON_TONES["medium-dark"];
+    this.skin = t ? { [d0]: t[0], [d1]: t[1] } : undefined;
     const nodes = this.variant === "fill" && icon.fill ? icon.fill : icon.nodes;
     for (const n of nodes) this.r.appendChild(svg, this.build(n));
     this.r.appendChild(host, svg);
@@ -68,7 +75,7 @@ export class AfroiconComponent implements OnChanges {
 
   private build([tag, a, children]: AfroiconElement): unknown {
     const n = this.r.createElement(tag, SVG_NS);
-    for (const [k, v] of Object.entries(a)) this.r.setAttribute(n, k, v);
+    for (const [k, v] of Object.entries(a)) this.r.setAttribute(n, k, this.skin?.[v] ?? v);
     for (const c of children ?? []) this.r.appendChild(n, this.build(c));
     return n;
   }

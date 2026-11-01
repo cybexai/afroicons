@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { AFRO, CITIES, FLAGS, ICONS, PAGE, UI, REGNAME, ROT_CITIES, SHOWCASE, VERSION, byId, catOf, type CityId } from "../lib/constants";
+import { AFRO, CITIES, EMOJIS, FLAGS, ICONS, PAGE, UI, REGNAME, ROT_CITIES, SHOWCASE, VERSION, byId, catOf, type CityId } from "../lib/constants";
 import { animateDraw, logoSvg, svgStr } from "../lib/svg";
 import { useApp, useName } from "../state";
 import { IClose, IDown, IMenu, IMoon, ISearch, ISun, Raw, Svg, T } from "./ui";
@@ -143,7 +143,7 @@ export function Hero() {
         <div className="hstats">
           <div><b>{ICONS.length}</b><span><T k="st1" /></span></div>
           <div><b>{AFRO.length}</b><span><T k="st2" /></span></div>
-          <div><b>{FLAGS.length}</b><span><T k="st5" /></span></div>
+          <div><b>{EMOJIS.length}</b><span><T k="st6" /></span></div>
           <div><b>{UI.length}</b><span><T k="st4" /></span></div>
         </div>
       </div>

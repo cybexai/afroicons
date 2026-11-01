@@ -46,6 +46,17 @@ h = await render(`<afroicon name="baobab" variant="fill" /><afroicon name="walle
 assert.match(h, /<mask id="afm-baobab"/, "version remplie (masque)");
 assert.equal((h.match(/<svg/g) || []).length, 2, "sans version remplie, l'icône reste au trait");
 
+// Emoji : teinte de peau (entrée tone)
+{
+  const { icons: all, tones } = await import("../packages/afroicons/index.js");
+  const toned = Object.keys(all).find((n) => all[n].tone);
+  const key = toned.replace(/(^|[-_])(\w)/g, (_, a, b) => b.toUpperCase());
+  const E = ng[key];
+  h = await render(`<afroicon [icon]="e" /><afroicon [icon]="e" tone="light" />`, [], { e: E });
+  const [first, second] = h.split("</svg>");
+  assert.ok(first.includes(tones["medium-dark"][0]) && second.includes(tones.light[0]) && !second.includes(tones["medium-dark"][0]), "Angular : entrée tone");
+}
+
 // Nom inconnu : rien, sans planter
 h = await render(`<afroicon name="inconnue" />`, [provideAfroicons({ Wallet })]);
 assert.doesNotMatch(h, /<svg/);

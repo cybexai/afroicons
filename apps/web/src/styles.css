@@ -646,3 +646,12 @@ a.vote span:first-child{font-size:17px;line-height:1}
 .rnote{color:var(--muted);font-size:13.5px;margin-top:14px}
 @media (max-width:760px){.rel>li{grid-template-columns:minmax(0,1fr);gap:12px;padding:20px 18px}.rh{flex-direction:row;flex-wrap:wrap;align-items:center;gap:8px 12px}.rh b{font-size:22px}}
 a.eyebrow:hover{color:var(--ink);border-color:var(--muted)}
+
+/* Emojis : sélecteur de teinte de peau */
+.tones{display:inline-flex;gap:6px;align-items:center;margin-left:auto;padding-left:6px}
+.tones button{width:22px;height:22px;border-radius:50%;border:2px solid var(--card);box-shadow:0 0 0 1px var(--line);padding:0}
+.tones button.on{box-shadow:0 0 0 2px var(--ink)}
+.dtone{display:flex;gap:8px;align-items:center;margin:10px 0 0;color:var(--muted);font-size:13px}
+.dtone .tones{margin-left:0;padding-left:0}
+.echar{font-size:20px;line-height:1}
+@media (max-width:640px){.eregs{flex-wrap:wrap;overflow:visible}.eregs .tones{margin-left:0;padding:6px 0 0 4px;width:100%}}

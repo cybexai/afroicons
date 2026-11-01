@@ -1,10 +1,11 @@
 import { ICONS, REGNAME, catOf, type Icon } from "./constants";
 
-export const norm = (s: string) => s.toLowerCase().replace(/œ/g, "oe").replace(/æ/g, "ae").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/['’-]/g, " ");
+export const norm = (s: string) => s.replace(/\uFE0F/g, "").toLowerCase().replace(/œ/g, "oe").replace(/æ/g, "ae").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/['’-]/g, " ");
 
 for (const i of ICONS) {
   const c = catOf(i.cat), r = REGNAME[i.region] ?? REGNAME.pan;
-  i._hay = norm([i.id, i.fr, i.en, ...i.tags, c.fr, c.en, r.fr, r.en].join(" "));
+  // Les emojis se trouvent aussi en tapant le caractère lui-même (🐘).
+  i._hay = norm([i.id, i.fr, i.en, ...i.tags, c.fr, c.en, r.fr, r.en, i.char ? i.char.replace(/\uFE0F/g, "") : ""].join(" "));
   i._n = norm(i.fr + " " + i.en);
 }
 

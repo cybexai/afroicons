@@ -1,13 +1,13 @@
 import { memo, useEffect, useMemo, useRef, useState, type KeyboardEvent } from "react";
-import { AFRO, CATS, FAMILIES, FLAGS, REGS, STYLES, UI, byId, colOf, isFlag, isNew, lineLike, type Collection, type Icon, type Style } from "../lib/constants";
+import { AFRO, CATS, EGROUPS, EMOJIS, FAMILIES, FLAGS, REGS, STYLES, TONES, TONE_LIST, UI, byId, colOf, isFlag, isNew, lineLike, type Collection, type Icon, type Style, type Tone } from "../lib/constants";
 import { rank } from "../lib/search";
 import { svgStr } from "../lib/svg";
 import { useApp, useName } from "../state";
 import { ICheck, IChevron, ICopy, IHeart, ISearch, ISelect, ISliders, Svg, T } from "./ui";
 import { inert } from "./Overlays";
 
-export const exportSvg = (i: Icon, a: { style: Style; stroke: number; color: string | null; badgeBg: string }) =>
-  svgStr(i, { style: a.style, w: a.stroke, bg: a.badgeBg, cls: `afroicon afroicon-${i.id}`, c: lineLike(a.style) ? "currentColor" : a.color ?? "#FFFFFF" });
+export const exportSvg = (i: Icon, a: { style: Style; stroke: number; color: string | null; badgeBg: string; tone?: Tone }) =>
+  svgStr(i, { style: a.style, w: a.stroke, bg: a.badgeBg, cls: `afroicon afroicon-${i.id}`, c: lineLike(a.style) ? "currentColor" : a.color ?? "#FFFFFF", tone: a.tone });
 
 /** Réglages d'icône : style, couleur, fond de pastille, épaisseur (et taille d'aperçu dans la bibliothèque). */
 export type CustomValue = { style: Style; color: string | null; bg: string | null; stroke: number; size?: number };
@@ -126,7 +126,9 @@ export function Library() {
   const a = useApp();
   // Trois collections : les icônes culturelles, les drapeaux, et les icônes d'interface (afroicons-ui).
   const [col, setCol] = useState<Collection>(() => colOf((location.pathname.match(/\/icones\/([a-z0-9-]+)/)?.[1] ?? location.hash.slice(1))));
-  const POOLS: Record<Collection, Icon[]> = { afro: AFRO, flags: FLAGS, ui: UI };
+  const POOLS: Record<Collection, Icon[]> = { afro: AFRO, flags: FLAGS, emojis: EMOJIS, ui: UI };
+  // Emojis : origine (tous, africains originaux, Unicode).
+  const [origin, setOrigin] = useState<"all" | "afro" | "unicode">("all");
   const pool = POOLS[col];
   const [cat, setCat] = useState("all");
   const [reg, setReg] = useState("all");
@@ -145,20 +147,22 @@ export function Library() {
     return () => removeEventListener("afroicons:filter", f);
   }, []);
 
-  const keep = (i: Icon) => (!favOnly || a.favs.has(i.id)) && (col === "ui" ? cat === "all" || i.family === cat : (cat === "all" || i.cat === cat) && (reg === "all" || i.region === reg));
+  const keep = (i: Icon) => (!favOnly || a.favs.has(i.id)) && (col === "ui" ? cat === "all" || i.family === cat
+    : col === "emojis" ? (cat === "all" || i.group === cat) && (origin === "all" || (origin === "afro") === !i.char)
+    : (cat === "all" || i.cat === cat) && (reg === "all" || i.region === reg));
   // Les favoris rassemblent les trois collections : le compteur du bouton ♥ et la grille disent la même chose.
-  const list = useMemo(() => rank(favOnly ? [...AFRO, ...FLAGS, ...UI].filter((i) => a.favs.has(i.id)) : pool.filter(keep), q), [col, cat, reg, q, favOnly, a.favs]); // eslint-disable-line react-hooks/exhaustive-deps
+  const list = useMemo(() => rank(favOnly ? [...AFRO, ...FLAGS, ...EMOJIS, ...UI].filter((i) => a.favs.has(i.id)) : pool.filter(keep), q), [col, cat, reg, origin, q, favOnly, a.favs]); // eslint-disable-line react-hooks/exhaustive-deps
   // Rien ici mais des résultats dans l'autre collection : on le signale.
   const elsewhere = useMemo(() => {
     if (!q.trim() || list.length || favOnly) return null;
-    for (const c of (["afro", "flags", "ui"] as const).filter((c) => c !== col)) { const n = rank(POOLS[c], q).length; if (n) return { c, n }; }
+    for (const c of (["afro", "flags", "emojis", "ui"] as const).filter((c) => c !== col)) { const n = rank(POOLS[c], q).length; if (n) return { c, n }; }
     return null;
   }, [q, list.length, col, favOnly]); // eslint-disable-line react-hooks/exhaustive-deps
-  const switchCol = (c: Collection) => change(() => { setCol(c); setCat("all"); setReg("all"); });
+  const switchCol = (c: Collection) => change(() => { setCol(c); setCat("all"); setReg("all"); setOrigin("all"); });
   useEffect(() => { a.setList(list); }, [list]); // eslint-disable-line react-hooks/exhaustive-deps
   const pages = Math.max(1, Math.ceil(list.length / PER));
   // Nouveau filtre : retour à la première page. Liste raccourcie (favori retiré…) : on reste dans les bornes.
-  useEffect(() => { setPage(0); }, [col, cat, reg, q, favOnly]);
+  useEffect(() => { setPage(0); }, [col, cat, reg, origin, q, favOnly]);
   useEffect(() => { setPage((p) => Math.min(p, pages - 1)); }, [pages]);
   // La fiche parcourt toute la liste (← →) : la grille suit, pour que le focus revienne sur la bonne carte.
   useEffect(() => {
@@ -237,14 +241,23 @@ export function Library() {
         </div>
         <div className="trow">
           <div className="seg cols" role="tablist" aria-label={a.tt("Collections", "Collections")}>
-            {([["afro", a.tt("Culturelles", "Cultural"), AFRO.length], ["flags", a.tt("Drapeaux", "Flags"), FLAGS.length], ["ui", a.tt("Interface", "Interface"), UI.length]] as const).map(([k, l, n]) =>
+            {([["afro", a.tt("Culturelles", "Cultural"), AFRO.length], ["flags", a.tt("Drapeaux", "Flags"), FLAGS.length], ["emojis", a.tt("Emojis", "Emojis"), EMOJIS.length], ["ui", a.tt("Interface", "Interface"), UI.length]] as const).map(([k, l, n]) =>
               <button key={k} role="tab" aria-selected={col === k} className={col === k ? "on" : ""} onClick={() => col !== k && switchCol(k)}>{l}<small>{n}</small></button>)}
           </div>
-          {col !== "flags" && <div className="cats">{(col === "ui" ? [CATS[0], ...FAMILIES] : CATS.filter((c) => c.id !== "interface" && c.id !== "drapeaux")).map((c) => {
+          {col === "emojis" && <div className="cats">{[{ id: "all", fr: "Tous", en: "All" }, ...EGROUPS].map((c) => {
+            const n = c.id === "all" ? pool.length : pool.filter((i) => i.group === c.id).length;
+            const ic = c.id === "all" ? pool[0] : pool.find((i) => i.group === c.id);
+            return n ? <button key={c.id} className={"cat" + (cat === c.id ? " on" : "")} onClick={() => change(() => setCat(c.id))}>{ic && <Svg i={ic} o={{ s: 18 }} />}{a.tt(c.fr, c.en)}<small>{n}</small></button> : null;
+          })}</div>}
+          {col === "emojis" && <div className="regs eregs">
+            {([["all", "Tous", "All"], ["afro", "Africains", "African"], ["unicode", "Unicode", "Unicode"]] as const).map(([k, fr, en]) => <button key={k} className={"reg" + (origin === k ? " on" : "")} onClick={() => change(() => setOrigin(k))}>{a.tt(fr, en)}</button>)}
+            <span className="tones" role="radiogroup" aria-label={a.tt("Teinte de peau", "Skin tone")}>{TONE_LIST.map((t) => <button key={t.id} role="radio" aria-checked={a.tone === t.id} aria-label={a.tt(t.fr, t.en)} title={a.tt(t.fr, t.en)} className={a.tone === t.id ? "on" : ""} style={{ background: TONES[t.id][0] }} onClick={() => a.setTone(t.id)} />)}</span>
+          </div>}
+          {col !== "flags" && col !== "emojis" && <div className="cats">{(col === "ui" ? [CATS[0], ...FAMILIES] : CATS.filter((c) => c.id !== "interface" && c.id !== "drapeaux" && c.id !== "emojis")).map((c) => {
             const n = c.id === "all" ? pool.length : pool.filter((i) => (col === "ui" ? i.family : i.cat) === c.id).length;
             return <button key={c.id} className={"cat" + (cat === c.id ? " on" : "")} onClick={() => change(() => setCat(c.id))}><Svg i={byId[c.ic]} o={{ s: 18, w: 2 }} />{a.tt(c.fr, c.en)}<small>{n}</small></button>;
           })}</div>}
-          {col !== "ui" && <div className="regs">{REGS.map((r) => <button key={r.id} className={"reg" + (reg === r.id ? " on" : "")} onClick={() => change(() => setReg(r.id))}>{a.tt(r.fr, r.en)}</button>)}</div>}
+          {col !== "ui" && col !== "emojis" && <div className="regs">{REGS.map((r) => <button key={r.id} className={"reg" + (reg === r.id ? " on" : "")} onClick={() => change(() => setReg(r.id))}>{a.tt(r.fr, r.en)}</button>)}</div>}
         </div>
       </div>
       <div ref={grid} className={"grid" + (a.selecting || a.sel.size ? " selecting" : "")} aria-label={a.t("nav1")} style={{ ["--cell" as string]: a.size + 92 + "px" }} onKeyDown={onKey}
@@ -264,7 +277,7 @@ export function Library() {
         </nav>
       )}
       {!list.length && <div className="empty"><div className="big"><T k="e1" /></div>{elsewhere
-        ? <button className="btn" style={{ marginTop: 12 }} onClick={() => switchCol(elsewhere.c)}>{a.tt(`${elsewhere.n} résultat${elsewhere.n > 1 ? "s" : ""} dans ${{ afro: "les icônes culturelles", flags: "les drapeaux", ui: "les icônes d'interface" }[elsewhere.c]}`, `${elsewhere.n} result${elsewhere.n > 1 ? "s" : ""} in ${{ afro: "cultural icons", flags: "flags", ui: "interface icons" }[elsewhere.c]}`)}</button>
+        ? <button className="btn" style={{ marginTop: 12 }} onClick={() => switchCol(elsewhere.c)}>{a.tt(`${elsewhere.n} résultat${elsewhere.n > 1 ? "s" : ""} dans ${{ afro: "les icônes culturelles", flags: "les drapeaux", emojis: "les emojis", ui: "les icônes d'interface" }[elsewhere.c]}`, `${elsewhere.n} result${elsewhere.n > 1 ? "s" : ""} in ${{ afro: "cultural icons", flags: "flags", emojis: "emojis", ui: "interface icons" }[elsewhere.c]}`)}</button>
         : <T k="e2" />}</div>}
       <div className="hint">
         {[["←↑→↓", "h1"], [a.tt("Entrée", "Enter"), "h2"], ["C", "h3"], ["F", "h4"], ["X", "h5"], ["?", "h6"]].map(([kb, k]) => <span key={k}><span className="kbd">{kb}</span><span><T k={k} /></span></span>)}

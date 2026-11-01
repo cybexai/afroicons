@@ -84,6 +84,10 @@ apps/web/              ← le site afroicons.org (React + Vite + TypeScript)
 
 Les 54 drapeaux sont décrits dans `scripts/flags.mjs` (bandes, étoiles, croissants…, en coordonnées de 0 à 1) : modifiez-y le drapeau, puis `node scripts/flags.mjs` régénère `src/flags.json`. Couleurs officielles uniquement, emblèmes simplifiés pour rester lisibles à 16 px.
 
+## Ajouter un emoji
+
+Les emojis sont dessinés dans `scripts/emojis/*.mjs` avec la boîte à outils `scripts/emojis/lib.mjs` (palette, visages, bustes, mains, vaisselle). Couleur à plat et contour arrondi ; la peau s'écrit avec `SKIN` et `SKIN_SHADE` (et `tone: true`) pour exister dans les 5 teintes Unicode. Pas d'identifiant SVG, pas de dégradé, pas de texte. `node scripts/emojis.mjs --sheet` vérifie les entrées, régénère `src/emojis.json` et écrit une planche de contrôle (`emojis-planche.html`) à joindre à la pull request.
+
 ## Ajouter une icône d'interface (`afroicons-ui`)
 
 `afroicons-ui` remplace `lucide-react` sans changer le code : chaque icône garde **exactement le nom Lucide** (`Wallet`, `ShoppingCart`…). Celles qui ne sont pas encore redessinées viennent de Lucide.

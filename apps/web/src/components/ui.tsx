@@ -1,11 +1,14 @@
-import { forwardRef, memo, type CSSProperties } from "react";
-import type { Icon } from "../lib/constants";
+import { createContext, forwardRef, memo, useContext, type CSSProperties } from "react";
+import type { Icon, Tone } from "../lib/constants";
+/** Teinte de peau choisie pour les emojis : seules les icônes la lisent, et se redessinent quand elle change. */
+export const ToneContext = createContext<Tone | undefined>(undefined);
 import { svgStr, type SvgOpts } from "../lib/svg";
 import { useApp } from "../state";
 
 /** Affiche une icône. Le corps SVG vient de nos propres données (jamais d'une saisie utilisateur). */
 export const Svg = memo(forwardRef<HTMLSpanElement, { i: Icon; o?: SvgOpts; className?: string; style?: CSSProperties }>(function Svg({ i, o, className, style }, ref) {
-  return <span ref={ref} className={className} style={{ display: className ? undefined : "contents", ...style }} dangerouslySetInnerHTML={{ __html: svgStr(i, o) }} />;
+  const tone = useContext(ToneContext);
+  return <span ref={ref} className={className} style={{ display: className ? undefined : "contents", ...style }} dangerouslySetInnerHTML={{ __html: svgStr(i, i.tone ? { ...o, tone: o?.tone ?? tone } : o) }} />;
 }));
 
 /** Une chaîne SVG brute (logo, motif…), rendue telle quelle. */

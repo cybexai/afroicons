@@ -7,7 +7,8 @@ npm install afroicons-react
 ```
 
 ```jsx
-import { Baobab, Mobilemoney, Mototaxi, DrapeauCameroun } from "afroicons-react";
+import { Baobab, Mobilemoney, Mototaxi, DrapeauCameroun, EmojiPouceLeve } from "afroicons-react";
+// <EmojiPouceLeve size={32} tone="light" /> : emoji, 5 teintes de peau (medium-dark par défaut)
 
 <Baobab />
 <Mobilemoney size={20} color="#22305C" />

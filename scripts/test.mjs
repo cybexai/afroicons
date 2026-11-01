@@ -7,9 +7,9 @@ assert.ok(names.length >= 150, "au moins 150 icônes");
 assert.equal(new Set(names).size, names.length, "ids uniques");
 for (const n of names) {
   const i = icons[n];
-  assert.match(n, i.cat === "drapeaux" ? /^drapeau-[a-z0-9]+(-[a-z0-9]+)*$/ : /^[a-z0-9]+$/, `id valide: ${n}`);
+  assert.match(n, i.cat === "drapeaux" ? /^drapeau-[a-z0-9]+(-[a-z0-9]+)*$/ : i.cat === "emojis" ? /^emoji-[a-z0-9]+(-[a-z0-9]+)*$/ : /^[a-z0-9]+$/, `id valide: ${n}`);
   assert.ok(i.fr && i.en, `noms FR/EN: ${n}`);
-  assert.ok(["nature","faune","musique","symboles","cuisine","vie","architecture","drapeaux"].includes(i.cat), `catégorie: ${n}`);
+  assert.ok(["nature","faune","musique","symboles","cuisine","vie","architecture","drapeaux","emojis"].includes(i.cat), `catégorie: ${n}`);
   assert.ok(i.tags.length >= 3, `mots-clés: ${n}`);
   assert.equal(new Set(i.tags.map((t) => t.toLowerCase())).size, i.tags.length, `mots-clés sans doublon: ${n}`);
   assert.ok(toSvg(n).startsWith("<svg") && toSvg(n).endsWith("</svg>"), `svg: ${n}`);
@@ -35,7 +35,28 @@ for (const n of flags) {
   assert.ok(!i.body.includes("currentColor"), `couleurs officielles : ${n}`);
   assert.equal(i.fill, i.body, `version remplie identique : ${n}`);
 }
-console.log(`✔ ${names.length} icônes vérifiées, au trait et remplies, dont ${flags.length} drapeaux`);
+// Emojis : en couleur, sans identifiant SVG ; ceux qui ont une peau existent dans les 5 teintes Unicode.
+const { tones, defaultTone } = await import("../packages/afroicons/index.js");
+const emojis = names.filter((n) => icons[n].cat === "emojis");
+assert.ok(emojis.length >= 140, `au moins 140 emojis (${emojis.length})`);
+assert.equal(Object.keys(tones).length, 5, "5 teintes de peau");
+const [d0, d1] = tones[defaultTone];
+for (const n of emojis) {
+  const i = icons[n];
+  assert.match(n, /^emoji-[a-z0-9]+(-[a-z0-9]+)*$/, `id d'emoji : ${n}`);
+  assert.doesNotMatch(i.body, /\bid="|url\(#|<clipPath|<mask|currentColor/, `emoji sans identifiant ni currentColor : ${n}`);
+  assert.equal(i.fill, i.body, `emoji : version remplie identique : ${n}`);
+  assert.ok(i.char === null || /\p{Extended_Pictographic}/u.test(i.char), `caractère Unicode : ${n}`);
+  if (i.tone) {
+    assert.ok(i.body.includes(d0), `peau par défaut : ${n}`);
+    for (const [t, [c0]] of Object.entries(tones)) if (t !== defaultTone) {
+      const out = toSvg(n, { tone: t });
+      assert.ok(out.includes(c0) && !out.includes(d0) && !out.includes(d1), `teinte ${t} : ${n}`);
+    }
+  } else assert.equal(toSvg(n, { tone: "light" }), toSvg(n), `sans peau, tone sans effet : ${n}`);
+}
+assert.ok(new Set(emojis.map((n) => icons[n].char).filter(Boolean)).size === emojis.filter((n) => icons[n].char).length, "un seul dessin par emoji Unicode");
+console.log(`✔ ${names.length} icônes vérifiées, au trait et remplies, dont ${flags.length} drapeaux et ${emojis.length} emojis (${emojis.filter((n) => icons[n].tone).length} en 5 teintes)`);
 
 // ---------- afroicons-ui : compatibilité lucide-react ----------
 import { createElement } from "react";
@@ -64,6 +85,11 @@ console.log(`✔ ${drawn.length} icônes d'interface vérifiées (compatibles lu
 // ---------- afroicons-react : rendu imbriqué, version remplie, couleur ----------
 const R = await import("../packages/afroicons-react/index.js");
 assert.match(html(R.Ngoni), /<g transform="rotate\(-35 12 12\)"><ellipse/, "groupe transformé conservé (ngoni)");
+{
+  const toned = emojis.find((n) => icons[n].tone), Rt = R[toned.replace(/(^|[-_])(\w)/g, (_, a, b) => b.toUpperCase())];
+  const [l0] = tones.light;
+  assert.ok(html(Rt).includes(d0) && html(Rt, { tone: "light" }).includes(l0) && !html(Rt, { tone: "light" }).includes(d0), "React : prop tone");
+}
 assert.match(html(R.Arachide, { color: "#C24E2A" }), /<svg[^>]*color="#C24E2A"/, "couleur transmise aux points");
 assert.match(html(R.DrapeauCameroun, { title: "Cameroun" }), /<svg[^>]*role="img"[^>]*><title>Cameroun<\/title><g stroke="none" stroke-linecap="butt"><path d="[^"]+" fill="#007A5E"/, "drapeau en React, avec titre accessible");
 for (const n of names) {

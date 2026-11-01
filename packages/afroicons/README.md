@@ -11,6 +11,7 @@ import { toSvg, icons, names, replace } from "afroicons";
 toSvg("baobab", { size: 32, color: "#C24E2A", strokeWidth: 2 });
 toSvg("baobab", { variant: "fill" });   // version remplie
 toSvg("drapeau-cameroun");              // drapeau, aux couleurs officielles
+toSvg("emoji-pouce-leve", { tone: "light" }); // emoji, teinte de peau Unicode
 icons.djembe.fr;      // "Djembé"
 icons.djembe.region;  // "ouest"
 replace();            // remplace <i data-afroicon="kora"></i> (data-variant="fill" pour la version remplie)

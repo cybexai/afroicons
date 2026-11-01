@@ -1,5 +1,5 @@
 import type { ForwardRefExoticComponent, RefAttributes, SVGProps } from "react";
-export interface AfroiconProps extends Omit<SVGProps<SVGSVGElement>, "ref"> { size?: number | string; color?: string; strokeWidth?: number | string; title?: string; /** "line" (trait, par défaut) ou "fill" (rempli). */ variant?: "line" | "fill"; }
+export interface AfroiconProps extends Omit<SVGProps<SVGSVGElement>, "ref"> { size?: number | string; color?: string; strokeWidth?: number | string; title?: string; /** "line" (trait, par défaut) ou "fill" (rempli). */ variant?: "line" | "fill"; /** Emojis : teinte de peau Unicode (par défaut "medium-dark"). */ tone?: "light" | "medium-light" | "medium" | "medium-dark" | "dark"; }
 export type Afroicon = ForwardRefExoticComponent<AfroiconProps & RefAttributes<SVGSVGElement>>;
 /** Baobab · Baobab */
 export declare const Baobab: Afroicon;
@@ -433,3 +433,299 @@ export declare const DrapeauTunisie: Afroicon;
 export declare const DrapeauZambie: Afroicon;
 /** Drapeau du Zimbabwe · Flag of Zimbabwe */
 export declare const DrapeauZimbabwe: Afroicon;
+/** Baobab · Baobab */
+export declare const EmojiBaobab: Afroicon;
+/** Kilimandjaro · Kilimanjaro */
+export declare const EmojiKilimandjaro: Afroicon;
+/** Okapi · Okapi */
+export declare const EmojiOkapi: Afroicon;
+/** Pangolin · Pangolin */
+export declare const EmojiPangolin: Afroicon;
+/** Caméléon · Chameleon */
+export declare const EmojiCameleon: Afroicon;
+/** Calao · Hornbill */
+export declare const EmojiCalao: Afroicon;
+/** Gorille · Gorilla */
+export declare const EmojiGorille: Afroicon;
+/** Zèbre · Zebra */
+export declare const EmojiZebre: Afroicon;
+/** Termitière · Termite mound */
+export declare const EmojiTermitiere: Afroicon;
+/** Coucher de soleil sur la savane · Sunset over the savanna */
+export declare const EmojiCoucherDeSoleilSavane: Afroicon;
+/** Djembé · Djembe */
+export declare const EmojiDjembe: Afroicon;
+/** Kora · Kora */
+export declare const EmojiKora: Afroicon;
+/** Masque africain · African mask */
+export declare const EmojiMasque: Afroicon;
+/** Calebasse · Calabash */
+export declare const EmojiCalebasse: Afroicon;
+/** Cauri · Cowrie shell */
+export declare const EmojiCauri: Afroicon;
+/** Case · Hut */
+export declare const EmojiCase: Afroicon;
+/** Pirogue · Pirogue */
+export declare const EmojiPirogue: Afroicon;
+/** Moto-taxi · Motorbike taxi */
+export declare const EmojiMotoTaxi: Afroicon;
+/** Taxi-brousse · Bush taxi */
+export declare const EmojiTaxiBrousse: Afroicon;
+/** Mobile money · Mobile money */
+export declare const EmojiMobileMoney: Afroicon;
+/** Awalé · Oware */
+export declare const EmojiAwale: Afroicon;
+/** Kente · Kente cloth */
+export declare const EmojiKente: Afroicon;
+/** Tissu wax · Wax print fabric */
+export declare const EmojiTissuWax: Afroicon;
+/** Sankofa · Sankofa */
+export declare const EmojiSankofa: Afroicon;
+/** Attiéké au poisson · Attiéké with fish */
+export declare const EmojiAttieke: Afroicon;
+/** Riz jollof · Jollof rice */
+export declare const EmojiJollof: Afroicon;
+/** Foufou · Fufu */
+export declare const EmojiFoufou: Afroicon;
+/** Alloco · Alloco */
+export declare const EmojiAlloco: Afroicon;
+/** Suya · Suya */
+export declare const EmojiSuya: Afroicon;
+/** Injera · Injera */
+export declare const EmojiInjera: Afroicon;
+/** Bissap · Bissap */
+export declare const EmojiBissap: Afroicon;
+/** Vin de palme · Palm wine */
+export declare const EmojiVinDePalme: Afroicon;
+/** Noix de kola · Kola nuts */
+export declare const EmojiNoixDeKola: Afroicon;
+/** Beignets · Puff-puff */
+export declare const EmojiBeignets: Afroicon;
+/** Mafé · Maafe peanut stew */
+export declare const EmojiMafe: Afroicon;
+/** Ndolè · Ndolé */
+export declare const EmojiNdole: Afroicon;
+/** Pouce levé · Thumbs up */
+export declare const EmojiPouceLeve: Afroicon;
+/** Pouce baissé · Thumbs down */
+export declare const EmojiPouceBaisse: Afroicon;
+/** Applaudissements · Clapping hands */
+export declare const EmojiApplaudissements: Afroicon;
+/** Mains jointes · Folded hands */
+export declare const EmojiMainsJointes: Afroicon;
+/** Main qui salue · Waving hand */
+export declare const EmojiSalutMain: Afroicon;
+/** Signe de la victoire · Victory hand */
+export declare const EmojiSigneVictoire: Afroicon;
+/** Main OK · OK hand */
+export declare const EmojiOkMain: Afroicon;
+/** Biceps · Flexed biceps */
+export declare const EmojiBiceps: Afroicon;
+/** Main levée · Raised hand */
+export declare const EmojiMainLevee: Afroicon;
+/** Index vers la droite · Backhand index pointing right */
+export declare const EmojiIndexDroite: Afroicon;
+/** Index levé · Index pointing up */
+export declare const EmojiIndexLeve: Afroicon;
+/** Doigts croisés · Crossed fingers */
+export declare const EmojiDoigtsCroises: Afroicon;
+/** Mains levées · Raising hands */
+export declare const EmojiMainsLevees: Afroicon;
+/** Mains en cœur · Heart hands */
+export declare const EmojiMainsCoeur: Afroicon;
+/** Poing levé · Raised fist */
+export declare const EmojiPoingLeve: Afroicon;
+/** Poignée de main · Handshake */
+export declare const EmojiPoigneeDeMain: Afroicon;
+/** Femme au gele · Woman wearing a gele */
+export declare const EmojiFemmeGele: Afroicon;
+/** Homme en agbada et fila · Man in agbada and fila */
+export declare const EmojiHommeAgbada: Afroicon;
+/** Femme en kente · Woman in kente */
+export declare const EmojiFemmeKente: Afroicon;
+/** Homme au kufi · Man wearing a kufi */
+export declare const EmojiHommeKufi: Afroicon;
+/** Grand-mère au foulard · Grandmother in a headscarf */
+export declare const EmojiGrandMereFoulard: Afroicon;
+/** Enfant aux nœuds bantous · Child with Bantu knots */
+export declare const EmojiEnfantNoeudsBantous: Afroicon;
+/** Femme portant un bébé au dos · Woman carrying a baby on her back */
+export declare const EmojiFemmeBebeAuDos: Afroicon;
+/** Vendeuse à la bassine · Market vendor with a basin */
+export declare const EmojiVendeuseBassine: Afroicon;
+/** Conducteur de moto-taxi · Motorbike taxi driver */
+export declare const EmojiConducteurMotoTaxi: Afroicon;
+/** Mariée en tenue traditionnelle · Bride in traditional attire */
+export declare const EmojiMarieeTraditionnelle: Afroicon;
+/** Chef traditionnel · Traditional chief */
+export declare const EmojiChefTraditionnel: Afroicon;
+/** Griot avec sa kora · Griot with a kora */
+export declare const EmojiGriotKora: Afroicon;
+/** Arbre feuillu · Deciduous tree */
+export declare const EmojiArbreFeuillu: Afroicon;
+/** Palmier · Palm tree */
+export declare const EmojiPalmier: Afroicon;
+/** Cactus · Cactus */
+export declare const EmojiCactus: Afroicon;
+/** Fleur de cerisier · Cherry blossom */
+export declare const EmojiFleurDeCerisier: Afroicon;
+/** Tournesol · Sunflower */
+export declare const EmojiTournesol: Afroicon;
+/** Soleil · Sun */
+export declare const EmojiSoleil: Afroicon;
+/** Croissant de lune · Crescent moon */
+export declare const EmojiCroissantDeLune: Afroicon;
+/** Nuage de pluie · Cloud with rain */
+export declare const EmojiNuageDePluie: Afroicon;
+/** Globe Afrique-Europe · Globe showing Europe-Africa */
+export declare const EmojiGlobeAfriqueEurope: Afroicon;
+/** Éléphant · Elephant */
+export declare const EmojiElephant: Afroicon;
+/** Lion · Lion */
+export declare const EmojiLion: Afroicon;
+/** Girafe · Giraffe */
+export declare const EmojiGirafe: Afroicon;
+/** Banane · Banana */
+export declare const EmojiBanane: Afroicon;
+/** Mangue · Mango */
+export declare const EmojiMangue: Afroicon;
+/** Ananas · Pineapple */
+export declare const EmojiAnanas: Afroicon;
+/** Noix de coco · Coconut */
+export declare const EmojiNoixDeCoco: Afroicon;
+/** Avocat · Avocado */
+export declare const EmojiAvocat: Afroicon;
+/** Piment · Hot pepper */
+export declare const EmojiPiment: Afroicon;
+/** Bol de riz · Cooked rice */
+export declare const EmojiBolDeRiz: Afroicon;
+/** Marmite de ragoût · Pot of food */
+export declare const EmojiMarmiteDeRagout: Afroicon;
+/** Boisson chaude · Hot beverage */
+export declare const EmojiTasseDeCafe: Afroicon;
+/** Pastèque · Watermelon */
+export declare const EmojiPasteque: Afroicon;
+/** Pain · Bread */
+export declare const EmojiPain: Afroicon;
+/** Cuisse de poulet · Poultry leg */
+export declare const EmojiCuisseDePoulet: Afroicon;
+/** Cotillon · Party popper */
+export declare const EmojiCotillon: Afroicon;
+/** Cadeau · Wrapped gift */
+export declare const EmojiCadeau: Afroicon;
+/** Téléphone portable · Mobile phone */
+export declare const EmojiTelephonePortable: Afroicon;
+/** Sac d'argent · Money bag */
+export declare const EmojiSacDArgent: Afroicon;
+/** Ballon de football · Soccer ball */
+export declare const EmojiBallonDeFootball: Afroicon;
+/** Tambour · Drum */
+export declare const EmojiTambourEtBaguettes: Afroicon;
+/** Note de musique · Musical note */
+export declare const EmojiNoteDeMusique: Afroicon;
+/** Maison · House */
+export declare const EmojiMaison: Afroicon;
+/** Voiture · Automobile */
+export declare const EmojiVoiture: Afroicon;
+/** Avion · Airplane */
+export declare const EmojiAvion: Afroicon;
+/** Punaise · Round pushpin */
+export declare const EmojiPunaiseRonde: Afroicon;
+/** Ampoule · Light bulb */
+export declare const EmojiAmpoule: Afroicon;
+/** Toque de diplômé · Graduation cap */
+export declare const EmojiToqueDeDiplome: Afroicon;
+/** Réveil · Alarm clock */
+export declare const EmojiReveil: Afroicon;
+/** Visage souriant · Grinning face */
+export declare const EmojiVisageSouriant: Afroicon;
+/** Visage souriant aux yeux rieurs · Grinning face with smiling eyes */
+export declare const EmojiVisageSouriantYeuxRieurs: Afroicon;
+/** Visage rayonnant aux yeux rieurs · Beaming face with smiling eyes */
+export declare const EmojiVisageRayonnant: Afroicon;
+/** Visage souriant aux yeux plissés · Grinning squinting face */
+export declare const EmojiVisagePlisseRieur: Afroicon;
+/** Visage souriant avec sueur · Grinning face with sweat */
+export declare const EmojiVisageSueur: Afroicon;
+/** Mort de rire · Rolling on the floor laughing */
+export declare const EmojiMortDeRire: Afroicon;
+/** Visage riant aux larmes · Face with tears of joy */
+export declare const EmojiLarmesDeJoie: Afroicon;
+/** Visage légèrement souriant · Slightly smiling face */
+export declare const EmojiVisageLegerementSouriant: Afroicon;
+/** Visage faisant un clin d'œil · Winking face */
+export declare const EmojiClinDOeil: Afroicon;
+/** Visage souriant aux joues roses · Smiling face with smiling eyes */
+export declare const EmojiVisageRougissant: Afroicon;
+/** Visage souriant avec auréole · Smiling face with halo */
+export declare const EmojiVisageAureole: Afroicon;
+/** Visage souriant entouré de cœurs · Smiling face with hearts */
+export declare const EmojiVisageCoeurs: Afroicon;
+/** Visage aux yeux en cœur · Smiling face with heart-eyes */
+export declare const EmojiYeuxEnCoeur: Afroicon;
+/** Visage aux yeux étoilés · Star-struck */
+export declare const EmojiYeuxEtoiles: Afroicon;
+/** Visage envoyant un bisou · Face blowing a kiss */
+export declare const EmojiBisou: Afroicon;
+/** Visage savourant · Face savoring food */
+export declare const EmojiMiam: Afroicon;
+/** Visage tirant la langue avec un clin d'œil · Winking face with tongue */
+export declare const EmojiLangueClinDOeil: Afroicon;
+/** Visage faisant un câlin · Hugging face */
+export declare const EmojiCalin: Afroicon;
+/** Visage qui réfléchit · Thinking face */
+export declare const EmojiVisagePensif: Afroicon;
+/** Visage avec lunettes de soleil · Smiling face with sunglasses */
+export declare const EmojiLunettesDeSoleil: Afroicon;
+/** Visage au sourire en coin · Smirking face */
+export declare const EmojiSourireEnCoin: Afroicon;
+/** Visage neutre · Neutral face */
+export declare const EmojiVisageNeutre: Afroicon;
+/** Visage roulant des yeux · Face with rolling eyes */
+export declare const EmojiYeuxAuCiel: Afroicon;
+/** Visage songeur · Pensive face */
+export declare const EmojiVisageSongeur: Afroicon;
+/** Visage qui pleure · Crying face */
+export declare const EmojiVisageEnLarmes: Afroicon;
+/** Visage pleurant à chaudes larmes · Loudly crying face */
+export declare const EmojiPleursBruyants: Afroicon;
+/** Visage furieux · Enraged face */
+export declare const EmojiVisageFurieux: Afroicon;
+/** Visage hurlant de peur · Face screaming in fear */
+export declare const EmojiVisageHorrifie: Afroicon;
+/** Visage endormi · Sleeping face */
+export declare const EmojiVisageEndormi: Afroicon;
+/** Visage festif · Partying face */
+export declare const EmojiVisageFestif: Afroicon;
+/** Cœur rouge · Red heart */
+export declare const EmojiCoeurRouge: Afroicon;
+/** Cœur orange · Orange heart */
+export declare const EmojiCoeurOrange: Afroicon;
+/** Cœur jaune · Yellow heart */
+export declare const EmojiCoeurJaune: Afroicon;
+/** Cœur vert · Green heart */
+export declare const EmojiCoeurVert: Afroicon;
+/** Cœur bleu · Blue heart */
+export declare const EmojiCoeurBleu: Afroicon;
+/** Cœur violet · Purple heart */
+export declare const EmojiCoeurViolet: Afroicon;
+/** Cœur noir · Black heart */
+export declare const EmojiCoeurNoir: Afroicon;
+/** Cœur blanc · White heart */
+export declare const EmojiCoeurBlanc: Afroicon;
+/** Cœur brisé · Broken heart */
+export declare const EmojiCoeurBrise: Afroicon;
+/** Deux cœurs · Two hearts */
+export declare const EmojiDeuxCoeurs: Afroicon;
+/** Étincelles · Sparkles */
+export declare const EmojiEtincelles: Afroicon;
+/** Feu · Fire */
+export declare const EmojiFeu: Afroicon;
+/** Cent points · Hundred points */
+export declare const EmojiCentPoints: Afroicon;
+/** Case cochée · Check mark button */
+export declare const EmojiCocheVerte: Afroicon;
+/** Croix · Cross mark */
+export declare const EmojiCroixRouge: Afroicon;
+/** Étoile · Star */
+export declare const EmojiEtoile: Afroicon;
