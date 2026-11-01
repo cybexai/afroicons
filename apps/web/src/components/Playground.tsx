@@ -285,12 +285,14 @@ export function Playground() {
               </div>
             </div>}
 
-            {show("mobile") && <div className="pgphone">
+            {show("mobile") && <div className="phone pgphone"><div className="screen pgscreen">
+              <div className="notch" /><div className="sb"><span>9:41</span><span>●●● 4G</span></div>
               <div className="pgpbar"><I k="menu" /><b>{cfg.name || DEF.name}</b><span className="pgbadge"><I k="bell" /><i>3</i></span></div>
               <div className="pglist">{(["l1", "l2", "l3", "l4"] as const).map((k) => <div key={k} className="pgli"><span className="pgkic"><I k={k} c={cfg.primary} /></span><div><b>{nm(k)}</b><small>{a.tt("Il y a 2 h", "2 h ago")}</small></div></div>)}</div>
               <span className="pgfab"><I k="fab" c="#fff" s={cfg.size + 2} /></span>
-              <nav className="pgtabs">{(["t1", "t2", "t3", "t4", "t5"] as const).map((k, n) => <span key={k} className={n === 0 ? "on" : ""}><I k={k} c={n === 0 ? cfg.primary : undefined} /><small>{nm(k).split(/[ ,]/)[0]}</small></span>)}</nav>
-            </div>}
+              {/* Barre d'onglets : libellés courts fixes, comme une vraie application (le nom des icônes serait coupé). */}
+              <nav className="tabb pgtabs">{(["t1", "t2", "t3", "t4", "t5"] as const).map((k, n) => <span key={k} className={n === 0 ? "on" : ""}><I k={k} c={n === 0 ? cfg.primary : undefined} />{[a.tt("Accueil", "Home"), a.tt("Ventes", "Sales"), "Wallet", "Messages", a.tt("Profil", "Profile")][n]}</span>)}</nav>
+            </div></div>}
 
             {show("mobile") && <div className="pgpay">
               <b className="pgpayt">{a.tt("Paiement", "Checkout")}</b>
