@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { CITIES, COMPAT_NAMES, EGROUPS, ICONS, REGNAME, TONES, TONE_LIST, VERSION, byId, catOf, codepoints, colOf, isColor, isEmoji, isFlag, isNew, lineLike, loadFills, type CityId, type Icon } from "../lib/constants";
+import { CITIES, COMPAT_NAMES, PAGE, EGROUPS, ICONS, REGNAME, TONES, TONE_LIST, VERSION, byId, catOf, codepoints, colOf, isColor, isEmoji, isFlag, isNew, lineLike, loadFills, type CityId, type Icon } from "../lib/constants";
 import { FACTS } from "../lib/i18n";
 import { norm, rank } from "../lib/search";
 import { animateDraw, compatSnippet, cssStr, highlight, jsxSnippet, ngSnippet, spriteStr, svgStr, svgToPng, useStr } from "../lib/svg";
-import { store } from "../lib/platform";
+import { goHome, store } from "../lib/platform";
 import { useApp, useName } from "../state";
 import { CustomizeFields, exportSvg, type CustomValue } from "./Library";
 import { IChevron, IClose, IGrid, INext, IPrev, IReplay, ISearch, ISliders, IUp, Svg, T } from "./ui";
@@ -127,7 +127,7 @@ export function Drawer() {
             <summary><ISliders s={16} />{a.tt("Personnaliser", "Customise")}<small>{a.tt("pour cette icône", "for this icon")}</small><IChevron s={14} w={2.4} /></summary>
             <CustomizeFields v={cust} set={(p) => setCust((c) => ({ ...c, ...p }))} onReset={fromLibrary} preview={ic} />
           </details>}
-          <div className="dtags">{ic.tags.map((x) => <button key={x} onClick={() => { close(); dispatchEvent(new CustomEvent("afroicons:filter", { detail: { q: x, favOnly: false, col: colOf(ic.id) } })); document.getElementById("icones")?.scrollIntoView(); }}>#{x}</button>)}</div>
+          <div className="dtags">{ic.tags.map((x) => <button key={x} onClick={() => { close(); filterTo({ q: x, favOnly: false, col: colOf(ic.id) }); }}>#{x}</button>)}</div>
           {fact && <div className="fact"><i>?</i><div><b><T k="didu" /></b><span>{fact[a.lang === "en" ? 1 : 0]}</span></div></div>}
           <div className="dacts">
             <button className="btn p" onClick={() => a.copy(exportSvg(ic, a))}><T k="cSvg" /><span className="kbd" style={{ background: "transparent", color: "inherit", borderColor: "#fff4" }}>C</span></button>
@@ -158,6 +158,14 @@ export function Drawer() {
     </>
   );
 }
+
+/** Filtre la bibliothèque (ou y ramène depuis une autre page) ; idem pour une section de l'accueil. */
+function filterTo(detail: Record<string, unknown>) {
+  if (PAGE !== "home") return goHome("icones", detail);
+  dispatchEvent(new CustomEvent("afroicons:filter", { detail }));
+  document.getElementById("icones")?.scrollIntoView();
+}
+const section = (id: string) => (PAGE !== "home" ? goHome(id) : document.getElementById(id)?.scrollIntoView());
 
 /* ---------------- Barre de sélection ---------------- */
 export async function zipIcons(list: Icon[], a: ReturnType<typeof useApp>, name: string) {
@@ -200,10 +208,10 @@ export function CommandPalette() {
 
   const actions = useMemo(() => [
     { lbl: a.t("hk8"), ic: "luneetoiles", run: () => a.setMode(a.mode === "dark" ? "light" : "dark") },
-    { lbl: a.tt("Aller à l'atelier de motifs", "Go to the pattern studio"), ic: "wax", run: () => document.getElementById("atelier")?.scrollIntoView() },
-    { lbl: a.tt("Voir mes favoris", "Show favourites"), ic: "sankofa", run: () => { dispatchEvent(new CustomEvent("afroicons:filter", { detail: { favOnly: true } })); document.getElementById("icones")?.scrollIntoView(); } },
+    { lbl: a.tt("Aller à l'atelier de motifs", "Go to the pattern studio"), ic: "wax", run: () => section("atelier") },
+    { lbl: a.tt("Voir mes favoris", "Show favourites"), ic: "sankofa", run: () => filterTo({ favOnly: true }) },
     { lbl: a.tt("Copier le sprite SVG complet", "Copy the full SVG sprite"), ic: "kente", run: () => a.copy(spriteStr(ICONS, a.stroke)) },
-    { lbl: a.tt("Proposer une icône", "Suggest an icon"), ic: "panier", run: () => document.getElementById("idees")?.scrollIntoView() },
+    { lbl: a.tt("Proposer une icône", "Suggest an icon"), ic: "panier", run: () => section("idees") },
     ...(Object.entries(CITIES) as [CityId, (typeof CITIES)[CityId]][]).map(([k, v]) => ({ lbl: a.tt("Ambiance : ", "Mood: ") + v.n, ic: "afrique", run: () => a.setCity(k) })),
     { lbl: a.lang === "en" ? "Passer en français" : "Switch to English", ic: "ville", run: () => a.setLang(a.lang === "en" ? "fr" : "en") },
   ], [a]);

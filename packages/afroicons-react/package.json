@@ -1,7 +1,7 @@
 {
   "name": "afroicons-react",
   "version": "0.7.0",
-  "description": "Les 364 icônes Afroicons, les 54 drapeaux africains et 372 emojis en composants React.",
+  "description": "Les 418 icônes Afroicons (dont les cartes des 54 pays), les 54 drapeaux africains et 372 emojis en composants React.",
   "type": "module",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -9,7 +9,7 @@
   "files": ["index.js", "index.d.ts", "LICENSE", "README.md"],
   "sideEffects": false,
   "peerDependencies": { "react": ">=17" },
-  "keywords": ["react", "icons", "svg", "africa", "afroicons", "flags"],
+  "keywords": ["react", "icons", "svg", "africa", "afroicons", "flags", "maps"],
   "license": "MIT",
   "author": "THAFAM HOLDING SARL",
   "repository": { "type": "git", "url": "git+https://github.com/cybexai/afroicons.git", "directory": "packages/afroicons-react" },

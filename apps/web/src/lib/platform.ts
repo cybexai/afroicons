@@ -13,6 +13,13 @@ export async function useCapability<T = any>(name: string): Promise<T | null> {
   try { return (await r.use(name)) as T; } catch { return null; }
 }
 
+/** Hors de l'accueil (bac à sable, nouveautés), un filtre de la bibliothèque ou une section ramène à l'accueil :
+ *  le filtre attend dans sessionStorage et la bibliothèque l'applique à son arrivée. */
+export function goHome(section: string, filter?: Record<string, unknown>) {
+  if (filter) { try { sessionStorage.setItem("afroicons:filter", JSON.stringify(filter)); } catch { /* stockage indisponible */ } }
+  location.href = "/#" + section;
+}
+
 export const store = {
   get<T>(k: string, d: T): T {
     try { const v = localStorage.getItem("afroicons:" + k); return v == null ? d : (JSON.parse(v) as T); } catch { return d; }

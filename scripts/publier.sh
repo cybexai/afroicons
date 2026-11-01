@@ -42,4 +42,5 @@ echo
 echo "Publiés : ${publies[*]:-aucun}"
 echo "Déjà à jour : ${passes[*]:-aucun}"
 if [ ${#echecs[@]} -gt 0 ]; then echo "✘ Échecs : ${echecs[*]} — relancez « npm run publier » : les paquets déjà publiés seront passés."; exit 1; fi
+if [ ${#publies[@]} -eq 0 ]; then echo "⚠ Rien de nouveau publié : la version $VERSION était déjà sur npm. Pour publier des changements, montez d'abord la version (package.json de la racine et des six paquets)."; exit 0; fi
 echo "✔ Les six paquets sont en $VERSION sur npm."

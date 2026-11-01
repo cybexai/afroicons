@@ -100,7 +100,7 @@ export type AfroiconCategory = "nature" | "faune" | "musique" | "symboles" | "cu
 export type AfroiconTone = "light" | "medium-light" | "medium" | "medium-dark" | "dark";
 export type AfroiconEmojiGroup = "visages" | "mains" | "personnes" | "coeurs" | "animaux" | "nature" | "fruits" | "nourriture" | "boissons" | "objets" | "lieux";
 export type AfroiconRegion = "pan" | "ouest" | "centre" | "est" | "nord" | "australe";
-export interface AfroiconData { id: AfroiconName; fr: string; en: string; cat: AfroiconCategory; region: AfroiconRegion; tags: string[]; since: string; /** Icône dont celle-ci est une variante (épluchée, coupée, ouverte…). */ variantOf?: AfroiconName; /** Drapeaux : code ISO du pays et son nom. */ iso?: string; country?: { fr: string; en: string }; /** Emojis : caractère Unicode équivalent (null pour un emoji africain original), groupe, et teinte de peau réglable. */ char?: string | null; group?: AfroiconEmojiGroup; tone?: boolean; /** Icône au trait équivalente (pour un emoji) ou emoji équivalent (pour une icône). */ icon?: AfroiconName; emoji?: AfroiconName; /** Carte d'un pays : son drapeau ; drapeau : la carte du pays. */ flag?: AfroiconName; map?: AfroiconName; /** Dessin au trait. */ body: string; /** Version remplie. */ fill: string; }
+export interface AfroiconData { id: AfroiconName; fr: string; en: string; cat: AfroiconCategory; region: AfroiconRegion; tags: string[]; since: string; /** Icône dont celle-ci est une variante (épluchée, coupée, ouverte…). */ variantOf?: AfroiconName; /** Drapeaux et cartes : code ISO du pays et son nom. */ iso?: string; country?: { fr: string; en: string }; /** Emojis : caractère Unicode équivalent (null pour un emoji africain original), groupe, et teinte de peau réglable. */ char?: string | null; group?: AfroiconEmojiGroup; tone?: boolean; /** Icône au trait équivalente (pour un emoji) ou emoji équivalent (pour une icône). */ icon?: AfroiconName; emoji?: AfroiconName; /** Carte d'un pays : son drapeau ; drapeau : la carte du pays. */ flag?: AfroiconName; map?: AfroiconName; /** Dessin au trait. */ body: string; /** Version remplie. */ fill: string; }
 export const icons: Record<AfroiconName, AfroiconData>;
 export const names: AfroiconName[];
 export type AfroiconVariant = "line" | "fill";
@@ -143,7 +143,7 @@ let dts = `import type { ForwardRefExoticComponent, RefAttributes, SVGProps } fr
 export interface AfroiconProps extends Omit<SVGProps<SVGSVGElement>, "ref"> { size?: number | string; color?: string; strokeWidth?: number | string; title?: string; /** "line" (trait, par défaut) ou "fill" (rempli). */ variant?: "line" | "fill"; /** Emojis : teinte de peau Unicode (par défaut "medium-dark"). */ tone?: "light" | "medium-light" | "medium" | "medium-dark" | "dark"; }
 export type Afroicon = ForwardRefExoticComponent<AfroiconProps & RefAttributes<SVGSVGElement>>;
 `;
-// /*#__PURE__*/ : sans lui, les bundlers gardent les 216 icônes même si on n'en importe qu'une ("sideEffects": false ne suffit pas).
+// /*#__PURE__*/ : sans lui, les bundlers gardent toutes les icônes même si on n'en importe qu'une ("sideEffects": false ne suffit pas).
 for (const i of icons) {
   // Drapeaux et emojis : pas de version remplie distincte (null : le dessin lui-même).
   js += `export const ${pascal(i.id)} = /*#__PURE__*/ make("${i.id}", ${JSON.stringify(toJsxChildren(i.body))}, ${i.fill === i.body ? "null" : JSON.stringify(toJsxChildren(i.fill))}${i.tone ? ", 1" : ""});\n`;
@@ -189,7 +189,7 @@ import type { LucideIcon } from "lucide-react";
 export declare const afroiconNames: readonly string[];
 `;
 for (const i of ui) {
-  ujs += `export const ${i.id} = make("${kebab(i.id)}", ${JSON.stringify(toJsxChildren(i.body))});\nexport { ${i.id} as ${i.id}Icon, ${i.id} as Lucide${i.id} };\n`;
+  ujs += `export const ${i.id} = /*#__PURE__*/ make("${kebab(i.id)}", ${JSON.stringify(toJsxChildren(i.body))});\nexport { ${i.id} as ${i.id}Icon, ${i.id} as Lucide${i.id} };\n`;
   udts += `/** ${i.fr} · ${i.en}${i.afro ? ` — ${i.afro}` : ""} */\nexport declare const ${i.id}: LucideIcon;\nexport declare const ${i.id}Icon: LucideIcon;\nexport declare const Lucide${i.id}: LucideIcon;\n`;
 }
 ujs += `export const afroiconNames = ${JSON.stringify(ui.map((i) => i.id))};\n`;

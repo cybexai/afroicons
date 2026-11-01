@@ -1,4 +1,4 @@
-import { createElement, useCallback, useEffect, useMemo, useRef, useState, type ComponentType, type CSSProperties } from "react";
+import { createContext, createElement, useCallback, useContext, useEffect, useMemo, useRef, useState, type ComponentType, type CSSProperties } from "react";
 import { AFRO, DEFAULT_TONE, EMOJIS, FLAGS, ICONS, TONE_LIST, TONES, UI, byId, colOf, isColor, type Collection, type Icon, type Style, type Tone } from "../lib/constants";
 import { store } from "../lib/platform";
 import { rank } from "../lib/search";
@@ -35,10 +35,10 @@ const PRESETS: { id: string; fr: string; en: string; slots: Partial<Slots> }[] =
   { id: "health", fr: "Santé", en: "Health", slots: { logo: "calebasse", s2: ui("Stethoscope"), s3: ui("Pill"), s4: ui("CalendarCheck"), s5: ui("FileText"), k1: ui("Activity"), k2: ui("CalendarCheck"), k3: ui("Pill"), t2: ui("Stethoscope"), t3: ui("CalendarCheck"), l1: ui("Pill"), l2: ui("FileText"), l3: ui("Phone"), l4: ui("MapPin"), e1: "calebasse", f1: "calebasse", f2: "panneausolaire", f3: "taxibrousse" } },
 ];
 const SWATCHES = ["#C24E2A", "#E3A22F", "#22305C", "#2E6B4E", "#7B4BA8", "#0F766E", "#1F1A15"];
-const FONTS: { id: string; n: string; css: string }[] = [
+const FONTS: { id: string; n: string; en?: string; css: string }[] = [
   { id: "dm", n: "DM Sans", css: '"DM Sans",system-ui,sans-serif' },
   { id: "brico", n: "Bricolage", css: '"Bricolage Grotesque","DM Sans",sans-serif' },
-  { id: "sys", n: "Système", css: "system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" },
+  { id: "sys", n: "Système", en: "System", css: "system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" },
   { id: "serif", n: "Serif", css: "Georgia,'Times New Roman',serif" },
   { id: "mono", n: "Mono", css: '"JetBrains Mono",ui-monospace,monospace' },
 ];
@@ -88,13 +88,42 @@ function dec(h: string): Saved | null {
     if (!DESKS.some((x) => x.id === cfg.desk)) cfg.desk = DEF.desk;
     if (!ANIMS.some((x) => x.id === cfg.anim)) cfg.anim = DEF.anim;
     cfg.name = cfg.name === "Kola" ? DEF.name : cfg.name.slice(0, 24);
+    if (!HEX.test(cfg.primary)) cfg.primary = DEF.primary;
+    const clamp = (v: number, lo: number, hi: number, d: number) => (Number.isFinite(v) ? Math.min(hi, Math.max(lo, v)) : d);
+    cfg.size = clamp(cfg.size, 14, 32, DEF.size); cfg.radius = clamp(cfg.radius, 0, 24, DEF.radius); cfg.stroke = clamp(cfg.stroke, 1, 2.5, DEF.stroke);
+    if (cfg.tint !== "text" && cfg.tint !== "primary") cfg.tint = DEF.tint;
+    if (!FONTS.some((f) => f.id === cfg.font)) cfg.font = DEF.font;
     return { cfg, slots, preset: PRESETS.some((p) => p.id === o.p) ? o.p : "erp", custom: cleanCusts(o.u) };
   } catch { return null; }
 }
+// Le lien d'abord, sinon les réglages gardés dans ce navigateur, passés par la même validation.
 const initial = (): Saved => {
-  const s = dec(location.hash.slice(1)) ?? store.get<Saved | null>("playground", null) ?? { cfg: DEF, slots: { ...BASE }, preset: "erp" };
-  return s.cfg?.name === "Kola" ? { ...s, cfg: { ...s.cfg, name: DEF.name } } : s;
+  const st = store.get<Partial<Saved> | null>("playground", null);
+  let kept: Saved | null = null;
+  try { if (st) kept = dec(enc({ cfg: { ...DEF, ...st.cfg }, slots: { ...BASE, ...st.slots }, preset: st.preset ?? "erp", custom: st.custom })); } catch { kept = null; }
+  return dec(location.hash.slice(1)) ?? kept ?? { cfg: DEF, slots: { ...BASE }, preset: "erp" };
 };
+const noPin = <T,>(o: Record<string, T>) => Object.fromEntries(Object.entries(o).filter(([k]) => !isPin(k)));
+const onlyPin = <T,>(o: Record<string, T>) => Object.fromEntries(Object.entries(o).filter(([k]) => isPin(k)));
+
+/* Icônes et boutons des maquettes : composants stables (pas de remontage à chaque réglage, le focus reste en place). */
+type Kit = { paint: (k: string, s: number, c?: string) => JSX.Element; pick: string | null; open: (k: string) => void; custom: Custs; slots: Slots; logo: string | null; size: number };
+const KitCtx = createContext<Kit | null>(null);
+/** Une icône d'emplacement : cliquable pour la remplacer ou la personnaliser. */
+function I({ k, s, c }: { k: string; s?: number; c?: string }) {
+  const x = useContext(KitCtx)!, a = useApp(), sz = s ?? x.size;
+  if (k === "logo" && x.logo) return <img className="pglogoimg" src={x.logo} alt="" style={{ height: sz + 8 }} />;
+  const i = byId[x.slots[k]] ?? byId[BASE[k]];
+  if (!i) return null;
+  const label = a.tt("Remplacer ou personnaliser : ", "Swap or customise: ") + (a.lang === "en" ? i.en : i.fr);
+  return <button type="button" className={"pgi" + (x.pick === k ? " on" : "") + (x.custom[k] ? " cu" : "")} title={label} aria-label={label} onClick={(e) => { e.stopPropagation(); x.open(k); }}>{x.paint(k, sz, c)}</button>;
+}
+/** Un bouton de maquette : cliquer n'importe où dessus change son icône. */
+function B({ k, ghost, wide, after, children }: { k: string; ghost?: boolean; wide?: boolean; after?: boolean; children: string }) {
+  const x = useContext(KitCtx)!;
+  const icon = <I k={k} s={x.size - 2} c={ghost ? undefined : "#fff"} />;
+  return <span className={"pgbtn" + (ghost ? " ghost" : "") + (wide ? " wide" : "") + (x.pick === k ? " on" : "")} role="presentation" onClick={(e) => { e.stopPropagation(); x.open(k); }}>{after ? <>{children}{icon}</> : <>{icon}{children}</>}</span>;
+}
 
 export function Playground() {
   const a = useApp();
@@ -112,12 +141,18 @@ export function Playground() {
   const [tab, setTab] = useState<"react" | "angular" | "html" | "css">("react");
   const [vision, setVision] = useState<Vision>("none");
   const [replay, setReplay] = useState(false); // « Rejouer » : anime toutes les icônes une fois
+  const timers = useRef<Record<string, number>>({});
+  const pulse = (k: string, on: (v: boolean) => void, ms: number) => {
+    clearTimeout(timers.current[k]); on(false);
+    requestAnimationFrame(() => { on(true); timers.current[k] = window.setTimeout(() => on(false), ms); });
+  };
   const [logo, setLogo] = useState<{ url: string; colors: string[] } | null>(null);
   const [shot, setShot] = useState<string | null>(null);
   const [pins, setPins] = useState<Pins>({});
   const pinN = useRef(0);
   const set = (p: Partial<Cfg>) => setCfg((c) => ({ ...c, ...p }));
-  useEffect(() => { if (cfg.style === "fill") a.needFills(); }, [cfg.style]); // eslint-disable-line react-hooks/exhaustive-deps
+  const anyFill = cfg.style === "fill" || Object.values(custom).some((c) => c.style === "fill");
+  useEffect(() => { if (anyFill) a.needFills(); }, [anyFill]); // eslint-disable-line react-hooks/exhaustive-deps
   // Comparaison avec Lucide : chargée seulement à la demande (paquet volumineux).
   useEffect(() => { if (lucide && !L) import("lucide-react").then((m) => setL(m as unknown as Record<string, ComponentType<any>>)).catch(() => setLucide(false)); }, [lucide, L]);
   // Les réglages restent d'une visite à l'autre ; l'ancre de l'adresse les suit (lien partageable).
@@ -128,7 +163,7 @@ export function Playground() {
     try { history.replaceState(null, "", location.pathname + location.search + "#" + hash); } catch { /* bac à sable */ }
   }, [hash]); // eslint-disable-line react-hooks/exhaustive-deps
   // Annuler / rétablir : un instantané des réglages par changement (les glissements de curseur comptent pour un).
-  const apply = (v: Saved) => { setCfg(v.cfg); setSlots(v.slots); setPreset(v.preset); setCustom(v.custom ?? {}); };
+  const apply = (v: Saved) => { setCfg(v.cfg); setSlots((sl) => ({ ...noPin(v.slots), ...onlyPin(sl) })); setPreset(v.preset); setCustom((m) => ({ ...noPin(v.custom ?? {}), ...onlyPin(m) })); };
   const hist = useRef({ past: [] as Saved[], future: [] as Saved[], last: saved, skip: false, t: 0 });
   const cur = useRef(saved); cur.current = saved;
   const [, tick] = useState(0);
@@ -165,11 +200,17 @@ export function Playground() {
     a.toast(a.tt(`${n} icônes remplacées par leur équivalent africain (⌘Z pour annuler)`, `${n} icons replaced by their African counterpart (⌘Z to undo)`));
   };
   // Logo importé : affiché dans les maquettes ; ses couleurs deviennent une palette.
+  const logoTurn = useRef(0);
   const loadLogo = (f?: File | null) => {
     if (!f || !f.type.startsWith("image/")) return;
-    const url = URL.createObjectURL(f);
-    paletteOf(url).then((colors) => { setLogo((o) => { if (o) URL.revokeObjectURL(o.url); return { url, colors }; }); if (colors[0]) set({ primary: colors[0] }); });
+    const url = URL.createObjectURL(f), turn = ++logoTurn.current;
+    paletteOf(url).then((colors) => {
+      if (turn !== logoTurn.current) { URL.revokeObjectURL(url); return; }
+      setLogo((o) => { if (o) URL.revokeObjectURL(o.url); return { url, colors }; }); if (colors[0]) set({ primary: colors[0] });
+    });
   };
+  const urls = useRef({ logo: "", shot: "" }); urls.current = { logo: logo?.url ?? "", shot: shot ?? "" };
+  useEffect(() => () => { Object.values(timers.current).forEach(clearTimeout); for (const u of Object.values(urls.current)) if (u) URL.revokeObjectURL(u); }, []);
   const loadShot = useCallback((f: File) => { setShot((o) => { if (o) URL.revokeObjectURL(o); return URL.createObjectURL(f); }); }, []);
   const clearShot = () => {
     setShot((o) => { if (o) URL.revokeObjectURL(o); return null; });
@@ -216,19 +257,13 @@ export function Playground() {
   /** Le dessin d'une icône d'emplacement, avec sa personnalisation (couleur, taille, fond, rotation…). */
   const paint = (k: string, s: number, c?: string) => {
     const i = byId[slots[k]] ?? byId[BASE[k]], cu = custom[k] ?? {};
+    if (!i) return <span />;
     const size = Math.round(s * (cu.scale ?? 1)), w = cu.stroke ?? cfg.stroke;
     const color = cu.color ?? c ?? (cfg.tint === "primary" ? cfg.primary : "currentColor");
     const Lc = lucide && L && i.lucide ? L[i.lucide] : null;
     const transform = [cu.rot && `rotate(${cu.rot}deg)`, cu.flip && "scaleX(-1)"].filter(Boolean).join(" ") || undefined;
     const svg = <span className="pgdraw" style={{ color, transform }}>{Lc ? createElement(Lc, { size, strokeWidth: w }) : <Svg i={i} o={{ s: size, w, style: cu.style ?? cfg.style, c: "currentColor", tone: cu.tone }} />}</span>;
     return cu.shape ? <span className="pgshape" style={{ background: cu.bg ?? cfg.primary, padding: Math.round(size * 0.28), borderRadius: cu.shape === "circle" ? "50%" : Math.round(size * 0.32) }}>{svg}</span> : svg;
-  };
-  /** Une icône d'emplacement : cliquable pour la remplacer ou la personnaliser. */
-  const I = ({ k, s = cfg.size, c }: { k: string; s?: number; c?: string }) => {
-    if (k === "logo" && logo) return <img className="pglogoimg" src={logo.url} alt="" style={{ height: s + 8 }} />;
-    const i = byId[slots[k]] ?? byId[BASE[k]];
-    const label = a.tt("Remplacer ou personnaliser : ", "Swap or customise: ") + (a.lang === "en" ? i.en : i.fr);
-    return <button type="button" className={"pgi" + (pick === k ? " on" : "") + (custom[k] ? " cu" : "")} title={label} aria-label={label} onClick={(e) => { e.stopPropagation(); setPick(k); }}>{paint(k, s, c)}</button>;
   };
 
   /** Un téléphone (forme choisie) autour d'un écran de maquette. */
@@ -251,11 +286,8 @@ export function Playground() {
     </div>
   );
 
-  /** Un bouton de maquette : cliquer n'importe où dessus change son icône. */
-  const B = ({ k, ghost, wide, after, children }: { k: string; ghost?: boolean; wide?: boolean; after?: boolean; children: string }) => {
-    const icon = <I k={k} s={cfg.size - 2} c={ghost ? undefined : "#fff"} />;
-    return <span className={"pgbtn" + (ghost ? " ghost" : "") + (wide ? " wide" : "") + (pick === k ? " on" : "")} role="presentation" onClick={(e) => { e.stopPropagation(); setPick(k); }}>{after ? <>{children}{icon}</> : <>{icon}{children}</>}</span>;
-  };
+
+  const kit: Kit = { paint, pick, open: setPick, custom, slots, logo: logo?.url ?? null, size: cfg.size };
 
   const used = useMemo(() => [...new Set(Object.values(slots))].map((id) => byId[id]).filter(Boolean) as Icon[], [slots]);
   const code = useMemo(() => {
@@ -292,7 +324,7 @@ export function Playground() {
       const b = box(cu);
       return [`<span style="display: inline-flex; padding: ${b.pad}px; border-radius: ${b.rad}; background: ${b.bg}">`, `  ${el}`, `</span>`];
     };
-    const custLines = (f: typeof jsx) => cust.length ? ["", `// Icônes personnalisées (${cust.length})`, ...cust.flatMap((x) => f(x))] : [];
+    const custLines = (f: typeof jsx) => cust.length ? ["", a.tt(`// Icônes personnalisées (${cust.length})`, `// Customised icons (${cust.length})`), ...cust.flatMap((x) => f(x))] : [];
     const fill = cfg.style === "fill" ? ' variant="fill"' : "";
     // Une ligne si elle tient, sinon plusieurs noms par ligne (≈ 72 caractères).
     const wrap = (pre: string, names: string[], post: string) => {
@@ -306,7 +338,7 @@ export function Playground() {
       `// npm install afroicons-react${uiI.length ? " afroicons-ui lucide-react" : ""}`,
       uiI.length ? wrap("import { ", uiI.map((i) => i.lucide!), ' } from "afroicons-ui";') : null,
       afro.length ? wrap("import { ", afro.map((i) => pascal(i.id)), ' } from "afroicons-react";') : null, "",
-      `// Les mêmes réglages partout : taille ${cfg.size}, trait ${cfg.stroke}${cfg.style === "fill" ? ", style rempli (icônes culturelles)" : ""}`,
+      a.tt(`// Les mêmes réglages partout : taille ${cfg.size}, trait ${cfg.stroke}${cfg.style === "fill" ? ", style rempli (icônes culturelles)" : ""}`, `// Same settings everywhere: size ${cfg.size}, stroke ${cfg.stroke}${cfg.style === "fill" ? ", filled style (cultural icons)" : ""}`),
       `const icon = { size: ${cfg.size}, strokeWidth: ${cfg.stroke} };`, "",
       ...uiI.map((i) => `<${i.lucide} {...icon} />`),
       ...afro.map((i) => `<${pascal(i.id)} ${isColor(i) ? `size={${cfg.size}}` : `{...icon}${fill}`} />`),
@@ -315,25 +347,37 @@ export function Playground() {
     if (tab === "angular") {
       const names = used.map((i) => i.lucide ?? pascal(i.id));
       return [`// npm install afroicons-angular`, wrap("import { AfroiconComponent, provideAfroicons, ", names, ' } from "afroicons-angular";'), "",
-        `// app.config.ts : seules les icônes déclarées entrent dans le bundle`, wrap("providers: [provideAfroicons({ ", names, " })]"), "",
-        `// composant : imports: [AfroiconComponent]`,
+        a.tt("// app.config.ts : seules les icônes déclarées entrent dans le bundle", "// app.config.ts: only the declared icons go into the bundle"), wrap("providers: [provideAfroicons({ ", names, " })]"), "",
+        a.tt("// composant : imports: [AfroiconComponent]", "// component: imports: [AfroiconComponent]"),
         ...used.map((i) => `<afroicon name="${i.lucide ?? i.id}" [size]="${cfg.size}"${isColor(i) ? "" : ` [strokeWidth]="${cfg.stroke}"`}${!i.lucide && !isColor(i) && cfg.style === "fill" ? ' variant="fill"' : ""} />`),
         ...custLines(ng).map((l) => l.replace(/^\/\/ (.*)$/, "<!-- $1 -->")),
       ].join("\n");
     }
     if (tab === "css") return [
-      `/* Le thème de cet aperçu, en variables CSS */`, `:root {`, `  --primary: ${cfg.primary};`, `  --text: ${ink};`, `  --background: ${bg};`, `  --surface: ${surface};`, `  --muted: ${muted};`, `  --border: ${line};`, `  --radius: ${cfg.radius}px;`, `  --icon-size: ${cfg.size}px;`, `  --icon-stroke: ${cfg.stroke};`, `}`, "",
-      `/* Les icônes Afroicons suivent la couleur du texte (currentColor) */`, `.icon { width: var(--icon-size); height: var(--icon-size); stroke-width: var(--icon-stroke);${cfg.tint === "primary" ? " color: var(--primary);" : ""} }`,
-      ...(cfg.anim !== "none" ? ["", `/* Animation au survol : ${ANIMS.find((x) => x.id === cfg.anim)!.fr.toLowerCase()} */`, animCss(cfg.anim, ".icon:hover svg")] : []),
+      a.tt("/* Le thème de cet aperçu, en variables CSS */", "/* This preview's theme, as CSS variables */"), `:root {`, `  --primary: ${cfg.primary};`, `  --text: ${ink};`, `  --background: ${bg};`, `  --surface: ${surface};`, `  --muted: ${muted};`, `  --border: ${line};`, `  --radius: ${cfg.radius}px;`, `  --icon-size: ${cfg.size}px;`, `  --icon-stroke: ${cfg.stroke};`, `}`, "",
+      a.tt("/* Les icônes Afroicons suivent la couleur du texte (currentColor) */", "/* Afroicons icons follow the text colour (currentColor) */"), `.icon { width: var(--icon-size); height: var(--icon-size); stroke-width: var(--icon-stroke);${cfg.tint === "primary" ? " color: var(--primary);" : ""} }`,
+      ...(cfg.anim !== "none" ? ["", `/* ${a.tt("Animation au survol", "Hover animation")} : ${a.tt(ANIMS.find((x) => x.id === cfg.anim)!.fr, ANIMS.find((x) => x.id === cfg.anim)!.en).toLowerCase()} */`, animCss(cfg.anim, ".icon:hover")] : []),
     ].join("\n");
     return [`<!-- npm install afroicons -->`, `<script type="module">`, `  import { replace } from "afroicons";`, `  replace();`, `</script>`, "",
       ...afro.map((i) => `<i data-afroicon="${i.id}" data-size="${cfg.size}"${isColor(i) ? "" : ` data-stroke="${cfg.stroke}"`}${cfg.style === "fill" && !isColor(i) ? ' data-variant="fill"' : ""}></i>`),
-      ...(uiI.length ? ["", `<!-- Icônes d'interface (${uiI.map((i) => i.lucide).join(", ")}) :`, `     afroicons-ui pour React, afroicons-angular pour Angular,`, `     ou le SVG de chaque fiche sur afroicons.org -->`] : [])].join("\n");
-  }, [used, cfg, tab, ink, bg, surface, muted, line, custom, slots]);
+      ...(() => {
+        // Icônes culturelles personnalisées : teinte, variante, taille et trait ; couleur, rotation et fond en style.
+        const lines = cust.filter(({ i }) => !i.lucide).flatMap(({ i, cu }) => {
+          const st = [cu.color && `color: ${cu.color}`, tf(cu) && `transform: ${tf(cu)}`].filter(Boolean).join("; ");
+          const el = `<i data-afroicon="${i.id}" data-size="${Math.round(cfg.size * (cu.scale ?? 1))}"${isColor(i) ? "" : ` data-stroke="${cu.stroke ?? cfg.stroke}"`}${!isColor(i) && (cu.style ?? cfg.style) === "fill" ? ' data-variant="fill"' : ""}${cu.tone ? ` data-tone="${cu.tone}"` : ""}${st ? ` style="${st}"` : ""}></i>`;
+          if (!cu.shape) return [el];
+          const b = box(cu);
+          return [`<span style="display: inline-flex; padding: ${b.pad}px; border-radius: ${b.rad}; background: ${b.bg}">`, `  ${el}`, `</span>`];
+        });
+        return lines.length ? ["", a.tt(`<!-- Icônes personnalisées (${lines.length}) -->`, `<!-- Customised icons (${lines.length}) -->`), ...lines] : [];
+      })(),
+      ...(uiI.length ? ["", a.tt(`<!-- Icônes d'interface (${uiI.map((i) => i.lucide).join(", ")}) :`, `<!-- Interface icons (${uiI.map((i) => i.lucide).join(", ")}):`), a.tt("     afroicons-ui pour React, afroicons-angular pour Angular,", "     afroicons-ui for React, afroicons-angular for Angular,"), a.tt("     ou le SVG de chaque fiche sur afroicons.org -->", "     or the SVG from each icon page on afroicons.org -->")] : [])].join("\n");
+  }, [used, cfg, tab, ink, bg, surface, muted, line, custom, slots, a.lang]); // eslint-disable-line react-hooks/exhaustive-deps
   const download = () => zipIcons(used, { ...a, style: cfg.style, stroke: cfg.stroke, color: null } as typeof a, `afroicons-${cfg.name.toLowerCase().replace(/[^a-z0-9]+/g, "-") || "app"}-${used.length}.zip`);
   const show = (v: View) => view === "all" || view === v;
 
   return (
+    <KitCtx.Provider value={kit}>
     <section id="playground" className="pg" onClick={() => setPick(null)}>
       <div className="shead"><div>
         <div className="kick">{a.tt("Bac à sable", "Playground")}</div>
@@ -349,11 +393,11 @@ export function Playground() {
           <label className="pgfield"><span>{a.tt("Nom", "Name")}</span><input value={cfg.name} maxLength={24} onChange={(e) => set({ name: e.target.value })} /></label>
           <div className="swat pgswat">{SWATCHES.map((c) => <button key={c} aria-label={c} className={cfg.primary.toLowerCase() === c.toLowerCase() ? "on" : ""} style={{ background: c }} onClick={() => set({ primary: c })} />)}<label className={"pgcustom" + (SWATCHES.some((c) => c.toLowerCase() === cfg.primary.toLowerCase()) ? "" : " on")} title={a.tt("Couleur libre", "Custom colour")} style={{ background: SWATCHES.some((c) => c.toLowerCase() === cfg.primary.toLowerCase()) ? undefined : cfg.primary }}><input type="color" value={cfg.primary} aria-label={a.tt("Couleur libre", "Custom colour")} onChange={(e) => set({ primary: e.target.value })} /></label></div>
           <div className="pgfield"><span>Logo</span><div className="pglogoin">
-            <label className="btn">{logo ? <img src={logo.url} alt="" /> : null}{logo ? a.tt("Changer", "Change") : a.tt("Importer votre logo", "Import your logo")}<input type="file" accept="image/*" hidden onChange={(e) => { loadLogo(e.target.files?.[0]); e.target.value = ""; }} /></label>
+            <label className="btn">{logo ? <img src={logo.url} alt="" /> : null}{logo ? a.tt("Changer", "Change") : a.tt("Importer votre logo", "Import your logo")}<input className="pgfile" type="file" accept="image/*" onChange={(e) => { loadLogo(e.target.files?.[0]); e.target.value = ""; }} /></label>
             {logo && <button className="ib" aria-label={a.tt("Retirer le logo", "Remove logo")} onClick={() => { URL.revokeObjectURL(logo.url); setLogo(null); }}><IClose s={16} /></button>}
           </div></div>
           {logo && logo.colors.length > 0 && <div className="pgfield"><span>{a.tt("Ses couleurs", "Its colours")}</span><div className="pgswat2">{logo.colors.map((c) => <button key={c} aria-label={c} title={c} className={cfg.primary.toLowerCase() === c.toLowerCase() ? "on" : ""} style={{ background: c }} onClick={() => set({ primary: c })} />)}</div></div>}
-          <label className="pgfield"><span>{a.tt("Police", "Font")}</span><select value={cfg.font} onChange={(e) => set({ font: e.target.value })}>{FONTS.map((f) => <option key={f.id} value={f.id}>{f.n}</option>)}</select></label>
+          <label className="pgfield"><span>{a.tt("Police", "Font")}</span><select value={cfg.font} onChange={(e) => set({ font: e.target.value })}>{FONTS.map((f) => <option key={f.id} value={f.id}>{a.lang === "en" ? f.en ?? f.n : f.n}</option>)}</select></label>
           <div className="pgfield"><span>{a.tt("Mode", "Mode")}</span><div className="seg"><button className={!cfg.dark ? "on" : ""} onClick={() => set({ dark: false })}>{a.tt("Clair", "Light")}</button><button className={cfg.dark ? "on" : ""} onClick={() => set({ dark: true })}>{a.tt("Sombre", "Dark")}</button></div></div>
           <label className="rng"><span>{a.tt("Arrondi", "Radius")}</span><input type="range" min={0} max={24} step={2} value={cfg.radius} onChange={(e) => set({ radius: +e.target.value })} /><output>{cfg.radius}</output></label>
           <h3>{a.tt("Appareils", "Devices")}</h3>
@@ -365,8 +409,8 @@ export function Playground() {
           <div className="pgfield"><span>Style</span><div className="seg"><button className={cfg.style === "line" ? "on" : ""} onClick={() => set({ style: "line" })}>{a.tt("Trait", "Line")}</button><button className={cfg.style === "fill" ? "on" : ""} onClick={() => set({ style: "fill" })}>{a.tt("Rempli", "Filled")}</button></div></div>
           <div className="pgfield"><span>{a.tt("Couleur", "Colour")}</span><div className="seg"><button className={cfg.tint === "text" ? "on" : ""} onClick={() => set({ tint: "text" })}>{a.tt("Du texte", "Text")}</button><button className={cfg.tint === "primary" ? "on" : ""} onClick={() => set({ tint: "primary" })}>{a.tt("Principale", "Primary")}</button></div></div>
           <div className="pgfield"><span>{a.tt("Survol", "Hover")}</span><div className="pganim">
-            <select value={cfg.anim} onChange={(e) => { set({ anim: e.target.value as Anim }); setReplay(true); setTimeout(() => setReplay(false), 900); }}>{ANIMS.map((x) => <option key={x.id} value={x.id}>{a.tt(x.fr, x.en)}</option>)}</select>
-            <button className="btn" disabled={cfg.anim === "none"} onClick={() => { setReplay(false); requestAnimationFrame(() => { setReplay(true); setTimeout(() => setReplay(false), 900); }); }}>{a.tt("Rejouer", "Replay")}</button>
+            <select aria-label={a.tt("Animation au survol", "Hover animation")} value={cfg.anim} onChange={(e) => { set({ anim: e.target.value as Anim }); pulse("replay", setReplay, 900); }}>{ANIMS.map((x) => <option key={x.id} value={x.id}>{a.tt(x.fr, x.en)}</option>)}</select>
+            <button className="btn" disabled={cfg.anim === "none"} onClick={() => pulse("replay", setReplay, 900)}>{a.tt("Rejouer", "Replay")}</button>
           </div></div>
           <label className="pgsw"><input type="checkbox" checked={lucide} onChange={(e) => setLucide(e.target.checked)} />{a.tt("Comparer avec Lucide (avant / après)", "Compare with Lucide (before / after)")}</label>
           {lucide && !L && <small className="pgnote">{a.tt("Chargement de Lucide…", "Loading Lucide…")}</small>}
@@ -396,14 +440,14 @@ export function Playground() {
           <div className="pghint">
             <span className="pghic" aria-hidden="true">↻</span>
             <p><b>{a.tt("Toutes les icônes ci-dessous sont modifiables.", "Every icon below can be changed.")}</b> {a.tt("Cliquez sur une icône (dans un bouton, le menu, une liste…) pour la remplacer, ou pour la personnaliser : couleur, taille, fond, rotation…", "Click an icon (in a button, the menu, a list…) to swap it, or to customise it: colour, size, background, rotation…")}</p>
-            <button className="btn" onClick={(e) => { e.stopPropagation(); setFlash(true); setTimeout(() => setFlash(false), 2400); }}>{a.tt("Les montrer", "Show them")}</button>
+            <button className="btn" onClick={(e) => { e.stopPropagation(); pulse("flash", setFlash, 2400); }}>{a.tt("Les montrer", "Show them")}</button>
           </div>
           <VisionFilters />
           <div className={"pgstage v-" + view + (flash ? " flash" : "") + (cfg.anim !== "none" ? " an-" + cfg.anim : "") + (replay ? " an-play" : "")} style={{ ...vars, filter: VISIONS.find((v) => v.id === vision)!.css || undefined }}>
             {view === "screen" && <ScreenView image={shot} setImage={loadShot} clear={clearShot} pins={pins}
               move={(k, x, y) => setPins((p) => ({ ...p, [k]: { x, y } }))} add={addPin} open={(k) => setPick(k)}
               render={(k) => (slots[k] ? <span className={"pgi" + (pick === k ? " on" : "") + (custom[k] ? " cu" : "")}>{paint(k, cfg.size + 4, cfg.primary)}</span> : null)}
-              frame={(body) => desk("dv-shot", "", body)} />}
+              frame={(body) => desk("dv-shot", "", body)} remove={removePin} />}
             {show("web") && desk("dv-web", "/tableau-de-bord", <div className="pgweb">
               <header className="pgnav"><span className="pglogo"><I k="logo" s={cfg.size + 4} c={cfg.primary} />{cfg.name || DEF.name}</span>
                 <span className="pgsearch"><I k="search" s={cfg.size - 2} c="var(--pmuted)" /><span>{a.tt("Rechercher…", "Search…")}</span></span>
@@ -479,7 +523,7 @@ export function Playground() {
         total={Object.keys(custom).length}
         resetAll={() => { setCustom({}); a.toast(a.tt("Toutes les personnalisations sont effacées", "All customisations cleared")); }}
         african={AFRICA[slots[pick]]} remove={isPin(pick) ? () => removePin(pick) : undefined}
-        applyAll={() => { const cu = custom[pick]; if (!cu) return; setCustom(Object.fromEntries(Object.keys(BASE).map((k) => [k, cu]))); a.toast(a.tt("Appliqué à toutes les icônes", "Applied to every icon")); }} />}
+        applyAll={() => { const cu = custom[pick]; if (!cu) return; setCustom(Object.fromEntries(Object.keys(slots).map((k) => [k, cu]))); a.toast(a.tt("Appliqué à toutes les icônes", "Applied to every icon")); }} />}
 
       <div className="code pgcode" onClick={(e) => e.stopPropagation()}>
         <div className="pgcodeh">
@@ -490,6 +534,7 @@ export function Playground() {
         <div className="codebox"><pre dangerouslySetInnerHTML={{ __html: highlight(code, true) }} /><button className="cp" onClick={() => a.copy(code)}>{a.tt("Copier", "Copy")}</button></div>
       </div>
     </section>
+    </KitCtx.Provider>
   );
 }
 
@@ -511,11 +556,21 @@ function Picker({ onClose, onPick, current, tab, setTab, cfg, preview, cust, set
   const [q, setQ] = useState("");
   const [col, setCol] = useState<Collection | "all">(colOf(current));
   const list = useMemo(() => rank(COLS.find((c) => c.id === col)!.list, q).slice(0, 72), [q, col]);
+  const dlg = useRef<HTMLDivElement>(null);
   useEffect(() => { const f = (e: KeyboardEvent) => e.key === "Escape" && onClose(); addEventListener("keydown", f); return () => removeEventListener("keydown", f); }, [onClose]);
+  // Le focus reste dans la fenêtre (Tab boucle) et revient à l'icône d'origine à la fermeture.
+  useEffect(() => { const back = document.activeElement as HTMLElement | null; if (!dlg.current?.contains(document.activeElement)) dlg.current?.querySelector<HTMLElement>("input, [role=tab].on")?.focus(); return () => { if (back?.isConnected) back.focus({ preventScroll: true }); }; }, []);
+  const trap = (e: React.KeyboardEvent) => {
+    if (e.key !== "Tab" || !dlg.current) return;
+    const f = [...dlg.current.querySelectorAll<HTMLElement>("button:not([disabled]), input, select, [tabindex='0']")].filter((x) => x.offsetParent !== null);
+    if (!f.length) return;
+    const [first, last] = [f[0], f[f.length - 1]];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); } else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  };
   return (
     <>
       <div className={"pgveil" + (tab === "edit" ? " light" : "")} onClick={onClose} />
-      <div className={"pgpick" + (tab === "edit" ? " edit" : "")} role="dialog" aria-modal="true" aria-label={a.tt("Remplacer ou personnaliser l'icône", "Swap or customise the icon")} onClick={(e) => e.stopPropagation()}>
+      <div className={"pgpick" + (tab === "edit" ? " edit" : "")} role="dialog" aria-modal="true" aria-label={a.tt("Remplacer ou personnaliser l'icône", "Swap or customise the icon")} ref={dlg} onKeyDown={trap} onClick={(e) => e.stopPropagation()}>
         <div className="pgpickt" role="tablist">
           <button role="tab" aria-selected={tab === "swap"} className={tab === "swap" ? "on" : ""} onClick={() => setTab("swap")}>{a.tt("Remplacer", "Swap")}</button>
           <button role="tab" aria-selected={tab === "edit"} className={tab === "edit" ? "on" : ""} onClick={() => setTab("edit")}>{a.tt("Personnaliser", "Customise")}{Object.keys(cust).length ? <i className="pgdot" /> : null}</button>
@@ -534,19 +589,24 @@ function Picker({ onClose, onPick, current, tab, setTab, cfg, preview, cust, set
   );
 }
 
-/** Réglages propres à une icône : ils s'appliquent tout de suite dans la maquette, derrière la fenêtre. */
-const INKS = ["#1F1A15", "#FFFFFF", "#C24E2A", "#E3A22F", "#22305C", "#2E6B4E", "#7B4BA8", "#0F766E"];
-const BGS = ["#C24E2A", "#E3A22F", "#22305C", "#2E6B4E", "#0F766E", "#1F1A15", "#F6F2EA", "#FCE9DF"];
-function Customize({ icon, cfg, preview, cust, set, reset, applyAll, resetAll, total }: { icon?: Icon; cfg: Cfg; preview: JSX.Element; cust: Cust; set: (p: Partial<Cust>) => void; reset: () => void; applyAll: () => void; resetAll: () => void; total: number }) {
+/** Un nuancier : pastilles, « Auto » et couleur libre. */
+function Swatch({ list, value, on, auto }: { list: string[]; value?: string; on: (v?: string) => void; auto?: string }) {
   const a = useApp();
-  const color = !!icon && isColor(icon), n = Object.keys(cust).length;
-  const Swatch = ({ list, value, on, auto }: { list: string[]; value?: string; on: (v?: string) => void; auto?: string }) => (
+  return (
     <div className="swat pgswat2">
       {auto && <button className={"pgauto" + (!value ? " on" : "")} onClick={() => on(undefined)}>{auto}</button>}
       {list.map((c) => <button key={c} aria-label={c} className={value?.toLowerCase() === c.toLowerCase() ? "on" : ""} style={{ background: c }} onClick={() => on(c)} />)}
       <label className={"pgcustom" + (value && !list.some((c) => c.toLowerCase() === value.toLowerCase()) ? " on" : "")} title={a.tt("Couleur libre", "Custom colour")}><input type="color" value={value ?? "#C24E2A"} aria-label={a.tt("Couleur libre", "Custom colour")} onChange={(e) => on(e.target.value)} /></label>
     </div>
   );
+}
+
+/** Réglages propres à une icône : ils s'appliquent tout de suite dans la maquette, derrière la fenêtre. */
+const INKS = ["#1F1A15", "#FFFFFF", "#C24E2A", "#E3A22F", "#22305C", "#2E6B4E", "#7B4BA8", "#0F766E"];
+const BGS = ["#C24E2A", "#E3A22F", "#22305C", "#2E6B4E", "#0F766E", "#1F1A15", "#F6F2EA", "#FCE9DF"];
+function Customize({ icon, cfg, preview, cust, set, reset, applyAll, resetAll, total }: { icon?: Icon; cfg: Cfg; preview: JSX.Element; cust: Cust; set: (p: Partial<Cust>) => void; reset: () => void; applyAll: () => void; resetAll: () => void; total: number }) {
+  const a = useApp();
+  const color = !!icon && isColor(icon), n = Object.keys(cust).length;
   return (
     <div className="pgcust">
       {preview}
@@ -557,7 +617,7 @@ function Customize({ icon, cfg, preview, cust, set, reset, applyAll, resetAll, t
         <label className="rng"><span>{a.tt("Taille", "Size")}</span><input type="range" min={0.5} max={2.5} step={0.25} value={cust.scale ?? 1} onChange={(e) => set({ scale: +e.target.value === 1 ? undefined : +e.target.value })} /><output>{Math.round((cust.scale ?? 1) * 100)} %</output></label>
         {!color && <label className="rng"><span>{a.tt("Trait", "Stroke")}</span><input type="range" min={1} max={2.5} step={0.25} value={cust.stroke ?? cfg.stroke} onChange={(e) => set({ stroke: +e.target.value === cfg.stroke ? undefined : +e.target.value })} /><output>{cust.stroke ?? cfg.stroke}</output></label>}
         <div className="pgfield"><span>{a.tt("Fond", "Background")}</span><div className="seg">
-          <button className={!cust.shape ? "on" : ""} onClick={() => set({ shape: undefined, bg: undefined })}>{a.tt("Aucun", "None")}</button>
+          <button className={!cust.shape ? "on" : ""} onClick={() => set({ shape: undefined, bg: undefined, ...(cust.color?.toUpperCase() === "#FFFFFF" && { color: undefined }) })}>{a.tt("Aucun", "None")}</button>
           <button className={cust.shape === "round" ? "on" : ""} onClick={() => set({ shape: "round", ...(!cust.color && !color && { color: "#FFFFFF" }) })}>{a.tt("Carré", "Square")}</button>
           <button className={cust.shape === "circle" ? "on" : ""} onClick={() => set({ shape: "circle", ...(!cust.color && !color && { color: "#FFFFFF" }) })}>{a.tt("Rond", "Round")}</button>
         </div></div>

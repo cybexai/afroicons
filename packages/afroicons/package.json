@@ -1,7 +1,7 @@
 {
   "name": "afroicons",
   "version": "0.7.0",
-  "description": "364 icônes SVG libres, au trait et remplies, les 54 drapeaux africains et 372 emojis, qui racontent l'Afrique — paysages, faune, musique, symboles, cuisine, vie quotidienne, architecture, peuples.",
+  "description": "418 icônes SVG libres, au trait et remplies (dont les cartes des 54 pays), les 54 drapeaux africains et 372 emojis, qui racontent l'Afrique — paysages, faune, musique, symboles, cuisine, vie quotidienne, architecture, peuples.",
   "type": "module",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -13,7 +13,7 @@
   },
   "files": ["index.js", "index.d.ts", "icons.json", "sprite.svg", "svg", "LICENSE", "README.md"],
   "sideEffects": false,
-  "keywords": ["icons", "svg", "africa", "afrique", "icon-set", "afroicons", "adinkra", "wax", "flags", "drapeaux"],
+  "keywords": ["icons", "svg", "africa", "afrique", "icon-set", "afroicons", "adinkra", "wax", "flags", "drapeaux", "maps", "cartes"],
   "license": "MIT",
   "author": "THAFAM HOLDING SARL",
   "repository": { "type": "git", "url": "git+https://github.com/cybexai/afroicons.git", "directory": "packages/afroicons" },

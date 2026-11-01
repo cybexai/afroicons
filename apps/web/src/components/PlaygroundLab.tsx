@@ -61,9 +61,9 @@ export type Vision = (typeof VISIONS)[number]["id"];
 /** Les matrices de daltonisme, référencées par filter: url(#…). */
 export const VisionFilters = () => (
   <svg width="0" height="0" style={{ position: "absolute" }} aria-hidden="true">
-    <filter id="pg-protan"><feColorMatrix values="0.567 0.433 0 0 0 0.558 0.442 0 0 0 0 0.242 0.758 0 0 0 0 0 1 0" /></filter>
-    <filter id="pg-deutan"><feColorMatrix values="0.625 0.375 0 0 0 0.7 0.3 0 0 0 0 0.3 0.7 0 0 0 0 0 1 0" /></filter>
-    <filter id="pg-tritan"><feColorMatrix values="0.95 0.05 0 0 0 0 0.433 0.567 0 0 0 0.475 0.525 0 0 0 0 0 1 0" /></filter>
+    <filter id="pg-protan" colorInterpolationFilters="sRGB"><feColorMatrix values="0.567 0.433 0 0 0 0.558 0.442 0 0 0 0 0.242 0.758 0 0 0 0 0 1 0" /></filter>
+    <filter id="pg-deutan" colorInterpolationFilters="sRGB"><feColorMatrix values="0.625 0.375 0 0 0 0.7 0.3 0 0 0 0 0.3 0.7 0 0 0 0 0 1 0" /></filter>
+    <filter id="pg-tritan" colorInterpolationFilters="sRGB"><feColorMatrix values="0.95 0.05 0 0 0 0 0.433 0.567 0 0 0 0.475 0.525 0 0 0 0 0 1 0" /></filter>
   </svg>
 );
 
@@ -123,9 +123,9 @@ export type Pins = Record<string, { x: number; y: number }>;
 type ScreenProps = {
   image: string | null; setImage: (f: File) => void; clear: () => void;
   pins: Pins; move: (k: string, x: number, y: number) => void; add: (x: number, y: number) => void; open: (k: string) => void;
-  render: (k: string) => ReactNode; frame: (body: JSX.Element) => JSX.Element;
+  render: (k: string) => ReactNode; frame: (body: JSX.Element) => JSX.Element; remove?: (k: string) => void;
 };
-export function ScreenView({ image, setImage, clear, pins, move, add, open, render, frame }: ScreenProps) {
+export function ScreenView({ image, setImage, clear, pins, move, add, open, render, frame, remove }: ScreenProps) {
   const a = useApp();
   const box = useRef<HTMLDivElement>(null);
   const file = useRef<HTMLInputElement>(null);
@@ -141,17 +141,18 @@ export function ScreenView({ image, setImage, clear, pins, move, add, open, rend
     e.stopPropagation(); e.preventDefault();
     const sx = e.clientX, sy = e.clientY; let moved = false;
     const mv = (ev: PointerEvent) => { if (Math.hypot(ev.clientX - sx, ev.clientY - sy) > 4) moved = true; if (moved) { const [x, y] = at(ev.clientX, ev.clientY); move(k, x, y); } };
-    const up = () => { removeEventListener("pointermove", mv); removeEventListener("pointerup", up); if (!moved) open(k); };
-    addEventListener("pointermove", mv); addEventListener("pointerup", up);
+    const up = (ev: PointerEvent) => { removeEventListener("pointermove", mv); removeEventListener("pointerup", up); removeEventListener("pointercancel", up); if (!moved && ev.type === "pointerup") open(k); };
+    addEventListener("pointermove", mv); addEventListener("pointerup", up); addEventListener("pointercancel", up);
   };
   const input = <input ref={file} type="file" accept="image/*" hidden onChange={(e) => { pickFile(e.target.files?.[0]); e.target.value = ""; }} />;
   if (!image) return (
-    <div className={"pgdrop" + (over ? " over" : "")} onClick={(e) => { e.stopPropagation(); file.current?.click(); }}
+    <div className={"pgdrop" + (over ? " over" : "")} role="button" tabIndex={0} onClick={(e) => { e.stopPropagation(); file.current?.click(); }}
+      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); file.current?.click(); } }}
       onDragOver={(e) => { e.preventDefault(); setOver(true); }} onDragLeave={() => setOver(false)} onDrop={(e) => { e.preventDefault(); setOver(false); pickFile(e.dataTransfer.files[0]); }}>
       {input}
       <b>{a.tt("Testez les icônes sur votre propre application", "Try the icons on your own app")}</b>
       <p>{a.tt("Glissez ici une capture d'écran de votre site ou de votre application, collez-la (⌘V / Ctrl V) ou cliquez pour la choisir. Posez ensuite les icônes dessus, là où elles iront.", "Drop a screenshot of your site or app here, paste it (⌘V / Ctrl V) or click to choose it. Then place the icons on it, where they will go.")}</p>
-      <span className="btn a">{a.tt("Choisir une capture", "Choose a screenshot")}</span>
+      <span className="btn a" aria-hidden="true">{a.tt("Choisir une capture", "Choose a screenshot")}</span>
       <small>{a.tt("L'image reste sur votre ordinateur : elle n'est envoyée nulle part.", "The image stays on your computer: it is not sent anywhere.")}</small>
     </div>
   );
@@ -167,7 +168,14 @@ export function ScreenView({ image, setImage, clear, pins, move, add, open, rend
         <div ref={box} className="pgshotimg" onClick={(e) => { e.stopPropagation(); const [x, y] = at(e.clientX, e.clientY); add(x, y); }}>
           <img src={image} alt={a.tt("Votre capture d'écran", "Your screenshot")} draggable={false} />
           {Object.entries(pins).map(([k, p]) => (
-            <span key={k} className="pgpin" style={{ left: p.x * 100 + "%", top: p.y * 100 + "%" }} onPointerDown={(e) => down(e, k)} onClick={(e) => e.stopPropagation()}>{render(k)}</span>
+            <span key={k} className="pgpin" role="button" tabIndex={0} aria-label={a.tt("Icône posée : Entrée pour la changer, flèches pour la déplacer, Suppr pour la retirer", "Placed icon: Enter to change it, arrows to move it, Delete to remove it")}
+              style={{ left: p.x * 100 + "%", top: p.y * 100 + "%" }} onPointerDown={(e) => down(e, k)} onClick={(e) => e.stopPropagation()}
+              onKeyDown={(e) => {
+                const d = e.shiftKey ? 0.05 : 0.01, m: Record<string, [number, number]> = { ArrowLeft: [-d, 0], ArrowRight: [d, 0], ArrowUp: [0, -d], ArrowDown: [0, d] };
+                if (m[e.key]) { e.preventDefault(); move(k, Math.min(1, Math.max(0, p.x + m[e.key][0])), Math.min(1, Math.max(0, p.y + m[e.key][1]))); }
+                else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(k); }
+                else if ((e.key === "Delete" || e.key === "Backspace") && remove) { e.preventDefault(); remove(k); }
+              }}>{render(k)}</span>
           ))}
         </div>,
       )}

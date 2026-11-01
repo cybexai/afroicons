@@ -28,7 +28,7 @@ export function Nav() {
     if (!menuOpen) return;
     const close = (e: MouseEvent) => { if (!(e.target as HTMLElement).closest(".menum")) setMenuOpen(false); };
     const esc = (e: KeyboardEvent) => { if (e.key === "Escape") setMenuOpen(false); };
-    const wide = matchMedia("(min-width: 1221px)");
+    const wide = matchMedia("(min-width: 1321px)");
     const off = () => { if (wide.matches) setMenuOpen(false); };
     document.addEventListener("click", close);
     document.addEventListener("keydown", esc);
@@ -59,7 +59,7 @@ export function Nav() {
         {news}
       </div>
       <div className="navr">
-        <button className="kbtn" onClick={() => a.setCmdOpen(true)}><ISearch s={17} /><span className="lbl"><T k="cmdLbl" /></span><span className="kbd">{isMac ? "⌘K" : "Ctrl K"}</span></button>
+        <button className="kbtn" aria-label={a.t("cmdLbl")} onClick={() => a.setCmdOpen(true)}><ISearch s={17} /><span className="lbl"><T k="cmdLbl" /></span><span className="kbd" aria-hidden="true">{isMac ? "⌘K" : "Ctrl K"}</span></button>
         <div className="citym">
           <button className="ib" title={a.tt("Ambiance", "Mood")} aria-label={a.tt("Ambiance de couleurs", "Colour mood")} aria-expanded={cityOpen} onClick={(e) => { e.stopPropagation(); setCityOpen((o) => !o); }}>
             <span className="dots">{CITIES[a.city].c.slice(0, 3).map((c) => <i key={c} style={{ background: c }} />)}</span>

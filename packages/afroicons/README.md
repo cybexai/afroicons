@@ -1,6 +1,6 @@
 # afroicons
 
-364 icônes SVG libres qui racontent l'Afrique, au trait et remplies, les 54 drapeaux africains et 372 emojis aux couleurs officielles. Grille 24 px, trait 1,75, `currentColor`.
+418 icônes SVG libres qui racontent l'Afrique, au trait et remplies (dont les cartes des 54 pays), les 54 drapeaux africains et 372 emojis aux couleurs officielles. Grille 24 px, trait 1,75, `currentColor`.
 
 ```bash
 npm install afroicons
@@ -11,6 +11,7 @@ import { toSvg, icons, names, replace } from "afroicons";
 toSvg("baobab", { size: 32, color: "#C24E2A", strokeWidth: 2 });
 toSvg("baobab", { variant: "fill" });   // version remplie
 toSvg("drapeau-cameroun");              // drapeau, aux couleurs officielles
+toSvg("carte-cameroun");                // carte du pays (au trait, ou variant: "fill")
 toSvg("emoji-pouce-leve", { tone: "light" }); // emoji, teinte de peau Unicode
 icons.djembe.fr;      // "Djembé"
 icons.djembe.region;  // "ouest"

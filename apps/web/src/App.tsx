@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { PAGE, byId } from "./lib/constants";
 import { useApp } from "./state";
 import { Hero, Marquee, Nav } from "./components/Header";
@@ -30,9 +30,11 @@ export default function App() {
     return () => removeEventListener("hashchange", open);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Le titre de l'onglet suit l'icône ouverte (et revient au titre du site à la fermeture).
-  const siteTitle = useRef(document.title.includes("| Afroicons") && PAGE === "home" ? a.tt("Afroicons — des icônes qui racontent l'Afrique", "Afroicons — icons that tell Africa's story") : document.title);
+  // Le titre de l'onglet suit l'icône ouverte, puis revient au titre de la page, dans la langue choisie.
   useEffect(() => {
+    const siteTitle = { current: (PAGE === "news" ? a.tt("Nouveautés — journal des versions | Afroicons", "What's new — release notes | Afroicons")
+      : PAGE === "playground" ? a.tt("Bac à sable — essayez les icônes dans votre interface | Afroicons", "Playground — try the icons in your interface | Afroicons")
+      : a.tt("Afroicons — des icônes qui racontent l'Afrique", "Afroicons — icons that tell Africa's story")) };
     const i = a.current ? byId[a.current] : null;
     document.title = i ? `${i.char ? i.char + " " : ""}${a.lang === "en" ? i.en : i.fr} — ${i.cat === "drapeaux" ? a.tt("SVG gratuit, couleurs officielles", "free SVG, official colours") : i.cat === "emojis" ? a.tt("emoji SVG gratuit", "free SVG emoji") : a.tt("icône SVG gratuite", "free SVG icon")} | Afroicons` : siteTitle.current;
   }, [a.current, a.lang]); // eslint-disable-line react-hooks/exhaustive-deps

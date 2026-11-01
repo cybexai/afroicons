@@ -16,6 +16,13 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 24, cache: npm, registry-url: "https://registry.npmjs.org" }
       - run: npm --version
+      - name: La version du tag correspond aux paquets
+        run: |
+          v="$(node -p 'require("./package.json").version')"
+          [ "${GITHUB_REF_NAME#v}" = "$v" ] || { echo "Tag $GITHUB_REF_NAME, mais package.json est en $v : mettez la version à jour avant de taguer."; exit 1; }
+          for d in packages/afroicons packages/afroicons-react packages/afroicons-ui packages/afroicons-angular packages/afroicons-mui packages/afroicons-antd; do
+            pv="$(node -p "require('./$d/package.json').version")"; [ "$pv" = "$v" ] || { echo "$d est en $pv, attendu $v"; exit 1; }
+          done
       - run: npm ci
       - run: cp LICENSE packages/afroicons-angular/
       - run: npm test

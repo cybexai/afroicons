@@ -82,7 +82,7 @@ function page({ path, title, desc, canonical, body, app = true }) {
   writeFileSync(join(dist, path, "index.html"), h);
 }
 
-const nav = `<nav><a href="/">Afroicons</a> › <a href="/icones/">Toutes les icônes</a></nav>`;
+const nav = `<nav><a href="/">Afroicons</a> › <a href="/icones/">Toutes les icônes</a> · <a href="/playground/">Bac à sable</a></nav>`;
 for (const i of icons) {
   const base = i.variantOf ? bySlug[i.variantOf] : i;
   const variants = icons.filter((x) => x.slug === base.slug || x.variantOf === base.slug).filter((x) => x.slug !== i.slug);
@@ -118,7 +118,7 @@ const groups = Object.keys(CATS).map((c) => [c, icons.filter((i) => i.cat === c)
 page({
   path: "icones",
   title: `Toutes les icônes Afroicons — ${icons.length} icônes SVG gratuites`,
-  desc: `Les ${icons.length} icônes Afroicons, par catégorie : nature, faune, musique, symboles adinkra, cuisine, vie quotidienne, architecture et interface. SVG libres, licence MIT.`,
+  desc: `Les ${icons.length} icônes Afroicons, par catégorie : nature, faune, musique, symboles adinkra, cuisine, vie quotidienne, architecture, interface, drapeaux, cartes des pays et emojis africains. SVG libres, licence MIT.`,
   canonical: `${SITE}/icones/`,
   app: false,
   body: `<nav><a href="/">Afroicons</a></nav><h1>Toutes les icônes (${icons.length})</h1>${groups.map(([c, l]) => `<h2>${esc(CATS[c])} (${l.length})</h2><ul class="g">${l.map((i) => `<li><a href="/icones/${i.slug}/">${esc(i.fr)}</a></li>`).join("")}</ul>`).join("")}`,

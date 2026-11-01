@@ -880,3 +880,5 @@ a.eyebrow:hover{color:var(--ink);border-color:var(--muted)}
 .pgpin{position:absolute;transform:translate(-50%,-50%);cursor:grab;touch-action:none;line-height:0;filter:drop-shadow(0 1px 2px rgba(0,0,0,.25))}
 .pgpin:active{cursor:grabbing}.pgpin .pgi{outline:1.5px dashed transparent}.pgpin:hover .pgi{outline-color:var(--pp)}
 .pgshoth .btn,.pgdrop .btn{color:var(--ink)}.pgdrop .btn.a{color:#fff}
+.pgfile{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;pointer-events:none}.pglogoin .btn{position:relative}.pglogoin .btn:focus-within{outline:2px solid var(--a1);outline-offset:2px}
+.pgpin:focus-visible{outline:2px solid var(--pp);outline-offset:3px;border-radius:6px}.pgdrop:focus-visible{outline:2px solid var(--pp);outline-offset:3px}
