@@ -63,10 +63,19 @@ export const UI: Icon[] = (UI_ICONS as { id: string; fr: string; en: string; fam
 const GORDER = ["visages", "mains", "personnes", "coeurs", "animaux", "nature", "fruits", "nourriture", "boissons", "objets", "lieux"];
 export const EMOJIS: Icon[] = (AFRO_DATA as Icon[]).filter(isEmoji).map((i) => ({ ...i, fill: i.body })).sort((a, b) => GORDER.indexOf(a.group!) - GORDER.indexOf(b.group!));
 export const ICONS: Icon[] = [...AFRO, ...FLAGS, ...EMOJIS, ...UI];
+/** Charge (une seule fois) les dessins des emojis, à part du reste pour alléger le premier affichage. */
+let emojisLoading: Promise<void> | null = null;
+export const loadEmojiBodies = () => (emojisLoading ??= import("../generated/emoji-bodies.json").then((m) => {
+  const b = m.default as Record<string, string>;
+  for (const i of EMOJIS) i.body = i.fill = b[i.id] ?? "";
+}));
 export type Collection = "afro" | "flags" | "emojis" | "ui";
 export const colOf = (id: string): Collection => (id.startsWith("ui-") ? "ui" : id.startsWith("drapeau-") ? "flags" : id.startsWith("emoji-") ? "emojis" : "afro");
 export const byId: Record<string, Icon> = Object.fromEntries(ICONS.map((i) => [i.id, i]));
-export const isNew = (i: Icon) => i.since === VERSION;
+/** Les dernières arrivées : la version la plus récente des données (« 0.8 », déjà sur le site avant sa sortie npm). */
+const vnum = (v?: string) => (v && /^\d+\.\d+$/.test(v) ? v.split(".").map(Number).reduce((a, b) => a * 1000 + b) : -1);
+export const LATEST = ICONS.reduce((m, i) => (vnum(i.since) > vnum(m) ? i.since! : m), VERSION);
+export const isNew = (i: Icon) => i.since === LATEST;
 
 export const CATS = [
   { id: "all", fr: "Toutes", en: "All", ic: "afrique" },

@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { CITIES, DEFAULT_TONE, PAGE, TONES, byId, loadFills, type CityId, type Icon, type Style, type Tone } from "./lib/constants";
+import { CITIES, DEFAULT_TONE, PAGE, TONES, byId, loadEmojiBodies, loadFills, type CityId, type Icon, type Style, type Tone } from "./lib/constants";
 import { EN, FR, type Lang } from "./lib/i18n";
 import { isHosted, saveFile, store, useCapability } from "./lib/platform";
 import type { PatternState } from "./lib/pattern";
@@ -39,6 +39,8 @@ function useAppState() {
   const setTone = useCallback((t: Tone) => { store.set("tone", t); _setTone(t); }, []);
   // Versions remplies : chargées en arrière-plan après l'affichage, ou tout de suite si on choisit « Rempli ».
   const [fillsReady, setFillsReady] = useState(false);
+  const [bodies, setBodies] = useState(0);
+  useEffect(() => { loadEmojiBodies().then(() => setBodies(1)).catch(() => {}); }, []);
   const needFills = useCallback(() => { loadFills().then(() => setFillsReady(true)).catch(() => {}); }, []);
   useEffect(() => { if (style === "fill") needFills(); }, [style, needFills]);
   useEffect(() => { const t = setTimeout(needFills, 2500); return () => clearTimeout(t); }, [needFills]);
@@ -149,7 +151,7 @@ function useAppState() {
 
   return {
     lang, setLang, t, tt, mode, setMode, city, setCity, theme, pal, ink, badgeBg,
-    color, setColor, bg, setBg, stroke, setStroke, size, setSize, style, setStyle, tone, setTone, fillsReady, needFills,
+    color, setColor, bg, setBg, stroke, setStroke, size, setSize, style, setStyle, tone, setTone, fillsReady, needFills, bodies,
     favs, toggleFav, sel, setSel, toggleSel, selecting, setSelecting,
     current, openIcon, cmdOpen, setCmdOpen, helpOpen, setHelpOpen, list, setList,
     pattern, setPattern, downloads, canDownload, toast, toastMsg, copy, save,

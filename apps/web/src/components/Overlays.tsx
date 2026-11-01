@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { CITIES, COMPAT_NAMES, PAGE, EGROUPS, ICONS, REGNAME, TONES, TONE_LIST, VERSION, byId, catOf, codepoints, colOf, isColor, isEmoji, isFlag, isNew, lineLike, loadFills, type CityId, type Icon } from "../lib/constants";
+import { CITIES, COMPAT_NAMES, LATEST, PAGE, EGROUPS, ICONS, REGNAME, TONES, TONE_LIST, VERSION, byId, catOf, codepoints, colOf, isColor, isEmoji, isFlag, isNew, lineLike, loadEmojiBodies, loadFills, type CityId, type Icon } from "../lib/constants";
 import { FACTS } from "../lib/i18n";
 import { norm, rank } from "../lib/search";
-import { animateDraw, compatSnippet, cssStr, highlight, jsxSnippet, ngSnippet, spriteStr, svgStr, svgToPng, useStr } from "../lib/svg";
+import { animateDraw, codeLang, compatSnippet, cssStr, highlight, jsxSnippet, ngSnippet, spriteStr, svgStr, svgToPng, useStr } from "../lib/svg";
 import { goHome, store } from "../lib/platform";
 import { useApp, useName } from "../state";
 import { CustomizeFields, exportSvg, type CustomValue } from "./Library";
@@ -89,7 +89,8 @@ export function Drawer() {
   // Onglets Material UI et Ant Design : seulement pour les icônes d'interface qui ont un équivalent.
   const tabs = (["svg", "jsx", "ng", "use", "css", ...(cn?.mui.length ? ["mui"] : []), ...(cn?.antd.length ? ["antd"] : [])] as const) as readonly ("svg" | "jsx" | "ng" | "use" | "css" | "mui" | "antd")[];
   const cur = tabs.includes(tab) ? tab : "svg";
-  const code = { svg: () => exportSvg(ic, a), jsx: () => jsxSnippet(ic, a.stroke, a.style === "fill" && !!ic.fill, app.tone), ng: () => ngSnippet(ic, a.stroke, a.style === "fill" && !!ic.fill, app.tone), use: () => `<!-- 1. ${a.tt("Collez le sprite une fois", "Paste the sprite once")} -->\n<!-- 2. ${a.tt("Puis", "Then")} : -->\n${useStr(ic)}`, css: () => cssStr(ic, a.stroke), mui: () => compatSnippet(ic, "mui", cn?.mui ?? []), antd: () => compatSnippet(ic, "antd", cn?.antd ?? []) }[cur]();
+  const code = { svg: () => exportSvg(ic, a), jsx: () => jsxSnippet(ic, a.stroke, a.style === "fill" && !!ic.fill, app.tone), ng: () => ngSnippet(ic, a.stroke, a.style === "fill" && !!ic.fill, app.tone), use: () => `<!-- 1. ${a.tt("Collez le sprite une fois", "Paste the sprite once")} -->\n<!-- 2. ${a.tt("Puis", "Then")} : -->\n${useStr(ic)}`, css: () => cssStr(ic, a.stroke), mui: () => compatSnippet(ic, "mui", cn?.mui ?? []), antd: () => compatSnippet(ic, "antd", cn?.antd ?? []) }[cur]().replace(/title="([^"]*)"/, (m) => (a.lang === "en" && (isEmoji(ic) || isFlag(ic)) ? `title="${ic.country?.en ?? ic.en}"` : m));
+  const codeShown = codeLang(code, a.lang === "en");
   const mk = (o = {}) => <Svg i={ic} o={{ s: 20, w: a.stroke, ...o }} />;
   const close = () => a.openIcon(null);
 
@@ -145,7 +146,7 @@ export function Drawer() {
           </div>
           <div className="code"><h4><T k="code" /></h4>
             <div className="ctabs" role="tablist">{tabs.map((k) => <button key={k} role="tab" aria-selected={cur === k} className={cur === k ? "on" : ""} onClick={() => setTab(k)}>{{ svg: "SVG", jsx: "React", ng: "Angular", use: "Sprite", css: "CSS", mui: "MUI", antd: "Ant" }[k]}</button>)}</div>
-            <div className="codebox"><pre dangerouslySetInnerHTML={{ __html: highlight(code, cur === "css") }} /><button className="cp" onClick={() => a.copy(code)}><T k="cp" /></button></div>
+            <div className="codebox"><pre dangerouslySetInnerHTML={{ __html: highlight(codeShown, cur === "css") }} /><button className="cp" onClick={() => a.copy(codeShown)}><T k="cp" /></button></div>
           </div>
           {variants.length > 1 && <div className="sim"><h4>{a.tt("Variantes", "Variants")}</h4>
             <div className="vars">{variants.map((x) => <button key={x.id} className={x.id === ic.id ? "on" : ""} aria-current={x.id === ic.id ? "true" : undefined} onClick={() => a.openIcon(x.id)}><span style={{ color: lineInk }}><Svg i={x} o={{ s: 28, w: a.stroke }} /></span><small>{nm(x)}</small></button>)}</div>
@@ -170,6 +171,7 @@ const section = (id: string) => (PAGE !== "home" ? goHome(id) : document.getElem
 /* ---------------- Barre de sélection ---------------- */
 export async function zipIcons(list: Icon[], a: ReturnType<typeof useApp>, name: string) {
   if (a.style === "fill") await loadFills();
+  await loadEmojiBodies();
   const { default: JSZip } = await import("jszip");
   const z = new JSZip(), f = z.folder("afroicons")!;
   list.forEach((i) => f.file(`svg/${i.id}.svg`, exportSvg(i, a)));
@@ -244,7 +246,7 @@ export function CommandPalette() {
         </div>
         <div className="res" ref={res}>
           {!items.length && <div className="empty" style={{ padding: 30 }}><T k="e1" /></div>}
-          {!!icons.length && <div className="grp">{q ? a.tt("Icônes", "Icons") : a.tt("Nouveautés v", "New in v") + VERSION}</div>}
+          {!!icons.length && <div className="grp">{q ? a.tt("Icônes", "Icons") : a.tt("Nouveautés v", "New in v") + LATEST}</div>}
           {icons.map((i, k) => (
             <button key={i.id} className={"it" + (idx === k ? " on" : "")} onMouseEnter={() => setIdx(k)} onClick={(e) => run(k, e.shiftKey)}>
               <span className="ic" style={{ color: a.ink }}><Svg i={i} o={{ s: 22 }} /></span><b>{nm(i)}</b><small>{a.lang === "en" ? i.fr : i.en}</small><span className="kbd k">↵</span>

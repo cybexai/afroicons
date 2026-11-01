@@ -1,6 +1,6 @@
 // Emojis faune d'Afrique (lot B) : forêts, primates et Madagascar (dessins originaux Afroicons).
 // Animaux de profil (tête à gauche) ou de face pour les primates, couleur à plat et contour brun foncé.
-import { O, W, C, path, circle, ellipse, rect, line } from "./lib.mjs";
+import { O, W, C, path, circle, ellipse, rect, line, g } from "./lib.mjs";
 
 /** Trait épais « plein » : contour brun puis couleur par-dessus (queues, pattes fines, cornes). */
 const thick = (d, col, w = 1.5) => line(d, O, w + 2 * W) + line(d, col, w);
@@ -137,7 +137,7 @@ const fossa = [
 
 /* ---------- propithèque de Verreaux : pelage blanc, visage noir, saut dansé ---------- */
 const SIF = "#F4F1EA", SIF_SHADE = "#D8D2C6", SIF_CAP = "#6A4630";
-const propitheque = [
+const propitheque = g("translate(12 12) scale(0.94) translate(-12.65 -12.5)", [
   thick("M14.4 15.4Q19.4 17.6 21.8 13", SIF, 1.2),
   // bras levés
   thick("M9 9.6L5.4 8L4 4.6M14.4 9.6L17.6 8.2L19.6 5", SIF, 1.5),
@@ -151,7 +151,7 @@ const propitheque = [
   path("M9.2 4.4Q11.4 3.6 12.8 4.8Q12.8 7.4 10.6 7.4Q8.6 7 9.2 4.4Z", C.noir, { w: 0.8 }),
   circle(10.4, 5.2, 0.6, C.jaune, false), eye(10.4, 5.2, 0.3),
   dots([[4, 4.6], [19.6, 5], [3.8, 21.4], [13.8, 22]], 0.6, C.noir),
-].join("");
+].join(""));
 
 /* ---------- bongo : robe rousse, rayures blanches, cornes en spirale ---------- */
 const BON = "#B4502A", BON_DARK = "#8A3A1C", BON_HORN = "#6E5A44";
@@ -303,7 +303,7 @@ const civette = [
 
 /* ---------- galago : immenses yeux, grandes oreilles, accroché à une branche ---------- */
 const GAL = "#A48C72", GAL_LIGHT = "#D8C8B2", GAL_EAR = "#E0B8A8";
-const galago = [
+const galago = g("translate(12.35 12) scale(0.91) translate(-12.35 -12)", [
   thick("M18.6 2.2V21.8", C.bois, 2),
   // longue queue touffue
   path("M13.4 16.4Q11.2 18.8 11.6 22.6H14.2Q13.8 19.6 15.4 17.4Z", GAL),
@@ -321,7 +321,7 @@ const galago = [
   eye(7.2, 7.8, 1.05), eye(12, 7.8, 1.05),
   circle(6.7, 7.3, 0.4, C.white, false), circle(11.5, 7.3, 0.4, C.white, false),
   ellipse(9.6, 10.6, 0.5, 0.35, O, false),
-].join("");
+].join(""));
 
 /* ---------- tenrec rayé : piquants noirs et jaunes, long museau ---------- */
 const TEN = "#262019", TEN_Y = "#F0C43C";
@@ -398,9 +398,9 @@ const cephalophe = [
 
 const A = (slug, fr, en, char, tags, body) => ({ slug, fr, en, char, group: "animaux", tags, tone: false, body });
 export default [
-  A("chimpanze", "Chimpanzé", "Chimpanzee", null, ["chimpanzé", "chimpanzee", "chimp", "sokwe", "kimpenzi", "grand singe", "great ape", "forêt", "forest", "gombe", "tanzanie", "guinée", "côte d'ivoire"], chimpanze),
-  A("bonobo", "Bonobo", "Bonobo", null, ["bonobo", "chimpanzé pygmée", "pygmy chimpanzee", "mokomboso", "grand singe", "great ape", "forêt", "forest", "rd congo", "drc", "lomami"], bonobo),
-  A("babouin", "Babouin olive", "Olive baboon", null, ["babouin", "baboon", "olive baboon", "nyani", "gbon", "singe", "monkey", "savane", "kenya", "éthiopie", "ouganda"], babouin),
+  A("chimpanze", "Chimpanzé", "Chimpanzee", null, ["chimpanzé", "chimpanzee", "chimp", "sokwe", "grand singe", "great ape", "forêt", "forest", "gombe", "tanzanie", "guinée", "côte d'ivoire"], chimpanze),
+  A("bonobo", "Bonobo", "Bonobo", null, ["bonobo", "chimpanzé pygmée", "pygmy chimpanzee", "grand singe", "great ape", "forêt", "forest", "rd congo", "drc", "lomami"], bonobo),
+  A("babouin", "Babouin olive", "Olive baboon", null, ["babouin", "baboon", "olive baboon", "nyani", "singe", "monkey", "savane", "kenya", "éthiopie", "ouganda"], babouin),
   A("mandrill", "Mandrill", "Mandrill", null, ["mandrill", "singe", "monkey", "nez rouge", "red nose", "forêt", "forest", "gabon", "cameroun", "congo", "lopé"], mandrill),
   A("maki-catta", "Maki catta", "Ring-tailed lemur", null, ["maki catta", "ring-tailed lemur", "lémurien", "lemur", "maky", "hira", "madagascar", "queue annelée", "ringed tail", "isalo"], makiCatta),
   A("aye-aye", "Aye-aye", "Aye-aye", null, ["aye-aye", "ahay", "lémurien", "lemur", "madagascar", "nocturne", "nocturnal", "long doigt", "long finger"], ayeAye),
@@ -408,7 +408,7 @@ export default [
   A("propitheque", "Propithèque", "Sifaka", null, ["propithèque", "sifaka", "simpona", "sifaka de verreaux", "lémurien", "lemur", "madagascar", "danse", "dancing", "berenty"], propitheque),
   A("bongo", "Bongo", "Bongo", null, ["bongo", "antilope", "antelope", "bongo antelope", "rayures", "stripes", "forêt", "forest", "kenya", "aberdare", "congo", "gabon"], bongo),
   A("sitatunga", "Sitatunga", "Sitatunga", null, ["sitatunga", "nzohe", "antilope des marais", "marsh antelope", "marais", "swamp", "papyrus", "ouganda", "zambie", "bangweulu", "okavango"], sitatunga),
-  A("potamochere", "Potamochère roux", "Red river hog", null, ["potamochère", "red river hog", "bushpig", "ngulungu", "sanglier", "pig", "forêt", "forest", "cameroun", "gabon", "congo"], potamochere),
+  A("potamochere", "Potamochère roux", "Red river hog", null, ["potamochère", "red river hog", "bushpig", "sanglier", "pig", "forêt", "forest", "cameroun", "gabon", "congo"], potamochere),
   A("hylochere", "Hylochère", "Giant forest hog", null, ["hylochère", "giant forest hog", "nguruwe msitu", "sanglier géant", "pig", "forêt", "forest", "kenya", "ouganda", "congo"], hylochere),
   A("chat-dore", "Chat doré africain", "African golden cat", null, ["chat doré", "golden cat", "african golden cat", "félin", "wild cat", "forêt", "forest", "gabon", "cameroun", "congo", "ouganda"], chatDore),
   A("genette", "Genette commune", "Common genet", null, ["genette", "genet", "common genet", "kanu", "taches", "spots", "queue annelée", "ringed tail", "savane", "forêt", "sénégal", "kenya"], genette),

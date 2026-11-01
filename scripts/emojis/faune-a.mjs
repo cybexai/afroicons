@@ -306,7 +306,7 @@ const dikdik = [
 
 /* ---------- gérénuk (debout sur ses pattes arrière) ---------- */
 const GER = "#B5733F", GER_LIGHT = "#E2B98A";
-const gerenuk = [
+const gerenuk = g("translate(11.6 12) scale(0.95) translate(-10.75 -12.3)", [
   // branche d'acacia
   thick("M1.8 9.6Q3 6.6 2.8 2.8", C.bois, 0.6),
   ellipse(2.4, 2.4, 1.2, 0.8, C.feuille, { w: 0.7 }), ellipse(2.2, 6.2, 0.6, 0.9, C.feuille, { w: 0.7 }), ellipse(3.8, 4.8, 0.9, 0.6, C.feuille, { w: 0.7 }),
@@ -329,7 +329,7 @@ const gerenuk = [
   path("M10.2 5Q9.8 2.6 7.6 2.8L5 4.2Q4.2 4.8 4.6 5.6Q6.2 6.4 8 6.4Q9.8 6.2 10.2 5Z", GER),
   path("M5 4.2Q4.2 4.8 4.6 5.6Q5.4 6 6 5.6Q5.8 4.6 5 4.2Z", "#7A4A2A", { w: 0.5 }),
   circle(7.6, 4.3, 0.85, C.white, { w: 0.5 }), eye(7.5, 4.3, 0.45),
-].join("");
+].join(""));
 
 /* ---------- serval ---------- */
 const SER = "#E5B455", SER_LIGHT = "#F7E6BE";
@@ -380,7 +380,7 @@ const caracal = [
 
 /* ---------- ratel (blaireau à miel) ---------- */
 const RAT_BK = "#211A16", RAT_GREY = "#D3D6D1";
-const ratel = [
+const ratel = g("translate(12 15.45) scale(0.96) translate(-12.4 -15.45)", [
   leg(16.6, 15, 20.6, 1.8, RAT_BK), leg(10, 15, 20.6, 1.8, RAT_BK),
   thick("M20.8 12.6L22.2 10.2", RAT_GREY, 0.8),
   // corps bas et trapu, noir
@@ -393,8 +393,8 @@ const ratel = [
   path("M9.4 12Q7.6 10.6 5.4 11.2L2 13.6Q1.2 14.6 2.2 15.2L4.6 15.8Q7.6 16.2 9.4 14.8Z", RAT_BK),
   path("M9.2 12.4Q7.4 10.6 5.4 11.2L2.4 13.2Q4.8 13.4 6.6 13.8Q8 13.6 9.2 12.4Z", RAT_GREY, { w: 0.7 }),
   ellipse(1.8, 14.2, 0.5, 0.4, "#5A4E48", false),
-  circle(6.6, 14, 0.5, "#6B5E56", false),
-].join("");
+  circle(6.6, 14, 0.6, "#F2E8DA", false), circle(6.6, 14, 0.3, O, false),
+].join(""));
 
 /* ---------- oryctérope ---------- */
 const AAR = "#B9A08E", AAR_DARK = "#8A7262", AAR_PINK = "#D9B4A6";

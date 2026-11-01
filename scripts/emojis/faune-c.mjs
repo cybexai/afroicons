@@ -389,10 +389,13 @@ const grandDuc = [
   line("M10 20.8V21.8M14 20.8V21.8", O, 1.2),
 ].join("");
 
-const A = (slug, fr, en, char, tags, body) => ({ slug, fr, en, char, group: "animaux", tags, tone: false, body });
+// Recadrage mesuré : ces dessins (branches et perchoirs compris) dépassaient la zone utile 1–23, ils sont réduits et recentrés juste assez.
+const FIT = { "tisserin": [1.485, 1.523, 0.876], "ibis-sacre": [0.974, -0.195, 0.951], "touraco": [1.291, 1.079, 0.927], "guepier-carmin": [1.294, 0.831, 0.935], "rollier": [1.296, 0.384, 0.939] };
+const A = (slug, fr, en, char, tags, body) => ({ slug, fr, en, char, group: "animaux", tags, tone: false,
+  body: FIT[slug] ? g(`translate(${FIT[slug][0]} ${FIT[slug][1]}) scale(${FIT[slug][2]})`, body) : body });
 export default [
   A("grue-couronnee", "Grue couronnée", "Grey crowned crane", null, ["grue couronnée", "crowned crane", "grue", "crane", "korongo", "ngaali", "ouganda", "uganda", "kenya", "zones humides", "wetlands", "oiseau", "bird"], grueCouronnee),
-  A("tisserin", "Tisserin", "Weaver bird", null, ["tisserin", "weaver", "nid", "nest", "mnana", "kwezi", "sahel", "savane", "savanna", "sénégal", "oiseau", "bird"], tisserin),
+  A("tisserin", "Tisserin", "Weaver bird", null, ["tisserin", "weaver", "nid", "nest", "kwezi", "sahel", "savane", "savanna", "sénégal", "oiseau", "bird"], tisserin),
   A("bec-en-sabot", "Bec-en-sabot", "Shoebill", null, ["bec-en-sabot", "shoebill", "whale-headed stork", "abu markub", "ouganda", "soudan du sud", "zambie", "marais", "swamp", "oiseau", "bird"], becEnSabot),
   A("marabout", "Marabout d'Afrique", "Marabou stork", null, ["marabout", "marabou", "cigogne", "stork", "korongo", "kenya", "ouganda", "savane", "ville", "city", "oiseau", "bird"], marabout),
   A("vautour", "Vautour africain", "White-backed vulture", null, ["vautour", "vulture", "tai", "gyps", "savane", "savanna", "charognard", "scavenger", "serengeti", "oiseau", "bird"], vautour),
@@ -405,7 +408,7 @@ export default [
   A("outarde-kori", "Outarde kori", "Kori bustard", null, ["outarde kori", "kori bustard", "outarde", "bustard", "gompou", "botswana", "namibie", "tanzanie", "savane", "oiseau", "bird"], outardeKori),
   A("francolin", "Francolin", "Francolin", null, ["francolin", "spurfowl", "kwale", "perdrix", "partridge", "savane", "savanna", "brousse", "bush", "oiseau", "bird"], francolin),
   A("guepier-carmin", "Guêpier carmin", "Carmine bee-eater", null, ["guêpier carmin", "carmine bee-eater", "guêpier", "bee-eater", "abeille", "bee", "zambie", "okavango", "sénégal", "oiseau", "bird"], guepier),
-  A("rollier", "Rollier à longs brins", "Lilac-breasted roller", null, ["rollier", "lilac-breasted roller", "roller", "kambu", "kenya", "botswana", "savane", "savanna", "oiseau", "bird"], rollier),
+  A("rollier", "Rollier à longs brins", "Lilac-breasted roller", null, ["rollier", "lilac-breasted roller", "roller", "kenya", "botswana", "savane", "savanna", "oiseau", "bird"], rollier),
   A("souimanga", "Souimanga", "Sunbird", null, ["souimanga", "sunbird", "nectar", "fleur", "flower", "chozi", "jardin", "garden", "kenya", "afrique du sud", "oiseau", "bird"], souimanga),
   A("jabiru", "Jabiru d'Afrique", "Saddle-billed stork", null, ["jabiru", "saddle-billed stork", "cigogne", "stork", "bec", "marais", "swamp", "okavango", "gambie", "oiseau", "bird"], jabiru),
   A("heron-garde-boeufs", "Héron garde-bœufs", "Cattle egret", null, ["héron garde-bœufs", "cattle egret", "aigrette", "egret", "zébu", "zebu", "bétail", "cattle", "village", "savane", "oiseau", "bird"], heronGardeBoeufs),

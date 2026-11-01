@@ -56,7 +56,8 @@ for (const e of all) if (FIT[e.slug]) e.body = `<g transform="translate(12 12) s
 // Version d'arrivée : 0.7 pour les premières vagues, 0.8 pour la faune ajoutée ensuite (fichiers faune-*.mjs).
 const emojis = all.map(({ slug, fr, en, char, group, tags, tone, body, file }) => ({
   id: `emoji-${slug}`, fr, en, char: char ?? null, cat: "emojis", group, region: "pan",
-  tags: [...new Set(["emoji", ...tags.map((t) => t.toLowerCase())])], tone: !!tone, since: file.startsWith("faune-") ? "0.8" : "0.7", body, fill: body,
+  tags: [...new Map(["emoji", ...tags.map((t) => t.toLowerCase())].map((t) => [t.normalize("NFD").replace(/[\u0300-\u036f]/g, ""), t])).values()], // sans doublon, accents compris
+  tone: !!tone, since: file.startsWith("faune-") ? "0.8" : "0.7", body, fill: body,
 }));
 writeFileSync(join(root, "src/emojis.json"), JSON.stringify(emojis, null, 1) + "\n");
 const afro = emojis.filter((e) => !e.char).length;

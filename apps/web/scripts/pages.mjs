@@ -86,7 +86,12 @@ const nav = `<nav><a href="/">Afroicons</a> › <a href="/icones/">Toutes les ic
 for (const i of icons) {
   const base = i.variantOf ? bySlug[i.variantOf] : i;
   const variants = icons.filter((x) => x.slug === base.slug || x.variantOf === base.slug).filter((x) => x.slug !== i.slug);
-  const similar = icons.filter((x) => x.cat === i.cat && (i.cat !== "emojis" || x.group === i.group) && x.slug !== i.slug && !variants.includes(x)).slice(0, 12);
+  // Les voisins dans la famille (à partir de la position de l'icône, en boucle) : chaque fiche mène à d'autres fiches.
+  const fam = icons.filter((x) => x.cat === i.cat && (i.cat !== "emojis" || x.group === i.group));
+  const at = fam.findIndex((x) => x.slug === i.slug);
+  const similar = [...fam.slice(at + 1), ...fam.slice(0, at)].filter((x) => !variants.includes(x)).slice(0, 12);
+  // Icône ↔ emoji, drapeau ↔ carte.
+  const twins = [[i.emoji, "Voir l'emoji"], [i.icon, "Voir l'icône au trait"], [i.map, "Voir la carte du pays"], [i.flag, "Voir le drapeau"]].filter(([id]) => id && bySlug[id]);
   const fact = FACTS[i.id];
   const code = i.lucide
     ? `npm install afroicons-ui lucide-react\n\nimport { ${i.lucide} } from "afroicons-ui";\n\n<${i.lucide} size={24} />`
@@ -108,6 +113,7 @@ ${i.lucide ? equivalents(i.lucide) : ""}
 <h2>Utiliser cette icône</h2><pre><code>${esc(code)}</code></pre>
 <p>Angular :</p><pre><code>${esc(`npm install afroicons-angular\n\nimport { AfroiconComponent, provideAfroicons, ${i.lucide ?? pascal(i.id)} } from "afroicons-angular";\n\nproviders: [provideAfroicons({ ${i.lucide ?? pascal(i.id)} })]\n\n<afroicon name="${i.lucide ?? i.slug}"${i.tone ? ' tone="light"' : ""} />`)}</code></pre>
 <p>Icône libre et gratuite, licence MIT, utilisation commerciale comprise. <a href="/#${i.slug}">Personnaliser et télécharger sur afroicons.org</a></p>
+${twins.length ? `<p>${twins.map(([id, t]) => `<a href="/icones/${bySlug[id].slug}/">${t} : ${esc(bySlug[id].fr)}</a>`).join(" · ")}</p>` : ""}
 ${variants.length ? `<h2>Variantes</h2>${links(variants)}` : ""}
 <h2>Dans la même famille</h2>${links(similar)}`,
   });

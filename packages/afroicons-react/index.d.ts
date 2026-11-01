@@ -49,7 +49,7 @@ export declare const Lion: Afroicon;
 export declare const Dromadaire: Afroicon;
 /** Crocodile · Crocodile */
 export declare const Crocodile: Afroicon;
-/** Poisson (tilapia) · Fish (tilapia) */
+/** Poisson · Fish */
 export declare const Poisson: Afroicon;
 /** Zébu · Zebu */
 export declare const Zebu: Afroicon;

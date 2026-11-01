@@ -58,7 +58,9 @@ writeFileSync(join(A, "icons.json"), JSON.stringify(meta, null, 1));
 // Pour le site : les versions remplies à part, chargées seulement quand on en a besoin (−17 Ko gzip au démarrage).
 const G = join(root, "apps/web/src/generated");
 mkdirSync(G, { recursive: true });
-writeFileSync(join(G, "afro.json"), JSON.stringify(meta.map(({ fill, ...m }) => m)));
+// Les dessins des emojis aussi (≈ 1 Mo) : la page s'affiche sans eux, ils arrivent juste après.
+writeFileSync(join(G, "afro.json"), JSON.stringify(meta.map(({ fill, ...m }) => (m.cat === "emojis" ? { ...m, body: "" } : m))));
+writeFileSync(join(G, "emoji-bodies.json"), JSON.stringify(Object.fromEntries(meta.filter((i) => i.cat === "emojis").map((i) => [i.id, i.body]))));
 writeFileSync(join(G, "tones.json"), JSON.stringify({ tones: TONES, def: DEFAULT_TONE }));
 writeFileSync(join(G, "fills.json"), JSON.stringify(Object.fromEntries(meta.filter((i) => i.fill !== i.body).map((i) => [i.id, i.fill]))));
 writeFileSync(join(A, "index.js"),

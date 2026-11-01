@@ -8,7 +8,7 @@ import { Brand, Footer, Manifesto, Showcase, Studio, Usage } from "./components/
 import { IdeaBox, IdeaBoundary } from "./components/IdeaBox";
 import { Changelog } from "./components/Changelog";
 import { Playground } from "./components/Playground";
-import { ToneContext } from "./components/ui";
+import { BodiesContext, ToneContext } from "./components/ui";
 
 export default function App() {
   const a = useApp();
@@ -68,7 +68,7 @@ export default function App() {
   });
 
   return (
-    <ToneContext.Provider value={a.tone}>
+    <BodiesContext.Provider value={a.bodies}><ToneContext.Provider value={a.tone}>
       {/* Quand une fenêtre est ouverte, la page derrière devient inerte : le focus clavier y reste enfermé. */}
       <div {...inert(modal)}>
       {PAGE !== "home" ? <>
@@ -97,6 +97,6 @@ export default function App() {
       <CommandPalette />
       <Help />
       <Toast />
-    </ToneContext.Provider>
+    </ToneContext.Provider></BodiesContext.Provider>
   );
 }

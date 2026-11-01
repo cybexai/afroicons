@@ -111,3 +111,26 @@ export function animateDraw(el: SVGSVGElement | null) {
   void el.getBoundingClientRect();
   el.classList.add("draw");
 }
+
+/** Version anglaise des commentaires des extraits de code (le site en anglais). */
+const EN: [RegExp | string, string][] = [
+  ["Aux couleurs officielles : color, strokeWidth et variant ne changent pas un drapeau.", "Official colours: color, strokeWidth and variant don't change a flag."],
+  ["Emoji Unicode équivalent : ", "Equivalent Unicode emoji: "],
+  ["Emoji africain original Afroicons (pas d'équivalent Unicode)", "Original Afroicons African emoji (no Unicode equivalent)"],
+  ["En couleur : image de fond, et non un masque (qui ne garderait que la silhouette).", "In colour: a background image, not a mask (which would keep only the silhouette)."],
+  ["Mêmes noms et mêmes props que @ant-design/icons : remplacez l'import.", "Same names and props as @ant-design/icons: just change the import."],
+  ["Mêmes noms et mêmes props que @mui/icons-material : remplacez l'import.", "Same names and props as @mui/icons-material: just change the import."],
+  ["Mêmes noms que lucide-react : remplacez simplement l'import.", "Same names as lucide-react: just change the import."],
+  ["Noms Ant Design de cette icône (en Outlined, et selon les cas Filled et TwoTone) :", "Ant Design names for this icon (Outlined, and Filled / TwoTone where available):"],
+  ["Noms Material UI de cette icône (et leurs variantes Outlined, Rounded, Sharp, TwoTone) :", "Material UI names for this icon (and their Outlined, Rounded, Sharp, TwoTone variants):"],
+  ["Projet indépendant, non affilié au groupe Ant. Dessins originaux.", "Independent project, not affiliated with Ant Group. Original drawings."],
+  ["Projet indépendant, non affilié à MUI (Material-UI SAS). Dessins originaux.", "Independent project, not affiliated with MUI (Material-UI SAS). Original drawings."],
+  ["app.config.ts : seules les icônes déclarées entrent dans le bundle", "app.config.ts: only the declared icons go into the bundle"],
+  ["composant : imports: [AfroiconComponent]", "component: imports: [AfroiconComponent]"],
+  ["// ou : import ", "// or: import "],
+  ["ou, sans dépendance :", "or, with no dependency:"],
+  ["(par défaut)", "(default)"],
+  ["tone : ", "tone: "],
+  ["Collez le sprite une fois", "Paste the sprite once"],
+];
+export const codeLang = (code: string, en: boolean) => (en ? EN.reduce((c, [fr, e]) => c.split(fr as string).join(e), code) : code);
