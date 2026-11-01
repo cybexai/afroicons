@@ -112,6 +112,7 @@ nav.top.scrolled{border-bottom-color:var(--line)}
 .mrow svg{width:30px;height:30px;flex:none}
 @keyframes mq{to{transform:translateX(-50%)}}
 .marq:hover .mrow{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){.mrow{animation-play-state:paused}}
 
 /* ===== EXPLORER ===== */
 section{position:relative}

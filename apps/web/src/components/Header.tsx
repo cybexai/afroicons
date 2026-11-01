@@ -168,10 +168,12 @@ export function Marquee() {
     const row = (L: typeof AFRO) => { const h = L.map((i) => svgStr(i, { s: 30, w: 1.6 })).join(""); return h + h; };
     return [row(AFRO.slice(0, half)), row(AFRO.slice(half))];
   }, []);
+  // Vitesse constante (≈ 40 px/s) quel que soit le nombre d'icônes : une icône et son espace font 64 px.
+  const speed = { animationDuration: `${Math.ceil(AFRO.length / 2) * 1.6}s` };
   return (
     <div className="marq" aria-hidden="true">
-      <div className="mrow" dangerouslySetInnerHTML={{ __html: rows[0] }} />
-      <div className="mrow rev" dangerouslySetInnerHTML={{ __html: rows[1] }} />
+      <div className="mrow" style={speed} dangerouslySetInnerHTML={{ __html: rows[0] }} />
+      <div className="mrow rev" style={speed} dangerouslySetInnerHTML={{ __html: rows[1] }} />
     </div>
   );
 }
