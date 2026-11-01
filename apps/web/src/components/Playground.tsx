@@ -73,6 +73,7 @@ export function Playground() {
   const [cfg, setCfg] = useState<Cfg>({ ...DEF, ...init.cfg });
   const [pick, setPick] = useState<string | null>(null);
   const [view, setView] = useState<View>("all");
+  const [flash, setFlash] = useState(false); // « Les montrer » : entoure un instant toutes les icônes modifiables
   const [lucide, setLucide] = useState(false);
   const [L, setL] = useState<Record<string, ComponentType<any>> | null>(null);
   const [tab, setTab] = useState<"react" | "angular" | "html" | "css">("react");
@@ -194,9 +195,13 @@ export function Playground() {
         <div className="pgright">
           <div className="pgviews" role="tablist" aria-label={a.tt("Maquettes", "Mockups")}>
             {([["all", a.tt("Tout", "All")], ["web", a.tt("Application web", "Web app")], ["mobile", a.tt("Mobile", "Mobile")], ["site", a.tt("Site vitrine", "Website")]] as [View, string][]).map(([v, l]) => <button key={v} role="tab" aria-selected={view === v} className={"cat" + (view === v ? " on" : "")} onClick={() => setView(v)}>{l}</button>)}
-            <span className="pghint">{a.tt("Astuce : cliquez sur une icône pour la remplacer", "Tip: click an icon to swap it")}</span>
           </div>
-          <div className={"pgstage v-" + view} style={vars}>
+          <div className="pghint">
+            <span className="pghic" aria-hidden="true">↻</span>
+            <p><b>{a.tt("Toutes les icônes ci-dessous sont modifiables.", "Every icon below can be changed.")}</b> {a.tt("Cliquez sur une icône (dans un bouton, le menu, une liste…) pour en choisir une autre dans la bibliothèque.", "Click an icon (in a button, the menu, a list…) to pick another one from the library.")}</p>
+            <button className="btn" onClick={(e) => { e.stopPropagation(); setFlash(true); setTimeout(() => setFlash(false), 2400); }}>{a.tt("Les montrer", "Show them")}</button>
+          </div>
+          <div className={"pgstage v-" + view + (flash ? " flash" : "")} style={vars}>
             {show("web") && <div className="pgweb">
               <header className="pgnav"><span className="pglogo"><I k="logo" s={cfg.size + 4} c={cfg.primary} />{cfg.name || DEF.name}</span>
                 <span className="pgsearch"><I k="search" s={cfg.size - 2} c="var(--pmuted)" /><span>{a.tt("Rechercher…", "Search…")}</span></span>

@@ -714,7 +714,12 @@ a.eyebrow:hover{color:var(--ink);border-color:var(--muted)}
 .pgpickg small{font-size:11px;color:var(--muted);max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .pgcode{margin-top:22px}
 .pgviews{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.pgviews .cat{padding:6px 12px;font-size:13px}
-.pghint{margin-left:auto;font-size:12.5px;color:var(--muted)}
+.pghint{display:flex;align-items:center;gap:12px;padding:10px 12px 10px 14px;border-radius:14px;background:color-mix(in srgb,var(--a1) 10%,var(--card));border:1px solid color-mix(in srgb,var(--a1) 30%,var(--line))}
+.pghint p{margin:0;flex:1;font-size:13.5px;line-height:1.45;color:var(--ink)}
+.pghic{display:grid;place-items:center;flex:none;width:30px;height:30px;border-radius:50%;background:var(--a1);color:#fff;font-weight:800;font-size:16px}
+.pghint .btn{height:34px;padding:0 14px;font-size:13px;flex:none}
+@keyframes pgflash{0%,100%{outline-color:transparent}50%{outline-color:var(--pp)}}
+.pgstage.flash .pgi{animation:pgflash .8s ease-in-out 3;outline-style:dashed;outline-width:2px}
 .pgfield{display:grid;grid-template-columns:62px minmax(0,1fr);align-items:center;gap:10px;font-size:13.5px}
 .pgfield input,.pgfield select{height:36px;padding:0 10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;min-width:0}
 .pglink{justify-self:start;font-size:13px;font-weight:600;color:var(--a1);padding:2px 0}
@@ -758,7 +763,7 @@ a.eyebrow:hover{color:var(--ink);border-color:var(--muted)}
 .pgpickc{padding:10px 14px 0}
 .pgcodeh{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}.pgcodeh h4{margin:0 auto 0 0}
 @media (max-width:1100px){.pglay{grid-template-columns:minmax(0,1fr)}.pgctl{position:static}}
-@media (max-width:700px){.pghint{display:none}.pgstage{padding:10px;border-radius:18px}.pgfeat{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:700px){.pghint{flex-wrap:wrap}.pghint p{flex-basis:calc(100% - 42px)}.pghint .btn{margin-left:42px}.pgstage{padding:10px;border-radius:18px}.pgfeat{grid-template-columns:minmax(0,1fr)}}
 .pgswat{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px}
 .pgswat>button,.pgcustom{width:auto;aspect-ratio:1;height:auto;border-radius:9px;border:2px solid var(--card);outline:1px solid var(--muted)}
 .pgswat>button.on,.pgcustom.on{outline:2.5px solid var(--ink)}
