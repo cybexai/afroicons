@@ -1,10 +1,11 @@
-import { createElement, useEffect, useMemo, useState, type ComponentType, type CSSProperties } from "react";
+import { createElement, useCallback, useEffect, useMemo, useRef, useState, type ComponentType, type CSSProperties } from "react";
 import { AFRO, DEFAULT_TONE, EMOJIS, FLAGS, ICONS, TONE_LIST, TONES, UI, byId, colOf, isColor, type Collection, type Icon, type Style, type Tone } from "../lib/constants";
 import { store } from "../lib/platform";
 import { rank } from "../lib/search";
 import { highlight, pascal } from "../lib/svg";
 import { useApp } from "../state";
 import { zipIcons } from "./Overlays";
+import { AFRICA, ANIMS, ScreenView, VISIONS, VisionFilters, animCss, fixPrimary, mix, paletteOf, ratio, type Anim, type Pair, type Pins, type Vision } from "./PlaygroundLab";
 import { IClose, ISearch, Svg } from "./ui";
 
 /* Bac à sable : les icônes dans des interfaces réalistes (application web, mobile, paiement, vitrine…), réglées
@@ -41,14 +42,14 @@ const FONTS: { id: string; n: string; css: string }[] = [
   { id: "serif", n: "Serif", css: "Georgia,'Times New Roman',serif" },
   { id: "mono", n: "Mono", css: '"JetBrains Mono",ui-monospace,monospace' },
 ];
-type View = "all" | "web" | "mobile" | "site";
+type View = "all" | "web" | "mobile" | "site" | "screen";
 // Les appareils autour des maquettes : forme du téléphone, et cadre de l'application web et du site vitrine.
 type Phone = "iphone" | "android" | "classic";
 type Desk = "laptop" | "monitor" | "browser" | "tablet";
 const PHONES: { id: Phone; fr: string; en: string }[] = [{ id: "iphone", fr: "iPhone", en: "iPhone" }, { id: "android", fr: "Android", en: "Android" }, { id: "classic", fr: "Classique", en: "Classic" }];
 const DESKS: { id: Desk; fr: string; en: string }[] = [{ id: "laptop", fr: "Portable", en: "Laptop" }, { id: "monitor", fr: "Écran", en: "Monitor" }, { id: "browser", fr: "Navigateur", en: "Browser" }, { id: "tablet", fr: "Tablette", en: "Tablet" }];
-type Cfg = { primary: string; dark: boolean; radius: number; size: number; stroke: number; style: Style; tint: "text" | "primary"; name: string; font: string; phone: Phone; desk: Desk };
-const DEF: Cfg = { primary: "#C24E2A", dark: false, radius: 12, size: 20, stroke: 1.75, style: "line", tint: "text", name: "NAFA ERP", font: "dm", phone: "iphone", desk: "laptop" };
+type Cfg = { primary: string; dark: boolean; radius: number; size: number; stroke: number; style: Style; tint: "text" | "primary"; name: string; font: string; phone: Phone; desk: Desk; anim: Anim };
+const DEF: Cfg = { primary: "#C24E2A", dark: false, radius: 12, size: 20, stroke: 1.75, style: "line", tint: "text", name: "NAFA ERP", font: "dm", phone: "iphone", desk: "laptop", anim: "none" };
 /** Personnalisation d'une icône d'emplacement ; un champ absent reprend le réglage général. */
 type Cust = { style?: "line" | "fill"; color?: string; scale?: number; stroke?: number; shape?: "round" | "circle"; bg?: string; rot?: number; flip?: boolean; tone?: Tone };
 type Custs = Record<string, Cust>;
@@ -69,10 +70,12 @@ function cleanCust(o: any): Cust | null {
   if (o.tone in TONES) c.tone = o.tone;
   return Object.keys(c).length ? c : null;
 }
-const cleanCusts = (o: any): Custs => Object.fromEntries(Object.entries(o ?? {}).filter(([k]) => k in BASE).map(([k, v]) => [k, cleanCust(v)]).filter(([, v]) => v)) as Custs;
+const cleanCusts = (o: any): Custs => Object.fromEntries(Object.entries(o ?? {}).filter(([k]) => k in BASE || isPin(k)).map(([k, v]) => [k, cleanCust(v)]).filter(([, v]) => v)) as Custs;
 
 // Lien partageable : les réglages et les icônes choisies, encodés dans l'ancre de l'adresse.
-const enc = (s: Saved) => btoa(unescape(encodeURIComponent(JSON.stringify({ c: s.cfg, p: s.preset, s: Object.fromEntries(Object.entries(s.slots).filter(([k, v]) => v !== BASE[k])), u: s.custom })))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+const isPin = (k: string) => /^u\d+$/.test(k);
+const strip = (s: Saved): Saved => ({ ...s, slots: Object.fromEntries(Object.entries(s.slots).filter(([k]) => !isPin(k))), custom: Object.fromEntries(Object.entries(s.custom ?? {}).filter(([k]) => !isPin(k))) });
+const enc = (s: Saved) => btoa(unescape(encodeURIComponent(JSON.stringify({ c: s.cfg, p: s.preset, s: Object.fromEntries(Object.entries(s.slots).filter(([k, v]) => k in BASE && v !== BASE[k])), u: strip(s).custom })))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
 function dec(h: string): Saved | null {
   try {
     const o = JSON.parse(decodeURIComponent(escape(atob(h.replace(/-/g, "+").replace(/_/g, "/")))));
@@ -83,6 +86,7 @@ function dec(h: string): Saved | null {
     if (!["line", "fill"].includes(cfg.style)) cfg.style = "line";
     if (!PHONES.some((x) => x.id === cfg.phone)) cfg.phone = DEF.phone;
     if (!DESKS.some((x) => x.id === cfg.desk)) cfg.desk = DEF.desk;
+    if (!ANIMS.some((x) => x.id === cfg.anim)) cfg.anim = DEF.anim;
     cfg.name = cfg.name === "Kola" ? DEF.name : cfg.name.slice(0, 24);
     return { cfg, slots, preset: PRESETS.some((p) => p.id === o.p) ? o.p : "erp", custom: cleanCusts(o.u) };
   } catch { return null; }
@@ -106,6 +110,12 @@ export function Playground() {
   const [lucide, setLucide] = useState(false);
   const [L, setL] = useState<Record<string, ComponentType<any>> | null>(null);
   const [tab, setTab] = useState<"react" | "angular" | "html" | "css">("react");
+  const [vision, setVision] = useState<Vision>("none");
+  const [replay, setReplay] = useState(false); // « Rejouer » : anime toutes les icônes une fois
+  const [logo, setLogo] = useState<{ url: string; colors: string[] } | null>(null);
+  const [shot, setShot] = useState<string | null>(null);
+  const [pins, setPins] = useState<Pins>({});
+  const pinN = useRef(0);
   const set = (p: Partial<Cfg>) => setCfg((c) => ({ ...c, ...p }));
   useEffect(() => { if (cfg.style === "fill") a.needFills(); }, [cfg.style]); // eslint-disable-line react-hooks/exhaustive-deps
   // Comparaison avec Lucide : chargée seulement à la demande (paquet volumineux).
@@ -114,11 +124,66 @@ export function Playground() {
   const saved: Saved = { cfg, slots, preset, custom };
   const hash = enc(saved);
   useEffect(() => {
-    store.set("playground", saved);
+    store.set("playground", strip(saved));
     try { history.replaceState(null, "", location.pathname + location.search + "#" + hash); } catch { /* bac à sable */ }
   }, [hash]); // eslint-disable-line react-hooks/exhaustive-deps
-  const choosePreset = (id: string) => { setPreset(id); setSlots({ ...BASE, ...PRESETS.find((p) => p.id === id)!.slots } as Slots); };
-  const reset = () => { setPreset("erp"); setSlots({ ...BASE }); setCfg(DEF); setCustom({}); a.toast(a.tt("Réglages par défaut rétablis", "Defaults restored")); };
+  // Annuler / rétablir : un instantané des réglages par changement (les glissements de curseur comptent pour un).
+  const apply = (v: Saved) => { setCfg(v.cfg); setSlots(v.slots); setPreset(v.preset); setCustom(v.custom ?? {}); };
+  const hist = useRef({ past: [] as Saved[], future: [] as Saved[], last: saved, skip: false, t: 0 });
+  const cur = useRef(saved); cur.current = saved;
+  const [, tick] = useState(0);
+  useEffect(() => {
+    const h = hist.current;
+    if (h.skip) { h.skip = false; h.last = cur.current; return; }
+    const prev = h.last;
+    clearTimeout(h.t);
+    h.t = window.setTimeout(() => { if (enc(prev) !== enc(cur.current)) { h.past.push(prev); if (h.past.length > 80) h.past.shift(); h.future = []; } h.last = cur.current; tick((n) => n + 1); }, 400);
+  }, [hash]);
+  const step = useCallback((back: boolean) => {
+    const h = hist.current;
+    clearTimeout(h.t);
+    if (enc(h.last) !== enc(cur.current)) { h.past.push(h.last); h.future = []; h.last = cur.current; }
+    const from = back ? h.past : h.future, to = back ? h.future : h.past, v = from.pop();
+    if (!v) return;
+    to.push(cur.current); h.last = v;
+    if (enc(v) !== enc(cur.current)) h.skip = true;
+    apply(v); tick((n) => n + 1);
+  }, []);
+  useEffect(() => {
+    const f = (e: KeyboardEvent) => {
+      if (!(e.metaKey || e.ctrlKey) || /^(INPUT|TEXTAREA|SELECT)$/.test((e.target as HTMLElement).tagName)) return;
+      const k = e.key.toLowerCase();
+      if (k === "z") { e.preventDefault(); step(!e.shiftKey); } else if (k === "y") { e.preventDefault(); step(false); }
+    };
+    addEventListener("keydown", f); return () => removeEventListener("keydown", f);
+  }, [step]);
+  // Version 100 % africaine : chaque icône d'interface qui a un équivalent culturel le prend.
+  const africanize = () => {
+    const n = Object.values(slots).filter((v) => AFRICA[v]).length;
+    if (!n) { a.toast(a.tt("Déjà 100 % africain", "Already 100% African")); return; }
+    setSlots((sl) => Object.fromEntries(Object.entries(sl).map(([k, v]) => [k, AFRICA[v] ?? v])));
+    a.toast(a.tt(`${n} icônes remplacées par leur équivalent africain (⌘Z pour annuler)`, `${n} icons replaced by their African counterpart (⌘Z to undo)`));
+  };
+  // Logo importé : affiché dans les maquettes ; ses couleurs deviennent une palette.
+  const loadLogo = (f?: File | null) => {
+    if (!f || !f.type.startsWith("image/")) return;
+    const url = URL.createObjectURL(f);
+    paletteOf(url).then((colors) => { setLogo((o) => { if (o) URL.revokeObjectURL(o.url); return { url, colors }; }); if (colors[0]) set({ primary: colors[0] }); });
+  };
+  const loadShot = useCallback((f: File) => { setShot((o) => { if (o) URL.revokeObjectURL(o); return URL.createObjectURL(f); }); }, []);
+  const clearShot = () => {
+    setShot((o) => { if (o) URL.revokeObjectURL(o); return null; });
+    setPins({}); setSlots((sl) => Object.fromEntries(Object.entries(sl).filter(([k]) => !isPin(k)))); setCustom((m) => Object.fromEntries(Object.entries(m).filter(([k]) => !isPin(k))));
+  };
+  const addPin = (x: number, y: number) => {
+    const k = "u" + ++pinN.current;
+    setPins((p) => ({ ...p, [k]: { x, y } })); setSlots((sl) => ({ ...sl, [k]: "baobab" })); setDtab("swap"); setPick(k);
+  };
+  const removePin = (k: string) => {
+    setPins((p) => { const o = { ...p }; delete o[k]; return o; }); setSlots((sl) => { const o = { ...sl }; delete o[k]; return o; }); setCustom((m) => { const o = { ...m }; delete o[k]; return o; }); setPick(null);
+  };
+  const choosePreset = (id: string) => { setPreset(id); setSlots((sl) => ({ ...BASE, ...PRESETS.find((p) => p.id === id)!.slots, ...Object.fromEntries(Object.entries(sl).filter(([k]) => isPin(k))) }) as Slots); };
+  const reset = () => { setPreset("erp"); setSlots((sl) => ({ ...BASE, ...Object.fromEntries(Object.entries(sl).filter(([k]) => isPin(k))) })); setCfg(DEF); setCustom({}); a.toast(a.tt("Réglages par défaut rétablis", "Defaults restored")); };
   const share = () => a.copy(location.origin + location.pathname + "#" + hash, a.tt("Lien copié : il ouvre le bac à sable avec vos réglages", "Link copied: it opens the playground with your settings"));
   // Une icône culturelle au hasard dans chaque emplacement « africain » (logo, paiement, vitrine, état vide).
   const surprise = () => {
@@ -129,7 +194,24 @@ export function Playground() {
   const ink = cfg.dark ? "#F3EADC" : "#1F1A15", bg = cfg.dark ? "#14110E" : "#FFFFFF", surface = cfg.dark ? "#1E1915" : "#F6F2EA", muted = cfg.dark ? "#A79987" : "#73685B", line = cfg.dark ? "#2F2822" : "#E8DCC8";
   const font = (FONTS.find((f) => f.id === cfg.font) ?? FONTS[0]).css;
   const vars = { "--pp": cfg.primary, "--pink": ink, "--pbg": bg, "--psurf": surface, "--pmuted": muted, "--pline": line, "--prad": cfg.radius + "px", fontFamily: font } as CSSProperties;
+  const iconInk = cfg.tint === "primary" ? cfg.primary : ink;
+  const pairs = (p: string): Pair[] => [
+    { id: "icons", fr: "Icônes sur le fond", en: "Icons on the background", fg: cfg.tint === "primary" ? p : ink, bg, min: 3 },
+    { id: "tint", fr: "Icônes sur pastille colorée", en: "Icons on tinted badge", fg: p, bg: mix(p, bg, 0.12), min: 3 },
+    { id: "btn", fr: "Texte et icônes blancs sur bouton", en: "White text and icons on button", fg: "#FFFFFF", bg: p, min: 4.5 },
+    { id: "muted", fr: "Icônes discrètes (recherche, actions)", en: "Subtle icons (search, actions)", fg: muted, bg, min: 3 },
+  ];
+  const report = pairs(cfg.primary).map((x) => ({ ...x, r: ratio(x.fg, x.bg) }));
+  const fixable = report.some((x) => x.r < x.min && x.id !== "muted");
+  const fix = () => {
+    const c = fixPrimary(cfg.primary, (p) => pairs(p).every((x) => x.id === "muted" || ratio(x.fg, x.bg) >= x.min));
+    if (c) { set({ primary: c }); a.toast(a.tt(`Couleur ajustée : ${c} (⌘Z pour annuler)`, `Colour adjusted: ${c} (⌘Z to undo)`)); }
+    else a.toast(a.tt("Pas de nuance de cette couleur qui passe tous les contrôles : essayez-en une autre.", "No shade of this colour passes every check: try another one."));
+  };
+  void iconInk;
   const nm = (k: string) => { const i = byId[slots[k]]; return i ? (a.lang === "en" ? i.en : i.fr) : ""; };
+  // Libellés de menu et de liste : ceux du thème de départ, même si l'icône change (« Stock » reste « Stock » avec le grenier).
+  const label = (k: string) => { const i = byId[({ ...BASE, ...PRESETS.find((p) => p.id === preset)!.slots } as Slots)[k]]; return i ? (a.lang === "en" ? i.en : i.fr) : nm(k); };
 
   /** Le dessin d'une icône d'emplacement, avec sa personnalisation (couleur, taille, fond, rotation…). */
   const paint = (k: string, s: number, c?: string) => {
@@ -143,6 +225,7 @@ export function Playground() {
   };
   /** Une icône d'emplacement : cliquable pour la remplacer ou la personnaliser. */
   const I = ({ k, s = cfg.size, c }: { k: string; s?: number; c?: string }) => {
+    if (k === "logo" && logo) return <img className="pglogoimg" src={logo.url} alt="" style={{ height: s + 8 }} />;
     const i = byId[slots[k]] ?? byId[BASE[k]];
     const label = a.tt("Remplacer ou personnaliser : ", "Swap or customise: ") + (a.lang === "en" ? i.en : i.fr);
     return <button type="button" className={"pgi" + (pick === k ? " on" : "") + (custom[k] ? " cu" : "")} title={label} aria-label={label} onClick={(e) => { e.stopPropagation(); setPick(k); }}>{paint(k, s, c)}</button>;
@@ -241,6 +324,7 @@ export function Playground() {
     if (tab === "css") return [
       `/* Le thème de cet aperçu, en variables CSS */`, `:root {`, `  --primary: ${cfg.primary};`, `  --text: ${ink};`, `  --background: ${bg};`, `  --surface: ${surface};`, `  --muted: ${muted};`, `  --border: ${line};`, `  --radius: ${cfg.radius}px;`, `  --icon-size: ${cfg.size}px;`, `  --icon-stroke: ${cfg.stroke};`, `}`, "",
       `/* Les icônes Afroicons suivent la couleur du texte (currentColor) */`, `.icon { width: var(--icon-size); height: var(--icon-size); stroke-width: var(--icon-stroke);${cfg.tint === "primary" ? " color: var(--primary);" : ""} }`,
+      ...(cfg.anim !== "none" ? ["", `/* Animation au survol : ${ANIMS.find((x) => x.id === cfg.anim)!.fr.toLowerCase()} */`, animCss(cfg.anim, ".icon:hover svg")] : []),
     ].join("\n");
     return [`<!-- npm install afroicons -->`, `<script type="module">`, `  import { replace } from "afroicons";`, `  replace();`, `</script>`, "",
       ...afro.map((i) => `<i data-afroicon="${i.id}" data-size="${cfg.size}"${isColor(i) ? "" : ` data-stroke="${cfg.stroke}"`}${cfg.style === "fill" && !isColor(i) ? ' data-variant="fill"' : ""}></i>`),
@@ -260,10 +344,15 @@ export function Playground() {
         <aside className="pgctl" onClick={(e) => e.stopPropagation()}>
           <h3>{a.tt("Thème de départ", "Starter set")}</h3>
           <div className="pgchips">{PRESETS.map((p) => <button key={p.id} className={"cat" + (preset === p.id ? " on" : "")} onClick={() => choosePreset(p.id)}>{a.tt(p.fr, p.en)}</button>)}</div>
-          <button className="pglink" onClick={surprise}>{a.tt("✦ Icônes africaines au hasard", "✦ Random African icons")}</button>
+          <div className="pglinks"><button className="pglink" onClick={africanize}>{a.tt("✦ Version 100 % africaine", "✦ 100% African version")}</button><button className="pglink" onClick={surprise}>{a.tt("✦ Au hasard", "✦ Shuffle")}</button></div>
           <h3>{a.tt("Votre marque", "Your brand")}</h3>
           <label className="pgfield"><span>{a.tt("Nom", "Name")}</span><input value={cfg.name} maxLength={24} onChange={(e) => set({ name: e.target.value })} /></label>
           <div className="swat pgswat">{SWATCHES.map((c) => <button key={c} aria-label={c} className={cfg.primary.toLowerCase() === c.toLowerCase() ? "on" : ""} style={{ background: c }} onClick={() => set({ primary: c })} />)}<label className={"pgcustom" + (SWATCHES.some((c) => c.toLowerCase() === cfg.primary.toLowerCase()) ? "" : " on")} title={a.tt("Couleur libre", "Custom colour")} style={{ background: SWATCHES.some((c) => c.toLowerCase() === cfg.primary.toLowerCase()) ? undefined : cfg.primary }}><input type="color" value={cfg.primary} aria-label={a.tt("Couleur libre", "Custom colour")} onChange={(e) => set({ primary: e.target.value })} /></label></div>
+          <div className="pgfield"><span>Logo</span><div className="pglogoin">
+            <label className="btn">{logo ? <img src={logo.url} alt="" /> : null}{logo ? a.tt("Changer", "Change") : a.tt("Importer votre logo", "Import your logo")}<input type="file" accept="image/*" hidden onChange={(e) => { loadLogo(e.target.files?.[0]); e.target.value = ""; }} /></label>
+            {logo && <button className="ib" aria-label={a.tt("Retirer le logo", "Remove logo")} onClick={() => { URL.revokeObjectURL(logo.url); setLogo(null); }}><IClose s={16} /></button>}
+          </div></div>
+          {logo && logo.colors.length > 0 && <div className="pgfield"><span>{a.tt("Ses couleurs", "Its colours")}</span><div className="pgswat2">{logo.colors.map((c) => <button key={c} aria-label={c} title={c} className={cfg.primary.toLowerCase() === c.toLowerCase() ? "on" : ""} style={{ background: c }} onClick={() => set({ primary: c })} />)}</div></div>}
           <label className="pgfield"><span>{a.tt("Police", "Font")}</span><select value={cfg.font} onChange={(e) => set({ font: e.target.value })}>{FONTS.map((f) => <option key={f.id} value={f.id}>{f.n}</option>)}</select></label>
           <div className="pgfield"><span>{a.tt("Mode", "Mode")}</span><div className="seg"><button className={!cfg.dark ? "on" : ""} onClick={() => set({ dark: false })}>{a.tt("Clair", "Light")}</button><button className={cfg.dark ? "on" : ""} onClick={() => set({ dark: true })}>{a.tt("Sombre", "Dark")}</button></div></div>
           <label className="rng"><span>{a.tt("Arrondi", "Radius")}</span><input type="range" min={0} max={24} step={2} value={cfg.radius} onChange={(e) => set({ radius: +e.target.value })} /><output>{cfg.radius}</output></label>
@@ -275,9 +364,25 @@ export function Playground() {
           <label className="rng"><span>{a.tt("Trait", "Stroke")}</span><input type="range" min={1} max={2.5} step={0.25} value={cfg.stroke} onChange={(e) => set({ stroke: +e.target.value })} /><output>{cfg.stroke}</output></label>
           <div className="pgfield"><span>Style</span><div className="seg"><button className={cfg.style === "line" ? "on" : ""} onClick={() => set({ style: "line" })}>{a.tt("Trait", "Line")}</button><button className={cfg.style === "fill" ? "on" : ""} onClick={() => set({ style: "fill" })}>{a.tt("Rempli", "Filled")}</button></div></div>
           <div className="pgfield"><span>{a.tt("Couleur", "Colour")}</span><div className="seg"><button className={cfg.tint === "text" ? "on" : ""} onClick={() => set({ tint: "text" })}>{a.tt("Du texte", "Text")}</button><button className={cfg.tint === "primary" ? "on" : ""} onClick={() => set({ tint: "primary" })}>{a.tt("Principale", "Primary")}</button></div></div>
+          <div className="pgfield"><span>{a.tt("Survol", "Hover")}</span><div className="pganim">
+            <select value={cfg.anim} onChange={(e) => { set({ anim: e.target.value as Anim }); setReplay(true); setTimeout(() => setReplay(false), 900); }}>{ANIMS.map((x) => <option key={x.id} value={x.id}>{a.tt(x.fr, x.en)}</option>)}</select>
+            <button className="btn" disabled={cfg.anim === "none"} onClick={() => { setReplay(false); requestAnimationFrame(() => { setReplay(true); setTimeout(() => setReplay(false), 900); }); }}>{a.tt("Rejouer", "Replay")}</button>
+          </div></div>
           <label className="pgsw"><input type="checkbox" checked={lucide} onChange={(e) => setLucide(e.target.checked)} />{a.tt("Comparer avec Lucide (avant / après)", "Compare with Lucide (before / after)")}</label>
           {lucide && !L && <small className="pgnote">{a.tt("Chargement de Lucide…", "Loading Lucide…")}</small>}
           {lucide && L && <small className="pgnote">{a.tt("Icônes d'interface : version Lucide d'origine. Les icônes culturelles n'ont pas d'équivalent Lucide.", "Interface icons: original Lucide version. Cultural icons have no Lucide equivalent.")}</small>}
+          <h3>{a.tt("Accessibilité", "Accessibility")}</h3>
+          <label className="pgfield"><span>{a.tt("Vision", "Vision")}</span><select value={vision} onChange={(e) => setVision(e.target.value as Vision)}>{VISIONS.map((v) => <option key={v.id} value={v.id}>{a.tt(v.fr, v.en)}</option>)}</select></label>
+          <ul className="pgcontrast">{report.map((x) => (
+            <li key={x.id} className={x.r >= x.min ? "ok" : "ko"} title={a.tt(`Minimum WCAG : ${x.min} : 1`, `WCAG minimum: ${x.min}:1`)}>
+              <span className="pgcsw" style={{ background: x.bg, color: x.fg }}>Aa</span><span>{a.tt(x.fr, x.en)}</span><b>{x.r.toFixed(1)} : 1</b><i>{x.r >= x.min ? "✓" : "✕"}</i>
+            </li>
+          ))}</ul>
+          {fixable ? <button className="btn pgfix" onClick={fix}>{a.tt("Corriger la couleur automatiquement", "Fix the colour automatically")}</button> : <small className="pgnote">{a.tt("Contrastes conformes aux règles WCAG pour les icônes (3 : 1) et le texte des boutons (4,5 : 1).", "Contrast meets WCAG rules for icons (3:1) and button text (4.5:1).")}</small>}
+          <div className="pgacts">
+            <button className="btn" disabled={!hist.current.past.length} onClick={() => step(true)} title="⌘Z">{a.tt("↶ Annuler", "↶ Undo")}</button>
+            <button className="btn" disabled={!hist.current.future.length} onClick={() => step(false)} title="⇧⌘Z">{a.tt("↷ Rétablir", "↷ Redo")}</button>
+          </div>
           <div className="pgacts">
             <button className="btn" onClick={share}>{a.tt("Copier le lien", "Copy link")}</button>
             <button className="btn" onClick={reset}>{a.tt("Réinitialiser", "Reset")}</button>
@@ -286,21 +391,26 @@ export function Playground() {
 
         <div className="pgright">
           <div className="pgviews" role="tablist" aria-label={a.tt("Maquettes", "Mockups")}>
-            {([["all", a.tt("Tout", "All")], ["web", a.tt("Application web", "Web app")], ["mobile", a.tt("Mobile", "Mobile")], ["site", a.tt("Site vitrine", "Website")]] as [View, string][]).map(([v, l]) => <button key={v} role="tab" aria-selected={view === v} className={"cat" + (view === v ? " on" : "")} onClick={() => setView(v)}>{l}</button>)}
+            {([["all", a.tt("Tout", "All")], ["web", a.tt("Application web", "Web app")], ["mobile", a.tt("Mobile", "Mobile")], ["site", a.tt("Site vitrine", "Website")], ["screen", a.tt("✦ Votre écran", "✦ Your screen")]] as [View, string][]).map(([v, l]) => <button key={v} role="tab" aria-selected={view === v} className={"cat" + (view === v ? " on" : "")} onClick={() => setView(v)}>{l}</button>)}
           </div>
           <div className="pghint">
             <span className="pghic" aria-hidden="true">↻</span>
             <p><b>{a.tt("Toutes les icônes ci-dessous sont modifiables.", "Every icon below can be changed.")}</b> {a.tt("Cliquez sur une icône (dans un bouton, le menu, une liste…) pour la remplacer, ou pour la personnaliser : couleur, taille, fond, rotation…", "Click an icon (in a button, the menu, a list…) to swap it, or to customise it: colour, size, background, rotation…")}</p>
             <button className="btn" onClick={(e) => { e.stopPropagation(); setFlash(true); setTimeout(() => setFlash(false), 2400); }}>{a.tt("Les montrer", "Show them")}</button>
           </div>
-          <div className={"pgstage v-" + view + (flash ? " flash" : "")} style={vars}>
+          <VisionFilters />
+          <div className={"pgstage v-" + view + (flash ? " flash" : "") + (cfg.anim !== "none" ? " an-" + cfg.anim : "") + (replay ? " an-play" : "")} style={{ ...vars, filter: VISIONS.find((v) => v.id === vision)!.css || undefined }}>
+            {view === "screen" && <ScreenView image={shot} setImage={loadShot} clear={clearShot} pins={pins}
+              move={(k, x, y) => setPins((p) => ({ ...p, [k]: { x, y } }))} add={addPin} open={(k) => setPick(k)}
+              render={(k) => (slots[k] ? <span className={"pgi" + (pick === k ? " on" : "") + (custom[k] ? " cu" : "")}>{paint(k, cfg.size + 4, cfg.primary)}</span> : null)}
+              frame={(body) => desk("dv-shot", "", body)} />}
             {show("web") && desk("dv-web", "/tableau-de-bord", <div className="pgweb">
               <header className="pgnav"><span className="pglogo"><I k="logo" s={cfg.size + 4} c={cfg.primary} />{cfg.name || DEF.name}</span>
                 <span className="pgsearch"><I k="search" s={cfg.size - 2} c="var(--pmuted)" /><span>{a.tt("Rechercher…", "Search…")}</span></span>
                 <span className="pgnavr"><span className="pgbadge"><I k="bell" /><i>3</i></span><I k="user" s={cfg.size + 4} /></span>
               </header>
               <div className="pgbody">
-                <nav className="pgside">{(["s1", "s2", "s3", "s4", "s5", "s6"] as const).map((k, n) => <span key={k} className={"pgitem" + (n === 0 ? " on" : "")}><I k={k} /><span>{nm(k)}</span></span>)}<span className="pgitem pgout"><I k="s7" /><span>{a.tt("Se déconnecter", "Log out")}</span></span></nav>
+                <nav className="pgside">{(["s1", "s2", "s3", "s4", "s5", "s6"] as const).map((k, n) => <span key={k} className={"pgitem" + (n === 0 ? " on" : "")}><I k={k} /><span>{label(k)}</span></span>)}<span className="pgitem pgout"><I k="s7" /><span>{a.tt("Se déconnecter", "Log out")}</span></span></nav>
                 <main className="pgmain">
                   <div className="pgrow"><h4>{a.tt("Tableau de bord", "Dashboard")}</h4><B k="b2" ghost>{a.tt("Exporter", "Export")}</B><B k="b1">{a.tt("Nouveau", "New")}</B></div>
                   <div className="pgkpis">{([["k1", "2,4 M", "+12 %"], ["k2", "845 000", "FCFA"], ["k3", "128", a.tt("en cours", "pending")]] as const).map(([k, v, s]) => <div key={k} className="pgkpi"><span className="pgkic"><I k={k} c={cfg.primary} /></span><b>{v}</b><small>{s}</small></div>)}</div>
@@ -317,7 +427,7 @@ export function Playground() {
 
             {show("mobile") && phone("pg-ph1", <>
               <div className="pgpbar"><I k="menu" /><b>{cfg.name || DEF.name}</b><span className="pgbadge"><I k="bell" /><i>3</i></span></div>
-              <div className="pglist">{(["l1", "l2", "l3", "l4"] as const).map((k) => <div key={k} className="pgli"><span className="pgkic"><I k={k} c={cfg.primary} /></span><div><b>{nm(k)}</b><small>{a.tt("Il y a 2 h", "2 h ago")}</small></div></div>)}</div>
+              <div className="pglist">{(["l1", "l2", "l3", "l4"] as const).map((k) => <div key={k} className="pgli"><span className="pgkic"><I k={k} c={cfg.primary} /></span><div><b>{label(k)}</b><small>{a.tt("Il y a 2 h", "2 h ago")}</small></div></div>)}</div>
               <span className="pgfab"><I k="fab" c="#fff" s={cfg.size + 2} /></span>
               {/* Barre d'onglets : libellés courts fixes, comme une vraie application (le nom des icônes serait coupé). */}
               <nav className="tabb pgtabs">{(["t1", "t2", "t3", "t4", "t5"] as const).map((k, n) => <span key={k} className={n === 0 ? "on" : ""}><I k={k} c={n === 0 ? cfg.primary : undefined} />{[a.tt("Accueil", "Home"), a.tt("Ventes", "Sales"), "Wallet", "Messages", a.tt("Profil", "Profile")][n]}</span>)}</nav>
@@ -368,6 +478,7 @@ export function Playground() {
         resetCust={() => setCustom((m) => { const o = { ...m }; delete o[pick]; return o; })}
         total={Object.keys(custom).length}
         resetAll={() => { setCustom({}); a.toast(a.tt("Toutes les personnalisations sont effacées", "All customisations cleared")); }}
+        african={AFRICA[slots[pick]]} remove={isPin(pick) ? () => removePin(pick) : undefined}
         applyAll={() => { const cu = custom[pick]; if (!cu) return; setCustom(Object.fromEntries(Object.keys(BASE).map((k) => [k, cu]))); a.toast(a.tt("Appliqué à toutes les icônes", "Applied to every icon")); }} />}
 
       <div className="code pgcode" onClick={(e) => e.stopPropagation()}>
@@ -392,9 +503,9 @@ const COLS: { id: Collection | "all"; fr: string; en: string; list: Icon[] }[] =
 ];
 type PickerProps = {
   onClose: () => void; onPick: (id: string) => void; current: string; tab: "swap" | "edit"; setTab: (t: "swap" | "edit") => void;
-  cfg: Cfg; preview: JSX.Element; cust: Cust; setCust: (p: Partial<Cust>) => void; resetCust: () => void; applyAll: () => void; resetAll: () => void; total: number;
+  cfg: Cfg; preview: JSX.Element; cust: Cust; setCust: (p: Partial<Cust>) => void; resetCust: () => void; applyAll: () => void; resetAll: () => void; total: number; african?: string; remove?: () => void;
 };
-function Picker({ onClose, onPick, current, tab, setTab, cfg, preview, cust, setCust, resetCust, applyAll, resetAll, total }: PickerProps) {
+function Picker({ onClose, onPick, current, tab, setTab, cfg, preview, cust, setCust, resetCust, applyAll, resetAll, total, african, remove }: PickerProps) {
   const a = useApp();
   const icon = byId[current];
   const [q, setQ] = useState("");
@@ -413,6 +524,8 @@ function Picker({ onClose, onPick, current, tab, setTab, cfg, preview, cust, set
         </div>
         {tab === "edit" ? <Customize icon={icon} cfg={cfg} preview={preview} cust={cust} set={setCust} reset={resetCust} applyAll={applyAll} resetAll={resetAll} total={total} /> : <>
         <div className="pgpickh"><label className="sbox"><ISearch s={18} /><input autoFocus value={q} onChange={(e) => setQ(e.target.value)} onKeyDown={(e) => e.key === "Enter" && list[0] && onPick(list[0].id)} placeholder={a.tt("Chercher : panier, cauri, bell…", "Search: basket, cowrie, bell…")} /></label></div>
+        {african && <button className="pgafr" onClick={() => onPick(african)}><Svg i={byId[african]} o={{ s: 22 }} /><span>{a.tt("Équivalent africain : ", "African counterpart: ")}<b>{a.lang === "en" ? byId[african].en : byId[african].fr}</b></span><em>{a.tt("Utiliser", "Use")}</em></button>}
+        {remove && <button className="pgafr del" onClick={remove}><span>{a.tt("Retirer cette icône de la capture", "Remove this icon from the screenshot")}</span></button>}
         <div className="pgchips pgpickc">{COLS.map((c) => <button key={c.id} className={"cat" + (col === c.id ? " on" : "")} onClick={() => setCol(c.id)}>{a.tt(c.fr, c.en)}</button>)}</div>
         <div className="pgpickg">{list.length ? list.map((i) => <button key={i.id} className={i.id === current ? "on" : ""} title={a.lang === "en" ? i.en : i.fr} onClick={() => onPick(i.id)}><Svg i={i} o={{ s: 24 }} /><small>{a.lang === "en" ? i.en : i.fr}</small></button>) : <p className="pgnote">{a.tt("Aucune icône trouvée.", "No icon found.")}</p>}</div>
         </>}
