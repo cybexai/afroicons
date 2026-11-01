@@ -33,7 +33,7 @@ let depth = 0, factsEnd = factsStart;
 for (; factsEnd < i18n.length; factsEnd++) { if (i18n[factsEnd] === "{") depth++; if (i18n[factsEnd] === "}" && !--depth) break; }
 const FACTS = JSON.parse(i18n.slice(factsStart, factsEnd + 1));
 
-const CATS = { nature: "Nature & paysages", faune: "Faune", musique: "Musique & arts", symboles: "Symboles & textiles", cuisine: "Cuisine", vie: "Vie quotidienne", architecture: "Architecture", personnes: "Peuples et tenues", drapeaux: "Drapeaux", emojis: "Emojis", interface: "Interface" };
+const CATS = { nature: "Nature & paysages", faune: "Faune", musique: "Musique & arts", symboles: "Symboles & textiles", cuisine: "Cuisine", vie: "Vie quotidienne", architecture: "Architecture", personnes: "Peuples et tenues", cartes: "Cartes des pays", drapeaux: "Drapeaux", emojis: "Emojis", interface: "Interface" };
 const EGROUP = { visages: "visages", mains: "mains", personnes: "personnes", coeurs: "cœurs et symboles", animaux: "animaux", nature: "nature", fruits: "fruits et légumes", nourriture: "nourriture", boissons: "boissons", objets: "objets et cultures", lieux: "villages et lieux" };
 const REG = { pan: "toute l'Afrique", ouest: "Afrique de l'Ouest", centre: "Afrique centrale", est: "Afrique de l'Est", nord: "Afrique du Nord", australe: "Afrique australe" };
 const pascal = (id) => id.replace(/(^|[-_])(\w)/g, (_, a, b) => b.toUpperCase());
@@ -52,14 +52,15 @@ const draw = (i, body, size = 120, idSuffix = "") =>
 
 function describe(i) {
   if (i.cat === "emojis") return `Emoji ${i.char ? `${i.char} ` : "africain original "}« ${i.fr} » (${i.en}) en SVG, dessiné dans le style Afroicons${i.tone ? ", dans les 5 teintes de peau Unicode" : ""}. Gratuit pour React, Angular et HTML, licence MIT.`;
-  if (i.iso) return `${i.fr} (${i.iso}) en SVG, aux couleurs officielles. Icône gratuite pour React, Angular et HTML, lisible dès 16 px. ${REG[i.region][0].toUpperCase() + REG[i.region].slice(1)}. Licence MIT.`;
+  if (i.cat === "cartes") return `${i.fr} (${i.iso}) : le contour du pays en icône SVG, au trait ou remplie, pour React, Angular et HTML. Tracée d'après Natural Earth (domaine public), frontières de l'ONU. Licence MIT.`;
+  if (i.cat === "drapeaux") return `${i.fr} (${i.iso}) en SVG, aux couleurs officielles. Icône gratuite pour React, Angular et HTML, lisible dès 16 px. ${REG[i.region][0].toUpperCase() + REG[i.region].slice(1)}. Licence MIT.`;
   if (i.lucide) return `Icône SVG « ${i.fr} » (${i.en}) dans le style Afroicons, compatible Lucide : remplacez l'import de lucide-react par afroicons-ui.${i.afro ? " " + i.afro : ""} Libre et gratuite, licence MIT.`;
   const fact = FACTS[i.id]?.[0];
   return `Icône SVG « ${i.fr} » (${i.en}), ${CATS[i.cat].toLowerCase()}, ${REG[i.region] ?? "Afrique"}. Au trait ou remplie, pour React, Angular et HTML. Libre et gratuite, licence MIT.${fact ? " " + fact : ""}`.slice(0, 300);
 }
 
 // Les compteurs de l'accueil (description, partage) sont calculés ici : ils suivent les icônes ajoutées.
-const counts = { __TOTAL__: icons.length, __FLAGS__: icons.filter((i) => i.iso).length, __EMOJIS__: icons.filter((i) => i.cat === "emojis").length };
+const counts = { __TOTAL__: icons.length, __FLAGS__: icons.filter((i) => i.cat === "drapeaux").length, __EMOJIS__: icons.filter((i) => i.cat === "emojis").length };
 const template = readFileSync(join(dist, "index.html"), "utf8").replace(/__(TOTAL|FLAGS|EMOJIS)__/g, (m) => counts[m]);
 writeFileSync(join(dist, "index.html"), template);
 function page({ path, title, desc, canonical, body, app = true }) {
@@ -89,11 +90,11 @@ for (const i of icons) {
   const fact = FACTS[i.id];
   const code = i.lucide
     ? `npm install afroicons-ui lucide-react\n\nimport { ${i.lucide} } from "afroicons-ui";\n\n<${i.lucide} size={24} />`
-    : `npm install afroicons-react\n\nimport { ${pascal(i.id)} } from "afroicons-react";\n\n<${pascal(i.id)} size={24} />${i.iso || i.cat === "emojis" ? "" : `\n<${pascal(i.id)} variant="fill" />`}${i.tone ? `\n<${pascal(i.id)} tone="light" />  // light, medium-light, medium, medium-dark (par défaut), dark` : ""}`;
+    : `npm install afroicons-react\n\nimport { ${pascal(i.id)} } from "afroicons-react";\n\n<${pascal(i.id)} size={24} />${i.cat === "drapeaux" || i.cat === "emojis" ? "" : `\n<${pascal(i.id)} variant="fill" />`}${i.tone ? `\n<${pascal(i.id)} tone="light" />  // light, medium-light, medium, medium-dark (par défaut), dark` : ""}`;
   const links = (list) => `<ul class="g">${list.map((x) => `<li><a href="/icones/${x.slug}/">${esc(x.fr)}</a></li>`).join("")}</ul>`;
   page({
     path: `icones/${i.slug}`,
-    title: i.cat === "emojis" ? `${i.char ? i.char + " " : ""}${i.fr} — emoji SVG gratuit | Afroicons` : i.iso ? `${i.fr} — SVG gratuit, couleurs officielles | Afroicons` : `${i.fr} — icône SVG gratuite${i.lucide ? " compatible Lucide" : ""} | Afroicons`,
+    title: i.cat === "emojis" ? `${i.char ? i.char + " " : ""}${i.fr} — emoji SVG gratuit | Afroicons` : i.cat === "drapeaux" ? `${i.fr} — SVG gratuit, couleurs officielles | Afroicons` : `${i.fr} — icône SVG gratuite${i.lucide ? " compatible Lucide" : ""} | Afroicons`,
     desc: describe(i),
     canonical: url(i),
     body: `${nav}

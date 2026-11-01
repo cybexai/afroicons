@@ -729,6 +729,114 @@ export declare const Kakaki: Afroicon;
 export declare const Algaita: Afroicon;
 /** Timbila · Timbila */
 export declare const Timbila: Afroicon;
+/** Carte de l'Algérie · Map of Algeria */
+export declare const CarteAlgerie: Afroicon;
+/** Carte de l'Angola · Map of Angola */
+export declare const CarteAngola: Afroicon;
+/** Carte du Bénin · Map of Benin */
+export declare const CarteBenin: Afroicon;
+/** Carte du Botswana · Map of Botswana */
+export declare const CarteBotswana: Afroicon;
+/** Carte du Burkina Faso · Map of Burkina Faso */
+export declare const CarteBurkinaFaso: Afroicon;
+/** Carte du Burundi · Map of Burundi */
+export declare const CarteBurundi: Afroicon;
+/** Carte du Cap-Vert · Map of Cabo Verde */
+export declare const CarteCapVert: Afroicon;
+/** Carte du Cameroun · Map of Cameroon */
+export declare const CarteCameroun: Afroicon;
+/** Carte de la Centrafrique · Map of the Central African Republic */
+export declare const CarteCentrafrique: Afroicon;
+/** Carte du Tchad · Map of Chad */
+export declare const CarteTchad: Afroicon;
+/** Carte des Comores · Map of the Comoros */
+export declare const CarteComores: Afroicon;
+/** Carte du Congo · Map of the Republic of the Congo */
+export declare const CarteCongo: Afroicon;
+/** Carte de la RD Congo · Map of the Democratic Republic of the Congo */
+export declare const CarteRdCongo: Afroicon;
+/** Carte de la Côte d'Ivoire · Map of Côte d'Ivoire */
+export declare const CarteCoteDIvoire: Afroicon;
+/** Carte de Djibouti · Map of Djibouti */
+export declare const CarteDjibouti: Afroicon;
+/** Carte de l'Égypte · Map of Egypt */
+export declare const CarteEgypte: Afroicon;
+/** Carte de la Guinée équatoriale · Map of Equatorial Guinea */
+export declare const CarteGuineeEquatoriale: Afroicon;
+/** Carte de l'Érythrée · Map of Eritrea */
+export declare const CarteErythree: Afroicon;
+/** Carte de l'Eswatini · Map of Eswatini */
+export declare const CarteEswatini: Afroicon;
+/** Carte de l'Éthiopie · Map of Ethiopia */
+export declare const CarteEthiopie: Afroicon;
+/** Carte du Gabon · Map of Gabon */
+export declare const CarteGabon: Afroicon;
+/** Carte de la Gambie · Map of the Gambia */
+export declare const CarteGambie: Afroicon;
+/** Carte du Ghana · Map of Ghana */
+export declare const CarteGhana: Afroicon;
+/** Carte de la Guinée · Map of Guinea */
+export declare const CarteGuinee: Afroicon;
+/** Carte de la Guinée-Bissau · Map of Guinea-Bissau */
+export declare const CarteGuineeBissau: Afroicon;
+/** Carte du Kenya · Map of Kenya */
+export declare const CarteKenya: Afroicon;
+/** Carte du Lesotho · Map of Lesotho */
+export declare const CarteLesotho: Afroicon;
+/** Carte du Liberia · Map of Liberia */
+export declare const CarteLiberia: Afroicon;
+/** Carte de la Libye · Map of Libya */
+export declare const CarteLibye: Afroicon;
+/** Carte de Madagascar · Map of Madagascar */
+export declare const CarteMadagascar: Afroicon;
+/** Carte du Malawi · Map of Malawi */
+export declare const CarteMalawi: Afroicon;
+/** Carte du Mali · Map of Mali */
+export declare const CarteMali: Afroicon;
+/** Carte de la Mauritanie · Map of Mauritania */
+export declare const CarteMauritanie: Afroicon;
+/** Carte de Maurice · Map of Mauritius */
+export declare const CarteMaurice: Afroicon;
+/** Carte du Maroc · Map of Morocco */
+export declare const CarteMaroc: Afroicon;
+/** Carte du Mozambique · Map of Mozambique */
+export declare const CarteMozambique: Afroicon;
+/** Carte de la Namibie · Map of Namibia */
+export declare const CarteNamibie: Afroicon;
+/** Carte du Niger · Map of Niger */
+export declare const CarteNiger: Afroicon;
+/** Carte du Nigeria · Map of Nigeria */
+export declare const CarteNigeria: Afroicon;
+/** Carte de l'Ouganda · Map of Uganda */
+export declare const CarteOuganda: Afroicon;
+/** Carte du Rwanda · Map of Rwanda */
+export declare const CarteRwanda: Afroicon;
+/** Carte de Sao Tomé-et-Principe · Map of São Tomé and Príncipe */
+export declare const CarteSaoTomeEtPrincipe: Afroicon;
+/** Carte du Sénégal · Map of Senegal */
+export declare const CarteSenegal: Afroicon;
+/** Carte des Seychelles · Map of the Seychelles */
+export declare const CarteSeychelles: Afroicon;
+/** Carte de la Sierra Leone · Map of Sierra Leone */
+export declare const CarteSierraLeone: Afroicon;
+/** Carte de la Somalie · Map of Somalia */
+export declare const CarteSomalie: Afroicon;
+/** Carte de l'Afrique du Sud · Map of South Africa */
+export declare const CarteAfriqueDuSud: Afroicon;
+/** Carte du Soudan du Sud · Map of South Sudan */
+export declare const CarteSoudanDuSud: Afroicon;
+/** Carte du Soudan · Map of Sudan */
+export declare const CarteSoudan: Afroicon;
+/** Carte de la Tanzanie · Map of Tanzania */
+export declare const CarteTanzanie: Afroicon;
+/** Carte du Togo · Map of Togo */
+export declare const CarteTogo: Afroicon;
+/** Carte de la Tunisie · Map of Tunisia */
+export declare const CarteTunisie: Afroicon;
+/** Carte de la Zambie · Map of Zambia */
+export declare const CarteZambie: Afroicon;
+/** Carte du Zimbabwe · Map of Zimbabwe */
+export declare const CarteZimbabwe: Afroicon;
 /** Drapeau de l'Algérie · Flag of Algeria */
 export declare const DrapeauAlgerie: Afroicon;
 /** Drapeau de l'Angola · Flag of Angola */

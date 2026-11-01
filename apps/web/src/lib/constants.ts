@@ -7,7 +7,7 @@ import COMPAT from "../../../../src/compat.json";
 export const COMPAT_NAMES = COMPAT as Record<string, { mui: string[]; antd: string[] }>;
 
 /** Une icône du site : icône Afroicons, ou icône d'interface (paquet afroicons-ui, nom Lucide dans `lucide`). */
-export type Icon = Omit<AfroiconData, "id" | "cat" | "region" | "fill" | "variantOf" | "group" | "icon" | "emoji"> & { group?: string; icon?: string; emoji?: string; id: string; cat: string; region: string; fill?: string; variantOf?: string; lucide?: string; family?: string; _hay?: string; _n?: string };
+export type Icon = Omit<AfroiconData, "id" | "cat" | "region" | "fill" | "variantOf" | "group" | "icon" | "emoji" | "flag" | "map"> & { group?: string; icon?: string; emoji?: string; flag?: string; map?: string; id: string; cat: string; region: string; fill?: string; variantOf?: string; lucide?: string; family?: string; _hay?: string; _n?: string };
 /** Les drapeaux gardent leurs couleurs officielles : ni couleur, ni style, ni épaisseur ne s'y appliquent. */
 export const isFlag = (i: Icon) => i.cat === "drapeaux";
 /** Les emojis aussi sont en couleur ; ceux qui ont une teinte de peau (tone) existent dans les 5 teintes Unicode. */
@@ -40,7 +40,7 @@ export type CityId = keyof typeof CITIES;
 
 /** Version affichée (0.4 pour 0.4.0), lue dans package.json au build. */
 export const VERSION = __AFROICONS_VERSION__.split(".").slice(0, 2).join(".");
-const ORDER = ["nature", "faune", "musique", "symboles", "cuisine", "vie", "architecture", "personnes"];
+const ORDER = ["nature", "faune", "musique", "symboles", "cuisine", "vie", "architecture", "personnes", "cartes"];
 /** Les icônes culturelles (paquets afroicons et afroicons-react). */
 export const AFRO: Icon[] = (AFRO_DATA as Icon[]).filter((i) => !isColor(i)).sort((a, b) => ORDER.indexOf(a.cat) - ORDER.indexOf(b.cat));
 /** Les drapeaux des 54 pays, par ordre alphabétique (même paquets ; leur version remplie est la même). */
@@ -78,6 +78,7 @@ export const CATS = [
   { id: "vie", fr: "Vie quotidienne", en: "Daily life", ic: "mototaxi" },
   { id: "architecture", fr: "Architecture", en: "Architecture", ic: "case" },
   { id: "personnes", fr: "Peuples et tenues", en: "Peoples & attire", ic: "tresses" },
+  { id: "cartes", fr: "Cartes des pays", en: "Country maps", ic: "carte-cameroun" },
   { id: "interface", fr: "Interface", en: "Interface", ic: "ui-layout-dashboard" },
   { id: "drapeaux", fr: "Drapeaux", en: "Flags", ic: "drapeau-cameroun" },
   { id: "emojis", fr: "Emojis", en: "Emojis", ic: "drapeau-cameroun" },

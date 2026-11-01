@@ -1,6 +1,6 @@
 <p align="center"><img src="docs/logo.svg" width="96" alt="Afroicons"></p>
 <h1 align="center">Afroicons</h1>
-<p align="center"><b>Des icônes libres qui racontent l'Afrique.</b><br>364 icônes culturelles, au trait et remplies, + les 54 drapeaux africains + 372 emojis + 177 icônes d'interface · grille 24 px · FR / EN · open source (MIT)</p>
+<p align="center"><b>Des icônes libres qui racontent l'Afrique.</b><br>418 icônes culturelles, au trait et remplies (dont les cartes des 54 pays), + les 54 drapeaux africains + 372 emojis + 177 icônes d'interface · grille 24 px · FR / EN · open source (MIT)</p>
 <p align="center"><a href="https://afroicons.org"><b>afroicons.org</b></a></p>
 <p align="center">
   <a href="LICENSE"><img alt="Licence MIT" src="https://img.shields.io/badge/licence-MIT-C24E2A"></a>
@@ -79,6 +79,7 @@ replace();
 | Vie quotidienne | 56 | moto-taxi, chaise en plastique, bassine émaillée, fourneau à charbon |
 | Architecture | 23 | Djenné, case obus, Lalibela, Tiébélé, Ganvié, toguna |
 | Peuples et tenues | 27 | massaï, touareg, peule, habesha, ndebele, wolof, haoussa, griot |
+| Cartes des pays | 54 | le contour de chaque pays africain (`carte-cameroun`), relié à son drapeau ; d'après Natural Earth (domaine public) |
 | Drapeaux | 54 | les 54 États africains membres de l'ONU, aux couleurs officielles |
 | Emojis | 372 | 119 emojis Unicode redessinés (😀 👍 ❤️ 🐘 🥭…, visages et mains dans les 5 teintes de peau) et 253 emojis africains originaux : peuples et tenues, villages, 86 plats, 22 boissons, fruits et légumes, animaux, instruments de musique, vie quotidienne, paysages et symboles. Chaque emoji africain a son icône au trait équivalente (champ `emoji` / `icon`) |
 

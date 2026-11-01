@@ -112,7 +112,7 @@ const Card = memo(function Card({ i, idx, focusIdx, fav, sel, anim, o }: CardPro
     <div className={"card" + (sel ? " sel" : "")} style={{ ["--i" as string]: anim ? Math.min(idx, 40) : 0, animation: anim ? undefined : "none", color: a.color ?? "var(--ink)" }} onClick={onClick}>
       <button className="hit" data-idx={idx} tabIndex={idx === Math.max(0, focusIdx) ? 0 : -1} aria-label={nm(i) + (sel ? a.tt(", sélectionnée", ", selected") : "")} />
       {isNew(i) && <span className="new" aria-hidden="true">{a.tt("NOUVEAU", "NEW")}</span>}
-      <Svg className="ico" i={i} o={o} /><span className="nm" aria-hidden="true">{isFlag(i) ? i.country![a.lang] : nm(i)}</span>
+      <Svg className="ico" i={i} o={o} /><span className="nm" aria-hidden="true">{i.country ? i.country[a.lang] : nm(i)}</span>
       <span className="qa">
         <button className={"fav" + (fav ? " on" : "")} data-act="fav" tabIndex={-1} aria-pressed={fav} aria-label={(fav ? a.t("remFav") : a.t("addFav")) + " : " + nm(i)} title={a.t("fav")}><IHeart s={15} on={fav} /></button>
         <button data-act="copy" tabIndex={-1} aria-label={a.t("cSvg") + " : " + nm(i)} title={a.t("cSvg")}><ICopy s={15} /></button>

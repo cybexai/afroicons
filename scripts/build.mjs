@@ -8,7 +8,8 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 // Icônes culturelles, drapeaux (scripts/flags.mjs) et emojis (scripts/emojis.mjs). Drapeaux et emojis sont en couleur :
 // leur version remplie est la même. Les emojis à teinte de peau (tone) existent dans les 5 teintes Unicode.
 const readJson = (f) => { try { return JSON.parse(readFileSync(join(root, f), "utf8")); } catch { return []; } };
-const icons = [...JSON.parse(readFileSync(join(root, "src/icons.json"), "utf8")), ...JSON.parse(readFileSync(join(root, "src/flags.json"), "utf8")), ...readJson("src/emojis.json")];
+// Cartes des pays (scripts/cartes.mjs, d'après Natural Earth) : icônes au trait, reliées au drapeau du pays.
+const icons = [...JSON.parse(readFileSync(join(root, "src/icons.json"), "utf8")), ...readJson("src/cartes.json"), ...JSON.parse(readFileSync(join(root, "src/flags.json"), "utf8")), ...readJson("src/emojis.json")];
 const { TONES, DEFAULT_TONE } = await import("./emojis/lib.mjs");
 const [SK0, SK1, SK2] = TONES[DEFAULT_TONE];
 const version = JSON.parse(readFileSync(join(root, "package.json"), "utf8")).version;
@@ -51,7 +52,8 @@ writeFileSync(join(A, "sprite.svg"),
   `<svg xmlns="http://www.w3.org/2000/svg" style="display:none">\n${icons.map((i) => `  <symbol id="afroicon-${i.id}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${STROKE}" stroke-linecap="round" stroke-linejoin="round">${i.body}</symbol>`).join("\n")}\n</svg>\n`);
 // Lien icône ↔ emoji : une icône culturelle peut porter « emoji » (son équivalent en couleur) ; l'emoji reçoit « icon ».
 const iconOf = Object.fromEntries(icons.filter((i) => i.emoji).map((i) => [i.emoji, i.id]));
-const meta = icons.map(({ id, fr, en, cat, region, tags, since, variantOf, iso, country, char, group, tone, emoji, body, fill }) => ({ id, fr, en, cat, region, tags, since, ...(variantOf ? { variantOf } : {}), ...(iso ? { iso, country } : {}), ...(cat === "emojis" ? { char, group, tone, ...(iconOf[id] ? { icon: iconOf[id] } : {}) } : {}), ...(emoji ? { emoji } : {}), body, fill }));
+const mapOf = Object.fromEntries(icons.filter((i) => i.flag).map((i) => [i.flag, i.id]));
+const meta = icons.map(({ id, fr, en, cat, region, tags, since, variantOf, iso, country, flag, char, group, tone, emoji, body, fill }) => ({ id, fr, en, cat, region, tags, since, ...(variantOf ? { variantOf } : {}), ...(iso ? { iso, country } : {}), ...(flag ? { flag } : {}), ...(mapOf[id] ? { map: mapOf[id] } : {}), ...(cat === "emojis" ? { char, group, tone, ...(iconOf[id] ? { icon: iconOf[id] } : {}) } : {}), ...(emoji ? { emoji } : {}), body, fill }));
 writeFileSync(join(A, "icons.json"), JSON.stringify(meta, null, 1));
 // Pour le site : les versions remplies à part, chargées seulement quand on en a besoin (−17 Ko gzip au démarrage).
 const G = join(root, "apps/web/src/generated");
@@ -93,12 +95,12 @@ export default { icons, names, tones, defaultTone, toSvg, replace };
 `);
 writeFileSync(join(A, "index.d.ts"),
 `export type AfroiconName =\n${icons.map((i) => `  | "${i.id}"`).join("\n")};
-export type AfroiconCategory = "nature" | "faune" | "musique" | "symboles" | "cuisine" | "vie" | "architecture" | "personnes" | "drapeaux" | "emojis";
+export type AfroiconCategory = "nature" | "faune" | "musique" | "symboles" | "cuisine" | "vie" | "architecture" | "personnes" | "cartes" | "drapeaux" | "emojis";
 /** Teinte de peau Unicode d'un emoji (🏻 à 🏿). Par défaut : "medium-dark". */
 export type AfroiconTone = "light" | "medium-light" | "medium" | "medium-dark" | "dark";
 export type AfroiconEmojiGroup = "visages" | "mains" | "personnes" | "coeurs" | "animaux" | "nature" | "fruits" | "nourriture" | "boissons" | "objets" | "lieux";
 export type AfroiconRegion = "pan" | "ouest" | "centre" | "est" | "nord" | "australe";
-export interface AfroiconData { id: AfroiconName; fr: string; en: string; cat: AfroiconCategory; region: AfroiconRegion; tags: string[]; since: string; /** Icône dont celle-ci est une variante (épluchée, coupée, ouverte…). */ variantOf?: AfroiconName; /** Drapeaux : code ISO du pays et son nom. */ iso?: string; country?: { fr: string; en: string }; /** Emojis : caractère Unicode équivalent (null pour un emoji africain original), groupe, et teinte de peau réglable. */ char?: string | null; group?: AfroiconEmojiGroup; tone?: boolean; /** Icône au trait équivalente (pour un emoji) ou emoji équivalent (pour une icône). */ icon?: AfroiconName; emoji?: AfroiconName; /** Dessin au trait. */ body: string; /** Version remplie. */ fill: string; }
+export interface AfroiconData { id: AfroiconName; fr: string; en: string; cat: AfroiconCategory; region: AfroiconRegion; tags: string[]; since: string; /** Icône dont celle-ci est une variante (épluchée, coupée, ouverte…). */ variantOf?: AfroiconName; /** Drapeaux : code ISO du pays et son nom. */ iso?: string; country?: { fr: string; en: string }; /** Emojis : caractère Unicode équivalent (null pour un emoji africain original), groupe, et teinte de peau réglable. */ char?: string | null; group?: AfroiconEmojiGroup; tone?: boolean; /** Icône au trait équivalente (pour un emoji) ou emoji équivalent (pour une icône). */ icon?: AfroiconName; emoji?: AfroiconName; /** Carte d'un pays : son drapeau ; drapeau : la carte du pays. */ flag?: AfroiconName; map?: AfroiconName; /** Dessin au trait. */ body: string; /** Version remplie. */ fill: string; }
 export const icons: Record<AfroiconName, AfroiconData>;
 export const names: AfroiconName[];
 export type AfroiconVariant = "line" | "fill";
@@ -149,7 +151,7 @@ for (const i of icons) {
 }
 writeFileSync(join(Rd, "index.js"), js);
 writeFileSync(join(Rd, "index.d.ts"), dts);
-console.log(`✔ ${icons.length} icônes (dont ${icons.filter((i) => i.iso).length} drapeaux) → packages/afroicons, packages/afroicons-react`);
+console.log(`✔ ${icons.length} icônes (dont ${icons.filter((i) => i.cat === "drapeaux").length} drapeaux, ${icons.filter((i) => i.cat === "cartes").length} cartes) → packages/afroicons, packages/afroicons-react`);
 
 /* ---------- afroicons-ui (icônes d'interface, compatibles lucide-react) ---------- */
 // Mêmes noms et mêmes props que lucide-react : on remplace l'import, rien d'autre.

@@ -117,7 +117,11 @@ export function Drawer() {
             <div id="dBig" ref={big}><Svg key={ic.id + a.style} i={ic} o={{ s: line ? 212 : 180, c: fg, style: a.style, w: a.stroke, bg: a.badgeBg }} /></div>
           </div>
           <div className="dsizes">{[16, 20, 24, 32, 48].map((s) => <div key={s} style={{ color: a.ink }}><Svg i={ic} o={{ s, style: a.style, w: a.stroke, bg: a.badgeBg, c: line ? "currentColor" : a.color ?? "#fff" }} /><small>{s}</small></div>)}</div>
-          {(() => { const twin = ic.emoji ?? ic.icon; return twin && byId[twin] ? <button className="btn sm dtwin" onClick={() => a.openIcon(twin)}><Svg i={byId[twin]} o={{ s: 20 }} />{ic.emoji ? a.tt("Voir l'emoji", "See the emoji") : a.tt("Voir l'icône au trait", "See the line icon")}</button> : null; })()}
+          {(() => {
+            // Équivalents : emoji ↔ icône au trait, carte du pays ↔ drapeau.
+            const twins = ([[ic.emoji, a.tt("Voir l'emoji", "See the emoji")], [ic.icon, a.tt("Voir l'icône au trait", "See the line icon")], [ic.flag, a.tt("Voir le drapeau", "See the flag")], [ic.map, a.tt("Voir la carte du pays", "See the country map")]] as const).filter(([t]) => t && byId[t]);
+            return twins.length ? <div className="dtwins">{twins.map(([t, l]) => <button key={t} className="btn sm dtwin" onClick={() => a.openIcon(t!)}><Svg i={byId[t!]} o={{ s: 20 }} />{l}</button>)}</div> : null;
+          })()}
           {ic.tone && <div className="dtone">{a.tt("Teinte de peau", "Skin tone")}<span className="tones" role="radiogroup" aria-label={a.tt("Teinte de peau", "Skin tone")}>{TONE_LIST.map((t) => <button key={t.id} role="radio" aria-checked={app.tone === t.id} aria-label={a.tt(t.fr, t.en)} title={a.tt(t.fr, t.en) + (ic.char ? " " + ic.char + t.mod : "")} className={app.tone === t.id ? "on" : ""} style={{ background: TONES[t.id][0] }} onClick={() => app.setTone(t.id)} />)}</span></div>}
           {!isColor(ic) && <details className="dcust" open={custOpen} onToggle={(e) => setCustOpen((e.target as HTMLDetailsElement).open)}>
             <summary><ISliders s={16} />{a.tt("Personnaliser", "Customise")}<small>{a.tt("pour cette icône", "for this icon")}</small><IChevron s={14} w={2.4} /></summary>

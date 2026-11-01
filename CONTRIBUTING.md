@@ -88,6 +88,10 @@ Les 54 drapeaux sont décrits dans `scripts/flags.mjs` (bandes, étoiles, croiss
 
 Les emojis sont dessinés dans `scripts/emojis/*.mjs` avec la boîte à outils `scripts/emojis/lib.mjs` (palette, visages, bustes, mains, vaisselle). Couleur à plat et contour arrondi ; la peau s'écrit avec `SKIN` et `SKIN_SHADE` (et `tone: true`) pour exister dans les 5 teintes Unicode. Pas d'identifiant SVG, pas de dégradé, pas de texte. `node scripts/emojis.mjs --sheet` vérifie les entrées, régénère `src/emojis.json` et écrit une planche de contrôle (`emojis-planche.html`) à joindre à la pull request.
 
+## Cartes des pays
+
+Les 54 cartes sont générées par `scripts/cartes.mjs` à partir de Natural Earth « Admin 0 – Countries » 1:50m (domaine public), à télécharger à part : `node scripts/cartes.mjs <chemin>/ne_50m_admin_0_countries.geojson` régénère `src/cartes.json`. Frontières de la liste des États membres de l'ONU, comme les drapeaux.
+
 ## Ajouter une icône d'interface (`afroicons-ui`)
 
 `afroicons-ui` remplace `lucide-react` sans changer le code : chaque icône garde **exactement le nom Lucide** (`Wallet`, `ShoppingCart`…). Celles qui ne sont pas encore redessinées viennent de Lucide.
