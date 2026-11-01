@@ -142,6 +142,7 @@ export function Hero() {
         <div className="cta">
           <a className="btn p" href="#icones"><T k="cta1" /><IDown s={18} w={2.2} /></a>
           <a className="btn" href="#atelier"><T k="cta2" /></a>
+          <a className="btn pgcta" href="/playground/">{a.tt("Essayer dans votre interface", "Try them in your interface")}<span aria-hidden="true">→</span></a>
         </div>
         <div className="hstats">
           <div><b>{ICONS.length}</b><span><T k="st1" /></span></div>

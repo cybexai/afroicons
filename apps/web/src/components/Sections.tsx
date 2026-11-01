@@ -161,6 +161,20 @@ export function Usage() {
         </div>
         <div className="ucard"><span className="n">F</span><h3><T k="u6" /></h3><p><T k="u6p" /></p><pre dangerouslySetInnerHTML={{ __html: highlight(`// lucide-react        → afroicons-ui\n// @mui/icons-material → afroicons-mui\n// @ant-design/icons   → afroicons-antd\nimport { Wallet } from "afroicons-ui";\nimport { DeleteOutlined } from "afroicons-mui";\nimport { PlusOutlined } from "afroicons-antd";`, true) }} /></div>
       </div>
+      {/* Appel vers le bac à sable : voir les icônes dans une interface avant de les installer. */}
+      <a className="pgpromo" href="/playground/">
+        <div className="pgpromo-t">
+          <div className="kick">{a.tt("Bac à sable", "Playground")}</div>
+          <h3>{a.tt("Avant d'installer, essayez les icônes dans votre interface", "Before installing, try the icons in your interface")}</h3>
+          <p>{a.tt("Une application web, un mobile et une page vitrine aux couleurs de votre marque. Remplacez et personnalisez chaque icône, puis copiez le code React, Angular ou HTML.", "A web app, a phone and a landing page in your brand colours. Swap and customise every icon, then copy the React, Angular or HTML code.")}</p>
+          <span className="btn a">{a.tt("Ouvrir le bac à sable", "Open the playground")}<span aria-hidden="true">→</span></span>
+        </div>
+        <div className="pgpromo-v" aria-hidden="true">
+          {["mobilemoney", "ui-layout-dashboard", "panier", "ui-bell", "cauri", "ui-wallet", "mototaxi", "ui-settings", "baobab"].map((id, n) => byId[id] && (
+            <span key={id} className={n % 4 === 0 ? "on" : ""}><Svg i={byId[id]} o={{ s: 26, w: 1.75 }} /></span>
+          ))}
+        </div>
+      </a>
     </section>
   );
 }
