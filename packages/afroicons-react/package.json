@@ -1,7 +1,7 @@
 {
   "name": "afroicons-react",
   "version": "0.7.0",
-  "description": "Les 418 icônes Afroicons (dont les cartes des 54 pays), les 54 drapeaux africains et 372 emojis en composants React.",
+  "description": "Les 498 icônes Afroicons (dont les cartes des 54 pays), les 54 drapeaux africains et 452 emojis en composants React.",
   "type": "module",
   "main": "./index.js",
   "types": "./index.d.ts",

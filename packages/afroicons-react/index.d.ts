@@ -729,6 +729,166 @@ export declare const Kakaki: Afroicon;
 export declare const Algaita: Afroicon;
 /** Timbila · Timbila */
 export declare const Timbila: Afroicon;
+/** Guépard · Cheetah */
+export declare const Guepard: Afroicon;
+/** Lycaon · African wild dog */
+export declare const Lycaon: Afroicon;
+/** Chacal à chabraque · Black-backed jackal */
+export declare const Chacal: Afroicon;
+/** Gnou bleu · Blue wildebeest */
+export declare const Gnou: Afroicon;
+/** Oryx gemsbok · Gemsbok */
+export declare const Oryx: Afroicon;
+/** Grand koudou · Greater kudu */
+export declare const Koudou: Afroicon;
+/** Éland du Cap · Common eland */
+export declare const Eland: Afroicon;
+/** Springbok · Springbok */
+export declare const Springbok: Afroicon;
+/** Hippotrague noir · Sable antelope */
+export declare const Hippotraguenoir: Afroicon;
+/** Topi · Topi */
+export declare const Topi: Afroicon;
+/** Cobe à croissant · Waterbuck */
+export declare const Cobeacroissant: Afroicon;
+/** Dik-dik · Dik-dik */
+export declare const Dikdik: Afroicon;
+/** Gérénuk · Gerenuk */
+export declare const Gerenuk: Afroicon;
+/** Serval · Serval */
+export declare const Serval: Afroicon;
+/** Caracal · Caracal */
+export declare const Caracal: Afroicon;
+/** Ratel · Honey badger */
+export declare const Ratel: Afroicon;
+/** Oryctérope · Aardvark */
+export declare const Orycterope: Afroicon;
+/** Porc-épic à crête · Crested porcupine */
+export declare const Porcepic: Afroicon;
+/** Mangouste rayée · Banded mongoose */
+export declare const Mangousterayee: Afroicon;
+/** Daman des rochers · Rock hyrax */
+export declare const Damandesrochers: Afroicon;
+/** Chimpanzé · Chimpanzee */
+export declare const Chimpanze: Afroicon;
+/** Bonobo · Bonobo */
+export declare const Bonobo: Afroicon;
+/** Babouin olive · Olive baboon */
+export declare const Babouin: Afroicon;
+/** Mandrill · Mandrill */
+export declare const Mandrill: Afroicon;
+/** Maki catta · Ring-tailed lemur */
+export declare const Makicatta: Afroicon;
+/** Aye-aye · Aye-aye */
+export declare const Ayeaye: Afroicon;
+/** Fossa · Fossa */
+export declare const Fossa: Afroicon;
+/** Propithèque · Sifaka */
+export declare const Propitheque: Afroicon;
+/** Bongo · Bongo */
+export declare const Bongo: Afroicon;
+/** Sitatunga · Sitatunga */
+export declare const Sitatunga: Afroicon;
+/** Potamochère roux · Red river hog */
+export declare const Potamochere: Afroicon;
+/** Hylochère · Giant forest hog */
+export declare const Hylochere: Afroicon;
+/** Chat doré africain · African golden cat */
+export declare const Chatdore: Afroicon;
+/** Genette commune · Common genet */
+export declare const Genette: Afroicon;
+/** Civette africaine · African civet */
+export declare const Civette: Afroicon;
+/** Galago · Bushbaby */
+export declare const Galago: Afroicon;
+/** Tenrec · Tenrec */
+export declare const Tenrec: Afroicon;
+/** Tortue radiée · Radiated tortoise */
+export declare const Tortueradiee: Afroicon;
+/** Grenouille Goliath · Goliath frog */
+export declare const Grenouillegoliath: Afroicon;
+/** Céphalophe · Duiker */
+export declare const Cephalophe: Afroicon;
+/** Grue couronnée · Grey crowned crane */
+export declare const Gruecouronnee: Afroicon;
+/** Tisserin · Weaver bird */
+export declare const Tisserin: Afroicon;
+/** Bec-en-sabot · Shoebill */
+export declare const Becensabot: Afroicon;
+/** Marabout d'Afrique · Marabou stork */
+export declare const Marabout: Afroicon;
+/** Vautour africain · White-backed vulture */
+export declare const Vautour: Afroicon;
+/** Pygargue vocifère · African fish eagle */
+export declare const Pygargue: Afroicon;
+/** Serpentaire · Secretary bird */
+export declare const Serpentaire: Afroicon;
+/** Ibis sacré · Sacred ibis */
+export declare const Ibissacre: Afroicon;
+/** Pélican blanc · Great white pelican */
+export declare const Pelican: Afroicon;
+/** Touraco · Turaco */
+export declare const Touraco: Afroicon;
+/** Martin-pêcheur huppé · Malachite kingfisher */
+export declare const Martinpecheur: Afroicon;
+/** Outarde kori · Kori bustard */
+export declare const Outardekori: Afroicon;
+/** Francolin · Francolin */
+export declare const Francolin: Afroicon;
+/** Guêpier carmin · Carmine bee-eater */
+export declare const Guepiercarmin: Afroicon;
+/** Rollier à longs brins · Lilac-breasted roller */
+export declare const Rollier: Afroicon;
+/** Souimanga · Sunbird */
+export declare const Souimanga: Afroicon;
+/** Jabiru d'Afrique · Saddle-billed stork */
+export declare const Jabiru: Afroicon;
+/** Héron garde-bœufs · Cattle egret */
+export declare const Herongardeboeufs: Afroicon;
+/** Manchot du Cap · African penguin */
+export declare const Manchot: Afroicon;
+/** Grand-duc de Verreaux · Verreaux's eagle-owl */
+export declare const Grandduc: Afroicon;
+/** Mamba noir · Black mamba */
+export declare const Mambanoir: Afroicon;
+/** Python de Seba · African rock python */
+export declare const Pythondeseba: Afroicon;
+/** Vipère du Gabon · Gaboon viper */
+export declare const Viperedugabon: Afroicon;
+/** Cobra cracheur · Spitting cobra */
+export declare const Cobracracheur: Afroicon;
+/** Varan du Nil · Nile monitor */
+export declare const Varandunil: Afroicon;
+/** Scorpion · Scorpion */
+export declare const Scorpion: Afroicon;
+/** Criquet pèlerin · Desert locust */
+export declare const Criquetpelerin: Afroicon;
+/** Abeille africaine · African honey bee */
+export declare const Abeilleafricaine: Afroicon;
+/** Papillon Charaxes · Charaxes butterfly */
+export declare const Papilloncharaxes: Afroicon;
+/** Mouche tsé-tsé · Tsetse fly */
+export declare const Mouchetsetse: Afroicon;
+/** Escargot géant africain · Giant African land snail */
+export declare const Escargotgeant: Afroicon;
+/** Lamantin d'Afrique · African manatee */
+export declare const Lamantin: Afroicon;
+/** Baleine à bosse · Humpback whale */
+export declare const Baleineabosse: Afroicon;
+/** Requin-baleine · Whale shark */
+export declare const Requinbaleine: Afroicon;
+/** Silure · Catfish */
+export declare const Silure: Afroicon;
+/** Tilapia · Tilapia */
+export declare const Tilapia: Afroicon;
+/** Capitaine · Nile perch */
+export declare const Capitaine: Afroicon;
+/** Cheval barbe · Barb horse */
+export declare const Chevalbarbe: Afroicon;
+/** Mouton peul · Fulani sheep */
+export declare const Moutonpeul: Afroicon;
+/** Basenji · Basenji */
+export declare const Basenji: Afroicon;
 /** Carte de l'Algérie · Map of Algeria */
 export declare const CarteAlgerie: Afroicon;
 /** Carte de l'Angola · Map of Angola */
@@ -1201,6 +1361,166 @@ export declare const EmojiFuraDaNono: Afroicon;
 export declare const EmojiJusDeCorossol: Afroicon;
 /** Bière de banane · Banana beer */
 export declare const EmojiBiereDeBanane: Afroicon;
+/** Guépard · Cheetah */
+export declare const EmojiGuepard: Afroicon;
+/** Lycaon · African wild dog */
+export declare const EmojiLycaon: Afroicon;
+/** Chacal à chabraque · Black-backed jackal */
+export declare const EmojiChacal: Afroicon;
+/** Gnou bleu · Blue wildebeest */
+export declare const EmojiGnou: Afroicon;
+/** Oryx gemsbok · Gemsbok */
+export declare const EmojiOryx: Afroicon;
+/** Grand koudou · Greater kudu */
+export declare const EmojiKoudou: Afroicon;
+/** Éland du Cap · Common eland */
+export declare const EmojiEland: Afroicon;
+/** Springbok · Springbok */
+export declare const EmojiSpringbok: Afroicon;
+/** Hippotrague noir · Sable antelope */
+export declare const EmojiHippotragueNoir: Afroicon;
+/** Topi · Topi */
+export declare const EmojiTopi: Afroicon;
+/** Cobe à croissant · Waterbuck */
+export declare const EmojiCobeACroissant: Afroicon;
+/** Dik-dik · Dik-dik */
+export declare const EmojiDikDik: Afroicon;
+/** Gérénuk · Gerenuk */
+export declare const EmojiGerenuk: Afroicon;
+/** Serval · Serval */
+export declare const EmojiServal: Afroicon;
+/** Caracal · Caracal */
+export declare const EmojiCaracal: Afroicon;
+/** Ratel · Honey badger */
+export declare const EmojiRatel: Afroicon;
+/** Oryctérope · Aardvark */
+export declare const EmojiOrycterope: Afroicon;
+/** Porc-épic à crête · Crested porcupine */
+export declare const EmojiPorcEpic: Afroicon;
+/** Mangouste rayée · Banded mongoose */
+export declare const EmojiMangousteRayee: Afroicon;
+/** Daman des rochers · Rock hyrax */
+export declare const EmojiDamanDesRochers: Afroicon;
+/** Chimpanzé · Chimpanzee */
+export declare const EmojiChimpanze: Afroicon;
+/** Bonobo · Bonobo */
+export declare const EmojiBonobo: Afroicon;
+/** Babouin olive · Olive baboon */
+export declare const EmojiBabouin: Afroicon;
+/** Mandrill · Mandrill */
+export declare const EmojiMandrill: Afroicon;
+/** Maki catta · Ring-tailed lemur */
+export declare const EmojiMakiCatta: Afroicon;
+/** Aye-aye · Aye-aye */
+export declare const EmojiAyeAye: Afroicon;
+/** Fossa · Fossa */
+export declare const EmojiFossa: Afroicon;
+/** Propithèque · Sifaka */
+export declare const EmojiPropitheque: Afroicon;
+/** Bongo · Bongo */
+export declare const EmojiBongo: Afroicon;
+/** Sitatunga · Sitatunga */
+export declare const EmojiSitatunga: Afroicon;
+/** Potamochère roux · Red river hog */
+export declare const EmojiPotamochere: Afroicon;
+/** Hylochère · Giant forest hog */
+export declare const EmojiHylochere: Afroicon;
+/** Chat doré africain · African golden cat */
+export declare const EmojiChatDore: Afroicon;
+/** Genette commune · Common genet */
+export declare const EmojiGenette: Afroicon;
+/** Civette africaine · African civet */
+export declare const EmojiCivette: Afroicon;
+/** Galago · Bushbaby */
+export declare const EmojiGalago: Afroicon;
+/** Tenrec · Tenrec */
+export declare const EmojiTenrec: Afroicon;
+/** Tortue radiée · Radiated tortoise */
+export declare const EmojiTortueRadiee: Afroicon;
+/** Grenouille Goliath · Goliath frog */
+export declare const EmojiGrenouilleGoliath: Afroicon;
+/** Céphalophe · Duiker */
+export declare const EmojiCephalophe: Afroicon;
+/** Grue couronnée · Grey crowned crane */
+export declare const EmojiGrueCouronnee: Afroicon;
+/** Tisserin · Weaver bird */
+export declare const EmojiTisserin: Afroicon;
+/** Bec-en-sabot · Shoebill */
+export declare const EmojiBecEnSabot: Afroicon;
+/** Marabout d'Afrique · Marabou stork */
+export declare const EmojiMarabout: Afroicon;
+/** Vautour africain · White-backed vulture */
+export declare const EmojiVautour: Afroicon;
+/** Pygargue vocifère · African fish eagle */
+export declare const EmojiPygargue: Afroicon;
+/** Serpentaire · Secretary bird */
+export declare const EmojiSerpentaire: Afroicon;
+/** Ibis sacré · Sacred ibis */
+export declare const EmojiIbisSacre: Afroicon;
+/** Pélican blanc · Great white pelican */
+export declare const EmojiPelican: Afroicon;
+/** Touraco · Turaco */
+export declare const EmojiTouraco: Afroicon;
+/** Martin-pêcheur huppé · Malachite kingfisher */
+export declare const EmojiMartinPecheur: Afroicon;
+/** Outarde kori · Kori bustard */
+export declare const EmojiOutardeKori: Afroicon;
+/** Francolin · Francolin */
+export declare const EmojiFrancolin: Afroicon;
+/** Guêpier carmin · Carmine bee-eater */
+export declare const EmojiGuepierCarmin: Afroicon;
+/** Rollier à longs brins · Lilac-breasted roller */
+export declare const EmojiRollier: Afroicon;
+/** Souimanga · Sunbird */
+export declare const EmojiSouimanga: Afroicon;
+/** Jabiru d'Afrique · Saddle-billed stork */
+export declare const EmojiJabiru: Afroicon;
+/** Héron garde-bœufs · Cattle egret */
+export declare const EmojiHeronGardeBoeufs: Afroicon;
+/** Manchot du Cap · African penguin */
+export declare const EmojiManchot: Afroicon;
+/** Grand-duc de Verreaux · Verreaux's eagle-owl */
+export declare const EmojiGrandDuc: Afroicon;
+/** Mamba noir · Black mamba */
+export declare const EmojiMambaNoir: Afroicon;
+/** Python de Seba · African rock python */
+export declare const EmojiPythonDeSeba: Afroicon;
+/** Vipère du Gabon · Gaboon viper */
+export declare const EmojiVipereDuGabon: Afroicon;
+/** Cobra cracheur · Spitting cobra */
+export declare const EmojiCobraCracheur: Afroicon;
+/** Varan du Nil · Nile monitor */
+export declare const EmojiVaranDuNil: Afroicon;
+/** Scorpion · Scorpion */
+export declare const EmojiScorpion: Afroicon;
+/** Criquet pèlerin · Desert locust */
+export declare const EmojiCriquetPelerin: Afroicon;
+/** Abeille africaine · African honey bee */
+export declare const EmojiAbeilleAfricaine: Afroicon;
+/** Papillon Charaxes · Charaxes butterfly */
+export declare const EmojiPapillonCharaxes: Afroicon;
+/** Mouche tsé-tsé · Tsetse fly */
+export declare const EmojiMoucheTseTse: Afroicon;
+/** Escargot géant africain · Giant African land snail */
+export declare const EmojiEscargotGeant: Afroicon;
+/** Lamantin d'Afrique · African manatee */
+export declare const EmojiLamantin: Afroicon;
+/** Baleine à bosse · Humpback whale */
+export declare const EmojiBaleineABosse: Afroicon;
+/** Requin-baleine · Whale shark */
+export declare const EmojiRequinBaleine: Afroicon;
+/** Silure · Catfish */
+export declare const EmojiSilure: Afroicon;
+/** Tilapia · Tilapia */
+export declare const EmojiTilapia: Afroicon;
+/** Capitaine · Nile perch */
+export declare const EmojiCapitaine: Afroicon;
+/** Cheval barbe · Barb horse */
+export declare const EmojiChevalBarbe: Afroicon;
+/** Mouton peul · Fulani sheep */
+export declare const EmojiMoutonPeul: Afroicon;
+/** Basenji · Basenji */
+export declare const EmojiBasenji: Afroicon;
 /** Safou · African pear (safou) */
 export declare const EmojiSafou: Afroicon;
 /** Corossol · Soursop */

@@ -53,9 +53,10 @@ if (errors.length) { console.error(errors.join("\n")); process.exit(1); }
 const FIT = { "cameleon": 0.937, "calao": 0.956, "bouclier-massai": 0.956, "bouclier-zoulou": 0.901, "balafon": 0.956, "cavalier-durbar": 0.901,
   "guerrier-massai": 0.956, "homme-zoulou": 0.956, "danseur-dogon-kanaga": 0.947, "coeur-brise": 0.928 };
 for (const e of all) if (FIT[e.slug]) e.body = `<g transform="translate(12 12) scale(${FIT[e.slug]}) translate(-12 -12)">${e.body}</g>`;
-const emojis = all.map(({ slug, fr, en, char, group, tags, tone, body }) => ({
+// Version d'arrivée : 0.7 pour les premières vagues, 0.8 pour la faune ajoutée ensuite (fichiers faune-*.mjs).
+const emojis = all.map(({ slug, fr, en, char, group, tags, tone, body, file }) => ({
   id: `emoji-${slug}`, fr, en, char: char ?? null, cat: "emojis", group, region: "pan",
-  tags: [...new Set(["emoji", ...tags.map((t) => t.toLowerCase())])], tone: !!tone, since: "0.7", body, fill: body,
+  tags: [...new Set(["emoji", ...tags.map((t) => t.toLowerCase())])], tone: !!tone, since: file.startsWith("faune-") ? "0.8" : "0.7", body, fill: body,
 }));
 writeFileSync(join(root, "src/emojis.json"), JSON.stringify(emojis, null, 1) + "\n");
 const afro = emojis.filter((e) => !e.char).length;
