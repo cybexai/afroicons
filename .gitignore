@@ -9,3 +9,5 @@ apps/web/src/generated/
 packages/afroicons-mui/icons/
 packages/afroicons-antd/icons/
 emojis-planche.html
+# Copies de LICENSE faites au moment de publier (scripts/publier.sh, workflow Release)
+packages/*/LICENSE
