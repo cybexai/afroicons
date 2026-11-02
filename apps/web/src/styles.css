@@ -540,6 +540,13 @@ footer .fr{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
   .tools .regs{flex:none}
   .cpop{max-height:calc(100vh - 170px);overflow-y:auto;overscroll-behavior:contain}
 }
+/* Tablette : collections, catégories et régions ne tiennent pas sur une ligne (la page débordait et le navigateur la réduisait).
+   Collections et régions en haut, les régions défilent si besoin ; les catégories défilent sur toute la largeur en dessous. */
+@media (min-width:641px) and (max-width:1199px){
+  .tools .trow:last-child{flex-wrap:wrap;row-gap:8px}
+  .tools .cats{flex:1 1 100%;order:3}
+  .tools .regs{flex:1 1 0;min-width:0;overflow-x:auto;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);padding-right:20px}
+}
 
 /* ===== Pagination de la grille ===== */
 .grid{scroll-margin-top:200px}
