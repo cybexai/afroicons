@@ -889,6 +889,14 @@ export declare const Chevalbarbe: Afroicon;
 export declare const Moutonpeul: Afroicon;
 /** Basenji · Basenji */
 export declare const Basenji: Afroicon;
+/** Blé · Wheat */
+export declare const Ble: Afroicon;
+/** Soja · Soybean */
+export declare const Soja: Afroicon;
+/** Vache laitière · Dairy cow */
+export declare const Vachelaitiere: Afroicon;
+/** Pharmacie · Pharmacy */
+export declare const Pharmacie: Afroicon;
 /** Carte de l'Algérie · Map of Algeria */
 export declare const CarteAlgerie: Afroicon;
 /** Carte de l'Angola · Map of Angola */
