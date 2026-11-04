@@ -1,4 +1,4 @@
-// afroicons-ui v0.8.0 — généré, ne pas modifier à la main.
+// afroicons-ui v0.9.0 — généré, ne pas modifier à la main.
 import { createElement, forwardRef } from "react";
 export * from "lucide-react";
 
