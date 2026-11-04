@@ -95,6 +95,9 @@ const out = flags.map((f) => {
   };
 });
 for (const c of out) if (!c.body) throw new Error(`carte vide : ${c.iso}`);
+// Cartes retouchées à la main (audit des dessins) : elles remplacent le tracé généré.
+const RETOUCHES = JSON.parse(readFileSync(join(root, "scripts/cartes-retouches.json"), "utf8"));
+for (const c of out) if (RETOUCHES[c.id]) Object.assign(c, RETOUCHES[c.id]);
 writeFileSync(join(root, "src/cartes.json"), JSON.stringify(out.map(({ _parts, _dots, ...c }) => c), null, 1) + "\n");
 console.log(`✔ ${out.length} cartes → src/cartes.json`);
 console.log(out.filter((c) => c._dots || c._parts > 1).map((c) => `${c.iso}:${c._parts}+${c._dots}·`).join(" "));

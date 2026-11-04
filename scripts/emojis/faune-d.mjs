@@ -328,6 +328,10 @@ const FIT = { "mamba-noir": [-0.19, 0.65, 0.95], "python-de-seba": [0.25, 0, 1],
   "silure": [0.44, 0.3, 0.975], "capitaine": [0.15, 0.05, 0.995], "cheval-barbe": [-0.18, 0.14, 0.988], "basenji": [-0.23, 0.15, 0.988] };
 const A = (slug, fr, en, char, tags, body) => ({ slug, fr, en, char, group: "animaux", tags, tone: false,
   body: FIT[slug] ? g(`translate(${FIT[slug][0]} ${FIT[slug][1]}) scale(${FIT[slug][2]})`, body) : body });
+/** Recadrage (audit du dessin) : ces dessins débordaient de la grille 24 × 24 (ou étaient décentrés) ;
+ *  ils sont réduits et décalés juste assez pour y tenir : [échelle, décalage x, décalage y]. */
+const CADRE = { "capitaine": [1, 0, 1.6] };
+const cadre = (e) => { const f = CADRE[e.slug]; return f ? { ...e, body: `<g transform="translate(${Math.round((12 + f[1]) * 100) / 100} ${Math.round((12 + f[2]) * 100) / 100}) scale(${f[0]}) translate(-12 -12)">${e.body}</g>` } : e; };
 export default [
   A("mamba-noir", "Mamba noir", "Black mamba", "🐍", ["mamba noir", "black mamba", "mamba", "serpent", "snake", "koboko", "imamba", "venimeux", "venomous", "savane", "kenya", "afrique du sud"], mambaNoir),
   A("python-de-seba", "Python de Seba", "African rock python", null, ["python de seba", "african rock python", "python", "serpent", "snake", "chatu", "constricteur", "savane", "fleuve", "afrique de l'ouest"], pythonSeba),
@@ -349,4 +353,4 @@ export default [
   A("cheval-barbe", "Cheval barbe", "Barb horse", "🐎", ["cheval barbe", "barb horse", "cheval", "horse", "farasi", "fantasia", "cavalier", "rider", "maghreb", "sahel"], cheval),
   A("mouton-peul", "Mouton peul", "Fulani sheep", "🐑", ["mouton peul", "fulani sheep", "mouton", "sheep", "bélier", "ram", "ouda", "xar", "tabaski", "peul", "sahel"], mouton),
   A("basenji", "Basenji", "Basenji", "🐕", ["basenji", "chien", "dog", "chien du congo", "congo dog", "mbwa", "barkless", "forêt", "congo", "rdc"], basenji),
-];
+].map(cadre);

@@ -362,6 +362,12 @@ const jarrePoterie = [
 
 const E = (slug, fr, en, tags, body, tone = false) => ({ slug, fr, en, char: null, group: "objets", tags, tone, body });
 
+/** Miroir horizontal : les emojis regardent vers la gauche (cheval tourné vers la gauche). */
+const miroir = (b) => g("matrix(-1 0 0 1 24 0)", b);
+/** Recadrage (audit du dessin) : ces dessins débordaient de la grille 24 × 24 (ou étaient décentrés) ;
+ *  ils sont réduits et décalés juste assez pour y tenir : [échelle, décalage x, décalage y]. */
+const CADRE = { "croix-agadez": [1, 0, 0.4], "collier-perles-massai": [0.98, 0, -0.2] };
+const cadre = (e) => { const f = CADRE[e.slug]; return f ? { ...e, body: `<g transform="translate(${Math.round((12 + f[1]) * 100) / 100} ${Math.round((12 + f[2]) * 100) / 100}) scale(${f[0]}) translate(-12 -12)">${e.body}</g>` } : e; };
 export default [
   E("masque-kanaga", "Masque kanaga", "Kanaga mask", ["kanaga", "masque", "mask", "dogon", "mali", "dama", "danse", "dance"], kanaga),
   E("masque-elephant-bamileke", "Masque éléphant bamiléké", "Bamileke elephant mask", ["masque", "mask", "éléphant", "elephant", "bamiléké", "bamileke", "cameroun", "cameroon", "perles", "beads", "kuosi"], masqueElephant),
@@ -374,8 +380,8 @@ export default [
   E("valiha", "Valiha", "Valiha", ["valiha", "madagascar", "malgache", "malagasy", "cithare", "zither", "bambou", "bamboo", "musique", "music"], valiha),
   E("balafon", "Balafon", "Balafon", ["balafon", "bala", "xylophone", "mandingue", "mande", "mali", "guinée", "guinea", "burkina faso", "musique", "music"], balafon),
   E("ceremonie-cafe", "Cérémonie du café", "Coffee ceremony", ["cérémonie du café", "coffee ceremony", "buna", "jebena", "éthiopie", "ethiopia", "érythrée", "eritrea", "café", "coffee"], ceremonieCafe),
-  E("fantasia", "Fantasia", "Fantasia", ["fantasia", "tbourida", "maroc", "morocco", "cavalier", "horseman", "cheval", "horse", "baroud"], fantasia, true),
-  E("cavalier-durbar", "Cavalier du durbar", "Durbar horseman", ["durbar", "sallah", "haoussa", "hausa", "nigeria", "kano", "cavalier", "horseman", "cheval", "horse"], cavalierDurbar, true),
+  E("fantasia", "Fantasia", "Fantasia", ["fantasia", "tbourida", "maroc", "morocco", "cavalier", "horseman", "cheval", "horse", "baroud"], g("translate(11.6 12) scale(0.96) translate(-12 -12)", miroir(fantasia)), true),
+  E("cavalier-durbar", "Cavalier du durbar", "Durbar horseman", ["durbar", "sallah", "haoussa", "hausa", "nigeria", "kano", "cavalier", "horseman", "cheval", "horse"], miroir(cavalierDurbar), true),
   E("mascarade-egungun", "Mascarade egungun", "Egungun masquerade", ["egungun", "mascarade", "masquerade", "yoruba", "nigeria", "bénin", "benin", "ancêtres", "ancestors"], mascaradeEgungun),
   E("tabouret-ashanti", "Tabouret ashanti", "Ashanti stool", ["tabouret", "stool", "ashanti", "asante", "akan", "ghana", "dwa", "bois", "wood"], tabouretAshanti),
   E("collier-perles-massai", "Collier de perles massaï", "Maasai beaded collar", ["collier", "collar", "perles", "beads", "massaï", "maasai", "kenya", "tanzanie", "tanzania", "parure"], collierPerles),
@@ -383,4 +389,4 @@ export default [
   E("tissu-bogolan", "Bogolan", "Bogolan mud cloth", ["bogolan", "bògòlanfini", "mud cloth", "tissu", "cloth", "mali", "bambara", "bamana"], tissuBogolan),
   E("tissu-kanga", "Kanga", "Kanga", ["kanga", "leso", "khanga", "pagne", "tissu", "cloth", "kenya", "tanzanie", "tanzania", "swahili"], tissuKanga),
   E("jarre-poterie", "Jarre en terre cuite", "Clay water jar", ["jarre", "jar", "canari", "poterie", "pottery", "terre cuite", "terracotta", "eau", "water"], jarrePoterie),
-];
+].map(cadre);

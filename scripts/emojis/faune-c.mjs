@@ -393,6 +393,10 @@ const grandDuc = [
 const FIT = { "tisserin": [1.485, 1.523, 0.876], "ibis-sacre": [0.974, -0.195, 0.951], "touraco": [1.291, 1.079, 0.927], "guepier-carmin": [1.294, 0.831, 0.935], "rollier": [1.296, 0.384, 0.939] };
 const A = (slug, fr, en, char, tags, body) => ({ slug, fr, en, char, group: "animaux", tags, tone: false,
   body: FIT[slug] ? g(`translate(${FIT[slug][0]} ${FIT[slug][1]}) scale(${FIT[slug][2]})`, body) : body });
+/** Recadrage (audit du dessin) : ces dessins débordaient de la grille 24 × 24 (ou étaient décentrés) ;
+ *  ils sont réduits et décalés juste assez pour y tenir : [échelle, décalage x, décalage y]. */
+const CADRE = { "bec-en-sabot": [1, 0, -0.3], "marabout": [1, 0, -0.3], "outarde-kori": [1, 0, -0.3], "souimanga": [1, 0, -0.3] };
+const cadre = (e) => { const f = CADRE[e.slug]; return f ? { ...e, body: `<g transform="translate(${Math.round((12 + f[1]) * 100) / 100} ${Math.round((12 + f[2]) * 100) / 100}) scale(${f[0]}) translate(-12 -12)">${e.body}</g>` } : e; };
 export default [
   A("grue-couronnee", "Grue couronnée", "Grey crowned crane", null, ["grue couronnée", "crowned crane", "grue", "crane", "korongo", "ngaali", "ouganda", "uganda", "kenya", "zones humides", "wetlands", "oiseau", "bird"], grueCouronnee),
   A("tisserin", "Tisserin", "Weaver bird", null, ["tisserin", "weaver", "nid", "nest", "kwezi", "sahel", "savane", "savanna", "sénégal", "oiseau", "bird"], tisserin),
@@ -414,4 +418,4 @@ export default [
   A("heron-garde-boeufs", "Héron garde-bœufs", "Cattle egret", null, ["héron garde-bœufs", "cattle egret", "aigrette", "egret", "zébu", "zebu", "bétail", "cattle", "village", "savane", "oiseau", "bird"], heronGardeBoeufs),
   A("manchot", "Manchot du Cap", "African penguin", "🐧", ["manchot du cap", "african penguin", "penguin", "manchot", "pingouin", "jackass penguin", "boulders beach", "afrique du sud", "namibie", "océan", "oiseau", "bird"], manchot),
   A("grand-duc", "Grand-duc de Verreaux", "Verreaux's eagle-owl", "🦉", ["grand-duc", "eagle-owl", "hibou", "owl", "chouette", "bundi", "giant eagle-owl", "savane", "nuit", "night", "oiseau", "bird"], grandDuc),
-];
+].map(cadre);

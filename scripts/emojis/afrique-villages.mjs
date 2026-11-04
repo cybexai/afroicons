@@ -356,6 +356,10 @@ const caseObus = [
 
 const E = (slug, fr, en, tags, body) => ({ slug, fr, en, char: null, group: "lieux", tags, tone: false, body });
 
+/** Recadrage (audit du dessin) : ces dessins débordaient de la grille 24 × 24 (ou étaient décentrés) ;
+ *  ils sont réduits et décalés juste assez pour y tenir : [échelle, décalage x, décalage y]. */
+const CADRE = { "manyatta-massai": [0.96, 0, 0], "chefferie-bamileke": [0.99, 0, 0.3], "pyramides-gizeh": [1, -0.4, 0] };
+const cadre = (e) => { const f = CADRE[e.slug]; return f ? { ...e, body: `<g transform="translate(${Math.round((12 + f[1]) * 100) / 100} ${Math.round((12 + f[2]) * 100) / 100}) scale(${f[0]}) translate(-12 -12)">${e.body}</g>` } : e; };
 export default [
   E("maison-ndebele", "Maison ndébélé", "Ndebele house", ["ndébélé", "ndebele", "afrique du sud", "south africa", "maison peinte", "painted house", "peinture murale", "mural"], maisonNdebele),
   E("grenier-dogon", "Grenier dogon", "Dogon granary", ["dogon", "grenier", "granary", "mali", "bandiagara", "banco", "mud", "paille", "thatch"], grenierDogon),
@@ -377,4 +381,4 @@ export default [
   E("pyramides-gizeh", "Pyramides de Gizeh", "Pyramids of Giza", ["gizeh", "giza", "pyramides", "pyramids", "égypte", "egypt", "kheops", "khufu", "désert", "desert"], pyramidesGizeh),
   E("tente-touaregue", "Tente touarègue", "Tuareg tent", ["touareg", "tuareg", "kel tamasheq", "tente", "tent", "sahara", "nomade", "nomad", "niger", "mali"], tenteTouaregue),
   E("rondavel-basotho", "Rondavel basotho", "Basotho rondavel", ["basotho", "rondavel", "mokorotlo", "lesotho", "sotho", "pierre", "stone", "chaume", "thatch"], rondavelBasotho),
-];
+].map(cadre);

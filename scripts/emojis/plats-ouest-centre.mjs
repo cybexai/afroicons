@@ -468,6 +468,10 @@ const cafeTouba = [
 ].join("");
 
 const E = (slug, fr, en, tags, body) => ({ slug, fr, en, char: null, group: "nourriture", tags, tone: false, body });
+/** Recadrage (audit du dessin) : ces dessins débordaient de la grille 24 × 24 (ou étaient décentrés) ;
+ *  ils sont réduits et décalés juste assez pour y tenir : [échelle, décalage x, décalage y]. */
+const CADRE = { "poisson-braise": [0.97, 0.4, 0], "moin-moin": [0.98, 0, 0], "pondu": [0.97, 0, 0] };
+const cadre = (e) => { const f = CADRE[e.slug]; return f ? { ...e, body: `<g transform="translate(${Math.round((12 + f[1]) * 100) / 100} ${Math.round((12 + f[2]) * 100) / 100}) scale(${f[0]}) translate(-12 -12)">${e.body}</g>` } : e; };
 export default [
   E("thieboudienne", "Thiéboudienne", "Thieboudienne", ["thiéboudienne", "thieboudienne", "ceebu jën", "sénégal", "senegal", "riz rouge", "red rice", "poisson", "fish"], thieboudienne),
   E("yassa-poulet", "Yassa poulet", "Chicken yassa", ["yassa", "poulet", "chicken", "sénégal", "senegal", "oignons", "onions", "citron", "lemon"], yassaPoulet),
@@ -493,4 +497,4 @@ export default [
   E("boli", "Boli", "Boli", ["boli", "bole", "plantain rôti", "roasted plantain", "nigeria", "arachides", "groundnuts", "peanuts"], boli),
   E("degue", "Dégué", "Dégué", ["dégué", "degue", "thiakry", "mil", "millet", "lait caillé", "yogurt", "sahel", "dessert"], degue),
   E("cafe-touba", "Café Touba", "Touba coffee", ["café touba", "touba coffee", "sénégal", "senegal", "café", "coffee", "poivre de selim", "selim pepper", "djar"], cafeTouba),
-];
+].map(cadre);

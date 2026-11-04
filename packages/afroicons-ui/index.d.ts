@@ -327,7 +327,7 @@ export declare const LucideCoins: LucideIcon;
 export declare const Banknote: LucideIcon;
 export declare const BanknoteIcon: LucideIcon;
 export declare const LucideBanknote: LucideIcon;
-/** Argent · Money — Une pièce frappée d'un cauri, le coquillage qui servait de monnaie. */
+/** Argent · Money */
 export declare const DollarSign: LucideIcon;
 export declare const DollarSignIcon: LucideIcon;
 export declare const LucideDollarSign: LucideIcon;
@@ -375,7 +375,7 @@ export declare const LucideBoxes: LucideIcon;
 export declare const Warehouse: LucideIcon;
 export declare const WarehouseIcon: LucideIcon;
 export declare const LucideWarehouse: LucideIcon;
-/** Livraison · Delivery — La moto de livraison, caisse à l'arrière. */
+/** Livraison · Delivery */
 export declare const Truck: LucideIcon;
 export declare const TruckIcon: LucideIcon;
 export declare const LucideTruck: LucideIcon;
@@ -415,7 +415,7 @@ export declare const LucideBedDouble: LucideIcon;
 export declare const Shirt: LucideIcon;
 export declare const ShirtIcon: LucideIcon;
 export declare const LucideShirt: LucideIcon;
-/** Restaurant · Restaurant — La marmite et sa louche, à la place des couverts. */
+/** Restaurant · Restaurant */
 export declare const UtensilsCrossed: LucideIcon;
 export declare const UtensilsCrossedIcon: LucideIcon;
 export declare const LucideUtensilsCrossed: LucideIcon;
@@ -683,7 +683,7 @@ export declare const LucideHourglass: LucideIcon;
 export declare const ClipboardX: LucideIcon;
 export declare const ClipboardXIcon: LucideIcon;
 export declare const LucideClipboardX: LucideIcon;
-/** Épargne, enveloppe · Savings, budget — La tirelire en terre cuite, qu'on casse quand elle est pleine, à la place du cochon. */
+/** Épargne, enveloppe · Savings, budget */
 export declare const PiggyBank: LucideIcon;
 export declare const PiggyBankIcon: LucideIcon;
 export declare const LucidePiggyBank: LucideIcon;

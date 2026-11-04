@@ -75,7 +75,7 @@ export const Home = /*#__PURE__*/ make("home", [["path",{"d":"M2.5 11.5L12 3L21.
 export { Home as HomeIcon, Home as LucideHome };
 export const LayoutDashboard = /*#__PURE__*/ make("layout-dashboard", [["rect",{"x":"3.5","y":"3.5","width":"7","height":"9","rx":"1.5"}],["rect",{"x":"13.5","y":"3.5","width":"7","height":"5","rx":"1.5"}],["rect",{"x":"13.5","y":"11.5","width":"7","height":"9","rx":"1.5"}],["rect",{"x":"3.5","y":"15.5","width":"7","height":"5","rx":"1.5"}]]);
 export { LayoutDashboard as LayoutDashboardIcon, LayoutDashboard as LucideLayoutDashboard };
-export const Workflow = /*#__PURE__*/ make("workflow", [["rect",{"x":"3.5","y":"3.5","width":"7","height":"7","rx":"1.5"}],["rect",{"x":"13.5","y":"13.5","width":"7","height":"7","rx":"1.5"}],["path",{"d":"M7 10.5V14C7 15.1 7.9 16 9 16H13.5"}]]);
+export const Workflow = /*#__PURE__*/ make("workflow", [["circle",{"cx":"6.5","cy":"6.5","r":"3"}],["rect",{"x":"13.5","y":"13.5","width":"7","height":"7","rx":"1.5"}],["path",{"d":"M9.5 6.5H15C16.1 6.5 17 7.4 17 8.5V13.5"}],["path",{"d":"M11.8 4.6L13.7 6.5L11.8 8.4"}]]);
 export { Workflow as WorkflowIcon, Workflow as LucideWorkflow };
 export const ListTree = /*#__PURE__*/ make("list-tree", [["circle",{"cx":"5","cy":"5","r":"1.6"}],["circle",{"cx":"11","cy":"12","r":"1.6"}],["circle",{"cx":"11","cy":"19","r":"1.6"}],["path",{"d":"M5 6.6V17.4C5 18.3 5.7 19 6.6 19H9.4M5 12H9.4"}],["path",{"d":"M8.5 5H20.5M14.5 12H20.5M14.5 19H20.5"}]]);
 export { ListTree as ListTreeIcon, ListTree as LucideListTree };
@@ -177,7 +177,7 @@ export const Coins = /*#__PURE__*/ make("coins", [["ellipse",{"cx":"9","cy":"6.5
 export { Coins as CoinsIcon, Coins as LucideCoins };
 export const Banknote = /*#__PURE__*/ make("banknote", [["rect",{"x":"2.5","y":"6","width":"19","height":"12","rx":"2"}],["circle",{"cx":"12","cy":"12","r":"2.8"}],["circle",{"cx":"6","cy":"9.5","r":"1","fill":"currentColor","stroke":"none"}],["circle",{"cx":"18","cy":"14.5","r":"1","fill":"currentColor","stroke":"none"}]]);
 export { Banknote as BanknoteIcon, Banknote as LucideBanknote };
-export const DollarSign = /*#__PURE__*/ make("dollar-sign", [["circle",{"cx":"12","cy":"12","r":"9"}],["ellipse",{"cx":"12","cy":"12","rx":"3.3","ry":"5"}],["path",{"d":"M12 8.6C11.5 10.6 11.5 13.4 12 15.4"}]]);
+export const DollarSign = /*#__PURE__*/ make("dollar-sign", [["path",{"d":"M16.5 7.5C15.8 6.3 14.2 5.5 12 5.5C9.5 5.5 7.8 6.7 7.8 8.6C7.8 12.6 16.3 10.9 16.3 15.3C16.3 17.3 14.5 18.5 12 18.5C9.7 18.5 8 17.6 7.3 16.2"}],["path",{"d":"M12 2.5V5.5M12 18.5V21.5"}]]);
 export { DollarSign as DollarSignIcon, DollarSign as LucideDollarSign };
 export const HandCoins = /*#__PURE__*/ make("hand-coins", [["path",{"d":"M2.5 14.5H6L10.5 17H14.2C15.1 17 15.8 16.3 15.8 15.4S15.1 13.8 14.2 13.8H10.5"}],["path",{"d":"M15.8 15.6L19.6 13.4C20.4 13 21.3 13.3 21.6 14.1S21.4 15.7 20.7 16.1L14.5 20H9L6 18.5H2.5"}],["ellipse",{"cx":"14","cy":"6.8","rx":"3.4","ry":"4.4"}],["path",{"d":"M14 4C13.5 5.8 13.5 7.8 14 9.6"}]]);
 export { HandCoins as HandCoinsIcon, HandCoins as LucideHandCoins };
@@ -201,7 +201,7 @@ export const Boxes = /*#__PURE__*/ make("boxes", [["rect",{"x":"3.5","y":"12.5",
 export { Boxes as BoxesIcon, Boxes as LucideBoxes };
 export const Warehouse = /*#__PURE__*/ make("warehouse", [["path",{"d":"M2.5 20.5V8.5L12 3.5L21.5 8.5V20.5"}],["path",{"d":"M6 20.5V11.5H18V20.5"}],["path",{"d":"M6 15H18M6 18H18"}]]);
 export { Warehouse as WarehouseIcon, Warehouse as LucideWarehouse };
-export const Truck = /*#__PURE__*/ make("truck", [["circle",{"cx":"5.5","cy":"17","r":"2.8"}],["circle",{"cx":"18.5","cy":"17","r":"2.8"}],["path",{"d":"M5.5 17L8.5 12.5H15L18.5 17"}],["path",{"d":"M15 12.5L16.2 8.5H18.5"}],["rect",{"x":"3","y":"5","width":"8","height":"7.5","rx":"1"}]]);
+export const Truck = /*#__PURE__*/ make("truck", [["path",{"d":"M13.5 15.5V5.5H3.5C2.9 5.5 2.5 5.9 2.5 6.5V14.5C2.5 15.1 2.9 15.5 3.5 15.5H4.5"}],["path",{"d":"M8.5 15.5H15"}],["path",{"d":"M13.5 8.5H17.3C17.6 8.5 17.9 8.6 18.1 8.9L21.2 12.4C21.4 12.6 21.5 12.9 21.5 13.2V14.5C21.5 15.1 21.1 15.5 20.5 15.5H19"}],["path",{"d":"M15.5 8.5V11.5H19.6"}],["circle",{"cx":"6.5","cy":"16.5","r":"2"}],["circle",{"cx":"17","cy":"16.5","r":"2"}]]);
 export { Truck as TruckIcon, Truck as LucideTruck };
 export const Bus = /*#__PURE__*/ make("bus", [["path",{"d":"M5.2 17H3.5C2.9 17 2.5 16.6 2.5 16V8C2.5 7.2 3.2 6.5 4 6.5H20C20.8 6.5 21.5 7.2 21.5 8V16C21.5 16.6 21.1 17 20.5 17H18.8M8.8 17H15.2"}],["path",{"d":"M4.5 9H19.5V12.5H4.5ZM9.5 9V12.5M14.5 9V12.5"}],["circle",{"cx":"7","cy":"17.2","r":"1.8"}],["circle",{"cx":"17","cy":"17.2","r":"1.8"}],["path",{"d":"M5.5 6.5V4H11V6.5M13 6.5V4.8H17.5V6.5"}]]);
 export { Bus as BusIcon, Bus as LucideBus };
@@ -221,13 +221,13 @@ export const BedDouble = /*#__PURE__*/ make("bed-double", [["path",{"d":"M4.5 13
 export { BedDouble as BedDoubleIcon, BedDouble as LucideBedDouble };
 export const Shirt = /*#__PURE__*/ make("shirt", [["path",{"d":"M8.5 3.5L3 6.5L4.5 11.5L7 10.8V20.5H17V10.8L19.5 11.5L21 6.5L15.5 3.5"}],["path",{"d":"M8.5 3.5C9 5.8 10.3 7 12 7S15 5.8 15.5 3.5"}],["path",{"d":"M10.2 8.5L12 11L13.8 8.5"}]]);
 export { Shirt as ShirtIcon, Shirt as LucideShirt };
-export const UtensilsCrossed = /*#__PURE__*/ make("utensils-crossed", [["path",{"d":"M4.5 11H19.5C19.5 16 16.5 19.5 12 19.5S4.5 16 4.5 11Z"}],["path",{"d":"M3 11H21"}],["path",{"d":"M13.5 11L18 3.5"}],["path",{"d":"M9 8C8.3 7.2 9.7 6.3 9 5.4"}]]);
+export const UtensilsCrossed = /*#__PURE__*/ make("utensils-crossed", [["path",{"d":"M4.5 3V7.5C4.5 8.9 5.6 10 7 10S9.5 8.9 9.5 7.5V3"}],["path",{"d":"M7 3V21"}],["ellipse",{"cx":"17","cy":"6.5","rx":"2.6","ry":"3.6"}],["path",{"d":"M17 10.1V21"}]]);
 export { UtensilsCrossed as UtensilsCrossedIcon, UtensilsCrossed as LucideUtensilsCrossed };
 export const CakeSlice = /*#__PURE__*/ make("cake-slice", [["path",{"d":"M3.5 11.5L20.5 7V19.5H3.5Z"}],["path",{"d":"M3.5 15.3H20.5"}],["circle",{"cx":"16.5","cy":"4.8","r":"1.4"}]]);
 export { CakeSlice as CakeSliceIcon, CakeSlice as LucideCakeSlice };
 export const Sprout = /*#__PURE__*/ make("sprout", [["path",{"d":"M12 21V11"}],["path",{"d":"M12 13C12 9 9.5 6.5 4.5 6.5C4.5 11 7 13 12 13Z"}],["path",{"d":"M12 11C12 7 14.5 4 19.5 4C19.5 8.5 17 11 12 11Z"}],["path",{"d":"M8 21H16"}]]);
 export { Sprout as SproutIcon, Sprout as LucideSprout };
-export const Settings = /*#__PURE__*/ make("settings", [["path",{"d":"M10.68 4.16Q12 2.7 13.32 4.16Q14.64 5.63 16.61 5.52Q18.58 5.42 18.48 7.39Q18.37 9.36 19.84 10.68Q21.3 12 19.84 13.32Q18.37 14.64 18.48 16.61Q18.58 18.58 16.61 18.48Q14.64 18.37 13.32 19.84Q12 21.3 10.68 19.84Q9.36 18.37 7.39 18.48Q5.42 18.58 5.52 16.61Q5.63 14.64 4.16 13.32Q2.7 12 4.16 10.68Q5.63 9.36 5.52 7.39Q5.42 5.42 7.39 5.52Q9.36 5.63 10.68 4.16Z"}],["circle",{"cx":"12","cy":"12","r":"3"}]]);
+export const Settings = /*#__PURE__*/ make("settings", [["path",{"d":"M9.93 3.04A9.2 9.2 0 0 1 14.07 3.04L14.37 5.84A6.6 6.6 0 0 1 16.15 6.87L18.73 5.73A9.2 9.2 0 0 1 20.8 9.31L18.52 10.97A6.6 6.6 0 0 1 18.52 13.03L20.8 14.69A9.2 9.2 0 0 1 18.73 18.27L16.15 17.13A6.6 6.6 0 0 1 14.37 18.16L14.07 20.96A9.2 9.2 0 0 1 9.93 20.96L9.63 18.16A6.6 6.6 0 0 1 7.85 17.13L5.27 18.27A9.2 9.2 0 0 1 3.2 14.69L5.48 13.03A6.6 6.6 0 0 1 5.48 10.97L3.2 9.31A9.2 9.2 0 0 1 5.27 5.73L7.85 6.87A6.6 6.6 0 0 1 9.63 5.84Z"}],["circle",{"cx":"12","cy":"12","r":"3"}]]);
 export { Settings as SettingsIcon, Settings as LucideSettings };
 export const Cog = /*#__PURE__*/ make("cog", [["path",{"d":"M10.71 5.53L10.78 2.88L13.22 2.88L13.29 5.53A6.6 6.6 0 0 1 15.67 6.51L15.67 6.51L17.58 4.69L19.31 6.42L17.49 8.33A6.6 6.6 0 0 1 18.47 10.71L18.47 10.71L21.12 10.78L21.12 13.22L18.47 13.29A6.6 6.6 0 0 1 17.49 15.67L17.49 15.67L19.31 17.58L17.58 19.31L15.67 17.49A6.6 6.6 0 0 1 13.29 18.47L13.29 18.47L13.22 21.12L10.78 21.12L10.71 18.47A6.6 6.6 0 0 1 8.33 17.49L8.33 17.49L6.42 19.31L4.69 17.58L6.51 15.67A6.6 6.6 0 0 1 5.53 13.29L5.53 13.29L2.88 13.22L2.88 10.78L5.53 10.71A6.6 6.6 0 0 1 6.51 8.33L6.51 8.33L4.69 6.42L6.42 4.69L8.33 6.51A6.6 6.6 0 0 1 10.71 5.53Z"}],["circle",{"cx":"12","cy":"12","r":"2.8"}]]);
 export { Cog as CogIcon, Cog as LucideCog };
@@ -257,7 +257,7 @@ export const Rocket = /*#__PURE__*/ make("rocket", [["path",{"d":"M11.5 16.2L7.8
 export { Rocket as RocketIcon, Rocket as LucideRocket };
 export const Lightbulb = /*#__PURE__*/ make("lightbulb", [["path",{"d":"M9 14.5C7.5 13.4 6.5 11.7 6.5 9.8A5.5 5.5 0 0 1 17.5 9.8C17.5 11.7 16.5 13.4 15 14.5V17.5H9Z"}],["path",{"d":"M10 20.5H14"}]]);
 export { Lightbulb as LightbulbIcon, Lightbulb as LucideLightbulb };
-export const Globe = /*#__PURE__*/ make("globe", [["circle",{"cx":"12","cy":"12","r":"9"}],["path",{"d":"M8.5 3.7C5.6 7.8 5.6 16.2 8.5 20.3"}],["path",{"d":"M10.5 7H15.5L17.5 9.5L16 12L15.5 15L13.5 18L12.5 15L12 12.5L10 11.5L9.5 9Z"}],["circle",{"cx":"17.6","cy":"15.2","r":"0.75","fill":"currentColor","stroke":"none"}]]);
+export const Globe = /*#__PURE__*/ make("globe", [["circle",{"cx":"12","cy":"12","r":"9"}],["path",{"d":"M7.8 6.6L10 5.8L12 5.6L15.6 6.2L17.4 10.4L19 10.2L17.4 13L16.4 15.6L13.4 18.8L11.8 15.4L11.4 12.4L8.2 11.8L5.4 9.4Z","fill":"currentColor","stroke":"none"}]]);
 export { Globe as GlobeIcon, Globe as LucideGlobe };
 export const Phone = /*#__PURE__*/ make("phone", [["path",{"d":"M6.5 3.5H8.6C9 3.5 9.4 3.8 9.5 4.2L10.4 7.4C10.5 7.8 10.3 8.3 9.9 8.5L8.2 9.4C9.3 11.8 11.2 13.7 13.6 14.8L14.5 13.1C14.7 12.7 15.2 12.5 15.6 12.6L18.8 13.5C19.2 13.6 19.5 14 19.5 14.4V16.5C19.5 18.7 17.7 20.5 15.5 20.4C9.1 20 4 14.9 3.6 8.5C3.4 5.8 4.6 3.5 6.5 3.5Z"}]]);
 export { Phone as PhoneIcon, Phone as LucidePhone };
@@ -289,11 +289,11 @@ export const Play = /*#__PURE__*/ make("play", [["path",{"d":"M7 4.5V19.5C7 20.3
 export { Play as PlayIcon, Play as LucidePlay };
 export const ScanLine = /*#__PURE__*/ make("scan-line", [["path",{"d":"M3.5 8V6C3.5 4.6 4.6 3.5 6 3.5H8M16 3.5H18C19.4 3.5 20.5 4.6 20.5 6V8M20.5 16V18C20.5 19.4 19.4 20.5 18 20.5H16M8 20.5H6C4.6 20.5 3.5 19.4 3.5 18V16"}],["path",{"d":"M7 12H17"}]]);
 export { ScanLine as ScanLineIcon, ScanLine as LucideScanLine };
-export const Settings2 = /*#__PURE__*/ make("settings-2", [["path",{"d":"M6 3.5V10M6 14V20.5M12 3.5V7M12 11V20.5M18 3.5V13M18 17V20.5"}],["circle",{"cx":"6","cy":"12","r":"2"}],["circle",{"cx":"12","cy":"9","r":"2"}],["circle",{"cx":"18","cy":"15","r":"2"}]]);
+export const Settings2 = /*#__PURE__*/ make("settings-2", [["rect",{"x":"2.5","y":"3.5","width":"19","height":"7","rx":"3.5"}],["circle",{"cx":"6","cy":"7","r":"1.75","fill":"currentColor","stroke":"none"}],["rect",{"x":"2.5","y":"13.5","width":"19","height":"7","rx":"3.5"}],["circle",{"cx":"18","cy":"17","r":"1.75","fill":"currentColor","stroke":"none"}]]);
 export { Settings2 as Settings2Icon, Settings2 as LucideSettings2 };
 export const Wrench = /*#__PURE__*/ make("wrench", [["path",{"d":"M14.6 3.7C12.6 4.6 11.6 6.9 12.4 9L4.6 16.8C3.8 17.6 3.8 18.9 4.6 19.7S6.6 20.5 7.4 19.7L15.2 11.9C17.3 12.7 19.6 11.7 20.5 9.7L17.7 9.9L15.5 7.8L15.7 5Z"}]]);
 export { Wrench as WrenchIcon, Wrench as LucideWrench };
-export const Handshake = /*#__PURE__*/ make("handshake", [["path",{"d":"M2.5 10L6 8.5L10.5 9.5"}],["path",{"d":"M21.5 10L18 8.5H14L9.8 11.6C9.2 12.1 9.2 13 9.8 13.5C10.4 14 11.2 14 11.8 13.5L14 11.8L18.5 15.2"}],["path",{"d":"M2.5 15H5.5L11 19.2C11.6 19.7 12.5 19.6 13 19L18.5 15.2H21.5"}]]);
+export const Handshake = /*#__PURE__*/ make("handshake", [["path",{"d":"M2.5 6.5V14"}],["path",{"d":"M21.5 6.5V14"}],["path",{"d":"M2.5 8H5.5L9 6.7"}],["path",{"d":"M21.5 7.5H18L14.6 5.8C14 5.5 13.3 5.5 12.7 5.9L8.9 8.5C8.2 9 8.2 10 8.9 10.5C9.5 10.9 10.3 10.9 10.9 10.5L13 9L17.6 13.1"}],["path",{"d":"M2.5 13H5L9.8 16.9C10.4 17.4 11.3 17.4 11.9 16.9L17.6 13.1H21.5"}],["path",{"d":"M12.9 16.2L10.8 14.2M15 14.8L12.9 12.7"}]]);
 export { Handshake as HandshakeIcon, Handshake as LucideHandshake };
 export const ChevronUp = /*#__PURE__*/ make("chevron-up", [["path",{"d":"M6 14.5L12 8.5L18 14.5"}]]);
 export { ChevronUp as ChevronUpIcon, ChevronUp as LucideChevronUp };
@@ -337,7 +337,7 @@ export const Database = /*#__PURE__*/ make("database", [["ellipse",{"cx":"12","c
 export { Database as DatabaseIcon, Database as LucideDatabase };
 export const HardDrive = /*#__PURE__*/ make("hard-drive", [["rect",{"x":"2.5","y":"13","width":"19","height":"7","rx":"2"}],["path",{"d":"M2.5 15L5.5 5.5C5.8 4.6 6.6 4 7.5 4H16.5C17.4 4 18.2 4.6 18.5 5.5L21.5 15"}],["circle",{"cx":"6.5","cy":"16.5","r":"0.9","fill":"currentColor","stroke":"none"}],["circle",{"cx":"9.5","cy":"16.5","r":"0.9","fill":"currentColor","stroke":"none"}]]);
 export { HardDrive as HardDriveIcon, HardDrive as LucideHardDrive };
-export const ShoppingBag = /*#__PURE__*/ make("shopping-bag", [["path",{"d":"M5 9H19L20 19.5C20.1 20.3 19.5 21 18.7 21H5.3C4.5 21 3.9 20.3 4 19.5Z"}],["path",{"d":"M7.5 9C7.5 4.6 10.5 4.6 10.5 9M13.5 9C13.5 4.6 16.5 4.6 16.5 9"}],["path",{"d":"M6.5 15L8.5 13.2L10.5 15L12.5 13.2L14.5 15L16.5 13.2"}]]);
+export const ShoppingBag = /*#__PURE__*/ make("shopping-bag", [["path",{"d":"M5.5 8.5H18.5L19.6 19C19.7 19.8 19.1 20.5 18.3 20.5H5.7C4.9 20.5 4.3 19.8 4.4 19Z"}],["path",{"d":"M9 8.5V7A3 3 0 0 1 15 7V8.5"}],["path",{"d":"M7.5 14.5L9 13L10.5 14.5L12 13L13.5 14.5L15 13L16.5 14.5"}]]);
 export { ShoppingBag as ShoppingBagIcon, ShoppingBag as LucideShoppingBag };
 export const PackageCheck = /*#__PURE__*/ make("package-check", [["path",{"d":"M20.5 11.5V7.5L12 3.5L3.5 7.5V16.5L12 20.5L13 20"}],["path",{"d":"M3.5 7.5L12 11.5L20.5 7.5M12 11.5V20.5"}],["path",{"d":"M7.8 5.5L16.2 9.5V12"}],["path",{"d":"M15 17.5L17 19.5L21 15.5"}]]);
 export { PackageCheck as PackageCheckIcon, PackageCheck as LucidePackageCheck };
@@ -355,7 +355,7 @@ export const Hourglass = /*#__PURE__*/ make("hourglass", [["path",{"d":"M6 3H18M
 export { Hourglass as HourglassIcon, Hourglass as LucideHourglass };
 export const ClipboardX = /*#__PURE__*/ make("clipboard-x", [["rect",{"x":"5","y":"4.5","width":"14","height":"16.5","rx":"2"}],["rect",{"x":"9","y":"3","width":"6","height":"3","rx":"1"}],["path",{"d":"M9.8 11.3L14.2 15.7M14.2 11.3L9.8 15.7"}]]);
 export { ClipboardX as ClipboardXIcon, ClipboardX as LucideClipboardX };
-export const PiggyBank = /*#__PURE__*/ make("piggy-bank", [["path",{"d":"M7 10C4.9 11.1 3.5 12.9 3.5 15C3.5 18 7.3 19.8 12 19.8S20.5 18 20.5 15C20.5 12.9 19.1 11.1 17 10Z"}],["path",{"d":"M9.5 19.8V21.3H14.5V19.8"}],["path",{"d":"M10 10H14"}],["circle",{"cx":"12","cy":"5","r":"2.6"}],["path",{"d":"M12 3.9V6.1"}]]);
+export const PiggyBank = /*#__PURE__*/ make("piggy-bank", [["path",{"d":"M19 11.25C18 8.55 15.3 6.75 12 6.75C7.6 6.75 4.5 9.45 4.5 12.75C4.5 14.85 5.6 16.45 7.5 17.45V19.75H10V18.55C10.7 18.65 11.3 18.75 12 18.75S13.3 18.65 14 18.55V19.75H16.5V17.45C17.6 16.85 18.5 16.05 19 15.05Z"}],["path",{"d":"M19 11.45H20.5C21 11.45 21.5 11.85 21.5 12.45V13.85C21.5 14.45 21 14.85 20.5 14.85H19"}],["path",{"d":"M14.3 6.95L15.9 4.25L17.2 8.05"}],["path",{"d":"M4.6 11.85C3.2 11.85 2.6 10.45 3.6 9.65"}],["path",{"d":"M9.5 9.75H13"}],["circle",{"cx":"16.4","cy":"10.65","r":"0.8","fill":"currentColor","stroke":"none"}]]);
 export { PiggyBank as PiggyBankIcon, PiggyBank as LucidePiggyBank };
 export const Folder = /*#__PURE__*/ make("folder", [["path",{"d":"M3.5 7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V17.5C20.5 18.6 19.6 19.5 18.5 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5Z"}],["path",{"d":"M3.5 10.2H20.5"}]]);
 export { Folder as FolderIcon, Folder as LucideFolder };
@@ -365,11 +365,11 @@ export const Building = /*#__PURE__*/ make("building", [["rect",{"x":"5.5","y":"
 export { Building as BuildingIcon, Building as LucideBuilding };
 export const UserCog = /*#__PURE__*/ make("user-cog", [["circle",{"cx":"9","cy":"7.5","r":"3.5"}],["path",{"d":"M3 20C3 16.6 5.7 14 9 14C10.1 14 11.2 14.3 12 14.8"}],["circle",{"cx":"17.5","cy":"17","r":"2.3"}],["path",{"d":"M19.8 17L20.9 17M18.65 18.99L19.2 19.94M16.35 18.99L15.8 19.94M15.2 17L14.1 17M16.35 15.01L15.8 14.06M18.65 15.01L19.2 14.06"}]]);
 export { UserCog as UserCogIcon, UserCog as LucideUserCog };
-export const Quote = /*#__PURE__*/ make("quote", [["path",{"d":"M4 12H9V17.5H4Z"}],["path",{"d":"M4 12C4 9 5.5 7 8.5 6"}],["path",{"d":"M13.5 12H18.5V17.5H13.5Z"}],["path",{"d":"M13.5 12C13.5 9 15 7 18 6"}]]);
+export const Quote = /*#__PURE__*/ make("quote", [["circle",{"cx":"7.25","cy":"14.75","r":"2.75","fill":"currentColor","stroke":"none"}],["path",{"d":"M4.6 14.5C4.6 10.6 6.2 8 9.5 6.5"}],["circle",{"cx":"16.25","cy":"14.75","r":"2.75","fill":"currentColor","stroke":"none"}],["path",{"d":"M13.6 14.5C13.6 10.6 15.2 8 18.5 6.5"}]]);
 export { Quote as QuoteIcon, Quote as LucideQuote };
 export const MailCheck = /*#__PURE__*/ make("mail-check", [["path",{"d":"M20.5 12V7.5C20.5 6.1 19.4 5 18 5H6C4.6 5 3.5 6.1 3.5 7.5V16.5C3.5 17.9 4.6 19 6 19H12.5"}],["path",{"d":"M4 7.5L12 13L20 7.5"}],["path",{"d":"M15 17.5L17 19.5L21 15.5"}]]);
 export { MailCheck as MailCheckIcon, MailCheck as LucideMailCheck };
-export const MonitorCog = /*#__PURE__*/ make("monitor-cog", [["rect",{"x":"4","y":"3.5","width":"8","height":"4.5","rx":"1"}],["path",{"d":"M8 8V12"}],["path",{"d":"M3.5 12H20.5V19A1.5 1.5 0 0 1 19 20.5H5A1.5 1.5 0 0 1 3.5 19Z"}],["path",{"d":"M3.5 16H20.5"}],["path",{"d":"M10.5 18.25H13.5"}],["circle",{"cx":"17.5","cy":"6.5","r":"1.6"}],["path",{"d":"M17.5 3.5V4.4M17.5 8.6V9.5M14.5 6.5H15.4M19.6 6.5H20.5M15.4 4.4L16.04 5.04M18.96 7.96L19.6 8.6M15.4 8.6L16.04 7.96M18.96 5.04L19.6 4.4"}]]);
+export const MonitorCog = /*#__PURE__*/ make("monitor-cog", [["path",{"d":"M11 3.5H4.5C3.4 3.5 2.5 4.4 2.5 5.5V14.5C2.5 15.6 3.4 16.5 4.5 16.5H19.5C20.6 16.5 21.5 15.6 21.5 14.5V12.5"}],["path",{"d":"M12 16.5V20.5M8.5 20.5H15.5"}],["path",{"d":"M16.53 2.62A4 4 0 0 1 18.47 2.62L18.49 3.77A2.9 2.9 0 0 1 19.36 4.28L20.38 3.72A4 4 0 0 1 21.35 5.4L20.36 6A2.9 2.9 0 0 1 20.36 7L21.35 7.6A4 4 0 0 1 20.38 9.28L19.36 8.72A2.9 2.9 0 0 1 18.49 9.23L18.47 10.38A4 4 0 0 1 16.53 10.38L16.51 9.23A2.9 2.9 0 0 1 15.64 8.72L14.62 9.28A4 4 0 0 1 13.65 7.6L14.64 7A2.9 2.9 0 0 1 14.64 6L13.65 5.4A4 4 0 0 1 14.62 3.72L15.64 4.28A2.9 2.9 0 0 1 16.51 3.77Z"}],["circle",{"cx":"17.5","cy":"6.5","r":"0.9","fill":"currentColor","stroke":"none"}]]);
 export { MonitorCog as MonitorCogIcon, MonitorCog as LucideMonitorCog };
 export const BotMessageSquare = /*#__PURE__*/ make("bot-message-square", [["path",{"d":"M12 3.5C16.7 3.5 20.5 6.7 20.5 10.75S16.7 18 12 18C10.95 18 9.94 17.84 9 17.54L4.5 20L5.7 16.3A6.9 6.9 0 0 1 3.5 10.75C3.5 6.7 7.3 3.5 12 3.5Z"}],["path",{"d":"M12 6.9L13.05 9.7L15.85 10.75L13.05 11.8L12 14.6L10.95 11.8L8.15 10.75L10.95 9.7Z"}]]);
 export { BotMessageSquare as BotMessageSquareIcon, BotMessageSquare as LucideBotMessageSquare };

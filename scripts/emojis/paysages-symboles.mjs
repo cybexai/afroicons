@@ -293,6 +293,10 @@ const khamsa = [
 
 const E = (slug, fr, en, group, tags, body) => ({ slug, fr, en, char: null, group, tags, tone: false, body });
 
+/** Recadrage (audit du dessin) : ces dessins débordaient de la grille 24 × 24 (ou étaient décentrés) ;
+ *  ils sont réduits et décalés juste assez pour y tenir : [échelle, décalage x, décalage y]. */
+const CADRE = { "ankh": [0.98, 0, 0.6] };
+const cadre = (e) => { const f = CADRE[e.slug]; return f ? { ...e, body: `<g transform="translate(${Math.round((12 + f[1]) * 100) / 100} ${Math.round((12 + f[2]) * 100) / 100}) scale(${f[0]}) translate(-12 -12)">${e.body}</g>` } : e; };
 export default [
   E("chutes-victoria", "Chutes Victoria", "Victoria Falls", "nature", ["chutes victoria", "victoria falls", "mosi-oa-tunya", "cascade", "waterfall", "zambèze", "zambezi", "zambie", "zambia", "zimbabwe", "arc-en-ciel", "rainbow"], chutesVictoria),
   E("montagne-de-la-table", "Montagne de la Table", "Table Mountain", "nature", ["montagne de la table", "table mountain", "le cap", "cape town", "afrique du sud", "south africa", "montagne", "mountain", "nappe", "tablecloth"], montagneTable),
@@ -310,4 +314,4 @@ export default [
   E("oeil-oudjat", "Œil Oudjat", "Eye of Horus", "coeurs", ["oudjat", "wedjat", "œil d'horus", "eye of horus", "protection", "égypte", "egypt", "kemet", "symbole", "symbol"], oeilOudjat),
   E("croix-copte", "Croix copte éthiopienne", "Ethiopian Coptic cross", "coeurs", ["croix", "cross", "copte", "coptic", "éthiopie", "ethiopia", "lalibela", "tewahedo", "meskel", "érythrée", "égypte", "symbole", "symbol"], crossCopte),
   E("main-khamsa", "Main de Fatma (khamsa)", "Hamsa hand (khamsa)", "coeurs", ["khamsa", "hamsa", "main de fatma", "hand of fatima", "protection", "mauvais œil", "evil eye", "maghreb", "maroc", "morocco", "algérie", "tunisie", "symbole", "symbol"], khamsa),
-];
+].map(cadre);

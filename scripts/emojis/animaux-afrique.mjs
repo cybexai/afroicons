@@ -378,6 +378,10 @@ const autruche = [
 ].join("");
 
 const A = (slug, fr, en, char, tags, body) => ({ slug, fr, en, char, group: "animaux", tags, tone: false, body });
+/** Recadrage (audit du dessin) : ces dessins débordaient de la grille 24 × 24 (ou étaient décentrés) ;
+ *  ils sont réduits et décalés juste assez pour y tenir : [échelle, décalage x, décalage y]. */
+const CADRE = { "leopard": [1, -0.7, 0], "ane": [0.99, 0, 0.5], "impala": [0.96, 0, 0.5], "flamant-rose": [1, 0, -0.3] };
+const cadre = (e) => { const f = CADRE[e.slug]; return f ? { ...e, body: `<g transform="translate(${Math.round((12 + f[1]) * 100) / 100} ${Math.round((12 + f[2]) * 100) / 100}) scale(${f[0]}) translate(-12 -12)">${e.body}</g>` } : e; };
 export default [
   A("hippopotame", "Hippopotame", "Hippopotamus", "🦛", ["hippopotame", "hippopotamus", "hippo", "kiboko", "fleuve", "river", "nil", "zambèze", "okavango"], hippopotame),
   A("rhinoceros", "Rhinocéros", "Rhinoceros", "🦏", ["rhinocéros", "rhinoceros", "rhino", "faru", "kifaru", "savane", "savanna", "kenya", "afrique du sud", "namibie"], rhinoceros),
@@ -397,4 +401,4 @@ export default [
   A("pintade", "Pintade", "Guineafowl", null, ["pintade", "guineafowl", "kanga", "zabo", "oiseau", "bird", "village", "volaille", "poultry"], pintade),
   A("impala", "Impala", "Impala", null, ["impala", "swala pala", "antilope", "antelope", "savane", "savanna", "kenya", "tanzanie", "botswana"], impala),
   A("autruche", "Autruche", "Ostrich", null, ["autruche", "ostrich", "mbuni", "volstruis", "oiseau", "bird", "kalahari", "sahel", "savane"], autruche),
-];
+].map(cadre);

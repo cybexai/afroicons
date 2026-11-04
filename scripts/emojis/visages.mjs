@@ -97,6 +97,10 @@ const bigHeart = (fill, shine = "rgba(255,255,255,0.55)") => path(H, fill) + lin
 const v = (slug, fr, en, char, tags, body) => ({ slug, fr, en, char, group: "visages", tags, tone: true, body });
 const h = (slug, fr, en, char, tags, body) => ({ slug, fr, en, char, group: "coeurs", tags, tone: false, body });
 
+/** Recadrage (audit du dessin) : ces dessins débordaient de la grille 24 × 24 (ou étaient décentrés) ;
+ *  ils sont réduits et décalés juste assez pour y tenir : [échelle, décalage x, décalage y]. */
+const CADRE = { "visage-festif": [1, 0.7, -0.2], "deux-coeurs": [1, 0.3, 1.6], "visage-horrifie": [0.97, 0, 0] };
+const cadre = (e) => { const f = CADRE[e.slug]; return f ? { ...e, body: `<g transform="translate(${Math.round((12 + f[1]) * 100) / 100} ${Math.round((12 + f[2]) * 100) / 100}) scale(${f[0]}) translate(-12 -12)">${e.body}</g>` } : e; };
 export default [
   v("visage-souriant", "Visage souriant", "Grinning face", "😀", ["sourire", "smile", "content", "happy", "joie"],
     F({ eyes: "oval", mouth: "grin" })),
@@ -207,4 +211,4 @@ export default [
     path("M6 3.4L12 9.4L18 3.4L20.6 6L14.6 12L20.6 18L18 20.6L12 14.6L6 20.6L3.4 18L9.4 12L3.4 6Z", C.rouge)),
   h("etoile", "Étoile", "Star", "⭐", ["étoile", "star", "favori", "top", "note"],
     path("M12 2.2L14.9 8.2L21.5 9.1L16.7 13.7L17.9 20.3L12 17.1L6.1 20.3L7.3 13.7L2.5 9.1L9.1 8.2Z", C.jaune)),
-];
+].map(cadre);

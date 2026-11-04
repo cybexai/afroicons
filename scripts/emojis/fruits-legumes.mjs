@@ -187,7 +187,7 @@ const CANE = "#C3C94A", CANE_D = "#7E8A2E";
 const stalk = (x, y1, y2, w) => [rect(x, y1, w, y2 - y1, 0.8, CANE), ...Array.from({ length: Math.floor((y2 - y1 - 2) / 4) }, (_, k) => rect(x - 0.3, y1 + 3.4 + k * 4, w + 0.6, 1, 0.5, CANE_D, { w: 0.6 })), line(`M${x + 0.8} ${y1 + 1}V${y2 - 1}`, "#E6EA9A", 0.6)].join("");
 const canneASucre = [
   g("rotate(24 12 12)",
-    leaf(9.2, 3.2, 1.6, -1, 1.6, C.feuille), leaf(9.6, 3, 12.6, -4, 1.3, C.vertLight, C.feuille), leaf(14, 4.6, 21, 2.4, 1.5, C.feuille),
+    leaf(9.2, 3.6, 4.6, 4.6, 1.5, C.feuille), leaf(9.8, 3.2, 14, 0.2, 1.2, C.vertLight, C.feuille), leaf(14, 4.8, 18.8, 5.2, 1.4, C.feuille),
     stalk(7.6, 2.6, 23.6, 3.4), stalk(12.4, 4, 21.4, 3.2),
   ),
   g("rotate(-18 16 19.6)", rect(13.4, 18.2, 7.6, 2.8, 0.6, CANE), rect(17.4, 17.9, 1, 3.4, 0.5, CANE_D, { w: 0.6 }), ellipse(13.4, 19.6, 1.1, 1.4, "#F4EDC4", { w: 0.8 }), dots([[13.3, 19.2], [13.6, 20]], 0.2, "#C8BE80")),
@@ -373,6 +373,10 @@ const gombo = [
 ].join("");
 
 const E = (slug, fr, en, tags, body, char = null) => ({ slug, fr, en, char, group: "fruits", tags, tone: false, body });
+/** Recadrage (audit du dessin) : ces dessins débordaient de la grille 24 × 24 (ou étaient décentrés) ;
+ *  ils sont réduits et décalés juste assez pour y tenir : [échelle, décalage x, décalage y]. */
+const CADRE = { "corossol": [0.94, 0, 0.6], "fruit-de-la-passion": [1, 0, 0.7], "tamarin": [0.93, 0, 0], "nere": [0.88, 0, -0.1], "regime-noix-de-palme": [0.94, 0, -0.9], "pomme-de-cajou": [0.93, 0, 0.3], "jacquier": [0.98, 0, 0.8], "gombo": [1, 0.6, 0.1], "papaye": [1, -0.3, 0], "igname": [1, 0.3, 0] };
+const cadre = (e) => { const f = CADRE[e.slug]; return f ? { ...e, body: `<g transform="translate(${Math.round((12 + f[1]) * 100) / 100} ${Math.round((12 + f[2]) * 100) / 100}) scale(${f[0]}) translate(-12 -12)">${e.body}</g>` } : e; };
 export default [
   E("safou", "Safou", "African pear (safou)", ["safou", "atanga", "prune", "african plum", "butterfruit", "dacryodes", "cameroun", "congo", "gabon"], safou),
   E("corossol", "Corossol", "Soursop", ["corossol", "soursop", "graviola", "guanabana", "fruit", "côte d'ivoire", "cameroun", "jus"], corossol),
@@ -398,4 +402,4 @@ export default [
   E("arachides-en-coque", "Arachides en coque", "Peanuts in shell", ["arachide", "cacahuète", "peanut", "groundnut", "coque", "shell", "sénégal", "mafé"], arachides, "🥜"),
   E("aubergine-africaine", "Aubergine africaine", "Garden egg", ["aubergine africaine", "garden egg", "africa eggplant", "garden eggs", "djakatou", "ghana", "nigeria", "côte d'ivoire"], aubergineAfricaine),
   E("gombo", "Gombo", "Okra", ["gombo", "okra", "ladyfinger", "légume", "vegetable", "sauce gombo", "bamia", "nigeria", "mali"], gombo),
-];
+].map(cadre);

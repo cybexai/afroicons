@@ -39,16 +39,16 @@ const krar = [
 
 // Masenqo (Éthiopie) : vièle monocorde, caisse en losange tendue de peau, long manche, grosse cheville, archet arqué.
 const masenqo = [
-  g("rotate(-12 12 12)",
-    rect(11.3, 1, 1.4, 12, 0.7, C.bois),
-    rect(8.4, 2.6, 7.2, 1.4, 0.7, C.marron),
-    path("M12 10.4L18.2 16.6L12 22.8L5.8 16.6Z", C.marron),
-    path("M12 12.2L16.4 16.6L12 21L7.6 16.6Z", C.sable, { w: 0.8 }),
-    strings("M12 21.4V3.4", 0.6),
-    rect(10.7, 17.8, 2.6, 1, 0.4, C.bois, { w: 0.7 }),
+  g("rotate(-14 10.4 12)",
+    rect(9.7, 1.2, 1.4, 12, 0.7, C.bois),
+    rect(7.6, 3, 5.6, 1.5, 0.75, C.marron),
+    path("M10.4 10.2L16.4 16.4L10.4 22.6L4.4 16.4Z", C.marron),
+    path("M10.4 12L14.6 16.4L10.4 20.8L6.2 16.4Z", C.sable, { w: 0.8 }),
+    strings("M10.4 21.2V4", 0.6),
+    rect(9.1, 17.6, 2.6, 1, 0.4, C.bois, { w: 0.7 }),
   ),
-  line("M4 12.4L20.8 8", O, 0.6),
-  thick("M4 12.4Q10.6 5.8 20.8 8", C.bois, 0.8),
+  line("M17.4 3.2L19.4 21", O, 0.6),
+  thick("M17.4 3.2Q22.6 11.4 19.4 21", C.bois, 0.8),
 ].join("");
 
 // Begena (Éthiopie) : grande lyre à caisse rectangulaire tendue de peau, bras parallèles, joug, 8 cordes (10 en vrai).
@@ -117,17 +117,17 @@ for (let y = 12.6; y < 20.6; y += 1.5) for (let x = 8.4 + ((y * 2) % 2 ? 0.75 : 
   if ((x - 12) ** 2 + (y - 16.4) ** 2 < 15) lizardScales.push([x, y]);
 }
 const goje = [
-  g("rotate(-35 12 12)",
-    rect(11.3, 0.8, 1.4, 21.6, 0.7, C.bois),
+  g("translate(1.6 0) rotate(24 12 14)",
+    rect(11.3, 1.4, 1.4, 21, 0.7, C.bois),
     circle(12, 16.4, 5.2, C.ocre),
     circle(12, 16.4, 4.3, LIZARD, { w: 0.8 }),
     dots(lizardScales, 0.32, C.marron),
-    rect(10.9, 1.8, 2.2, 1.2, 0.5, C.terre, { w: 0.6 }),
-    strings("M12 20.8V2.6", 0.7),
+    rect(10.9, 2.4, 2.2, 1.2, 0.5, C.terre, { w: 0.6 }),
+    strings("M12 20.8V3.2", 0.7),
     rect(10.7, 17.6, 2.6, 1, 0.4, C.bois, { w: 0.7 }),
-    line("M5.4 10.6H18.6", O, 0.6),
-    thick("M5.4 10.6Q12 4.4 18.6 10.6", C.marron, 0.8),
   ),
+  line("M4.6 3L4 20.8", O, 0.6),
+  thick("M4.6 3Q-0.4 12 4 20.8", C.marron, 0.8),
 ].join("");
 
 // Akonting (Diola, Sénégal / Gambie) : luth à calebasse tendue de peau cloutée, manche de bambou, 2 cordes + corde de bourdon courte.
@@ -347,15 +347,19 @@ const timbila = [
 
 const E = (slug, fr, en, tags, body) => ({ slug, fr, en, char: null, group: "objets", tags: [...tags, "musique", "music", "instrument"], tone: false, body });
 
+/** Recadrage (audit du dessin) : ces dessins débordaient de la grille 24 × 24 (ou étaient décentrés) ;
+ *  ils sont réduits et décalés juste assez pour y tenir : [échelle, décalage x, décalage y]. */
+const CADRE = { "sabar": [0.97, 0, 0.8], "atumpan": [0.96, 0, 0.5], "gankogui": [1, 0, -0.8], "timbila": [0.94, 0, 0], "dunun": [1, 0.3, 0] };
+const cadre = (e) => { const f = CADRE[e.slug]; return f ? { ...e, body: `<g transform="translate(${Math.round((12 + f[1]) * 100) / 100} ${Math.round((12 + f[2]) * 100) / 100}) scale(${f[0]}) translate(-12 -12)">${e.body}</g>` } : e; };
 export default [
   E("ngoni", "Ngoni", "Ngoni", ["ngoni", "n'goni", "kamalé ngoni", "donso ngoni", "luth", "lute", "cordes", "strings", "mali", "bambara", "griot"], ngoni),
   E("krar", "Krar", "Krar", ["krar", "kirar", "lyre", "cordes", "strings", "éthiopie", "ethiopia", "érythrée", "eritrea", "azmari"], krar),
-  E("masenqo", "Masenqo", "Masenqo", ["masenqo", "masinko", "vièle", "fiddle", "archet", "bow", "cordes", "strings", "éthiopie", "ethiopia", "azmari"], masenqo),
+  E("masenqo", "Masenqo", "Masenqo", ["masenqo", "masinko", "vièle", "fiddle", "archet", "bow", "cordes", "strings", "éthiopie", "ethiopia", "azmari"], g("translate(-1.6 0)", masenqo)),
   E("begena", "Begena", "Begena", ["begena", "bagana", "lyre", "harpe de david", "cordes", "strings", "éthiopie", "ethiopia", "amhara", "orthodoxe"], begena),
   E("oud", "Oud", "Oud", ["oud", "ʿūd", "luth", "lute", "cordes", "strings", "maghreb", "égypte", "egypt", "soudan", "sudan", "maroc", "morocco"], oud),
   E("guembri", "Guembri", "Guembri", ["guembri", "gimbri", "sintir", "hajhouj", "gnaoua", "gnawa", "maroc", "morocco", "luth", "lute", "cordes", "strings"], guembri),
   E("imzad", "Imzad", "Imzad", ["imzad", "anzad", "vièle", "fiddle", "touareg", "tuareg", "niger", "algérie", "algeria", "mali", "cordes", "strings"], imzad),
-  E("goje", "Goje", "Goje", ["goje", "gonje", "goge", "vièle", "fiddle", "haoussa", "hausa", "nigeria", "niger", "sahel", "cordes", "strings"], goje),
+  E("goje", "Goje", "Goje", ["goje", "gonje", "goge", "vièle", "fiddle", "haoussa", "hausa", "nigeria", "niger", "sahel", "cordes", "strings"], g("translate(1.9 0)", goje)),
   E("akonting", "Akonting", "Akonting", ["akonting", "ekonting", "banjo", "luth", "lute", "diola", "jola", "sénégal", "senegal", "gambie", "gambia", "cordes", "strings"], akonting),
   E("mvet", "Mvet", "Mvet", ["mvet", "cithare", "zither", "fang", "beti", "cameroun", "cameroon", "gabon", "guinée équatoriale", "equatorial guinea", "cordes", "strings"], mvet),
   E("sabar", "Sabar", "Sabar", ["sabar", "nder", "mbalax", "tambour", "drum", "wolof", "sénégal", "senegal", "gambie", "gambia", "percussion"], sabar),
@@ -372,4 +376,4 @@ export default [
   E("kakaki", "Kakaki", "Kakaki", ["kakaki", "trompette", "trumpet", "haoussa", "hausa", "nigeria", "niger", "émir", "emir", "durbar", "vent", "wind"], kakaki),
   E("algaita", "Algaita", "Algaita", ["algaita", "alghaita", "hautbois", "oboe", "anche double", "double reed", "haoussa", "hausa", "nigeria", "niger", "vent", "wind"], algaita),
   E("timbila", "Timbila", "Timbila", ["timbila", "mbila", "xylophone", "chopi", "mozambique", "calebasse", "gourd", "percussion"], timbila),
-];
+].map(cadre);

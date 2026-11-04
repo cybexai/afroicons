@@ -334,6 +334,10 @@ const machine = [
 
 const E = (slug, fr, en, tags, body, { char = null, group = "objets" } = {}) => ({ slug, fr, en, char, group, tags, tone: false, body });
 
+/** Recadrage (audit du dessin) : ces dessins débordaient de la grille 24 × 24 (ou étaient décentrés) ;
+ *  ils sont réduits et décalés juste assez pour y tenir : [échelle, décalage x, décalage y]. */
+const CADRE = { "mortier-pilon": [0.98, 0, 0.6], "panier-tresse": [1, 0, 0.8], "charrette-a-ane": [0.97, 0.6, 0], "groupe-electrogene": [0.94, 0, 0], "fourneau-charbon": [1, 0, -0.4] };
+const cadre = (e) => { const f = CADRE[e.slug]; return f ? { ...e, body: `<g transform="translate(${Math.round((12 + f[1]) * 100) / 100} ${Math.round((12 + f[2]) * 100) / 100}) scale(${f[0]}) translate(-12 -12)">${e.body}</g>` } : e; };
 export default [
   E("chaise-plastique", "Chaise en plastique", "Plastic chair", ["chaise en plastique", "plastic chair", "monobloc", "chaise", "chair", "maquis", "fête", "party", "cérémonie"], chaise),
   E("bidon-jaune", "Bidon jaune", "Yellow jerrycan", ["bidon", "jerrycan", "jerry can", "gallon", "kufuor gallon", "eau", "water", "ghana", "corvée d'eau"], bidon),
@@ -346,11 +350,11 @@ export default [
   E("panier-tresse", "Panier tressé", "Woven basket", ["panier", "basket", "bolga", "bolgatanga", "ghana", "tressé", "woven", "paille", "straw", "marché"], panier, { char: "🧺" }),
   E("tuk-tuk", "Tuk-tuk", "Tuk-tuk", ["tuk-tuk", "keke", "keke napep", "bajaj", "tricycle", "rickshaw", "nigeria", "éthiopie", "ethiopia", "égypte", "taxi"], tuktuk, { char: "🛺" }),
   E("matatu", "Matatu", "Matatu", ["matatu", "minibus", "kenya", "nairobi", "art de rue", "street art", "nganya", "transport", "bus"], matatu),
-  E("charrette-a-ane", "Charrette à âne", "Donkey cart", ["charrette", "cart", "âne", "donkey", "sahel", "mali", "burkina faso", "niger", "sénégal", "transport"], charrette),
+  E("charrette-a-ane", "Charrette à âne", "Donkey cart", ["charrette", "cart", "âne", "donkey", "sahel", "mali", "burkina faso", "niger", "sénégal", "transport"], g("matrix(-1 0 0 1 24 0)", charrette)),
   E("pousse-pousse", "Pousse-pousse", "Handcart", ["pousse-pousse", "handcart", "charrette à bras", "pushcart", "truck pusher", "cameroun", "marché", "market", "porteur"], pousse),
   E("etal-de-marche", "Étal de marché", "Market stall", ["étal", "stall", "marché", "market", "tomates", "tomatoes", "oignons", "onions", "parasol", "vendeuse"], etal, { group: "lieux" }),
   E("groupe-electrogene", "Groupe électrogène", "Generator", ["groupe électrogène", "generator", "gen", "i-better-pass-my-neighbour", "électricité", "electricity", "délestage", "nepa", "courant"], groupe),
   E("seau-et-gobelet", "Seau et gobelet", "Bucket and cup", ["seau", "bucket", "gobelet", "cup", "douche", "bucket shower", "toilette", "eau", "water"], seau, { char: "🪣" }),
   E("pagne-plie", "Pagnes pliés", "Folded wax cloths", ["pagne", "wax", "ankara", "cadeau", "gift", "dot", "dowry", "mariage", "wedding", "tissu"], pagne),
   E("machine-a-coudre", "Machine à coudre", "Sewing machine", ["machine à coudre", "sewing machine", "couturier", "tailor", "tailleur", "pédale", "treadle", "couture", "sewing"], machine),
-];
+].map(cadre);

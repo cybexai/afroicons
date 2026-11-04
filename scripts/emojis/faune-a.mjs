@@ -476,6 +476,10 @@ const daman = [
 ].join("");
 
 const A = (slug, fr, en, char, tags, body) => ({ slug, fr, en, char, group: "animaux", tags, tone: false, body });
+/** Recadrage (audit du dessin) : ces dessins débordaient de la grille 24 × 24 (ou étaient décentrés) ;
+ *  ils sont réduits et décalés juste assez pour y tenir : [échelle, décalage x, décalage y]. */
+const CADRE = { "koudou": [0.97, 0, 0.4], "oryx": [0.98, 0, 0.2], "hippotrague-noir": [0.99, 0, 0.2], "caracal": [0.99, 0, 0.2] };
+const cadre = (e) => { const f = CADRE[e.slug]; return f ? { ...e, body: `<g transform="translate(${Math.round((12 + f[1]) * 100) / 100} ${Math.round((12 + f[2]) * 100) / 100}) scale(${f[0]}) translate(-12 -12)">${e.body}</g>` } : e; };
 export default [
   A("guepard", "Guépard", "Cheetah", null, ["guépard", "cheetah", "duma", "félin", "savane", "savanna", "kenya", "namibie", "larmes noires"], guepard),
   A("lycaon", "Lycaon", "African wild dog", null, ["lycaon", "african wild dog", "chien sauvage", "painted dog", "mbwa mwitu", "inkentshane", "savane", "botswana", "zimbabwe"], lycaon),
@@ -497,4 +501,4 @@ export default [
   A("porc-epic", "Porc-épic à crête", "Crested porcupine", null, ["porc-épic", "porcupine", "crested porcupine", "nungunungu", "ingungumbane", "piquants", "quills", "savane", "sahel"], porcepic),
   A("mangouste-rayee", "Mangouste rayée", "Banded mongoose", null, ["mangouste rayée", "banded mongoose", "mangouste", "mongoose", "nguchiro", "savane", "ouganda", "kenya"], mangouste),
   A("daman-des-rochers", "Daman des rochers", "Rock hyrax", null, ["daman des rochers", "rock hyrax", "daman", "pimbi", "imbila", "dassie", "rochers", "kopje", "afrique australe", "éthiopie"], daman),
-];
+].map(cadre);

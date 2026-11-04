@@ -277,6 +277,10 @@ const banane = [
 ].join("");
 
 const E = (slug, fr, en, tags, body) => ({ slug, fr, en, char: null, group: "boissons", tags, tone: false, body });
+/** Recadrage (audit du dessin) : ces dessins débordaient de la grille 24 × 24 (ou étaient décentrés) ;
+ *  ils sont réduits et décalés juste assez pour y tenir : [échelle, décalage x, décalage y]. */
+const CADRE = { "bouye": [1, 0.7, 0], "chapman": [1, 0, 0.9], "kinkeliba": [0.95, 0, 0.5], "biere-de-banane": [0.99, 0, 1.2], "dolo": [1, 0.4, 0], "fura-da-nono": [1, 0, 0.4] };
+const cadre = (e) => { const f = CADRE[e.slug]; return f ? { ...e, body: `<g transform="translate(${Math.round((12 + f[1]) * 100) / 100} ${Math.round((12 + f[2]) * 100) / 100}) scale(${f[0]}) translate(-12 -12)">${e.body}</g>` } : e; };
 export default [
   E("jus-de-gingembre", "Jus de gingembre", "Ginger juice", ["gnamakoudji", "jus de gingembre", "ginger juice", "gingembre", "ginger", "côte d'ivoire", "sénégal", "afrique de l'ouest", "west africa", "boisson", "drink"], gingembre),
   E("bouye", "Bouye", "Baobab juice", ["bouye", "bouy", "jus de pain de singe", "baobab", "pain de singe", "monkey bread", "sénégal", "senegal", "boisson", "drink"], bouye),
@@ -294,4 +298,4 @@ export default [
   E("fura-da-nono", "Fura da nono", "Fura da nono", ["fura da nono", "fura", "nono", "lait caillé", "fermented milk", "mil", "millet", "peul", "fulani", "nigeria", "niger", "calebasse", "calabash", "boisson", "drink"], fura),
   E("jus-de-corossol", "Jus de corossol", "Soursop juice", ["corossol", "soursop", "graviola", "jus de corossol", "soursop juice", "cameroun", "côte d'ivoire", "afrique centrale", "boisson", "drink"], corossol),
   E("biere-de-banane", "Bière de banane", "Banana beer", ["urwagwa", "tonto", "mbege", "bière de banane", "banana beer", "banane", "banana", "gourde", "gourd", "rwanda", "ouganda", "uganda", "burundi", "boisson", "drink"], banane),
-];
+].map(cadre);

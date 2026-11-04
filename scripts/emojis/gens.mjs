@@ -429,7 +429,11 @@ const people = [
   },
 ];
 
+/** Recadrage (audit du dessin) : ces dessins débordaient de la grille 24 × 24 (ou étaient décentrés) ;
+ *  ils sont réduits et décalés juste assez pour y tenir : [échelle, décalage x, décalage y]. */
+const CADRE = { "mains-levees": [0.93, 0, 0] };
+const cadre = (e) => { const f = CADRE[e.slug]; return f ? { ...e, body: `<g transform="translate(${Math.round((12 + f[1]) * 100) / 100} ${Math.round((12 + f[2]) * 100) / 100}) scale(${f[0]}) translate(-12 -12)">${e.body}</g>` } : e; };
 export default [
   ...hands.map((e) => ({ ...e, group: "mains", tone: true })),
   ...people.map((e) => ({ ...e, char: null, group: "personnes", tone: true })),
-];
+].map(cadre);

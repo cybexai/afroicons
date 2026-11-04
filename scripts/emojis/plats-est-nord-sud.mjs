@@ -483,6 +483,10 @@ const mofoGasy = [
 
 const E = (slug, fr, en, tags, body) => ({ slug, fr, en, char: null, group: "nourriture", tags, tone: false, body });
 
+/** Recadrage (audit du dessin) : ces dessins débordaient de la grille 24 × 24 (ou étaient décentrés) ;
+ *  ils sont réduits et décalés juste assez pour y tenir : [échelle, décalage x, décalage y]. */
+const CADRE = { "the-a-la-menthe": [0.99, 0.7, 0], "dattes": [0.97, 0, -0.5], "mofo-gasy": [0.93, 0.6, 0], "matoke": [0.98, 0, 0], "couscous": [0.98, 0, 0], "pastilla": [0.98, 0, 0], "braai-boerewors": [0.98, 0, 0], "poulet-peri-peri": [0.98, 0.1, 0] };
+const cadre = (e) => { const f = CADRE[e.slug]; return f ? { ...e, body: `<g transform="translate(${Math.round((12 + f[1]) * 100) / 100} ${Math.round((12 + f[2]) * 100) / 100}) scale(${f[0]}) translate(-12 -12)">${e.body}</g>` } : e; };
 export default [
   E("ugali-sukuma", "Ugali et sukuma wiki", "Ugali and sukuma wiki", ["ugali", "sukuma wiki", "sima", "posho", "kenya", "tanzanie", "tanzania", "maïs", "maize", "chou", "collard greens"], ugaliSukuma),
   E("nyama-choma", "Nyama choma", "Nyama choma", ["nyama choma", "viande grillée", "grilled meat", "chèvre", "goat", "kenya", "tanzanie", "tanzania", "kachumbari", "braise"], nyamaChoma),
@@ -513,4 +517,4 @@ export default [
 
   E("romazava", "Romazava", "Romazava", ["romazava", "bouillon", "broth", "brèdes", "greens", "bœuf", "beef", "brèdes mafane", "madagascar", "malagasy"], romazava),
   E("mofo-gasy", "Mofo gasy", "Mofo gasy", ["mofo gasy", "mofo", "gâteau de riz", "rice cake", "madagascar", "malagasy", "petit-déjeuner", "breakfast"], mofoGasy),
-];
+].map(cadre);

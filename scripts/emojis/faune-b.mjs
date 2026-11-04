@@ -397,6 +397,10 @@ const cephalophe = [
 ].join("");
 
 const A = (slug, fr, en, char, tags, body) => ({ slug, fr, en, char, group: "animaux", tags, tone: false, body });
+/** Recadrage (audit du dessin) : ces dessins débordaient de la grille 24 × 24 (ou étaient décentrés) ;
+ *  ils sont réduits et décalés juste assez pour y tenir : [échelle, décalage x, décalage y]. */
+const CADRE = { "babouin": [1, -0.3, 0] };
+const cadre = (e) => { const f = CADRE[e.slug]; return f ? { ...e, body: `<g transform="translate(${Math.round((12 + f[1]) * 100) / 100} ${Math.round((12 + f[2]) * 100) / 100}) scale(${f[0]}) translate(-12 -12)">${e.body}</g>` } : e; };
 export default [
   A("chimpanze", "Chimpanzé", "Chimpanzee", null, ["chimpanzé", "chimpanzee", "chimp", "sokwe", "grand singe", "great ape", "forêt", "forest", "gombe", "tanzanie", "guinée", "côte d'ivoire"], chimpanze),
   A("bonobo", "Bonobo", "Bonobo", null, ["bonobo", "chimpanzé pygmée", "pygmy chimpanzee", "grand singe", "great ape", "forêt", "forest", "rd congo", "drc", "lomami"], bonobo),
@@ -418,4 +422,4 @@ export default [
   A("tortue-radiee", "Tortue radiée", "Radiated tortoise", "🐢", ["tortue radiée", "radiated tortoise", "sokake", "tortue", "tortoise", "étoiles", "star pattern", "madagascar", "épineux", "spiny forest"], tortueRadiee),
   A("grenouille-goliath", "Grenouille Goliath", "Goliath frog", "🐸", ["grenouille goliath", "goliath frog", "grenouille", "frog", "plus grande grenouille", "largest frog", "cameroun", "cameroon", "guinée équatoriale", "rivière", "river"], grenouille),
   A("cephalophe", "Céphalophe", "Duiker", null, ["céphalophe", "duiker", "red forest duiker", "funo", "nsya", "antilope", "antelope", "forêt", "forest", "tanzanie", "congo", "côte d'ivoire"], cephalophe),
-];
+].map(cadre);

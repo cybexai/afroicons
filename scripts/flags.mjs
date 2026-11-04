@@ -7,7 +7,7 @@
 // Les formes sont découpées ici, au calcul, dans ce rectangle arrondi : pas de clipPath ni d'identifiant dans le SVG,
 // donc un drapeau s'affiche correctement même répété sur une page, dans un sprite caché ou un menu fermé.
 // Les emblèmes complexes (armoiries, aigles, outils) sont simplifiés pour rester lisibles à 24 px.
-import { writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -180,6 +180,10 @@ function de(fr) {
   if (M.includes(fr)) return "du " + fr;
   return "de la " + fr;
 }
+
+// Emblèmes redessinés à la main (audit des dessins) : ils remplacent le dessin généré ci-dessus.
+const RETOUCHES = JSON.parse(readFileSync(join(root, "scripts/flags-retouches.json"), "utf8"));
+for (const f of flags) if (RETOUCHES[f.id]) f.body = f.fill = RETOUCHES[f.id];
 
 if (flags.length !== 54 || new Set(flags.map((f) => f.id)).size !== 54) throw new Error(`54 drapeaux attendus, ${flags.length} obtenus`);
 writeFileSync(join(root, "src/flags.json"), JSON.stringify(flags, null, 1) + "\n");

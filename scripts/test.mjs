@@ -101,7 +101,7 @@ console.log(`✔ ${drawn.length} icônes d'interface vérifiées (compatibles lu
 
 // ---------- afroicons-react : rendu imbriqué, version remplie, couleur ----------
 const R = await import("../packages/afroicons-react/index.js");
-assert.match(html(R.Ngoni), /<g transform="rotate\(-35 12 12\)"><ellipse/, "groupe transformé conservé (ngoni)");
+assert.match(html(R.Goje), /<g transform="rotate\(-35 12 12\)">/, "groupe transformé conservé (goje)");
 {
   const toned = emojis.find((n) => icons[n].tone), Rt = R[toned.replace(/(^|[-_])(\w)/g, (_, a, b) => b.toUpperCase())];
   const [l0] = tones.light;
