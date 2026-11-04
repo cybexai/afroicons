@@ -711,3 +711,11 @@ export declare const LucideQuote: LucideIcon;
 export declare const MailCheck: LucideIcon;
 export declare const MailCheckIcon: LucideIcon;
 export declare const LucideMailCheck: LucideIcon;
+/** Réglages de la caisse · POS settings */
+export declare const MonitorCog: LucideIcon;
+export declare const MonitorCogIcon: LucideIcon;
+export declare const LucideMonitorCog: LucideIcon;
+/** Assistant IA · AI assistant */
+export declare const BotMessageSquare: LucideIcon;
+export declare const BotMessageSquareIcon: LucideIcon;
+export declare const LucideBotMessageSquare: LucideIcon;

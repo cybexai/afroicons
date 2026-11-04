@@ -1,6 +1,7 @@
 # Journal des versions
 
 ## À venir
+- `afroicons-ui` et `afroicons-angular` : **2 nouvelles icônes d'interface** pour NAFA ERP, soit 179 au total : `MonitorCog` (la caisse du comptoir, écran et tiroir, avec l'engrenage des réglages) et `BotMessageSquare` (l'assistant IA : une bulle de conversation et son étincelle)
 - **4 nouvelles icônes culturelles** (au trait et remplies), pour les secteurs prioritaires de SYSIGAPE : `ble` (épi de blé à grains par paires et barbes, avec un sac de farine noué), `soja` (gousse à trois graines et feuille), `vachelaitiere` (vache tachetée, pis visible, tête à droite) et `pharmacie` (flacon à croix et gélule)
 
 ## 0.8.0 — 1er novembre 2026 · cartes des 54 pays, 80 animaux, bac à sable
