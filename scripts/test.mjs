@@ -98,7 +98,12 @@ for (const n of drawn) {
 }
 assert.match(html(ui.Plus, { size: 48, strokeWidth: 2, absoluteStrokeWidth: true, className: "x" }), /width="48".*stroke-width="1".*class="lucide lucide-plus afroicon x"/);
 assert.match(html(ui.Wallet, { color: "#C24E2A" }), /stroke="#C24E2A"/);
-assert.equal(ui.Underline, lucide.Underline, "les icônes non redessinées viennent de lucide-react");
+assert.equal(ui.Anchor, lucide.Anchor, "les icônes non redessinées viennent de lucide-react");
+// Les autres noms Lucide d'un dessin redessiné le sont aussi (sinon `export *` les sert en Lucide).
+for (const [alias, id] of [["CircleAlert", "AlertCircle"], ["House", "Home"], ["CircleX", "XCircle"]]) {
+  assert.equal(lucide[alias], lucide[id], `${alias} est bien un alias Lucide de ${id}`);
+  assert.ok(ui[alias] === ui[id] && ui[alias + "Icon"] === ui[id] && ui["Lucide" + alias] === ui[id], `alias redessiné : ${alias}`);
+}
 assert.match(html(ui.CheckCircle2), /class="lucide lucide-check-circle-2 afroicon"/);
 console.log(`✔ ${drawn.length} icônes d'interface vérifiées (compatibles lucide-react)`);
 

@@ -196,14 +196,23 @@ import type { LucideIcon } from "lucide-react";
 /** Noms des icônes redessinées par Afroicons (les autres viennent de lucide-react). */
 export declare const afroiconNames: readonly string[];
 `;
+// Lucide donne plusieurs noms au même dessin (CircleAlert = AlertCircle, House = Home, CircleX = XCircle…) :
+// ces autres noms sont redessinés aussi, sinon `export *` les sert encore en Lucide.
+const L = await import("lucide-react");
+const drawnIds = new Set(ui.map((i) => i.id));
+const lucideAliases = (id) => !L[id] ? [] : [...new Set(Object.keys(L).filter((k) => L[k] === L[id])
+  .map((k) => k.replace(/^Lucide/, "").replace(/Icon$/, "")))].filter((k) => k && k !== id && !drawnIds.has(k) && L[k] === L[id]);
+let nbAlias = 0;
 for (const i of ui) {
-  ujs += `export const ${i.id} = /*#__PURE__*/ make("${kebab(i.id)}", ${JSON.stringify(toJsxChildren(i.body))});\nexport { ${i.id} as ${i.id}Icon, ${i.id} as Lucide${i.id} };\n`;
-  udts += `/** ${i.fr} · ${i.en}${i.afro ? ` — ${i.afro}` : ""} */\nexport declare const ${i.id}: LucideIcon;\nexport declare const ${i.id}Icon: LucideIcon;\nexport declare const Lucide${i.id}: LucideIcon;\n`;
+  const names = [i.id, ...(i.extra ? [] : lucideAliases(i.id))];
+  nbAlias += names.length - 1;
+  ujs += `export const ${i.id} = /*#__PURE__*/ make("${kebab(i.id)}", ${JSON.stringify(toJsxChildren(i.body))});\nexport { ${names.flatMap((n) => [n === i.id ? null : `${i.id} as ${n}`, `${i.id} as ${n}Icon`, `${i.id} as Lucide${n}`]).filter(Boolean).join(", ")} };\n`;
+  udts += `/** ${i.fr} · ${i.en}${i.afro ? ` — ${i.afro}` : ""} */\n` + names.map((n) => `export declare const ${n}: LucideIcon;\nexport declare const ${n}Icon: LucideIcon;\nexport declare const Lucide${n}: LucideIcon;\n`).join("");
 }
 ujs += `export const afroiconNames = ${JSON.stringify(ui.map((i) => i.id))};\n`;
 writeFileSync(join(U, "index.js"), ujs);
 writeFileSync(join(U, "index.d.ts"), udts);
-console.log(`✔ ${ui.length} icônes d'interface → packages/afroicons-ui`);
+console.log(`✔ ${ui.length} icônes d'interface (+ ${nbAlias} noms Lucide équivalents) → packages/afroicons-ui`);
 
 /* ---------- afroicons-angular : données des icônes (le composant est écrit à la main) ---------- */
 // Une constante exportée par icône, pour que le bundle ne garde que celles qui sont importées.

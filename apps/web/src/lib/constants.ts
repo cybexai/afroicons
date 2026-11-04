@@ -105,6 +105,7 @@ export const FAMILIES = [
   { id: "Personnes", fr: "Personnes", en: "People", ic: "ui-users" },
   { id: "Argent et paiement", fr: "Argent et paiement", en: "Money & payments", ic: "ui-wallet" },
   { id: "Commerce et stock", fr: "Commerce et stock", en: "Retail & stock", ic: "ui-store" },
+  { id: "Médias et matériel", fr: "Médias et matériel", en: "Media & devices", ic: "ui-monitor" },
   { id: "Thème et météo", fr: "Thème et météo", en: "Theme & weather", ic: "ui-moon" },
 ] as const;
 
