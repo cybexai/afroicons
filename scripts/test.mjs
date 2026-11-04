@@ -1,15 +1,15 @@
 // Vérifications minimales avant publication.
 import assert from "node:assert/strict";
-import { readdirSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { icons, names, toSvg } from "../packages/afroicons/index.js";
 
 assert.ok(names.length >= 150, "au moins 150 icônes");
 assert.equal(new Set(names).size, names.length, "ids uniques");
 for (const n of names) {
   const i = icons[n];
-  assert.match(n, i.cat === "drapeaux" ? /^drapeau-[a-z0-9]+(-[a-z0-9]+)*$/ : i.cat === "emojis" ? /^emoji-[a-z0-9]+(-[a-z0-9]+)*$/ : i.cat === "cartes" ? /^carte-[a-z0-9]+(-[a-z0-9]+)*$/ : /^[a-z0-9]+$/, `id valide: ${n}`);
+  assert.match(n, i.cat === "drapeaux" ? /^drapeau-[a-z0-9]+(-[a-z0-9]+)*$/ : i.cat === "emojis" ? /^emoji-[a-z0-9]+(-[a-z0-9]+)*$/ : i.cat === "cartes" ? /^carte-[a-z0-9]+(-[a-z0-9]+)*$/ : i.cat === "monnaies" ? /^monnaie-[a-z]{3}$/ : /^[a-z0-9]+$/, `id valide: ${n}`);
   assert.ok(i.fr && i.en, `noms FR/EN: ${n}`);
-  assert.ok(["nature","faune","musique","symboles","cuisine","vie","architecture","personnes","cartes","drapeaux","emojis"].includes(i.cat), `catégorie: ${n}`);
+  assert.ok(["nature","faune","musique","symboles","cuisine","vie","architecture","personnes","cartes","monnaies","drapeaux","emojis"].includes(i.cat), `catégorie: ${n}`);
   assert.ok(i.tags.length >= 3, `mots-clés: ${n}`);
   assert.equal(new Set(i.tags.map((t) => t.toLowerCase())).size, i.tags.length, `mots-clés sans doublon: ${n}`);
   assert.ok(toSvg(n).startsWith("<svg") && toSvg(n).endsWith("</svg>"), `svg: ${n}`);
@@ -84,8 +84,11 @@ assert.ok(drawn.length >= 177, "au moins 177 icônes d'interface");
 assert.equal(new Set(drawn).size, drawn.length, "noms d'interface uniques");
 { const uiData = (await import("../src/ui-icons.json", { with: { type: "json" } })).default; assert.equal(new Set(uiData.map((u) => u.fr)).size, uiData.length, "noms français d'interface uniques"); }
 const html = (C, p = {}) => renderToStaticMarkup(createElement(C, p));
+const extra = new Set(JSON.parse(readFileSync(new URL("../packages/afroicons-ui/icons.json", import.meta.url), "utf8")).filter((u) => u.extra).map((u) => u.id));
 for (const n of drawn) {
-  assert.ok(lucide[n], `nom Lucide existant : ${n}`);
+  // Les icônes « en plus » (monnaies africaines…) n'ont pas d'équivalent Lucide.
+  if (extra.has(n)) assert.ok(!lucide[n], `icône en plus, sans homonyme Lucide : ${n}`);
+  else assert.ok(lucide[n], `nom Lucide existant : ${n}`);
   assert.notEqual(ui[n], lucide[n], `redessinée : ${n}`);
   assert.equal(ui[n + "Icon"], ui[n], `alias ${n}Icon`);
   assert.equal(ui["Lucide" + n], ui[n], `alias Lucide${n}`);

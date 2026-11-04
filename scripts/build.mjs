@@ -9,7 +9,10 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 // leur version remplie est la même. Les emojis à teinte de peau (tone) existent dans les 5 teintes Unicode.
 const readJson = (f) => { try { return JSON.parse(readFileSync(join(root, f), "utf8")); } catch { return []; } };
 // Cartes des pays (scripts/cartes.mjs, d'après Natural Earth) : icônes au trait, reliées au drapeau du pays.
-const icons = [...JSON.parse(readFileSync(join(root, "src/icons.json"), "utf8")), ...readJson("src/cartes.json"), ...JSON.parse(readFileSync(join(root, "src/flags.json"), "utf8")), ...readJson("src/emojis.json")];
+// Monnaies (src/monnaies.json) : une pièce avec le symbole de chaque monnaie africaine, reliée aux pays qui l'utilisent ;
+// le même dessin sert d'icône d'interface dans afroicons-ui (nom façon Lucide : Naira, Cedi, CfaFrancBeac…).
+const monnaies = readJson("src/monnaies.json").map(({ ui, symbol, ...m }) => ({ ...m, cat: "monnaies", since: m.since ?? "0.9" }));
+const icons = [...JSON.parse(readFileSync(join(root, "src/icons.json"), "utf8")), ...readJson("src/cartes.json"), ...monnaies, ...JSON.parse(readFileSync(join(root, "src/flags.json"), "utf8")), ...readJson("src/emojis.json")];
 const { TONES, DEFAULT_TONE } = await import("./emojis/lib.mjs");
 const [SK0, SK1, SK2] = TONES[DEFAULT_TONE];
 const version = JSON.parse(readFileSync(join(root, "package.json"), "utf8")).version;
@@ -53,7 +56,7 @@ writeFileSync(join(A, "sprite.svg"),
 // Lien icône ↔ emoji : une icône culturelle peut porter « emoji » (son équivalent en couleur) ; l'emoji reçoit « icon ».
 const iconOf = Object.fromEntries(icons.filter((i) => i.emoji).map((i) => [i.emoji, i.id]));
 const mapOf = Object.fromEntries(icons.filter((i) => i.flag).map((i) => [i.flag, i.id]));
-const meta = icons.map(({ id, fr, en, cat, region, tags, since, variantOf, iso, country, flag, char, group, tone, emoji, body, fill }) => ({ id, fr, en, cat, region, tags, since, ...(variantOf ? { variantOf } : {}), ...(iso ? { iso, country } : {}), ...(flag ? { flag } : {}), ...(mapOf[id] ? { map: mapOf[id] } : {}), ...(cat === "emojis" ? { char, group, tone, ...(iconOf[id] ? { icon: iconOf[id] } : {}) } : {}), ...(emoji ? { emoji } : {}), body, fill }));
+const meta = icons.map(({ id, fr, en, cat, region, tags, since, variantOf, iso, country, flag, char, group, tone, emoji, code, countries, body, fill }) => ({ id, fr, en, cat, region, tags, since, ...(variantOf ? { variantOf } : {}), ...(iso ? { iso, country } : {}), ...(code ? { code, countries } : {}), ...(flag ? { flag } : {}), ...(mapOf[id] ? { map: mapOf[id] } : {}), ...(cat === "emojis" ? { char, group, tone, ...(iconOf[id] ? { icon: iconOf[id] } : {}) } : {}), ...(emoji ? { emoji } : {}), body, fill }));
 writeFileSync(join(A, "icons.json"), JSON.stringify(meta, null, 1));
 // Pour le site : les versions remplies à part, chargées seulement quand on en a besoin (−17 Ko gzip au démarrage).
 const G = join(root, "apps/web/src/generated");
@@ -97,12 +100,12 @@ export default { icons, names, tones, defaultTone, toSvg, replace };
 `);
 writeFileSync(join(A, "index.d.ts"),
 `export type AfroiconName =\n${icons.map((i) => `  | "${i.id}"`).join("\n")};
-export type AfroiconCategory = "nature" | "faune" | "musique" | "symboles" | "cuisine" | "vie" | "architecture" | "personnes" | "cartes" | "drapeaux" | "emojis";
+export type AfroiconCategory = "nature" | "faune" | "musique" | "symboles" | "cuisine" | "vie" | "architecture" | "personnes" | "cartes" | "monnaies" | "drapeaux" | "emojis";
 /** Teinte de peau Unicode d'un emoji (🏻 à 🏿). Par défaut : "medium-dark". */
 export type AfroiconTone = "light" | "medium-light" | "medium" | "medium-dark" | "dark";
 export type AfroiconEmojiGroup = "visages" | "mains" | "personnes" | "coeurs" | "animaux" | "nature" | "fruits" | "nourriture" | "boissons" | "objets" | "lieux";
 export type AfroiconRegion = "pan" | "ouest" | "centre" | "est" | "nord" | "australe";
-export interface AfroiconData { id: AfroiconName; fr: string; en: string; cat: AfroiconCategory; region: AfroiconRegion; tags: string[]; since: string; /** Icône dont celle-ci est une variante (épluchée, coupée, ouverte…). */ variantOf?: AfroiconName; /** Drapeaux et cartes : code ISO du pays et son nom. */ iso?: string; country?: { fr: string; en: string }; /** Emojis : caractère Unicode équivalent (null pour un emoji africain original), groupe, et teinte de peau réglable. */ char?: string | null; group?: AfroiconEmojiGroup; tone?: boolean; /** Icône au trait équivalente (pour un emoji) ou emoji équivalent (pour une icône). */ icon?: AfroiconName; emoji?: AfroiconName; /** Carte d'un pays : son drapeau ; drapeau : la carte du pays. */ flag?: AfroiconName; map?: AfroiconName; /** Dessin au trait. */ body: string; /** Version remplie. */ fill: string; }
+export interface AfroiconData { id: AfroiconName; fr: string; en: string; cat: AfroiconCategory; region: AfroiconRegion; tags: string[]; since: string; /** Icône dont celle-ci est une variante (épluchée, coupée, ouverte…). */ variantOf?: AfroiconName; /** Drapeaux et cartes : code ISO du pays et son nom. */ iso?: string; country?: { fr: string; en: string }; /** Emojis : caractère Unicode équivalent (null pour un emoji africain original), groupe, et teinte de peau réglable. */ char?: string | null; group?: AfroiconEmojiGroup; tone?: boolean; /** Icône au trait équivalente (pour un emoji) ou emoji équivalent (pour une icône). */ icon?: AfroiconName; emoji?: AfroiconName; /** Carte d'un pays : son drapeau ; drapeau : la carte du pays. */ flag?: AfroiconName; map?: AfroiconName; /** Monnaies : code ISO 4217 et pays (ISO 3166) qui l'utilisent. */ code?: string; countries?: string[]; /** Dessin au trait. */ body: string; /** Version remplie. */ fill: string; }
 export const icons: Record<AfroiconName, AfroiconData>;
 export const names: AfroiconName[];
 export type AfroiconVariant = "line" | "fill";
@@ -158,14 +161,17 @@ console.log(`✔ ${icons.length} icônes (dont ${icons.filter((i) => i.cat === "
 /* ---------- afroicons-ui (icônes d'interface, compatibles lucide-react) ---------- */
 // Mêmes noms et mêmes props que lucide-react : on remplace l'import, rien d'autre.
 // Les icônes pas encore dessinées sont reprises de lucide-react (export *).
-const ui = JSON.parse(readFileSync(join(root, "src/ui-icons.json"), "utf8"));
+// Icônes d'interface : celles qui remplacent une icône Lucide, puis des icônes en plus, sans équivalent Lucide
+// (« extra », comme les monnaies africaines) : même composant, mêmes props.
+const ui = [...JSON.parse(readFileSync(join(root, "src/ui-icons.json"), "utf8")),
+  ...readJson("src/monnaies.json").map((m) => ({ id: m.ui, fr: m.fr, en: m.en, family: "Monnaies", afro: null, extra: true, body: m.body }))];
 const U = join(root, "packages/afroicons-ui");
 const kebab = (n) => n.replace(/([a-z0-9])([A-Z])/g, "$1-$2").replace(/([a-zA-Z])(\d)/g, "$1-$2").toLowerCase();
 rmSync(join(U, "svg"), { recursive: true, force: true });
 mkdirSync(join(U, "svg"), { recursive: true });
 for (const i of ui) writeFileSync(join(U, "svg", `${i.id}.svg`),
   `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${STROKE}" stroke-linecap="round" stroke-linejoin="round" class="afroicon afroicon-ui-${kebab(i.id)}">${i.body}</svg>\n`);
-writeFileSync(join(U, "icons.json"), JSON.stringify(ui.map(({ id, fr, en, family, afro, body }) => ({ id, fr, en, family, afro, body })), null, 1));
+writeFileSync(join(U, "icons.json"), JSON.stringify(ui.map(({ id, fr, en, family, afro, extra, body }) => ({ id, fr, en, family, afro, ...(extra ? { extra } : {}), body })), null, 1));
 let ujs = `// afroicons-ui v${version} — généré, ne pas modifier à la main.
 import { createElement, forwardRef } from "react";
 export * from "lucide-react";

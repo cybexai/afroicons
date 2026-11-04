@@ -40,7 +40,7 @@ export type CityId = keyof typeof CITIES;
 
 /** Version affichée (0.4 pour 0.4.0), lue dans package.json au build. */
 export const VERSION = __AFROICONS_VERSION__.split(".").slice(0, 2).join(".");
-const ORDER = ["nature", "faune", "musique", "symboles", "cuisine", "vie", "architecture", "personnes", "cartes"];
+const ORDER = ["nature", "faune", "musique", "symboles", "cuisine", "vie", "architecture", "personnes", "cartes", "monnaies"];
 /** Les icônes culturelles (paquets afroicons et afroicons-react). */
 export const AFRO: Icon[] = (AFRO_DATA as Icon[]).filter((i) => !isColor(i)).sort((a, b) => ORDER.indexOf(a.cat) - ORDER.indexOf(b.cat));
 /** Les drapeaux des 54 pays, par ordre alphabétique (même paquets ; leur version remplie est la même). */
@@ -88,6 +88,7 @@ export const CATS = [
   { id: "architecture", fr: "Architecture", en: "Architecture", ic: "case" },
   { id: "personnes", fr: "Peuples et tenues", en: "Peoples & attire", ic: "tresses" },
   { id: "cartes", fr: "Cartes des pays", en: "Country maps", ic: "carte-cameroun" },
+  { id: "monnaies", fr: "Monnaies", en: "Currencies", ic: "monnaie-xaf" },
   { id: "interface", fr: "Interface", en: "Interface", ic: "ui-layout-dashboard" },
   { id: "drapeaux", fr: "Drapeaux", en: "Flags", ic: "drapeau-cameroun" },
   { id: "emojis", fr: "Emojis", en: "Emojis", ic: "drapeau-cameroun" },

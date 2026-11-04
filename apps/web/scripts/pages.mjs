@@ -33,7 +33,7 @@ let depth = 0, factsEnd = factsStart;
 for (; factsEnd < i18n.length; factsEnd++) { if (i18n[factsEnd] === "{") depth++; if (i18n[factsEnd] === "}" && !--depth) break; }
 const FACTS = JSON.parse(i18n.slice(factsStart, factsEnd + 1));
 
-const CATS = { nature: "Nature & paysages", faune: "Faune", musique: "Musique & arts", symboles: "Symboles & textiles", cuisine: "Cuisine", vie: "Vie quotidienne", architecture: "Architecture", personnes: "Peuples et tenues", cartes: "Cartes des pays", drapeaux: "Drapeaux", emojis: "Emojis", interface: "Interface" };
+const CATS = { nature: "Nature & paysages", faune: "Faune", musique: "Musique & arts", symboles: "Symboles & textiles", cuisine: "Cuisine", vie: "Vie quotidienne", architecture: "Architecture", personnes: "Peuples et tenues", cartes: "Cartes des pays", monnaies: "Monnaies", drapeaux: "Drapeaux", emojis: "Emojis", interface: "Interface" };
 const EGROUP = { visages: "visages", mains: "mains", personnes: "personnes", coeurs: "cœurs et symboles", animaux: "animaux", nature: "nature", fruits: "fruits et légumes", nourriture: "nourriture", boissons: "boissons", objets: "objets et cultures", lieux: "villages et lieux" };
 const REG = { pan: "toute l'Afrique", ouest: "Afrique de l'Ouest", centre: "Afrique centrale", est: "Afrique de l'Est", nord: "Afrique du Nord", australe: "Afrique australe" };
 const pascal = (id) => id.replace(/(^|[-_])(\w)/g, (_, a, b) => b.toUpperCase());
@@ -46,12 +46,14 @@ const icons = [
   ...ui.map((u) => ({ slug: "ui-" + kebab(u.id), lucide: u.id, fr: u.fr, en: u.en, cat: "interface", region: null, tags: [u.family], body: u.body, afro: u.afro })),
 ];
 const bySlug = Object.fromEntries(icons.map((i) => [i.slug, i]));
+const byIso = Object.fromEntries(icons.filter((i) => i.cat === "drapeaux").map((i) => [i.iso, i]));
 const url = (i) => `${SITE}/icones/${i.slug}/`;
 const draw = (i, body, size = 120, idSuffix = "") =>
   `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" color="currentColor" role="img" aria-label="${esc(i.fr)}">${idSuffix ? body.replaceAll(`afm-${i.slug}"`, `afm-${i.slug}${idSuffix}"`).replaceAll(`#afm-${i.slug})`, `#afm-${i.slug}${idSuffix})`) : body}</svg>`;
 
 function describe(i) {
   if (i.cat === "emojis") return `Emoji ${i.char ? `${i.char} ` : "africain original "}« ${i.fr} » (${i.en}) en SVG, dessiné dans le style Afroicons${i.tone ? ", dans les 5 teintes de peau Unicode" : ""}. Gratuit pour React, Angular et HTML, licence MIT.`;
+  if (i.cat === "monnaies") return `${i.fr} (${i.code}) : la pièce et son symbole en icône SVG, au trait ou remplie, pour React, Angular et HTML, et en icône d'interface (afroicons-ui). Utilisée par : ${i.countries.map((c) => byIso[c]?.country?.fr ?? c).join(", ")}. Licence MIT.`;
   if (i.cat === "cartes") return `${i.fr} (${i.iso}) : le contour du pays en icône SVG, au trait ou remplie, pour React, Angular et HTML. Tracée d'après Natural Earth (domaine public), frontières de l'ONU. Licence MIT.`;
   if (i.cat === "drapeaux") return `${i.fr} (${i.iso}) en SVG, aux couleurs officielles. Icône gratuite pour React, Angular et HTML, lisible dès 16 px. ${REG[i.region][0].toUpperCase() + REG[i.region].slice(1)}. Licence MIT.`;
   if (i.lucide) return `Icône SVG « ${i.fr} » (${i.en}) dans le style Afroicons, compatible Lucide : remplacez l'import de lucide-react par afroicons-ui.${i.afro ? " " + i.afro : ""} Libre et gratuite, licence MIT.`;
@@ -92,6 +94,9 @@ for (const i of icons) {
   const similar = [...fam.slice(at + 1), ...fam.slice(0, at)].filter((x) => !variants.includes(x)).slice(0, 12);
   // Icône ↔ emoji, drapeau ↔ carte.
   const twins = [[i.emoji, "Voir l'emoji"], [i.icon, "Voir l'icône au trait"], [i.map, "Voir la carte du pays"], [i.flag, "Voir le drapeau"]].filter(([id]) => id && bySlug[id]);
+  // Une monnaie mène aux drapeaux des pays qui l'utilisent ; un drapeau, à la monnaie du pays.
+  if (i.cat === "monnaies") for (const c of i.countries) if (byIso[c]) twins.push([byIso[c].slug, "Pays"]);
+  if (i.cat === "drapeaux") { const m = icons.find((x) => x.cat === "monnaies" && x.countries.includes(i.iso)); if (m) twins.push([m.slug, "Voir la monnaie"]); }
   const fact = FACTS[i.id];
   const code = i.lucide
     ? `npm install afroicons-ui lucide-react\n\nimport { ${i.lucide} } from "afroicons-ui";\n\n<${i.lucide} size={24} />`
@@ -124,7 +129,7 @@ const groups = Object.keys(CATS).map((c) => [c, icons.filter((i) => i.cat === c)
 page({
   path: "icones",
   title: `Toutes les icônes Afroicons — ${icons.length} icônes SVG gratuites`,
-  desc: `Les ${icons.length} icônes Afroicons, par catégorie : nature, faune, musique, symboles adinkra, cuisine, vie quotidienne, architecture, interface, drapeaux, cartes des pays et emojis africains. SVG libres, licence MIT.`,
+  desc: `Les ${icons.length} icônes Afroicons, par catégorie : nature, faune, musique, symboles adinkra, cuisine, vie quotidienne, architecture, interface, drapeaux, cartes des pays, monnaies et emojis africains. SVG libres, licence MIT.`,
   canonical: `${SITE}/icones/`,
   app: false,
   body: `<nav><a href="/">Afroicons</a></nav><h1>Toutes les icônes (${icons.length})</h1>${groups.map(([c, l]) => `<h2>${esc(CATS[c])} (${l.length})</h2><ul class="g">${l.map((i) => `<li><a href="/icones/${i.slug}/">${esc(i.fr)}</a></li>`).join("")}</ul>`).join("")}`,

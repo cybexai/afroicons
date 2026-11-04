@@ -10953,6 +10953,1124 @@
   "fill": "<path d=\"M17.3 20.73L12.61 20.2L11.82 19.74L11.78 19.17L9.31 18.54L8.47 17.28L8.54 15.9L7.52 15.76L7.27 14.79L4.8 13.33L2.58 8.82L6.89 9.25L9.11 6.5L11.13 5.56L11.51 4.16L13.5 3.27L15.13 3.27L15.23 4.18L17.18 4.25L21.36 6.03L21.47 10.29L20.75 11.79L21.47 14.49L20.24 16.23L20.09 17.88Z\" fill=\"currentColor\"/>"
  },
  {
+  "id": "monnaie-xaf",
+  "fr": "Franc CFA (CEMAC)",
+  "en": "Central African CFA franc",
+  "cat": "monnaies",
+  "region": "centre",
+  "tags": [
+   "franc cfa (cemac)",
+   "central african cfa franc",
+   "xaf",
+   "CFA",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "cameroun",
+   "cameroon",
+   "centrafrique",
+   "central african republic",
+   "tchad",
+   "chad",
+   "congo",
+   "republic of the congo",
+   "gabon",
+   "guinée équatoriale",
+   "equatorial guinea",
+   "FCFA",
+   "beac",
+   "cemac"
+  ],
+  "since": "0.9",
+  "code": "XAF",
+  "countries": [
+   "CM",
+   "CF",
+   "TD",
+   "CG",
+   "GA",
+   "GQ"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M8.67 9.09C8.28 8.4 7.67 8.17 7.12 8.5C6.58 8.83 6.22 9.67 6.22 10.6C6.22 11.53 6.58 12.37 7.12 12.7C7.67 13.03 8.28 12.8 8.67 12.11\"/><path d=\"M11.32 12.85V8.35H13.41M11.32 10.6H13.07\"/><path d=\"M15.18 12.85L16.48 8.35L17.78 12.85M15.63 11.32H17.34\"/><path d=\"M9.8 15.65H14.2\"/>",
+  "fill": "<mask id=\"afm-monnaie-xaf\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M8.67 9.09C8.28 8.4 7.67 8.17 7.12 8.5C6.58 8.83 6.22 9.67 6.22 10.6C6.22 11.53 6.58 12.37 7.12 12.7C7.67 13.03 8.28 12.8 8.67 12.11\" fill=\"none\" stroke=\"#000\"/><path d=\"M11.32 12.85V8.35H13.41M11.32 10.6H13.07\" fill=\"none\" stroke=\"#000\"/><path d=\"M15.18 12.85L16.48 8.35L17.78 12.85M15.63 11.32H17.34\" fill=\"none\" stroke=\"#000\"/><path d=\"M9.8 15.65H14.2\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-xaf)\"/>"
+ },
+ {
+  "id": "monnaie-xof",
+  "fr": "Franc CFA (UEMOA)",
+  "en": "West African CFA franc",
+  "cat": "monnaies",
+  "region": "ouest",
+  "tags": [
+   "franc cfa (uemoa)",
+   "west african cfa franc",
+   "xof",
+   "CFA",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "bénin",
+   "benin",
+   "burkina faso",
+   "côte d'ivoire",
+   "guinée-bissau",
+   "guinea-bissau",
+   "mali",
+   "niger",
+   "sénégal",
+   "senegal",
+   "togo",
+   "FCFA",
+   "bceao",
+   "uemoa"
+  ],
+  "since": "0.9",
+  "code": "XOF",
+  "countries": [
+   "BJ",
+   "BF",
+   "CI",
+   "GW",
+   "ML",
+   "NE",
+   "SN",
+   "TG"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M8.67 8.97C8.28 8.28 7.67 8.04 7.12 8.37C6.58 8.71 6.22 9.54 6.22 10.47C6.22 11.41 6.58 12.24 7.12 12.58C7.67 12.91 8.28 12.67 8.67 11.98\"/><path d=\"M11.32 12.72V8.22H13.41M11.32 10.47H13.07\"/><path d=\"M15.18 12.72L16.48 8.22L17.78 12.72M15.63 11.2H17.34\"/><circle cx=\"12\" cy=\"15.65\" r=\"1\" fill=\"currentColor\" stroke=\"none\"/>",
+  "fill": "<mask id=\"afm-monnaie-xof\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M8.67 8.97C8.28 8.28 7.67 8.04 7.12 8.37C6.58 8.71 6.22 9.54 6.22 10.47C6.22 11.41 6.58 12.24 7.12 12.58C7.67 12.91 8.28 12.67 8.67 11.98\" fill=\"none\" stroke=\"#000\"/><path d=\"M11.32 12.72V8.22H13.41M11.32 10.47H13.07\" fill=\"none\" stroke=\"#000\"/><path d=\"M15.18 12.72L16.48 8.22L17.78 12.72M15.63 11.2H17.34\" fill=\"none\" stroke=\"#000\"/><circle cx=\"12\" cy=\"15.65\" r=\"1\" fill=\"#000\" stroke=\"none\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-xof)\"/>"
+ },
+ {
+  "id": "monnaie-ngn",
+  "fr": "Naira",
+  "en": "Nigerian naira",
+  "cat": "monnaies",
+  "region": "ouest",
+  "tags": [
+   "naira",
+   "nigerian naira",
+   "ngn",
+   "₦",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "nigeria"
+  ],
+  "since": "0.9",
+  "code": "NGN",
+  "countries": [
+   "NG"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M9.48 16.5V7.5L14.52 16.5V7.5\"/><path d=\"M8.13 13.8H15.87\"/><path d=\"M8.13 10.2H15.87\"/>",
+  "fill": "<mask id=\"afm-monnaie-ngn\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M9.48 16.5V7.5L14.52 16.5V7.5\" fill=\"none\" stroke=\"#000\"/><path d=\"M8.13 13.8H15.87\" fill=\"none\" stroke=\"#000\"/><path d=\"M8.13 10.2H15.87\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-ngn)\"/>"
+ },
+ {
+  "id": "monnaie-ghs",
+  "fr": "Cedi",
+  "en": "Ghanaian cedi",
+  "cat": "monnaies",
+  "region": "ouest",
+  "tags": [
+   "cedi",
+   "ghanaian cedi",
+   "ghs",
+   "₵",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "ghana"
+  ],
+  "since": "0.9",
+  "code": "GHS",
+  "countries": [
+   "GH"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M15.06 8.99C14.09 7.6 12.55 7.13 11.19 7.8C9.84 8.47 8.94 10.14 8.94 12C8.94 13.86 9.84 15.53 11.19 16.2C12.55 16.87 14.09 16.4 15.06 15.01\"/><path d=\"M12.45 6.4V17.6\"/>",
+  "fill": "<mask id=\"afm-monnaie-ghs\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M15.06 8.99C14.09 7.6 12.55 7.13 11.19 7.8C9.84 8.47 8.94 10.14 8.94 12C8.94 13.86 9.84 15.53 11.19 16.2C12.55 16.87 14.09 16.4 15.06 15.01\" fill=\"none\" stroke=\"#000\"/><path d=\"M12.45 6.4V17.6\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-ghs)\"/>"
+ },
+ {
+  "id": "monnaie-zar",
+  "fr": "Rand",
+  "en": "South African rand",
+  "cat": "monnaies",
+  "region": "australe",
+  "tags": [
+   "rand",
+   "south african rand",
+   "zar",
+   "R",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "afrique du sud",
+   "south africa"
+  ],
+  "since": "0.9",
+  "code": "ZAR",
+  "countries": [
+   "ZA"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M9.03 16.5V7.5H12.27C13.66 7.5 14.79 8.63 14.79 10.02C14.79 11.41 13.66 12.54 12.27 12.54H9.03\"/><path d=\"M11.52 12.54L14.97 16.5\"/>",
+  "fill": "<mask id=\"afm-monnaie-zar\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M9.03 16.5V7.5H12.27C13.66 7.5 14.79 8.63 14.79 10.02C14.79 11.41 13.66 12.54 12.27 12.54H9.03\" fill=\"none\" stroke=\"#000\"/><path d=\"M11.52 12.54L14.97 16.5\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-zar)\"/>"
+ },
+ {
+  "id": "monnaie-kes",
+  "fr": "Shilling kényan",
+  "en": "Kenyan shilling",
+  "cat": "monnaies",
+  "region": "est",
+  "tags": [
+   "shilling kényan",
+   "kenyan shilling",
+   "kes",
+   "KSh",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "kenya"
+  ],
+  "since": "0.9",
+  "code": "KES",
+  "countries": [
+   "KE"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M6.1 14.25V9.75M8.41 9.75L6.1 12.45M6.93 11.48L8.41 14.25\"/><path d=\"M13.09 10.35C12.82 9.86 12.24 9.63 11.7 9.81C11.17 9.99 10.84 10.51 10.93 11.06C11.03 11.6 11.51 12 12.07 12C12.67 12 13.18 12.4 13.28 12.94C13.38 13.49 13.03 14.01 12.46 14.19C11.89 14.37 11.27 14.14 10.99 13.65\"/><path d=\"M15.94 14.25V9.75M15.94 12.4C15.94 11.63 16.38 11.01 16.92 11.01C17.46 11.01 17.9 11.63 17.9 12.41V14.25\"/>",
+  "fill": "<mask id=\"afm-monnaie-kes\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M6.1 14.25V9.75M8.41 9.75L6.1 12.45M6.93 11.48L8.41 14.25\" fill=\"none\" stroke=\"#000\"/><path d=\"M13.09 10.35C12.82 9.86 12.24 9.63 11.7 9.81C11.17 9.99 10.84 10.51 10.93 11.06C11.03 11.6 11.51 12 12.07 12C12.67 12 13.18 12.4 13.28 12.94C13.38 13.49 13.03 14.01 12.46 14.19C11.89 14.37 11.27 14.14 10.99 13.65\" fill=\"none\" stroke=\"#000\"/><path d=\"M15.94 14.25V9.75M15.94 12.4C15.94 11.63 16.38 11.01 16.92 11.01C17.46 11.01 17.9 11.63 17.9 12.41V14.25\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-kes)\"/>"
+ },
+ {
+  "id": "monnaie-ugx",
+  "fr": "Shilling ougandais",
+  "en": "Ugandan shilling",
+  "cat": "monnaies",
+  "region": "est",
+  "tags": [
+   "shilling ougandais",
+   "ugandan shilling",
+   "ugx",
+   "USh",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "ouganda",
+   "uganda"
+  ],
+  "since": "0.9",
+  "code": "UGX",
+  "countries": [
+   "UG"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M6.07 9.75V12.86C6.07 13.63 6.57 14.25 7.19 14.25C7.8 14.25 8.3 13.63 8.3 12.86V9.75\"/><path d=\"M13.12 10.35C12.85 9.86 12.27 9.63 11.73 9.81C11.2 9.99 10.88 10.51 10.97 11.06C11.06 11.6 11.54 12 12.1 12C12.7 12 13.21 12.4 13.31 12.94C13.41 13.49 13.06 14.01 12.49 14.19C11.93 14.37 11.3 14.14 11.02 13.65\"/><path d=\"M15.98 14.25V9.75M15.98 12.4C15.98 11.63 16.41 11.01 16.95 11.01C17.49 11.01 17.93 11.63 17.93 12.41V14.25\"/>",
+  "fill": "<mask id=\"afm-monnaie-ugx\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M6.07 9.75V12.86C6.07 13.63 6.57 14.25 7.19 14.25C7.8 14.25 8.3 13.63 8.3 12.86V9.75\" fill=\"none\" stroke=\"#000\"/><path d=\"M13.12 10.35C12.85 9.86 12.27 9.63 11.73 9.81C11.2 9.99 10.88 10.51 10.97 11.06C11.06 11.6 11.54 12 12.1 12C12.7 12 13.21 12.4 13.31 12.94C13.41 13.49 13.06 14.01 12.49 14.19C11.93 14.37 11.3 14.14 11.02 13.65\" fill=\"none\" stroke=\"#000\"/><path d=\"M15.98 14.25V9.75M15.98 12.4C15.98 11.63 16.41 11.01 16.95 11.01C17.49 11.01 17.93 11.63 17.93 12.41V14.25\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-ugx)\"/>"
+ },
+ {
+  "id": "monnaie-tzs",
+  "fr": "Shilling tanzanien",
+  "en": "Tanzanian shilling",
+  "cat": "monnaies",
+  "region": "est",
+  "tags": [
+   "shilling tanzanien",
+   "tanzanian shilling",
+   "tzs",
+   "TSh",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "tanzanie",
+   "tanzania"
+  ],
+  "since": "0.9",
+  "code": "TZS",
+  "countries": [
+   "TZ"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M6.16 9.75H8.39M7.27 9.75V14.25\"/><path d=\"M13.03 10.35C12.77 9.86 12.18 9.63 11.65 9.81C11.11 9.99 10.79 10.51 10.88 11.06C10.97 11.6 11.45 12 12.02 12C12.62 12 13.13 12.4 13.22 12.94C13.32 13.49 12.98 14.01 12.41 14.19C11.84 14.37 11.22 14.14 10.94 13.65\"/><path d=\"M15.89 14.25V9.75M15.89 12.4C15.89 11.63 16.33 11.01 16.87 11.01C17.41 11.01 17.84 11.63 17.84 12.41V14.25\"/>",
+  "fill": "<mask id=\"afm-monnaie-tzs\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M6.16 9.75H8.39M7.27 9.75V14.25\" fill=\"none\" stroke=\"#000\"/><path d=\"M13.03 10.35C12.77 9.86 12.18 9.63 11.65 9.81C11.11 9.99 10.79 10.51 10.88 11.06C10.97 11.6 11.45 12 12.02 12C12.62 12 13.13 12.4 13.22 12.94C13.32 13.49 12.98 14.01 12.41 14.19C11.84 14.37 11.22 14.14 10.94 13.65\" fill=\"none\" stroke=\"#000\"/><path d=\"M15.89 14.25V9.75M15.89 12.4C15.89 11.63 16.33 11.01 16.87 11.01C17.41 11.01 17.84 11.63 17.84 12.41V14.25\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-tzs)\"/>"
+ },
+ {
+  "id": "monnaie-sos",
+  "fr": "Shilling somalien",
+  "en": "Somali shilling",
+  "cat": "monnaies",
+  "region": "est",
+  "tags": [
+   "shilling somalien",
+   "somali shilling",
+   "sos",
+   "Sh",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "somalie",
+   "somalia",
+   "Sh.So."
+  ],
+  "since": "0.9",
+  "code": "SOS",
+  "countries": [
+   "SO"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M10.29 9.91C9.87 9.29 8.95 9 8.1 9.22C7.26 9.45 6.74 10.12 6.89 10.81C7.03 11.49 7.79 12 8.68 12C9.63 12 10.44 12.51 10.6 13.19C10.75 13.88 10.2 14.55 9.31 14.78C8.41 15 7.42 14.71 6.97 14.09\"/><path d=\"M13.6 14.85V9.15M13.6 12.51C13.6 11.54 14.39 10.75 15.37 10.75C16.35 10.75 17.14 11.54 17.14 12.51V14.85\"/>",
+  "fill": "<mask id=\"afm-monnaie-sos\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M10.29 9.91C9.87 9.29 8.95 9 8.1 9.22C7.26 9.45 6.74 10.12 6.89 10.81C7.03 11.49 7.79 12 8.68 12C9.63 12 10.44 12.51 10.6 13.19C10.75 13.88 10.2 14.55 9.31 14.78C8.41 15 7.42 14.71 6.97 14.09\" fill=\"none\" stroke=\"#000\"/><path d=\"M13.6 14.85V9.15M13.6 12.51C13.6 11.54 14.39 10.75 15.37 10.75C16.35 10.75 17.14 11.54 17.14 12.51V14.85\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-sos)\"/>"
+ },
+ {
+  "id": "monnaie-mad",
+  "fr": "Dirham marocain",
+  "en": "Moroccan dirham",
+  "cat": "monnaies",
+  "region": "nord",
+  "tags": [
+   "dirham marocain",
+   "moroccan dirham",
+   "mad",
+   "DH",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "maroc",
+   "morocco"
+  ],
+  "since": "0.9",
+  "code": "MAD",
+  "countries": [
+   "MA"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M6.81 14.85V9.15H8.4C9.66 9.15 10.68 10.17 10.68 11.43V12.57C10.68 13.83 9.66 14.85 8.4 14.85H6.81\"/><path d=\"M13.66 14.85V9.15M17.19 14.85V9.15M13.66 12H17.19\"/>",
+  "fill": "<mask id=\"afm-monnaie-mad\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M6.81 14.85V9.15H8.4C9.66 9.15 10.68 10.17 10.68 11.43V12.57C10.68 13.83 9.66 14.85 8.4 14.85H6.81\" fill=\"none\" stroke=\"#000\"/><path d=\"M13.66 14.85V9.15M17.19 14.85V9.15M13.66 12H17.19\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-mad)\"/>"
+ },
+ {
+  "id": "monnaie-dzd",
+  "fr": "Dinar algérien",
+  "en": "Algerian dinar",
+  "cat": "monnaies",
+  "region": "nord",
+  "tags": [
+   "dinar algérien",
+   "algerian dinar",
+   "dzd",
+   "DA",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "algérie",
+   "algeria"
+  ],
+  "since": "0.9",
+  "code": "DZD",
+  "countries": [
+   "DZ"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M6.77 14.85V9.15H8.36C9.62 9.15 10.64 10.17 10.64 11.43V12.57C10.64 13.83 9.62 14.85 8.36 14.85H6.77\"/><path d=\"M13.13 14.85L15.18 9.15L17.23 14.85M13.83 12.91H16.54\"/>",
+  "fill": "<mask id=\"afm-monnaie-dzd\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M6.77 14.85V9.15H8.36C9.62 9.15 10.64 10.17 10.64 11.43V12.57C10.64 13.83 9.62 14.85 8.36 14.85H6.77\" fill=\"none\" stroke=\"#000\"/><path d=\"M13.13 14.85L15.18 9.15L17.23 14.85M13.83 12.91H16.54\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-dzd)\"/>"
+ },
+ {
+  "id": "monnaie-tnd",
+  "fr": "Dinar tunisien",
+  "en": "Tunisian dinar",
+  "cat": "monnaies",
+  "region": "nord",
+  "tags": [
+   "dinar tunisien",
+   "tunisian dinar",
+   "tnd",
+   "DT",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "tunisie",
+   "tunisia"
+  ],
+  "since": "0.9",
+  "code": "TND",
+  "countries": [
+   "TN"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M7.07 14.85V9.15H8.66C9.92 9.15 10.94 10.17 10.94 11.43V12.57C10.94 13.83 9.92 14.85 8.66 14.85H7.07\"/><path d=\"M13.4 9.15H16.93M15.17 9.15V14.85\"/>",
+  "fill": "<mask id=\"afm-monnaie-tnd\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M7.07 14.85V9.15H8.66C9.92 9.15 10.94 10.17 10.94 11.43V12.57C10.94 13.83 9.92 14.85 8.66 14.85H7.07\" fill=\"none\" stroke=\"#000\"/><path d=\"M13.4 9.15H16.93M15.17 9.15V14.85\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-tnd)\"/>"
+ },
+ {
+  "id": "monnaie-lyd",
+  "fr": "Dinar libyen",
+  "en": "Libyan dinar",
+  "cat": "monnaies",
+  "region": "nord",
+  "tags": [
+   "dinar libyen",
+   "libyan dinar",
+   "lyd",
+   "LD",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "libye",
+   "libya"
+  ],
+  "since": "0.9",
+  "code": "LYD",
+  "countries": [
+   "LY"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M6.98 9.15V14.85H10.17\"/><path d=\"M13.15 14.85V9.15H14.74C16 9.15 17.02 10.17 17.02 11.43V12.57C17.02 13.83 16 14.85 14.74 14.85H13.15\"/>",
+  "fill": "<mask id=\"afm-monnaie-lyd\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M6.98 9.15V14.85H10.17\" fill=\"none\" stroke=\"#000\"/><path d=\"M13.15 14.85V9.15H14.74C16 9.15 17.02 10.17 17.02 11.43V12.57C17.02 13.83 16 14.85 14.74 14.85H13.15\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-lyd)\"/>"
+ },
+ {
+  "id": "monnaie-egp",
+  "fr": "Livre égyptienne",
+  "en": "Egyptian pound",
+  "cat": "monnaies",
+  "region": "nord",
+  "tags": [
+   "livre égyptienne",
+   "egyptian pound",
+   "egp",
+   "E£",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "égypte",
+   "egypt"
+  ],
+  "since": "0.9",
+  "code": "EGP",
+  "countries": [
+   "EG"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M6.8 14.85V9.15H10.22M6.8 12H9.68M6.8 14.85H10.22\"/><path d=\"M17.11 10.39C17.05 9.66 16.42 9.12 15.7 9.15C14.97 9.18 14.4 9.78 14.4 10.51V14.85M13.21 14.85H17.2M13.21 12.23H15.84\"/>",
+  "fill": "<mask id=\"afm-monnaie-egp\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M6.8 14.85V9.15H10.22M6.8 12H9.68M6.8 14.85H10.22\" fill=\"none\" stroke=\"#000\"/><path d=\"M17.11 10.39C17.05 9.66 16.42 9.12 15.7 9.15C14.97 9.18 14.4 9.78 14.4 10.51V14.85M13.21 14.85H17.2M13.21 12.23H15.84\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-egp)\"/>"
+ },
+ {
+  "id": "monnaie-sdg",
+  "fr": "Livre soudanaise",
+  "en": "Sudanese pound",
+  "cat": "monnaies",
+  "region": "nord",
+  "tags": [
+   "livre soudanaise",
+   "sudanese pound",
+   "sdg",
+   "LS",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "soudan",
+   "sudan",
+   "£S",
+   "£Sd"
+  ],
+  "since": "0.9",
+  "code": "SDG",
+  "countries": [
+   "SD"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M7.14 9.15V14.85H10.33\"/><path d=\"M16.53 9.91C16.11 9.29 15.19 9 14.34 9.22C13.5 9.45 12.98 10.12 13.13 10.81C13.27 11.49 14.03 12 14.92 12C15.87 12 16.68 12.51 16.84 13.19C16.99 13.88 16.44 14.55 15.54 14.78C14.65 15 13.66 14.71 13.21 14.09\"/>",
+  "fill": "<mask id=\"afm-monnaie-sdg\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M7.14 9.15V14.85H10.33\" fill=\"none\" stroke=\"#000\"/><path d=\"M16.53 9.91C16.11 9.29 15.19 9 14.34 9.22C13.5 9.45 12.98 10.12 13.13 10.81C13.27 11.49 14.03 12 14.92 12C15.87 12 16.68 12.51 16.84 13.19C16.99 13.88 16.44 14.55 15.54 14.78C14.65 15 13.66 14.71 13.21 14.09\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-sdg)\"/>"
+ },
+ {
+  "id": "monnaie-ssp",
+  "fr": "Livre sud-soudanaise",
+  "en": "South Sudanese pound",
+  "cat": "monnaies",
+  "region": "est",
+  "tags": [
+   "livre sud-soudanaise",
+   "south sudanese pound",
+   "ssp",
+   "S£",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "soudan du sud",
+   "south sudan",
+   "SS£"
+  ],
+  "since": "0.9",
+  "code": "SSP",
+  "countries": [
+   "SS"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M10.16 9.91C9.74 9.29 8.81 9 7.97 9.22C7.12 9.45 6.61 10.12 6.75 10.81C6.9 11.49 7.66 12 8.55 12C9.5 12 10.31 12.5 10.46 13.19C10.61 13.88 10.07 14.55 9.17 14.77C8.27 15 7.28 14.71 6.84 14.09\"/><path d=\"M17.19 10.39C17.12 9.66 16.5 9.12 15.78 9.15C15.05 9.18 14.48 9.78 14.48 10.51V14.85M13.28 14.85H17.27M13.28 12.23H15.92\"/>",
+  "fill": "<mask id=\"afm-monnaie-ssp\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M10.16 9.91C9.74 9.29 8.81 9 7.97 9.22C7.12 9.45 6.61 10.12 6.75 10.81C6.9 11.49 7.66 12 8.55 12C9.5 12 10.31 12.5 10.46 13.19C10.61 13.88 10.07 14.55 9.17 14.77C8.27 15 7.28 14.71 6.84 14.09\" fill=\"none\" stroke=\"#000\"/><path d=\"M17.19 10.39C17.12 9.66 16.5 9.12 15.78 9.15C15.05 9.18 14.48 9.78 14.48 10.51V14.85M13.28 14.85H17.27M13.28 12.23H15.92\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-ssp)\"/>"
+ },
+ {
+  "id": "monnaie-etb",
+  "fr": "Birr",
+  "en": "Ethiopian birr",
+  "cat": "monnaies",
+  "region": "est",
+  "tags": [
+   "birr",
+   "ethiopian birr",
+   "etb",
+   "Br",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "éthiopie",
+   "ethiopia"
+  ],
+  "since": "0.9",
+  "code": "ETB",
+  "countries": [
+   "ET"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M7.32 14.85V9.15H9.36C10.1 9.15 10.7 9.75 10.7 10.49C10.7 11.23 10.1 11.83 9.36 11.83H7.32M9.57 11.83C10.4 11.83 11.08 12.51 11.08 13.34C11.08 14.17 10.4 14.85 9.57 14.85H7.32\"/><path d=\"M14.06 10.75V14.85M14.06 13.13C14.06 11.36 15.11 10.75 16.68 10.75\"/>",
+  "fill": "<mask id=\"afm-monnaie-etb\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M7.32 14.85V9.15H9.36C10.1 9.15 10.7 9.75 10.7 10.49C10.7 11.23 10.1 11.83 9.36 11.83H7.32M9.57 11.83C10.4 11.83 11.08 12.51 11.08 13.34C11.08 14.17 10.4 14.85 9.57 14.85H7.32\" fill=\"none\" stroke=\"#000\"/><path d=\"M14.06 10.75V14.85M14.06 13.13C14.06 11.36 15.11 10.75 16.68 10.75\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-etb)\"/>"
+ },
+ {
+  "id": "monnaie-ern",
+  "fr": "Nakfa",
+  "en": "Eritrean nakfa",
+  "cat": "monnaies",
+  "region": "est",
+  "tags": [
+   "nakfa",
+   "eritrean nakfa",
+   "ern",
+   "Nfk",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "érythrée",
+   "eritrea"
+  ],
+  "since": "0.9",
+  "code": "ERN",
+  "countries": [
+   "ER"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M6.39 14.25V9.75L8.91 14.25V9.75\"/><path d=\"M13.19 10.42C13.14 10.01 12.88 9.72 12.59 9.75C12.29 9.79 12.07 10.14 12.07 10.56V14.25M11.56 11.01H12.92\"/><path d=\"M15.84 14.25V9.75M17.61 11.01L15.84 13.21M16.55 12.33L17.61 14.25\"/>",
+  "fill": "<mask id=\"afm-monnaie-ern\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M6.39 14.25V9.75L8.91 14.25V9.75\" fill=\"none\" stroke=\"#000\"/><path d=\"M13.19 10.42C13.14 10.01 12.88 9.72 12.59 9.75C12.29 9.79 12.07 10.14 12.07 10.56V14.25M11.56 11.01H12.92\" fill=\"none\" stroke=\"#000\"/><path d=\"M15.84 14.25V9.75M17.61 11.01L15.84 13.21M16.55 12.33L17.61 14.25\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-ern)\"/>"
+ },
+ {
+  "id": "monnaie-djf",
+  "fr": "Franc djiboutien",
+  "en": "Djiboutian franc",
+  "cat": "monnaies",
+  "region": "est",
+  "tags": [
+   "franc djiboutien",
+   "djiboutian franc",
+   "djf",
+   "Fdj",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "djibouti"
+  ],
+  "since": "0.9",
+  "code": "DJF",
+  "countries": [
+   "DJ"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M7.32 14.38V9.88H9.4M7.32 12.12H9.07\"/><path d=\"M13.63 12.76C13.63 13.65 13.2 14.38 12.66 14.38C12.12 14.38 11.68 13.65 11.68 12.76C11.68 11.86 12.12 11.13 12.66 11.13C13.2 11.13 13.63 11.86 13.63 12.75M13.63 9.88V14.38\"/><path d=\"M16.56 11.13V15.27C16.56 15.57 16.39 15.81 16.17 15.81H15.86\"/><circle cx=\"16.56\" cy=\"8.31\" r=\"1\" fill=\"currentColor\" stroke=\"none\"/>",
+  "fill": "<mask id=\"afm-monnaie-djf\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M7.32 14.38V9.88H9.4M7.32 12.12H9.07\" fill=\"none\" stroke=\"#000\"/><path d=\"M13.63 12.76C13.63 13.65 13.2 14.38 12.66 14.38C12.12 14.38 11.68 13.65 11.68 12.76C11.68 11.86 12.12 11.13 12.66 11.13C13.2 11.13 13.63 11.86 13.63 12.75M13.63 9.88V14.38\" fill=\"none\" stroke=\"#000\"/><path d=\"M16.56 11.13V15.27C16.56 15.57 16.39 15.81 16.17 15.81H15.86\" fill=\"none\" stroke=\"#000\"/><circle cx=\"16.56\" cy=\"8.31\" r=\"1\" fill=\"#000\" stroke=\"none\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-djf)\"/>"
+ },
+ {
+  "id": "monnaie-kmf",
+  "fr": "Franc comorien",
+  "en": "Comorian franc",
+  "cat": "monnaies",
+  "region": "est",
+  "tags": [
+   "franc comorien",
+   "comorian franc",
+   "kmf",
+   "CF",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "comores",
+   "comoros"
+  ],
+  "since": "0.9",
+  "code": "KMF",
+  "countries": [
+   "KM"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M10.79 10.09C10.18 9.22 9.21 8.92 8.35 9.34C7.49 9.76 6.92 10.82 6.92 12C6.92 13.18 7.49 14.24 8.35 14.66C9.21 15.08 10.18 14.78 10.79 13.91\"/><path d=\"M13.77 14.85V9.15H17.08M13.77 12H16.55\"/>",
+  "fill": "<mask id=\"afm-monnaie-kmf\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M10.79 10.09C10.18 9.22 9.21 8.92 8.35 9.34C7.49 9.76 6.92 10.82 6.92 12C6.92 13.18 7.49 14.24 8.35 14.66C9.21 15.08 10.18 14.78 10.79 13.91\" fill=\"none\" stroke=\"#000\"/><path d=\"M13.77 14.85V9.15H17.08M13.77 12H16.55\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-kmf)\"/>"
+ },
+ {
+  "id": "monnaie-mga",
+  "fr": "Ariary",
+  "en": "Malagasy ariary",
+  "cat": "monnaies",
+  "region": "est",
+  "tags": [
+   "ariary",
+   "malagasy ariary",
+   "mga",
+   "Ar",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "madagascar"
+  ],
+  "since": "0.9",
+  "code": "MGA",
+  "countries": [
+   "MG"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M7.15 14.85L9.2 9.15L11.25 14.85M7.84 12.91H10.55\"/><path d=\"M14.23 10.75V14.85M14.23 13.13C14.23 11.36 15.28 10.75 16.85 10.75\"/>",
+  "fill": "<mask id=\"afm-monnaie-mga\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M7.15 14.85L9.2 9.15L11.25 14.85M7.84 12.91H10.55\" fill=\"none\" stroke=\"#000\"/><path d=\"M14.23 10.75V14.85M14.23 13.13C14.23 11.36 15.28 10.75 16.85 10.75\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-mga)\"/>"
+ },
+ {
+  "id": "monnaie-mur",
+  "fr": "Roupie mauricienne",
+  "en": "Mauritian rupee",
+  "cat": "monnaies",
+  "region": "est",
+  "tags": [
+   "roupie mauricienne",
+   "mauritian rupee",
+   "mur",
+   "Rs",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "maurice",
+   "mauritius",
+   "₨"
+  ],
+  "since": "0.9",
+  "code": "MUR",
+  "countries": [
+   "MU"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M7.11 14.85V9.15H9.16C10.04 9.15 10.76 9.86 10.76 10.75C10.76 11.63 10.04 12.34 9.16 12.34H7.11M8.69 12.34L10.87 14.85\"/><path d=\"M16.61 11.29C16.26 10.85 15.47 10.64 14.76 10.8C14.04 10.96 13.6 11.44 13.73 11.94C13.85 12.43 14.49 12.8 15.25 12.8C16.05 12.8 16.74 13.16 16.87 13.66C17 14.15 16.54 14.64 15.78 14.8C15.01 14.96 14.18 14.75 13.8 14.31\"/>",
+  "fill": "<mask id=\"afm-monnaie-mur\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M7.11 14.85V9.15H9.16C10.04 9.15 10.76 9.86 10.76 10.75C10.76 11.63 10.04 12.34 9.16 12.34H7.11M8.69 12.34L10.87 14.85\" fill=\"none\" stroke=\"#000\"/><path d=\"M16.61 11.29C16.26 10.85 15.47 10.64 14.76 10.8C14.04 10.96 13.6 11.44 13.73 11.94C13.85 12.43 14.49 12.8 15.25 12.8C16.05 12.8 16.74 13.16 16.87 13.66C17 14.15 16.54 14.64 15.78 14.8C15.01 14.96 14.18 14.75 13.8 14.31\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-mur)\"/>"
+ },
+ {
+  "id": "monnaie-scr",
+  "fr": "Roupie seychelloise",
+  "en": "Seychellois rupee",
+  "cat": "monnaies",
+  "region": "est",
+  "tags": [
+   "roupie seychelloise",
+   "seychellois rupee",
+   "scr",
+   "SR",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "seychelles"
+  ],
+  "since": "0.9",
+  "code": "SCR",
+  "countries": [
+   "SC"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M10.18 9.91C9.76 9.29 8.83 9 7.99 9.22C7.14 9.45 6.63 10.12 6.77 10.81C6.92 11.49 7.68 12 8.57 12C9.52 12 10.33 12.51 10.48 13.19C10.64 13.88 10.09 14.55 9.19 14.78C8.29 15 7.31 14.71 6.86 14.09\"/><path d=\"M13.49 14.85V9.15H15.54C16.42 9.15 17.14 9.86 17.14 10.75C17.14 11.63 16.42 12.34 15.54 12.34H13.49M15.07 12.34L17.25 14.85\"/>",
+  "fill": "<mask id=\"afm-monnaie-scr\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M10.18 9.91C9.76 9.29 8.83 9 7.99 9.22C7.14 9.45 6.63 10.12 6.77 10.81C6.92 11.49 7.68 12 8.57 12C9.52 12 10.33 12.51 10.48 13.19C10.64 13.88 10.09 14.55 9.19 14.78C8.29 15 7.31 14.71 6.86 14.09\" fill=\"none\" stroke=\"#000\"/><path d=\"M13.49 14.85V9.15H15.54C16.42 9.15 17.14 9.86 17.14 10.75C17.14 11.63 16.42 12.34 15.54 12.34H13.49M15.07 12.34L17.25 14.85\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-scr)\"/>"
+ },
+ {
+  "id": "monnaie-rwf",
+  "fr": "Franc rwandais",
+  "en": "Rwandan franc",
+  "cat": "monnaies",
+  "region": "est",
+  "tags": [
+   "franc rwandais",
+   "rwandan franc",
+   "rwf",
+   "FRw",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "rwanda",
+   "RF",
+   "R₣"
+  ],
+  "since": "0.9",
+  "code": "RWF",
+  "countries": [
+   "RW"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M6.07 14.25V9.75H7.74M6.07 12H7.47\"/><path d=\"M10.39 14.25V9.75H11.43C11.87 9.75 12.23 10.31 12.23 11.01C12.23 11.71 11.87 12.27 11.43 12.27H10.39M11.19 12.27L12.29 14.25\"/><path d=\"M14.88 11.01L15.62 14.25L16.41 11.79L17.2 14.25L17.93 11.01\"/>",
+  "fill": "<mask id=\"afm-monnaie-rwf\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M6.07 14.25V9.75H7.74M6.07 12H7.47\" fill=\"none\" stroke=\"#000\"/><path d=\"M10.39 14.25V9.75H11.43C11.87 9.75 12.23 10.31 12.23 11.01C12.23 11.71 11.87 12.27 11.43 12.27H10.39M11.19 12.27L12.29 14.25\" fill=\"none\" stroke=\"#000\"/><path d=\"M14.88 11.01L15.62 14.25L16.41 11.79L17.2 14.25L17.93 11.01\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-rwf)\"/>"
+ },
+ {
+  "id": "monnaie-bif",
+  "fr": "Franc burundais",
+  "en": "Burundian franc",
+  "cat": "monnaies",
+  "region": "est",
+  "tags": [
+   "franc burundais",
+   "burundian franc",
+   "bif",
+   "FBu",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "burundi"
+  ],
+  "since": "0.9",
+  "code": "BIF",
+  "countries": [
+   "BI"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M6.14 14.25V9.75H8.23M6.14 12H7.9\"/><path d=\"M10.88 14.25V9.75H12.18C12.64 9.75 13.02 10.22 13.02 10.81C13.02 11.39 12.64 11.87 12.18 11.87H10.88M12.3 11.87C12.83 11.87 13.26 12.4 13.26 13.06C13.26 13.72 12.83 14.25 12.3 14.25H10.88\"/><path d=\"M15.9 11.01V12.86C15.9 13.63 16.34 14.25 16.88 14.25C17.42 14.25 17.86 13.63 17.86 12.86V11.01V14.25\"/>",
+  "fill": "<mask id=\"afm-monnaie-bif\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M6.14 14.25V9.75H8.23M6.14 12H7.9\" fill=\"none\" stroke=\"#000\"/><path d=\"M10.88 14.25V9.75H12.18C12.64 9.75 13.02 10.22 13.02 10.81C13.02 11.39 12.64 11.87 12.18 11.87H10.88M12.3 11.87C12.83 11.87 13.26 12.4 13.26 13.06C13.26 13.72 12.83 14.25 12.3 14.25H10.88\" fill=\"none\" stroke=\"#000\"/><path d=\"M15.9 11.01V12.86C15.9 13.63 16.34 14.25 16.88 14.25C17.42 14.25 17.86 13.63 17.86 12.86V11.01V14.25\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-bif)\"/>"
+ },
+ {
+  "id": "monnaie-cdf",
+  "fr": "Franc congolais",
+  "en": "Congolese franc",
+  "cat": "monnaies",
+  "region": "centre",
+  "tags": [
+   "franc congolais",
+   "congolese franc",
+   "cdf",
+   "FC",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "rd congo",
+   "democratic republic of the congo"
+  ],
+  "since": "0.9",
+  "code": "CDF",
+  "countries": [
+   "CD"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M7.18 14.85V9.15H10.49M7.18 12H9.96\"/><path d=\"M16.82 10.09C16.2 9.22 15.23 8.92 14.37 9.34C13.51 9.76 12.94 10.82 12.94 12C12.94 13.18 13.51 14.24 14.37 14.66C15.23 15.08 16.2 14.78 16.82 13.91\"/>",
+  "fill": "<mask id=\"afm-monnaie-cdf\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M7.18 14.85V9.15H10.49M7.18 12H9.96\" fill=\"none\" stroke=\"#000\"/><path d=\"M16.82 10.09C16.2 9.22 15.23 8.92 14.37 9.34C13.51 9.76 12.94 10.82 12.94 12C12.94 13.18 13.51 14.24 14.37 14.66C15.23 15.08 16.2 14.78 16.82 13.91\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-cdf)\"/>"
+ },
+ {
+  "id": "monnaie-gnf",
+  "fr": "Franc guinéen",
+  "en": "Guinean franc",
+  "cat": "monnaies",
+  "region": "ouest",
+  "tags": [
+   "franc guinéen",
+   "guinean franc",
+   "gnf",
+   "FG",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "guinée",
+   "guinea"
+  ],
+  "since": "0.9",
+  "code": "GNF",
+  "countries": [
+   "GN"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M7.01 14.85V9.15H10.32M7.01 12H9.79\"/><path d=\"M16.18 9.75C15.45 8.99 14.44 8.95 13.68 9.66C12.92 10.37 12.59 11.66 12.86 12.85C13.14 14.04 13.95 14.85 14.88 14.85C16.14 14.85 16.99 14.17 16.99 13.03V12H15.21\"/>",
+  "fill": "<mask id=\"afm-monnaie-gnf\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M7.01 14.85V9.15H10.32M7.01 12H9.79\" fill=\"none\" stroke=\"#000\"/><path d=\"M16.18 9.75C15.45 8.99 14.44 8.95 13.68 9.66C12.92 10.37 12.59 11.66 12.86 12.85C13.14 14.04 13.95 14.85 14.88 14.85C16.14 14.85 16.99 14.17 16.99 13.03V12H15.21\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-gnf)\"/>"
+ },
+ {
+  "id": "monnaie-aoa",
+  "fr": "Kwanza",
+  "en": "Angolan kwanza",
+  "cat": "monnaies",
+  "region": "centre",
+  "tags": [
+   "kwanza",
+   "angolan kwanza",
+   "aoa",
+   "Kz",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "angola"
+  ],
+  "since": "0.9",
+  "code": "AOA",
+  "countries": [
+   "AO"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M7.21 14.85V9.15M10.86 9.15L7.21 12.57M8.52 11.34L10.86 14.85\"/><path d=\"M13.84 10.75H16.79L13.84 14.85H16.79\"/>",
+  "fill": "<mask id=\"afm-monnaie-aoa\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M7.21 14.85V9.15M10.86 9.15L7.21 12.57M8.52 11.34L10.86 14.85\" fill=\"none\" stroke=\"#000\"/><path d=\"M13.84 10.75H16.79L13.84 14.85H16.79\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-aoa)\"/>"
+ },
+ {
+  "id": "monnaie-zmw",
+  "fr": "Kwacha zambien",
+  "en": "Zambian kwacha",
+  "cat": "monnaies",
+  "region": "australe",
+  "tags": [
+   "kwacha zambien",
+   "zambian kwacha",
+   "zmw",
+   "ZK",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "zambie",
+   "zambia"
+  ],
+  "since": "0.9",
+  "code": "ZMW",
+  "countries": [
+   "ZM"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M6.8 9.15H10.57L6.8 14.85H10.57\"/><path d=\"M13.55 14.85V9.15M17.2 9.15L13.55 12.57M14.86 11.34L17.2 14.85\"/>",
+  "fill": "<mask id=\"afm-monnaie-zmw\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M6.8 9.15H10.57L6.8 14.85H10.57\" fill=\"none\" stroke=\"#000\"/><path d=\"M13.55 14.85V9.15M17.2 9.15L13.55 12.57M14.86 11.34L17.2 14.85\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-zmw)\"/>"
+ },
+ {
+  "id": "monnaie-mwk",
+  "fr": "Kwacha malawite",
+  "en": "Malawian kwacha",
+  "cat": "monnaies",
+  "region": "australe",
+  "tags": [
+   "kwacha malawite",
+   "malawian kwacha",
+   "mwk",
+   "MK",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "malawi"
+  ],
+  "since": "0.9",
+  "code": "MWK",
+  "countries": [
+   "MW"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M6.58 14.85L6.75 9.15L8.69 13.71L10.63 9.15L10.79 14.85\"/><path d=\"M13.78 14.85V9.15M17.42 9.15L13.78 12.57M15.09 11.34L17.42 14.85\"/>",
+  "fill": "<mask id=\"afm-monnaie-mwk\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M6.58 14.85L6.75 9.15L8.69 13.71L10.63 9.15L10.79 14.85\" fill=\"none\" stroke=\"#000\"/><path d=\"M13.78 14.85V9.15M17.42 9.15L13.78 12.57M15.09 11.34L17.42 14.85\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-mwk)\"/>"
+ },
+ {
+  "id": "monnaie-mzn",
+  "fr": "Metical",
+  "en": "Mozambican metical",
+  "cat": "monnaies",
+  "region": "australe",
+  "tags": [
+   "metical",
+   "mozambican metical",
+   "mzn",
+   "MT",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "mozambique"
+  ],
+  "since": "0.9",
+  "code": "MZN",
+  "countries": [
+   "MZ"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M6.72 14.85L6.89 9.15L8.83 13.71L10.77 9.15L10.94 14.85\"/><path d=\"M13.75 9.15H17.28M15.51 9.15V14.85\"/>",
+  "fill": "<mask id=\"afm-monnaie-mzn\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M6.72 14.85L6.89 9.15L8.83 13.71L10.77 9.15L10.94 14.85\" fill=\"none\" stroke=\"#000\"/><path d=\"M13.75 9.15H17.28M15.51 9.15V14.85\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-mzn)\"/>"
+ },
+ {
+  "id": "monnaie-zwg",
+  "fr": "Or du Zimbabwe (ZiG)",
+  "en": "Zimbabwe Gold",
+  "cat": "monnaies",
+  "region": "australe",
+  "tags": [
+   "or du zimbabwe (zig)",
+   "zimbabwe gold",
+   "zwg",
+   "ZiG",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "zimbabwe"
+  ],
+  "since": "0.9",
+  "code": "ZWG",
+  "countries": [
+   "ZW"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M6.5 10.6H8.87L6.5 15.1H8.87\"/><path d=\"M11.52 11.86V15.1\"/><path d=\"M16.86 11.07C16.29 10.47 15.49 10.43 14.89 10.99C14.29 11.55 14.03 12.58 14.25 13.52C14.47 14.46 15.11 15.1 15.84 15.1C16.84 15.1 17.5 14.55 17.5 13.66V12.85H16.1\"/><circle cx=\"11.52\" cy=\"9.03\" r=\"1\" fill=\"currentColor\" stroke=\"none\"/>",
+  "fill": "<mask id=\"afm-monnaie-zwg\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M6.5 10.6H8.87L6.5 15.1H8.87\" fill=\"none\" stroke=\"#000\"/><path d=\"M11.52 11.86V15.1\" fill=\"none\" stroke=\"#000\"/><path d=\"M16.86 11.07C16.29 10.47 15.49 10.43 14.89 10.99C14.29 11.55 14.03 12.58 14.25 13.52C14.47 14.46 15.11 15.1 15.84 15.1C16.84 15.1 17.5 14.55 17.5 13.66V12.85H16.1\" fill=\"none\" stroke=\"#000\"/><circle cx=\"11.52\" cy=\"9.03\" r=\"1\" fill=\"#000\" stroke=\"none\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-zwg)\"/>"
+ },
+ {
+  "id": "monnaie-bwp",
+  "fr": "Pula",
+  "en": "Botswana pula",
+  "cat": "monnaies",
+  "region": "australe",
+  "tags": [
+   "pula",
+   "botswana pula",
+   "bwp",
+   "P",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "botswana"
+  ],
+  "since": "0.9",
+  "code": "BWP",
+  "countries": [
+   "BW"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M9.12 16.5V7.5\"/><path d=\"M9.12 7.5H12.27C13.71 7.5 14.88 8.67 14.88 10.11C14.88 11.55 13.71 12.72 12.27 12.72H9.12\"/>",
+  "fill": "<mask id=\"afm-monnaie-bwp\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M9.12 16.5V7.5\" fill=\"none\" stroke=\"#000\"/><path d=\"M9.12 7.5H12.27C13.71 7.5 14.88 8.67 14.88 10.11C14.88 11.55 13.71 12.72 12.27 12.72H9.12\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-bwp)\"/>"
+ },
+ {
+  "id": "monnaie-nad",
+  "fr": "Dollar namibien",
+  "en": "Namibian dollar",
+  "cat": "monnaies",
+  "region": "australe",
+  "tags": [
+   "dollar namibien",
+   "namibian dollar",
+   "nad",
+   "N$",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "namibie",
+   "namibia"
+  ],
+  "since": "0.9",
+  "code": "NAD",
+  "countries": [
+   "NA"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M6.64 14.85V9.15L10.63 14.85V9.15\"/><path d=\"M17.04 9.91C16.62 9.29 15.69 9 14.84 9.22C14 9.45 13.48 10.12 13.63 10.81C13.77 11.49 14.53 12 15.43 12C16.38 12 17.19 12.51 17.34 13.19C17.49 13.88 16.95 14.55 16.05 14.78C15.15 15 14.16 14.71 13.72 14.09M15.43 7.95V9.15M15.43 14.85V16.05\"/>",
+  "fill": "<mask id=\"afm-monnaie-nad\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M6.64 14.85V9.15L10.63 14.85V9.15\" fill=\"none\" stroke=\"#000\"/><path d=\"M17.04 9.91C16.62 9.29 15.69 9 14.84 9.22C14 9.45 13.48 10.12 13.63 10.81C13.77 11.49 14.53 12 15.43 12C16.38 12 17.19 12.51 17.34 13.19C17.49 13.88 16.95 14.55 16.05 14.78C15.15 15 14.16 14.71 13.72 14.09M15.43 7.95V9.15M15.43 14.85V16.05\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-nad)\"/>"
+ },
+ {
+  "id": "monnaie-lsl",
+  "fr": "Loti",
+  "en": "Lesotho loti",
+  "cat": "monnaies",
+  "region": "australe",
+  "tags": [
+   "loti",
+   "lesotho loti",
+   "lsl",
+   "L",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "lesotho"
+  ],
+  "since": "0.9",
+  "code": "LSL",
+  "countries": [
+   "LS"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M9.48 7.5V16.5\"/><path d=\"M9.48 16.5H14.52\"/>",
+  "fill": "<mask id=\"afm-monnaie-lsl\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M9.48 7.5V16.5\" fill=\"none\" stroke=\"#000\"/><path d=\"M9.48 16.5H14.52\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-lsl)\"/>"
+ },
+ {
+  "id": "monnaie-szl",
+  "fr": "Lilangeni",
+  "en": "Swazi lilangeni",
+  "cat": "monnaies",
+  "region": "australe",
+  "tags": [
+   "lilangeni",
+   "swazi lilangeni",
+   "szl",
+   "E",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "eswatini"
+  ],
+  "since": "0.9",
+  "code": "SZL",
+  "countries": [
+   "SZ"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M9.3 16.5V7.5H14.7\"/><path d=\"M9.3 12H13.84\"/><path d=\"M9.3 16.5H14.7\"/>",
+  "fill": "<mask id=\"afm-monnaie-szl\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M9.3 16.5V7.5H14.7\" fill=\"none\" stroke=\"#000\"/><path d=\"M9.3 12H13.84\" fill=\"none\" stroke=\"#000\"/><path d=\"M9.3 16.5H14.7\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-szl)\"/>"
+ },
+ {
+  "id": "monnaie-gmd",
+  "fr": "Dalasi",
+  "en": "Gambian dalasi",
+  "cat": "monnaies",
+  "region": "ouest",
+  "tags": [
+   "dalasi",
+   "gambian dalasi",
+   "gmd",
+   "D",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "gambie",
+   "the gambia"
+  ],
+  "since": "0.9",
+  "code": "GMD",
+  "countries": [
+   "GM"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M8.94 16.5V7.5\"/><path d=\"M8.94 7.5H11.46C13.45 7.5 15.06 9.11 15.06 11.1V12.9C15.06 14.89 13.45 16.5 11.46 16.5H8.94\"/>",
+  "fill": "<mask id=\"afm-monnaie-gmd\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M8.94 16.5V7.5\" fill=\"none\" stroke=\"#000\"/><path d=\"M8.94 7.5H11.46C13.45 7.5 15.06 9.11 15.06 11.1V12.9C15.06 14.89 13.45 16.5 11.46 16.5H8.94\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-gmd)\"/>"
+ },
+ {
+  "id": "monnaie-sle",
+  "fr": "Leone",
+  "en": "Sierra Leonean leone",
+  "cat": "monnaies",
+  "region": "ouest",
+  "tags": [
+   "leone",
+   "sierra leonean leone",
+   "sle",
+   "Le",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "sierra leone"
+  ],
+  "since": "0.9",
+  "code": "SLE",
+  "countries": [
+   "SL"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M7.43 9.15V14.85H10.62\"/><path d=\"M13.2 12.8H16.57C16.57 11.83 16.01 10.99 15.23 10.79C14.46 10.59 13.67 11.08 13.35 11.96C13.02 12.85 13.25 13.89 13.9 14.46C14.54 15.03 15.42 14.97 16.01 14.32\"/>",
+  "fill": "<mask id=\"afm-monnaie-sle\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M7.43 9.15V14.85H10.62\" fill=\"none\" stroke=\"#000\"/><path d=\"M13.2 12.8H16.57C16.57 11.83 16.01 10.99 15.23 10.79C14.46 10.59 13.67 11.08 13.35 11.96C13.02 12.85 13.25 13.89 13.9 14.46C14.54 15.03 15.42 14.97 16.01 14.32\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-sle)\"/>"
+ },
+ {
+  "id": "monnaie-lrd",
+  "fr": "Dollar libérien",
+  "en": "Liberian dollar",
+  "cat": "monnaies",
+  "region": "ouest",
+  "tags": [
+   "dollar libérien",
+   "liberian dollar",
+   "lrd",
+   "L$",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "liberia"
+  ],
+  "since": "0.9",
+  "code": "LRD",
+  "countries": [
+   "LR"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M7.14 9.15V14.85H10.33\"/><path d=\"M16.53 9.91C16.11 9.29 15.19 9 14.34 9.22C13.5 9.45 12.98 10.12 13.13 10.81C13.27 11.49 14.03 12 14.92 12C15.87 12 16.68 12.51 16.84 13.19C16.99 13.88 16.44 14.55 15.54 14.78C14.65 15 13.66 14.71 13.21 14.09M14.92 7.95V9.15M14.92 14.85V16.05\"/>",
+  "fill": "<mask id=\"afm-monnaie-lrd\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M7.14 9.15V14.85H10.33\" fill=\"none\" stroke=\"#000\"/><path d=\"M16.53 9.91C16.11 9.29 15.19 9 14.34 9.22C13.5 9.45 12.98 10.12 13.13 10.81C13.27 11.49 14.03 12 14.92 12C15.87 12 16.68 12.51 16.84 13.19C16.99 13.88 16.44 14.55 15.54 14.78C14.65 15 13.66 14.71 13.21 14.09M14.92 7.95V9.15M14.92 14.85V16.05\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-lrd)\"/>"
+ },
+ {
+  "id": "monnaie-mru",
+  "fr": "Ouguiya",
+  "en": "Mauritanian ouguiya",
+  "cat": "monnaies",
+  "region": "ouest",
+  "tags": [
+   "ouguiya",
+   "mauritanian ouguiya",
+   "mru",
+   "UM",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "mauritanie",
+   "mauritania"
+  ],
+  "since": "0.9",
+  "code": "MRU",
+  "countries": [
+   "MR"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M6.66 9.15V13.08C6.66 14.06 7.45 14.85 8.43 14.85C9.4 14.85 10.19 14.06 10.19 13.08V9.15\"/><path d=\"M13.12 14.85L13.29 9.15L15.23 13.71L17.17 9.15L17.34 14.85\"/>",
+  "fill": "<mask id=\"afm-monnaie-mru\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M6.66 9.15V13.08C6.66 14.06 7.45 14.85 8.43 14.85C9.4 14.85 10.19 14.06 10.19 13.08V9.15\" fill=\"none\" stroke=\"#000\"/><path d=\"M13.12 14.85L13.29 9.15L15.23 13.71L17.17 9.15L17.34 14.85\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-mru)\"/>"
+ },
+ {
+  "id": "monnaie-cve",
+  "fr": "Escudo cap-verdien",
+  "en": "Cape Verdean escudo",
+  "cat": "monnaies",
+  "region": "ouest",
+  "tags": [
+   "escudo cap-verdien",
+   "cape verdean escudo",
+   "cve",
+   "Esc",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "cap-vert",
+   "cabo verde"
+  ],
+  "since": "0.9",
+  "code": "CVE",
+  "countries": [
+   "CV"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M6.62 14.25V9.75H8.78M6.62 12H8.44M6.62 14.25H8.78\"/><path d=\"M12.95 11.44C12.75 11.09 12.32 10.93 11.92 11.05C11.53 11.18 11.29 11.56 11.36 11.95C11.42 12.34 11.78 12.63 12.2 12.63C12.64 12.63 13.02 12.92 13.09 13.31C13.16 13.7 12.91 14.08 12.49 14.21C12.07 14.33 11.6 14.17 11.4 13.82\"/><path d=\"M17.38 11.55C17.11 11.05 16.69 10.88 16.32 11.12C15.94 11.36 15.7 11.96 15.7 12.63C15.7 13.3 15.94 13.9 16.32 14.14C16.69 14.38 17.11 14.21 17.38 13.71\"/>",
+  "fill": "<mask id=\"afm-monnaie-cve\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M6.62 14.25V9.75H8.78M6.62 12H8.44M6.62 14.25H8.78\" fill=\"none\" stroke=\"#000\"/><path d=\"M12.95 11.44C12.75 11.09 12.32 10.93 11.92 11.05C11.53 11.18 11.29 11.56 11.36 11.95C11.42 12.34 11.78 12.63 12.2 12.63C12.64 12.63 13.02 12.92 13.09 13.31C13.16 13.7 12.91 14.08 12.49 14.21C12.07 14.33 11.6 14.17 11.4 13.82\" fill=\"none\" stroke=\"#000\"/><path d=\"M17.38 11.55C17.11 11.05 16.69 10.88 16.32 11.12C15.94 11.36 15.7 11.96 15.7 12.63C15.7 13.3 15.94 13.9 16.32 14.14C16.69 14.38 17.11 14.21 17.38 13.71\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-cve)\"/>"
+ },
+ {
+  "id": "monnaie-stn",
+  "fr": "Dobra",
+  "en": "São Tomé and Príncipe dobra",
+  "cat": "monnaies",
+  "region": "centre",
+  "tags": [
+   "dobra",
+   "são tomé and príncipe dobra",
+   "stn",
+   "Db",
+   "monnaie",
+   "currency",
+   "argent",
+   "money",
+   "sao tomé-et-principe",
+   "são tomé and príncipe"
+  ],
+  "since": "0.9",
+  "code": "STN",
+  "countries": [
+   "ST"
+  ],
+  "body": "<circle cx=\"12\" cy=\"12\" r=\"9.1\"/><path d=\"M6.81 14.85V9.15H8.4C9.66 9.15 10.68 10.17 10.68 11.43V12.57C10.68 13.83 9.66 14.85 8.4 14.85H6.81\"/><path d=\"M13.66 9.15V14.85M13.66 12.8C13.66 11.66 14.45 10.75 15.43 10.75C16.4 10.75 17.19 11.66 17.19 12.8C17.19 13.93 16.4 14.85 15.43 14.85C14.45 14.85 13.66 13.93 13.66 12.8\"/>",
+  "fill": "<mask id=\"afm-monnaie-stn\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"12\" r=\"9.1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M6.81 14.85V9.15H8.4C9.66 9.15 10.68 10.17 10.68 11.43V12.57C10.68 13.83 9.66 14.85 8.4 14.85H6.81\" fill=\"none\" stroke=\"#000\"/><path d=\"M13.66 9.15V14.85M13.66 12.8C13.66 11.66 14.45 10.75 15.43 10.75C16.4 10.75 17.19 11.66 17.19 12.8C17.19 13.93 16.4 14.85 15.43 14.85C14.45 14.85 13.66 13.93 13.66 12.8\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-monnaie-stn)\"/>"
+ },
+ {
   "id": "drapeau-algerie",
   "fr": "Drapeau de l'Algérie",
   "en": "Flag of Algeria",

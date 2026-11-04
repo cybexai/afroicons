@@ -228,7 +228,7 @@ export function Playground() {
   const share = () => a.copy(location.origin + location.pathname + "#" + hash, a.tt("Lien copié : il ouvre le bac à sable avec vos réglages", "Link copied: it opens the playground with your settings"));
   // Une icône culturelle au hasard dans chaque emplacement « africain » (logo, paiement, vitrine, état vide).
   const surprise = () => {
-    const pool = AFRO.filter((i) => i.cat !== "cartes"), r = () => pool[Math.floor(Math.random() * pool.length)].id;
+    const pool = AFRO.filter((i) => i.cat !== "cartes" && i.cat !== "monnaies"), r = () => pool[Math.floor(Math.random() * pool.length)].id;
     setSlots((s) => ({ ...s, logo: r(), e1: r(), f1: r(), f2: r(), f3: r() }));
   };
 

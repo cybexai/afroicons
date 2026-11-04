@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { CITIES, COMPAT_NAMES, LATEST, PAGE, EGROUPS, ICONS, REGNAME, TONES, TONE_LIST, VERSION, byId, catOf, codepoints, colOf, isColor, isEmoji, isFlag, isNew, lineLike, loadEmojiBodies, loadFills, type CityId, type Icon } from "../lib/constants";
+import { AFRO, CITIES, COMPAT_NAMES, FLAGS, LATEST, PAGE, EGROUPS, ICONS, REGNAME, TONES, TONE_LIST, VERSION, byId, catOf, codepoints, colOf, isColor, isEmoji, isFlag, isNew, lineLike, loadEmojiBodies, loadFills, type CityId, type Icon } from "../lib/constants";
 import { FACTS } from "../lib/i18n";
 import { norm, rank } from "../lib/search";
 import { animateDraw, codeLang, compatSnippet, cssStr, highlight, jsxSnippet, ngSnippet, spriteStr, svgStr, svgToPng, useStr } from "../lib/svg";
@@ -120,7 +120,10 @@ export function Drawer() {
           <div className="dsizes">{[16, 20, 24, 32, 48].map((s) => <div key={s} style={{ color: a.ink }}><Svg i={ic} o={{ s, style: a.style, w: a.stroke, bg: a.badgeBg, c: line ? "currentColor" : a.color ?? "#fff" }} /><small>{s}</small></div>)}</div>
           {(() => {
             // Équivalents : emoji ↔ icône au trait, carte du pays ↔ drapeau.
-            const twins = ([[ic.emoji, a.tt("Voir l'emoji", "See the emoji")], [ic.icon, a.tt("Voir l'icône au trait", "See the line icon")], [ic.flag, a.tt("Voir le drapeau", "See the flag")], [ic.map, a.tt("Voir la carte du pays", "See the country map")]] as const).filter(([t]) => t && byId[t]);
+            // Monnaie ↔ drapeaux des pays qui l'utilisent.
+            const money = ic.cat === "drapeaux" ? AFRO.find((x) => x.cat === "monnaies" && x.countries?.includes(ic.iso!))?.id : undefined;
+            const lands = ic.cat === "monnaies" ? (ic.countries ?? []).map((c) => FLAGS.find((f) => f.iso === c)?.id) : [];
+            const twins = ([[ic.emoji, a.tt("Voir l'emoji", "See the emoji")], [ic.icon, a.tt("Voir l'icône au trait", "See the line icon")], [ic.flag, a.tt("Voir le drapeau", "See the flag")], [ic.map, a.tt("Voir la carte du pays", "See the country map")], [money, a.tt("Voir la monnaie", "See the currency")], ...lands.map((f) => [f, byId[f!]?.country ? (a.lang === "en" ? byId[f!].country!.en : byId[f!].country!.fr) : ""] as const)] as const).filter(([t]) => t && byId[t]);
             return twins.length ? <div className="dtwins">{twins.map(([t, l]) => <button key={t} className="btn sm dtwin" onClick={() => a.openIcon(t!)}><Svg i={byId[t!]} o={{ s: 20 }} />{l}</button>)}</div> : null;
           })()}
           {ic.tone && <div className="dtone">{a.tt("Teinte de peau", "Skin tone")}<span className="tones" role="radiogroup" aria-label={a.tt("Teinte de peau", "Skin tone")}>{TONE_LIST.map((t) => <button key={t.id} role="radio" aria-checked={app.tone === t.id} aria-label={a.tt(t.fr, t.en)} title={a.tt(t.fr, t.en) + (ic.char ? " " + ic.char + t.mod : "")} className={app.tone === t.id ? "on" : ""} style={{ background: TONES[t.id][0] }} onClick={() => app.setTone(t.id)} />)}</span></div>}

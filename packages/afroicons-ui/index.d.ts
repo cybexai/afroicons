@@ -719,3 +719,171 @@ export declare const LucideMonitorCog: LucideIcon;
 export declare const BotMessageSquare: LucideIcon;
 export declare const BotMessageSquareIcon: LucideIcon;
 export declare const LucideBotMessageSquare: LucideIcon;
+/** Franc CFA (CEMAC) · Central African CFA franc */
+export declare const CfaFrancBeac: LucideIcon;
+export declare const CfaFrancBeacIcon: LucideIcon;
+export declare const LucideCfaFrancBeac: LucideIcon;
+/** Franc CFA (UEMOA) · West African CFA franc */
+export declare const CfaFrancBceao: LucideIcon;
+export declare const CfaFrancBceaoIcon: LucideIcon;
+export declare const LucideCfaFrancBceao: LucideIcon;
+/** Naira · Nigerian naira */
+export declare const Naira: LucideIcon;
+export declare const NairaIcon: LucideIcon;
+export declare const LucideNaira: LucideIcon;
+/** Cedi · Ghanaian cedi */
+export declare const Cedi: LucideIcon;
+export declare const CediIcon: LucideIcon;
+export declare const LucideCedi: LucideIcon;
+/** Rand · South African rand */
+export declare const Rand: LucideIcon;
+export declare const RandIcon: LucideIcon;
+export declare const LucideRand: LucideIcon;
+/** Shilling kényan · Kenyan shilling */
+export declare const KenyanShilling: LucideIcon;
+export declare const KenyanShillingIcon: LucideIcon;
+export declare const LucideKenyanShilling: LucideIcon;
+/** Shilling ougandais · Ugandan shilling */
+export declare const UgandanShilling: LucideIcon;
+export declare const UgandanShillingIcon: LucideIcon;
+export declare const LucideUgandanShilling: LucideIcon;
+/** Shilling tanzanien · Tanzanian shilling */
+export declare const TanzanianShilling: LucideIcon;
+export declare const TanzanianShillingIcon: LucideIcon;
+export declare const LucideTanzanianShilling: LucideIcon;
+/** Shilling somalien · Somali shilling */
+export declare const SomaliShilling: LucideIcon;
+export declare const SomaliShillingIcon: LucideIcon;
+export declare const LucideSomaliShilling: LucideIcon;
+/** Dirham marocain · Moroccan dirham */
+export declare const MoroccanDirham: LucideIcon;
+export declare const MoroccanDirhamIcon: LucideIcon;
+export declare const LucideMoroccanDirham: LucideIcon;
+/** Dinar algérien · Algerian dinar */
+export declare const AlgerianDinar: LucideIcon;
+export declare const AlgerianDinarIcon: LucideIcon;
+export declare const LucideAlgerianDinar: LucideIcon;
+/** Dinar tunisien · Tunisian dinar */
+export declare const TunisianDinar: LucideIcon;
+export declare const TunisianDinarIcon: LucideIcon;
+export declare const LucideTunisianDinar: LucideIcon;
+/** Dinar libyen · Libyan dinar */
+export declare const LibyanDinar: LucideIcon;
+export declare const LibyanDinarIcon: LucideIcon;
+export declare const LucideLibyanDinar: LucideIcon;
+/** Livre égyptienne · Egyptian pound */
+export declare const EgyptianPound: LucideIcon;
+export declare const EgyptianPoundIcon: LucideIcon;
+export declare const LucideEgyptianPound: LucideIcon;
+/** Livre soudanaise · Sudanese pound */
+export declare const SudanesePound: LucideIcon;
+export declare const SudanesePoundIcon: LucideIcon;
+export declare const LucideSudanesePound: LucideIcon;
+/** Livre sud-soudanaise · South Sudanese pound */
+export declare const SouthSudanesePound: LucideIcon;
+export declare const SouthSudanesePoundIcon: LucideIcon;
+export declare const LucideSouthSudanesePound: LucideIcon;
+/** Birr · Ethiopian birr */
+export declare const Birr: LucideIcon;
+export declare const BirrIcon: LucideIcon;
+export declare const LucideBirr: LucideIcon;
+/** Nakfa · Eritrean nakfa */
+export declare const Nakfa: LucideIcon;
+export declare const NakfaIcon: LucideIcon;
+export declare const LucideNakfa: LucideIcon;
+/** Franc djiboutien · Djiboutian franc */
+export declare const DjiboutianFranc: LucideIcon;
+export declare const DjiboutianFrancIcon: LucideIcon;
+export declare const LucideDjiboutianFranc: LucideIcon;
+/** Franc comorien · Comorian franc */
+export declare const ComorianFranc: LucideIcon;
+export declare const ComorianFrancIcon: LucideIcon;
+export declare const LucideComorianFranc: LucideIcon;
+/** Ariary · Malagasy ariary */
+export declare const Ariary: LucideIcon;
+export declare const AriaryIcon: LucideIcon;
+export declare const LucideAriary: LucideIcon;
+/** Roupie mauricienne · Mauritian rupee */
+export declare const MauritianRupee: LucideIcon;
+export declare const MauritianRupeeIcon: LucideIcon;
+export declare const LucideMauritianRupee: LucideIcon;
+/** Roupie seychelloise · Seychellois rupee */
+export declare const SeychelloisRupee: LucideIcon;
+export declare const SeychelloisRupeeIcon: LucideIcon;
+export declare const LucideSeychelloisRupee: LucideIcon;
+/** Franc rwandais · Rwandan franc */
+export declare const RwandanFranc: LucideIcon;
+export declare const RwandanFrancIcon: LucideIcon;
+export declare const LucideRwandanFranc: LucideIcon;
+/** Franc burundais · Burundian franc */
+export declare const BurundianFranc: LucideIcon;
+export declare const BurundianFrancIcon: LucideIcon;
+export declare const LucideBurundianFranc: LucideIcon;
+/** Franc congolais · Congolese franc */
+export declare const CongoleseFranc: LucideIcon;
+export declare const CongoleseFrancIcon: LucideIcon;
+export declare const LucideCongoleseFranc: LucideIcon;
+/** Franc guinéen · Guinean franc */
+export declare const GuineanFranc: LucideIcon;
+export declare const GuineanFrancIcon: LucideIcon;
+export declare const LucideGuineanFranc: LucideIcon;
+/** Kwanza · Angolan kwanza */
+export declare const Kwanza: LucideIcon;
+export declare const KwanzaIcon: LucideIcon;
+export declare const LucideKwanza: LucideIcon;
+/** Kwacha zambien · Zambian kwacha */
+export declare const ZambianKwacha: LucideIcon;
+export declare const ZambianKwachaIcon: LucideIcon;
+export declare const LucideZambianKwacha: LucideIcon;
+/** Kwacha malawite · Malawian kwacha */
+export declare const MalawianKwacha: LucideIcon;
+export declare const MalawianKwachaIcon: LucideIcon;
+export declare const LucideMalawianKwacha: LucideIcon;
+/** Metical · Mozambican metical */
+export declare const Metical: LucideIcon;
+export declare const MeticalIcon: LucideIcon;
+export declare const LucideMetical: LucideIcon;
+/** Or du Zimbabwe (ZiG) · Zimbabwe Gold */
+export declare const ZimbabweGold: LucideIcon;
+export declare const ZimbabweGoldIcon: LucideIcon;
+export declare const LucideZimbabweGold: LucideIcon;
+/** Pula · Botswana pula */
+export declare const Pula: LucideIcon;
+export declare const PulaIcon: LucideIcon;
+export declare const LucidePula: LucideIcon;
+/** Dollar namibien · Namibian dollar */
+export declare const NamibianDollar: LucideIcon;
+export declare const NamibianDollarIcon: LucideIcon;
+export declare const LucideNamibianDollar: LucideIcon;
+/** Loti · Lesotho loti */
+export declare const Loti: LucideIcon;
+export declare const LotiIcon: LucideIcon;
+export declare const LucideLoti: LucideIcon;
+/** Lilangeni · Swazi lilangeni */
+export declare const Lilangeni: LucideIcon;
+export declare const LilangeniIcon: LucideIcon;
+export declare const LucideLilangeni: LucideIcon;
+/** Dalasi · Gambian dalasi */
+export declare const Dalasi: LucideIcon;
+export declare const DalasiIcon: LucideIcon;
+export declare const LucideDalasi: LucideIcon;
+/** Leone · Sierra Leonean leone */
+export declare const Leone: LucideIcon;
+export declare const LeoneIcon: LucideIcon;
+export declare const LucideLeone: LucideIcon;
+/** Dollar libérien · Liberian dollar */
+export declare const LiberianDollar: LucideIcon;
+export declare const LiberianDollarIcon: LucideIcon;
+export declare const LucideLiberianDollar: LucideIcon;
+/** Ouguiya · Mauritanian ouguiya */
+export declare const Ouguiya: LucideIcon;
+export declare const OuguiyaIcon: LucideIcon;
+export declare const LucideOuguiya: LucideIcon;
+/** Escudo cap-verdien · Cape Verdean escudo */
+export declare const CapeVerdeanEscudo: LucideIcon;
+export declare const CapeVerdeanEscudoIcon: LucideIcon;
+export declare const LucideCapeVerdeanEscudo: LucideIcon;
+/** Dobra · São Tomé and Príncipe dobra */
+export declare const Dobra: LucideIcon;
+export declare const DobraIcon: LucideIcon;
+export declare const LucideDobra: LucideIcon;

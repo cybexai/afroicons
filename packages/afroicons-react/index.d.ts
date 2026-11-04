@@ -1005,6 +1005,90 @@ export declare const CarteTunisie: Afroicon;
 export declare const CarteZambie: Afroicon;
 /** Carte du Zimbabwe · Map of Zimbabwe */
 export declare const CarteZimbabwe: Afroicon;
+/** Franc CFA (CEMAC) · Central African CFA franc */
+export declare const MonnaieXaf: Afroicon;
+/** Franc CFA (UEMOA) · West African CFA franc */
+export declare const MonnaieXof: Afroicon;
+/** Naira · Nigerian naira */
+export declare const MonnaieNgn: Afroicon;
+/** Cedi · Ghanaian cedi */
+export declare const MonnaieGhs: Afroicon;
+/** Rand · South African rand */
+export declare const MonnaieZar: Afroicon;
+/** Shilling kényan · Kenyan shilling */
+export declare const MonnaieKes: Afroicon;
+/** Shilling ougandais · Ugandan shilling */
+export declare const MonnaieUgx: Afroicon;
+/** Shilling tanzanien · Tanzanian shilling */
+export declare const MonnaieTzs: Afroicon;
+/** Shilling somalien · Somali shilling */
+export declare const MonnaieSos: Afroicon;
+/** Dirham marocain · Moroccan dirham */
+export declare const MonnaieMad: Afroicon;
+/** Dinar algérien · Algerian dinar */
+export declare const MonnaieDzd: Afroicon;
+/** Dinar tunisien · Tunisian dinar */
+export declare const MonnaieTnd: Afroicon;
+/** Dinar libyen · Libyan dinar */
+export declare const MonnaieLyd: Afroicon;
+/** Livre égyptienne · Egyptian pound */
+export declare const MonnaieEgp: Afroicon;
+/** Livre soudanaise · Sudanese pound */
+export declare const MonnaieSdg: Afroicon;
+/** Livre sud-soudanaise · South Sudanese pound */
+export declare const MonnaieSsp: Afroicon;
+/** Birr · Ethiopian birr */
+export declare const MonnaieEtb: Afroicon;
+/** Nakfa · Eritrean nakfa */
+export declare const MonnaieErn: Afroicon;
+/** Franc djiboutien · Djiboutian franc */
+export declare const MonnaieDjf: Afroicon;
+/** Franc comorien · Comorian franc */
+export declare const MonnaieKmf: Afroicon;
+/** Ariary · Malagasy ariary */
+export declare const MonnaieMga: Afroicon;
+/** Roupie mauricienne · Mauritian rupee */
+export declare const MonnaieMur: Afroicon;
+/** Roupie seychelloise · Seychellois rupee */
+export declare const MonnaieScr: Afroicon;
+/** Franc rwandais · Rwandan franc */
+export declare const MonnaieRwf: Afroicon;
+/** Franc burundais · Burundian franc */
+export declare const MonnaieBif: Afroicon;
+/** Franc congolais · Congolese franc */
+export declare const MonnaieCdf: Afroicon;
+/** Franc guinéen · Guinean franc */
+export declare const MonnaieGnf: Afroicon;
+/** Kwanza · Angolan kwanza */
+export declare const MonnaieAoa: Afroicon;
+/** Kwacha zambien · Zambian kwacha */
+export declare const MonnaieZmw: Afroicon;
+/** Kwacha malawite · Malawian kwacha */
+export declare const MonnaieMwk: Afroicon;
+/** Metical · Mozambican metical */
+export declare const MonnaieMzn: Afroicon;
+/** Or du Zimbabwe (ZiG) · Zimbabwe Gold */
+export declare const MonnaieZwg: Afroicon;
+/** Pula · Botswana pula */
+export declare const MonnaieBwp: Afroicon;
+/** Dollar namibien · Namibian dollar */
+export declare const MonnaieNad: Afroicon;
+/** Loti · Lesotho loti */
+export declare const MonnaieLsl: Afroicon;
+/** Lilangeni · Swazi lilangeni */
+export declare const MonnaieSzl: Afroicon;
+/** Dalasi · Gambian dalasi */
+export declare const MonnaieGmd: Afroicon;
+/** Leone · Sierra Leonean leone */
+export declare const MonnaieSle: Afroicon;
+/** Dollar libérien · Liberian dollar */
+export declare const MonnaieLrd: Afroicon;
+/** Ouguiya · Mauritanian ouguiya */
+export declare const MonnaieMru: Afroicon;
+/** Escudo cap-verdien · Cape Verdean escudo */
+export declare const MonnaieCve: Afroicon;
+/** Dobra · São Tomé and Príncipe dobra */
+export declare const MonnaieStn: Afroicon;
 /** Drapeau de l'Algérie · Flag of Algeria */
 export declare const DrapeauAlgerie: Afroicon;
 /** Drapeau de l'Angola · Flag of Angola */
