@@ -271,6 +271,26 @@ export declare const Panneausolaire: Afroicon;
 export declare const Houe: Afroicon;
 /** Machette · Machete */
 export declare const Machette: Afroicon;
+/** Charrue · Plough */
+export declare const Charrue: Afroicon;
+/** Bêche · Spade */
+export declare const Beche: Afroicon;
+/** Râteau · Rake */
+export declare const Rateau: Afroicon;
+/** Faucille · Sickle */
+export declare const Faucille: Afroicon;
+/** Fourche · Pitchfork */
+export declare const Fourche: Afroicon;
+/** Croc (houe à dents) · Fork hoe */
+export declare const Croc: Afroicon;
+/** Serfouette · Double hoe */
+export declare const Serfouette: Afroicon;
+/** Seau · Bucket */
+export declare const Seau: Afroicon;
+/** Brouette · Wheelbarrow */
+export declare const Brouette: Afroicon;
+/** Tamis · Sieve */
+export declare const Tamis: Afroicon;
 /** Filet de pêche · Fishing net */
 export declare const Filet: Afroicon;
 /** Pousse-pousse · Handcart */
