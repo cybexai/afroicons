@@ -108,7 +108,9 @@ const noPin = <T,>(o: Record<string, T>) => Object.fromEntries(Object.entries(o)
 const onlyPin = <T,>(o: Record<string, T>) => Object.fromEntries(Object.entries(o).filter(([k]) => isPin(k)));
 
 /* Icônes et boutons des maquettes : composants stables (pas de remontage à chaque réglage, le focus reste en place). */
-type Kit = { paint: (k: string, s: number, c?: string, before?: boolean) => JSX.Element; before?: boolean; drop?: (k: string, id: string) => void; pick: string | null; open: (k: string) => void; custom: Custs; slots: Slots; logo: string | null; size: number };
+type Kit = { paint: (k: string, s: number, c?: string, before?: boolean) => JSX.Element; before?: boolean; drop?: (k: string, id: string) => void;
+  /** Icône survolée, focalisée ou visée par un dépôt : la copie « avant » de la comparaison l'affiche aussi (elle recouvre la vraie). */
+  hot?: string | null; setHot?: (k: string | null) => void; pick: string | null; open: (k: string) => void; custom: Custs; slots: Slots; logo: string | null; size: number };
 const KitCtx = createContext<Kit | null>(null);
 /** Une icône d'emplacement : cliquable pour la remplacer ou la personnaliser. */
 /** Glisser-déposer : une icône glissée depuis le panneau porte son identifiant sous ce type. */
@@ -116,7 +118,8 @@ const DND = "text/x-afroicon";
 const dragIcon = (id: string) => (e: React.DragEvent) => { e.dataTransfer.setData(DND, id); e.dataTransfer.effectAllowed = "copy"; };
 function I({ k, s, c }: { k: string; s?: number; c?: string }) {
   const x = useContext(KitCtx)!, a = useApp(), sz = s ?? x.size;
-  const [over, setOver] = useState(false);
+  const over = x.hot === k;
+  const setOver = (v: boolean) => x.setHot?.(v ? k : null);
   if (k === "logo" && x.logo) return <img className="pglogoimg" src={x.logo} alt="" style={{ height: sz + 8 }} />;
   const i = byId[x.slots[k]] ?? byId[BASE[k]];
   if (!i) return null;
@@ -126,7 +129,8 @@ function I({ k, s, c }: { k: string; s?: number; c?: string }) {
     onDragLeave: () => setOver(false),
     onDrop: (e: React.DragEvent) => { e.preventDefault(); setOver(false); const id = e.dataTransfer.getData(DND); if (id) x.drop!(k, id); },
   } : {};
-  return <button type="button" className={"pgi" + (x.pick === k ? " on" : "") + (x.custom[k] ? " cu" : "") + (over ? " drop" : "")} title={label} aria-label={label} onClick={(e) => { e.stopPropagation(); x.open(k); }} {...dnd}>{x.paint(k, sz, c, x.before)}</button>;
+  const hot = x.setHot ? { onMouseEnter: () => setOver(true), onMouseLeave: () => setOver(false), onFocus: () => setOver(true), onBlur: () => setOver(false) } : {};
+  return <button type="button" className={"pgi" + (x.pick === k ? " on" : "") + (x.custom[k] ? " cu" : "") + (over ? " hot" : "")} title={label} aria-label={label} onClick={(e) => { e.stopPropagation(); x.open(k); }} {...hot} {...dnd}>{x.paint(k, sz, c, x.before)}</button>;
 }
 /** Un bouton de maquette : cliquer n'importe où dessus change son icône. */
 function B({ k, ghost, wide, after, children }: { k: string; ghost?: boolean; wide?: boolean; after?: boolean; children: string }) {
@@ -157,6 +161,7 @@ export function Playground() {
   const [dtab, setDtab] = useState<"swap" | "edit">("swap"); // onglet de la fenêtre d'icône, gardé d'une ouverture à l'autre
   const [cfg, setCfg] = useState<Cfg>({ ...DEF, ...init.cfg });
   const [pick, setPick] = useState<string | null>(null);
+  const [hot, setHot] = useState<string | null>(null);
   // Passage du grand écran (panneau) au petit (fenêtre) : on désélectionne, pour ne pas ouvrir une fenêtre d'office.
   const wasWide = useRef(wide);
   useEffect(() => { if (wasWide.current && !wide) setPick(null); wasWide.current = wide; }, [wide]);
@@ -165,7 +170,13 @@ export function Playground() {
   const [lucide, setLucide] = useState(false); // comparaison avant / après
   const [cut, setCut] = useState(50); // position du curseur (% de la largeur) : avant à gauche, après à droite
   const wipe = useRef<HTMLDivElement>(null);
-  const drag = (e: React.PointerEvent) => { const r = wipe.current?.getBoundingClientRect(); if (r) setCut(Math.max(0, Math.min(100, ((e.clientX - r.left) / r.width) * 100))); };
+  const raf = useRef(0);
+  const drag = (e: React.PointerEvent) => {
+    const r = wipe.current?.getBoundingClientRect(); if (!r) return;
+    const v = Math.max(0, Math.min(100, ((e.clientX - r.left) / r.width) * 100));
+    wipe.current!.style.setProperty("--cut", v + "%"); // la coupure suit le doigt sans attendre React
+    cancelAnimationFrame(raf.current); raf.current = requestAnimationFrame(() => setCut(v));
+  };
   const [L, setL] = useState<Record<string, ComponentType<any>> | null>(null);
   const [tab, setTab] = useState<"react" | "angular" | "html" | "css">("react");
   const [vision, setVision] = useState<Vision>("none");
@@ -317,7 +328,7 @@ export function Playground() {
   );
 
 
-  const kit: Kit = { paint, pick, open: setPick, custom, slots, logo: logo?.url ?? null, size: cfg.size,
+  const kit: Kit = { paint, pick, open: setPick, custom, slots, logo: logo?.url ?? null, size: cfg.size, hot, setHot,
     drop: (k, id) => { if (!byId[id]) return; setSlots((sl) => ({ ...sl, [k]: id })); setPick(k); } };
 
   const used = useMemo(() => [...new Set(Object.values(slots))].map((id) => byId[id]).filter(Boolean) as Icon[], [slots]);
@@ -404,6 +415,7 @@ export function Playground() {
       })(),
       ...(uiI.length ? ["", a.tt(`<!-- Icônes d'interface (${uiI.map((i) => i.lucide).join(", ")}) :`, `<!-- Interface icons (${uiI.map((i) => i.lucide).join(", ")}):`), a.tt("     afroicons-ui pour React, afroicons-angular pour Angular,", "     afroicons-ui for React, afroicons-angular for Angular,"), a.tt("     ou le SVG de chaque fiche sur afroicons.org -->", "     or the SVG from each icon page on afroicons.org -->")] : [])].join("\n");
   }, [used, cfg, tab, ink, bg, surface, muted, line, custom, slots, a.lang]); // eslint-disable-line react-hooks/exhaustive-deps
+  const codeHtml = useMemo(() => highlight(code, true), [code]);
   const download = () => zipIcons(used, { ...a, style: cfg.style, stroke: cfg.stroke, color: null } as typeof a, `afroicons-${cfg.name.toLowerCase().replace(/[^a-z0-9]+/g, "-") || "app"}-${used.length}.zip`);
   const show = (v: View) => view === "all" || view === v;
   // Export de la maquette (ou de l'avant / après) en PNG : html-to-image, chargé au premier clic.
@@ -412,14 +424,22 @@ export function Playground() {
     const node = (lucide && view !== "screen" ? wipe.current : document.querySelector<HTMLElement>(".pg .pgstage")) as HTMLElement | null;
     if (!node || busy) return;
     setBusy(true);
+    const root = document.querySelector<HTMLElement>(".pg");
+    // Sans les marques d'édition (sélection, pastille « personnalisée », survol, animation) ;
+    // avec les filtres de daltonisme, qui doivent être dans l'image capturée.
+    root?.classList.add("pgexport");
+    const defs = vision !== "none" ? (document.querySelector("#pg-protan")?.closest("svg")?.cloneNode(true) as SVGElement | undefined) : undefined;
+    if (defs) node.prepend(defs);
     try {
       const { toBlob } = await import("html-to-image");
-      const blob = await toBlob(node, { pixelRatio: 2, cacheBust: true, filter: (n) => !(n instanceof HTMLElement && (n.classList.contains("pgwr") || n.classList.contains("pgwh"))) });
+      // Pas de cacheBust : il casse les adresses blob: du logo ou de la capture importés.
+      const blob = await toBlob(node, { pixelRatio: 2, preferredFontFormat: "woff2", filter: (n) => !(n instanceof HTMLElement && (n.classList.contains("pgwr") || n.classList.contains("pgwh"))) });
       if (blob) await a.save(`afroicons-${(cfg.name || "app").toLowerCase().replace(/[^a-z0-9]+/g, "-")}${lucide ? "-avant-apres" : ""}.png`, blob);
     } catch { a.toast(a.tt("Export impossible dans ce navigateur", "Export not possible in this browser")); }
+    defs?.remove(); root?.classList.remove("pgexport");
     setBusy(false);
   };
-  const picker = (pick || wide) ? <Picker key={pick ?? "aucune"} inline={wide} empty={!pick} used={used} select={(id) => { const k = Object.keys(slots).find((x) => slots[x] === id); if (k) setPick(k); }} onClose={() => setPick(null)} onPick={(id) => { if (!pick) return; setSlots((s) => ({ ...s, [pick]: id })); if (!wide) setPick(null); }} current={pick ? slots[pick] : ""}
+  const picker = (pick || wide) ? <Picker key={wide ? "panneau" : pick ?? "aucune"} inline={wide} empty={!pick} used={used} select={(id) => { const k = Object.keys(slots).find((x) => slots[x] === id); if (k) setPick(k); }} onClose={() => setPick(null)} onPick={(id) => { if (!pick) return; setSlots((s) => ({ ...s, [pick]: id })); if (!wide) setPick(null); }} current={pick ? slots[pick] : ""}
         tab={dtab} setTab={setDtab} cfg={cfg} preview={pick ? <div className="pgprev" style={vars}>{paint(pick, 56)}</div> : <span />}
         cust={(pick && custom[pick]) || {}}
         setCust={(p) => pick && setCustom((m) => { const n = cleanCust({ ...m[pick], ...p }); const o = { ...m }; if (n) o[pick] = n; else delete o[pick]; return o; })}
@@ -484,15 +504,15 @@ export function Playground() {
             </span>
             <button className={"btn pgcmp" + (lucide ? " on" : "")} aria-pressed={lucide} onClick={() => setLucide((v) => !v)}>{lucide ? a.tt("Fermer la comparaison", "Close comparison") : a.tt("Comparer avant / après", "Compare before / after")}</button>
             <span className="pgbarsp" />
-            {a.canDownload && <button className="btn" disabled={busy} onClick={exportPng}>{busy ? a.tt("Export…", "Exporting…") : a.tt("Exporter en PNG", "Export as PNG")}</button>}
+            {a.canDownload && <button className="btn" disabled={busy || (lucide && !L)} onClick={exportPng}>{busy ? a.tt("Export…", "Exporting…") : a.tt("Exporter en PNG", "Export as PNG")}</button>}
             <button className="btn" onClick={share}>{a.tt("Copier le lien", "Copy link")}</button>
             <button className="btn" onClick={reset}>{a.tt("Réinitialiser", "Reset")}</button>
           </div>
           {lucide && <small className="pgnote pgcmpn">{L ? (view === "screen" ? a.tt("La comparaison porte sur les maquettes : choisissez Tout, Application web, Mobile ou Site vitrine.", "The comparison covers the mockups: choose All, Web app, Mobile or Website.") : a.tt("Glissez le curseur : à gauche, les icônes génériques (Lucide) ; à droite, Afroicons. Une icône sans équivalent Lucide reste la même des deux côtés.", "Drag the slider: generic icons (Lucide) on the left, Afroicons on the right. An icon without a Lucide equivalent stays the same on both sides.")) : a.tt("Chargement de Lucide…", "Loading Lucide…")}</small>}
-          <div className="pgviews" role="tablist" aria-label={a.tt("Maquettes", "Mockups")}>
+          <div className="pgviews" role="tablist" onClick={(e) => e.stopPropagation()} aria-label={a.tt("Maquettes", "Mockups")}>
             {([["all", a.tt("Tout", "All")], ["web", a.tt("Application web", "Web app")], ["mobile", a.tt("Mobile", "Mobile")], ["site", a.tt("Site vitrine", "Website")], ["screen", a.tt("✦ Votre écran", "✦ Your screen")]] as [View, string][]).map(([v, l]) => <button key={v} role="tab" aria-selected={view === v} className={"cat" + (view === v ? " on" : "")} onClick={() => setView(v)}>{l}</button>)}
           </div>
-          <div className="pghint">
+          <div className="pghint" onClick={(e) => e.stopPropagation()}>
             <span className="pghic" aria-hidden="true">↻</span>
             <p><b>{a.tt("Toutes les icônes ci-dessous sont modifiables.", "Every icon below can be changed.")}</b> {a.tt("Cliquez sur une icône (dans un bouton, le menu, une liste…) pour la remplacer, ou pour la personnaliser : couleur, taille, fond, rotation…", "Click an icon (in a button, the menu, a list…) to swap it, or to customise it: colour, size, background, rotation…")}</p>
             <button className="btn" onClick={(e) => { e.stopPropagation(); pulse("flash", setFlash, 2400); }}>{a.tt("Les montrer", "Show them")}</button>
@@ -562,12 +582,12 @@ export function Playground() {
                       </>;
             if (!lucide || view === "screen") return <div className={cls} style={st}>{body}</div>;
             // Avant / après : la même maquette deux fois ; l'« avant » (Lucide) recouvre la gauche jusqu'au curseur.
-            return <div className="pgwipe" ref={wipe}>
+            return <div className="pgwipe" ref={wipe} style={{ "--cut": cut + "%" } as CSSProperties}>
               <div className={cls} style={st}>{body}</div>
-              <KitCtx.Provider value={{ ...kit, before: true }}><div className={cls + " pgbefore"} style={{ ...st, clipPath: `inset(0 ${100 - cut}% 0 0)` }} aria-hidden="true" {...inert(true)}>{body}</div></KitCtx.Provider>
+              <KitCtx.Provider value={{ ...kit, before: true }}><div className={cls + " pgbefore"} style={st} aria-hidden="true" {...inert(true)}>{body}</div></KitCtx.Provider>
               <span className="pgwlab l">{a.tt("Avant · Lucide", "Before · Lucide")}</span><span className="pgwlab r">{a.tt("Après · Afroicons", "After · Afroicons")}</span>
-              <div className="pgwh" style={{ left: cut + "%" }} onPointerDown={(e) => { (e.target as HTMLElement).setPointerCapture(e.pointerId); drag(e); }} onPointerMove={(e) => e.buttons && drag(e)}><span aria-hidden="true">⇆</span></div>
-              <input className="pgwr" type="range" min={0} max={100} value={Math.round(cut)} onChange={(e) => setCut(+e.target.value)} aria-label={a.tt("Curseur avant / après", "Before / after slider")} />
+              <div className="pgwh" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => { e.preventDefault(); e.currentTarget.setPointerCapture(e.pointerId); drag(e); }} onPointerMove={(e) => e.buttons && drag(e)}><span aria-hidden="true">⇆</span></div>
+              <input className="pgwr" type="range" min={0} max={100} value={Math.round(cut)} onClick={(e) => e.stopPropagation()} onChange={(e) => { setCut(+e.target.value); wipe.current?.style.setProperty("--cut", e.target.value + "%"); }} aria-label={a.tt("Curseur avant / après", "Before / after slider")} aria-valuetext={a.tt(`${Math.round(cut)} % avant, ${100 - Math.round(cut)} % après`, `${Math.round(cut)}% before, ${100 - Math.round(cut)}% after`)} />
             </div>;
           })()}
 
@@ -592,7 +612,7 @@ export function Playground() {
           {a.canDownload && <button className="btn a" onClick={download}>{a.tt(`Télécharger les ${used.length} SVG (.zip)`, `Download the ${used.length} SVGs (.zip)`)}</button>}
         </div>
         <div className="ctabs" role="tablist">{(["react", "angular", "html", "css"] as const).map((k) => <button key={k} role="tab" aria-selected={tab === k} className={tab === k ? "on" : ""} onClick={() => setTab(k)}>{{ react: "React", angular: "Angular", html: "HTML / JS", css: a.tt("Thème CSS", "CSS theme") }[k]}</button>)}</div>
-        <div className="codebox"><pre dangerouslySetInnerHTML={{ __html: highlight(code, true) }} /><button className="cp" onClick={() => a.copy(code)}>{a.tt("Copier", "Copy")}</button></div>
+        <div className="codebox"><pre dangerouslySetInnerHTML={{ __html: codeHtml }} /><button className="cp" onClick={() => a.copy(code)}>{a.tt("Copier", "Copy")}</button></div>
       </div>
     </section>
     </KitCtx.Provider>
@@ -620,9 +640,20 @@ function Picker({ onClose, onPick, current, tab, setTab, cfg, preview, cust, set
   const icon = byId[current];
   const [q, setQ] = useState("");
   const [col, setCol] = useState<Collection | "all">(current ? colOf(current) : "all");
+  // Panneau : une autre icône sélectionnée repart d'une recherche vide, dans sa collection.
+  const slotKey = empty ? "" : current;
+  const prevSlot = useRef(slotKey);
+  const hadFocus = useRef(false);
+  useEffect(() => {
+    if (!inline) return;
+    if (prevSlot.current !== slotKey && !empty) { setQ(""); setCol(colOf(current)); }
+    prevSlot.current = slotKey;
+    // Le focus était dans le panneau et son contenu a changé : on le remet sur le premier élément du panneau.
+    if (hadFocus.current && !dlg.current?.contains(document.activeElement)) dlg.current?.querySelector<HTMLElement>("[role=tab], button")?.focus({ preventScroll: true });
+  }, [empty, slotKey]); // eslint-disable-line react-hooks/exhaustive-deps
   const list = useMemo(() => rank(COLS.find((c) => c.id === col)!.list, q).slice(0, 72), [q, col]);
   const dlg = useRef<HTMLDivElement>(null);
-  useEffect(() => { const f = (e: KeyboardEvent) => e.key === "Escape" && onClose(); addEventListener("keydown", f); return () => removeEventListener("keydown", f); }, [onClose]);
+  useEffect(() => { const f = (e: KeyboardEvent) => { if (e.key !== "Escape" || e.defaultPrevented) return; if (inline && !dlg.current?.contains(e.target as Node)) return; onClose(); }; addEventListener("keydown", f); return () => removeEventListener("keydown", f); }, [onClose, inline]);
   // Le focus reste dans la fenêtre (Tab boucle) et revient à l'icône d'origine à la fermeture.
   useEffect(() => { if (inline) return; const back = document.activeElement as HTMLElement | null; if (!dlg.current?.contains(document.activeElement)) dlg.current?.querySelector<HTMLElement>("input, [role=tab].on")?.focus(); return () => { if (back?.isConnected) back.focus({ preventScroll: true }); }; }, [inline]);
   const trap = (e: React.KeyboardEvent) => {
@@ -633,7 +664,7 @@ function Picker({ onClose, onPick, current, tab, setTab, cfg, preview, cust, set
     if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); } else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   };
   if (inline && empty) return (
-    <aside className="pginsp pgpick inl" onClick={(e) => e.stopPropagation()} aria-label={a.tt("Élément sélectionné", "Selected element")}>
+    <aside className="pginsp pgpick inl" ref={dlg as never} onFocus={() => (hadFocus.current = true)} onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget as Node)) hadFocus.current = false; }} onClick={(e) => e.stopPropagation()} aria-label={a.tt("Élément sélectionné", "Selected element")}>
       <div className="pgink">{a.tt("Élément sélectionné", "Selected element")}</div>
       <p className="pgnote">{a.tt("Cliquez une icône dans la maquette pour la remplacer ou la personnaliser, ou choisissez-en une ici. Vous pouvez aussi glisser une icône de ce panneau sur la maquette.", "Click an icon in the mockup to swap or customise it, or pick one here. You can also drag an icon from this panel onto the mockup.")}</p>
       <div className="pgpickg pgused">{used.map((i) => <button key={i.id} title={a.lang === "en" ? i.en : i.fr} draggable onDragStart={dragIcon(i.id)} onClick={() => select?.(i.id)}><Svg i={i} o={{ s: 22 }} /><small>{a.lang === "en" ? i.en : i.fr}</small></button>)}</div>
@@ -643,7 +674,7 @@ function Picker({ onClose, onPick, current, tab, setTab, cfg, preview, cust, set
   return (
     <>
       {!inline && <div className={"pgveil" + (tab === "edit" ? " light" : "")} onClick={onClose} />}
-      <Wrap className={"pgpick" + (tab === "edit" ? " edit" : "") + (inline ? " pginsp inl" : "")} {...(inline ? { "aria-label": a.tt("Élément sélectionné", "Selected element") } : { role: "dialog", "aria-modal": "true", "aria-label": a.tt("Remplacer ou personnaliser l'icône", "Swap or customise the icon") })} ref={dlg as never} onKeyDown={trap} onClick={(e: React.MouseEvent) => e.stopPropagation()}>
+      <Wrap className={"pgpick" + (tab === "edit" ? " edit" : "") + (inline ? " pginsp inl" : "")} {...(inline ? { "aria-label": a.tt("Élément sélectionné", "Selected element") } : { role: "dialog", "aria-modal": "true", "aria-label": a.tt("Remplacer ou personnaliser l'icône", "Swap or customise the icon") })} ref={dlg as never} onKeyDown={trap} {...(inline ? { onFocus: () => (hadFocus.current = true), onBlur: (e: React.FocusEvent<HTMLElement>) => { if (!e.currentTarget.contains(e.relatedTarget as Node)) hadFocus.current = false; } } : {})} onClick={(e: React.MouseEvent) => e.stopPropagation()}>
         {inline && <div className="pgink">{a.tt("Élément sélectionné", "Selected element")}</div>}
         <div className="pgpickt" role="tablist">
           <button role="tab" aria-selected={tab === "swap"} className={tab === "swap" ? "on" : ""} onClick={() => setTab("swap")}>{a.tt("Remplacer", "Swap")}</button>
@@ -656,7 +687,7 @@ function Picker({ onClose, onPick, current, tab, setTab, cfg, preview, cust, set
         {african && <button className="pgafr" onClick={() => onPick(african)}><Svg i={byId[african]} o={{ s: 22 }} /><span>{a.tt("Équivalent africain : ", "African counterpart: ")}<b>{a.lang === "en" ? byId[african].en : byId[african].fr}</b></span><em>{a.tt("Utiliser", "Use")}</em></button>}
         {remove && <button className="pgafr del" onClick={remove}><span>{a.tt("Retirer cette icône de la capture", "Remove this icon from the screenshot")}</span></button>}
         <div className="pgchips pgpickc">{COLS.map((c) => <button key={c.id} className={"cat" + (col === c.id ? " on" : "")} onClick={() => setCol(c.id)}>{a.tt(c.fr, c.en)}</button>)}</div>
-        <div className="pgpickg">{list.length ? list.map((i) => <button key={i.id} className={i.id === current ? "on" : ""} title={a.lang === "en" ? i.en : i.fr} draggable onDragStart={dragIcon(i.id)} onClick={() => onPick(i.id)}><Svg i={i} o={{ s: 24 }} /><small>{a.lang === "en" ? i.en : i.fr}</small></button>) : <p className="pgnote">{a.tt("Aucune icône trouvée.", "No icon found.")}</p>}</div>
+        <div className="pgpickg">{list.length ? list.map((i) => <button key={i.id} className={i.id === current ? "on" : ""} title={a.lang === "en" ? i.en : i.fr} draggable={inline} onDragStart={inline ? dragIcon(i.id) : undefined} onClick={() => onPick(i.id)}><Svg i={i} o={{ s: 24 }} /><small>{a.lang === "en" ? i.en : i.fr}</small></button>) : <p className="pgnote">{a.tt("Aucune icône trouvée.", "No icon found.")}</p>}</div>
         </>}
       </Wrap>
     </>
