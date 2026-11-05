@@ -1,4 +1,4 @@
-// afroicons-mui v0.9.0 — généré, ne pas modifier à la main.
+// afroicons-mui v0.10.0 — généré, ne pas modifier à la main.
 export * from "@mui/icons-material";
 import type { SvgIconComponent } from "@mui/icons-material";
 type AfroIcon = SvgIconComponent;

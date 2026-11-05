@@ -1,4 +1,4 @@
-// afroicons-react v0.9.0 — généré, ne pas modifier à la main.
+// afroicons-react v0.10.0 — généré, ne pas modifier à la main.
 import { createElement, forwardRef } from "react";
 
 const el = ([t, p, c], k) => createElement(t, { key: k, ...p }, ...(c ? c.map(el) : []));
