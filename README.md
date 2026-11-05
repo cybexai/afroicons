@@ -1,6 +1,6 @@
 <p align="center"><img src="docs/logo.svg" width="96" alt="Afroicons"></p>
 <h1 align="center">Afroicons</h1>
-<p align="center"><b>Des icônes libres qui racontent l'Afrique.</b><br>554 icônes culturelles, au trait et remplies (dont les cartes des 54 pays et 42 monnaies), + les 56 drapeaux (54 pays, l'Union africaine et le panafricain) + 452 emojis + 1557 icônes d'interface · grille 24 px · FR / EN · open source (MIT)</p>
+<p align="center"><b>Des icônes libres qui racontent l'Afrique.</b><br>567 icônes culturelles, au trait et remplies (dont les cartes des 54 pays et 42 monnaies), + les 56 drapeaux (54 pays, l'Union africaine et le panafricain) + 465 emojis + 1557 icônes d'interface · grille 24 px · FR / EN · open source (MIT)</p>
 <p align="center"><a href="https://afroicons.org"><b>afroicons.org</b></a></p>
 <p align="center">
   <a href="LICENSE"><img alt="Licence MIT" src="https://img.shields.io/badge/licence-MIT-C24E2A"></a>
@@ -72,16 +72,16 @@ replace();
 | Catégorie | Nombre | Exemples |
 | --- | ---: | --- |
 | Nature & paysages | 29 | baobab, kilimandjaro, chutes Victoria, forêt du Congo, mangrove |
-| Faune | 115 | éléphant, okapi, pangolin, guépard, lémurien, grue couronnée, bec-en-sabot, mamba noir, tisserin, lamantin |
+| Faune | 116 | éléphant, okapi, pangolin, guépard, lémurien, grue couronnée, bec-en-sabot, mamba noir, tisserin, lamantin |
 | Musique & arts | 42 | djembé, kora, balafon, krar, oud, guembri, mbira, kakaki |
 | Symboles & textiles | 26 | sankofa, gye nyame, kente, bogolan, tête d'Ife, boucliers |
-| Cuisine | 126 | thiéboudienne, jollof, attiéké, injera, couscous, ugali, mafé, bissap, ataya, corossol… |
-| Vie quotidienne | 56 | moto-taxi, chaise en plastique, bassine émaillée, fourneau à charbon |
+| Cuisine | 141 | thiéboudienne, jollof, attiéké, injera, couscous, ugali, ndolè, eru, achu, mafé, bissap, ataya, corossol… |
+| Vie quotidienne | 67 | moto-taxi, chaise en plastique, bassine émaillée, fourneau à charbon |
 | Architecture | 23 | Djenné, case obus, Lalibela, Tiébélé, Ganvié, toguna |
 | Peuples et tenues | 27 | massaï, touareg, peule, habesha, ndebele, wolof, haoussa, griot |
 | Cartes des pays | 54 | le contour de chaque pays africain (`carte-cameroun`), relié à son drapeau ; d'après Natural Earth (domaine public) |
-| Drapeaux | 54 | les 54 États africains membres de l'ONU, aux couleurs officielles |
-| Emojis | 452 | 138 emojis Unicode redessinés (😀 👍 ❤️ 🐘 🥭…, visages et mains dans les 5 teintes de peau) et 314 emojis africains originaux : peuples et tenues, villages, 86 plats, 22 boissons, fruits et légumes, 107 animaux, instruments de musique, vie quotidienne, paysages et symboles. Chaque emoji africain a son icône au trait équivalente (champ `emoji` / `icon`) |
+| Drapeaux | 56 | les 54 États africains membres de l'ONU, aux couleurs officielles, et ceux de l'Union africaine et panafricain |
+| Emojis | 465 | 138 emojis Unicode redessinés (😀 👍 ❤️ 🐘 🥭…, visages et mains dans les 5 teintes de peau) et 327 emojis africains originaux : peuples et tenues, villages, 99 plats, 22 boissons, fruits et légumes, 107 animaux, instruments de musique, vie quotidienne, paysages et symboles. Chaque emoji africain a son icône au trait équivalente (champ `emoji` / `icon`) |
 
 Chaque icône porte un nom français et anglais, une catégorie, une région (`ouest`, `centre`, `est`, `nord`, `australe`, `pan`) et des mots-clés locaux (benskin, okada, matatu, attiéké…). Tout est dans `icons.json`.
 
