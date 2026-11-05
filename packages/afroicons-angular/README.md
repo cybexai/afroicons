@@ -39,7 +39,7 @@ import { AfroiconComponent } from "afroicons-angular";
 export class AppComponent {}
 ```
 
-Seules les icônes déclarées entrent dans votre bundle. `provideAfroicons(afroicons)` les déclare toutes, au prix d'environ 80 Ko.
+Seules les icônes déclarées entrent dans votre bundle. `provideAfroicons(afroicons)` les déclare toutes, au prix d'environ 2 Mo (340 Ko gzip) : réservez-le aux prototypes.
 
 ## Sans registre
 
@@ -83,8 +83,9 @@ export class SharedModule {}
 | `absoluteStrokeWidth` | `false` | Garde la même épaisseur visuelle quelle que soit la taille. |
 | `title` | | Texte alternatif. Sans titre, l'icône est décorative (`aria-hidden`). |
 | `variant` | `line` | `fill` pour la version remplie (icônes culturelles). Sans version remplie, l'icône reste au trait. |
+| `tone` | `medium-dark` | Teinte de peau des emojis qui en ont une : `light`, `medium-light`, `medium`, `medium-dark`, `dark`. |
 
-Noms des icônes : l'id Afroicons en PascalCase pour les icônes culturelles (`Baobab`, `Peigneafro`, `Taxibrousse`), le nom Lucide pour les icônes d'interface (`Wallet`, `ShoppingCart`). La liste complète est sur [afroicons.org](https://afroicons.org).
+Noms des icônes : l'id Afroicons en PascalCase pour les icônes culturelles (`Baobab`, `Peigneafro`, `Taxibrousse`), le nom Lucide pour les icônes d'interface (`Wallet`, `ShoppingCart`). Quand une icône culturelle porte déjà ce nom, l'icône d'interface prend le suffixe `Icon` : `RadioIcon` (`name="radio-icon"`), car `Radio` est le poste de radio culturel. La liste complète est sur [afroicons.org](https://afroicons.org).
 
 Le SVG est construit élément par élément, sans `innerHTML`, et fonctionne avec le rendu serveur (SSR).
 

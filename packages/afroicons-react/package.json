@@ -5,7 +5,7 @@
   "type": "module",
   "main": "./index.js",
   "types": "./index.d.ts",
-  "exports": { ".": { "types": "./index.d.ts", "default": "./index.js" } },
+  "exports": { ".": { "types": "./index.d.ts", "default": "./index.js" }, "./package.json": "./package.json" },
   "files": ["index.js", "index.d.ts", "LICENSE", "README.md"],
   "sideEffects": false,
   "peerDependencies": { "react": ">=17" },

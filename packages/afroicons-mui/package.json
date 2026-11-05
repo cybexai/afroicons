@@ -12,7 +12,7 @@
     "./compat.json": "./compat.json",
     "./*": { "types": "./icons/*.d.ts", "default": "./icons/*.js" }
   },
-  "typesVersions": { "*": { "index.d.ts": ["index.d.ts"], "*": ["icons/*.d.ts"] } },
+  "typesVersions": { "*": { "index.d.ts": ["index.d.ts"], "compat.json": ["compat.json"], "*": ["icons/*.d.ts"] } },
   "sideEffects": false,
   "files": ["index.js", "index.d.ts", "afro.js", "compat.json", "icons", "README.md", "LICENSE"],
   "peerDependencies": { "@mui/icons-material": ">=5", "@mui/material": ">=5", "react": ">=17" },

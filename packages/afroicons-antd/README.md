@@ -27,6 +27,8 @@ import EyeOutlined from "afroicons-antd/EyeOutlined";
 - Des métaphores africaines : `HomeOutlined` → la case, `ShoppingCartOutlined` → le panier tressé, `ShopOutlined` → la boutique de quartier, `WalletOutlined` → le portefeuille au cauri…
 - **Toutes les autres** icônes Ant Design restent disponibles sous leur nom, ainsi que le composant `Icon` (export par défaut).
 
+L'import direct (`afroicons-antd/CaretDownOutlined`) existe pour les noms redessinés ; pour les autres, gardez `@ant-design/icons/…`.
+
 `afroiconNames` donne la liste des noms redessinés ; `afroicons-antd/compat.json` associe chaque nom à son icône Afroicons. `twoToneColor` est accepté mais sans effet : les icônes Afroicons sont au trait.
 
 ## Licence et marques
