@@ -142,7 +142,8 @@ const UI_OF: Record<string, string> = Object.fromEntries(Object.entries(AFRICA).
 function useWide() {
   const q = "(min-width: 1280px)";
   const [w, setW] = useState(() => typeof matchMedia !== "undefined" && matchMedia(q).matches);
-  useEffect(() => { const m = matchMedia(q), f = () => setW(m.matches); m.addEventListener("change", f); return () => m.removeEventListener("change", f); }, []);
+  // « change » plus « resize » par sécurité (certains navigateurs ou vues émulées ne signalent pas le changement).
+  useEffect(() => { const m = matchMedia(q), f = () => setW(m.matches); m.addEventListener("change", f); addEventListener("resize", f); return () => { m.removeEventListener("change", f); removeEventListener("resize", f); }; }, []);
   return w;
 }
 
@@ -156,6 +157,9 @@ export function Playground() {
   const [dtab, setDtab] = useState<"swap" | "edit">("swap"); // onglet de la fenêtre d'icône, gardé d'une ouverture à l'autre
   const [cfg, setCfg] = useState<Cfg>({ ...DEF, ...init.cfg });
   const [pick, setPick] = useState<string | null>(null);
+  // Passage du grand écran (panneau) au petit (fenêtre) : on désélectionne, pour ne pas ouvrir une fenêtre d'office.
+  const wasWide = useRef(wide);
+  useEffect(() => { if (wasWide.current && !wide) setPick(null); wasWide.current = wide; }, [wide]);
   const [view, setView] = useState<View>("all");
   const [flash, setFlash] = useState(false); // « Les montrer » : entoure un instant toutes les icônes modifiables
   const [lucide, setLucide] = useState(false); // comparaison avant / après
