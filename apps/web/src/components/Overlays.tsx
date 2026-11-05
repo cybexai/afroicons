@@ -159,6 +159,18 @@ export function Drawer() {
             const twins = ([[ic.emoji, a.tt("Voir l'emoji", "See the emoji")], [ic.icon, a.tt("Voir l'icône au trait", "See the line icon")], [ic.flag, a.tt("Voir le drapeau", "See the flag")], [ic.map, ic.iso ? a.tt("Voir la carte du pays", "See the country map") : a.tt("Voir la carte de l'Afrique", "See the map of Africa")], [money, a.tt("Voir la monnaie", "See the currency")], ...lands.map((f) => [f, byId[f!]?.country ? (a.lang === "en" ? byId[f!].country!.en : byId[f!].country!.fr) : ""] as const)] as const).filter(([t]) => t && byId[t]);
             return twins.length ? <div className="dtwins">{twins.map(([t, l]) => <button key={t} className="btn sm dtwin" onClick={() => a.openIcon(t!)}><Svg i={byId[t!]} o={{ s: 20 }} />{l}</button>)}</div> : null;
           })()}
+          {(() => {
+            // Drapeau ou carte d'un pays : sa cuisine (plats dont les mots-clés nomment le pays), et un lien vers tous ses plats.
+            if ((ic.cat !== "drapeaux" && ic.cat !== "cartes") || !ic.iso || !ic.country) return null;
+            const names = [norm(ic.country.fr), norm(ic.country.en)];
+            const dishes = AFRO.filter((x) => x.cat === "cuisine" && x.tags.some((t) => names.includes(norm(t))));
+            if (!dishes.length) return null;
+            const of = ic.fr.replace(/^(Drapeau|Carte) /, "");
+            return <div className="sim dfood"><h4>{a.tt(`Cuisine ${of}`, `Food of ${ic.country.en}`)}<small>{dishes.length}</small></h4>
+              <div className="simg">{dishes.slice(0, 12).map((x) => <button key={x.id} title={nm(x)} aria-label={nm(x)} style={{ color: lineInk }} onClick={() => a.openIcon(x.id)}><Svg i={x} o={{ s: 26, w: a.stroke }} /></button>)}</div>
+              {<button className="btn sm dfoodall" onClick={() => { close(); filterTo({ q: ic.country!.fr.toLowerCase(), cat: "cuisine", favOnly: false, col: "afro" }); }}>{a.tt(`Voir les ${dishes.length} plats dans la bibliothèque`, `See all ${dishes.length} dishes in the library`)}</button>}
+            </div>;
+          })()}
           {ic.tone && <div className="dtone">{a.tt("Teinte de peau", "Skin tone")}<span className="tones" role="radiogroup" aria-label={a.tt("Teinte de peau", "Skin tone")}>{TONE_LIST.map((t) => <button key={t.id} role="radio" aria-checked={app.tone === t.id} aria-label={a.tt(t.fr, t.en)} title={a.tt(t.fr, t.en) + (ic.char ? " " + ic.char + t.mod : "")} className={app.tone === t.id ? "on" : ""} style={{ background: TONES[t.id][0] }} onClick={() => app.setTone(t.id)} />)}</span></div>}
           {!isColor(ic) && <details className="dcust" open={custOpen} onToggle={(e) => setCustOpen((e.target as HTMLDetailsElement).open)}>
             <summary><ISliders s={16} />{a.tt("Personnaliser", "Customise")}<small>{a.tt("pour cette icône", "for this icon")}</small><IChevron s={14} w={2.4} /></summary>

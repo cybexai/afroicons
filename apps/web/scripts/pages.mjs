@@ -34,6 +34,14 @@ const HIST = Object.fromEntries(readdirSync(join(repo, "apps/web/src/data/histoi
 /** Espaces insécables : avant : ; ! ? », après «, entre un jour et son mois, dans « XIXe s. ». */
 const MONTHS = "janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre|January|February|March|April|May|June|July|August|September|October|November|December";
 const nbsp = (s) => s.replace(/ ([:;!?»])/g, "\u00A0$1").replace(/« /g, "«\u00A0").replace(new RegExp(`(\\d{1,2}(?:er)?) (${MONTHS})`, "g"), "$1\u00A0$2").replace(/(\d) %/g, "$1\u00A0%").replace(/([IVXL]+e) s\./g, "$1\u00A0s.");
+// Drapeau ou carte d'un pays : liens vers ses plats (mots-clés qui nomment le pays).
+const nrm = (s) => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/['’-]/g, " ");
+function cuisine(i) {
+  if ((i.cat !== "drapeaux" && i.cat !== "cartes") || !i.iso || !i.country) return "";
+  const names = [nrm(i.country.fr), nrm(i.country.en)];
+  const dishes = icons.filter((x) => x.cat === "cuisine" && x.tags.some((t) => names.includes(nrm(t))));
+  return dishes.length ? `<h2>Cuisine ${esc(i.fr.replace(/^(Drapeau|Carte) /, ""))}</h2><ul class="g">${dishes.map((x) => `<li><a href="/icones/${x.slug}/">${esc(x.fr)}</a></li>`).join("")}</ul>` : "";
+}
 function history(i) {
   const h = (i.cat === "drapeaux" || i.cat === "cartes") && HIST[i.iso ?? i.id];
   if (!h) return "";
@@ -133,6 +141,7 @@ ${i.lucide ? equivalents(i.lucide) : ""}
 <p>Icône libre et gratuite, licence MIT, utilisation commerciale comprise. <a href="/#${i.slug}">Personnaliser et télécharger sur afroicons.org</a></p>
 ${twins.length ? `<p>${twins.map(([id, t]) => `<a href="/icones/${bySlug[id].slug}/">${t} : ${esc(bySlug[id].fr)}</a>`).join(" · ")}</p>` : ""}
 ${history(i)}
+${cuisine(i)}
 ${variants.length ? `<h2>Variantes</h2>${links(variants)}` : ""}
 <h2>Dans la même famille</h2>${links(similar)}`,
   });

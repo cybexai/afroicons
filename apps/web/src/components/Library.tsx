@@ -142,7 +142,7 @@ export function Library() {
 
   // Permet aux tags de la fiche et à la palette de piloter la recherche.
   useEffect(() => {
-    const f = (e: Event) => { const d = (e as CustomEvent).detail ?? {}; if (d.col) setCol(d.col); if (d.q != null) { setQ(d.q); setCat("all"); setReg("all"); } if (d.favOnly != null) setFavOnly(d.favOnly); };
+    const f = (e: Event) => { const d = (e as CustomEvent).detail ?? {}; if (d.col) setCol(d.col); if (d.q != null) { setQ(d.q); setCat("all"); setReg("all"); } if (d.cat) setCat(d.cat); if (d.favOnly != null) setFavOnly(d.favOnly); };
     addEventListener("afroicons:filter", f);
     // Un filtre demandé depuis une autre page (tag d'une fiche ouverte dans le bac à sable…).
     try { const p = sessionStorage.getItem("afroicons:filter"); if (p) { sessionStorage.removeItem("afroicons:filter"); f(new CustomEvent("afroicons:filter", { detail: JSON.parse(p) })); } } catch { /* stockage indisponible */ }
