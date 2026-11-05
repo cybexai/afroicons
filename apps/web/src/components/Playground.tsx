@@ -108,16 +108,25 @@ const noPin = <T,>(o: Record<string, T>) => Object.fromEntries(Object.entries(o)
 const onlyPin = <T,>(o: Record<string, T>) => Object.fromEntries(Object.entries(o).filter(([k]) => isPin(k)));
 
 /* Icônes et boutons des maquettes : composants stables (pas de remontage à chaque réglage, le focus reste en place). */
-type Kit = { paint: (k: string, s: number, c?: string, before?: boolean) => JSX.Element; before?: boolean; pick: string | null; open: (k: string) => void; custom: Custs; slots: Slots; logo: string | null; size: number };
+type Kit = { paint: (k: string, s: number, c?: string, before?: boolean) => JSX.Element; before?: boolean; drop?: (k: string, id: string) => void; pick: string | null; open: (k: string) => void; custom: Custs; slots: Slots; logo: string | null; size: number };
 const KitCtx = createContext<Kit | null>(null);
 /** Une icône d'emplacement : cliquable pour la remplacer ou la personnaliser. */
+/** Glisser-déposer : une icône glissée depuis le panneau porte son identifiant sous ce type. */
+const DND = "text/x-afroicon";
+const dragIcon = (id: string) => (e: React.DragEvent) => { e.dataTransfer.setData(DND, id); e.dataTransfer.effectAllowed = "copy"; };
 function I({ k, s, c }: { k: string; s?: number; c?: string }) {
   const x = useContext(KitCtx)!, a = useApp(), sz = s ?? x.size;
+  const [over, setOver] = useState(false);
   if (k === "logo" && x.logo) return <img className="pglogoimg" src={x.logo} alt="" style={{ height: sz + 8 }} />;
   const i = byId[x.slots[k]] ?? byId[BASE[k]];
   if (!i) return null;
   const label = a.tt("Remplacer ou personnaliser : ", "Swap or customise: ") + (a.lang === "en" ? i.en : i.fr);
-  return <button type="button" className={"pgi" + (x.pick === k ? " on" : "") + (x.custom[k] ? " cu" : "")} title={label} aria-label={label} onClick={(e) => { e.stopPropagation(); x.open(k); }}>{x.paint(k, sz, c, x.before)}</button>;
+  const dnd = x.drop ? {
+    onDragOver: (e: React.DragEvent) => { if (e.dataTransfer.types.includes(DND)) { e.preventDefault(); e.dataTransfer.dropEffect = "copy"; setOver(true); } },
+    onDragLeave: () => setOver(false),
+    onDrop: (e: React.DragEvent) => { e.preventDefault(); setOver(false); const id = e.dataTransfer.getData(DND); if (id) x.drop!(k, id); },
+  } : {};
+  return <button type="button" className={"pgi" + (x.pick === k ? " on" : "") + (x.custom[k] ? " cu" : "") + (over ? " drop" : "")} title={label} aria-label={label} onClick={(e) => { e.stopPropagation(); x.open(k); }} {...dnd}>{x.paint(k, sz, c, x.before)}</button>;
 }
 /** Un bouton de maquette : cliquer n'importe où dessus change son icône. */
 function B({ k, ghost, wide, after, children }: { k: string; ghost?: boolean; wide?: boolean; after?: boolean; children: string }) {
@@ -304,7 +313,8 @@ export function Playground() {
   );
 
 
-  const kit: Kit = { paint, pick, open: setPick, custom, slots, logo: logo?.url ?? null, size: cfg.size };
+  const kit: Kit = { paint, pick, open: setPick, custom, slots, logo: logo?.url ?? null, size: cfg.size,
+    drop: (k, id) => { if (!byId[id]) return; setSlots((sl) => ({ ...sl, [k]: id })); setPick(k); } };
 
   const used = useMemo(() => [...new Set(Object.values(slots))].map((id) => byId[id]).filter(Boolean) as Icon[], [slots]);
   const code = useMemo(() => {
@@ -392,6 +402,19 @@ export function Playground() {
   }, [used, cfg, tab, ink, bg, surface, muted, line, custom, slots, a.lang]); // eslint-disable-line react-hooks/exhaustive-deps
   const download = () => zipIcons(used, { ...a, style: cfg.style, stroke: cfg.stroke, color: null } as typeof a, `afroicons-${cfg.name.toLowerCase().replace(/[^a-z0-9]+/g, "-") || "app"}-${used.length}.zip`);
   const show = (v: View) => view === "all" || view === v;
+  // Export de la maquette (ou de l'avant / après) en PNG : html-to-image, chargé au premier clic.
+  const [busy, setBusy] = useState(false);
+  const exportPng = async () => {
+    const node = (lucide && view !== "screen" ? wipe.current : document.querySelector<HTMLElement>(".pg .pgstage")) as HTMLElement | null;
+    if (!node || busy) return;
+    setBusy(true);
+    try {
+      const { toBlob } = await import("html-to-image");
+      const blob = await toBlob(node, { pixelRatio: 2, cacheBust: true, filter: (n) => !(n instanceof HTMLElement && (n.classList.contains("pgwr") || n.classList.contains("pgwh"))) });
+      if (blob) await a.save(`afroicons-${(cfg.name || "app").toLowerCase().replace(/[^a-z0-9]+/g, "-")}${lucide ? "-avant-apres" : ""}.png`, blob);
+    } catch { a.toast(a.tt("Export impossible dans ce navigateur", "Export not possible in this browser")); }
+    setBusy(false);
+  };
   const picker = (pick || wide) ? <Picker key={pick ?? "aucune"} inline={wide} empty={!pick} used={used} select={(id) => { const k = Object.keys(slots).find((x) => slots[x] === id); if (k) setPick(k); }} onClose={() => setPick(null)} onPick={(id) => { if (!pick) return; setSlots((s) => ({ ...s, [pick]: id })); if (!wide) setPick(null); }} current={pick ? slots[pick] : ""}
         tab={dtab} setTab={setDtab} cfg={cfg} preview={pick ? <div className="pgprev" style={vars}>{paint(pick, 56)}</div> : <span />}
         cust={(pick && custom[pick]) || {}}
@@ -457,6 +480,7 @@ export function Playground() {
             </span>
             <button className={"btn pgcmp" + (lucide ? " on" : "")} aria-pressed={lucide} onClick={() => setLucide((v) => !v)}>{lucide ? a.tt("Fermer la comparaison", "Close comparison") : a.tt("Comparer avant / après", "Compare before / after")}</button>
             <span className="pgbarsp" />
+            {a.canDownload && <button className="btn" disabled={busy} onClick={exportPng}>{busy ? a.tt("Export…", "Exporting…") : a.tt("Exporter en PNG", "Export as PNG")}</button>}
             <button className="btn" onClick={share}>{a.tt("Copier le lien", "Copy link")}</button>
             <button className="btn" onClick={reset}>{a.tt("Réinitialiser", "Reset")}</button>
           </div>
@@ -607,8 +631,8 @@ function Picker({ onClose, onPick, current, tab, setTab, cfg, preview, cust, set
   if (inline && empty) return (
     <aside className="pginsp pgpick inl" onClick={(e) => e.stopPropagation()} aria-label={a.tt("Élément sélectionné", "Selected element")}>
       <div className="pgink">{a.tt("Élément sélectionné", "Selected element")}</div>
-      <p className="pgnote">{a.tt("Cliquez une icône dans la maquette pour la remplacer ou la personnaliser. Ou choisissez-en une ici :", "Click an icon in the mockup to swap or customise it. Or pick one here:")}</p>
-      <div className="pgpickg pgused">{used.map((i) => <button key={i.id} title={a.lang === "en" ? i.en : i.fr} onClick={() => select?.(i.id)}><Svg i={i} o={{ s: 22 }} /><small>{a.lang === "en" ? i.en : i.fr}</small></button>)}</div>
+      <p className="pgnote">{a.tt("Cliquez une icône dans la maquette pour la remplacer ou la personnaliser, ou choisissez-en une ici. Vous pouvez aussi glisser une icône de ce panneau sur la maquette.", "Click an icon in the mockup to swap or customise it, or pick one here. You can also drag an icon from this panel onto the mockup.")}</p>
+      <div className="pgpickg pgused">{used.map((i) => <button key={i.id} title={a.lang === "en" ? i.en : i.fr} draggable onDragStart={dragIcon(i.id)} onClick={() => select?.(i.id)}><Svg i={i} o={{ s: 22 }} /><small>{a.lang === "en" ? i.en : i.fr}</small></button>)}</div>
     </aside>
   );
   const Wrap = inline ? "aside" : "div";
@@ -628,7 +652,7 @@ function Picker({ onClose, onPick, current, tab, setTab, cfg, preview, cust, set
         {african && <button className="pgafr" onClick={() => onPick(african)}><Svg i={byId[african]} o={{ s: 22 }} /><span>{a.tt("Équivalent africain : ", "African counterpart: ")}<b>{a.lang === "en" ? byId[african].en : byId[african].fr}</b></span><em>{a.tt("Utiliser", "Use")}</em></button>}
         {remove && <button className="pgafr del" onClick={remove}><span>{a.tt("Retirer cette icône de la capture", "Remove this icon from the screenshot")}</span></button>}
         <div className="pgchips pgpickc">{COLS.map((c) => <button key={c.id} className={"cat" + (col === c.id ? " on" : "")} onClick={() => setCol(c.id)}>{a.tt(c.fr, c.en)}</button>)}</div>
-        <div className="pgpickg">{list.length ? list.map((i) => <button key={i.id} className={i.id === current ? "on" : ""} title={a.lang === "en" ? i.en : i.fr} onClick={() => onPick(i.id)}><Svg i={i} o={{ s: 24 }} /><small>{a.lang === "en" ? i.en : i.fr}</small></button>) : <p className="pgnote">{a.tt("Aucune icône trouvée.", "No icon found.")}</p>}</div>
+        <div className="pgpickg">{list.length ? list.map((i) => <button key={i.id} className={i.id === current ? "on" : ""} title={a.lang === "en" ? i.en : i.fr} draggable onDragStart={dragIcon(i.id)} onClick={() => onPick(i.id)}><Svg i={i} o={{ s: 24 }} /><small>{a.lang === "en" ? i.en : i.fr}</small></button>) : <p className="pgnote">{a.tt("Aucune icône trouvée.", "No icon found.")}</p>}</div>
         </>}
       </Wrap>
     </>

@@ -839,6 +839,8 @@ a.eyebrow:hover{color:var(--ink);border-color:var(--muted)}
 .pgwlab.l{left:10px}.pgwlab.r{right:10px;background:var(--a1);color:#fff}
 .pgwr{position:absolute;left:0;right:0;bottom:-28px;width:100%;accent-color:var(--a1)}
 .pgwipe{margin-bottom:30px}
+.pgi.drop{outline:2.5px dashed var(--a1);outline-offset:3px;background:color-mix(in srgb,var(--a1) 14%,transparent)}
+.pgpickg button[draggable]{cursor:grab}
 .pgveil{position:fixed;inset:0;z-index:59;background:rgba(20,17,14,.35)}
 .pgpickc{padding:10px 14px 0}
 .pgcodeh{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}.pgcodeh h4{margin:0 auto 0 0}
