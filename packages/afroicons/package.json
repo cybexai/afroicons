@@ -1,7 +1,7 @@
 {
   "name": "afroicons",
   "version": "0.11.0",
-  "description": "567 icônes SVG libres, au trait et remplies (dont les cartes des 54 pays et 42 monnaies), les 56 drapeaux (54 pays, l'Union africaine et le panafricain) et 465 emojis, qui racontent l'Afrique — paysages, faune, musique, symboles, cuisine, vie quotidienne, architecture, peuples, monnaies.",
+  "description": "585 icônes SVG libres, au trait et remplies (dont les cartes des 54 pays et 42 monnaies), les 56 drapeaux (54 pays, l'Union africaine et le panafricain) et 483 emojis, qui racontent l'Afrique — paysages, faune, musique, symboles, cuisine, vie quotidienne, architecture, peuples, monnaies.",
   "type": "module",
   "main": "./index.js",
   "types": "./index.d.ts",
