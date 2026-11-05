@@ -1,7 +1,7 @@
 {
   "name": "afroicons-angular",
   "version": "0.9.0",
-  "description": "Les icônes Afroicons en composant Angular autonome : 544 icônes culturelles (au trait et remplies, dont les cartes des 54 pays et 42 monnaies), 54 drapeaux africains, 452 emojis et 846 icônes d'interface (noms Lucide).",
+  "description": "Les icônes Afroicons en composant Angular autonome : 544 icônes culturelles (au trait et remplies, dont les cartes des 54 pays et 42 monnaies), 54 drapeaux africains, 452 emojis et 1557 icônes d'interface (noms Lucide).",
   "keywords": ["angular", "icons", "svg", "africa", "afroicons", "lucide", "flags", "maps"],
   "license": "MIT",
   "author": "THAFAM HOLDING SARL",

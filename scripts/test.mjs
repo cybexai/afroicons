@@ -98,7 +98,17 @@ for (const n of drawn) {
 }
 assert.match(html(ui.Plus, { size: 48, strokeWidth: 2, absoluteStrokeWidth: true, className: "x" }), /width="48".*stroke-width="1".*class="lucide lucide-plus afroicon x"/);
 assert.match(html(ui.Wallet, { color: "#C24E2A" }), /stroke="#C24E2A"/);
-assert.equal(ui.Anchor, lucide.Anchor, "les icônes non redessinées viennent de lucide-react");
+// afroicons-angular : chaque icône a sa propre clé (une icône d'interface ne doit pas masquer une icône culturelle).
+{
+  const ngSrc = readFileSync(new URL("../packages/afroicons-angular/src/icons.ts", import.meta.url), "utf8");
+  const vues = new Map();
+  for (const [, n] of ngSrc.matchAll(/name: "([^"]+)"/g)) {
+    const cle = n.replace(/[-_\s]/g, "").toLowerCase();
+    assert.ok(!vues.has(cle), `afroicons-angular : « ${n} » et « ${vues.get(cle)} » ont la même clé`);
+    vues.set(cle, n);
+  }
+}
+assert.equal(ui.Github, lucide.Github, "les icônes non redessinées (logos de marques) viennent de lucide-react");
 // Les autres noms Lucide d'un dessin redessiné le sont aussi (sinon `export *` les sert en Lucide).
 for (const [alias, id] of [["CircleAlert", "AlertCircle"], ["House", "Home"], ["CircleX", "XCircle"]]) {
   assert.equal(lucide[alias], lucide[id], `${alias} est bien un alias Lucide de ${id}`);

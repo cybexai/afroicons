@@ -1,6 +1,6 @@
 <p align="center"><img src="docs/logo.svg" width="96" alt="Afroicons"></p>
 <h1 align="center">Afroicons</h1>
-<p align="center"><b>Des icônes libres qui racontent l'Afrique.</b><br>544 icônes culturelles, au trait et remplies (dont les cartes des 54 pays et 42 monnaies), + les 54 drapeaux africains + 452 emojis + 846 icônes d'interface · grille 24 px · FR / EN · open source (MIT)</p>
+<p align="center"><b>Des icônes libres qui racontent l'Afrique.</b><br>544 icônes culturelles, au trait et remplies (dont les cartes des 54 pays et 42 monnaies), + les 54 drapeaux africains + 452 emojis + 1557 icônes d'interface · grille 24 px · FR / EN · open source (MIT)</p>
 <p align="center"><a href="https://afroicons.org"><b>afroicons.org</b></a></p>
 <p align="center">
   <a href="LICENSE"><img alt="Licence MIT" src="https://img.shields.io/badge/licence-MIT-C24E2A"></a>
@@ -20,7 +20,7 @@
 | --- | --- |
 | [`afroicons`](packages/afroicons) | SVG, sprite, `icons.json`, fonction `toSvg()` (JS natif) |
 | [`afroicons-react`](packages/afroicons-react) | Un composant React par icône |
-| [`afroicons-ui`](packages/afroicons-ui) | 846 icônes d'interface, compatibles `lucide-react` (mêmes noms, mêmes props) |
+| [`afroicons-ui`](packages/afroicons-ui) | 1557 icônes d'interface, compatibles `lucide-react` (mêmes noms, mêmes props) |
 | [`afroicons-mui`](packages/afroicons-mui) | les mêmes icônes sous les noms de `@mui/icons-material` (1 655 noms, mêmes props) |
 | [`afroicons-antd`](packages/afroicons-antd) | les mêmes icônes sous les noms de `@ant-design/icons` (299 noms, mêmes props) |
 | [`afroicons-angular`](packages/afroicons-angular) | Composant Angular autonome `<afroicon>`, toutes les icônes |

@@ -3579,6 +3579,3081 @@ export declare const LucideRotate3D: LucideIcon;
 export declare const Rotate3d: LucideIcon;
 export declare const Rotate3dIcon: LucideIcon;
 export declare const LucideRotate3d: LucideIcon;
+/** Mélange de couleurs · Blend colours */
+export declare const Blend: LucideIcon;
+export declare const BlendIcon: LucideIcon;
+export declare const LucideBlend: LucideIcon;
+/** Blocs d'extension · Add-on blocks */
+export declare const Blocks: LucideIcon;
+export declare const BlocksIcon: LucideIcon;
+export declare const LucideBlocks: LucideIcon;
+/** Cercle (forme) · Circle shape */
+export declare const Circle: LucideIcon;
+export declare const CircleIcon: LucideIcon;
+export declare const LucideCircle: LucideIcon;
+/** Sortir vers le bas à gauche · Exit down-left */
+export declare const CircleArrowOutDownLeft: LucideIcon;
+export declare const CircleArrowOutDownLeftIcon: LucideIcon;
+export declare const LucideCircleArrowOutDownLeft: LucideIcon;
+export declare const ArrowDownLeftFromCircle: LucideIcon;
+export declare const ArrowDownLeftFromCircleIcon: LucideIcon;
+export declare const LucideArrowDownLeftFromCircle: LucideIcon;
+/** Sortir vers le bas à droite · Exit down-right */
+export declare const CircleArrowOutDownRight: LucideIcon;
+export declare const CircleArrowOutDownRightIcon: LucideIcon;
+export declare const LucideCircleArrowOutDownRight: LucideIcon;
+export declare const ArrowDownRightFromCircle: LucideIcon;
+export declare const ArrowDownRightFromCircleIcon: LucideIcon;
+export declare const LucideArrowDownRightFromCircle: LucideIcon;
+/** Sortir vers le haut à gauche · Exit up-left */
+export declare const CircleArrowOutUpLeft: LucideIcon;
+export declare const CircleArrowOutUpLeftIcon: LucideIcon;
+export declare const LucideCircleArrowOutUpLeft: LucideIcon;
+export declare const ArrowUpLeftFromCircle: LucideIcon;
+export declare const ArrowUpLeftFromCircleIcon: LucideIcon;
+export declare const LucideArrowUpLeftFromCircle: LucideIcon;
+/** Sortir vers le haut à droite · Exit up-right */
+export declare const CircleArrowOutUpRight: LucideIcon;
+export declare const CircleArrowOutUpRightIcon: LucideIcon;
+export declare const LucideCircleArrowOutUpRight: LucideIcon;
+export declare const ArrowUpRightFromCircle: LucideIcon;
+export declare const ArrowUpRightFromCircleIcon: LucideIcon;
+export declare const LucideArrowUpRightFromCircle: LucideIcon;
+/** Tâche non commencée · Not started */
+export declare const CircleDashed: LucideIcon;
+export declare const CircleDashedIcon: LucideIcon;
+export declare const LucideCircleDashed: LucideIcon;
+/** Diviser (rond) · Divide (circle) */
+export declare const CircleDivide: LucideIcon;
+export declare const CircleDivideIcon: LucideIcon;
+export declare const LucideCircleDivide: LucideIcon;
+export declare const DivideCircle: LucideIcon;
+export declare const DivideCircleIcon: LucideIcon;
+export declare const LucideDivideCircle: LucideIcon;
+/** Montant en dollars (rond) · Dollar amount (circle) */
+export declare const CircleDollarSign: LucideIcon;
+export declare const CircleDollarSignIcon: LucideIcon;
+export declare const LucideCircleDollarSign: LucideIcon;
+/** Tâche entamée · Task under way */
+export declare const CircleDotDashed: LucideIcon;
+export declare const CircleDotDashedIcon: LucideIcon;
+export declare const LucideCircleDotDashed: LucideIcon;
+/** Autres actions (rond) · More actions (circle) */
+export declare const CircleEllipsis: LucideIcon;
+export declare const CircleEllipsisIcon: LucideIcon;
+export declare const LucideCircleEllipsis: LucideIcon;
+/** Égal (rond) · Equals (circle) */
+export declare const CircleEqual: LucideIcon;
+export declare const CircleEqualIcon: LucideIcon;
+export declare const LucideCircleEqual: LucideIcon;
+/** Mise à niveau disponible · Upgrade available */
+export declare const CircleFadingArrowUp: LucideIcon;
+export declare const CircleFadingArrowUpIcon: LucideIcon;
+export declare const LucideCircleFadingArrowUp: LucideIcon;
+/** Publier un statut · Post a status */
+export declare const CircleFadingPlus: LucideIcon;
+export declare const CircleFadingPlusIcon: LucideIcon;
+export declare const LucideCircleFadingPlus: LucideIcon;
+/** Compteur de vitesse · Speedometer */
+export declare const CircleGauge: LucideIcon;
+export declare const CircleGaugeIcon: LucideIcon;
+export declare const LucideCircleGauge: LucideIcon;
+export declare const GaugeCircle: LucideIcon;
+export declare const GaugeCircleIcon: LucideIcon;
+export declare const LucideGaugeCircle: LucideIcon;
+/** Retirer (rond) · Remove (circle) */
+export declare const CircleMinus: LucideIcon;
+export declare const CircleMinusIcon: LucideIcon;
+export declare const LucideCircleMinus: LucideIcon;
+export declare const MinusCircle: LucideIcon;
+export declare const MinusCircleIcon: LucideIcon;
+export declare const LucideMinusCircle: LucideIcon;
+/** Cercle désactivé · Circle off */
+export declare const CircleOff: LucideIcon;
+export declare const CircleOffIcon: LucideIcon;
+export declare const LucideCircleOff: LucideIcon;
+/** Parking · Parking */
+export declare const CircleParking: LucideIcon;
+export declare const CircleParkingIcon: LucideIcon;
+export declare const LucideCircleParking: LucideIcon;
+export declare const ParkingCircle: LucideIcon;
+export declare const ParkingCircleIcon: LucideIcon;
+export declare const LucideParkingCircle: LucideIcon;
+/** Parking fermé · Parking closed */
+export declare const CircleParkingOff: LucideIcon;
+export declare const CircleParkingOffIcon: LucideIcon;
+export declare const LucideCircleParkingOff: LucideIcon;
+export declare const ParkingCircleOff: LucideIcon;
+export declare const ParkingCircleOffIcon: LucideIcon;
+export declare const LucideParkingCircleOff: LucideIcon;
+/** Remise (rond) · Discount (circle) */
+export declare const CirclePercent: LucideIcon;
+export declare const CirclePercentIcon: LucideIcon;
+export declare const LucideCirclePercent: LucideIcon;
+export declare const PercentCircle: LucideIcon;
+export declare const PercentCircleIcon: LucideIcon;
+export declare const LucidePercentCircle: LucideIcon;
+/** Bouton marche (rond) · Power button (circle) */
+export declare const CirclePower: LucideIcon;
+export declare const CirclePowerIcon: LucideIcon;
+export declare const LucideCirclePower: LucideIcon;
+export declare const PowerCircle: LucideIcon;
+export declare const PowerCircleIcon: LucideIcon;
+export declare const LucidePowerCircle: LucideIcon;
+/** Non disponible · Not available */
+export declare const CircleSlash: LucideIcon;
+export declare const CircleSlashIcon: LucideIcon;
+export declare const LucideCircleSlash: LucideIcon;
+/** Ensemble vide · Empty set */
+export declare const CircleSlash2: LucideIcon;
+export declare const CircleSlash2Icon: LucideIcon;
+export declare const LucideCircleSlash2: LucideIcon;
+export declare const CircleSlashed: LucideIcon;
+export declare const CircleSlashedIcon: LucideIcon;
+export declare const LucideCircleSlashed: LucideIcon;
+/** Arrêter (rond) · Stop (circle) */
+export declare const CircleStop: LucideIcon;
+export declare const CircleStopIcon: LucideIcon;
+export declare const LucideCircleStop: LucideIcon;
+export declare const StopCircle: LucideIcon;
+export declare const StopCircleIcon: LucideIcon;
+export declare const LucideStopCircle: LucideIcon;
+/** Combiner des éléments · Combine items */
+export declare const Combine: LucideIcon;
+export declare const CombineIcon: LucideIcon;
+export declare const LucideCombine: LucideIcon;
+/** Composant réutilisable · Reusable component */
+export declare const Component: LucideIcon;
+export declare const ComponentIcon: LucideIcon;
+export declare const LucideComponent: LucideIcon;
+/** Cône (volume) · Cone (solid) */
+export declare const Cone: LucideIcon;
+export declare const ConeIcon: LucideIcon;
+export declare const LucideCone: LucideIcon;
+/** Contraste · Contrast */
+export declare const Contrast: LucideIcon;
+export declare const ContrastIcon: LucideIcon;
+export declare const LucideContrast: LucideIcon;
+/** Pavé (volume) · Cuboid (solid) */
+export declare const Cuboid: LucideIcon;
+export declare const CuboidIcon: LucideIcon;
+export declare const LucideCuboid: LucideIcon;
+/** Cylindre (volume) · Cylinder (solid) */
+export declare const Cylinder: LucideIcon;
+export declare const CylinderIcon: LucideIcon;
+export declare const LucideCylinder: LucideIcon;
+/** Losange (forme) · Diamond shape */
+export declare const Diamond: LucideIcon;
+export declare const DiamondIcon: LucideIcon;
+export declare const LucideDiamond: LucideIcon;
+/** Retirer (losange) · Remove (diamond) */
+export declare const DiamondMinus: LucideIcon;
+export declare const DiamondMinusIcon: LucideIcon;
+export declare const LucideDiamondMinus: LucideIcon;
+/** Promotion (losange) · Promotion (diamond) */
+export declare const DiamondPercent: LucideIcon;
+export declare const DiamondPercentIcon: LucideIcon;
+export declare const LucideDiamondPercent: LucideIcon;
+export declare const PercentDiamond: LucideIcon;
+export declare const PercentDiamondIcon: LucideIcon;
+export declare const LucidePercentDiamond: LucideIcon;
+/** Ajouter (losange) · Add (diamond) */
+export declare const DiamondPlus: LucideIcon;
+export declare const DiamondPlusIcon: LucideIcon;
+export declare const LucideDiamondPlus: LucideIcon;
+/** Puce (point) · Bullet dot */
+export declare const Dot: LucideIcon;
+export declare const DotIcon: LucideIcon;
+export declare const LucideDot: LucideIcon;
+/** Point encadré · Dot in square */
+export declare const DotSquare: LucideIcon;
+export declare const DotSquareIcon: LucideIcon;
+export declare const LucideDotSquare: LucideIcon;
+export declare const SquareDot: LucideIcon;
+export declare const SquareDotIcon: LucideIcon;
+export declare const LucideSquareDot: LucideIcon;
+/** Grouper la sélection · Group selection */
+export declare const Group: LucideIcon;
+export declare const GroupIcon: LucideIcon;
+export declare const LucideGroup: LucideIcon;
+/** Hexagone (forme) · Hexagon shape */
+export declare const Hexagon: LucideIcon;
+export declare const HexagonIcon: LucideIcon;
+export declare const LucideHexagon: LucideIcon;
+/** Deux calques · Two layers */
+export declare const Layers2: LucideIcon;
+export declare const Layers2Icon: LucideIcon;
+export declare const LucideLayers2: LucideIcon;
+/** Trois calques · Three layers */
+export declare const Layers3: LucideIcon;
+export declare const Layers3Icon: LucideIcon;
+export declare const LucideLayers3: LucideIcon;
+/** Octogone (forme) · Octagon shape */
+export declare const Octagon: LucideIcon;
+export declare const OctagonIcon: LucideIcon;
+export declare const LucideOctagon: LucideIcon;
+/** Sens interdit · No entry */
+export declare const OctagonMinus: LucideIcon;
+export declare const OctagonMinusIcon: LucideIcon;
+export declare const LucideOctagonMinus: LucideIcon;
+/** Mise en attente bloquante · Blocking hold */
+export declare const OctagonPause: LucideIcon;
+export declare const OctagonPauseIcon: LucideIcon;
+export declare const LucideOctagonPause: LucideIcon;
+export declare const PauseOctagon: LucideIcon;
+export declare const PauseOctagonIcon: LucideIcon;
+export declare const LucidePauseOctagon: LucideIcon;
+/** Arrêt sur erreur · Stopped on error */
+export declare const OctagonX: LucideIcon;
+export declare const OctagonXIcon: LucideIcon;
+export declare const LucideOctagonX: LucideIcon;
+export declare const XOctagon: LucideIcon;
+export declare const XOctagonIcon: LucideIcon;
+export declare const LucideXOctagon: LucideIcon;
+/** Pentagone (forme) · Pentagon shape */
+export declare const Pentagon: LucideIcon;
+export declare const PentagonIcon: LucideIcon;
+export declare const LucidePentagon: LucideIcon;
+/** Pyramide (volume) · Pyramid (solid) */
+export declare const Pyramid: LucideIcon;
+export declare const PyramidIcon: LucideIcon;
+export declare const LucidePyramid: LucideIcon;
+/** Format paysage · Landscape format */
+export declare const RectangleHorizontal: LucideIcon;
+export declare const RectangleHorizontalIcon: LucideIcon;
+export declare const LucideRectangleHorizontal: LucideIcon;
+/** Format portrait · Portrait format */
+export declare const RectangleVertical: LucideIcon;
+export declare const RectangleVerticalIcon: LucideIcon;
+export declare const LucideRectangleVertical: LucideIcon;
+/** Formes géométriques · Shapes */
+export declare const Shapes: LucideIcon;
+export declare const ShapesIcon: LucideIcon;
+export declare const LucideShapes: LucideIcon;
+/** Barre oblique · Slash */
+export declare const Slash: LucideIcon;
+export declare const SlashIcon: LucideIcon;
+export declare const LucideSlash: LucideIcon;
+/** Barre oblique encadrée · Boxed slash */
+export declare const SlashSquare: LucideIcon;
+export declare const SlashSquareIcon: LucideIcon;
+export declare const LucideSlashSquare: LucideIcon;
+export declare const SquareSlash: LucideIcon;
+export declare const SquareSlashIcon: LucideIcon;
+export declare const LucideSquareSlash: LucideIcon;
+/** Étincelle · Sparkle */
+export declare const Sparkle: LucideIcon;
+export declare const SparkleIcon: LucideIcon;
+export declare const LucideSparkle: LucideIcon;
+/** Sortie du cadre vers le bas à gauche · Exit frame down-left */
+export declare const SquareArrowOutDownLeft: LucideIcon;
+export declare const SquareArrowOutDownLeftIcon: LucideIcon;
+export declare const LucideSquareArrowOutDownLeft: LucideIcon;
+export declare const ArrowDownLeftFromSquare: LucideIcon;
+export declare const ArrowDownLeftFromSquareIcon: LucideIcon;
+export declare const LucideArrowDownLeftFromSquare: LucideIcon;
+/** Sortie du cadre vers le bas à droite · Exit frame down-right */
+export declare const SquareArrowOutDownRight: LucideIcon;
+export declare const SquareArrowOutDownRightIcon: LucideIcon;
+export declare const LucideSquareArrowOutDownRight: LucideIcon;
+export declare const ArrowDownRightFromSquare: LucideIcon;
+export declare const ArrowDownRightFromSquareIcon: LucideIcon;
+export declare const LucideArrowDownRightFromSquare: LucideIcon;
+/** Sortie du cadre vers le haut à gauche · Exit frame up-left */
+export declare const SquareArrowOutUpLeft: LucideIcon;
+export declare const SquareArrowOutUpLeftIcon: LucideIcon;
+export declare const LucideSquareArrowOutUpLeft: LucideIcon;
+export declare const ArrowUpLeftFromSquare: LucideIcon;
+export declare const ArrowUpLeftFromSquareIcon: LucideIcon;
+export declare const LucideArrowUpLeftFromSquare: LucideIcon;
+/** Sortie du cadre vers le haut à droite · Exit frame up-right */
+export declare const SquareArrowOutUpRight: LucideIcon;
+export declare const SquareArrowOutUpRightIcon: LucideIcon;
+export declare const LucideSquareArrowOutUpRight: LucideIcon;
+export declare const ArrowUpRightFromSquare: LucideIcon;
+export declare const ArrowUpRightFromSquareIcon: LucideIcon;
+export declare const LucideArrowUpRightFromSquare: LucideIcon;
+/** Case cochée · Checked box */
+export declare const SquareCheck: LucideIcon;
+export declare const SquareCheckIcon: LucideIcon;
+export declare const LucideSquareCheck: LucideIcon;
+export declare const CheckSquare2: LucideIcon;
+export declare const CheckSquare2Icon: LucideIcon;
+export declare const LucideCheckSquare2: LucideIcon;
+/** Cadre pointillé en bas · Dashed-bottom frame */
+export declare const SquareDashedBottom: LucideIcon;
+export declare const SquareDashedBottomIcon: LucideIcon;
+export declare const LucideSquareDashedBottom: LucideIcon;
+/** Extrait de code · Code snippet */
+export declare const SquareDashedBottomCode: LucideIcon;
+export declare const SquareDashedBottomCodeIcon: LucideIcon;
+export declare const LucideSquareDashedBottomCode: LucideIcon;
+/** Racine carrée · Square root */
+export declare const SquareRadical: LucideIcon;
+export declare const SquareRadicalIcon: LucideIcon;
+export declare const LucideSquareRadical: LucideIcon;
+/** Carré imbriqué · Nested square */
+export declare const SquareSquare: LucideIcon;
+export declare const SquareSquareIcon: LucideIcon;
+export declare const LucideSquareSquare: LucideIcon;
+/** Cadres empilés · Stacked frames */
+export declare const SquareStack: LucideIcon;
+export declare const SquareStackIcon: LucideIcon;
+export declare const LucideSquareStack: LucideIcon;
+/** Invite de commandes · Command prompt */
+export declare const SquareTerminal: LucideIcon;
+export declare const SquareTerminalIcon: LucideIcon;
+export declare const LucideSquareTerminal: LucideIcon;
+export declare const TerminalSquare: LucideIcon;
+export declare const TerminalSquareIcon: LucideIcon;
+export declare const LucideTerminalSquare: LucideIcon;
+/** Fiche de profil · Profile frame */
+export declare const SquareUser: LucideIcon;
+export declare const SquareUserIcon: LucideIcon;
+export declare const LucideSquareUser: LucideIcon;
+export declare const UserSquare: LucideIcon;
+export declare const UserSquareIcon: LucideIcon;
+export declare const LucideUserSquare: LucideIcon;
+/** Case refusée · Rejected box */
+export declare const SquareX: LucideIcon;
+export declare const SquareXIcon: LucideIcon;
+export declare const LucideSquareX: LucideIcon;
+export declare const XSquare: LucideIcon;
+export declare const XSquareIcon: LucideIcon;
+export declare const LucideXSquare: LucideIcon;
+/** Carré arrondi · Squircle */
+export declare const Squircle: LucideIcon;
+export declare const SquircleIcon: LucideIcon;
+export declare const LucideSquircle: LucideIcon;
+/** Demi-étoile de notation · Half-star rating */
+export declare const StarHalf: LucideIcon;
+export declare const StarHalfIcon: LucideIcon;
+export declare const LucideStarHalf: LucideIcon;
+/** Retirer des favoris · Remove from favorites */
+export declare const StarOff: LucideIcon;
+export declare const StarOffIcon: LucideIcon;
+export declare const LucideStarOff: LucideIcon;
+/** Tore · Torus */
+export declare const Torus: LucideIcon;
+export declare const TorusIcon: LucideIcon;
+export declare const LucideTorus: LucideIcon;
+/** Triangle · Triangle */
+export declare const Triangle: LucideIcon;
+export declare const TriangleIcon: LucideIcon;
+export declare const LucideTriangle: LucideIcon;
+/** Triangle rectangle · Right triangle */
+export declare const TriangleRight: LucideIcon;
+export declare const TriangleRightIcon: LucideIcon;
+export declare const LucideTriangleRight: LucideIcon;
+/** Dissocier les éléments · Ungroup items */
+export declare const Ungroup: LucideIcon;
+export declare const UngroupIcon: LucideIcon;
+export declare const LucideUngroup: LucideIcon;
+/** Suivi d'activité encadré · Boxed activity */
+export declare const ActivitySquare: LucideIcon;
+export declare const ActivitySquareIcon: LucideIcon;
+export declare const LucideActivitySquare: LucideIcon;
+export declare const SquareActivity: LucideIcon;
+export declare const SquareActivityIcon: LucideIcon;
+export declare const LucideSquareActivity: LucideIcon;
+/** Champ obligatoire · Required field */
+export declare const AsteriskSquare: LucideIcon;
+export declare const AsteriskSquareIcon: LucideIcon;
+export declare const LucideAsteriskSquare: LucideIcon;
+export declare const SquareAsterisk: LucideIcon;
+export declare const SquareAsteriskIcon: LucideIcon;
+export declare const LucideSquareAsterisk: LucideIcon;
+/** Tâche accomplie · Task done */
+export declare const CheckSquare: LucideIcon;
+export declare const CheckSquareIcon: LucideIcon;
+export declare const LucideCheckSquare: LucideIcon;
+export declare const SquareCheckBig: LucideIcon;
+export declare const SquareCheckBigIcon: LucideIcon;
+export declare const LucideSquareCheckBig: LucideIcon;
+/** Code encadré · Boxed code */
+export declare const CodeSquare: LucideIcon;
+export declare const CodeSquareIcon: LucideIcon;
+export declare const LucideCodeSquare: LucideIcon;
+export declare const SquareCode: LucideIcon;
+export declare const SquareCodeIcon: LucideIcon;
+export declare const LucideSquareCode: LucideIcon;
+/** Division encadrée · Boxed division */
+export declare const DivideSquare: LucideIcon;
+export declare const DivideSquareIcon: LucideIcon;
+export declare const LucideDivideSquare: LucideIcon;
+export declare const SquareDivide: LucideIcon;
+export declare const SquareDivideIcon: LucideIcon;
+export declare const LucideSquareDivide: LucideIcon;
+/** Égal encadré · Boxed equals */
+export declare const EqualSquare: LucideIcon;
+export declare const EqualSquareIcon: LucideIcon;
+export declare const LucideEqualSquare: LucideIcon;
+export declare const SquareEqual: LucideIcon;
+export declare const SquareEqualIcon: LucideIcon;
+export declare const LucideSquareEqual: LucideIcon;
+/** Fonction de calcul · Function */
+export declare const FunctionSquare: LucideIcon;
+export declare const FunctionSquareIcon: LucideIcon;
+export declare const LucideFunctionSquare: LucideIcon;
+export declare const SquareFunction: LucideIcon;
+export declare const SquareFunctionIcon: LucideIcon;
+export declare const LucideSquareFunction: LucideIcon;
+/** Clé d'accès encadrée · Boxed access key */
+export declare const KeySquare: LucideIcon;
+export declare const KeySquareIcon: LucideIcon;
+export declare const LucideKeySquare: LucideIcon;
+/** Bibliothèque encadrée · Boxed library */
+export declare const LibrarySquare: LucideIcon;
+export declare const LibrarySquareIcon: LucideIcon;
+export declare const LucideLibrarySquare: LucideIcon;
+export declare const SquareLibrary: LucideIcon;
+export declare const SquareLibraryIcon: LucideIcon;
+export declare const LucideSquareLibrary: LucideIcon;
+/** Lettre M encadrée · Boxed letter M */
+export declare const MSquare: LucideIcon;
+export declare const MSquareIcon: LucideIcon;
+export declare const LucideMSquare: LucideIcon;
+export declare const SquareM: LucideIcon;
+export declare const SquareMIcon: LucideIcon;
+export declare const LucideSquareM: LucideIcon;
+/** Menu encadré · Boxed menu */
+export declare const MenuSquare: LucideIcon;
+export declare const MenuSquareIcon: LucideIcon;
+export declare const LucideMenuSquare: LucideIcon;
+export declare const SquareMenu: LucideIcon;
+export declare const SquareMenuIcon: LucideIcon;
+export declare const LucideSquareMenu: LucideIcon;
+/** Moins encadré · Boxed minus */
+export declare const MinusSquare: LucideIcon;
+export declare const MinusSquareIcon: LucideIcon;
+export declare const LucideMinusSquare: LucideIcon;
+export declare const SquareMinus: LucideIcon;
+export declare const SquareMinusIcon: LucideIcon;
+export declare const LucideSquareMinus: LucideIcon;
+/** Sélection à la souris · Mouse selection */
+export declare const MousePointerSquareDashed: LucideIcon;
+export declare const MousePointerSquareDashedIcon: LucideIcon;
+export declare const LucideMousePointerSquareDashed: LucideIcon;
+export declare const SquareDashedMousePointer: LucideIcon;
+export declare const SquareDashedMousePointerIcon: LucideIcon;
+export declare const LucideSquareDashedMousePointer: LucideIcon;
+/** Stationnement encadré · Boxed parking */
+export declare const ParkingSquare: LucideIcon;
+export declare const ParkingSquareIcon: LucideIcon;
+export declare const LucideParkingSquare: LucideIcon;
+export declare const SquareParking: LucideIcon;
+export declare const SquareParkingIcon: LucideIcon;
+export declare const LucideSquareParking: LucideIcon;
+/** Stationnement encadré interdit · Boxed no parking */
+export declare const ParkingSquareOff: LucideIcon;
+export declare const ParkingSquareOffIcon: LucideIcon;
+export declare const LucideParkingSquareOff: LucideIcon;
+export declare const SquareParkingOff: LucideIcon;
+export declare const SquareParkingOffIcon: LucideIcon;
+export declare const LucideSquareParkingOff: LucideIcon;
+/** Pi encadré · Boxed pi */
+export declare const PiSquare: LucideIcon;
+export declare const PiSquareIcon: LucideIcon;
+export declare const LucidePiSquare: LucideIcon;
+export declare const SquarePi: LucideIcon;
+export declare const SquarePiIcon: LucideIcon;
+export declare const LucideSquarePi: LucideIcon;
+/** Lire la vidéo · Play video */
+export declare const PlaySquare: LucideIcon;
+export declare const PlaySquareIcon: LucideIcon;
+export declare const LucidePlaySquare: LucideIcon;
+export declare const SquarePlay: LucideIcon;
+export declare const SquarePlayIcon: LucideIcon;
+export declare const LucideSquarePlay: LucideIcon;
+/** Plus encadré · Boxed plus */
+export declare const PlusSquare: LucideIcon;
+export declare const PlusSquareIcon: LucideIcon;
+export declare const LucidePlusSquare: LucideIcon;
+export declare const SquarePlus: LucideIcon;
+export declare const SquarePlusIcon: LucideIcon;
+export declare const LucideSquarePlus: LucideIcon;
+/** Marche / arrêt encadré · Boxed power */
+export declare const PowerSquare: LucideIcon;
+export declare const PowerSquareIcon: LucideIcon;
+export declare const LucidePowerSquare: LucideIcon;
+export declare const SquarePower: LucideIcon;
+export declare const SquarePowerIcon: LucideIcon;
+export declare const LucideSquarePower: LucideIcon;
+/** Découpe encadrée · Boxed cut */
+export declare const ScissorsSquare: LucideIcon;
+export declare const ScissorsSquareIcon: LucideIcon;
+export declare const LucideScissorsSquare: LucideIcon;
+export declare const SquareScissors: LucideIcon;
+export declare const SquareScissorsIcon: LucideIcon;
+export declare const LucideSquareScissors: LucideIcon;
+/** Couper la sélection · Cut selection */
+export declare const ScissorsSquareDashedBottom: LucideIcon;
+export declare const ScissorsSquareDashedBottomIcon: LucideIcon;
+export declare const LucideScissorsSquareDashedBottom: LucideIcon;
+export declare const SquareBottomDashedScissors: LucideIcon;
+export declare const SquareBottomDashedScissorsIcon: LucideIcon;
+export declare const LucideSquareBottomDashedScissors: LucideIcon;
+/** Recopier l'écran (AirPlay) · Screen mirroring */
+export declare const Airplay: LucideIcon;
+export declare const AirplayIcon: LucideIcon;
+export declare const LucideAirplay: LucideIcon;
+/** Esperluette · Ampersand */
+export declare const Ampersand: LucideIcon;
+export declare const AmpersandIcon: LucideIcon;
+export declare const LucideAmpersand: LucideIcon;
+/** Double esperluette (ET logique) · Logical AND */
+export declare const Ampersands: LucideIcon;
+export declare const AmpersandsIcon: LucideIcon;
+export declare const LucideAmpersands: LucideIcon;
+/** Astérisque · Asterisk */
+export declare const Asterisk: LucideIcon;
+export declare const AsteriskIcon: LucideIcon;
+export declare const LucideAsterisk: LucideIcon;
+/** Axes en 3D · 3D axes */
+export declare const Axis3D: LucideIcon;
+export declare const Axis3DIcon: LucideIcon;
+export declare const LucideAxis3D: LucideIcon;
+export declare const Axis3d: LucideIcon;
+export declare const Axis3dIcon: LucideIcon;
+export declare const LucideAxis3d: LucideIcon;
+/** Code binaire · Binary code */
+export declare const Binary: LucideIcon;
+export declare const BinaryIcon: LucideIcon;
+export declare const LucideBinary: LucideIcon;
+/** Robot conversationnel · Chatbot */
+export declare const Bot: LucideIcon;
+export declare const BotIcon: LucideIcon;
+export declare const LucideBot: LucideIcon;
+/** Robot désactivé · Bot disabled */
+export declare const BotOff: LucideIcon;
+export declare const BotOffIcon: LucideIcon;
+export declare const LucideBotOff: LucideIcon;
+/** Accolades · Braces */
+export declare const Braces: LucideIcon;
+export declare const BracesIcon: LucideIcon;
+export declare const LucideBraces: LucideIcon;
+export declare const CurlyBraces: LucideIcon;
+export declare const CurlyBracesIcon: LucideIcon;
+export declare const LucideCurlyBraces: LucideIcon;
+/** Crochets · Brackets */
+export declare const Brackets: LucideIcon;
+export declare const BracketsIcon: LucideIcon;
+export declare const LucideBrackets: LucideIcon;
+/** Réseau neuronal (IA) · Neural network */
+export declare const BrainCircuit: LucideIcon;
+export declare const BrainCircuitIcon: LucideIcon;
+export declare const LucideBrainCircuit: LucideIcon;
+/** Réglages de l'IA · AI settings */
+export declare const BrainCog: LucideIcon;
+export declare const BrainCogIcon: LucideIcon;
+export declare const LucideBrainCog: LucideIcon;
+/** Débogage désactivé · Debugging off */
+export declare const BugOff: LucideIcon;
+export declare const BugOffIcon: LucideIcon;
+export declare const LucideBugOff: LucideIcon;
+/** Lancer le débogage · Start debugging */
+export declare const BugPlay: LucideIcon;
+export declare const BugPlayIcon: LucideIcon;
+export declare const LucideBugPlay: LucideIcon;
+/** Diffuser sur un écran · Cast to screen */
+export declare const Cast: LucideIcon;
+export declare const CastIcon: LucideIcon;
+export declare const LucideCast: LucideIcon;
+/** Forteresse (tata) · Fortress — Tata somba du nord du Bénin : deux tours rondes à toit conique de paille reliées par un mur de terre et une porte en arc. */
+export declare const Castle: LucideIcon;
+export declare const CastleIcon: LucideIcon;
+export declare const LucideCastle: LucideIcon;
+/** Carte électronique · Circuit board */
+export declare const CircuitBoard: LucideIcon;
+export declare const CircuitBoardIcon: LucideIcon;
+export declare const LucideCircuitBoard: LucideIcon;
+/** Balises de code · Code tags */
+export declare const Code: LucideIcon;
+export declare const CodeIcon: LucideIcon;
+export declare const LucideCode: LucideIcon;
+/** Touche Commande · Command key */
+export declare const Command: LucideIcon;
+export declare const CommandIcon: LucideIcon;
+export declare const LucideCommand: LucideIcon;
+/** Copie vérifiée · Copy verified */
+export declare const CopyCheck: LucideIcon;
+export declare const CopyCheckIcon: LucideIcon;
+export declare const LucideCopyCheck: LucideIcon;
+/** Retirer une copie · Remove copy */
+export declare const CopyMinus: LucideIcon;
+export declare const CopyMinusIcon: LucideIcon;
+export declare const LucideCopyMinus: LucideIcon;
+/** Ajouter une copie · Add copy */
+export declare const CopyPlus: LucideIcon;
+export declare const CopyPlusIcon: LucideIcon;
+export declare const LucideCopyPlus: LucideIcon;
+/** Copie interdite · Copying disabled */
+export declare const CopySlash: LucideIcon;
+export declare const CopySlashIcon: LucideIcon;
+export declare const LucideCopySlash: LucideIcon;
+/** Annuler la copie · Cancel copy */
+export declare const CopyX: LucideIcon;
+export declare const CopyXIcon: LucideIcon;
+export declare const LucideCopyX: LucideIcon;
+/** Licence libre (copyleft) · Copyleft */
+export declare const Copyleft: LucideIcon;
+export declare const CopyleftIcon: LucideIcon;
+export declare const LucideCopyleft: LucideIcon;
+/** Droits d'auteur · Copyright */
+export declare const Copyright: LucideIcon;
+export declare const CopyrightIcon: LucideIcon;
+export declare const LucideCopyright: LucideIcon;
+/** Sauvegarde de la base · Database backup */
+export declare const DatabaseBackup: LucideIcon;
+export declare const DatabaseBackupIcon: LucideIcon;
+export declare const LucideDatabaseBackup: LucideIcon;
+/** Cache de la base de données · Database cache */
+export declare const DatabaseZap: LucideIcon;
+export declare const DatabaseZapIcon: LucideIcon;
+export declare const LucideDatabaseZap: LucideIcon;
+/** Diamètre · Diameter */
+export declare const Diameter: LucideIcon;
+export declare const DiameterIcon: LucideIcon;
+export declare const LucideDiameter: LucideIcon;
+/** Différences entre versions · Diff */
+export declare const Diff: LucideIcon;
+export declare const DiffIcon: LucideIcon;
+export declare const LucideDiff: LucideIcon;
+/** Éditer le contenu · Edit content */
+export declare const Edit: LucideIcon;
+export declare const EditIcon: LucideIcon;
+export declare const LucideEdit: LucideIcon;
+export declare const PenBox: LucideIcon;
+export declare const PenBoxIcon: LucideIcon;
+export declare const LucidePenBox: LucideIcon;
+export declare const PenSquare: LucideIcon;
+export declare const PenSquareIcon: LucideIcon;
+export declare const LucidePenSquare: LucideIcon;
+export declare const SquarePen: LucideIcon;
+export declare const SquarePenIcon: LucideIcon;
+export declare const LucideSquarePen: LucideIcon;
+/** Différent de · Not equal */
+export declare const EqualNot: LucideIcon;
+export declare const EqualNotIcon: LucideIcon;
+export declare const LucideEqualNot: LucideIcon;
+/** Champ de formulaire · Form field */
+export declare const FormInput: LucideIcon;
+export declare const FormInputIcon: LucideIcon;
+export declare const LucideFormInput: LucideIcon;
+export declare const RectangleEllipsis: LucideIcon;
+export declare const RectangleEllipsisIcon: LucideIcon;
+export declare const LucideRectangleEllipsis: LucideIcon;
+/** Branche de code · Code branch */
+export declare const GitBranch: LucideIcon;
+export declare const GitBranchIcon: LucideIcon;
+export declare const LucideGitBranch: LucideIcon;
+/** Nouvelle branche de code · New code branch */
+export declare const GitBranchPlus: LucideIcon;
+export declare const GitBranchPlusIcon: LucideIcon;
+export declare const LucideGitBranchPlus: LucideIcon;
+/** Version enregistrée (commit) · Commit */
+export declare const GitCommit: LucideIcon;
+export declare const GitCommitIcon: LucideIcon;
+export declare const LucideGitCommit: LucideIcon;
+export declare const GitCommitHorizontal: LucideIcon;
+export declare const GitCommitHorizontalIcon: LucideIcon;
+export declare const LucideGitCommitHorizontal: LucideIcon;
+/** Version enregistrée (verticale) · Commit (vertical) */
+export declare const GitCommitVertical: LucideIcon;
+export declare const GitCommitVerticalIcon: LucideIcon;
+export declare const LucideGitCommitVertical: LucideIcon;
+/** Comparer deux versions de code · Compare code versions */
+export declare const GitCompare: LucideIcon;
+export declare const GitCompareIcon: LucideIcon;
+export declare const LucideGitCompare: LucideIcon;
+/** Comparer des branches · Compare branches */
+export declare const GitCompareArrows: LucideIcon;
+export declare const GitCompareArrowsIcon: LucideIcon;
+export declare const LucideGitCompareArrows: LucideIcon;
+/** Bifurcation de projet (fork) · Fork */
+export declare const GitFork: LucideIcon;
+export declare const GitForkIcon: LucideIcon;
+export declare const LucideGitFork: LucideIcon;
+/** Historique des branches · Branch graph */
+export declare const GitGraph: LucideIcon;
+export declare const GitGraphIcon: LucideIcon;
+export declare const LucideGitGraph: LucideIcon;
+/** Fusionner des branches · Merge branches */
+export declare const GitMerge: LucideIcon;
+export declare const GitMergeIcon: LucideIcon;
+export declare const LucideGitMerge: LucideIcon;
+/** Demande de fusion · Pull request */
+export declare const GitPullRequest: LucideIcon;
+export declare const GitPullRequestIcon: LucideIcon;
+export declare const LucideGitPullRequest: LucideIcon;
+/** Proposer une fusion · Open pull request */
+export declare const GitPullRequestArrow: LucideIcon;
+export declare const GitPullRequestArrowIcon: LucideIcon;
+export declare const LucideGitPullRequestArrow: LucideIcon;
+/** Demande de fusion fermée · Closed pull request */
+export declare const GitPullRequestClosed: LucideIcon;
+export declare const GitPullRequestClosedIcon: LucideIcon;
+export declare const LucideGitPullRequestClosed: LucideIcon;
+/** Créer une demande de fusion · Create pull request */
+export declare const GitPullRequestCreate: LucideIcon;
+export declare const GitPullRequestCreateIcon: LucideIcon;
+export declare const LucideGitPullRequestCreate: LucideIcon;
+/** Proposer une demande de fusion · Open pull request */
+export declare const GitPullRequestCreateArrow: LucideIcon;
+export declare const GitPullRequestCreateArrowIcon: LucideIcon;
+export declare const LucideGitPullRequestCreateArrow: LucideIcon;
+/** Demande de fusion en brouillon · Draft pull request */
+export declare const GitPullRequestDraft: LucideIcon;
+export declare const GitPullRequestDraftIcon: LucideIcon;
+export declare const LucideGitPullRequestDraft: LucideIcon;
+/** Télécharger sur le disque · Download to drive */
+export declare const HardDriveDownload: LucideIcon;
+export declare const HardDriveDownloadIcon: LucideIcon;
+export declare const LucideHardDriveDownload: LucideIcon;
+/** Envoyer depuis le disque · Upload from drive */
+export declare const HardDriveUpload: LucideIcon;
+export declare const HardDriveUploadIcon: LucideIcon;
+export declare const LucideHardDriveUpload: LucideIcon;
+/** Numéro (dièse) · Number sign */
+export declare const Hash: LucideIcon;
+export declare const HashIcon: LucideIcon;
+export declare const LucideHash: LucideIcon;
+/** Importer des données · Import data */
+export declare const Import: LucideIcon;
+export declare const ImportIcon: LucideIcon;
+export declare const LucideImport: LucideIcon;
+/** Inspecter un élément · Inspect element */
+export declare const Inspect: LucideIcon;
+export declare const InspectIcon: LucideIcon;
+export declare const LucideInspect: LucideIcon;
+export declare const SquareMousePointer: LucideIcon;
+export declare const SquareMousePointerIcon: LucideIcon;
+export declare const LucideSquareMousePointer: LucideIcon;
+/** Panneau d'inspection · Inspection panel */
+export declare const InspectionPanel: LucideIcon;
+export declare const InspectionPanelIcon: LucideIcon;
+export declare const LucideInspectionPanel: LucideIcon;
+/** Barrette de mémoire · Memory stick */
+export declare const MemoryStick: LucideIcon;
+export declare const MemoryStickIcon: LucideIcon;
+export declare const LucideMemoryStick: LucideIcon;
+/** Puce électronique · Microchip */
+export declare const Microchip: LucideIcon;
+export declare const MicrochipIcon: LucideIcon;
+export declare const LucideMicrochip: LucideIcon;
+/** Oméga · Omega */
+export declare const Omega: LucideIcon;
+export declare const OmegaIcon: LucideIcon;
+export declare const LucideOmega: LucideIcon;
+/** Touche Option · Option key */
+export declare const Option: LucideIcon;
+export declare const OptionIcon: LucideIcon;
+export declare const LucideOption: LucideIcon;
+/** Parenthèses · Parentheses */
+export declare const Parentheses: LucideIcon;
+export declare const ParenthesesIcon: LucideIcon;
+export declare const LucideParentheses: LucideIcon;
+/** Nombre pi · Pi */
+export declare const Pi: LucideIcon;
+export declare const PiIcon: LucideIcon;
+export declare const LucidePi: LucideIcon;
+/** Piano · Piano */
+export declare const Piano: LucideIcon;
+export declare const PianoIcon: LucideIcon;
+export declare const LucidePiano: LucideIcon;
+/** Pioche · Pickaxe */
+export declare const Pickaxe: LucideIcon;
+export declare const PickaxeIcon: LucideIcon;
+export declare const LucidePickaxe: LucideIcon;
+/** Passer en image dans l'image · Enter picture-in-picture */
+export declare const PictureInPicture: LucideIcon;
+export declare const PictureInPictureIcon: LucideIcon;
+export declare const LucidePictureInPicture: LucideIcon;
+/** Fenêtre vidéo incrustée · Picture-in-picture window */
+export declare const PictureInPicture2: LucideIcon;
+export declare const PictureInPicture2Icon: LucideIcon;
+export declare const LucidePictureInPicture2: LucideIcon;
+/** Flacon de médicaments · Pill bottle */
+export declare const PillBottle: LucideIcon;
+export declare const PillBottleIcon: LucideIcon;
+export declare const LucidePillBottle: LucideIcon;
+/** Épingler · Pin */
+export declare const Pin: LucideIcon;
+export declare const PinIcon: LucideIcon;
+export declare const LucidePin: LucideIcon;
+/** Désépingler · Unpin */
+export declare const PinOff: LucideIcon;
+export declare const PinOffIcon: LucideIcon;
+export declare const LucidePinOff: LucideIcon;
+/** Pipette à couleur · Color picker */
+export declare const Pipette: LucideIcon;
+export declare const PipetteIcon: LucideIcon;
+export declare const LucidePipette: LucideIcon;
+/** Pizza · Pizza */
+export declare const Pizza: LucideIcon;
+export declare const PizzaIcon: LucideIcon;
+export declare const LucidePizza: LucideIcon;
+/** Podcast · Podcast */
+export declare const Podcast: LucideIcon;
+export declare const PodcastIcon: LucideIcon;
+export declare const LucidePodcast: LucideIcon;
+/** Proportions · Proportions */
+export declare const Proportions: LucideIcon;
+export declare const ProportionsIcon: LucideIcon;
+export declare const LucideProportions: LucideIcon;
+/** Symbole racine · Radical sign */
+export declare const Radical: LucideIcon;
+export declare const RadicalIcon: LucideIcon;
+export declare const LucideRadical: LucideIcon;
+/** Rayon · Radius */
+export declare const Radius: LucideIcon;
+export declare const RadiusIcon: LucideIcon;
+export declare const LucideRadius: LucideIcon;
+/** Format d'image · Aspect ratio */
+export declare const Ratio: LucideIcon;
+export declare const RatioIcon: LucideIcon;
+export declare const LucideRatio: LucideIcon;
+/** Expression régulière · Regular expression */
+export declare const Regex: LucideIcon;
+export declare const RegexIcon: LucideIcon;
+export declare const LucideRegex: LucideIcon;
+/** Remplacer · Replace */
+export declare const Replace: LucideIcon;
+export declare const ReplaceIcon: LucideIcon;
+export declare const LucideReplace: LucideIcon;
+/** Tout remplacer · Replace all */
+export declare const ReplaceAll: LucideIcon;
+export declare const ReplaceAllIcon: LucideIcon;
+export declare const LucideReplaceAll: LucideIcon;
+/** Flux RSS · RSS feed */
+export declare const Rss: LucideIcon;
+export declare const RssIcon: LucideIcon;
+export declare const LucideRss: LucideIcon;
+/** Tout enregistrer · Save all */
+export declare const SaveAll: LucideIcon;
+export declare const SaveAllIcon: LucideIcon;
+export declare const LucideSaveAll: LucideIcon;
+/** Enregistrement désactivé · Saving disabled */
+export declare const SaveOff: LucideIcon;
+export declare const SaveOffIcon: LucideIcon;
+export declare const LucideSaveOff: LucideIcon;
+/** Mettre à l'échelle · Scale */
+export declare const Scaling: LucideIcon;
+export declare const ScalingIcon: LucideIcon;
+export declare const LucideScaling: LucideIcon;
+/** Réglages du serveur · Server settings */
+export declare const ServerCog: LucideIcon;
+export declare const ServerCogIcon: LucideIcon;
+export declare const LucideServerCog: LucideIcon;
+/** Panne du serveur · Server crash */
+export declare const ServerCrash: LucideIcon;
+export declare const ServerCrashIcon: LucideIcon;
+export declare const LucideServerCrash: LucideIcon;
+/** Feuille de partage · Share sheet */
+export declare const Share: LucideIcon;
+export declare const ShareIcon: LucideIcon;
+export declare const LucideShare: LucideIcon;
+/** Tracé en spline · Spline curve */
+export declare const Spline: LucideIcon;
+export declare const SplineIcon: LucideIcon;
+export declare const LucideSpline: LucideIcon;
+/** Tangente · Tangent */
+export declare const Tangent: LucideIcon;
+export declare const TangentIcon: LucideIcon;
+export declare const LucideTangent: LucideIcon;
+/** Terminal de commandes · Command terminal */
+export declare const Terminal: LucideIcon;
+export declare const TerminalIcon: LucideIcon;
+export declare const LucideTerminal: LucideIcon;
+/** Variable · Variable */
+export declare const Variable: LucideIcon;
+export declare const VariableIcon: LucideIcon;
+export declare const LucideVariable: LucideIcon;
+/** Webhook · Webhook */
+export declare const Webhook: LucideIcon;
+export declare const WebhookIcon: LucideIcon;
+export declare const LucideWebhook: LucideIcon;
+/** Webhook désactivé · Webhook disabled */
+export declare const WebhookOff: LucideIcon;
+export declare const WebhookOffIcon: LucideIcon;
+export declare const LucideWebhookOff: LucideIcon;
+/** Climatisation · Air conditioning */
+export declare const AirVent: LucideIcon;
+export declare const AirVentIcon: LucideIcon;
+export declare const LucideAirVent: LucideIcon;
+/** Antenne de télévision · TV antenna */
+export declare const Antenna: LucideIcon;
+export declare const AntennaIcon: LucideIcon;
+export declare const LucideAntenna: LucideIcon;
+/** Fenêtre d'application · App window */
+export declare const AppWindow: LucideIcon;
+export declare const AppWindowIcon: LucideIcon;
+export declare const LucideAppWindow: LucideIcon;
+/** Fenêtre d'application Mac · Mac app window */
+export declare const AppWindowMac: LucideIcon;
+export declare const AppWindowMacIcon: LucideIcon;
+export declare const LucideAppWindowMac: LucideIcon;
+/** Batterie · Battery */
+export declare const Battery: LucideIcon;
+export declare const BatteryIcon: LucideIcon;
+export declare const LucideBattery: LucideIcon;
+/** Batterie en charge · Battery charging */
+export declare const BatteryCharging: LucideIcon;
+export declare const BatteryChargingIcon: LucideIcon;
+export declare const LucideBatteryCharging: LucideIcon;
+/** Batterie pleine · Battery full */
+export declare const BatteryFull: LucideIcon;
+export declare const BatteryFullIcon: LucideIcon;
+export declare const LucideBatteryFull: LucideIcon;
+/** Batterie faible · Battery low */
+export declare const BatteryLow: LucideIcon;
+export declare const BatteryLowIcon: LucideIcon;
+export declare const LucideBatteryLow: LucideIcon;
+/** Batterie à moitié · Battery half */
+export declare const BatteryMedium: LucideIcon;
+export declare const BatteryMediumIcon: LucideIcon;
+export declare const LucideBatteryMedium: LucideIcon;
+/** Alerte batterie · Battery warning */
+export declare const BatteryWarning: LucideIcon;
+export declare const BatteryWarningIcon: LucideIcon;
+export declare const LucideBatteryWarning: LucideIcon;
+/** Bluetooth connecté · Bluetooth connected */
+export declare const BluetoothConnected: LucideIcon;
+export declare const BluetoothConnectedIcon: LucideIcon;
+export declare const LucideBluetoothConnected: LucideIcon;
+/** Recherche Bluetooth · Bluetooth searching */
+export declare const BluetoothSearching: LucideIcon;
+export declare const BluetoothSearchingIcon: LucideIcon;
+export declare const LucideBluetoothSearching: LucideIcon;
+/** Écrou hexagonal · Hex nut */
+export declare const Bolt: LucideIcon;
+export declare const BoltIcon: LucideIcon;
+export declare const LucideBolt: LucideIcon;
+/** Câble de raccordement · Cable */
+export declare const Cable: LucideIcon;
+export declare const CableIcon: LucideIcon;
+export declare const LucideCable: LucideIcon;
+/** Vidéosurveillance · CCTV camera */
+export declare const Cctv: LucideIcon;
+export declare const CctvIcon: LucideIcon;
+export declare const LucideCctv: LucideIcon;
+/** Ordinateur de bureau · Desktop computer */
+export declare const Computer: LucideIcon;
+export declare const ComputerIcon: LucideIcon;
+export declare const LucideComputer: LucideIcon;
+/** Barre d'applications · Dock */
+export declare const Dock: LucideIcon;
+export declare const DockIcon: LucideIcon;
+export declare const LucideDock: LucideIcon;
+/** Port Ethernet · Ethernet port */
+export declare const EthernetPort: LucideIcon;
+export declare const EthernetPortIcon: LucideIcon;
+export declare const LucideEthernetPort: LucideIcon;
+/** Ventilateur · Fan */
+export declare const Fan: LucideIcon;
+export declare const FanIcon: LucideIcon;
+export declare const LucideFan: LucideIcon;
+/** Manette de jeu · Game controller */
+export declare const Gamepad: LucideIcon;
+export declare const GamepadIcon: LucideIcon;
+export declare const LucideGamepad: LucideIcon;
+/** Manette de console · Console controller */
+export declare const Gamepad2: LucideIcon;
+export declare const Gamepad2Icon: LucideIcon;
+export declare const LucideGamepad2: LucideIcon;
+/** Port HDMI · HDMI port */
+export declare const HdmiPort: LucideIcon;
+export declare const HdmiPortIcon: LucideIcon;
+export declare const LucideHdmiPort: LucideIcon;
+/** Casque coupé · Headphones off */
+export declare const HeadphoneOff: LucideIcon;
+export declare const HeadphoneOffIcon: LucideIcon;
+export declare const LucideHeadphoneOff: LucideIcon;
+/** Casque avec micro · Headset */
+export declare const Headset: LucideIcon;
+export declare const HeadsetIcon: LucideIcon;
+export declare const LucideHeadset: LucideIcon;
+/** Radiateur · Heater */
+export declare const Heater: LucideIcon;
+export declare const HeaterIcon: LucideIcon;
+export declare const LucideHeater: LucideIcon;
+/** Levier de jeu · Joystick */
+export declare const Joystick: LucideIcon;
+export declare const JoystickIcon: LucideIcon;
+export declare const LucideJoystick: LucideIcon;
+/** Clavier musical · Music keyboard */
+export declare const KeyboardMusic: LucideIcon;
+export declare const KeyboardMusicIcon: LucideIcon;
+export declare const LucideKeyboardMusic: LucideIcon;
+/** Clavier désactivé · Keyboard off */
+export declare const KeyboardOff: LucideIcon;
+export declare const KeyboardOffIcon: LucideIcon;
+export declare const LucideKeyboardOff: LucideIcon;
+/** Lampe de chevet · Table lamp */
+export declare const Lamp: LucideIcon;
+export declare const LampIcon: LucideIcon;
+export declare const LucideLamp: LucideIcon;
+/** Plafonnier · Ceiling lamp */
+export declare const LampCeiling: LucideIcon;
+export declare const LampCeilingIcon: LucideIcon;
+export declare const LucideLampCeiling: LucideIcon;
+/** Lampe de bureau · Desk lamp */
+export declare const LampDesk: LucideIcon;
+export declare const LampDeskIcon: LucideIcon;
+export declare const LucideLampDesk: LucideIcon;
+/** Lampadaire · Floor lamp */
+export declare const LampFloor: LucideIcon;
+export declare const LampFloorIcon: LucideIcon;
+export declare const LucideLampFloor: LucideIcon;
+/** Applique murale vers le bas · Wall lamp facing down */
+export declare const LampWallDown: LucideIcon;
+export declare const LampWallDownIcon: LucideIcon;
+export declare const LucideLampWallDown: LucideIcon;
+/** Applique murale vers le haut · Wall lamp facing up */
+export declare const LampWallUp: LucideIcon;
+export declare const LampWallUpIcon: LucideIcon;
+export declare const LucideLampWallUp: LucideIcon;
+/** Ordinateur portable · Laptop */
+export declare const Laptop: LucideIcon;
+export declare const LaptopIcon: LucideIcon;
+export declare const LucideLaptop: LucideIcon;
+/** Poste portable · Laptop (flat) */
+export declare const Laptop2: LucideIcon;
+export declare const Laptop2Icon: LucideIcon;
+export declare const LucideLaptop2: LucideIcon;
+export declare const LaptopMinimal: LucideIcon;
+export declare const LaptopMinimalIcon: LucideIcon;
+export declare const LucideLaptopMinimal: LucideIcon;
+/** Astuces masquées · Tips off */
+export declare const LightbulbOff: LucideIcon;
+export declare const LightbulbOffIcon: LucideIcon;
+export declare const LucideLightbulbOff: LucideIcon;
+/** Aimant · Magnet */
+export declare const Magnet: LucideIcon;
+export declare const MagnetIcon: LucideIcon;
+export declare const LucideMagnet: LucideIcon;
+/** Micro-ondes · Microwave oven */
+export declare const Microwave: LucideIcon;
+export declare const MicrowaveIcon: LucideIcon;
+export declare const LucideMicrowave: LucideIcon;
+/** Écran validé · Display checked */
+export declare const MonitorCheck: LucideIcon;
+export declare const MonitorCheckIcon: LucideIcon;
+export declare const LucideMonitorCheck: LucideIcon;
+/** Écran avec pastille · Display with badge */
+export declare const MonitorDot: LucideIcon;
+export declare const MonitorDotIcon: LucideIcon;
+export declare const LucideMonitorDot: LucideIcon;
+/** Recevoir sur l'écran · Download to display */
+export declare const MonitorDown: LucideIcon;
+export declare const MonitorDownIcon: LucideIcon;
+export declare const LucideMonitorDown: LucideIcon;
+/** Écran éteint · Display off */
+export declare const MonitorOff: LucideIcon;
+export declare const MonitorOffIcon: LucideIcon;
+export declare const LucideMonitorOff: LucideIcon;
+/** Écran en pause · Display paused */
+export declare const MonitorPause: LucideIcon;
+export declare const MonitorPauseIcon: LucideIcon;
+export declare const LucideMonitorPause: LucideIcon;
+/** Lecture à l'écran · Play on display */
+export declare const MonitorPlay: LucideIcon;
+export declare const MonitorPlayIcon: LucideIcon;
+export declare const LucideMonitorPlay: LucideIcon;
+/** Écran et enceinte · Display and speaker */
+export declare const MonitorSpeaker: LucideIcon;
+export declare const MonitorSpeakerIcon: LucideIcon;
+export declare const LucideMonitorSpeaker: LucideIcon;
+/** Diffusion arrêtée · Display stopped */
+export declare const MonitorStop: LucideIcon;
+export declare const MonitorStopIcon: LucideIcon;
+export declare const LucideMonitorStop: LucideIcon;
+/** Partager l'écran · Share screen */
+export declare const MonitorUp: LucideIcon;
+export declare const MonitorUpIcon: LucideIcon;
+export declare const LucideMonitorUp: LucideIcon;
+/** Écran en erreur · Screen error */
+export declare const MonitorX: LucideIcon;
+export declare const MonitorXIcon: LucideIcon;
+export declare const LucideMonitorX: LucideIcon;
+/** Souris d'ordinateur · Computer mouse */
+export declare const Mouse: LucideIcon;
+export declare const MouseIcon: LucideIcon;
+export declare const LucideMouse: LucideIcon;
+/** Souris débranchée · Mouse disconnected */
+export declare const MouseOff: LucideIcon;
+export declare const MouseOffIcon: LucideIcon;
+export declare const LucideMouseOff: LucideIcon;
+/** Pointeur de souris · Mouse pointer */
+export declare const MousePointer: LucideIcon;
+export declare const MousePointerIcon: LucideIcon;
+export declare const LucideMousePointer: LucideIcon;
+/** Flèche de sélection · Selection arrow */
+export declare const MousePointer2: LucideIcon;
+export declare const MousePointer2Icon: LucideIcon;
+export declare const LucideMousePointer2: LucideIcon;
+/** Clic interdit · Click not allowed */
+export declare const MousePointerBan: LucideIcon;
+export declare const MousePointerBanIcon: LucideIcon;
+export declare const LucideMousePointerBan: LucideIcon;
+/** Cliquer · Click */
+export declare const MousePointerClick: LucideIcon;
+export declare const MousePointerClickIcon: LucideIcon;
+export declare const LucideMousePointerClick: LucideIcon;
+/** Sans contact NFC · NFC contactless */
+export declare const Nfc: LucideIcon;
+export declare const NfcIcon: LucideIcon;
+export declare const LucideNfc: LucideIcon;
+/** Unité centrale · PC tower */
+export declare const PcCase: LucideIcon;
+export declare const PcCaseIcon: LucideIcon;
+export declare const LucidePcCase: LucideIcon;
+/** Prise électrique · Power plug */
+export declare const Plug2: LucideIcon;
+export declare const Plug2Icon: LucideIcon;
+export declare const LucidePlug2: LucideIcon;
+/** Prise sous tension · Live plug */
+export declare const PlugZap: LucideIcon;
+export declare const PlugZapIcon: LucideIcon;
+export declare const LucidePlugZap: LucideIcon;
+export declare const PlugZap2: LucideIcon;
+export declare const PlugZap2Icon: LucideIcon;
+export declare const LucidePlugZap2: LucideIcon;
+/** Hors tension · Powered off */
+export declare const PowerOff: LucideIcon;
+export declare const PowerOffIcon: LucideIcon;
+export declare const LucidePowerOff: LucideIcon;
+/** Impression terminée · Print done */
+export declare const PrinterCheck: LucideIcon;
+export declare const PrinterCheckIcon: LucideIcon;
+export declare const LucidePrinterCheck: LucideIcon;
+/** Vidéoprojecteur · Projector */
+export declare const Projector: LucideIcon;
+export declare const ProjectorIcon: LucideIcon;
+export declare const LucideProjector: LucideIcon;
+/** Radar de détection · Detection radar */
+export declare const Radar: LucideIcon;
+export declare const RadarIcon: LucideIcon;
+export declare const LucideRadar: LucideIcon;
+/** Diffusion en direct · Live broadcast */
+export declare const Radio: LucideIcon;
+export declare const RadioIcon: LucideIcon;
+export declare const LucideRadio: LucideIcon;
+/** Poste de radio · Radio set — Le poste à transistors à antenne télescopique, compagnon des boutiques et des marchés. */
+export declare const RadioReceiver: LucideIcon;
+export declare const RadioReceiverIcon: LucideIcon;
+export declare const LucideRadioReceiver: LucideIcon;
+/** Antenne relais · Relay tower */
+export declare const RadioTower: LucideIcon;
+export declare const RadioTowerIcon: LucideIcon;
+export declare const LucideRadioTower: LucideIcon;
+/** Réfrigérateur · Refrigerator */
+export declare const Refrigerator: LucideIcon;
+export declare const RefrigeratorIcon: LucideIcon;
+export declare const LucideRefrigerator: LucideIcon;
+/** Réseau mobile excellent · Full mobile signal */
+export declare const Signal: LucideIcon;
+export declare const SignalIcon: LucideIcon;
+export declare const LucideSignal: LucideIcon;
+/** Réseau mobile bon · Good mobile signal */
+export declare const SignalHigh: LucideIcon;
+export declare const SignalHighIcon: LucideIcon;
+export declare const LucideSignalHigh: LucideIcon;
+/** Réseau mobile faible · Weak mobile signal */
+export declare const SignalLow: LucideIcon;
+export declare const SignalLowIcon: LucideIcon;
+export declare const LucideSignalLow: LucideIcon;
+/** Réseau mobile moyen · Medium mobile signal */
+export declare const SignalMedium: LucideIcon;
+export declare const SignalMediumIcon: LucideIcon;
+export declare const LucideSignalMedium: LucideIcon;
+/** Aucun réseau mobile · No mobile signal */
+export declare const SignalZero: LucideIcon;
+export declare const SignalZeroIcon: LucideIcon;
+export declare const LucideSignalZero: LucideIcon;
+/** Gyrophare d'alerte · Alert beacon */
+export declare const Siren: LucideIcon;
+export declare const SirenIcon: LucideIcon;
+export declare const LucideSiren: LucideIcon;
+/** Téléphone en charge · Phone charging */
+export declare const SmartphoneCharging: LucideIcon;
+export declare const SmartphoneChargingIcon: LucideIcon;
+export declare const LucideSmartphoneCharging: LucideIcon;
+/** Paiement sans contact par téléphone · Tap-to-pay phone */
+export declare const SmartphoneNfc: LucideIcon;
+export declare const SmartphoneNfcIcon: LucideIcon;
+export declare const LucideSmartphoneNfc: LucideIcon;
+/** Enceinte · Loudspeaker */
+export declare const Speaker: LucideIcon;
+export declare const SpeakerIcon: LucideIcon;
+export declare const LucideSpeaker: LucideIcon;
+/** Tablette · Tablet */
+export declare const Tablet: LucideIcon;
+export declare const TabletIcon: LucideIcon;
+export declare const LucideTablet: LucideIcon;
+/** Tablette et téléphone · Tablet and phone */
+export declare const TabletSmartphone: LucideIcon;
+export declare const TabletSmartphoneIcon: LucideIcon;
+export declare const LucideTabletSmartphone: LucideIcon;
+/** Comprimés · Tablets (pills) */
+export declare const Tablets: LucideIcon;
+export declare const TabletsIcon: LucideIcon;
+export declare const LucideTablets: LucideIcon;
+/** Option désactivée · Switch off */
+export declare const ToggleLeft: LucideIcon;
+export declare const ToggleLeftIcon: LucideIcon;
+export declare const LucideToggleLeft: LucideIcon;
+/** Option activée · Switch on */
+export declare const ToggleRight: LucideIcon;
+export declare const ToggleRightIcon: LucideIcon;
+export declare const LucideToggleRight: LucideIcon;
+/** Pavé tactile · Touchpad */
+export declare const Touchpad: LucideIcon;
+export declare const TouchpadIcon: LucideIcon;
+export declare const LucideTouchpad: LucideIcon;
+/** Pavé tactile désactivé · Touchpad off */
+export declare const TouchpadOff: LucideIcon;
+export declare const TouchpadOffIcon: LucideIcon;
+export declare const LucideTouchpadOff: LucideIcon;
+/** Téléviseur · Television */
+export declare const Tv: LucideIcon;
+export declare const TvIcon: LucideIcon;
+export declare const LucideTv: LucideIcon;
+/** Écran plat · Flat screen TV */
+export declare const Tv2: LucideIcon;
+export declare const Tv2Icon: LucideIcon;
+export declare const LucideTv2: LucideIcon;
+export declare const TvMinimal: LucideIcon;
+export declare const TvMinimalIcon: LucideIcon;
+export declare const LucideTvMinimal: LucideIcon;
+/** Lecture à la télévision · Play on TV */
+export declare const TvMinimalPlay: LucideIcon;
+export declare const TvMinimalPlayIcon: LucideIcon;
+export declare const LucideTvMinimalPlay: LucideIcon;
+/** Débrancher · Unplug */
+export declare const Unplug: LucideIcon;
+export declare const UnplugIcon: LucideIcon;
+export declare const LucideUnplug: LucideIcon;
+/** Mode vibreur · Vibrate mode */
+export declare const Vibrate: LucideIcon;
+export declare const VibrateIcon: LucideIcon;
+export declare const LucideVibrate: LucideIcon;
+/** Vibreur coupé · Vibrate off */
+export declare const VibrateOff: LucideIcon;
+export declare const VibrateOffIcon: LucideIcon;
+export declare const LucideVibrateOff: LucideIcon;
+/** Lave-linge · Washing machine */
+export declare const WashingMachine: LucideIcon;
+export declare const WashingMachineIcon: LucideIcon;
+export declare const LucideWashingMachine: LucideIcon;
+/** Webcam · Webcam */
+export declare const Webcam: LucideIcon;
+export declare const WebcamIcon: LucideIcon;
+export declare const LucideWebcam: LucideIcon;
+/** Wi-Fi bon · Good Wi-Fi */
+export declare const WifiHigh: LucideIcon;
+export declare const WifiHighIcon: LucideIcon;
+export declare const LucideWifiHigh: LucideIcon;
+/** Wi-Fi faible · Weak Wi-Fi */
+export declare const WifiLow: LucideIcon;
+export declare const WifiLowIcon: LucideIcon;
+export declare const LucideWifiLow: LucideIcon;
+/** Wi-Fi sans signal · No Wi-Fi signal */
+export declare const WifiZero: LucideIcon;
+export declare const WifiZeroIcon: LucideIcon;
+export declare const LucideWifiZero: LucideIcon;
+/** Coupure de courant · Power outage */
+export declare const ZapOff: LucideIcon;
+export declare const ZapOffIcon: LucideIcon;
+export declare const LucideZapOff: LucideIcon;
+/** Ambulance · Ambulance */
+export declare const Ambulance: LucideIcon;
+export declare const AmbulanceIcon: LucideIcon;
+export declare const LucideAmbulance: LucideIcon;
+/** Ancre de port · Anchor */
+export declare const Anchor: LucideIcon;
+export declare const AnchorIcon: LucideIcon;
+export declare const LucideAnchor: LucideIcon;
+/** Sac à dos · Backpack */
+export declare const Backpack: LucideIcon;
+export declare const BackpackIcon: LucideIcon;
+export declare const LucideBackpack: LucideIcon;
+/** Chariot à bagages · Baggage trolley */
+export declare const BaggageClaim: LucideIcon;
+export declare const BaggageClaimIcon: LucideIcon;
+export declare const LucideBaggageClaim: LucideIcon;
+/** Vélo · Bicycle */
+export declare const Bike: LucideIcon;
+export declare const BikeIcon: LucideIcon;
+export declare const LucideBike: LucideIcon;
+/** Mur de briques · Brick wall */
+export declare const BrickWall: LucideIcon;
+export declare const BrickWallIcon: LucideIcon;
+export declare const LucideBrickWall: LucideIcon;
+/** Ligne de bus · Bus line */
+export declare const BusFront: LucideIcon;
+export declare const BusFrontIcon: LucideIcon;
+export declare const LucideBusFront: LucideIcon;
+/** Téléphérique · Cable car */
+export declare const CableCar: LucideIcon;
+export declare const CableCarIcon: LucideIcon;
+export declare const LucideCableCar: LucideIcon;
+/** Taxi · Taxi */
+export declare const CarTaxiFront: LucideIcon;
+export declare const CarTaxiFrontIcon: LucideIcon;
+export declare const LucideCarTaxiFront: LucideIcon;
+/** Caravane · Caravan */
+export declare const Caravan: LucideIcon;
+export declare const CaravanIcon: LucideIcon;
+export declare const LucideCaravan: LucideIcon;
+/** Carotte · Carrot */
+export declare const Carrot: LucideIcon;
+export declare const CarrotIcon: LucideIcon;
+export declare const LucideCarrot: LucideIcon;
+/** Église · Church */
+export declare const Church: LucideIcon;
+export declare const ChurchIcon: LucideIcon;
+export declare const LucideChurch: LucideIcon;
+/** Boussole · Compass */
+export declare const Compass: LucideIcon;
+export declare const CompassIcon: LucideIcon;
+export declare const LucideCompass: LucideIcon;
+/** Viseur · Crosshair */
+export declare const Crosshair: LucideIcon;
+export declare const CrosshairIcon: LucideIcon;
+export declare const LucideCrosshair: LucideIcon;
+/** Barrage · Dam */
+export declare const Dam: LucideIcon;
+export declare const DamIcon: LucideIcon;
+export declare const LucideDam: LucideIcon;
+/** Porte fermée · Door closed */
+export declare const DoorClosed: LucideIcon;
+export declare const DoorClosedIcon: LucideIcon;
+export declare const LucideDoorClosed: LucideIcon;
+/** Porte ouverte · Door open */
+export declare const DoorOpen: LucideIcon;
+export declare const DoorOpenIcon: LucideIcon;
+export declare const LucideDoorOpen: LucideIcon;
+/** Restriction géographique · Geo-restriction — Le globe centré sur l'Afrique, avec un cadenas. */
+export declare const EarthLock: LucideIcon;
+export declare const EarthLockIcon: LucideIcon;
+export declare const LucideEarthLock: LucideIcon;
+/** Clôture · Fence — La palissade de piquets taillés, clôture de la concession. */
+export declare const Fence: LucideIcon;
+export declare const FenceIcon: LucideIcon;
+export declare const LucideFence: LucideIcon;
+/** Parc d'attractions · Amusement park */
+export declare const FerrisWheel: LucideIcon;
+export declare const FerrisWheelIcon: LucideIcon;
+export declare const LucideFerrisWheel: LucideIcon;
+/** Mise au point · Focus */
+export declare const Focus: LucideIcon;
+export declare const FocusIcon: LucideIcon;
+export declare const LucideFocus: LucideIcon;
+/** Empreintes de pas · Footprints */
+export declare const Footprints: LucideIcon;
+export declare const FootprintsIcon: LucideIcon;
+export declare const LucideFootprints: LucideIcon;
+/** Chariot élévateur · Forklift */
+export declare const Forklift: LucideIcon;
+export declare const ForkliftIcon: LucideIcon;
+export declare const LucideForklift: LucideIcon;
+/** Accès web restreint · Restricted web access */
+export declare const GlobeLock: LucideIcon;
+export declare const GlobeLockIcon: LucideIcon;
+export declare const LucideGlobeLock: LucideIcon;
+/** Hôpital · Hospital */
+export declare const Hospital: LucideIcon;
+export declare const HospitalIcon: LucideIcon;
+export declare const LucideHospital: LucideIcon;
+/** Hôtel · Hotel */
+export declare const Hotel: LucideIcon;
+export declare const HotelIcon: LucideIcon;
+export declare const LucideHotel: LucideIcon;
+/** Électricité du logement · Home electricity */
+export declare const HousePlug: LucideIcon;
+export declare const HousePlugIcon: LucideIcon;
+export declare const LucideHousePlug: LucideIcon;
+/** Ajouter un logement · Add a home */
+export declare const HousePlus: LucideIcon;
+export declare const HousePlusIcon: LucideIcon;
+export declare const LucideHousePlus: LucideIcon;
+/** Parcelle de terrain · Land plot */
+export declare const LandPlot: LucideIcon;
+export declare const LandPlotIcon: LucideIcon;
+export declare const LucideLandPlot: LucideIcon;
+/** Me localiser · Locate me */
+export declare const Locate: LucideIcon;
+export declare const LocateIcon: LucideIcon;
+export declare const LucideLocate: LucideIcon;
+/** Position trouvée · Location found */
+export declare const LocateFixed: LucideIcon;
+export declare const LocateFixedIcon: LucideIcon;
+export declare const LucideLocateFixed: LucideIcon;
+/** Localisation désactivée · Location off */
+export declare const LocateOff: LucideIcon;
+export declare const LocateOffIcon: LucideIcon;
+export declare const LucideLocateOff: LucideIcon;
+/** Valise · Luggage */
+export declare const Luggage: LucideIcon;
+export declare const LuggageIcon: LucideIcon;
+export declare const LucideLuggage: LucideIcon;
+/** Adresse confirmée · Address confirmed */
+export declare const MapPinCheck: LucideIcon;
+export declare const MapPinCheckIcon: LucideIcon;
+export declare const LucideMapPinCheck: LucideIcon;
+/** Lieu validé · Place checked */
+export declare const MapPinCheckInside: LucideIcon;
+export declare const MapPinCheckInsideIcon: LucideIcon;
+export declare const LucideMapPinCheckInside: LucideIcon;
+/** Adresse du domicile · Home address */
+export declare const MapPinHouse: LucideIcon;
+export declare const MapPinHouseIcon: LucideIcon;
+export declare const LucideMapPinHouse: LucideIcon;
+/** Retirer un lieu · Remove place */
+export declare const MapPinMinus: LucideIcon;
+export declare const MapPinMinusIcon: LucideIcon;
+export declare const LucideMapPinMinus: LucideIcon;
+/** Retirer le point sur la carte · Remove map point */
+export declare const MapPinMinusInside: LucideIcon;
+export declare const MapPinMinusInsideIcon: LucideIcon;
+export declare const LucideMapPinMinusInside: LucideIcon;
+/** Épingle de lieu désactivée · Location pin off */
+export declare const MapPinOff: LucideIcon;
+export declare const MapPinOffIcon: LucideIcon;
+export declare const LucideMapPinOff: LucideIcon;
+/** Ajouter un lieu · Add place */
+export declare const MapPinPlus: LucideIcon;
+export declare const MapPinPlusIcon: LucideIcon;
+export declare const LucideMapPinPlus: LucideIcon;
+/** Ajouter un point sur la carte · Add map point */
+export declare const MapPinPlusInside: LucideIcon;
+export declare const MapPinPlusInsideIcon: LucideIcon;
+export declare const LucideMapPinPlusInside: LucideIcon;
+/** Supprimer un lieu · Delete place */
+export declare const MapPinX: LucideIcon;
+export declare const MapPinXIcon: LucideIcon;
+export declare const LucideMapPinX: LucideIcon;
+/** Point de carte invalide · Invalid map point */
+export declare const MapPinXInside: LucideIcon;
+export declare const MapPinXInsideIcon: LucideIcon;
+export declare const LucideMapPinXInside: LucideIcon;
+/** Lieu épinglé · Pinned place */
+export declare const MapPinned: LucideIcon;
+export declare const MapPinnedIcon: LucideIcon;
+export declare const LucideMapPinned: LucideIcon;
+/** Jalon · Milestone */
+export declare const Milestone: LucideIcon;
+export declare const MilestoneIcon: LucideIcon;
+export declare const LucideMilestone: LucideIcon;
+/** Guidage · Navigate */
+export declare const Navigation: LucideIcon;
+export declare const NavigationIcon: LucideIcon;
+export declare const LucideNavigation: LucideIcon;
+/** Cap à suivre · Heading */
+export declare const Navigation2: LucideIcon;
+export declare const Navigation2Icon: LucideIcon;
+export declare const LucideNavigation2: LucideIcon;
+/** Cap désactivé · Heading off */
+export declare const Navigation2Off: LucideIcon;
+export declare const Navigation2OffIcon: LucideIcon;
+export declare const LucideNavigation2Off: LucideIcon;
+/** Guidage désactivé · Navigation off */
+export declare const NavigationOff: LucideIcon;
+export declare const NavigationOffIcon: LucideIcon;
+export declare const LucideNavigationOff: LucideIcon;
+/** Horodateur de stationnement · Parking meter */
+export declare const ParkingMeter: LucideIcon;
+export declare const ParkingMeterIcon: LucideIcon;
+export declare const LucideParkingMeter: LucideIcon;
+/** Vol en avion · Flight */
+export declare const Plane: LucideIcon;
+export declare const PlaneIcon: LucideIcon;
+export declare const LucidePlane: LucideIcon;
+/** Atterrissage · Landing */
+export declare const PlaneLanding: LucideIcon;
+export declare const PlaneLandingIcon: LucideIcon;
+export declare const LucidePlaneLanding: LucideIcon;
+/** Décollage · Takeoff */
+export declare const PlaneTakeoff: LucideIcon;
+export declare const PlaneTakeoffIcon: LucideIcon;
+export declare const LucidePlaneTakeoff: LucideIcon;
+/** Réseau ferré · Rail network */
+export declare const RailSymbol: LucideIcon;
+export declare const RailSymbolIcon: LucideIcon;
+export declare const LucideRailSymbol: LucideIcon;
+/** Montagnes russes · Roller coaster */
+export declare const RollerCoaster: LucideIcon;
+export declare const RollerCoasterIcon: LucideIcon;
+export declare const LucideRollerCoaster: LucideIcon;
+/** Itinéraire indisponible · Route unavailable */
+export declare const RouteOff: LucideIcon;
+export declare const RouteOffIcon: LucideIcon;
+export declare const LucideRouteOff: LucideIcon;
+/** Bateau à voile · Sailboat — La pirogue à voile : coque effilée aux pointes relevées, mât et voile triangulaire. */
+export declare const Sailboat: LucideIcon;
+export declare const SailboatIcon: LucideIcon;
+export declare const LucideSailboat: LucideIcon;
+/** École · School */
+export declare const School: LucideIcon;
+export declare const SchoolIcon: LucideIcon;
+export declare const LucideSchool: LucideIcon;
+/** Établissement scolaire · School building */
+export declare const School2: LucideIcon;
+export declare const School2Icon: LucideIcon;
+export declare const LucideSchool2: LucideIcon;
+export declare const University: LucideIcon;
+export declare const UniversityIcon: LucideIcon;
+export declare const LucideUniversity: LucideIcon;
+/** Gouvernail · Helm */
+export declare const ShipWheel: LucideIcon;
+export declare const ShipWheelIcon: LucideIcon;
+export declare const LucideShipWheel: LucideIcon;
+/** Panneau indicateur · Signpost */
+export declare const Signpost: LucideIcon;
+export declare const SignpostIcon: LucideIcon;
+export declare const LucideSignpost: LucideIcon;
+/** Grand panneau directionnel · Big signpost */
+export declare const SignpostBig: LucideIcon;
+export declare const SignpostBigIcon: LucideIcon;
+export declare const LucideSignpostBig: LucideIcon;
+/** Salle de spectacle · Theater */
+export declare const Theater: LucideIcon;
+export declare const TheaterIcon: LucideIcon;
+export declare const LucideTheater: LucideIcon;
+/** Tour de contrôle · Control tower */
+export declare const TowerControl: LucideIcon;
+export declare const TowerControlIcon: LucideIcon;
+export declare const LucideTowerControl: LucideIcon;
+/** Travaux (cône) · Roadworks */
+export declare const TrafficCone: LucideIcon;
+export declare const TrafficConeIcon: LucideIcon;
+export declare const LucideTrafficCone: LucideIcon;
+/** Voyage en train · Train trip */
+export declare const Train: LucideIcon;
+export declare const TrainIcon: LucideIcon;
+export declare const LucideTrain: LucideIcon;
+export declare const TramFront: LucideIcon;
+export declare const TramFrontIcon: LucideIcon;
+export declare const LucideTramFront: LucideIcon;
+/** Gare ferroviaire · Railway station */
+export declare const TrainFront: LucideIcon;
+export declare const TrainFrontIcon: LucideIcon;
+export declare const LucideTrainFront: LucideIcon;
+/** Train en tunnel · Train tunnel */
+export declare const TrainFrontTunnel: LucideIcon;
+export declare const TrainFrontTunnelIcon: LucideIcon;
+export declare const LucideTrainFrontTunnel: LucideIcon;
+/** Voie ferrée · Railway track */
+export declare const TrainTrack: LucideIcon;
+export declare const TrainTrackIcon: LucideIcon;
+export declare const LucideTrainTrack: LucideIcon;
+/** Poteau électrique · Utility pole */
+export declare const UtilityPole: LucideIcon;
+export declare const UtilityPoleIcon: LucideIcon;
+export declare const LucideUtilityPole: LucideIcon;
+/** Étapes du trajet · Waypoints */
+export declare const Waypoints: LucideIcon;
+export declare const WaypointsIcon: LucideIcon;
+export declare const LucideWaypoints: LucideIcon;
+/** Album photo · Photo album */
+export declare const Album: LucideIcon;
+export declare const AlbumIcon: LucideIcon;
+export declare const LucideAlbum: LucideIcon;
+/** Livre · Book */
+export declare const Book: LucideIcon;
+export declare const BookIcon: LucideIcon;
+export declare const LucideBook: LucideIcon;
+/** Glossaire · Glossary */
+export declare const BookA: LucideIcon;
+export declare const BookAIcon: LucideIcon;
+export declare const LucideBookA: LucideIcon;
+/** Livre audio · Audiobook */
+export declare const BookAudio: LucideIcon;
+export declare const BookAudioIcon: LucideIcon;
+export declare const LucideBookAudio: LucideIcon;
+/** Lecture terminée · Finished reading */
+export declare const BookCheck: LucideIcon;
+export declare const BookCheckIcon: LucideIcon;
+export declare const LucideBookCheck: LucideIcon;
+/** Exemplaires du livre · Book copies */
+export declare const BookCopy: LucideIcon;
+export declare const BookCopyIcon: LucideIcon;
+export declare const LucideBookCopy: LucideIcon;
+/** Livre en brouillon · Draft book */
+export declare const BookDashed: LucideIcon;
+export declare const BookDashedIcon: LucideIcon;
+export declare const LucideBookDashed: LucideIcon;
+export declare const BookTemplate: LucideIcon;
+export declare const BookTemplateIcon: LucideIcon;
+export declare const LucideBookTemplate: LucideIcon;
+/** Télécharger un livre · Download book */
+export declare const BookDown: LucideIcon;
+export declare const BookDownIcon: LucideIcon;
+export declare const LucideBookDown: LucideIcon;
+/** Écouter un livre · Listen to a book */
+export declare const BookHeadphones: LucideIcon;
+export declare const BookHeadphonesIcon: LucideIcon;
+export declare const LucideBookHeadphones: LucideIcon;
+/** Livre préféré · Favorite book */
+export declare const BookHeart: LucideIcon;
+export declare const BookHeartIcon: LucideIcon;
+export declare const LucideBookHeart: LucideIcon;
+/** Livre illustré · Picture book */
+export declare const BookImage: LucideIcon;
+export declare const BookImageIcon: LucideIcon;
+export declare const LucideBookImage: LucideIcon;
+/** Livre sous clé · Book key */
+export declare const BookKey: LucideIcon;
+export declare const BookKeyIcon: LucideIcon;
+export declare const LucideBookKey: LucideIcon;
+/** Retirer un livre · Remove a book */
+export declare const BookMinus: LucideIcon;
+export declare const BookMinusIcon: LucideIcon;
+export declare const LucideBookMinus: LucideIcon;
+/** Leçon terminée · Lesson completed */
+export declare const BookOpenCheck: LucideIcon;
+export declare const BookOpenCheckIcon: LucideIcon;
+export declare const LucideBookOpenCheck: LucideIcon;
+/** Mode lecture · Reading mode */
+export declare const BookOpenText: LucideIcon;
+export declare const BookOpenTextIcon: LucideIcon;
+export declare const LucideBookOpenText: LucideIcon;
+/** Ajouter un livre · Add a book */
+export declare const BookPlus: LucideIcon;
+export declare const BookPlusIcon: LucideIcon;
+export declare const LucideBookPlus: LucideIcon;
+/** Catalogue de polices · Font book */
+export declare const BookType: LucideIcon;
+export declare const BookTypeIcon: LucideIcon;
+export declare const LucideBookType: LucideIcon;
+/** Publier un livre · Upload book */
+export declare const BookUp: LucideIcon;
+export declare const BookUpIcon: LucideIcon;
+export declare const LucideBookUp: LucideIcon;
+/** Exporter un livre · Export book */
+export declare const BookUp2: LucideIcon;
+export declare const BookUp2Icon: LucideIcon;
+export declare const LucideBookUp2: LucideIcon;
+/** Livre des membres · Members book */
+export declare const BookUser: LucideIcon;
+export declare const BookUserIcon: LucideIcon;
+export declare const LucideBookUser: LucideIcon;
+/** Supprimer un livre · Delete a book */
+export declare const BookX: LucideIcon;
+export declare const BookXIcon: LucideIcon;
+export declare const LucideBookX: LucideIcon;
+/** Signet · Bookmark */
+export declare const Bookmark: LucideIcon;
+export declare const BookmarkIcon: LucideIcon;
+export declare const LucideBookmark: LucideIcon;
+/** Signet validé · Bookmark saved */
+export declare const BookmarkCheck: LucideIcon;
+export declare const BookmarkCheckIcon: LucideIcon;
+export declare const LucideBookmarkCheck: LucideIcon;
+/** Retirer le signet · Remove bookmark */
+export declare const BookmarkMinus: LucideIcon;
+export declare const BookmarkMinusIcon: LucideIcon;
+export declare const LucideBookmarkMinus: LucideIcon;
+/** Ajouter un signet · Add bookmark */
+export declare const BookmarkPlus: LucideIcon;
+export declare const BookmarkPlusIcon: LucideIcon;
+export declare const LucideBookmarkPlus: LucideIcon;
+/** Supprimer le signet · Delete bookmark */
+export declare const BookmarkX: LucideIcon;
+export declare const BookmarkXIcon: LucideIcon;
+export declare const LucideBookmarkX: LucideIcon;
+/** Sous-titres · Captions */
+export declare const Captions: LucideIcon;
+export declare const CaptionsIcon: LucideIcon;
+export declare const LucideCaptions: LucideIcon;
+export declare const Subtitles: LucideIcon;
+export declare const SubtitlesIcon: LucideIcon;
+export declare const LucideSubtitles: LucideIcon;
+/** Masquer les sous-titres · Hide captions */
+export declare const CaptionsOff: LucideIcon;
+export declare const CaptionsOffIcon: LucideIcon;
+export declare const LucideCaptionsOff: LucideIcon;
+/** Langues · Languages */
+export declare const Languages: LucideIcon;
+export declare const LanguagesIcon: LucideIcon;
+export declare const LucideLanguages: LucideIcon;
+/** Pupitre · Lectern */
+export declare const Lectern: LucideIcon;
+export declare const LecternIcon: LucideIcon;
+export declare const LucideLectern: LucideIcon;
+/** Grande bibliothèque · Large library */
+export declare const LibraryBig: LucideIcon;
+export declare const LibraryBigIcon: LucideIcon;
+export declare const LucideLibraryBig: LucideIcon;
+/** Journal d'activité · Activity logs */
+export declare const Logs: LucideIcon;
+export declare const LogsIcon: LucideIcon;
+export declare const LucideLogs: LucideIcon;
+/** Actualités · News */
+export declare const Newspaper: LucideIcon;
+export declare const NewspaperIcon: LucideIcon;
+export declare const LucideNewspaper: LucideIcon;
+/** Carnet · Notebook */
+export declare const Notebook: LucideIcon;
+export declare const NotebookIcon: LucideIcon;
+export declare const LucideNotebook: LucideIcon;
+/** Prendre des notes · Take notes */
+export declare const NotebookPen: LucideIcon;
+export declare const NotebookPenIcon: LucideIcon;
+export declare const LucideNotebookPen: LucideIcon;
+/** Carnet à onglets · Tabbed notebook */
+export declare const NotebookTabs: LucideIcon;
+export declare const NotebookTabsIcon: LucideIcon;
+export declare const LucideNotebookTabs: LucideIcon;
+/** Carnet de notes · Notes notebook */
+export declare const NotebookText: LucideIcon;
+export declare const NotebookTextIcon: LucideIcon;
+export declare const LucideNotebookText: LucideIcon;
+/** Bloc-notes · Notepad */
+export declare const NotepadText: LucideIcon;
+export declare const NotepadTextIcon: LucideIcon;
+export declare const LucideNotepadText: LucideIcon;
+/** Brouillon de bloc-notes · Draft notepad */
+export declare const NotepadTextDashed: LucideIcon;
+export declare const NotepadTextDashedIcon: LucideIcon;
+export declare const LucideNotepadTextDashed: LucideIcon;
+/** Parchemin · Scroll */
+export declare const Scroll: LucideIcon;
+export declare const ScrollIcon: LucideIcon;
+export declare const LucideScroll: LucideIcon;
+/** Signe de section · Section sign */
+export declare const Section: LucideIcon;
+export declare const SectionIcon: LucideIcon;
+export declare const LucideSection: LucideIcon;
+/** Feuille de tableur · Sheet */
+export declare const Sheet: LucideIcon;
+export declare const SheetIcon: LucideIcon;
+export declare const LucideSheet: LucideIcon;
+/** Signer · Sign */
+export declare const Signature: LucideIcon;
+export declare const SignatureIcon: LucideIcon;
+export declare const LucideSignature: LucideIcon;
+/** Cachet · Stamp */
+export declare const Stamp: LucideIcon;
+export declare const StampIcon: LucideIcon;
+export declare const LucideStamp: LucideIcon;
+/** Autocollant · Sticker */
+export declare const Sticker: LucideIcon;
+export declare const StickerIcon: LucideIcon;
+export declare const LucideSticker: LucideIcon;
+/** Nuancier · Swatch book */
+export declare const SwatchBook: LucideIcon;
+export declare const SwatchBookIcon: LucideIcon;
+export declare const LucideSwatchBook: LucideIcon;
+/** Mot entier · Whole word */
+export declare const WholeWord: LucideIcon;
+export declare const WholeWordIcon: LucideIcon;
+export declare const LucideWholeWord: LucideIcon;
+/** Atome, sciences · Atom, science */
+export declare const Atom: LucideIcon;
+export declare const AtomIcon: LucideIcon;
+export declare const LucideAtom: LucideIcon;
+/** Réglages du cloud · Cloud settings */
+export declare const CloudCog: LucideIcon;
+export declare const CloudCogIcon: LucideIcon;
+export declare const LucideCloudCog: LucideIcon;
+/** Bruine · Drizzle */
+export declare const CloudDrizzle: LucideIcon;
+export declare const CloudDrizzleIcon: LucideIcon;
+export declare const LucideCloudDrizzle: LucideIcon;
+/** Brouillard · Fog */
+export declare const CloudFog: LucideIcon;
+export declare const CloudFogIcon: LucideIcon;
+export declare const LucideCloudFog: LucideIcon;
+/** Grêle · Hail */
+export declare const CloudHail: LucideIcon;
+export declare const CloudHailIcon: LucideIcon;
+export declare const LucideCloudHail: LucideIcon;
+/** Orage · Thunderstorm */
+export declare const CloudLightning: LucideIcon;
+export declare const CloudLightningIcon: LucideIcon;
+export declare const LucideCloudLightning: LucideIcon;
+/** Nuit nuageuse · Cloudy night */
+export declare const CloudMoon: LucideIcon;
+export declare const CloudMoonIcon: LucideIcon;
+export declare const LucideCloudMoon: LucideIcon;
+/** Pluie de nuit · Rainy night */
+export declare const CloudMoonRain: LucideIcon;
+export declare const CloudMoonRainIcon: LucideIcon;
+export declare const LucideCloudMoonRain: LucideIcon;
+/** Pluie · Rain */
+export declare const CloudRain: LucideIcon;
+export declare const CloudRainIcon: LucideIcon;
+export declare const LucideCloudRain: LucideIcon;
+/** Pluie et vent · Wind and rain */
+export declare const CloudRainWind: LucideIcon;
+export declare const CloudRainWindIcon: LucideIcon;
+export declare const LucideCloudRainWind: LucideIcon;
+/** Neige · Snow */
+export declare const CloudSnow: LucideIcon;
+export declare const CloudSnowIcon: LucideIcon;
+export declare const LucideCloudSnow: LucideIcon;
+/** Éclaircies · Partly sunny */
+export declare const CloudSun: LucideIcon;
+export declare const CloudSunIcon: LucideIcon;
+export declare const LucideCloudSun: LucideIcon;
+/** Averses et soleil · Sun showers */
+export declare const CloudSunRain: LucideIcon;
+export declare const CloudSunRainIcon: LucideIcon;
+export declare const LucideCloudSunRain: LucideIcon;
+/** Nuageux · Cloudy */
+export declare const Cloudy: LucideIcon;
+export declare const CloudyIcon: LucideIcon;
+export declare const LucideCloudy: LucideIcon;
+/** Trèfle, chance · Clover, luck */
+export declare const Clover: LucideIcon;
+export declare const CloverIcon: LucideIcon;
+export declare const LucideClover: LucideIcon;
+/** Goutte d'eau · Water drop */
+export declare const Droplet: LucideIcon;
+export declare const DropletIcon: LucideIcon;
+export declare const LucideDroplet: LucideIcon;
+/** Humidité · Humidity */
+export declare const Droplets: LucideIcon;
+export declare const DropletsIcon: LucideIcon;
+export declare const LucideDroplets: LucideIcon;
+/** Éclipse · Eclipse */
+export declare const Eclipse: LucideIcon;
+export declare const EclipseIcon: LucideIcon;
+export declare const LucideEclipse: LucideIcon;
+/** Plume, légèreté · Feather, lightweight */
+export declare const Feather: LucideIcon;
+export declare const FeatherIcon: LucideIcon;
+export declare const LucideFeather: LucideIcon;
+/** Feu de bois · Wood fire */
+export declare const FlameKindling: LucideIcon;
+export declare const FlameKindlingIcon: LucideIcon;
+export declare const LucideFlameKindling: LucideIcon;
+/** Fleur · Flower */
+export declare const Flower: LucideIcon;
+export declare const FlowerIcon: LucideIcon;
+export declare const LucideFlower: LucideIcon;
+/** Tulipe, fleur sur tige · Tulip, stemmed flower */
+export declare const Flower2: LucideIcon;
+export declare const Flower2Icon: LucideIcon;
+export declare const LucideFlower2: LucideIcon;
+/** Brume · Haze */
+export declare const Haze: LucideIcon;
+export declare const HazeIcon: LucideIcon;
+export declare const LucideHaze: LucideIcon;
+/** Feuille d'arbre, écologie · Leaf, eco */
+export declare const Leaf: LucideIcon;
+export declare const LeafIcon: LucideIcon;
+export declare const LucideLeaf: LucideIcon;
+/** Légumes verts · Leafy greens */
+export declare const LeafyGreen: LucideIcon;
+export declare const LeafyGreenIcon: LucideIcon;
+export declare const LucideLeafyGreen: LucideIcon;
+/** Nuit étoilée · Starry night */
+export declare const MoonStar: LucideIcon;
+export declare const MoonStarIcon: LucideIcon;
+export declare const LucideMoonStar: LucideIcon;
+/** Montagne · Mountain */
+export declare const Mountain: LucideIcon;
+export declare const MountainIcon: LucideIcon;
+export declare const LucideMountain: LucideIcon;
+/** Montagne enneigée · Snowy mountain */
+export declare const MountainSnow: LucideIcon;
+export declare const MountainSnowIcon: LucideIcon;
+export declare const LucideMountainSnow: LucideIcon;
+/** Orbite · Orbit */
+export declare const Orbit: LucideIcon;
+export declare const OrbitIcon: LucideIcon;
+export declare const LucideOrbit: LucideIcon;
+/** Palmier, vacances · Palm tree, holidays */
+export declare const Palmtree: LucideIcon;
+export declare const PalmtreeIcon: LucideIcon;
+export declare const LucidePalmtree: LucideIcon;
+export declare const TreePalm: LucideIcon;
+export declare const TreePalmIcon: LucideIcon;
+export declare const LucideTreePalm: LucideIcon;
+/** Arc-en-ciel · Rainbow */
+export declare const Rainbow: LucideIcon;
+export declare const RainbowIcon: LucideIcon;
+export declare const LucideRainbow: LucideIcon;
+/** Satellite en orbite · Satellite */
+export declare const Satellite: LucideIcon;
+export declare const SatelliteIcon: LucideIcon;
+export declare const LucideSatellite: LucideIcon;
+/** Antenne parabolique · Satellite dish */
+export declare const SatelliteDish: LucideIcon;
+export declare const SatelliteDishIcon: LucideIcon;
+export declare const LucideSatelliteDish: LucideIcon;
+/** Coquillage (cauri) · Shell (cowrie) — Un cauri, le coquillage qui servait de monnaie en Afrique de l'Ouest. */
+export declare const Shell: LucideIcon;
+export declare const ShellIcon: LucideIcon;
+export declare const LucideShell: LucideIcon;
+/** Arbuste · Shrub */
+export declare const Shrub: LucideIcon;
+export declare const ShrubIcon: LucideIcon;
+export declare const LucideShrub: LucideIcon;
+/** Flocon, froid · Snowflake, cold */
+export declare const Snowflake: LucideIcon;
+export declare const SnowflakeIcon: LucideIcon;
+export declare const LucideSnowflake: LucideIcon;
+/** Luminosité faible · Low brightness */
+export declare const SunDim: LucideIcon;
+export declare const SunDimIcon: LucideIcon;
+export declare const LucideSunDim: LucideIcon;
+/** Luminosité moyenne · Medium brightness */
+export declare const SunMedium: LucideIcon;
+export declare const SunMediumIcon: LucideIcon;
+export declare const LucideSunMedium: LucideIcon;
+/** Thème automatique (jour et nuit) · Automatic theme (day and night) */
+export declare const SunMoon: LucideIcon;
+export declare const SunMoonIcon: LucideIcon;
+export declare const LucideSunMoon: LucideIcon;
+/** Chaud et froid · Hot and cold */
+export declare const SunSnow: LucideIcon;
+export declare const SunSnowIcon: LucideIcon;
+export declare const LucideSunSnow: LucideIcon;
+/** Lever du soleil · Sunrise */
+export declare const Sunrise: LucideIcon;
+export declare const SunriseIcon: LucideIcon;
+export declare const LucideSunrise: LucideIcon;
+/** Coucher du soleil · Sunset */
+export declare const Sunset: LucideIcon;
+export declare const SunsetIcon: LucideIcon;
+export declare const LucideSunset: LucideIcon;
+/** Télescope, exploration · Telescope, explore */
+export declare const Telescope: LucideIcon;
+export declare const TelescopeIcon: LucideIcon;
+export declare const LucideTelescope: LucideIcon;
+/** Tente, camping · Tent, camping */
+export declare const Tent: LucideIcon;
+export declare const TentIcon: LucideIcon;
+export declare const LucideTent: LucideIcon;
+/** Camping en nature · Camping in nature */
+export declare const TentTree: LucideIcon;
+export declare const TentTreeIcon: LucideIcon;
+export declare const LucideTentTree: LucideIcon;
+/** Température · Temperature */
+export declare const Thermometer: LucideIcon;
+export declare const ThermometerIcon: LucideIcon;
+export declare const LucideThermometer: LucideIcon;
+/** Température froide · Cold temperature */
+export declare const ThermometerSnowflake: LucideIcon;
+export declare const ThermometerSnowflakeIcon: LucideIcon;
+export declare const LucideThermometerSnowflake: LucideIcon;
+/** Température chaude · Hot temperature */
+export declare const ThermometerSun: LucideIcon;
+export declare const ThermometerSunIcon: LucideIcon;
+export declare const LucideThermometerSun: LucideIcon;
+/** Tornade · Tornado */
+export declare const Tornado: LucideIcon;
+export declare const TornadoIcon: LucideIcon;
+export declare const LucideTornado: LucideIcon;
+/** Arbre (baobab) · Tree (baobab) — Un baobab : tronc épais et couronne large et plate, l'arbre emblématique des savanes africaines. */
+export declare const TreeDeciduous: LucideIcon;
+export declare const TreeDeciduousIcon: LucideIcon;
+export declare const LucideTreeDeciduous: LucideIcon;
+/** Pin, conifère · Pine tree */
+export declare const TreePine: LucideIcon;
+export declare const TreePineIcon: LucideIcon;
+export declare const LucideTreePine: LucideIcon;
+/** Forêt, espaces verts · Forest, green spaces */
+export declare const Trees: LucideIcon;
+export declare const TreesIcon: LucideIcon;
+export declare const LucideTrees: LucideIcon;
+/** Parapluie, assurance · Umbrella, insurance */
+export declare const Umbrella: LucideIcon;
+export declare const UmbrellaIcon: LucideIcon;
+export declare const LucideUmbrella: LucideIcon;
+/** Sans parapluie, sans couverture · No umbrella, not covered */
+export declare const UmbrellaOff: LucideIcon;
+export declare const UmbrellaOffIcon: LucideIcon;
+export declare const LucideUmbrellaOff: LucideIcon;
+/** Vagues, mer · Waves, sea */
+export declare const Waves: LucideIcon;
+export declare const WavesIcon: LucideIcon;
+export declare const LucideWaves: LucideIcon;
+/** Vent · Wind */
+export declare const Wind: LucideIcon;
+export declare const WindIcon: LucideIcon;
+export declare const LucideWind: LucideIcon;
+/** Diaphragme photo · Camera aperture */
+export declare const Aperture: LucideIcon;
+export declare const ApertureIcon: LucideIcon;
+export declare const LucideAperture: LucideIcon;
+/** Niveaux audio · Audio levels */
+export declare const AudioLines: LucideIcon;
+export declare const AudioLinesIcon: LucideIcon;
+export declare const LucideAudioLines: LucideIcon;
+/** Forme d'onde audio · Audio waveform */
+export declare const AudioWaveform: LucideIcon;
+export declare const AudioWaveformIcon: LucideIcon;
+export declare const LucideAudioWaveform: LucideIcon;
+/** Radiocassette · Boombox */
+export declare const BoomBox: LucideIcon;
+export declare const BoomBoxIcon: LucideIcon;
+export declare const LucideBoomBox: LucideIcon;
+/** Caméra désactivée · Camera off */
+export declare const CameraOff: LucideIcon;
+export declare const CameraOffIcon: LucideIcon;
+export declare const LucideCameraOff: LucideIcon;
+/** Cassette audio · Cassette tape */
+export declare const CassetteTape: LucideIcon;
+export declare const CassetteTapeIcon: LucideIcon;
+export declare const LucideCassetteTape: LucideIcon;
+/** Clap de tournage · Clapperboard */
+export declare const Clapperboard: LucideIcon;
+export declare const ClapperboardIcon: LucideIcon;
+export declare const LucideClapperboard: LucideIcon;
+/** Recadrer · Crop */
+export declare const Crop: LucideIcon;
+export declare const CropIcon: LucideIcon;
+export declare const LucideCrop: LucideIcon;
+/** Disque · Disc */
+export declare const Disc: LucideIcon;
+export declare const DiscIcon: LucideIcon;
+export declare const LucideDisc: LucideIcon;
+/** Disque vinyle · Vinyl record */
+export declare const Disc2: LucideIcon;
+export declare const Disc2Icon: LucideIcon;
+export declare const LucideDisc2: LucideIcon;
+/** Disque optique · Optical disc */
+export declare const Disc3: LucideIcon;
+export declare const Disc3Icon: LucideIcon;
+export declare const LucideDisc3: LucideIcon;
+/** Album musical · Music album */
+export declare const DiscAlbum: LucideIcon;
+export declare const DiscAlbumIcon: LucideIcon;
+export declare const LucideDiscAlbum: LucideIcon;
+/** Spectacle (théâtre) · Theatre */
+export declare const Drama: LucideIcon;
+export declare const DramaIcon: LucideIcon;
+export declare const LucideDrama: LucideIcon;
+/** Tambour · Drum — Djembé : tambour-calice à peau tendue, cordage en zigzag et pied évasé. */
+export declare const Drum: LucideIcon;
+export declare const DrumIcon: LucideIcon;
+export declare const LucideDrum: LucideIcon;
+/** Cuisse de poulet · Chicken leg */
+export declare const Drumstick: LucideIcon;
+export declare const DrumstickIcon: LucideIcon;
+export declare const LucideDrumstick: LucideIcon;
+/** Écoute · Listening */
+export declare const Ear: LucideIcon;
+export declare const EarIcon: LucideIcon;
+export declare const LucideEar: LucideIcon;
+/** Écoute désactivée · Listening off */
+export declare const EarOff: LucideIcon;
+export declare const EarOffIcon: LucideIcon;
+export declare const LucideEarOff: LucideIcon;
+/** Avance rapide · Fast forward */
+export declare const FastForward: LucideIcon;
+export declare const FastForwardIcon: LucideIcon;
+export declare const LucideFastForward: LucideIcon;
+/** Pellicule · Film */
+export declare const Film: LucideIcon;
+export declare const FilmIcon: LucideIcon;
+export declare const LucideFilm: LucideIcon;
+/** Cadre de mise en page · Layout frame */
+export declare const Frame: LucideIcon;
+export declare const FrameIcon: LucideIcon;
+export declare const LucideFrame: LucideIcon;
+/** Carrousel horizontal · Horizontal carousel */
+export declare const GalleryHorizontal: LucideIcon;
+export declare const GalleryHorizontalIcon: LucideIcon;
+export declare const LucideGalleryHorizontal: LucideIcon;
+/** Fin du carrousel horizontal · Horizontal carousel end */
+export declare const GalleryHorizontalEnd: LucideIcon;
+export declare const GalleryHorizontalEndIcon: LucideIcon;
+export declare const LucideGalleryHorizontalEnd: LucideIcon;
+/** Galerie de vignettes · Thumbnail gallery */
+export declare const GalleryThumbnails: LucideIcon;
+export declare const GalleryThumbnailsIcon: LucideIcon;
+export declare const LucideGalleryThumbnails: LucideIcon;
+/** Carrousel vertical · Vertical carousel */
+export declare const GalleryVertical: LucideIcon;
+export declare const GalleryVerticalIcon: LucideIcon;
+export declare const LucideGalleryVertical: LucideIcon;
+/** Fin du carrousel vertical · Vertical carousel end */
+export declare const GalleryVerticalEnd: LucideIcon;
+export declare const GalleryVerticalEndIcon: LucideIcon;
+export declare const LucideGalleryVerticalEnd: LucideIcon;
+/** Guitare · Guitar */
+export declare const Guitar: LucideIcon;
+export declare const GuitarIcon: LucideIcon;
+export declare const LucideGuitar: LucideIcon;
+/** Télécharger l'image · Download image */
+export declare const ImageDown: LucideIcon;
+export declare const ImageDownIcon: LucideIcon;
+export declare const LucideImageDown: LucideIcon;
+/** Retirer l'image · Remove image */
+export declare const ImageMinus: LucideIcon;
+export declare const ImageMinusIcon: LucideIcon;
+export declare const LucideImageMinus: LucideIcon;
+/** Image indisponible · Image unavailable */
+export declare const ImageOff: LucideIcon;
+export declare const ImageOffIcon: LucideIcon;
+export declare const LucideImageOff: LucideIcon;
+/** Image animée · Animated image */
+export declare const ImagePlay: LucideIcon;
+export declare const ImagePlayIcon: LucideIcon;
+export declare const LucideImagePlay: LucideIcon;
+/** Téléverser l'image · Upload image */
+export declare const ImageUp: LucideIcon;
+export declare const ImageUpIcon: LucideIcon;
+export declare const LucideImageUp: LucideIcon;
+/** Micro à main · Handheld microphone */
+export declare const Mic2: LucideIcon;
+export declare const Mic2Icon: LucideIcon;
+export declare const LucideMic2: LucideIcon;
+export declare const MicVocal: LucideIcon;
+export declare const MicVocalIcon: LucideIcon;
+export declare const LucideMicVocal: LucideIcon;
+/** Microscope · Microscope */
+export declare const Microscope: LucideIcon;
+export declare const MicroscopeIcon: LucideIcon;
+export declare const LucideMicroscope: LucideIcon;
+/** Musique · Music */
+export declare const Music: LucideIcon;
+export declare const MusicIcon: LucideIcon;
+export declare const LucideMusic: LucideIcon;
+/** Note de musique · Music note */
+export declare const Music2: LucideIcon;
+export declare const Music2Icon: LucideIcon;
+export declare const LucideMusic2: LucideIcon;
+/** Note noire · Quarter note */
+export declare const Music3: LucideIcon;
+export declare const Music3Icon: LucideIcon;
+export declare const LucideMusic3: LucideIcon;
+/** Doubles croches · Sixteenth notes */
+export declare const Music4: LucideIcon;
+export declare const Music4Icon: LucideIcon;
+export declare const LucideMusic4: LucideIcon;
+/** Retour rapide · Rewind */
+export declare const Rewind: LucideIcon;
+export declare const RewindIcon: LucideIcon;
+export declare const LucideRewind: LucideIcon;
+/** Scanner un code-barres · Scan barcode */
+export declare const ScanBarcode: LucideIcon;
+export declare const ScanBarcodeIcon: LucideIcon;
+export declare const LucideScanBarcode: LucideIcon;
+/** Analyse de l'œil · Eye scan */
+export declare const ScanEye: LucideIcon;
+export declare const ScanEyeIcon: LucideIcon;
+export declare const LucideScanEye: LucideIcon;
+/** Reconnaissance faciale · Face scan */
+export declare const ScanFace: LucideIcon;
+export declare const ScanFaceIcon: LucideIcon;
+export declare const LucideScanFace: LucideIcon;
+/** Scanner un code QR · Scan QR code */
+export declare const ScanQrCode: LucideIcon;
+export declare const ScanQrCodeIcon: LucideIcon;
+export declare const LucideScanQrCode: LucideIcon;
+/** Recherche par l'image · Visual search */
+export declare const ScanSearch: LucideIcon;
+export declare const ScanSearchIcon: LucideIcon;
+export declare const LucideScanSearch: LucideIcon;
+/** Lecture de texte (OCR) · Text recognition */
+export declare const ScanText: LucideIcon;
+export declare const ScanTextIcon: LucideIcon;
+export declare const LucideScanText: LucideIcon;
+/** Diffuser son écran · Share screen */
+export declare const ScreenShare: LucideIcon;
+export declare const ScreenShareIcon: LucideIcon;
+export declare const LucideScreenShare: LucideIcon;
+/** Arrêter le partage d'écran · Stop sharing screen */
+export declare const ScreenShareOff: LucideIcon;
+export declare const ScreenShareOffIcon: LucideIcon;
+export declare const LucideScreenShareOff: LucideIcon;
+/** Piste précédente · Previous track */
+export declare const SkipBack: LucideIcon;
+export declare const SkipBackIcon: LucideIcon;
+export declare const LucideSkipBack: LucideIcon;
+/** Piste suivante · Next track */
+export declare const SkipForward: LucideIcon;
+export declare const SkipForwardIcon: LucideIcon;
+export declare const LucideSkipForward: LucideIcon;
+/** Reculer d'une image · Step back */
+export declare const StepBack: LucideIcon;
+export declare const StepBackIcon: LucideIcon;
+export declare const LucideStepBack: LucideIcon;
+/** Avancer d'une image · Step forward */
+export declare const StepForward: LucideIcon;
+export declare const StepForwardIcon: LucideIcon;
+export declare const LucideStepForward: LucideIcon;
+/** Changer de caméra · Switch camera */
+export declare const SwitchCamera: LucideIcon;
+export declare const SwitchCameraIcon: LucideIcon;
+export declare const LucideSwitchCamera: LucideIcon;
+/** Masque de carnaval · Party mask */
+export declare const VenetianMask: LucideIcon;
+export declare const VenetianMaskIcon: LucideIcon;
+export declare const LucideVenetianMask: LucideIcon;
+/** Vidéo désactivée · Video off */
+export declare const VideoOff: LucideIcon;
+export declare const VideoOffIcon: LucideIcon;
+export declare const LucideVideoOff: LucideIcon;
+/** Cassette vidéo · Videotape */
+export declare const Videotape: LucideIcon;
+export declare const VideotapeIcon: LucideIcon;
+export declare const LucideVideotape: LucideIcon;
+/** Vue d'ensemble · Overview */
+export declare const View: LucideIcon;
+export declare const ViewIcon: LucideIcon;
+export declare const LucideView: LucideIcon;
+/** Haut-parleur · Speaker */
+export declare const Volume: LucideIcon;
+export declare const VolumeIcon: LucideIcon;
+export declare const LucideVolume: LucideIcon;
+/** Son faible · Low volume */
+export declare const Volume1: LucideIcon;
+export declare const Volume1Icon: LucideIcon;
+export declare const LucideVolume1: LucideIcon;
+/** Son désactivé · Sound off */
+export declare const VolumeOff: LucideIcon;
+export declare const VolumeOffIcon: LucideIcon;
+export declare const LucideVolumeOff: LucideIcon;
+/** Fond d'écran · Wallpaper */
+export declare const Wallpaper: LucideIcon;
+export declare const WallpaperIcon: LucideIcon;
+export declare const LucideWallpaper: LucideIcon;
+/** Banane · Banana */
+export declare const Banana: LucideIcon;
+export declare const BananaIcon: LucideIcon;
+export declare const LucideBanana: LucideIcon;
+/** Haricot · Bean */
+export declare const Bean: LucideIcon;
+export declare const BeanIcon: LucideIcon;
+export declare const LucideBean: LucideIcon;
+/** Sans légumineuses · Legume-free */
+export declare const BeanOff: LucideIcon;
+export declare const BeanOffIcon: LucideIcon;
+export declare const LucideBeanOff: LucideIcon;
+/** Viande de bœuf · Beef */
+export declare const Beef: LucideIcon;
+export declare const BeefIcon: LucideIcon;
+export declare const LucideBeef: LucideIcon;
+/** Bière · Beer */
+export declare const Beer: LucideIcon;
+export declare const BeerIcon: LucideIcon;
+export declare const LucideBeer: LucideIcon;
+/** Sans bière · No beer */
+export declare const BeerOff: LucideIcon;
+export declare const BeerOffIcon: LucideIcon;
+export declare const LucideBeerOff: LucideIcon;
+/** Gâteau d’anniversaire · Birthday cake */
+export declare const Cake: LucideIcon;
+export declare const CakeIcon: LucideIcon;
+export declare const LucideCake: LucideIcon;
+/** Bonbon · Candy */
+export declare const Candy: LucideIcon;
+export declare const CandyIcon: LucideIcon;
+export declare const LucideCandy: LucideIcon;
+/** Sucre d’orge · Candy cane */
+export declare const CandyCane: LucideIcon;
+export declare const CandyCaneIcon: LucideIcon;
+export declare const LucideCandyCane: LucideIcon;
+/** Sans sucreries · No sweets */
+export declare const CandyOff: LucideIcon;
+export declare const CandyOffIcon: LucideIcon;
+export declare const LucideCandyOff: LucideIcon;
+/** Cannabis · Cannabis */
+export declare const Cannabis: LucideIcon;
+export declare const CannabisIcon: LucideIcon;
+export declare const LucideCannabis: LucideIcon;
+/** Cerise · Cherry */
+export declare const Cherry: LucideIcon;
+export declare const CherryIcon: LucideIcon;
+export declare const LucideCherry: LucideIcon;
+/** Espace fumeurs · Smoking area */
+export declare const Cigarette: LucideIcon;
+export declare const CigaretteIcon: LucideIcon;
+export declare const LucideCigarette: LucideIcon;
+/** Non-fumeur · No smoking */
+export declare const CigaretteOff: LucideIcon;
+export declare const CigaretteOffIcon: LucideIcon;
+export declare const LucideCigaretteOff: LucideIcon;
+/** Agrumes · Citrus */
+export declare const Citrus: LucideIcon;
+export declare const CitrusIcon: LucideIcon;
+export declare const LucideCitrus: LucideIcon;
+/** Café · Coffee */
+export declare const Coffee: LucideIcon;
+export declare const CoffeeIcon: LucideIcon;
+export declare const LucideCoffee: LucideIcon;
+/** Sonnette de réception · Front desk bell */
+export declare const ConciergeBell: LucideIcon;
+export declare const ConciergeBellIcon: LucideIcon;
+export declare const LucideConciergeBell: LucideIcon;
+/** Biscuit · Cookie */
+export declare const Cookie: LucideIcon;
+export declare const CookieIcon: LucideIcon;
+export declare const LucideCookie: LucideIcon;
+/** Marmite à trois pieds · Cooking pot — La marmite en fonte à trois pieds de la cuisine au feu de bois. */
+export declare const CookingPot: LucideIcon;
+export declare const CookingPotIcon: LucideIcon;
+export declare const LucideCookingPot: LucideIcon;
+/** Croissant · Croissant */
+export declare const Croissant: LucideIcon;
+export declare const CroissantIcon: LucideIcon;
+export declare const LucideCroissant: LucideIcon;
+/** Soda à emporter · Soda to go */
+export declare const CupSoda: LucideIcon;
+export declare const CupSodaIcon: LucideIcon;
+export declare const LucideCupSoda: LucideIcon;
+/** Desserts · Desserts */
+export declare const Dessert: LucideIcon;
+export declare const DessertIcon: LucideIcon;
+export declare const LucideDessert: LucideIcon;
+/** Beignet · Doughnut */
+export declare const Donut: LucideIcon;
+export declare const DonutIcon: LucideIcon;
+export declare const LucideDonut: LucideIcon;
+/** Œuf · Egg */
+export declare const Egg: LucideIcon;
+export declare const EggIcon: LucideIcon;
+export declare const LucideEgg: LucideIcon;
+/** Œuf au plat · Fried egg */
+export declare const EggFried: LucideIcon;
+export declare const EggFriedIcon: LucideIcon;
+export declare const LucideEggFried: LucideIcon;
+/** Sans œuf · Egg-free */
+export declare const EggOff: LucideIcon;
+export declare const EggOffIcon: LucideIcon;
+export declare const LucideEggOff: LucideIcon;
+/** Poisson · Fish */
+export declare const Fish: LucideIcon;
+export declare const FishIcon: LucideIcon;
+export declare const LucideFish: LucideIcon;
+/** Sans poisson · Fish-free */
+export declare const FishOff: LucideIcon;
+export declare const FishOffIcon: LucideIcon;
+export declare const LucideFishOff: LucideIcon;
+/** Symbole du poisson · Fish symbol */
+export declare const FishSymbol: LucideIcon;
+export declare const FishSymbolIcon: LucideIcon;
+export declare const LucideFishSymbol: LucideIcon;
+/** Verre d’eau · Glass of water */
+export declare const GlassWater: LucideIcon;
+export declare const GlassWaterIcon: LucideIcon;
+export declare const LucideGlassWater: LucideIcon;
+/** Raisin · Grapes */
+export declare const Grape: LucideIcon;
+export declare const GrapeIcon: LucideIcon;
+export declare const LucideGrape: LucideIcon;
+/** Jambon · Ham */
+export declare const Ham: LucideIcon;
+export declare const HamIcon: LucideIcon;
+export declare const LucideHam: LucideIcon;
+/** Bricolage et travaux · DIY and repairs */
+export declare const Hammer: LucideIcon;
+export declare const HammerIcon: LucideIcon;
+export declare const LucideHammer: LucideIcon;
+/** Houblon · Hops */
+export declare const Hop: LucideIcon;
+export declare const HopIcon: LucideIcon;
+export declare const LucideHop: LucideIcon;
+/** Sans houblon · Hop-free */
+export declare const HopOff: LucideIcon;
+export declare const HopOffIcon: LucideIcon;
+export declare const LucideHopOff: LucideIcon;
+/** Cornet de glace · Ice cream cone */
+export declare const IceCream: LucideIcon;
+export declare const IceCreamIcon: LucideIcon;
+export declare const LucideIceCream: LucideIcon;
+export declare const IceCreamCone: LucideIcon;
+export declare const IceCreamConeIcon: LucideIcon;
+export declare const LucideIceCreamCone: LucideIcon;
+/** Coupe de glace · Ice cream bowl */
+export declare const IceCream2: LucideIcon;
+export declare const IceCream2Icon: LucideIcon;
+export declare const LucideIceCream2: LucideIcon;
+export declare const IceCreamBowl: LucideIcon;
+export declare const IceCreamBowlIcon: LucideIcon;
+export declare const LucideIceCreamBowl: LucideIcon;
+/** Sucette · Lollipop */
+export declare const Lollipop: LucideIcon;
+export declare const LollipopIcon: LucideIcon;
+export declare const LucideLollipop: LucideIcon;
+/** Cocktail · Cocktail */
+export declare const Martini: LucideIcon;
+export declare const MartiniIcon: LucideIcon;
+export declare const LucideMartini: LucideIcon;
+/** Lait · Milk */
+export declare const Milk: LucideIcon;
+export declare const MilkIcon: LucideIcon;
+export declare const LucideMilk: LucideIcon;
+/** Sans lactose · Lactose-free */
+export declare const MilkOff: LucideIcon;
+export declare const MilkOffIcon: LucideIcon;
+export declare const LucideMilkOff: LucideIcon;
+/** Pop-corn · Popcorn */
+export declare const Popcorn: LucideIcon;
+export declare const PopcornIcon: LucideIcon;
+export declare const LucidePopcorn: LucideIcon;
+/** Glace à l’eau · Ice pop */
+export declare const Popsicle: LucideIcon;
+export declare const PopsicleIcon: LucideIcon;
+export declare const LucidePopsicle: LucideIcon;
+/** Salade · Salad */
+export declare const Salad: LucideIcon;
+export declare const SaladIcon: LucideIcon;
+export declare const LucideSalad: LucideIcon;
+/** Sandwich · Sandwich */
+export declare const Sandwich: LucideIcon;
+export declare const SandwichIcon: LucideIcon;
+export declare const LucideSandwich: LucideIcon;
+/** Trancher · Slice */
+export declare const Slice: LucideIcon;
+export declare const SliceIcon: LucideIcon;
+export declare const LucideSlice: LucideIcon;
+/** Soupe · Soup */
+export declare const Soup: LucideIcon;
+export declare const SoupIcon: LucideIcon;
+export declare const LucideSoup: LucideIcon;
+/** Végan · Vegan */
+export declare const Vegan: LucideIcon;
+export declare const VeganIcon: LucideIcon;
+export declare const LucideVegan: LucideIcon;
+/** Sans gluten · Gluten-free */
+export declare const WheatOff: LucideIcon;
+export declare const WheatOffIcon: LucideIcon;
+export declare const LucideWheatOff: LucideIcon;
+/** Sans vin · No wine */
+export declare const WineOff: LucideIcon;
+export declare const WineOffIcon: LucideIcon;
+export declare const LucideWineOff: LucideIcon;
+/** Forge, enclume · Anvil */
+export declare const Anvil: LucideIcon;
+export declare const AnvilIcon: LucideIcon;
+export declare const LucideAnvil: LucideIcon;
+/** Hache, bois de chauffe · Axe */
+export declare const Axe: LucideIcon;
+export declare const AxeIcon: LucideIcon;
+export declare const LucideAxe: LucideIcon;
+/** Pansement · Bandage */
+export declare const Bandage: LucideIcon;
+export declare const BandageIcon: LucideIcon;
+export declare const LucideBandage: LucideIcon;
+/** Bécher de laboratoire · Beaker */
+export declare const Beaker: LucideIcon;
+export declare const BeakerIcon: LucideIcon;
+export declare const LucideBeaker: LucideIcon;
+/** Force physique · Strength */
+export declare const BicepsFlexed: LucideIcon;
+export declare const BicepsFlexedIcon: LucideIcon;
+export declare const LucideBicepsFlexed: LucideIcon;
+/** Risque biologique · Biohazard */
+export declare const Biohazard: LucideIcon;
+export declare const BiohazardIcon: LucideIcon;
+export declare const LucideBiohazard: LucideIcon;
+/** Danger d'explosion · Explosion hazard */
+export declare const Bomb: LucideIcon;
+export declare const BombIcon: LucideIcon;
+export declare const LucideBomb: LucideIcon;
+/** Brosse de style · Style brush */
+export declare const Brush: LucideIcon;
+export declare const BrushIcon: LucideIcon;
+export declare const LucideBrush: LucideIcon;
+/** ADN, génétique · DNA, genetics */
+export declare const Dna: LucideIcon;
+export declare const DnaIcon: LucideIcon;
+export declare const LucideDna: LucideIcon;
+/** Sans OGM · GMO-free */
+export declare const DnaOff: LucideIcon;
+export declare const DnaOffIcon: LucideIcon;
+export declare const LucideDnaOff: LucideIcon;
+/** Compas de dessin technique · Drafting compass */
+export declare const DraftingCompass: LucideIcon;
+export declare const DraftingCompassIcon: LucideIcon;
+export declare const LucideDraftingCompass: LucideIcon;
+/** Perceuse, bricolage · Power drill */
+export declare const Drill: LucideIcon;
+export declare const DrillIcon: LucideIcon;
+export declare const LucideDrill: LucideIcon;
+/** Haltère, salle de sport · Dumbbell */
+export declare const Dumbbell: LucideIcon;
+export declare const DumbbellIcon: LucideIcon;
+export declare const LucideDumbbell: LucideIcon;
+/** Extincteur · Fire extinguisher */
+export declare const FireExtinguisher: LucideIcon;
+export declare const FireExtinguisherIcon: LucideIcon;
+export declare const LucideFireExtinguisher: LucideIcon;
+/** Essais désactivés · Experiments off */
+export declare const FlaskConicalOff: LucideIcon;
+export declare const FlaskConicalOffIcon: LucideIcon;
+export declare const LucideFlaskConicalOff: LucideIcon;
+/** Ballon de chimie · Round flask */
+export declare const FlaskRound: LucideIcon;
+export declare const FlaskRoundIcon: LucideIcon;
+export declare const LucideFlaskRound: LucideIcon;
+/** Saisir (main fermée) · Grab */
+export declare const Grab: LucideIcon;
+export declare const GrabIcon: LucideIcon;
+export declare const LucideGrab: LucideIcon;
+/** Poignée à neuf points · Grip */
+export declare const Grip: LucideIcon;
+export declare const GripIcon: LucideIcon;
+export declare const LucideGrip: LucideIcon;
+/** Poignée horizontale · Horizontal grip */
+export declare const GripHorizontal: LucideIcon;
+export declare const GripHorizontalIcon: LucideIcon;
+export declare const LucideGripHorizontal: LucideIcon;
+/** Attraper au lasso · Lasso */
+export declare const Lasso: LucideIcon;
+export declare const LassoIcon: LucideIcon;
+export declare const LucideLasso: LucideIcon;
+/** Sélection libre au lasso · Lasso select */
+export declare const LassoSelect: LucideIcon;
+export declare const LassoSelectIcon: LucideIcon;
+export declare const LucideLassoSelect: LucideIcon;
+/** Arachide, fruits à coque · Nuts — L'arachide en coque, la noix de tous les marchés d'Afrique de l'Ouest. */
+export declare const Nut: LucideIcon;
+export declare const NutIcon: LucideIcon;
+export declare const LucideNut: LucideIcon;
+/** Sans fruits à coque · Nut-free */
+export declare const NutOff: LucideIcon;
+export declare const NutOffIcon: LucideIcon;
+export declare const LucideNutOff: LucideIcon;
+/** Remplir de couleur · Fill with color */
+export declare const PaintBucket: LucideIcon;
+export declare const PaintBucketIcon: LucideIcon;
+export declare const LucidePaintBucket: LucideIcon;
+/** Rouleau de peinture · Paint roller */
+export declare const PaintRoller: LucideIcon;
+export declare const PaintRollerIcon: LucideIcon;
+export declare const LucidePaintRoller: LucideIcon;
+/** Pinceau · Paintbrush */
+export declare const Paintbrush: LucideIcon;
+export declare const PaintbrushIcon: LucideIcon;
+export declare const LucidePaintbrush: LucideIcon;
+/** Pinceau plat · Flat brush */
+export declare const Paintbrush2: LucideIcon;
+export declare const Paintbrush2Icon: LucideIcon;
+export declare const LucidePaintbrush2: LucideIcon;
+export declare const PaintbrushVertical: LucideIcon;
+export declare const PaintbrushVerticalIcon: LucideIcon;
+export declare const LucidePaintbrushVertical: LucideIcon;
+/** Stylo désactivé · Pen disabled */
+export declare const PenOff: LucideIcon;
+export declare const PenOffIcon: LucideIcon;
+export declare const LucidePenOff: LucideIcon;
+/** Plume de tracé vectoriel · Vector pen tool */
+export declare const PenTool: LucideIcon;
+export declare const PenToolIcon: LucideIcon;
+export declare const LucidePenTool: LucideIcon;
+/** Rédiger au crayon · Write in pencil */
+export declare const PencilLine: LucideIcon;
+export declare const PencilLineIcon: LucideIcon;
+export declare const LucidePencilLine: LucideIcon;
+/** Modification interdite · Editing locked */
+export declare const PencilOff: LucideIcon;
+export declare const PencilOffIcon: LucideIcon;
+export declare const LucidePencilOff: LucideIcon;
+/** Couteau pliant · Pocket knife */
+export declare const PocketKnife: LucideIcon;
+export declare const PocketKnifeIcon: LucideIcon;
+export declare const LucidePocketKnife: LucideIcon;
+/** Pointer du doigt · Point */
+export declare const Pointer: LucideIcon;
+export declare const PointerIcon: LucideIcon;
+export declare const LucidePointer: LucideIcon;
+/** Pointage désactivé · Pointing disabled */
+export declare const PointerOff: LucideIcon;
+export declare const PointerOffIcon: LucideIcon;
+export declare const LucidePointerOff: LucideIcon;
+/** Radioactivité · Radiation */
+export declare const Radiation: LucideIcon;
+export declare const RadiationIcon: LucideIcon;
+export declare const LucideRadiation: LucideIcon;
+/** Recycler · Recycle */
+export declare const Recycle: LucideIcon;
+export declare const RecycleIcon: LucideIcon;
+export declare const LucideRecycle: LucideIcon;
+/** Règle graduée · Ruler */
+export declare const Ruler: LucideIcon;
+export declare const RulerIcon: LucideIcon;
+export declare const LucideRuler: LucideIcon;
+/** Découper selon le pointillé · Cut along the line */
+export declare const ScissorsLineDashed: LucideIcon;
+export declare const ScissorsLineDashedIcon: LucideIcon;
+export declare const LucideScissorsLineDashed: LucideIcon;
+/** Pelle, terrassement · Shovel */
+export declare const Shovel: LucideIcon;
+export declare const ShovelIcon: LucideIcon;
+export declare const LucideShovel: LucideIcon;
+/** Peinture en aérosol · Spray paint */
+export declare const SprayCan: LucideIcon;
+export declare const SprayCanIcon: LucideIcon;
+export declare const LucideSprayCan: LucideIcon;
+/** Épée · Sword */
+export declare const Sword: LucideIcon;
+export declare const SwordIcon: LucideIcon;
+export declare const LucideSword: LucideIcon;
+/** Épées croisées, combat · Crossed swords */
+export declare const Swords: LucideIcon;
+export declare const SwordsIcon: LucideIcon;
+export declare const LucideSwords: LucideIcon;
+/** Tube à essai · Test tube */
+export declare const TestTube: LucideIcon;
+export declare const TestTubeIcon: LucideIcon;
+export declare const LucideTestTube: LucideIcon;
+/** Tube à essai incliné · Tilted test tube */
+export declare const TestTube2: LucideIcon;
+export declare const TestTube2Icon: LucideIcon;
+export declare const LucideTestTube2: LucideIcon;
+export declare const TestTubeDiagonal: LucideIcon;
+export declare const TestTubeDiagonalIcon: LucideIcon;
+export declare const LucideTestTubeDiagonal: LucideIcon;
+/** Série de tubes à essai · Test tube rack */
+export declare const TestTubes: LucideIcon;
+export declare const TestTubesIcon: LucideIcon;
+export declare const LucideTestTubes: LucideIcon;
+/** Baguette magique · Magic wand */
+export declare const Wand: LucideIcon;
+export declare const WandIcon: LucideIcon;
+export declare const LucideWand: LucideIcon;
+/** Poids, pesée · Weight */
+export declare const Weight: LucideIcon;
+export declare const WeightIcon: LucideIcon;
+export declare const LucideWeight: LucideIcon;
+/** Réduire la taille du texte · Decrease text size */
+export declare const AArrowDown: LucideIcon;
+export declare const AArrowDownIcon: LucideIcon;
+export declare const LucideAArrowDown: LucideIcon;
+/** Agrandir la taille du texte · Increase text size */
+export declare const AArrowUp: LucideIcon;
+export declare const AArrowUpIcon: LucideIcon;
+export declare const LucideAArrowUp: LucideIcon;
+/** Choisir la taille du texte · Text size */
+export declare const ALargeSmall: LucideIcon;
+export declare const ALargeSmallIcon: LucideIcon;
+export declare const LucideALargeSmall: LucideIcon;
+/** Accessibilité · Accessibility */
+export declare const Accessibility: LucideIcon;
+export declare const AccessibilityIcon: LucideIcon;
+export declare const LucideAccessibility: LucideIcon;
+/** Jarre en terre cuite · Clay jar — Une jarre de terre cuite à anses, ornée d'une frise de chevrons comme les poteries des potières d'Afrique de l'Ouest. */
+export declare const Amphora: LucideIcon;
+export declare const AmphoraIcon: LucideIcon;
+export declare const LucideAmphora: LucideIcon;
+/** En colère · Angry */
+export declare const Angry: LucideIcon;
+export declare const AngryIcon: LucideIcon;
+export declare const LucideAngry: LucideIcon;
+/** Agacé · Annoyed */
+export declare const Annoyed: LucideIcon;
+export declare const AnnoyedIcon: LucideIcon;
+export declare const LucideAnnoyed: LucideIcon;
+/** Graphique en aires · Area chart */
+export declare const AreaChart: LucideIcon;
+export declare const AreaChartIcon: LucideIcon;
+export declare const LucideAreaChart: LucideIcon;
+export declare const ChartArea: LucideIcon;
+export declare const ChartAreaIcon: LucideIcon;
+export declare const LucideChartArea: LucideIcon;
+/** Fauteuil · Armchair */
+export declare const Armchair: LucideIcon;
+export declare const ArmchairIcon: LucideIcon;
+export declare const LucideArmchair: LucideIcon;
+/** Colonnes croissantes sans axes · Rising columns */
+export declare const BarChart: LucideIcon;
+export declare const BarChartIcon: LucideIcon;
+export declare const LucideBarChart: LucideIcon;
+export declare const ChartNoAxesColumnIncreasing: LucideIcon;
+export declare const ChartNoAxesColumnIncreasingIcon: LucideIcon;
+export declare const LucideChartNoAxesColumnIncreasing: LucideIcon;
+/** Colonnes croissantes · Rising column chart */
+export declare const BarChart4: LucideIcon;
+export declare const BarChart4Icon: LucideIcon;
+export declare const LucideBarChart4: LucideIcon;
+export declare const ChartColumnIncreasing: LucideIcon;
+export declare const ChartColumnIncreasingIcon: LucideIcon;
+export declare const LucideChartColumnIncreasing: LucideIcon;
+/** Grandes colonnes · Big column chart */
+export declare const BarChartBig: LucideIcon;
+export declare const BarChartBigIcon: LucideIcon;
+export declare const LucideBarChartBig: LucideIcon;
+export declare const ChartColumnBig: LucideIcon;
+export declare const ChartColumnBigIcon: LucideIcon;
+export declare const LucideChartColumnBig: LucideIcon;
+/** Salle de bain · Bathroom */
+export declare const Bath: LucideIcon;
+export declare const BathIcon: LucideIcon;
+export declare const LucideBath: LucideIcon;
+/** Lit · Bed */
+export declare const Bed: LucideIcon;
+export declare const BedIcon: LucideIcon;
+export declare const LucideBed: LucideIcon;
+/** Chambre individuelle · Single room */
+export declare const BedSingle: LucideIcon;
+export declare const BedSingleIcon: LucideIcon;
+export declare const LucideBedSingle: LucideIcon;
+/** Jumelles d'observation · Binoculars */
+export declare const Binoculars: LucideIcon;
+export declare const BinocularsIcon: LucideIcon;
+export declare const LucideBinoculars: LucideIcon;
+/** Oiseau · Bird */
+export declare const Bird: LucideIcon;
+export declare const BirdIcon: LucideIcon;
+export declare const LucideBird: LucideIcon;
+/** Bitcoin · Bitcoin */
+export declare const Bitcoin: LucideIcon;
+export declare const BitcoinIcon: LucideIcon;
+export declare const LucideBitcoin: LucideIcon;
+/** Store à lamelles · Window blinds */
+export declare const Blinds: LucideIcon;
+export declare const BlindsIcon: LucideIcon;
+export declare const LucideBlinds: LucideIcon;
+/** Os à ronger · Chew bone */
+export declare const Bone: LucideIcon;
+export declare const BoneIcon: LucideIcon;
+export declare const LucideBone: LucideIcon;
+/** Boîte · Box */
+export declare const Box: LucideIcon;
+export declare const BoxIcon: LucideIcon;
+export declare const LucideBox: LucideIcon;
+/** Sélection rectangulaire · Box select */
+export declare const BoxSelect: LucideIcon;
+export declare const BoxSelectIcon: LucideIcon;
+export declare const LucideBoxSelect: LucideIcon;
+export declare const SquareDashed: LucideIcon;
+export declare const SquareDashedIcon: LucideIcon;
+export declare const LucideSquareDashed: LucideIcon;
+/** Mettre au premier plan · Bring to front */
+export declare const BringToFront: LucideIcon;
+export declare const BringToFrontIcon: LucideIcon;
+export declare const LucideBringToFront: LucideIcon;
+/** Graphique en chandeliers · Candlestick chart */
+export declare const CandlestickChart: LucideIcon;
+export declare const CandlestickChartIcon: LucideIcon;
+export declare const LucideCandlestickChart: LucideIcon;
+export declare const ChartCandlestick: LucideIcon;
+export declare const ChartCandlestickIcon: LucideIcon;
+export declare const LucideChartCandlestick: LucideIcon;
+/** Chat · Cat */
+export declare const Cat: LucideIcon;
+export declare const CatIcon: LucideIcon;
+export declare const LucideCat: LucideIcon;
+/** Trèfle · Club */
+export declare const Club: LucideIcon;
+export declare const ClubIcon: LucideIcon;
+export declare const LucideClub: LucideIcon;
+/** Licence Creative Commons · Creative Commons license */
+export declare const CreativeCommons: LucideIcon;
+export declare const CreativeCommonsIcon: LucideIcon;
+export declare const LucideCreativeCommons: LucideIcon;
+/** Croix · Cross */
+export declare const Cross: LucideIcon;
+export declare const CrossIcon: LucideIcon;
+export declare const LucideCross: LucideIcon;
+/** Dé : face un · Die face one */
+export declare const Dice1: LucideIcon;
+export declare const Dice1Icon: LucideIcon;
+export declare const LucideDice1: LucideIcon;
+/** Dé : face deux · Die face two */
+export declare const Dice2: LucideIcon;
+export declare const Dice2Icon: LucideIcon;
+export declare const LucideDice2: LucideIcon;
+/** Dé : face trois · Die face three */
+export declare const Dice3: LucideIcon;
+export declare const Dice3Icon: LucideIcon;
+export declare const LucideDice3: LucideIcon;
+/** Dé : face quatre · Die face four */
+export declare const Dice4: LucideIcon;
+export declare const Dice4Icon: LucideIcon;
+export declare const LucideDice4: LucideIcon;
+/** Dé : face cinq · Die face five */
+export declare const Dice5: LucideIcon;
+export declare const Dice5Icon: LucideIcon;
+export declare const LucideDice5: LucideIcon;
+/** Dé : face six · Die face six */
+export declare const Dice6: LucideIcon;
+export declare const Dice6Icon: LucideIcon;
+export declare const LucideDice6: LucideIcon;
+/** Jeu de dés · Dice game */
+export declare const Dices: LucideIcon;
+export declare const DicesIcon: LucideIcon;
+export declare const LucideDices: LucideIcon;
+/** Chien · Dog */
+export declare const Dog: LucideIcon;
+export declare const DogIcon: LucideIcon;
+export declare const LucideDog: LucideIcon;
+/** Effacer les filtres · Clear filters */
+export declare const FilterX: LucideIcon;
+export declare const FilterXIcon: LucideIcon;
+export declare const LucideFilterX: LucideIcon;
+/** Retirer le signalement · Remove flag */
+export declare const FlagOff: LucideIcon;
+export declare const FlagOffIcon: LucideIcon;
+export declare const LucideFlagOff: LucideIcon;
+/** Fanion vers la gauche · Pennant left */
+export declare const FlagTriangleLeft: LucideIcon;
+export declare const FlagTriangleLeftIcon: LucideIcon;
+export declare const LucideFlagTriangleLeft: LucideIcon;
+/** Fanion vers la droite · Pennant right */
+export declare const FlagTriangleRight: LucideIcon;
+export declare const FlagTriangleRightIcon: LucideIcon;
+export declare const LucideFlagTriangleRight: LucideIcon;
+/** Retourner horizontalement · Flip horizontally */
+export declare const FlipHorizontal: LucideIcon;
+export declare const FlipHorizontalIcon: LucideIcon;
+export declare const LucideFlipHorizontal: LucideIcon;
+/** Symétrie horizontale · Mirror horizontally */
+export declare const FlipHorizontal2: LucideIcon;
+export declare const FlipHorizontal2Icon: LucideIcon;
+export declare const LucideFlipHorizontal2: LucideIcon;
+/** Retourner verticalement · Flip vertically */
+export declare const FlipVertical: LucideIcon;
+export declare const FlipVerticalIcon: LucideIcon;
+export declare const LucideFlipVertical: LucideIcon;
+/** Symétrie verticale · Mirror vertically */
+export declare const FlipVertical2: LucideIcon;
+export declare const FlipVertical2Icon: LucideIcon;
+export declare const LucideFlipVertical2: LucideIcon;
+/** Pierre précieuse · Gemstone */
+export declare const Gem: LucideIcon;
+export declare const GemIcon: LucideIcon;
+export declare const LucideGem: LucideIcon;
+/** Mode fantôme · Ghost mode */
+export declare const Ghost: LucideIcon;
+export declare const GhostIcon: LucideIcon;
+export declare const LucideGhost: LucideIcon;
+/** Cadeau · Gift */
+export declare const Gift: LucideIcon;
+export declare const GiftIcon: LucideIcon;
+export declare const LucideGift: LucideIcon;
+/** But à atteindre · Goal */
+export declare const Goal: LucideIcon;
+export declare const GoalIcon: LucideIcon;
+export declare const LucideGoal: LucideIcon;
+/** Cœur brisé · Broken heart */
+export declare const HeartCrack: LucideIcon;
+export declare const HeartCrackIcon: LucideIcon;
+export declare const LucideHeartCrack: LucideIcon;
+/** Bénévolat · Volunteering */
+export declare const HeartHandshake: LucideIcon;
+export declare const HeartHandshakeIcon: LucideIcon;
+export declare const LucideHeartHandshake: LucideIcon;
+/** Ne plus aimer · Unlike */
+export declare const HeartOff: LucideIcon;
+export declare const HeartOffIcon: LucideIcon;
+export declare const LucideHeartOff: LucideIcon;
+/** Roupie indienne · Indian rupee */
+export declare const IndianRupee: LucideIcon;
+export declare const IndianRupeeIcon: LucideIcon;
+export declare const LucideIndianRupee: LucideIcon;
+/** Nouvelle itération (antihoraire) · Iterate counter-clockwise */
+export declare const IterationCcw: LucideIcon;
+export declare const IterationCcwIcon: LucideIcon;
+export declare const LucideIterationCcw: LucideIcon;
+/** Nouvelle itération (horaire) · Iterate clockwise */
+export declare const IterationCw: LucideIcon;
+export declare const IterationCwIcon: LucideIcon;
+export declare const LucideIterationCw: LucideIcon;
+/** Yen japonais · Japanese yen */
+export declare const JapaneseYen: LucideIcon;
+export declare const JapaneseYenIcon: LucideIcon;
+export declare const LucideJapaneseYen: LucideIcon;
+/** Chargement en moulinet · Pinwheel loading */
+export declare const LoaderPinwheel: LucideIcon;
+export declare const LoaderPinwheelIcon: LucideIcon;
+export declare const LucideLoaderPinwheel: LucideIcon;
+/** Verrou à serrure · Keyhole lock */
+export declare const LockKeyhole: LucideIcon;
+export declare const LockKeyholeIcon: LucideIcon;
+export declare const LucideLockKeyhole: LucideIcon;
+/** Médaille · Medal */
+export declare const Medal: LucideIcon;
+export declare const MedalIcon: LucideIcon;
+export declare const LucideMedal: LucideIcon;
+/** Pliage en papier · Paper folding */
+export declare const Origami: LucideIcon;
+export declare const OrigamiIcon: LucideIcon;
+export declare const LucideOrigami: LucideIcon;
+/** Carton fermé · Closed box */
+export declare const Package2: LucideIcon;
+export declare const Package2Icon: LucideIcon;
+export declare const LucidePackage2: LucideIcon;
+/** Colis ouvert · Open package */
+export declare const PackageOpen: LucideIcon;
+export declare const PackageOpenIcon: LucideIcon;
+export declare const LucidePackageOpen: LucideIcon;
+/** Rechercher un colis · Find a package */
+export declare const PackageSearch: LucideIcon;
+export declare const PackageSearchIcon: LucideIcon;
+export declare const LucidePackageSearch: LucideIcon;
+/** Colis refusé · Rejected package */
+export declare const PackageX: LucideIcon;
+export declare const PackageXIcon: LucideIcon;
+export declare const LucidePackageX: LucideIcon;
+/** Célébration · Celebration */
+export declare const PartyPopper: LucideIcon;
+export declare const PartyPopperIcon: LucideIcon;
+export declare const LucidePartyPopper: LucideIcon;
+/** Animaux de compagnie · Pets */
+export declare const PawPrint: LucideIcon;
+export declare const PawPrintIcon: LucideIcon;
+export declare const LucidePawPrint: LucideIcon;
+/** Peso philippin · Philippine peso */
+export declare const PhilippinePeso: LucideIcon;
+export declare const PhilippinePesoIcon: LucideIcon;
+export declare const LucidePhilippinePeso: LucideIcon;
+/** Extension, module · Extension */
+export declare const Puzzle: LucideIcon;
+export declare const PuzzleIcon: LucideIcon;
+export declare const LucidePuzzle: LucideIcon;
+/** Lièvre · Hare — Leuk le lièvre, héros malin des contes d'Afrique de l'Ouest : profil assis aux longues oreilles. */
+export declare const Rabbit: LucideIcon;
+export declare const RabbitIcon: LucideIcon;
+export declare const LucideRabbit: LucideIcon;
+/** Rongeur nuisible · Rodent pest */
+export declare const Rat: LucideIcon;
+export declare const RatIcon: LucideIcon;
+export declare const LucideRat: LucideIcon;
+/** Ruban de soutien · Awareness ribbon */
+export declare const Ribbon: LucideIcon;
+export declare const RibbonIcon: LucideIcon;
+export declare const LucideRibbon: LucideIcon;
+/** Fauteuil à bascule · Rocking chair */
+export declare const RockingChair: LucideIcon;
+export declare const RockingChairIcon: LucideIcon;
+export declare const LucideRockingChair: LucideIcon;
+/** Rouble russe · Russian ruble */
+export declare const RussianRuble: LucideIcon;
+export declare const RussianRubleIcon: LucideIcon;
+export declare const LucideRussianRuble: LucideIcon;
+/** Recherche validée · Search verified */
+export declare const SearchCheck: LucideIcon;
+export declare const SearchCheckIcon: LucideIcon;
+export declare const LucideSearchCheck: LucideIcon;
+/** Rechercher dans le code · Search code */
+export declare const SearchCode: LucideIcon;
+export declare const SearchCodeIcon: LucideIcon;
+export declare const LucideSearchCode: LucideIcon;
+/** Recherche impossible · Search unavailable */
+export declare const SearchSlash: LucideIcon;
+export declare const SearchSlashIcon: LucideIcon;
+export declare const LucideSearchSlash: LucideIcon;
+/** Accès bloqué par la sécurité · Blocked by security */
+export declare const ShieldBan: LucideIcon;
+export declare const ShieldBanIcon: LucideIcon;
+export declare const LucideShieldBan: LucideIcon;
+/** Vérification de sécurité en cours · Security check in progress */
+export declare const ShieldEllipsis: LucideIcon;
+export declare const ShieldEllipsisIcon: LucideIcon;
+export declare const LucideShieldEllipsis: LucideIcon;
+/** Protection partielle · Partial protection */
+export declare const ShieldHalf: LucideIcon;
+export declare const ShieldHalfIcon: LucideIcon;
+export declare const LucideShieldHalf: LucideIcon;
+/** Protection réduite · Reduced protection */
+export declare const ShieldMinus: LucideIcon;
+export declare const ShieldMinusIcon: LucideIcon;
+export declare const LucideShieldMinus: LucideIcon;
+/** Protection renforcée · Enhanced protection */
+export declare const ShieldPlus: LucideIcon;
+export declare const ShieldPlusIcon: LucideIcon;
+export declare const LucideShieldPlus: LucideIcon;
+/** Sécurité à vérifier · Security to check */
+export declare const ShieldQuestion: LucideIcon;
+export declare const ShieldQuestionIcon: LucideIcon;
+export declare const LucideShieldQuestion: LucideIcon;
+/** Douche · Shower */
+export declare const ShowerHead: LucideIcon;
+export declare const ShowerHeadIcon: LucideIcon;
+export declare const LucideShowerHead: LucideIcon;
+/** Danger mortel · Deadly hazard */
+export declare const Skull: LucideIcon;
+export declare const SkullIcon: LucideIcon;
+export declare const LucideSkull: LucideIcon;
+/** Curseurs de réglage · Adjustment sliders */
+export declare const Sliders: LucideIcon;
+export declare const SlidersIcon: LucideIcon;
+export declare const LucideSliders: LucideIcon;
+export declare const SlidersVertical: LucideIcon;
+export declare const SlidersVerticalIcon: LucideIcon;
+export declare const LucideSlidersVertical: LucideIcon;
+/** Lenteur · Slowness */
+export declare const Snail: LucideIcon;
+export declare const SnailIcon: LucideIcon;
+export declare const LucideSnail: LucideIcon;
+/** Canapé · Sofa */
+export declare const Sofa: LucideIcon;
+export declare const SofaIcon: LucideIcon;
+export declare const LucideSofa: LucideIcon;
+/** Tri ascendant · Sort ascending */
+export declare const SortAsc: LucideIcon;
+export declare const SortAscIcon: LucideIcon;
+export declare const LucideSortAsc: LucideIcon;
+export declare const ArrowUpNarrowWide: LucideIcon;
+export declare const ArrowUpNarrowWideIcon: LucideIcon;
+export declare const LucideArrowUpNarrowWide: LucideIcon;
+/** Tri descendant · Sort descending */
+export declare const SortDesc: LucideIcon;
+export declare const SortDescIcon: LucideIcon;
+export declare const LucideSortDesc: LucideIcon;
+export declare const ArrowDownWideNarrow: LucideIcon;
+export declare const ArrowDownWideNarrowIcon: LucideIcon;
+export declare const LucideArrowDownWideNarrow: LucideIcon;
+/** Pique (cartes) · Spade suit */
+export declare const Spade: LucideIcon;
+export declare const SpadeIcon: LucideIcon;
+export declare const LucideSpade: LucideIcon;
+/** Écureuil · Squirrel */
+export declare const Squirrel: LucideIcon;
+export declare const SquirrelIcon: LucideIcon;
+export declare const LucideSquirrel: LucideIcon;
+/** Étirer en largeur · Stretch horizontally */
+export declare const StretchHorizontal: LucideIcon;
+export declare const StretchHorizontalIcon: LucideIcon;
+export declare const LucideStretchHorizontal: LucideIcon;
+/** Étirer en hauteur · Stretch vertically */
+export declare const StretchVertical: LucideIcon;
+export declare const StretchVerticalIcon: LucideIcon;
+export declare const LucideStretchVertical: LucideIcon;
+/** Franc suisse · Swiss franc */
+export declare const SwissFranc: LucideIcon;
+export declare const SwissFrancIcon: LucideIcon;
+export declare const LucideSwissFranc: LucideIcon;
+/** Brique de construction · Building brick */
+export declare const ToyBrick: LucideIcon;
+export declare const ToyBrickIcon: LucideIcon;
+export declare const LucideToyBrick: LucideIcon;
+/** Corbeille · Bin */
+export declare const Trash: LucideIcon;
+export declare const TrashIcon: LucideIcon;
+export declare const LucideTrash: LucideIcon;
+/** Tortue · Tortoise */
+export declare const Turtle: LucideIcon;
+export declare const TurtleIcon: LucideIcon;
+export declare const LucideTurtle: LucideIcon;
+/** Lien coupé · Broken link */
+export declare const Unlink2: LucideIcon;
+export declare const Unlink2Icon: LucideIcon;
+export declare const LucideUnlink2: LucideIcon;
+/** Serrure ouverte · Unlocked keyhole */
+export declare const UnlockKeyhole: LucideIcon;
+export declare const UnlockKeyholeIcon: LucideIcon;
+export declare const LucideUnlockKeyhole: LucideIcon;
+export declare const LockKeyholeOpen: LucideIcon;
+export declare const LockKeyholeOpenIcon: LucideIcon;
+export declare const LucideLockKeyholeOpen: LucideIcon;
+/** Vote, scrutin · Vote */
+export declare const Vote: LucideIcon;
+export declare const VoteIcon: LucideIcon;
+export declare const LucideVote: LucideIcon;
+/** Ver de terre · Earthworm */
+export declare const Worm: LucideIcon;
+export declare const WormIcon: LucideIcon;
+export declare const LucideWorm: LucideIcon;
+/** Zoom avant · Zoom in */
+export declare const ZoomIn: LucideIcon;
+export declare const ZoomInIcon: LucideIcon;
+export declare const LucideZoomIn: LucideIcon;
+/** Zoom arrière · Zoom out */
+export declare const ZoomOut: LucideIcon;
+export declare const ZoomOutIcon: LucideIcon;
+export declare const LucideZoomOut: LucideIcon;
 /** Franc CFA (CEMAC) · Central African CFA franc */
 export declare const CfaFrancBeac: LucideIcon;
 export declare const CfaFrancBeacIcon: LucideIcon;

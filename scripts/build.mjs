@@ -221,8 +221,12 @@ const node = (name, body, fill, tone) => `{ name: ${JSON.stringify(name)}, nodes
 let ng = `// afroicons-angular v${version} — généré par scripts/build.mjs, ne pas modifier à la main.\nimport type { AfroiconNode } from "./types";\n\n// Icônes culturelles (id Afroicons)\n`;
 for (const i of icons) ng += `/** ${i.fr} · ${i.en} */\nexport const ${pascal(i.id)}: AfroiconNode = ${node(i.id, i.body, i.fill, i.tone)};\n`;
 ng += `\n// Icônes d'interface (noms Lucide, comme afroicons-ui)\n`;
-for (const i of ui) ng += `/** ${i.fr} · ${i.en} */\nexport const ${i.id}: AfroiconNode = ${node(i.id, i.body)};\n`;
-ng += `\n/** Toutes les icônes : provideAfroicons(afroicons). Pratique, mais tout entre dans le bundle. */\nexport const afroicons = { ${[...icons.map((i) => pascal(i.id)), ...ui.map((i) => i.id)].join(", ")} } as const;\n`;
+// Un nom d'interface déjà pris par une icône culturelle (Radio = le poste radio) est exporté et déclaré
+// avec le suffixe Icon (RadioIcon, name="radio-icon") : sinon les deux se disputeraient la même clé.
+const culturels = new Set(icons.map((i) => pascal(i.id)));
+const ngUi = (i) => (culturels.has(i.id) ? `${i.id}Icon` : i.id);
+for (const i of ui) ng += `/** ${i.fr} · ${i.en} */\nexport const ${ngUi(i)}: AfroiconNode = ${node(ngUi(i), i.body)};\n`;
+ng += `\n/** Toutes les icônes : provideAfroicons(afroicons). Pratique, mais tout entre dans le bundle. */\nexport const afroicons = { ${[...icons.map((i) => pascal(i.id)), ...ui.map(ngUi)].join(", ")} } as const;\n`;
 writeFileSync(NG, ng);
 console.log(`✔ ${icons.length + ui.length} icônes → packages/afroicons-angular`);
 
