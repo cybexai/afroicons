@@ -7,6 +7,7 @@ import { useApp } from "../state";
 import { zipIcons } from "./Overlays";
 import { AFRICA, ANIMS, ScreenView, VISIONS, VisionFilters, animCss, fixPrimary, mix, paletteOf, ratio, type Anim, type Pair, type Pins, type Vision } from "./PlaygroundLab";
 import { IClose, ISearch, Svg } from "./ui";
+import { inert } from "./Overlays";
 
 /* Bac à sable : les icônes dans des interfaces réalistes (application web, mobile, paiement, vitrine…), réglées
    comme le site du développeur, avec le code des icônes utilisées. Chaque emplacement est cliquable pour changer
@@ -107,7 +108,7 @@ const noPin = <T,>(o: Record<string, T>) => Object.fromEntries(Object.entries(o)
 const onlyPin = <T,>(o: Record<string, T>) => Object.fromEntries(Object.entries(o).filter(([k]) => isPin(k)));
 
 /* Icônes et boutons des maquettes : composants stables (pas de remontage à chaque réglage, le focus reste en place). */
-type Kit = { paint: (k: string, s: number, c?: string) => JSX.Element; pick: string | null; open: (k: string) => void; custom: Custs; slots: Slots; logo: string | null; size: number };
+type Kit = { paint: (k: string, s: number, c?: string, before?: boolean) => JSX.Element; before?: boolean; pick: string | null; open: (k: string) => void; custom: Custs; slots: Slots; logo: string | null; size: number };
 const KitCtx = createContext<Kit | null>(null);
 /** Une icône d'emplacement : cliquable pour la remplacer ou la personnaliser. */
 function I({ k, s, c }: { k: string; s?: number; c?: string }) {
@@ -116,7 +117,7 @@ function I({ k, s, c }: { k: string; s?: number; c?: string }) {
   const i = byId[x.slots[k]] ?? byId[BASE[k]];
   if (!i) return null;
   const label = a.tt("Remplacer ou personnaliser : ", "Swap or customise: ") + (a.lang === "en" ? i.en : i.fr);
-  return <button type="button" className={"pgi" + (x.pick === k ? " on" : "") + (x.custom[k] ? " cu" : "")} title={label} aria-label={label} onClick={(e) => { e.stopPropagation(); x.open(k); }}>{x.paint(k, sz, c)}</button>;
+  return <button type="button" className={"pgi" + (x.pick === k ? " on" : "") + (x.custom[k] ? " cu" : "")} title={label} aria-label={label} onClick={(e) => { e.stopPropagation(); x.open(k); }}>{x.paint(k, sz, c, x.before)}</button>;
 }
 /** Un bouton de maquette : cliquer n'importe où dessus change son icône. */
 function B({ k, ghost, wide, after, children }: { k: string; ghost?: boolean; wide?: boolean; after?: boolean; children: string }) {
@@ -124,6 +125,9 @@ function B({ k, ghost, wide, after, children }: { k: string; ghost?: boolean; wi
   const icon = <I k={k} s={x.size - 2} c={ghost ? undefined : "#fff"} />;
   return <span className={"pgbtn" + (ghost ? " ghost" : "") + (wide ? " wide" : "") + (x.pick === k ? " on" : "")} role="presentation" onClick={(e) => { e.stopPropagation(); x.open(k); }}>{after ? <>{children}{icon}</> : <>{icon}{children}</>}</span>;
 }
+
+/** Pour l'« avant » : l'icône d'interface que remplace chaque équivalent africain. */
+const UI_OF: Record<string, string> = Object.fromEntries(Object.entries(AFRICA).map(([ui, af]) => [af, ui]));
 
 /** Grand écran : l'icône sélectionnée s'édite dans un panneau fixe à droite (sinon, dans une fenêtre). */
 function useWide() {
@@ -145,7 +149,10 @@ export function Playground() {
   const [pick, setPick] = useState<string | null>(null);
   const [view, setView] = useState<View>("all");
   const [flash, setFlash] = useState(false); // « Les montrer » : entoure un instant toutes les icônes modifiables
-  const [lucide, setLucide] = useState(false);
+  const [lucide, setLucide] = useState(false); // comparaison avant / après
+  const [cut, setCut] = useState(50); // position du curseur (% de la largeur) : avant à gauche, après à droite
+  const wipe = useRef<HTMLDivElement>(null);
+  const drag = (e: React.PointerEvent) => { const r = wipe.current?.getBoundingClientRect(); if (r) setCut(Math.max(0, Math.min(100, ((e.clientX - r.left) / r.width) * 100))); };
   const [L, setL] = useState<Record<string, ComponentType<any>> | null>(null);
   const [tab, setTab] = useState<"react" | "angular" | "html" | "css">("react");
   const [vision, setVision] = useState<Vision>("none");
@@ -264,12 +271,13 @@ export function Playground() {
   const label = (k: string) => { const i = byId[({ ...BASE, ...PRESETS.find((p) => p.id === preset)!.slots } as Slots)[k]]; return i ? (a.lang === "en" ? i.en : i.fr) : nm(k); };
 
   /** Le dessin d'une icône d'emplacement, avec sa personnalisation (couleur, taille, fond, rotation…). */
-  const paint = (k: string, s: number, c?: string) => {
+  const paint = (k: string, s: number, c?: string, before = false) => {
     const i = byId[slots[k]] ?? byId[BASE[k]], cu = custom[k] ?? {};
     if (!i) return <span />;
     const size = Math.round(s * (cu.scale ?? 1)), w = cu.stroke ?? cfg.stroke;
     const color = cu.color ?? c ?? (cfg.tint === "primary" ? cfg.primary : "currentColor");
-    const Lc = lucide && L && i.lucide ? L[i.lucide] : null;
+    const ui = i.lucide ? i : byId[UI_OF[i.id]];
+    const Lc = before && L && ui?.lucide ? L[ui.lucide] : null;
     const transform = [cu.rot && `rotate(${cu.rot}deg)`, cu.flip && "scaleX(-1)"].filter(Boolean).join(" ") || undefined;
     const svg = <span className="pgdraw" style={{ color, transform }}>{Lc ? createElement(Lc, { size, strokeWidth: w }) : <Svg i={i} o={{ s: size, w, style: cu.style ?? cfg.style, c: "currentColor", tone: cu.tone }} />}</span>;
     return cu.shape ? <span className="pgshape" style={{ background: cu.bg ?? cfg.primary, padding: Math.round(size * 0.28), borderRadius: cu.shape === "circle" ? "50%" : Math.round(size * 0.32) }}>{svg}</span> : svg;
@@ -447,12 +455,12 @@ export function Playground() {
               <button className="ib" disabled={!hist.current.past.length} onClick={() => step(true)} title={a.tt("Annuler", "Undo") + " (" + MOD + "Z)"} aria-label={a.tt("Annuler", "Undo")}>↶</button>
               <button className="ib" disabled={!hist.current.future.length} onClick={() => step(false)} title={a.tt("Rétablir", "Redo") + " (" + (IS_MAC ? "⇧⌘Z" : "Ctrl Y") + ")"} aria-label={a.tt("Rétablir", "Redo")}>↷</button>
             </span>
-            <button className={"btn pgcmp" + (lucide ? " on" : "")} aria-pressed={lucide} onClick={() => setLucide((v) => !v)}>{lucide ? a.tt("Avant : Lucide", "Before: Lucide") : a.tt("Comparer avant / après", "Compare before / after")}</button>
+            <button className={"btn pgcmp" + (lucide ? " on" : "")} aria-pressed={lucide} onClick={() => setLucide((v) => !v)}>{lucide ? a.tt("Fermer la comparaison", "Close comparison") : a.tt("Comparer avant / après", "Compare before / after")}</button>
             <span className="pgbarsp" />
             <button className="btn" onClick={share}>{a.tt("Copier le lien", "Copy link")}</button>
             <button className="btn" onClick={reset}>{a.tt("Réinitialiser", "Reset")}</button>
           </div>
-          {lucide && <small className="pgnote pgcmpn">{L ? a.tt("Avant : les icônes d'interface en version Lucide d'origine (les icônes culturelles n'ont pas d'équivalent). Recliquez pour revenir à Afroicons.", "Before: interface icons in their original Lucide version (cultural icons have no equivalent). Click again to go back to Afroicons.") : a.tt("Chargement de Lucide…", "Loading Lucide…")}</small>}
+          {lucide && <small className="pgnote pgcmpn">{L ? (view === "screen" ? a.tt("La comparaison porte sur les maquettes : choisissez Tout, Application web, Mobile ou Site vitrine.", "The comparison covers the mockups: choose All, Web app, Mobile or Website.") : a.tt("Glissez le curseur : à gauche, les icônes génériques (Lucide) ; à droite, Afroicons. Une icône sans équivalent Lucide reste la même des deux côtés.", "Drag the slider: generic icons (Lucide) on the left, Afroicons on the right. An icon without a Lucide equivalent stays the same on both sides.")) : a.tt("Chargement de Lucide…", "Loading Lucide…")}</small>}
           <div className="pgviews" role="tablist" aria-label={a.tt("Maquettes", "Mockups")}>
             {([["all", a.tt("Tout", "All")], ["web", a.tt("Application web", "Web app")], ["mobile", a.tt("Mobile", "Mobile")], ["site", a.tt("Site vitrine", "Website")], ["screen", a.tt("✦ Votre écran", "✦ Your screen")]] as [View, string][]).map(([v, l]) => <button key={v} role="tab" aria-selected={view === v} className={"cat" + (view === v ? " on" : "")} onClick={() => setView(v)}>{l}</button>)}
           </div>
@@ -462,7 +470,10 @@ export function Playground() {
             <button className="btn" onClick={(e) => { e.stopPropagation(); pulse("flash", setFlash, 2400); }}>{a.tt("Les montrer", "Show them")}</button>
           </div>
           <VisionFilters />
-          <div className={"pgstage v-" + view + (flash ? " flash" : "") + (cfg.anim !== "none" ? " an-" + cfg.anim : "") + (replay ? " an-play" : "")} style={{ ...vars, filter: VISIONS.find((v) => v.id === vision)!.css || undefined }}>
+          {(() => {
+            const cls = "pgstage v-" + view + (flash ? " flash" : "") + (cfg.anim !== "none" ? " an-" + cfg.anim : "") + (replay ? " an-play" : "");
+            const st = { ...vars, filter: VISIONS.find((v) => v.id === vision)!.css || undefined };
+            const body = <>
             {view === "screen" && <ScreenView image={shot} setImage={loadShot} clear={clearShot} pins={pins}
               move={(k, x, y) => setPins((p) => ({ ...p, [k]: { x, y } }))} add={addPin} open={(k) => setPick(k)}
               render={(k) => (slots[k] ? <span className={"pgi" + (pick === k ? " on" : "") + (custom[k] ? " cu" : "")}>{paint(k, cfg.size + 4, cfg.primary)}</span> : null)}
@@ -520,7 +531,17 @@ export function Playground() {
               </div>
               <div className="pgfeat">{(["f1", "f2", "f3"] as const).map((k) => <div key={k}><span className="pgfic"><I k={k} s={cfg.size + 12} c={cfg.primary} /></span><b>{nm(k)}</b><small>{a.tt("Une phrase qui présente la fonctionnalité.", "A sentence introducing the feature.")}</small></div>)}</div>
             </div>)}
-          </div>
+                      </>;
+            if (!lucide || view === "screen") return <div className={cls} style={st}>{body}</div>;
+            // Avant / après : la même maquette deux fois ; l'« avant » (Lucide) recouvre la gauche jusqu'au curseur.
+            return <div className="pgwipe" ref={wipe}>
+              <div className={cls} style={st}>{body}</div>
+              <KitCtx.Provider value={{ ...kit, before: true }}><div className={cls + " pgbefore"} style={{ ...st, clipPath: `inset(0 ${100 - cut}% 0 0)` }} aria-hidden="true" {...inert(true)}>{body}</div></KitCtx.Provider>
+              <span className="pgwlab l">{a.tt("Avant · Lucide", "Before · Lucide")}</span><span className="pgwlab r">{a.tt("Après · Afroicons", "After · Afroicons")}</span>
+              <div className="pgwh" style={{ left: cut + "%" }} onPointerDown={(e) => { (e.target as HTMLElement).setPointerCapture(e.pointerId); drag(e); }} onPointerMove={(e) => e.buttons && drag(e)}><span aria-hidden="true">⇆</span></div>
+              <input className="pgwr" type="range" min={0} max={100} value={Math.round(cut)} onChange={(e) => setCut(+e.target.value)} aria-label={a.tt("Curseur avant / après", "Before / after slider")} />
+            </div>;
+          })()}
 
           {/* Lisibilité : les icônes utilisées aux tailles courantes, sur fond clair et sombre. */}
           <div className="pgsizes">
