@@ -28,7 +28,7 @@ export function Nav() {
     if (!menuOpen) return;
     const close = (e: MouseEvent) => { if (!(e.target as HTMLElement).closest(".menum")) setMenuOpen(false); };
     const esc = (e: KeyboardEvent) => { if (e.key === "Escape") setMenuOpen(false); };
-    const wide = matchMedia("(min-width: 1321px)");
+    const wide = matchMedia("(min-width: 1401px)");
     const off = () => { if (wide.matches) setMenuOpen(false); };
     document.addEventListener("click", close);
     document.addEventListener("keydown", esc);

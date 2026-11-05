@@ -125,8 +125,17 @@ function B({ k, ghost, wide, after, children }: { k: string; ghost?: boolean; wi
   return <span className={"pgbtn" + (ghost ? " ghost" : "") + (wide ? " wide" : "") + (x.pick === k ? " on" : "")} role="presentation" onClick={(e) => { e.stopPropagation(); x.open(k); }}>{after ? <>{children}{icon}</> : <>{icon}{children}</>}</span>;
 }
 
+/** Grand écran : l'icône sélectionnée s'édite dans un panneau fixe à droite (sinon, dans une fenêtre). */
+function useWide() {
+  const q = "(min-width: 1280px)";
+  const [w, setW] = useState(() => typeof matchMedia !== "undefined" && matchMedia(q).matches);
+  useEffect(() => { const m = matchMedia(q), f = () => setW(m.matches); m.addEventListener("change", f); return () => m.removeEventListener("change", f); }, []);
+  return w;
+}
+
 export function Playground() {
   const a = useApp();
+  const wide = useWide();
   const [init] = useState(initial);
   const [preset, setPreset] = useState(init.preset);
   const [slots, setSlots] = useState<Slots>({ ...BASE, ...init.slots });
@@ -375,6 +384,15 @@ export function Playground() {
   }, [used, cfg, tab, ink, bg, surface, muted, line, custom, slots, a.lang]); // eslint-disable-line react-hooks/exhaustive-deps
   const download = () => zipIcons(used, { ...a, style: cfg.style, stroke: cfg.stroke, color: null } as typeof a, `afroicons-${cfg.name.toLowerCase().replace(/[^a-z0-9]+/g, "-") || "app"}-${used.length}.zip`);
   const show = (v: View) => view === "all" || view === v;
+  const picker = (pick || wide) ? <Picker key={pick ?? "aucune"} inline={wide} empty={!pick} used={used} select={(id) => { const k = Object.keys(slots).find((x) => slots[x] === id); if (k) setPick(k); }} onClose={() => setPick(null)} onPick={(id) => { if (!pick) return; setSlots((s) => ({ ...s, [pick]: id })); if (!wide) setPick(null); }} current={pick ? slots[pick] : ""}
+        tab={dtab} setTab={setDtab} cfg={cfg} preview={pick ? <div className="pgprev" style={vars}>{paint(pick, 56)}</div> : <span />}
+        cust={(pick && custom[pick]) || {}}
+        setCust={(p) => pick && setCustom((m) => { const n = cleanCust({ ...m[pick], ...p }); const o = { ...m }; if (n) o[pick] = n; else delete o[pick]; return o; })}
+        resetCust={() => pick && setCustom((m) => { const o = { ...m }; delete o[pick]; return o; })}
+        total={Object.keys(custom).length}
+        resetAll={() => { setCustom({}); a.toast(a.tt("Toutes les personnalisations sont effacées", "All customisations cleared")); }}
+        african={pick ? AFRICA[slots[pick]] : undefined} remove={pick && isPin(pick) ? () => removePin(pick) : undefined}
+        applyAll={() => { const cu = pick && custom[pick]; if (!cu) return; setCustom(Object.fromEntries(Object.keys(slots).map((k) => [k, cu]))); a.toast(a.tt("Appliqué à toutes les icônes", "Applied to every icon")); }} /> : null;
 
   return (
     <KitCtx.Provider value={kit}>
@@ -412,9 +430,6 @@ export function Playground() {
             <select aria-label={a.tt("Animation au survol", "Hover animation")} value={cfg.anim} onChange={(e) => { set({ anim: e.target.value as Anim }); pulse("replay", setReplay, 900); }}>{ANIMS.map((x) => <option key={x.id} value={x.id}>{a.tt(x.fr, x.en)}</option>)}</select>
             <button className="btn" disabled={cfg.anim === "none"} onClick={() => pulse("replay", setReplay, 900)}>{a.tt("Rejouer", "Replay")}</button>
           </div></div>
-          <label className="pgsw"><input type="checkbox" checked={lucide} onChange={(e) => setLucide(e.target.checked)} />{a.tt("Comparer avec Lucide (avant / après)", "Compare with Lucide (before / after)")}</label>
-          {lucide && !L && <small className="pgnote">{a.tt("Chargement de Lucide…", "Loading Lucide…")}</small>}
-          {lucide && L && <small className="pgnote">{a.tt("Icônes d'interface : version Lucide d'origine. Les icônes culturelles n'ont pas d'équivalent Lucide.", "Interface icons: original Lucide version. Cultural icons have no Lucide equivalent.")}</small>}
           <h3>{a.tt("Accessibilité", "Accessibility")}</h3>
           <label className="pgfield"><span>{a.tt("Vision", "Vision")}</span><select value={vision} onChange={(e) => setVision(e.target.value as Vision)}>{VISIONS.map((v) => <option key={v.id} value={v.id}>{a.tt(v.fr, v.en)}</option>)}</select></label>
           <ul className="pgcontrast">{report.map((x) => (
@@ -423,17 +438,21 @@ export function Playground() {
             </li>
           ))}</ul>
           {fixable ? <button className="btn pgfix" onClick={fix}>{a.tt("Corriger la couleur automatiquement", "Fix the colour automatically")}</button> : <small className="pgnote">{a.tt("Contrastes conformes aux règles WCAG pour les icônes (3 : 1) et le texte des boutons (4,5 : 1).", "Contrast meets WCAG rules for icons (3:1) and button text (4.5:1).")}</small>}
-          <div className="pgacts">
-            <button className="btn" disabled={!hist.current.past.length} onClick={() => step(true)} title={MOD + "Z"}>{a.tt("↶ Annuler", "↶ Undo")}</button>
-            <button className="btn" disabled={!hist.current.future.length} onClick={() => step(false)} title={IS_MAC ? "⇧⌘Z" : "Ctrl Y"}>{a.tt("↷ Rétablir", "↷ Redo")}</button>
-          </div>
-          <div className="pgacts">
-            <button className="btn" onClick={share}>{a.tt("Copier le lien", "Copy link")}</button>
-            <button className="btn" onClick={reset}>{a.tt("Réinitialiser", "Reset")}</button>
-          </div>
         </aside>
 
         <div className="pgright">
+          {/* Barre d'actions : historique, comparaison avant / après, partage. */}
+          <div className="pgbar" onClick={(e) => e.stopPropagation()}>
+            <span className="pgbarg">
+              <button className="ib" disabled={!hist.current.past.length} onClick={() => step(true)} title={a.tt("Annuler", "Undo") + " (" + MOD + "Z)"} aria-label={a.tt("Annuler", "Undo")}>↶</button>
+              <button className="ib" disabled={!hist.current.future.length} onClick={() => step(false)} title={a.tt("Rétablir", "Redo") + " (" + (IS_MAC ? "⇧⌘Z" : "Ctrl Y") + ")"} aria-label={a.tt("Rétablir", "Redo")}>↷</button>
+            </span>
+            <button className={"btn pgcmp" + (lucide ? " on" : "")} aria-pressed={lucide} onClick={() => setLucide((v) => !v)}>{lucide ? a.tt("Avant : Lucide", "Before: Lucide") : a.tt("Comparer avant / après", "Compare before / after")}</button>
+            <span className="pgbarsp" />
+            <button className="btn" onClick={share}>{a.tt("Copier le lien", "Copy link")}</button>
+            <button className="btn" onClick={reset}>{a.tt("Réinitialiser", "Reset")}</button>
+          </div>
+          {lucide && <small className="pgnote pgcmpn">{L ? a.tt("Avant : les icônes d'interface en version Lucide d'origine (les icônes culturelles n'ont pas d'équivalent). Recliquez pour revenir à Afroicons.", "Before: interface icons in their original Lucide version (cultural icons have no equivalent). Click again to go back to Afroicons.") : a.tt("Chargement de Lucide…", "Loading Lucide…")}</small>}
           <div className="pgviews" role="tablist" aria-label={a.tt("Maquettes", "Mockups")}>
             {([["all", a.tt("Tout", "All")], ["web", a.tt("Application web", "Web app")], ["mobile", a.tt("Mobile", "Mobile")], ["site", a.tt("Site vitrine", "Website")], ["screen", a.tt("✦ Votre écran", "✦ Your screen")]] as [View, string][]).map(([v, l]) => <button key={v} role="tab" aria-selected={view === v} className={"cat" + (view === v ? " on" : "")} onClick={() => setView(v)}>{l}</button>)}
           </div>
@@ -513,17 +532,10 @@ export function Playground() {
             ))}
           </div>
         </div>
+        {wide && picker}
       </div>
 
-      {pick && <Picker onClose={() => setPick(null)} onPick={(id) => { setSlots((s) => ({ ...s, [pick]: id })); setPick(null); }} current={slots[pick]}
-        tab={dtab} setTab={setDtab} cfg={cfg} preview={<div className="pgprev" style={vars}>{paint(pick, 56)}</div>}
-        cust={custom[pick] ?? {}}
-        setCust={(p) => setCustom((m) => { const n = cleanCust({ ...m[pick], ...p }); const o = { ...m }; if (n) o[pick] = n; else delete o[pick]; return o; })}
-        resetCust={() => setCustom((m) => { const o = { ...m }; delete o[pick]; return o; })}
-        total={Object.keys(custom).length}
-        resetAll={() => { setCustom({}); a.toast(a.tt("Toutes les personnalisations sont effacées", "All customisations cleared")); }}
-        african={AFRICA[slots[pick]]} remove={isPin(pick) ? () => removePin(pick) : undefined}
-        applyAll={() => { const cu = custom[pick]; if (!cu) return; setCustom(Object.fromEntries(Object.keys(slots).map((k) => [k, cu]))); a.toast(a.tt("Appliqué à toutes les icônes", "Applied to every icon")); }} />}
+      {!wide && picker}
 
       <div className="code pgcode" onClick={(e) => e.stopPropagation()}>
         <div className="pgcodeh">
@@ -549,28 +561,41 @@ const COLS: { id: Collection | "all"; fr: string; en: string; list: Icon[] }[] =
 type PickerProps = {
   onClose: () => void; onPick: (id: string) => void; current: string; tab: "swap" | "edit"; setTab: (t: "swap" | "edit") => void;
   cfg: Cfg; preview: JSX.Element; cust: Cust; setCust: (p: Partial<Cust>) => void; resetCust: () => void; applyAll: () => void; resetAll: () => void; total: number; african?: string; remove?: () => void;
+  /** Panneau fixe à droite (grand écran) au lieu d'une fenêtre. */
+  inline?: boolean;
+  /** Panneau sans icône sélectionnée : on propose les icônes de la maquette. */
+  empty?: boolean; used?: Icon[]; select?: (id: string) => void;
 };
-function Picker({ onClose, onPick, current, tab, setTab, cfg, preview, cust, setCust, resetCust, applyAll, resetAll, total, african, remove }: PickerProps) {
+function Picker({ onClose, onPick, current, tab, setTab, cfg, preview, cust, setCust, resetCust, applyAll, resetAll, total, african, remove, inline, empty, used = [], select }: PickerProps) {
   const a = useApp();
   const icon = byId[current];
   const [q, setQ] = useState("");
-  const [col, setCol] = useState<Collection | "all">(colOf(current));
+  const [col, setCol] = useState<Collection | "all">(current ? colOf(current) : "all");
   const list = useMemo(() => rank(COLS.find((c) => c.id === col)!.list, q).slice(0, 72), [q, col]);
   const dlg = useRef<HTMLDivElement>(null);
   useEffect(() => { const f = (e: KeyboardEvent) => e.key === "Escape" && onClose(); addEventListener("keydown", f); return () => removeEventListener("keydown", f); }, [onClose]);
   // Le focus reste dans la fenêtre (Tab boucle) et revient à l'icône d'origine à la fermeture.
-  useEffect(() => { const back = document.activeElement as HTMLElement | null; if (!dlg.current?.contains(document.activeElement)) dlg.current?.querySelector<HTMLElement>("input, [role=tab].on")?.focus(); return () => { if (back?.isConnected) back.focus({ preventScroll: true }); }; }, []);
+  useEffect(() => { if (inline) return; const back = document.activeElement as HTMLElement | null; if (!dlg.current?.contains(document.activeElement)) dlg.current?.querySelector<HTMLElement>("input, [role=tab].on")?.focus(); return () => { if (back?.isConnected) back.focus({ preventScroll: true }); }; }, [inline]);
   const trap = (e: React.KeyboardEvent) => {
-    if (e.key !== "Tab" || !dlg.current) return;
+    if (inline || e.key !== "Tab" || !dlg.current) return;
     const f = [...dlg.current.querySelectorAll<HTMLElement>("button:not([disabled]), input, select, [tabindex='0']")].filter((x) => x.offsetParent !== null);
     if (!f.length) return;
     const [first, last] = [f[0], f[f.length - 1]];
     if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); } else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   };
+  if (inline && empty) return (
+    <aside className="pginsp pgpick inl" onClick={(e) => e.stopPropagation()} aria-label={a.tt("Élément sélectionné", "Selected element")}>
+      <div className="pgink">{a.tt("Élément sélectionné", "Selected element")}</div>
+      <p className="pgnote">{a.tt("Cliquez une icône dans la maquette pour la remplacer ou la personnaliser. Ou choisissez-en une ici :", "Click an icon in the mockup to swap or customise it. Or pick one here:")}</p>
+      <div className="pgpickg pgused">{used.map((i) => <button key={i.id} title={a.lang === "en" ? i.en : i.fr} onClick={() => select?.(i.id)}><Svg i={i} o={{ s: 22 }} /><small>{a.lang === "en" ? i.en : i.fr}</small></button>)}</div>
+    </aside>
+  );
+  const Wrap = inline ? "aside" : "div";
   return (
     <>
-      <div className={"pgveil" + (tab === "edit" ? " light" : "")} onClick={onClose} />
-      <div className={"pgpick" + (tab === "edit" ? " edit" : "")} role="dialog" aria-modal="true" aria-label={a.tt("Remplacer ou personnaliser l'icône", "Swap or customise the icon")} ref={dlg} onKeyDown={trap} onClick={(e) => e.stopPropagation()}>
+      {!inline && <div className={"pgveil" + (tab === "edit" ? " light" : "")} onClick={onClose} />}
+      <Wrap className={"pgpick" + (tab === "edit" ? " edit" : "") + (inline ? " pginsp inl" : "")} {...(inline ? { "aria-label": a.tt("Élément sélectionné", "Selected element") } : { role: "dialog", "aria-modal": "true", "aria-label": a.tt("Remplacer ou personnaliser l'icône", "Swap or customise the icon") })} ref={dlg as never} onKeyDown={trap} onClick={(e: React.MouseEvent) => e.stopPropagation()}>
+        {inline && <div className="pgink">{a.tt("Élément sélectionné", "Selected element")}</div>}
         <div className="pgpickt" role="tablist">
           <button role="tab" aria-selected={tab === "swap"} className={tab === "swap" ? "on" : ""} onClick={() => setTab("swap")}>{a.tt("Remplacer", "Swap")}</button>
           <button role="tab" aria-selected={tab === "edit"} className={tab === "edit" ? "on" : ""} onClick={() => setTab("edit")}>{a.tt("Personnaliser", "Customise")}{Object.keys(cust).length ? <i className="pgdot" /> : null}</button>
@@ -578,13 +603,13 @@ function Picker({ onClose, onPick, current, tab, setTab, cfg, preview, cust, set
           <button className="ib" aria-label={a.tt("Fermer", "Close")} onClick={onClose}><IClose /></button>
         </div>
         {tab === "edit" ? <Customize icon={icon} cfg={cfg} preview={preview} cust={cust} set={setCust} reset={resetCust} applyAll={applyAll} resetAll={resetAll} total={total} /> : <>
-        <div className="pgpickh"><label className="sbox"><ISearch s={18} /><input autoFocus value={q} onChange={(e) => setQ(e.target.value)} onKeyDown={(e) => e.key === "Enter" && list[0] && onPick(list[0].id)} placeholder={a.tt("Chercher : panier, cauri, bell…", "Search: basket, cowrie, bell…")} /></label></div>
+        <div className="pgpickh"><label className="sbox"><ISearch s={18} /><input autoFocus={!inline} value={q} onChange={(e) => setQ(e.target.value)} onKeyDown={(e) => e.key === "Enter" && list[0] && onPick(list[0].id)} placeholder={a.tt("Chercher : panier, cauri, bell…", "Search: basket, cowrie, bell…")} /></label></div>
         {african && <button className="pgafr" onClick={() => onPick(african)}><Svg i={byId[african]} o={{ s: 22 }} /><span>{a.tt("Équivalent africain : ", "African counterpart: ")}<b>{a.lang === "en" ? byId[african].en : byId[african].fr}</b></span><em>{a.tt("Utiliser", "Use")}</em></button>}
         {remove && <button className="pgafr del" onClick={remove}><span>{a.tt("Retirer cette icône de la capture", "Remove this icon from the screenshot")}</span></button>}
         <div className="pgchips pgpickc">{COLS.map((c) => <button key={c.id} className={"cat" + (col === c.id ? " on" : "")} onClick={() => setCol(c.id)}>{a.tt(c.fr, c.en)}</button>)}</div>
         <div className="pgpickg">{list.length ? list.map((i) => <button key={i.id} className={i.id === current ? "on" : ""} title={a.lang === "en" ? i.en : i.fr} onClick={() => onPick(i.id)}><Svg i={i} o={{ s: 24 }} /><small>{a.lang === "en" ? i.en : i.fr}</small></button>) : <p className="pgnote">{a.tt("Aucune icône trouvée.", "No icon found.")}</p>}</div>
         </>}
-      </div>
+      </Wrap>
     </>
   );
 }

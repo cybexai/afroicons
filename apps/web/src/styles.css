@@ -814,6 +814,21 @@ a.eyebrow:hover{color:var(--ink);border-color:var(--muted)}
 .pgsz{display:grid;gap:8px;padding:12px 14px;border-radius:14px;background:#fff;color:#1F1A15;border:1px solid var(--line)}.pgsz.dk{background:#14110E;color:#F3EADC;border-color:#14110E}
 .pgsz>div{display:grid;grid-template-columns:44px minmax(0,1fr);align-items:center;gap:10px}.pgsz small{font:600 11px "JetBrains Mono",monospace;opacity:.6}
 .pgsz span{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+/* Bac à sable, grand écran : réglages | maquettes | élément sélectionné */
+@media (min-width:1280px){
+  .pglay{grid-template-columns:260px minmax(0,1fr) 300px}
+  .pgpick.pginsp.inl{position:sticky;top:84px;left:auto;transform:none;z-index:1;width:auto;max-height:calc(100vh - 100px);box-shadow:none;align-self:start}
+}
+.pgink{font:700 11.5px "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--a1);padding:14px 16px 0}
+.pginsp.inl>.pgnote{padding:6px 16px 0;margin:0}
+.pgused{padding:12px 16px 16px}
+.pgbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px;border:1px solid var(--line);border-radius:16px;background:var(--card)}
+.pgbar .btn{height:36px;padding:0 14px;font-size:13px}
+.pgbarg{display:inline-flex;gap:4px}.pgbarg .ib{width:36px;height:36px;font-size:17px}
+.pgbarg .ib:disabled{opacity:.35;cursor:default}
+.pgbarsp{flex:1}
+.pgcmp.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.pgcmpn{margin:-6px 4px 0}
 .pgveil{position:fixed;inset:0;z-index:59;background:rgba(20,17,14,.35)}
 .pgpickc{padding:10px 14px 0}
 .pgcodeh{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}.pgcodeh h4{margin:0 auto 0 0}
