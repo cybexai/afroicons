@@ -2516,7 +2516,11 @@
    "champ",
    "agriculture",
    "farming",
-   "attelage"
+   "attelage",
+   "outil",
+   "tool",
+   "bœufs",
+   "oxen"
   ],
   "since": "0.10",
   "body": "<path d=\"M8.4 15.4L16 19.8H9.2C8.6 19.8 8.2 19.4 8.2 18.8Z\"/><path d=\"M3.2 3.6C4.6 3.6 5.6 4.4 6 5.6L8.8 16\"/><path d=\"M7 11.4L21 9.4V11.8\"/><path d=\"M12.6 10.6L12.2 17.6\"/>",
@@ -2536,7 +2540,12 @@
    "garden",
    "champ",
    "agriculture",
-   "creuser"
+   "creuser",
+   "pelle",
+   "shovel",
+   "outil",
+   "tool",
+   "farming"
   ],
   "since": "0.10",
   "body": "<path d=\"M7.4 10.6H16.6V15C16.6 17.6 14.6 20 12 21.6C9.4 20 7.4 17.6 7.4 15Z\"/><path d=\"M12 10.6V14.6\"/><path d=\"M12 10.6V3.2\"/><path d=\"M9.6 3H14.4\"/>",
@@ -2556,11 +2565,14 @@
    "garden",
    "champ",
    "agriculture",
-   "feuilles"
+   "feuilles",
+   "outil",
+   "tool",
+   "farming"
   ],
   "since": "0.10",
   "body": "<path d=\"M4 20L16.4 7.6\"/><path d=\"M13 4.2L19.8 11\"/><path d=\"M13 4.2L14.4 2.8M14.7 5.9L16.1 4.5M16.4 7.6L17.8 6.2M18.1 9.3L19.5 7.9M19.8 11L21.2 9.6\"/>",
-  "fill": "<path d=\"M4 20L16.4 7.6\"/><path d=\"M13 4.2L19.8 11\"/><path d=\"M13 4.2L14.4 2.8M14.7 5.9L16.1 4.5M16.4 7.6L17.8 6.2M18.1 9.3L19.5 7.9M19.8 11L21.2 9.6\"/>"
+  "fill": "<mask id=\"afm-rateau\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><path d=\"M12.4 4.8L13.6 3.6L20.4 10.4L19.2 11.6Z\" fill=\"#fff\" stroke=\"#fff\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-rateau)\"/><path d=\"M4 20L16.4 7.6\"/><path d=\"M13 4.2L19.8 11\"/><path d=\"M13 4.2L14.4 2.8M14.7 5.9L16.1 4.5M16.4 7.6L17.8 6.2M18.1 9.3L19.5 7.9M19.8 11L21.2 9.6\"/>"
  },
  {
   "id": "faucille",
@@ -2577,7 +2589,11 @@
    "millet",
    "riz",
    "rice",
-   "agriculture"
+   "agriculture",
+   "outil",
+   "tool",
+   "farming",
+   "moisson"
   ],
   "since": "0.10",
   "body": "<path d=\"M7.6 16.6C4.8 12 7.4 4.4 14 4C18 3.8 20.6 6.4 20.6 9.6C19.2 7.4 16.8 6.4 14.4 6.6C10.2 7 8.2 11.4 9.6 15.4Z\"/><path d=\"M6.6 15.8L3.4 19.4C3.1 19.8 3.1 20.3 3.5 20.6C3.8 20.9 4.3 20.9 4.6 20.6L8.2 17.4Z\"/>",
@@ -2597,11 +2613,14 @@
    "paille",
    "straw",
    "champ",
-   "agriculture"
+   "agriculture",
+   "outil",
+   "tool",
+   "farming"
   ],
   "since": "0.10",
   "body": "<path d=\"M4 20.5L14.6 9.9\"/><path d=\"M16.7 3.6L12.5 7.8L16.7 12L20.9 7.8\"/><path d=\"M14.6 9.9L18.8 5.7\"/>",
-  "fill": "<path d=\"M4 20.5L14.6 9.9\"/><path d=\"M16.7 3.6L12.5 7.8L16.7 12L20.9 7.8\"/><path d=\"M14.6 9.9L18.8 5.7\"/>"
+  "fill": "<mask id=\"afm-fourche\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><path d=\"M11.8 11.5L14 9.3L15.2 10.5L13 12.7Z\" fill=\"#fff\" stroke=\"#fff\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-fourche)\"/><path d=\"M4 20.5L14.6 9.9\"/><path d=\"M16.7 3.6L12.5 7.8L16.7 12L20.9 7.8\"/><path d=\"M14.6 9.9L18.8 5.7\"/>"
  },
  {
   "id": "croc",
@@ -2618,11 +2637,14 @@
    "tines",
    "labour",
    "champ",
-   "agriculture"
+   "agriculture",
+   "outil",
+   "tool",
+   "farming"
   ],
   "since": "0.10",
   "body": "<circle cx=\"12\" cy=\"4.6\" r=\"2\"/><path d=\"M12 6.6V9.6\"/><path d=\"M5.4 13.2C7 10.6 17 10.6 18.6 13.2\"/><path d=\"M5.4 13.2V20.6M9.8 10.9V20.6M14.2 10.9V20.6M18.6 13.2V20.6\"/>",
-  "fill": "<circle cx=\"12\" cy=\"4.6\" r=\"2\"/><path d=\"M12 6.6V9.6\"/><path d=\"M5.4 13.2C7 10.6 17 10.6 18.6 13.2\"/><path d=\"M5.4 13.2V20.6M9.8 10.9V20.6M14.2 10.9V20.6M18.6 13.2V20.6\"/>"
+  "fill": "<mask id=\"afm-croc\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><circle cx=\"12\" cy=\"4.6\" r=\"2\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M5.4 13.2C7 10.6 17 10.6 18.6 13.2V14.8C17 12.4 7 12.4 5.4 14.8Z\" fill=\"#fff\" stroke=\"#fff\"/><circle cx=\"12\" cy=\"4.6\" r=\"0.8\" fill=\"#000\" stroke=\"none\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-croc)\"/><circle cx=\"12\" cy=\"4.6\" r=\"2\"/><path d=\"M12 6.6V9.6\"/><path d=\"M5.4 13.2C7 10.6 17 10.6 18.6 13.2\"/><path d=\"M5.4 13.2V20.6M9.8 10.9V20.6M14.2 10.9V20.6M18.6 13.2V20.6\"/>"
  },
  {
   "id": "serfouette",
@@ -2639,7 +2661,10 @@
    "weeding",
    "jardin",
    "maraîchage",
-   "agriculture"
+   "agriculture",
+   "outil",
+   "tool",
+   "farming"
   ],
   "since": "0.10",
   "body": "<path d=\"M14.6 8.6L16.2 6.6L20.8 10.2C20.3 11.6 19.3 12.5 18 12.8Z\"/><path d=\"M4 20.5L15.2 7.6\"/><path d=\"M15.2 7.6C13.6 6.2 11.8 5.6 9.6 5.6\"/><path d=\"M16.2 6.6C15.2 4.8 13.6 3.6 11.4 3\"/>",
@@ -2659,7 +2684,9 @@
    "arrosage",
    "traite",
    "champ",
-   "village"
+   "village",
+   "agriculture",
+   "farming"
   ],
   "since": "0.10",
   "body": "<path d=\"M5 8.5H19L17.7 19.6C17.6 20.4 16.9 21 16.1 21H7.9C7.1 21 6.4 20.4 6.3 19.6Z\"/><path d=\"M5.7 12.6H18.3\"/><path d=\"M5 8.5C5 2.8 19 2.8 19 8.5\"/>",
@@ -2678,7 +2705,10 @@
    "jardin",
    "champ",
    "transport",
-   "agriculture"
+   "agriculture",
+   "outil",
+   "tool",
+   "farming"
   ],
   "since": "0.10",
   "body": "<path d=\"M6.6 7.4H19.2L16.8 13H9.2Z\"/><circle cx=\"17.4\" cy=\"17.8\" r=\"2.6\"/><path d=\"M15 16.8L3.2 11.8\"/><path d=\"M9.4 14.4L8.6 20.6\"/>",
@@ -2699,7 +2729,11 @@
    "manioc",
    "gari",
    "cuisine",
-   "trier"
+   "trier",
+   "ustensile",
+   "utensil",
+   "tamiser",
+   "sift"
   ],
   "since": "0.10",
   "body": "<path d=\"M3 6.6V10.6C3 12.3 7 13.6 12 13.6S21 12.3 21 10.6V6.6C21 8.3 17 9.6 12 9.6S3 8.3 3 6.6Z\"/><ellipse cx=\"12\" cy=\"6.6\" rx=\"9\" ry=\"3\"/><circle cx=\"8\" cy=\"6.6\" r=\"0.6\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"12\" cy=\"6.6\" r=\"0.6\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"16\" cy=\"6.6\" r=\"0.6\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"10\" cy=\"5.3\" r=\"0.6\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"14\" cy=\"5.3\" r=\"0.6\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"10\" cy=\"7.9\" r=\"0.6\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"14\" cy=\"7.9\" r=\"0.6\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"9.2\" cy=\"16.6\" r=\"0.9\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"13.6\" cy=\"17.2\" r=\"0.9\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"11\" cy=\"20.2\" r=\"0.9\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"15.4\" cy=\"20.6\" r=\"0.9\" fill=\"currentColor\" stroke=\"none\"/>",
