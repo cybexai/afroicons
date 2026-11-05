@@ -22,7 +22,7 @@ import CloseIcon from "afroicons-mui/Close";
 
 ## Ce qui change
 
-- **5 344 noms Material UI** (1 069 icônes sur 2 133) redessinés au trait Afroicons (1,75, arrondi), variantes comprises : `Delete`, `DeleteOutlined`, `DeleteRounded`, `DeleteSharp` et `DeleteTwoTone` donnent la même poubelle.
+- **6 304 noms Material UI** (1 261 icônes sur 2 133) redessinés au trait Afroicons (1,75, arrondi), variantes comprises : `Delete`, `DeleteOutlined`, `DeleteRounded`, `DeleteSharp` et `DeleteTwoTone` donnent la même poubelle.
 - Les props de `SvgIcon` sont conservées : `fontSize`, `color`, `htmlColor`, `sx`, `titleAccess`, `className`, ainsi que la classe `MuiSvgIcon-root` et le `data-testid` (`DeleteOutlinedIcon`).
 - Des métaphores africaines : `Home` → la case, `ShoppingCart` → le panier tressé, `Wallet` → le portefeuille au cauri, `LocalShipping` → la moto de livraison, `Savings` → la tirelire en terre cuite, `Agriculture` → la daba…
 - **Toutes les autres** icônes Material UI restent disponibles sous leur nom.

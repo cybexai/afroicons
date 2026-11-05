@@ -10692,3 +10692,1923 @@ export declare const WrongLocationRounded: AfroIcon;
 export declare const WrongLocationSharp: AfroIcon;
 /** Supprimer un lieu · Delete place (Afroicons MapPinX) */
 export declare const WrongLocationTwoTone: AfroIcon;
+/** Flèche pleine vers le bas · Caret down (Afroicons CaretDown) */
+export declare const ArrowDropDown: AfroIcon;
+/** Flèche pleine vers le bas · Caret down (Afroicons CaretDown) */
+export declare const ArrowDropDownOutlined: AfroIcon;
+/** Flèche pleine vers le bas · Caret down (Afroicons CaretDown) */
+export declare const ArrowDropDownRounded: AfroIcon;
+/** Flèche pleine vers le bas · Caret down (Afroicons CaretDown) */
+export declare const ArrowDropDownSharp: AfroIcon;
+/** Flèche pleine vers le bas · Caret down (Afroicons CaretDown) */
+export declare const ArrowDropDownTwoTone: AfroIcon;
+/** Flèche pleine vers le haut · Caret up (Afroicons CaretUp) */
+export declare const ArrowDropUp: AfroIcon;
+/** Flèche pleine vers le haut · Caret up (Afroicons CaretUp) */
+export declare const ArrowDropUpOutlined: AfroIcon;
+/** Flèche pleine vers le haut · Caret up (Afroicons CaretUp) */
+export declare const ArrowDropUpRounded: AfroIcon;
+/** Flèche pleine vers le haut · Caret up (Afroicons CaretUp) */
+export declare const ArrowDropUpSharp: AfroIcon;
+/** Flèche pleine vers le haut · Caret up (Afroicons CaretUp) */
+export declare const ArrowDropUpTwoTone: AfroIcon;
+/** Liste déroulante ronde · Circle caret down (Afroicons CircleCaretDown) */
+export declare const ArrowDropDownCircle: AfroIcon;
+/** Liste déroulante ronde · Circle caret down (Afroicons CircleCaretDown) */
+export declare const ArrowDropDownCircleOutlined: AfroIcon;
+/** Liste déroulante ronde · Circle caret down (Afroicons CircleCaretDown) */
+export declare const ArrowDropDownCircleRounded: AfroIcon;
+/** Liste déroulante ronde · Circle caret down (Afroicons CircleCaretDown) */
+export declare const ArrowDropDownCircleSharp: AfroIcon;
+/** Liste déroulante ronde · Circle caret down (Afroicons CircleCaretDown) */
+export declare const ArrowDropDownCircleTwoTone: AfroIcon;
+/** Ajouter une tâche · Add task (Afroicons CircleCheckPlus) */
+export declare const AddTask: AfroIcon;
+/** Ajouter une tâche · Add task (Afroicons CircleCheckPlus) */
+export declare const AddTaskOutlined: AfroIcon;
+/** Ajouter une tâche · Add task (Afroicons CircleCheckPlus) */
+export declare const AddTaskRounded: AfroIcon;
+/** Ajouter une tâche · Add task (Afroicons CircleCheckPlus) */
+export declare const AddTaskSharp: AfroIcon;
+/** Ajouter une tâche · Add task (Afroicons CircleCheckPlus) */
+export declare const AddTaskTwoTone: AfroIcon;
+/** Ajouter une carte · Add card (Afroicons CreditCardPlus) */
+export declare const AddCard: AfroIcon;
+/** Ajouter une carte · Add card (Afroicons CreditCardPlus) */
+export declare const AddCardOutlined: AfroIcon;
+/** Ajouter une carte · Add card (Afroicons CreditCardPlus) */
+export declare const AddCardRounded: AfroIcon;
+/** Ajouter une carte · Add card (Afroicons CreditCardPlus) */
+export declare const AddCardSharp: AfroIcon;
+/** Ajouter une carte · Add card (Afroicons CreditCardPlus) */
+export declare const AddCardTwoTone: AfroIcon;
+/** Ajouter un commerce · Add business (Afroicons StorePlus) */
+export declare const AddBusiness: AfroIcon;
+/** Ajouter un commerce · Add business (Afroicons StorePlus) */
+export declare const AddBusinessOutlined: AfroIcon;
+/** Ajouter un commerce · Add business (Afroicons StorePlus) */
+export declare const AddBusinessRounded: AfroIcon;
+/** Ajouter un commerce · Add business (Afroicons StorePlus) */
+export declare const AddBusinessSharp: AfroIcon;
+/** Ajouter un commerce · Add business (Afroicons StorePlus) */
+export declare const AddBusinessTwoTone: AfroIcon;
+/** Ajouter maison et bureau · Add home and work (Afroicons HomeWorkPlus) */
+export declare const AddHomeWork: AfroIcon;
+/** Ajouter maison et bureau · Add home and work (Afroicons HomeWorkPlus) */
+export declare const AddHomeWorkOutlined: AfroIcon;
+/** Ajouter maison et bureau · Add home and work (Afroicons HomeWorkPlus) */
+export declare const AddHomeWorkRounded: AfroIcon;
+/** Ajouter maison et bureau · Add home and work (Afroicons HomeWorkPlus) */
+export declare const AddHomeWorkSharp: AfroIcon;
+/** Ajouter maison et bureau · Add home and work (Afroicons HomeWorkPlus) */
+export declare const AddHomeWorkTwoTone: AfroIcon;
+/** Ajouter un lien · Add link (Afroicons LinkPlus) */
+export declare const AddLink: AfroIcon;
+/** Ajouter un lien · Add link (Afroicons LinkPlus) */
+export declare const AddLinkOutlined: AfroIcon;
+/** Ajouter un lien · Add link (Afroicons LinkPlus) */
+export declare const AddLinkRounded: AfroIcon;
+/** Ajouter un lien · Add link (Afroicons LinkPlus) */
+export declare const AddLinkSharp: AfroIcon;
+/** Ajouter un lien · Add link (Afroicons LinkPlus) */
+export declare const AddLinkTwoTone: AfroIcon;
+/** Ajouter au panier · Add to cart (Afroicons ShoppingCartPlus) */
+export declare const AddShoppingCart: AfroIcon;
+/** Ajouter au panier · Add to cart (Afroicons ShoppingCartPlus) */
+export declare const AddShoppingCartOutlined: AfroIcon;
+/** Ajouter au panier · Add to cart (Afroicons ShoppingCartPlus) */
+export declare const AddShoppingCartRounded: AfroIcon;
+/** Ajouter au panier · Add to cart (Afroicons ShoppingCartPlus) */
+export declare const AddShoppingCartSharp: AfroIcon;
+/** Ajouter au panier · Add to cart (Afroicons ShoppingCartPlus) */
+export declare const AddShoppingCartTwoTone: AfroIcon;
+/** Ajouter une photo · Add a photo (Afroicons CameraPlus) */
+export declare const AddAPhoto: AfroIcon;
+/** Ajouter une photo · Add a photo (Afroicons CameraPlus) */
+export declare const AddAPhotoOutlined: AfroIcon;
+/** Ajouter une photo · Add a photo (Afroicons CameraPlus) */
+export declare const AddAPhotoRounded: AfroIcon;
+/** Ajouter une photo · Add a photo (Afroicons CameraPlus) */
+export declare const AddAPhotoSharp: AfroIcon;
+/** Ajouter une photo · Add a photo (Afroicons CameraPlus) */
+export declare const AddAPhotoTwoTone: AfroIcon;
+/** Ajouter à la file · Add to queue (Afroicons MonitorPlus) */
+export declare const AddToQueue: AfroIcon;
+/** Ajouter à la file · Add to queue (Afroicons MonitorPlus) */
+export declare const AddToQueueOutlined: AfroIcon;
+/** Ajouter à la file · Add to queue (Afroicons MonitorPlus) */
+export declare const AddToQueueRounded: AfroIcon;
+/** Ajouter à la file · Add to queue (Afroicons MonitorPlus) */
+export declare const AddToQueueSharp: AfroIcon;
+/** Ajouter à la file · Add to queue (Afroicons MonitorPlus) */
+export declare const AddToQueueTwoTone: AfroIcon;
+/** Ajouter un graphique · Add chart (Afroicons ChartColumnPlus) */
+export declare const Addchart: AfroIcon;
+/** Ajouter un graphique · Add chart (Afroicons ChartColumnPlus) */
+export declare const AddchartOutlined: AfroIcon;
+/** Ajouter un graphique · Add chart (Afroicons ChartColumnPlus) */
+export declare const AddchartRounded: AfroIcon;
+/** Ajouter un graphique · Add chart (Afroicons ChartColumnPlus) */
+export declare const AddchartSharp: AfroIcon;
+/** Ajouter un graphique · Add chart (Afroicons ChartColumnPlus) */
+export declare const AddchartTwoTone: AfroIcon;
+/** Tâche attribuée · Assigned task (Afroicons ClipboardUser) */
+export declare const AssignmentInd: AfroIcon;
+/** Tâche attribuée · Assigned task (Afroicons ClipboardUser) */
+export declare const AssignmentIndOutlined: AfroIcon;
+/** Tâche attribuée · Assigned task (Afroicons ClipboardUser) */
+export declare const AssignmentIndRounded: AfroIcon;
+/** Tâche attribuée · Assigned task (Afroicons ClipboardUser) */
+export declare const AssignmentIndSharp: AfroIcon;
+/** Tâche attribuée · Assigned task (Afroicons ClipboardUser) */
+export declare const AssignmentIndTwoTone: AfroIcon;
+/** Tâche en retard · Late task (Afroicons ClipboardAlert) */
+export declare const AssignmentLate: AfroIcon;
+/** Tâche en retard · Late task (Afroicons ClipboardAlert) */
+export declare const AssignmentLateOutlined: AfroIcon;
+/** Tâche en retard · Late task (Afroicons ClipboardAlert) */
+export declare const AssignmentLateRounded: AfroIcon;
+/** Tâche en retard · Late task (Afroicons ClipboardAlert) */
+export declare const AssignmentLateSharp: AfroIcon;
+/** Tâche en retard · Late task (Afroicons ClipboardAlert) */
+export declare const AssignmentLateTwoTone: AfroIcon;
+/** Renvoyer la tâche · Return assignment (Afroicons ClipboardArrowLeft) */
+export declare const AssignmentReturn: AfroIcon;
+/** Renvoyer la tâche · Return assignment (Afroicons ClipboardArrowLeft) */
+export declare const AssignmentReturnOutlined: AfroIcon;
+/** Renvoyer la tâche · Return assignment (Afroicons ClipboardArrowLeft) */
+export declare const AssignmentReturnRounded: AfroIcon;
+/** Renvoyer la tâche · Return assignment (Afroicons ClipboardArrowLeft) */
+export declare const AssignmentReturnSharp: AfroIcon;
+/** Renvoyer la tâche · Return assignment (Afroicons ClipboardArrowLeft) */
+export declare const AssignmentReturnTwoTone: AfroIcon;
+/** Tâche rendue · Assignment returned (Afroicons ClipboardArrowDown) */
+export declare const AssignmentReturned: AfroIcon;
+/** Tâche rendue · Assignment returned (Afroicons ClipboardArrowDown) */
+export declare const AssignmentReturnedOutlined: AfroIcon;
+/** Tâche rendue · Assignment returned (Afroicons ClipboardArrowDown) */
+export declare const AssignmentReturnedRounded: AfroIcon;
+/** Tâche rendue · Assignment returned (Afroicons ClipboardArrowDown) */
+export declare const AssignmentReturnedSharp: AfroIcon;
+/** Tâche rendue · Assignment returned (Afroicons ClipboardArrowDown) */
+export declare const AssignmentReturnedTwoTone: AfroIcon;
+/** Contact courriel · Contact mail (Afroicons ContactMail) */
+export declare const ContactMail: AfroIcon;
+/** Contact courriel · Contact mail (Afroicons ContactMail) */
+export declare const ContactMailOutlined: AfroIcon;
+/** Contact courriel · Contact mail (Afroicons ContactMail) */
+export declare const ContactMailRounded: AfroIcon;
+/** Contact courriel · Contact mail (Afroicons ContactMail) */
+export declare const ContactMailSharp: AfroIcon;
+/** Contact courriel · Contact mail (Afroicons ContactMail) */
+export declare const ContactMailTwoTone: AfroIcon;
+/** Page de contact · Contact page (Afroicons ContactPage) */
+export declare const ContactPage: AfroIcon;
+/** Page de contact · Contact page (Afroicons ContactPage) */
+export declare const ContactPageOutlined: AfroIcon;
+/** Page de contact · Contact page (Afroicons ContactPage) */
+export declare const ContactPageRounded: AfroIcon;
+/** Page de contact · Contact page (Afroicons ContactPage) */
+export declare const ContactPageSharp: AfroIcon;
+/** Page de contact · Contact page (Afroicons ContactPage) */
+export declare const ContactPageTwoTone: AfroIcon;
+/** Contact téléphone · Contact phone (Afroicons ContactPhone) */
+export declare const ContactPhone: AfroIcon;
+/** Contact téléphone · Contact phone (Afroicons ContactPhone) */
+export declare const ContactPhoneOutlined: AfroIcon;
+/** Contact téléphone · Contact phone (Afroicons ContactPhone) */
+export declare const ContactPhoneRounded: AfroIcon;
+/** Contact téléphone · Contact phone (Afroicons ContactPhone) */
+export declare const ContactPhoneSharp: AfroIcon;
+/** Contact téléphone · Contact phone (Afroicons ContactPhone) */
+export declare const ContactPhoneTwoTone: AfroIcon;
+/** Contact d'urgence · Emergency contact (Afroicons ContactEmergency) */
+export declare const ContactEmergency: AfroIcon;
+/** Contact d'urgence · Emergency contact (Afroicons ContactEmergency) */
+export declare const ContactEmergencyOutlined: AfroIcon;
+/** Contact d'urgence · Emergency contact (Afroicons ContactEmergency) */
+export declare const ContactEmergencyRounded: AfroIcon;
+/** Contact d'urgence · Emergency contact (Afroicons ContactEmergency) */
+export declare const ContactEmergencySharp: AfroIcon;
+/** Contact d'urgence · Emergency contact (Afroicons ContactEmergency) */
+export declare const ContactEmergencyTwoTone: AfroIcon;
+/** Contacts récents · Recent actors (Afroicons RecentActors) */
+export declare const RecentActors: AfroIcon;
+/** Contacts récents · Recent actors (Afroicons RecentActors) */
+export declare const RecentActorsOutlined: AfroIcon;
+/** Contacts récents · Recent actors (Afroicons RecentActors) */
+export declare const RecentActorsRounded: AfroIcon;
+/** Contacts récents · Recent actors (Afroicons RecentActors) */
+export declare const RecentActorsSharp: AfroIcon;
+/** Contacts récents · Recent actors (Afroicons RecentActors) */
+export declare const RecentActorsTwoTone: AfroIcon;
+/** Changer de compte · Switch account (Afroicons SwitchAccount) */
+export declare const SwitchAccount: AfroIcon;
+/** Changer de compte · Switch account (Afroicons SwitchAccount) */
+export declare const SwitchAccountOutlined: AfroIcon;
+/** Changer de compte · Switch account (Afroicons SwitchAccount) */
+export declare const SwitchAccountRounded: AfroIcon;
+/** Changer de compte · Switch account (Afroicons SwitchAccount) */
+export declare const SwitchAccountSharp: AfroIcon;
+/** Changer de compte · Switch account (Afroicons SwitchAccount) */
+export declare const SwitchAccountTwoTone: AfroIcon;
+/** Ajouter au groupe · Add to group (Afroicons UsersPlus) */
+export declare const GroupAdd: AfroIcon;
+/** Ajouter au groupe · Add to group (Afroicons UsersPlus) */
+export declare const GroupAddOutlined: AfroIcon;
+/** Ajouter au groupe · Add to group (Afroicons UsersPlus) */
+export declare const GroupAddRounded: AfroIcon;
+/** Ajouter au groupe · Add to group (Afroicons UsersPlus) */
+export declare const GroupAddSharp: AfroIcon;
+/** Ajouter au groupe · Add to group (Afroicons UsersPlus) */
+export declare const GroupAddTwoTone: AfroIcon;
+/** Retirer du groupe · Remove from group (Afroicons UsersMinus) */
+export declare const GroupRemove: AfroIcon;
+/** Retirer du groupe · Remove from group (Afroicons UsersMinus) */
+export declare const GroupRemoveOutlined: AfroIcon;
+/** Retirer du groupe · Remove from group (Afroicons UsersMinus) */
+export declare const GroupRemoveRounded: AfroIcon;
+/** Retirer du groupe · Remove from group (Afroicons UsersMinus) */
+export declare const GroupRemoveSharp: AfroIcon;
+/** Retirer du groupe · Remove from group (Afroicons UsersMinus) */
+export declare const GroupRemoveTwoTone: AfroIcon;
+/** Ajout de personne désactivé · Add person disabled (Afroicons UserPlusOff) */
+export declare const PersonAddDisabled: AfroIcon;
+/** Ajout de personne désactivé · Add person disabled (Afroicons UserPlusOff) */
+export declare const PersonAddDisabledOutlined: AfroIcon;
+/** Ajout de personne désactivé · Add person disabled (Afroicons UserPlusOff) */
+export declare const PersonAddDisabledRounded: AfroIcon;
+/** Ajout de personne désactivé · Add person disabled (Afroicons UserPlusOff) */
+export declare const PersonAddDisabledSharp: AfroIcon;
+/** Ajout de personne désactivé · Add person disabled (Afroicons UserPlusOff) */
+export declare const PersonAddDisabledTwoTone: AfroIcon;
+/** Administration de la sécurité · Admin panel settings (Afroicons ShieldCog) */
+export declare const AdminPanelSettings: AfroIcon;
+/** Administration de la sécurité · Admin panel settings (Afroicons ShieldCog) */
+export declare const AdminPanelSettingsOutlined: AfroIcon;
+/** Administration de la sécurité · Admin panel settings (Afroicons ShieldCog) */
+export declare const AdminPanelSettingsRounded: AfroIcon;
+/** Administration de la sécurité · Admin panel settings (Afroicons ShieldCog) */
+export declare const AdminPanelSettingsSharp: AfroIcon;
+/** Administration de la sécurité · Admin panel settings (Afroicons ShieldCog) */
+export declare const AdminPanelSettingsTwoTone: AfroIcon;
+/** Analyse de sécurité · Security scan (Afroicons ShieldSearch) */
+export declare const Policy: AfroIcon;
+/** Analyse de sécurité · Security scan (Afroicons ShieldSearch) */
+export declare const PolicyOutlined: AfroIcon;
+/** Analyse de sécurité · Security scan (Afroicons ShieldSearch) */
+export declare const PolicyRounded: AfroIcon;
+/** Analyse de sécurité · Security scan (Afroicons ShieldSearch) */
+export declare const PolicySharp: AfroIcon;
+/** Analyse de sécurité · Security scan (Afroicons ShieldSearch) */
+export declare const PolicyTwoTone: AfroIcon;
+/** Confidentialité · Privacy tip (Afroicons ShieldInfo) */
+export declare const PrivacyTip: AfroIcon;
+/** Confidentialité · Privacy tip (Afroicons ShieldInfo) */
+export declare const PrivacyTipOutlined: AfroIcon;
+/** Confidentialité · Privacy tip (Afroicons ShieldInfo) */
+export declare const PrivacyTipRounded: AfroIcon;
+/** Confidentialité · Privacy tip (Afroicons ShieldInfo) */
+export declare const PrivacyTipSharp: AfroIcon;
+/** Confidentialité · Privacy tip (Afroicons ShieldInfo) */
+export declare const PrivacyTipTwoTone: AfroIcon;
+/** Mot de passe · Password (Afroicons Password) */
+export declare const Password: AfroIcon;
+/** Mot de passe · Password (Afroicons Password) */
+export declare const PasswordOutlined: AfroIcon;
+/** Mot de passe · Password (Afroicons Password) */
+export declare const PasswordRounded: AfroIcon;
+/** Mot de passe · Password (Afroicons Password) */
+export declare const PasswordSharp: AfroIcon;
+/** Mot de passe · Password (Afroicons Password) */
+export declare const PasswordTwoTone: AfroIcon;
+/** Verrouillage temporisé · Lock clock (Afroicons LockClock) */
+export declare const LockClock: AfroIcon;
+/** Verrouillage temporisé · Lock clock (Afroicons LockClock) */
+export declare const LockClockOutlined: AfroIcon;
+/** Verrouillage temporisé · Lock clock (Afroicons LockClock) */
+export declare const LockClockRounded: AfroIcon;
+/** Verrouillage temporisé · Lock clock (Afroicons LockClock) */
+export declare const LockClockSharp: AfroIcon;
+/** Verrouillage temporisé · Lock clock (Afroicons LockClock) */
+export declare const LockClockTwoTone: AfroIcon;
+/** Compte verrouillé · Lock person (Afroicons LockUser) */
+export declare const LockPerson: AfroIcon;
+/** Compte verrouillé · Lock person (Afroicons LockUser) */
+export declare const LockPersonOutlined: AfroIcon;
+/** Compte verrouillé · Lock person (Afroicons LockUser) */
+export declare const LockPersonRounded: AfroIcon;
+/** Compte verrouillé · Lock person (Afroicons LockUser) */
+export declare const LockPersonSharp: AfroIcon;
+/** Compte verrouillé · Lock person (Afroicons LockUser) */
+export declare const LockPersonTwoTone: AfroIcon;
+/** Réinitialiser le verrouillage · Lock reset (Afroicons LockReset) */
+export declare const LockReset: AfroIcon;
+/** Réinitialiser le verrouillage · Lock reset (Afroicons LockReset) */
+export declare const LockResetOutlined: AfroIcon;
+/** Réinitialiser le verrouillage · Lock reset (Afroicons LockReset) */
+export declare const LockResetRounded: AfroIcon;
+/** Réinitialiser le verrouillage · Lock reset (Afroicons LockReset) */
+export declare const LockResetSharp: AfroIcon;
+/** Réinitialiser le verrouillage · Lock reset (Afroicons LockReset) */
+export declare const LockResetTwoTone: AfroIcon;
+/** Clé désactivée · Key off (Afroicons KeyOff) */
+export declare const KeyOff: AfroIcon;
+/** Clé désactivée · Key off (Afroicons KeyOff) */
+export declare const KeyOffOutlined: AfroIcon;
+/** Clé désactivée · Key off (Afroicons KeyOff) */
+export declare const KeyOffRounded: AfroIcon;
+/** Clé désactivée · Key off (Afroicons KeyOff) */
+export declare const KeyOffSharp: AfroIcon;
+/** Clé désactivée · Key off (Afroicons KeyOff) */
+export declare const KeyOffTwoTone: AfroIcon;
+/** Chiffrement renforcé · Enhanced encryption (Afroicons LockPlus) */
+export declare const EnhancedEncryption: AfroIcon;
+/** Chiffrement renforcé · Enhanced encryption (Afroicons LockPlus) */
+export declare const EnhancedEncryptionOutlined: AfroIcon;
+/** Chiffrement renforcé · Enhanced encryption (Afroicons LockPlus) */
+export declare const EnhancedEncryptionRounded: AfroIcon;
+/** Chiffrement renforcé · Enhanced encryption (Afroicons LockPlus) */
+export declare const EnhancedEncryptionSharp: AfroIcon;
+/** Chiffrement renforcé · Enhanced encryption (Afroicons LockPlus) */
+export declare const EnhancedEncryptionTwoTone: AfroIcon;
+/** Non chiffré · No encryption (Afroicons LockOff) */
+export declare const NoEncryption: AfroIcon;
+/** Non chiffré · No encryption (Afroicons LockOff) */
+export declare const NoEncryptionOutlined: AfroIcon;
+/** Non chiffré · No encryption (Afroicons LockOff) */
+export declare const NoEncryptionRounded: AfroIcon;
+/** Non chiffré · No encryption (Afroicons LockOff) */
+export declare const NoEncryptionSharp: AfroIcon;
+/** Non chiffré · No encryption (Afroicons LockOff) */
+export declare const NoEncryptionTwoTone: AfroIcon;
+/** Tout supprimer · Delete sweep (Afroicons TrashSweep) */
+export declare const DeleteSweep: AfroIcon;
+/** Tout supprimer · Delete sweep (Afroicons TrashSweep) */
+export declare const DeleteSweepOutlined: AfroIcon;
+/** Tout supprimer · Delete sweep (Afroicons TrashSweep) */
+export declare const DeleteSweepRounded: AfroIcon;
+/** Tout supprimer · Delete sweep (Afroicons TrashSweep) */
+export declare const DeleteSweepSharp: AfroIcon;
+/** Tout supprimer · Delete sweep (Afroicons TrashSweep) */
+export declare const DeleteSweepTwoTone: AfroIcon;
+/** Suppression automatique · Auto delete (Afroicons TrashClock) */
+export declare const AutoDelete: AfroIcon;
+/** Suppression automatique · Auto delete (Afroicons TrashClock) */
+export declare const AutoDeleteOutlined: AfroIcon;
+/** Suppression automatique · Auto delete (Afroicons TrashClock) */
+export declare const AutoDeleteRounded: AfroIcon;
+/** Suppression automatique · Auto delete (Afroicons TrashClock) */
+export declare const AutoDeleteSharp: AfroIcon;
+/** Suppression automatique · Auto delete (Afroicons TrashClock) */
+export declare const AutoDeleteTwoTone: AfroIcon;
+/** Restaurer de la corbeille · Restore from trash (Afroicons TrashRestore) */
+export declare const RestoreFromTrash: AfroIcon;
+/** Restaurer de la corbeille · Restore from trash (Afroicons TrashRestore) */
+export declare const RestoreFromTrashOutlined: AfroIcon;
+/** Restaurer de la corbeille · Restore from trash (Afroicons TrashRestore) */
+export declare const RestoreFromTrashRounded: AfroIcon;
+/** Restaurer de la corbeille · Restore from trash (Afroicons TrashRestore) */
+export declare const RestoreFromTrashSharp: AfroIcon;
+/** Restaurer de la corbeille · Restore from trash (Afroicons TrashRestore) */
+export declare const RestoreFromTrashTwoTone: AfroIcon;
+/** Restaurer la page · Restore page (Afroicons FileRestore) */
+export declare const RestorePage: AfroIcon;
+/** Restaurer la page · Restore page (Afroicons FileRestore) */
+export declare const RestorePageOutlined: AfroIcon;
+/** Restaurer la page · Restore page (Afroicons FileRestore) */
+export declare const RestorePageRounded: AfroIcon;
+/** Restaurer la page · Restore page (Afroicons FileRestore) */
+export declare const RestorePageSharp: AfroIcon;
+/** Restaurer la page · Restore page (Afroicons FileRestore) */
+export declare const RestorePageTwoTone: AfroIcon;
+/** Tout effacer · Clear all (Afroicons ClearAll) */
+export declare const ClearAll: AfroIcon;
+/** Tout effacer · Clear all (Afroicons ClearAll) */
+export declare const ClearAllOutlined: AfroIcon;
+/** Tout effacer · Clear all (Afroicons ClearAll) */
+export declare const ClearAllRounded: AfroIcon;
+/** Tout effacer · Clear all (Afroicons ClearAll) */
+export declare const ClearAllSharp: AfroIcon;
+/** Tout effacer · Clear all (Afroicons ClearAll) */
+export declare const ClearAllTwoTone: AfroIcon;
+/** Désélectionner · Deselect (Afroicons Deselect) */
+export declare const Deselect: AfroIcon;
+/** Désélectionner · Deselect (Afroicons Deselect) */
+export declare const DeselectOutlined: AfroIcon;
+/** Désélectionner · Deselect (Afroicons Deselect) */
+export declare const DeselectRounded: AfroIcon;
+/** Désélectionner · Deselect (Afroicons Deselect) */
+export declare const DeselectSharp: AfroIcon;
+/** Désélectionner · Deselect (Afroicons Deselect) */
+export declare const DeselectTwoTone: AfroIcon;
+/** Décocher · Remove done (Afroicons CheckOff) */
+export declare const RemoveDone: AfroIcon;
+/** Décocher · Remove done (Afroicons CheckOff) */
+export declare const RemoveDoneOutlined: AfroIcon;
+/** Décocher · Remove done (Afroicons CheckOff) */
+export declare const RemoveDoneRounded: AfroIcon;
+/** Décocher · Remove done (Afroicons CheckOff) */
+export declare const RemoveDoneSharp: AfroIcon;
+/** Décocher · Remove done (Afroicons CheckOff) */
+export declare const RemoveDoneTwoTone: AfroIcon;
+/** Enregistrer sous · Save as (Afroicons SaveAs) */
+export declare const SaveAs: AfroIcon;
+/** Enregistrer sous · Save as (Afroicons SaveAs) */
+export declare const SaveAsOutlined: AfroIcon;
+/** Enregistrer sous · Save as (Afroicons SaveAs) */
+export declare const SaveAsRounded: AfroIcon;
+/** Enregistrer sous · Save as (Afroicons SaveAs) */
+export declare const SaveAsSharp: AfroIcon;
+/** Enregistrer sous · Save as (Afroicons SaveAs) */
+export declare const SaveAsTwoTone: AfroIcon;
+/** Téléchargement terminé · Download done (Afroicons DownloadDone) */
+export declare const DownloadDone: AfroIcon;
+/** Téléchargement terminé · Download done (Afroicons DownloadDone) */
+export declare const DownloadDoneOutlined: AfroIcon;
+/** Téléchargement terminé · Download done (Afroicons DownloadDone) */
+export declare const DownloadDoneRounded: AfroIcon;
+/** Téléchargement terminé · Download done (Afroicons DownloadDone) */
+export declare const DownloadDoneSharp: AfroIcon;
+/** Téléchargement terminé · Download done (Afroicons DownloadDone) */
+export declare const DownloadDoneTwoTone: AfroIcon;
+/** Téléchargement terminé · Download done (Afroicons DownloadDone) */
+export declare const FileDownloadDone: AfroIcon;
+/** Téléchargement terminé · Download done (Afroicons DownloadDone) */
+export declare const FileDownloadDoneOutlined: AfroIcon;
+/** Téléchargement terminé · Download done (Afroicons DownloadDone) */
+export declare const FileDownloadDoneRounded: AfroIcon;
+/** Téléchargement terminé · Download done (Afroicons DownloadDone) */
+export declare const FileDownloadDoneSharp: AfroIcon;
+/** Téléchargement terminé · Download done (Afroicons DownloadDone) */
+export declare const FileDownloadDoneTwoTone: AfroIcon;
+/** Téléchargement en cours · Downloading (Afroicons Downloading) */
+export declare const Downloading: AfroIcon;
+/** Téléchargement en cours · Downloading (Afroicons Downloading) */
+export declare const DownloadingOutlined: AfroIcon;
+/** Téléchargement en cours · Downloading (Afroicons Downloading) */
+export declare const DownloadingRounded: AfroIcon;
+/** Téléchargement en cours · Downloading (Afroicons Downloading) */
+export declare const DownloadingSharp: AfroIcon;
+/** Téléchargement en cours · Downloading (Afroicons Downloading) */
+export declare const DownloadingTwoTone: AfroIcon;
+/** Téléchargement désactivé · Download off (Afroicons DownloadOff) */
+export declare const FileDownloadOff: AfroIcon;
+/** Téléchargement désactivé · Download off (Afroicons DownloadOff) */
+export declare const FileDownloadOffOutlined: AfroIcon;
+/** Téléchargement désactivé · Download off (Afroicons DownloadOff) */
+export declare const FileDownloadOffRounded: AfroIcon;
+/** Téléchargement désactivé · Download off (Afroicons DownloadOff) */
+export declare const FileDownloadOffSharp: AfroIcon;
+/** Téléchargement désactivé · Download off (Afroicons DownloadOff) */
+export declare const FileDownloadOffTwoTone: AfroIcon;
+/** Déplacer vers un dossier · Move to folder (Afroicons FolderMove) */
+export declare const DriveFileMove: AfroIcon;
+/** Déplacer vers un dossier · Move to folder (Afroicons FolderMove) */
+export declare const DriveFileMoveOutlined: AfroIcon;
+/** Déplacer vers un dossier · Move to folder (Afroicons FolderMove) */
+export declare const DriveFileMoveRounded: AfroIcon;
+/** Déplacer vers un dossier · Move to folder (Afroicons FolderMove) */
+export declare const DriveFileMoveSharp: AfroIcon;
+/** Déplacer vers un dossier · Move to folder (Afroicons FolderMove) */
+export declare const DriveFileMoveTwoTone: AfroIcon;
+/** Copier le dossier · Folder copy (Afroicons FolderCopy) */
+export declare const FolderCopy: AfroIcon;
+/** Copier le dossier · Folder copy (Afroicons FolderCopy) */
+export declare const FolderCopyOutlined: AfroIcon;
+/** Copier le dossier · Folder copy (Afroicons FolderCopy) */
+export declare const FolderCopyRounded: AfroIcon;
+/** Copier le dossier · Folder copy (Afroicons FolderCopy) */
+export declare const FolderCopySharp: AfroIcon;
+/** Copier le dossier · Folder copy (Afroicons FolderCopy) */
+export declare const FolderCopyTwoTone: AfroIcon;
+/** Dossier partagé · Shared folder (Afroicons FolderUser) */
+export declare const FolderShared: AfroIcon;
+/** Dossier partagé · Shared folder (Afroicons FolderUser) */
+export declare const FolderSharedOutlined: AfroIcon;
+/** Dossier partagé · Shared folder (Afroicons FolderUser) */
+export declare const FolderSharedRounded: AfroIcon;
+/** Dossier partagé · Shared folder (Afroicons FolderUser) */
+export declare const FolderSharedSharp: AfroIcon;
+/** Dossier partagé · Shared folder (Afroicons FolderUser) */
+export declare const FolderSharedTwoTone: AfroIcon;
+/** Dossier important · Special folder (Afroicons FolderStar) */
+export declare const FolderSpecial: AfroIcon;
+/** Dossier important · Special folder (Afroicons FolderStar) */
+export declare const FolderSpecialOutlined: AfroIcon;
+/** Dossier important · Special folder (Afroicons FolderStar) */
+export declare const FolderSpecialRounded: AfroIcon;
+/** Dossier important · Special folder (Afroicons FolderStar) */
+export declare const FolderSpecialSharp: AfroIcon;
+/** Dossier important · Special folder (Afroicons FolderStar) */
+export declare const FolderSpecialTwoTone: AfroIcon;
+/** Dossier indisponible · Folder off (Afroicons FolderOff) */
+export declare const FolderOff: AfroIcon;
+/** Dossier indisponible · Folder off (Afroicons FolderOff) */
+export declare const FolderOffOutlined: AfroIcon;
+/** Dossier indisponible · Folder off (Afroicons FolderOff) */
+export declare const FolderOffRounded: AfroIcon;
+/** Dossier indisponible · Folder off (Afroicons FolderOff) */
+export declare const FolderOffSharp: AfroIcon;
+/** Dossier indisponible · Folder off (Afroicons FolderOff) */
+export declare const FolderOffTwoTone: AfroIcon;
+/** Fichier joint · File present (Afroicons FilePaperclip) */
+export declare const FilePresent: AfroIcon;
+/** Fichier joint · File present (Afroicons FilePaperclip) */
+export declare const FilePresentOutlined: AfroIcon;
+/** Fichier joint · File present (Afroicons FilePaperclip) */
+export declare const FilePresentRounded: AfroIcon;
+/** Fichier joint · File present (Afroicons FilePaperclip) */
+export declare const FilePresentSharp: AfroIcon;
+/** Fichier joint · File present (Afroicons FilePaperclip) */
+export declare const FilePresentTwoTone: AfroIcon;
+/** Règles du dossier · Rule folder (Afroicons FolderRule) */
+export declare const RuleFolder: AfroIcon;
+/** Règles du dossier · Rule folder (Afroicons FolderRule) */
+export declare const RuleFolderOutlined: AfroIcon;
+/** Règles du dossier · Rule folder (Afroicons FolderRule) */
+export declare const RuleFolderRounded: AfroIcon;
+/** Règles du dossier · Rule folder (Afroicons FolderRule) */
+export declare const RuleFolderSharp: AfroIcon;
+/** Règles du dossier · Rule folder (Afroicons FolderRule) */
+export declare const RuleFolderTwoTone: AfroIcon;
+/** Dossier d’extraits · Snippet folder (Afroicons FolderFile) */
+export declare const SnippetFolder: AfroIcon;
+/** Dossier d’extraits · Snippet folder (Afroicons FolderFile) */
+export declare const SnippetFolderOutlined: AfroIcon;
+/** Dossier d’extraits · Snippet folder (Afroicons FolderFile) */
+export declare const SnippetFolderRounded: AfroIcon;
+/** Dossier d’extraits · Snippet folder (Afroicons FolderFile) */
+export declare const SnippetFolderSharp: AfroIcon;
+/** Dossier d’extraits · Snippet folder (Afroicons FolderFile) */
+export declare const SnippetFolderTwoTone: AfroIcon;
+/** Événement récurrent · Recurring event (Afroicons EventRepeat) */
+export declare const EventRepeat: AfroIcon;
+/** Événement récurrent · Recurring event (Afroicons EventRepeat) */
+export declare const EventRepeatOutlined: AfroIcon;
+/** Événement récurrent · Recurring event (Afroicons EventRepeat) */
+export declare const EventRepeatRounded: AfroIcon;
+/** Événement récurrent · Recurring event (Afroicons EventRepeat) */
+export declare const EventRepeatSharp: AfroIcon;
+/** Événement récurrent · Recurring event (Afroicons EventRepeat) */
+export declare const EventRepeatTwoTone: AfroIcon;
+/** Ajouter du temps · More time (Afroicons MoreTime) */
+export declare const MoreTime: AfroIcon;
+/** Ajouter du temps · More time (Afroicons MoreTime) */
+export declare const MoreTimeOutlined: AfroIcon;
+/** Ajouter du temps · More time (Afroicons MoreTime) */
+export declare const MoreTimeRounded: AfroIcon;
+/** Ajouter du temps · More time (Afroicons MoreTime) */
+export declare const MoreTimeSharp: AfroIcon;
+/** Ajouter du temps · More time (Afroicons MoreTime) */
+export declare const MoreTimeTwoTone: AfroIcon;
+/** Historique professionnel · Work history (Afroicons WorkHistory) */
+export declare const WorkHistory: AfroIcon;
+/** Historique professionnel · Work history (Afroicons WorkHistory) */
+export declare const WorkHistoryOutlined: AfroIcon;
+/** Historique professionnel · Work history (Afroicons WorkHistory) */
+export declare const WorkHistoryRounded: AfroIcon;
+/** Historique professionnel · Work history (Afroicons WorkHistory) */
+export declare const WorkHistorySharp: AfroIcon;
+/** Historique professionnel · Work history (Afroicons WorkHistory) */
+export declare const WorkHistoryTwoTone: AfroIcon;
+/** Gérer l'historique · Manage history (Afroicons ManageHistory) */
+export declare const ManageHistory: AfroIcon;
+/** Gérer l'historique · Manage history (Afroicons ManageHistory) */
+export declare const ManageHistoryOutlined: AfroIcon;
+/** Gérer l'historique · Manage history (Afroicons ManageHistory) */
+export declare const ManageHistoryRounded: AfroIcon;
+/** Gérer l'historique · Manage history (Afroicons ManageHistory) */
+export declare const ManageHistorySharp: AfroIcon;
+/** Gérer l'historique · Manage history (Afroicons ManageHistory) */
+export declare const ManageHistoryTwoTone: AfroIcon;
+/** Pointeuse · Punch clock (Afroicons PunchClock) */
+export declare const PunchClock: AfroIcon;
+/** Pointeuse · Punch clock (Afroicons PunchClock) */
+export declare const PunchClockOutlined: AfroIcon;
+/** Pointeuse · Punch clock (Afroicons PunchClock) */
+export declare const PunchClockRounded: AfroIcon;
+/** Pointeuse · Punch clock (Afroicons PunchClock) */
+export declare const PunchClockSharp: AfroIcon;
+/** Pointeuse · Punch clock (Afroicons PunchClock) */
+export declare const PunchClockTwoTone: AfroIcon;
+/** Vue jour · Day view (Afroicons CalendarDayView) */
+export declare const CalendarViewDay: AfroIcon;
+/** Vue jour · Day view (Afroicons CalendarDayView) */
+export declare const CalendarViewDayOutlined: AfroIcon;
+/** Vue jour · Day view (Afroicons CalendarDayView) */
+export declare const CalendarViewDayRounded: AfroIcon;
+/** Vue jour · Day view (Afroicons CalendarDayView) */
+export declare const CalendarViewDaySharp: AfroIcon;
+/** Vue jour · Day view (Afroicons CalendarDayView) */
+export declare const CalendarViewDayTwoTone: AfroIcon;
+/** Vue semaine · Week view (Afroicons CalendarWeekView) */
+export declare const CalendarViewWeek: AfroIcon;
+/** Vue semaine · Week view (Afroicons CalendarWeekView) */
+export declare const CalendarViewWeekOutlined: AfroIcon;
+/** Vue semaine · Week view (Afroicons CalendarWeekView) */
+export declare const CalendarViewWeekRounded: AfroIcon;
+/** Vue semaine · Week view (Afroicons CalendarWeekView) */
+export declare const CalendarViewWeekSharp: AfroIcon;
+/** Vue semaine · Week view (Afroicons CalendarWeekView) */
+export declare const CalendarViewWeekTwoTone: AfroIcon;
+/** À venir · Upcoming (Afroicons Upcoming) */
+export declare const Upcoming: AfroIcon;
+/** À venir · Upcoming (Afroicons Upcoming) */
+export declare const UpcomingOutlined: AfroIcon;
+/** À venir · Upcoming (Afroicons Upcoming) */
+export declare const UpcomingRounded: AfroIcon;
+/** À venir · Upcoming (Afroicons Upcoming) */
+export declare const UpcomingSharp: AfroIcon;
+/** À venir · Upcoming (Afroicons Upcoming) */
+export declare const UpcomingTwoTone: AfroIcon;
+/** Rappel différé · Snooze (Afroicons Snooze) */
+export declare const Snooze: AfroIcon;
+/** Rappel différé · Snooze (Afroicons Snooze) */
+export declare const SnoozeOutlined: AfroIcon;
+/** Rappel différé · Snooze (Afroicons Snooze) */
+export declare const SnoozeRounded: AfroIcon;
+/** Rappel différé · Snooze (Afroicons Snooze) */
+export declare const SnoozeSharp: AfroIcon;
+/** Rappel différé · Snooze (Afroicons Snooze) */
+export declare const SnoozeTwoTone: AfroIcon;
+/** Semaine prochaine · Next week (Afroicons NextWeek) */
+export declare const NextWeek: AfroIcon;
+/** Semaine prochaine · Next week (Afroicons NextWeek) */
+export declare const NextWeekOutlined: AfroIcon;
+/** Semaine prochaine · Next week (Afroicons NextWeek) */
+export declare const NextWeekRounded: AfroIcon;
+/** Semaine prochaine · Next week (Afroicons NextWeek) */
+export declare const NextWeekSharp: AfroIcon;
+/** Semaine prochaine · Next week (Afroicons NextWeek) */
+export declare const NextWeekTwoTone: AfroIcon;
+/** Envoi programmé · Schedule send (Afroicons ScheduleSend) */
+export declare const ScheduleSend: AfroIcon;
+/** Envoi programmé · Schedule send (Afroicons ScheduleSend) */
+export declare const ScheduleSendOutlined: AfroIcon;
+/** Envoi programmé · Schedule send (Afroicons ScheduleSend) */
+export declare const ScheduleSendRounded: AfroIcon;
+/** Envoi programmé · Schedule send (Afroicons ScheduleSend) */
+export declare const ScheduleSendSharp: AfroIcon;
+/** Envoi programmé · Schedule send (Afroicons ScheduleSend) */
+export declare const ScheduleSendTwoTone: AfroIcon;
+/** Annuler l'envoi programmé · Cancel scheduled send (Afroicons ScheduleSendX) */
+export declare const CancelScheduleSend: AfroIcon;
+/** Annuler l'envoi programmé · Cancel scheduled send (Afroicons ScheduleSendX) */
+export declare const CancelScheduleSendOutlined: AfroIcon;
+/** Annuler l'envoi programmé · Cancel scheduled send (Afroicons ScheduleSendX) */
+export declare const CancelScheduleSendRounded: AfroIcon;
+/** Annuler l'envoi programmé · Cancel scheduled send (Afroicons ScheduleSendX) */
+export declare const CancelScheduleSendSharp: AfroIcon;
+/** Annuler l'envoi programmé · Cancel scheduled send (Afroicons ScheduleSendX) */
+export declare const CancelScheduleSendTwoTone: AfroIcon;
+/** Formulaire dynamique · Dynamic form (Afroicons DynamicForm) */
+export declare const DynamicForm: AfroIcon;
+/** Formulaire dynamique · Dynamic form (Afroicons DynamicForm) */
+export declare const DynamicFormOutlined: AfroIcon;
+/** Formulaire dynamique · Dynamic form (Afroicons DynamicForm) */
+export declare const DynamicFormRounded: AfroIcon;
+/** Formulaire dynamique · Dynamic form (Afroicons DynamicForm) */
+export declare const DynamicFormSharp: AfroIcon;
+/** Formulaire dynamique · Dynamic form (Afroicons DynamicForm) */
+export declare const DynamicFormTwoTone: AfroIcon;
+/** Liste encadrée · List in a box (Afroicons ListSquare) */
+export declare const ListAlt: AfroIcon;
+/** Liste encadrée · List in a box (Afroicons ListSquare) */
+export declare const ListAltOutlined: AfroIcon;
+/** Liste encadrée · List in a box (Afroicons ListSquare) */
+export declare const ListAltRounded: AfroIcon;
+/** Liste encadrée · List in a box (Afroicons ListSquare) */
+export declare const ListAltSharp: AfroIcon;
+/** Liste encadrée · List in a box (Afroicons ListSquare) */
+export declare const ListAltTwoTone: AfroIcon;
+/** Notation · Grading (Afroicons Grading) */
+export declare const Grading: AfroIcon;
+/** Notation · Grading (Afroicons Grading) */
+export declare const GradingOutlined: AfroIcon;
+/** Notation · Grading (Afroicons Grading) */
+export declare const GradingRounded: AfroIcon;
+/** Notation · Grading (Afroicons Grading) */
+export declare const GradingSharp: AfroIcon;
+/** Notation · Grading (Afroicons Grading) */
+export declare const GradingTwoTone: AfroIcon;
+/** Règle de validation · Rule (Afroicons Rule) */
+export declare const Rule: AfroIcon;
+/** Règle de validation · Rule (Afroicons Rule) */
+export declare const RuleOutlined: AfroIcon;
+/** Règle de validation · Rule (Afroicons Rule) */
+export declare const RuleRounded: AfroIcon;
+/** Règle de validation · Rule (Afroicons Rule) */
+export declare const RuleSharp: AfroIcon;
+/** Règle de validation · Rule (Afroicons Rule) */
+export declare const RuleTwoTone: AfroIcon;
+/** Quiz · Quiz (Afroicons Quiz) */
+export declare const Quiz: AfroIcon;
+/** Quiz · Quiz (Afroicons Quiz) */
+export declare const QuizOutlined: AfroIcon;
+/** Quiz · Quiz (Afroicons Quiz) */
+export declare const QuizRounded: AfroIcon;
+/** Quiz · Quiz (Afroicons Quiz) */
+export declare const QuizSharp: AfroIcon;
+/** Quiz · Quiz (Afroicons Quiz) */
+export declare const QuizTwoTone: AfroIcon;
+/** Centre d'aide · Help center (Afroicons HelpCenter) */
+export declare const HelpCenter: AfroIcon;
+/** Centre d'aide · Help center (Afroicons HelpCenter) */
+export declare const HelpCenterOutlined: AfroIcon;
+/** Centre d'aide · Help center (Afroicons HelpCenter) */
+export declare const HelpCenterRounded: AfroIcon;
+/** Centre d'aide · Help center (Afroicons HelpCenter) */
+export declare const HelpCenterSharp: AfroIcon;
+/** Centre d'aide · Help center (Afroicons HelpCenter) */
+export declare const HelpCenterTwoTone: AfroIcon;
+/** Aide en direct · Live help (Afroicons LiveHelp) */
+export declare const LiveHelp: AfroIcon;
+/** Aide en direct · Live help (Afroicons LiveHelp) */
+export declare const LiveHelpOutlined: AfroIcon;
+/** Aide en direct · Live help (Afroicons LiveHelp) */
+export declare const LiveHelpRounded: AfroIcon;
+/** Aide en direct · Live help (Afroicons LiveHelp) */
+export declare const LiveHelpSharp: AfroIcon;
+/** Aide en direct · Live help (Afroicons LiveHelp) */
+export declare const LiveHelpTwoTone: AfroIcon;
+/** Point d'interrogation · Question mark (Afroicons QuestionMark) */
+export declare const QuestionMark: AfroIcon;
+/** Point d'interrogation · Question mark (Afroicons QuestionMark) */
+export declare const QuestionMarkOutlined: AfroIcon;
+/** Point d'interrogation · Question mark (Afroicons QuestionMark) */
+export declare const QuestionMarkRounded: AfroIcon;
+/** Point d'interrogation · Question mark (Afroicons QuestionMark) */
+export declare const QuestionMarkSharp: AfroIcon;
+/** Point d'interrogation · Question mark (Afroicons QuestionMark) */
+export declare const QuestionMarkTwoTone: AfroIcon;
+/** Priorité haute · High priority (Afroicons PriorityHigh) */
+export declare const PriorityHigh: AfroIcon;
+/** Priorité haute · High priority (Afroicons PriorityHigh) */
+export declare const PriorityHighOutlined: AfroIcon;
+/** Priorité haute · High priority (Afroicons PriorityHigh) */
+export declare const PriorityHighRounded: AfroIcon;
+/** Priorité haute · High priority (Afroicons PriorityHigh) */
+export declare const PriorityHighSharp: AfroIcon;
+/** Priorité haute · High priority (Afroicons PriorityHigh) */
+export declare const PriorityHighTwoTone: AfroIcon;
+/** Étiquette importante · Important label (Afroicons LabelImportant) */
+export declare const LabelImportant: AfroIcon;
+/** Étiquette importante · Important label (Afroicons LabelImportant) */
+export declare const LabelImportantOutlined: AfroIcon;
+/** Étiquette importante · Important label (Afroicons LabelImportant) */
+export declare const LabelImportantRounded: AfroIcon;
+/** Étiquette importante · Important label (Afroicons LabelImportant) */
+export declare const LabelImportantSharp: AfroIcon;
+/** Étiquette importante · Important label (Afroicons LabelImportant) */
+export declare const LabelImportantTwoTone: AfroIcon;
+/** Notification importante · Important notification (Afroicons BellAlert) */
+export declare const NotificationImportant: AfroIcon;
+/** Notification importante · Important notification (Afroicons BellAlert) */
+export declare const NotificationImportantOutlined: AfroIcon;
+/** Notification importante · Important notification (Afroicons BellAlert) */
+export declare const NotificationImportantRounded: AfroIcon;
+/** Notification importante · Important notification (Afroicons BellAlert) */
+export declare const NotificationImportantSharp: AfroIcon;
+/** Notification importante · Important notification (Afroicons BellAlert) */
+export declare const NotificationImportantTwoTone: AfroIcon;
+/** Fil d'actualité · Feed (Afroicons Feed) */
+export declare const Feed: AfroIcon;
+/** Fil d'actualité · Feed (Afroicons Feed) */
+export declare const FeedOutlined: AfroIcon;
+/** Fil d'actualité · Feed (Afroicons Feed) */
+export declare const FeedRounded: AfroIcon;
+/** Fil d'actualité · Feed (Afroicons Feed) */
+export declare const FeedSharp: AfroIcon;
+/** Fil d'actualité · Feed (Afroicons Feed) */
+export declare const FeedTwoTone: AfroIcon;
+/** Change de devises · Currency exchange (Afroicons CurrencyExchange) */
+export declare const CurrencyExchange: AfroIcon;
+/** Change de devises · Currency exchange (Afroicons CurrencyExchange) */
+export declare const CurrencyExchangeOutlined: AfroIcon;
+/** Change de devises · Currency exchange (Afroicons CurrencyExchange) */
+export declare const CurrencyExchangeRounded: AfroIcon;
+/** Change de devises · Currency exchange (Afroicons CurrencyExchange) */
+export declare const CurrencyExchangeSharp: AfroIcon;
+/** Change de devises · Currency exchange (Afroicons CurrencyExchange) */
+export declare const CurrencyExchangeTwoTone: AfroIcon;
+/** Variation de prix · Price change (Afroicons PriceChange) */
+export declare const PriceChange: AfroIcon;
+/** Variation de prix · Price change (Afroicons PriceChange) */
+export declare const PriceChangeOutlined: AfroIcon;
+/** Variation de prix · Price change (Afroicons PriceChange) */
+export declare const PriceChangeRounded: AfroIcon;
+/** Variation de prix · Price change (Afroicons PriceChange) */
+export declare const PriceChangeSharp: AfroIcon;
+/** Variation de prix · Price change (Afroicons PriceChange) */
+export declare const PriceChangeTwoTone: AfroIcon;
+/** Prix vérifié · Price check (Afroicons PriceCheck) */
+export declare const PriceCheck: AfroIcon;
+/** Prix vérifié · Price check (Afroicons PriceCheck) */
+export declare const PriceCheckOutlined: AfroIcon;
+/** Prix vérifié · Price check (Afroicons PriceCheck) */
+export declare const PriceCheckRounded: AfroIcon;
+/** Prix vérifié · Price check (Afroicons PriceCheck) */
+export declare const PriceCheckSharp: AfroIcon;
+/** Prix vérifié · Price check (Afroicons PriceCheck) */
+export declare const PriceCheckTwoTone: AfroIcon;
+/** Solvabilité · Credit score (Afroicons CreditCardCheck) */
+export declare const CreditScore: AfroIcon;
+/** Solvabilité · Credit score (Afroicons CreditCardCheck) */
+export declare const CreditScoreOutlined: AfroIcon;
+/** Solvabilité · Credit score (Afroicons CreditCardCheck) */
+export declare const CreditScoreRounded: AfroIcon;
+/** Solvabilité · Credit score (Afroicons CreditCardCheck) */
+export declare const CreditScoreSharp: AfroIcon;
+/** Solvabilité · Credit score (Afroicons CreditCardCheck) */
+export declare const CreditScoreTwoTone: AfroIcon;
+/** Carte désactivée · Credit card off (Afroicons CreditCardOff) */
+export declare const CreditCardOff: AfroIcon;
+/** Carte désactivée · Credit card off (Afroicons CreditCardOff) */
+export declare const CreditCardOffOutlined: AfroIcon;
+/** Carte désactivée · Credit card off (Afroicons CreditCardOff) */
+export declare const CreditCardOffRounded: AfroIcon;
+/** Carte désactivée · Credit card off (Afroicons CreditCardOff) */
+export declare const CreditCardOffSharp: AfroIcon;
+/** Carte désactivée · Credit card off (Afroicons CreditCardOff) */
+export declare const CreditCardOffTwoTone: AfroIcon;
+/** Sans frais · Money off (Afroicons DollarSignOff) */
+export declare const MoneyOff: AfroIcon;
+/** Sans frais · Money off (Afroicons DollarSignOff) */
+export declare const MoneyOffOutlined: AfroIcon;
+/** Sans frais · Money off (Afroicons DollarSignOff) */
+export declare const MoneyOffRounded: AfroIcon;
+/** Sans frais · Money off (Afroicons DollarSignOff) */
+export declare const MoneyOffSharp: AfroIcon;
+/** Sans frais · Money off (Afroicons DollarSignOff) */
+export declare const MoneyOffTwoTone: AfroIcon;
+/** Distributeur de billets · ATM (Afroicons Atm) */
+export declare const Atm: AfroIcon;
+/** Distributeur de billets · ATM (Afroicons Atm) */
+export declare const AtmOutlined: AfroIcon;
+/** Distributeur de billets · ATM (Afroicons Atm) */
+export declare const AtmRounded: AfroIcon;
+/** Distributeur de billets · ATM (Afroicons Atm) */
+export declare const AtmSharp: AfroIcon;
+/** Distributeur de billets · ATM (Afroicons Atm) */
+export declare const AtmTwoTone: AfroIcon;
+/** Fidélité · Loyalty (Afroicons TagHeart) */
+export declare const Loyalty: AfroIcon;
+/** Fidélité · Loyalty (Afroicons TagHeart) */
+export declare const LoyaltyOutlined: AfroIcon;
+/** Fidélité · Loyalty (Afroicons TagHeart) */
+export declare const LoyaltyRounded: AfroIcon;
+/** Fidélité · Loyalty (Afroicons TagHeart) */
+export declare const LoyaltySharp: AfroIcon;
+/** Fidélité · Loyalty (Afroicons TagHeart) */
+export declare const LoyaltyTwoTone: AfroIcon;
+/** Carte d’adhérent · Membership card (Afroicons CardMembership) */
+export declare const CardMembership: AfroIcon;
+/** Carte d’adhérent · Membership card (Afroicons CardMembership) */
+export declare const CardMembershipOutlined: AfroIcon;
+/** Carte d’adhérent · Membership card (Afroicons CardMembership) */
+export declare const CardMembershipRounded: AfroIcon;
+/** Carte d’adhérent · Membership card (Afroicons CardMembership) */
+export declare const CardMembershipSharp: AfroIcon;
+/** Carte d’adhérent · Membership card (Afroicons CardMembership) */
+export declare const CardMembershipTwoTone: AfroIcon;
+/** Passer commande · Checkout (Afroicons ShoppingCartCheckout) */
+export declare const ShoppingCartCheckout: AfroIcon;
+/** Passer commande · Checkout (Afroicons ShoppingCartCheckout) */
+export declare const ShoppingCartCheckoutOutlined: AfroIcon;
+/** Passer commande · Checkout (Afroicons ShoppingCartCheckout) */
+export declare const ShoppingCartCheckoutRounded: AfroIcon;
+/** Passer commande · Checkout (Afroicons ShoppingCartCheckout) */
+export declare const ShoppingCartCheckoutSharp: AfroIcon;
+/** Passer commande · Checkout (Afroicons ShoppingCartCheckout) */
+export declare const ShoppingCartCheckoutTwoTone: AfroIcon;
+/** Retirer du panier · Remove from cart (Afroicons ShoppingCartOff) */
+export declare const RemoveShoppingCart: AfroIcon;
+/** Retirer du panier · Remove from cart (Afroicons ShoppingCartOff) */
+export declare const RemoveShoppingCartOutlined: AfroIcon;
+/** Retirer du panier · Remove from cart (Afroicons ShoppingCartOff) */
+export declare const RemoveShoppingCartRounded: AfroIcon;
+/** Retirer du panier · Remove from cart (Afroicons ShoppingCartOff) */
+export declare const RemoveShoppingCartSharp: AfroIcon;
+/** Retirer du panier · Remove from cart (Afroicons ShoppingCartOff) */
+export declare const RemoveShoppingCartTwoTone: AfroIcon;
+/** Quantité limitée · Quantity limit (Afroicons ShoppingCartAlert) */
+export declare const ProductionQuantityLimits: AfroIcon;
+/** Quantité limitée · Quantity limit (Afroicons ShoppingCartAlert) */
+export declare const ProductionQuantityLimitsOutlined: AfroIcon;
+/** Quantité limitée · Quantity limit (Afroicons ShoppingCartAlert) */
+export declare const ProductionQuantityLimitsRounded: AfroIcon;
+/** Quantité limitée · Quantity limit (Afroicons ShoppingCartAlert) */
+export declare const ProductionQuantityLimitsSharp: AfroIcon;
+/** Quantité limitée · Quantity limit (Afroicons ShoppingCartAlert) */
+export declare const ProductionQuantityLimitsTwoTone: AfroIcon;
+/** Analyses · Insights (Afroicons Insights) */
+export declare const Insights: AfroIcon;
+/** Analyses · Insights (Afroicons Insights) */
+export declare const InsightsOutlined: AfroIcon;
+/** Analyses · Insights (Afroicons Insights) */
+export declare const InsightsRounded: AfroIcon;
+/** Analyses · Insights (Afroicons Insights) */
+export declare const InsightsSharp: AfroIcon;
+/** Analyses · Insights (Afroicons Insights) */
+export declare const InsightsTwoTone: AfroIcon;
+/** Statistiques de recherche · Query stats (Afroicons SearchChart) */
+export declare const QueryStats: AfroIcon;
+/** Statistiques de recherche · Query stats (Afroicons SearchChart) */
+export declare const QueryStatsOutlined: AfroIcon;
+/** Statistiques de recherche · Query stats (Afroicons SearchChart) */
+export declare const QueryStatsRounded: AfroIcon;
+/** Statistiques de recherche · Query stats (Afroicons SearchChart) */
+export declare const QueryStatsSharp: AfroIcon;
+/** Statistiques de recherche · Query stats (Afroicons SearchChart) */
+export declare const QueryStatsTwoTone: AfroIcon;
+/** Graphique automatique · Auto graph (Afroicons AutoGraph) */
+export declare const AutoGraph: AfroIcon;
+/** Graphique automatique · Auto graph (Afroicons AutoGraph) */
+export declare const AutoGraphOutlined: AfroIcon;
+/** Graphique automatique · Auto graph (Afroicons AutoGraph) */
+export declare const AutoGraphRounded: AfroIcon;
+/** Graphique automatique · Auto graph (Afroicons AutoGraph) */
+export declare const AutoGraphSharp: AfroIcon;
+/** Graphique automatique · Auto graph (Afroicons AutoGraph) */
+export declare const AutoGraphTwoTone: AfroIcon;
+/** Consommation de données · Data usage (Afroicons DataUsage) */
+export declare const DataUsage: AfroIcon;
+/** Consommation de données · Data usage (Afroicons DataUsage) */
+export declare const DataUsageOutlined: AfroIcon;
+/** Consommation de données · Data usage (Afroicons DataUsage) */
+export declare const DataUsageRounded: AfroIcon;
+/** Consommation de données · Data usage (Afroicons DataUsage) */
+export declare const DataUsageSharp: AfroIcon;
+/** Consommation de données · Data usage (Afroicons DataUsage) */
+export declare const DataUsageTwoTone: AfroIcon;
+/** Graphique en anneau · Donut chart (Afroicons ChartDonut) */
+export declare const DonutLarge: AfroIcon;
+/** Graphique en anneau · Donut chart (Afroicons ChartDonut) */
+export declare const DonutLargeOutlined: AfroIcon;
+/** Graphique en anneau · Donut chart (Afroicons ChartDonut) */
+export declare const DonutLargeRounded: AfroIcon;
+/** Graphique en anneau · Donut chart (Afroicons ChartDonut) */
+export declare const DonutLargeSharp: AfroIcon;
+/** Graphique en anneau · Donut chart (Afroicons ChartDonut) */
+export declare const DonutLargeTwoTone: AfroIcon;
+/** Anneau à petit trou · Small donut chart (Afroicons ChartDonutSmall) */
+export declare const DonutSmall: AfroIcon;
+/** Anneau à petit trou · Small donut chart (Afroicons ChartDonutSmall) */
+export declare const DonutSmallOutlined: AfroIcon;
+/** Anneau à petit trou · Small donut chart (Afroicons ChartDonutSmall) */
+export declare const DonutSmallRounded: AfroIcon;
+/** Anneau à petit trou · Small donut chart (Afroicons ChartDonutSmall) */
+export declare const DonutSmallSharp: AfroIcon;
+/** Anneau à petit trou · Small donut chart (Afroicons ChartDonutSmall) */
+export declare const DonutSmallTwoTone: AfroIcon;
+/** Graphique à bulles · Bubble chart (Afroicons ChartBubble) */
+export declare const BubbleChart: AfroIcon;
+/** Graphique à bulles · Bubble chart (Afroicons ChartBubble) */
+export declare const BubbleChartOutlined: AfroIcon;
+/** Graphique à bulles · Bubble chart (Afroicons ChartBubble) */
+export declare const BubbleChartRounded: AfroIcon;
+/** Graphique à bulles · Bubble chart (Afroicons ChartBubble) */
+export declare const BubbleChartSharp: AfroIcon;
+/** Graphique à bulles · Bubble chart (Afroicons ChartBubble) */
+export declare const BubbleChartTwoTone: AfroIcon;
+/** Graphique en cascade · Waterfall chart (Afroicons ChartWaterfall) */
+export declare const WaterfallChart: AfroIcon;
+/** Graphique en cascade · Waterfall chart (Afroicons ChartWaterfall) */
+export declare const WaterfallChartOutlined: AfroIcon;
+/** Graphique en cascade · Waterfall chart (Afroicons ChartWaterfall) */
+export declare const WaterfallChartRounded: AfroIcon;
+/** Graphique en cascade · Waterfall chart (Afroicons ChartWaterfall) */
+export declare const WaterfallChartSharp: AfroIcon;
+/** Graphique en cascade · Waterfall chart (Afroicons ChartWaterfall) */
+export declare const WaterfallChartTwoTone: AfroIcon;
+/** Chronologie · Timeline (Afroicons Timeline) */
+export declare const Timeline: AfroIcon;
+/** Chronologie · Timeline (Afroicons Timeline) */
+export declare const TimelineOutlined: AfroIcon;
+/** Chronologie · Timeline (Afroicons Timeline) */
+export declare const TimelineRounded: AfroIcon;
+/** Chronologie · Timeline (Afroicons Timeline) */
+export declare const TimelineSharp: AfroIcon;
+/** Chronologie · Timeline (Afroicons Timeline) */
+export declare const TimelineTwoTone: AfroIcon;
+/** Toutes les bordures · All borders (Afroicons BorderAll) */
+export declare const BorderAll: AfroIcon;
+/** Toutes les bordures · All borders (Afroicons BorderAll) */
+export declare const BorderAllOutlined: AfroIcon;
+/** Toutes les bordures · All borders (Afroicons BorderAll) */
+export declare const BorderAllRounded: AfroIcon;
+/** Toutes les bordures · All borders (Afroicons BorderAll) */
+export declare const BorderAllSharp: AfroIcon;
+/** Toutes les bordures · All borders (Afroicons BorderAll) */
+export declare const BorderAllTwoTone: AfroIcon;
+/** Sans bordure · Clear borders (Afroicons BorderClear) */
+export declare const BorderClear: AfroIcon;
+/** Sans bordure · Clear borders (Afroicons BorderClear) */
+export declare const BorderClearOutlined: AfroIcon;
+/** Sans bordure · Clear borders (Afroicons BorderClear) */
+export declare const BorderClearRounded: AfroIcon;
+/** Sans bordure · Clear borders (Afroicons BorderClear) */
+export declare const BorderClearSharp: AfroIcon;
+/** Sans bordure · Clear borders (Afroicons BorderClear) */
+export declare const BorderClearTwoTone: AfroIcon;
+/** Style de bordure · Border style (Afroicons BorderStyle) */
+export declare const BorderStyle: AfroIcon;
+/** Style de bordure · Border style (Afroicons BorderStyle) */
+export declare const BorderStyleOutlined: AfroIcon;
+/** Style de bordure · Border style (Afroicons BorderStyle) */
+export declare const BorderStyleRounded: AfroIcon;
+/** Style de bordure · Border style (Afroicons BorderStyle) */
+export declare const BorderStyleSharp: AfroIcon;
+/** Style de bordure · Border style (Afroicons BorderStyle) */
+export declare const BorderStyleTwoTone: AfroIcon;
+/** Bordure extérieure · Outer border (Afroicons BorderOuter) */
+export declare const BorderOuter: AfroIcon;
+/** Bordure extérieure · Outer border (Afroicons BorderOuter) */
+export declare const BorderOuterOutlined: AfroIcon;
+/** Bordure extérieure · Outer border (Afroicons BorderOuter) */
+export declare const BorderOuterRounded: AfroIcon;
+/** Bordure extérieure · Outer border (Afroicons BorderOuter) */
+export declare const BorderOuterSharp: AfroIcon;
+/** Bordure extérieure · Outer border (Afroicons BorderOuter) */
+export declare const BorderOuterTwoTone: AfroIcon;
+/** Bordures intérieures · Inner borders (Afroicons BorderInner) */
+export declare const BorderInner: AfroIcon;
+/** Bordures intérieures · Inner borders (Afroicons BorderInner) */
+export declare const BorderInnerOutlined: AfroIcon;
+/** Bordures intérieures · Inner borders (Afroicons BorderInner) */
+export declare const BorderInnerRounded: AfroIcon;
+/** Bordures intérieures · Inner borders (Afroicons BorderInner) */
+export declare const BorderInnerSharp: AfroIcon;
+/** Bordures intérieures · Inner borders (Afroicons BorderInner) */
+export declare const BorderInnerTwoTone: AfroIcon;
+/** Aligner au milieu · Align middle (Afroicons VerticalAlignMiddle) */
+export declare const VerticalAlignCenter: AfroIcon;
+/** Aligner au milieu · Align middle (Afroicons VerticalAlignMiddle) */
+export declare const VerticalAlignCenterOutlined: AfroIcon;
+/** Aligner au milieu · Align middle (Afroicons VerticalAlignMiddle) */
+export declare const VerticalAlignCenterRounded: AfroIcon;
+/** Aligner au milieu · Align middle (Afroicons VerticalAlignMiddle) */
+export declare const VerticalAlignCenterSharp: AfroIcon;
+/** Aligner au milieu · Align middle (Afroicons VerticalAlignMiddle) */
+export declare const VerticalAlignCenterTwoTone: AfroIcon;
+/** Écran partagé · Split screen (Afroicons Splitscreen) */
+export declare const Splitscreen: AfroIcon;
+/** Écran partagé · Split screen (Afroicons Splitscreen) */
+export declare const SplitscreenOutlined: AfroIcon;
+/** Écran partagé · Split screen (Afroicons Splitscreen) */
+export declare const SplitscreenRounded: AfroIcon;
+/** Écran partagé · Split screen (Afroicons Splitscreen) */
+export declare const SplitscreenSharp: AfroIcon;
+/** Écran partagé · Split screen (Afroicons Splitscreen) */
+export declare const SplitscreenTwoTone: AfroIcon;
+/** Partage horizontal · Horizontal split (Afroicons HorizontalSplit) */
+export declare const HorizontalSplit: AfroIcon;
+/** Partage horizontal · Horizontal split (Afroicons HorizontalSplit) */
+export declare const HorizontalSplitOutlined: AfroIcon;
+/** Partage horizontal · Horizontal split (Afroicons HorizontalSplit) */
+export declare const HorizontalSplitRounded: AfroIcon;
+/** Partage horizontal · Horizontal split (Afroicons HorizontalSplit) */
+export declare const HorizontalSplitSharp: AfroIcon;
+/** Partage horizontal · Horizontal split (Afroicons HorizontalSplit) */
+export declare const HorizontalSplitTwoTone: AfroIcon;
+/** Vue par jour · Day view (Afroicons ViewDay) */
+export declare const ViewDay: AfroIcon;
+/** Vue par jour · Day view (Afroicons ViewDay) */
+export declare const ViewDayOutlined: AfroIcon;
+/** Vue par jour · Day view (Afroicons ViewDay) */
+export declare const ViewDayRounded: AfroIcon;
+/** Vue par jour · Day view (Afroicons ViewDay) */
+export declare const ViewDaySharp: AfroIcon;
+/** Vue par jour · Day view (Afroicons ViewDay) */
+export declare const ViewDayTwoTone: AfroIcon;
+/** Vue par titres · Headline view (Afroicons ViewHeadline) */
+export declare const ViewHeadline: AfroIcon;
+/** Vue par titres · Headline view (Afroicons ViewHeadline) */
+export declare const ViewHeadlineOutlined: AfroIcon;
+/** Vue par titres · Headline view (Afroicons ViewHeadline) */
+export declare const ViewHeadlineRounded: AfroIcon;
+/** Vue par titres · Headline view (Afroicons ViewHeadline) */
+export declare const ViewHeadlineSharp: AfroIcon;
+/** Vue par titres · Headline view (Afroicons ViewHeadline) */
+export declare const ViewHeadlineTwoTone: AfroIcon;
+/** Vue en patchwork · Quilt view (Afroicons ViewQuilt) */
+export declare const ViewQuilt: AfroIcon;
+/** Vue en patchwork · Quilt view (Afroicons ViewQuilt) */
+export declare const ViewQuiltOutlined: AfroIcon;
+/** Vue en patchwork · Quilt view (Afroicons ViewQuilt) */
+export declare const ViewQuiltRounded: AfroIcon;
+/** Vue en patchwork · Quilt view (Afroicons ViewQuilt) */
+export declare const ViewQuiltSharp: AfroIcon;
+/** Vue en patchwork · Quilt view (Afroicons ViewQuilt) */
+export declare const ViewQuiltTwoTone: AfroIcon;
+/** Vue compacte · Compact view (Afroicons ViewCompact) */
+export declare const ViewCompact: AfroIcon;
+/** Vue compacte · Compact view (Afroicons ViewCompact) */
+export declare const ViewCompactOutlined: AfroIcon;
+/** Vue compacte · Compact view (Afroicons ViewCompact) */
+export declare const ViewCompactRounded: AfroIcon;
+/** Vue compacte · Compact view (Afroicons ViewCompact) */
+export declare const ViewCompactSharp: AfroIcon;
+/** Vue compacte · Compact view (Afroicons ViewCompact) */
+export declare const ViewCompactTwoTone: AfroIcon;
+/** Vue aérée · Comfortable view (Afroicons ViewComfy) */
+export declare const ViewComfy: AfroIcon;
+/** Vue aérée · Comfortable view (Afroicons ViewComfy) */
+export declare const ViewComfyOutlined: AfroIcon;
+/** Vue aérée · Comfortable view (Afroicons ViewComfy) */
+export declare const ViewComfyRounded: AfroIcon;
+/** Vue aérée · Comfortable view (Afroicons ViewComfy) */
+export declare const ViewComfySharp: AfroIcon;
+/** Vue aérée · Comfortable view (Afroicons ViewComfy) */
+export declare const ViewComfyTwoTone: AfroIcon;
+/** Vue en carrousel · Array view (Afroicons ViewArray) */
+export declare const ViewArray: AfroIcon;
+/** Vue en carrousel · Array view (Afroicons ViewArray) */
+export declare const ViewArrayOutlined: AfroIcon;
+/** Vue en carrousel · Array view (Afroicons ViewArray) */
+export declare const ViewArrayRounded: AfroIcon;
+/** Vue en carrousel · Array view (Afroicons ViewArray) */
+export declare const ViewArraySharp: AfroIcon;
+/** Vue en carrousel · Array view (Afroicons ViewArray) */
+export declare const ViewArrayTwoTone: AfroIcon;
+/** Densité large · Large density (Afroicons DensityLarge) */
+export declare const DensityLarge: AfroIcon;
+/** Densité large · Large density (Afroicons DensityLarge) */
+export declare const DensityLargeOutlined: AfroIcon;
+/** Densité large · Large density (Afroicons DensityLarge) */
+export declare const DensityLargeRounded: AfroIcon;
+/** Densité large · Large density (Afroicons DensityLarge) */
+export declare const DensityLargeSharp: AfroIcon;
+/** Densité large · Large density (Afroicons DensityLarge) */
+export declare const DensityLargeTwoTone: AfroIcon;
+/** Densité moyenne · Medium density (Afroicons DensityMedium) */
+export declare const DensityMedium: AfroIcon;
+/** Densité moyenne · Medium density (Afroicons DensityMedium) */
+export declare const DensityMediumOutlined: AfroIcon;
+/** Densité moyenne · Medium density (Afroicons DensityMedium) */
+export declare const DensityMediumRounded: AfroIcon;
+/** Densité moyenne · Medium density (Afroicons DensityMedium) */
+export declare const DensityMediumSharp: AfroIcon;
+/** Densité moyenne · Medium density (Afroicons DensityMedium) */
+export declare const DensityMediumTwoTone: AfroIcon;
+/** Densité serrée · Small density (Afroicons DensitySmall) */
+export declare const DensitySmall: AfroIcon;
+/** Densité serrée · Small density (Afroicons DensitySmall) */
+export declare const DensitySmallOutlined: AfroIcon;
+/** Densité serrée · Small density (Afroicons DensitySmall) */
+export declare const DensitySmallRounded: AfroIcon;
+/** Densité serrée · Small density (Afroicons DensitySmall) */
+export declare const DensitySmallSharp: AfroIcon;
+/** Densité serrée · Small density (Afroicons DensitySmall) */
+export declare const DensitySmallTwoTone: AfroIcon;
+/** Widgets · Widgets (Afroicons Widgets) */
+export declare const Widgets: AfroIcon;
+/** Widgets · Widgets (Afroicons Widgets) */
+export declare const WidgetsOutlined: AfroIcon;
+/** Widgets · Widgets (Afroicons Widgets) */
+export declare const WidgetsRounded: AfroIcon;
+/** Widgets · Widgets (Afroicons Widgets) */
+export declare const WidgetsSharp: AfroIcon;
+/** Widgets · Widgets (Afroicons Widgets) */
+export declare const WidgetsTwoTone: AfroIcon;
+/** Personnaliser le tableau de bord · Customize dashboard (Afroicons DashboardCustomize) */
+export declare const DashboardCustomize: AfroIcon;
+/** Personnaliser le tableau de bord · Customize dashboard (Afroicons DashboardCustomize) */
+export declare const DashboardCustomizeOutlined: AfroIcon;
+/** Personnaliser le tableau de bord · Customize dashboard (Afroicons DashboardCustomize) */
+export declare const DashboardCustomizeRounded: AfroIcon;
+/** Personnaliser le tableau de bord · Customize dashboard (Afroicons DashboardCustomize) */
+export declare const DashboardCustomizeSharp: AfroIcon;
+/** Personnaliser le tableau de bord · Customize dashboard (Afroicons DashboardCustomize) */
+export declare const DashboardCustomizeTwoTone: AfroIcon;
+/** Trier · Sort (Afroicons Sort) */
+export declare const Sort: AfroIcon;
+/** Trier · Sort (Afroicons Sort) */
+export declare const SortOutlined: AfroIcon;
+/** Trier · Sort (Afroicons Sort) */
+export declare const SortRounded: AfroIcon;
+/** Trier · Sort (Afroicons Sort) */
+export declare const SortSharp: AfroIcon;
+/** Trier · Sort (Afroicons Sort) */
+export declare const SortTwoTone: AfroIcon;
+/** Réordonner · Reorder (Afroicons Reorder) */
+export declare const Reorder: AfroIcon;
+/** Réordonner · Reorder (Afroicons Reorder) */
+export declare const ReorderOutlined: AfroIcon;
+/** Réordonner · Reorder (Afroicons Reorder) */
+export declare const ReorderRounded: AfroIcon;
+/** Réordonner · Reorder (Afroicons Reorder) */
+export declare const ReorderSharp: AfroIcon;
+/** Réordonner · Reorder (Afroicons Reorder) */
+export declare const ReorderTwoTone: AfroIcon;
+/** Priorité basse · Low priority (Afroicons LowPriority) */
+export declare const LowPriority: AfroIcon;
+/** Priorité basse · Low priority (Afroicons LowPriority) */
+export declare const LowPriorityOutlined: AfroIcon;
+/** Priorité basse · Low priority (Afroicons LowPriority) */
+export declare const LowPriorityRounded: AfroIcon;
+/** Priorité basse · Low priority (Afroicons LowPriority) */
+export declare const LowPrioritySharp: AfroIcon;
+/** Priorité basse · Low priority (Afroicons LowPriority) */
+export declare const LowPriorityTwoTone: AfroIcon;
+/** Services de nettoyage · Cleaning services (Afroicons CleaningServices) */
+export declare const CleaningServices: AfroIcon;
+/** Services de nettoyage · Cleaning services (Afroicons CleaningServices) */
+export declare const CleaningServicesOutlined: AfroIcon;
+/** Services de nettoyage · Cleaning services (Afroicons CleaningServices) */
+export declare const CleaningServicesRounded: AfroIcon;
+/** Services de nettoyage · Cleaning services (Afroicons CleaningServices) */
+export declare const CleaningServicesSharp: AfroIcon;
+/** Services de nettoyage · Cleaning services (Afroicons CleaningServices) */
+export declare const CleaningServicesTwoTone: AfroIcon;
+/** Caisse à outils · Toolbox (Afroicons HomeRepairService) */
+export declare const HomeRepairService: AfroIcon;
+/** Caisse à outils · Toolbox (Afroicons HomeRepairService) */
+export declare const HomeRepairServiceOutlined: AfroIcon;
+/** Caisse à outils · Toolbox (Afroicons HomeRepairService) */
+export declare const HomeRepairServiceRounded: AfroIcon;
+/** Caisse à outils · Toolbox (Afroicons HomeRepairService) */
+export declare const HomeRepairServiceSharp: AfroIcon;
+/** Caisse à outils · Toolbox (Afroicons HomeRepairService) */
+export declare const HomeRepairServiceTwoTone: AfroIcon;
+/** Services divers · Miscellaneous services (Afroicons MiscellaneousServices) */
+export declare const MiscellaneousServices: AfroIcon;
+/** Services divers · Miscellaneous services (Afroicons MiscellaneousServices) */
+export declare const MiscellaneousServicesOutlined: AfroIcon;
+/** Services divers · Miscellaneous services (Afroicons MiscellaneousServices) */
+export declare const MiscellaneousServicesRounded: AfroIcon;
+/** Services divers · Miscellaneous services (Afroicons MiscellaneousServices) */
+export declare const MiscellaneousServicesSharp: AfroIcon;
+/** Services divers · Miscellaneous services (Afroicons MiscellaneousServices) */
+export declare const MiscellaneousServicesTwoTone: AfroIcon;
+/** Services de conception · Design services (Afroicons DesignServices) */
+export declare const DesignServices: AfroIcon;
+/** Services de conception · Design services (Afroicons DesignServices) */
+export declare const DesignServicesOutlined: AfroIcon;
+/** Services de conception · Design services (Afroicons DesignServices) */
+export declare const DesignServicesRounded: AfroIcon;
+/** Services de conception · Design services (Afroicons DesignServices) */
+export declare const DesignServicesSharp: AfroIcon;
+/** Services de conception · Design services (Afroicons DesignServices) */
+export declare const DesignServicesTwoTone: AfroIcon;
+/** Location de voiture · Car rental (Afroicons CarRental) */
+export declare const CarRental: AfroIcon;
+/** Location de voiture · Car rental (Afroicons CarRental) */
+export declare const CarRentalOutlined: AfroIcon;
+/** Location de voiture · Car rental (Afroicons CarRental) */
+export declare const CarRentalRounded: AfroIcon;
+/** Location de voiture · Car rental (Afroicons CarRental) */
+export declare const CarRentalSharp: AfroIcon;
+/** Location de voiture · Car rental (Afroicons CarRental) */
+export declare const CarRentalTwoTone: AfroIcon;
+/** Réparation automobile · Car repair (Afroicons CarRepair) */
+export declare const CarRepair: AfroIcon;
+/** Réparation automobile · Car repair (Afroicons CarRepair) */
+export declare const CarRepairOutlined: AfroIcon;
+/** Réparation automobile · Car repair (Afroicons CarRepair) */
+export declare const CarRepairRounded: AfroIcon;
+/** Réparation automobile · Car repair (Afroicons CarRepair) */
+export declare const CarRepairSharp: AfroIcon;
+/** Réparation automobile · Car repair (Afroicons CarRepair) */
+export declare const CarRepairTwoTone: AfroIcon;
+/** Lavage auto · Car wash (Afroicons CarWash) */
+export declare const LocalCarWash: AfroIcon;
+/** Lavage auto · Car wash (Afroicons CarWash) */
+export declare const LocalCarWashOutlined: AfroIcon;
+/** Lavage auto · Car wash (Afroicons CarWash) */
+export declare const LocalCarWashRounded: AfroIcon;
+/** Lavage auto · Car wash (Afroicons CarWash) */
+export declare const LocalCarWashSharp: AfroIcon;
+/** Lavage auto · Car wash (Afroicons CarWash) */
+export declare const LocalCarWashTwoTone: AfroIcon;
+/** Point de recharge · Charging station (Afroicons ChargingStation) */
+export declare const ChargingStation: AfroIcon;
+/** Point de recharge · Charging station (Afroicons ChargingStation) */
+export declare const ChargingStationOutlined: AfroIcon;
+/** Point de recharge · Charging station (Afroicons ChargingStation) */
+export declare const ChargingStationRounded: AfroIcon;
+/** Point de recharge · Charging station (Afroicons ChargingStation) */
+export declare const ChargingStationSharp: AfroIcon;
+/** Point de recharge · Charging station (Afroicons ChargingStation) */
+export declare const ChargingStationTwoTone: AfroIcon;
+/** Borne électrique · EV charging station (Afroicons EvStation) */
+export declare const EvStation: AfroIcon;
+/** Borne électrique · EV charging station (Afroicons EvStation) */
+export declare const EvStationOutlined: AfroIcon;
+/** Borne électrique · EV charging station (Afroicons EvStation) */
+export declare const EvStationRounded: AfroIcon;
+/** Borne électrique · EV charging station (Afroicons EvStation) */
+export declare const EvStationSharp: AfroIcon;
+/** Borne électrique · EV charging station (Afroicons EvStation) */
+export declare const EvStationTwoTone: AfroIcon;
+/** Police · Police (Afroicons PoliceBadge) */
+export declare const LocalPolice: AfroIcon;
+/** Police · Police (Afroicons PoliceBadge) */
+export declare const LocalPoliceOutlined: AfroIcon;
+/** Police · Police (Afroicons PoliceBadge) */
+export declare const LocalPoliceRounded: AfroIcon;
+/** Police · Police (Afroicons PoliceBadge) */
+export declare const LocalPoliceSharp: AfroIcon;
+/** Police · Police (Afroicons PoliceBadge) */
+export declare const LocalPoliceTwoTone: AfroIcon;
+/** Camion de pompiers · Fire truck (Afroicons FireTruck) */
+export declare const FireTruck: AfroIcon;
+/** Camion de pompiers · Fire truck (Afroicons FireTruck) */
+export declare const FireTruckOutlined: AfroIcon;
+/** Camion de pompiers · Fire truck (Afroicons FireTruck) */
+export declare const FireTruckRounded: AfroIcon;
+/** Camion de pompiers · Fire truck (Afroicons FireTruck) */
+export declare const FireTruckSharp: AfroIcon;
+/** Camion de pompiers · Fire truck (Afroicons FireTruck) */
+export declare const FireTruckTwoTone: AfroIcon;
+/** Bibliothèque de quartier · Local library (Afroicons PersonReading) */
+export declare const LocalLibrary: AfroIcon;
+/** Bibliothèque de quartier · Local library (Afroicons PersonReading) */
+export declare const LocalLibraryOutlined: AfroIcon;
+/** Bibliothèque de quartier · Local library (Afroicons PersonReading) */
+export declare const LocalLibraryRounded: AfroIcon;
+/** Bibliothèque de quartier · Local library (Afroicons PersonReading) */
+export declare const LocalLibrarySharp: AfroIcon;
+/** Bibliothèque de quartier · Local library (Afroicons PersonReading) */
+export declare const LocalLibraryTwoTone: AfroIcon;
+/** Mosquée · Mosque (Afroicons Mosque) */
+export declare const Mosque: AfroIcon;
+/** Mosquée · Mosque (Afroicons Mosque) */
+export declare const MosqueOutlined: AfroIcon;
+/** Mosquée · Mosque (Afroicons Mosque) */
+export declare const MosqueRounded: AfroIcon;
+/** Mosquée · Mosque (Afroicons Mosque) */
+export declare const MosqueSharp: AfroIcon;
+/** Mosquée · Mosque (Afroicons Mosque) */
+export declare const MosqueTwoTone: AfroIcon;
+/** Stade · Stadium (Afroicons Stadium) */
+export declare const Stadium: AfroIcon;
+/** Stade · Stadium (Afroicons Stadium) */
+export declare const StadiumOutlined: AfroIcon;
+/** Stade · Stadium (Afroicons Stadium) */
+export declare const StadiumRounded: AfroIcon;
+/** Stade · Stadium (Afroicons Stadium) */
+export declare const StadiumSharp: AfroIcon;
+/** Stade · Stadium (Afroicons Stadium) */
+export declare const StadiumTwoTone: AfroIcon;
+/** Garage · Garage (Afroicons Garage) */
+export declare const Garage: AfroIcon;
+/** Garage · Garage (Afroicons Garage) */
+export declare const GarageOutlined: AfroIcon;
+/** Garage · Garage (Afroicons Garage) */
+export declare const GarageRounded: AfroIcon;
+/** Garage · Garage (Afroicons Garage) */
+export declare const GarageSharp: AfroIcon;
+/** Garage · Garage (Afroicons Garage) */
+export declare const GarageTwoTone: AfroIcon;
+/** Ascenseur · Elevator (Afroicons Elevator) */
+export declare const Elevator: AfroIcon;
+/** Ascenseur · Elevator (Afroicons Elevator) */
+export declare const ElevatorOutlined: AfroIcon;
+/** Ascenseur · Elevator (Afroicons Elevator) */
+export declare const ElevatorRounded: AfroIcon;
+/** Ascenseur · Elevator (Afroicons Elevator) */
+export declare const ElevatorSharp: AfroIcon;
+/** Ascenseur · Elevator (Afroicons Elevator) */
+export declare const ElevatorTwoTone: AfroIcon;
+/** Escalier · Stairs (Afroicons Stairs) */
+export declare const Stairs: AfroIcon;
+/** Escalier · Stairs (Afroicons Stairs) */
+export declare const StairsOutlined: AfroIcon;
+/** Escalier · Stairs (Afroicons Stairs) */
+export declare const StairsRounded: AfroIcon;
+/** Escalier · Stairs (Afroicons Stairs) */
+export declare const StairsSharp: AfroIcon;
+/** Escalier · Stairs (Afroicons Stairs) */
+export declare const StairsTwoTone: AfroIcon;
+/** Escalier mécanique · Escalator (Afroicons Escalator) */
+export declare const Escalator: AfroIcon;
+/** Escalier mécanique · Escalator (Afroicons Escalator) */
+export declare const EscalatorOutlined: AfroIcon;
+/** Escalier mécanique · Escalator (Afroicons Escalator) */
+export declare const EscalatorRounded: AfroIcon;
+/** Escalier mécanique · Escalator (Afroicons Escalator) */
+export declare const EscalatorSharp: AfroIcon;
+/** Escalier mécanique · Escalator (Afroicons Escalator) */
+export declare const EscalatorTwoTone: AfroIcon;
+/** Toilettes · Restroom (Afroicons Restroom) */
+export declare const Wc: AfroIcon;
+/** Toilettes · Restroom (Afroicons Restroom) */
+export declare const WcOutlined: AfroIcon;
+/** Toilettes · Restroom (Afroicons Restroom) */
+export declare const WcRounded: AfroIcon;
+/** Toilettes · Restroom (Afroicons Restroom) */
+export declare const WcSharp: AfroIcon;
+/** Toilettes · Restroom (Afroicons Restroom) */
+export declare const WcTwoTone: AfroIcon;
+/** Salle d’eau · Bathroom (Afroicons Bathroom) */
+export declare const Bathroom: AfroIcon;
+/** Salle d’eau · Bathroom (Afroicons Bathroom) */
+export declare const BathroomOutlined: AfroIcon;
+/** Salle d’eau · Bathroom (Afroicons Bathroom) */
+export declare const BathroomRounded: AfroIcon;
+/** Salle d’eau · Bathroom (Afroicons Bathroom) */
+export declare const BathroomSharp: AfroIcon;
+/** Salle d’eau · Bathroom (Afroicons Bathroom) */
+export declare const BathroomTwoTone: AfroIcon;
+/** Trajet quotidien · Commute (Afroicons Commute) */
+export declare const Commute: AfroIcon;
+/** Trajet quotidien · Commute (Afroicons Commute) */
+export declare const CommuteOutlined: AfroIcon;
+/** Trajet quotidien · Commute (Afroicons Commute) */
+export declare const CommuteRounded: AfroIcon;
+/** Trajet quotidien · Commute (Afroicons Commute) */
+export declare const CommuteSharp: AfroIcon;
+/** Trajet quotidien · Commute (Afroicons Commute) */
+export declare const CommuteTwoTone: AfroIcon;
+/** Course à pied · Running (Afroicons PersonRunning) */
+export declare const DirectionsRun: AfroIcon;
+/** Course à pied · Running (Afroicons PersonRunning) */
+export declare const DirectionsRunOutlined: AfroIcon;
+/** Course à pied · Running (Afroicons PersonRunning) */
+export declare const DirectionsRunRounded: AfroIcon;
+/** Course à pied · Running (Afroicons PersonRunning) */
+export declare const DirectionsRunSharp: AfroIcon;
+/** Course à pied · Running (Afroicons PersonRunning) */
+export declare const DirectionsRunTwoTone: AfroIcon;
+/** Mobylette · Moped (Afroicons Moped) */
+export declare const Moped: AfroIcon;
+/** Mobylette · Moped (Afroicons Moped) */
+export declare const MopedOutlined: AfroIcon;
+/** Mobylette · Moped (Afroicons Moped) */
+export declare const MopedRounded: AfroIcon;
+/** Mobylette · Moped (Afroicons Moped) */
+export declare const MopedSharp: AfroIcon;
+/** Mobylette · Moped (Afroicons Moped) */
+export declare const MopedTwoTone: AfroIcon;
+/** Trottinette électrique · Electric scooter (Afroicons ElectricScooter) */
+export declare const ElectricScooter: AfroIcon;
+/** Trottinette électrique · Electric scooter (Afroicons ElectricScooter) */
+export declare const ElectricScooterOutlined: AfroIcon;
+/** Trottinette électrique · Electric scooter (Afroicons ElectricScooter) */
+export declare const ElectricScooterRounded: AfroIcon;
+/** Trottinette électrique · Electric scooter (Afroicons ElectricScooter) */
+export declare const ElectricScooterSharp: AfroIcon;
+/** Trottinette électrique · Electric scooter (Afroicons ElectricScooter) */
+export declare const ElectricScooterTwoTone: AfroIcon;
+/** Voiture électrique · Electric car (Afroicons ElectricCar) */
+export declare const ElectricCar: AfroIcon;
+/** Voiture électrique · Electric car (Afroicons ElectricCar) */
+export declare const ElectricCarOutlined: AfroIcon;
+/** Voiture électrique · Electric car (Afroicons ElectricCar) */
+export declare const ElectricCarRounded: AfroIcon;
+/** Voiture électrique · Electric car (Afroicons ElectricCar) */
+export declare const ElectricCarSharp: AfroIcon;
+/** Voiture électrique · Electric car (Afroicons ElectricCar) */
+export declare const ElectricCarTwoTone: AfroIcon;
+/** Vélo électrique · Electric bike (Afroicons ElectricBike) */
+export declare const ElectricBike: AfroIcon;
+/** Vélo électrique · Electric bike (Afroicons ElectricBike) */
+export declare const ElectricBikeOutlined: AfroIcon;
+/** Vélo électrique · Electric bike (Afroicons ElectricBike) */
+export declare const ElectricBikeRounded: AfroIcon;
+/** Vélo électrique · Electric bike (Afroicons ElectricBike) */
+export declare const ElectricBikeSharp: AfroIcon;
+/** Vélo électrique · Electric bike (Afroicons ElectricBike) */
+export declare const ElectricBikeTwoTone: AfroIcon;
+/** Itinéraire bis · Alternative route (Afroicons AltRoute) */
+export declare const AltRoute: AfroIcon;
+/** Itinéraire bis · Alternative route (Afroicons AltRoute) */
+export declare const AltRouteOutlined: AfroIcon;
+/** Itinéraire bis · Alternative route (Afroicons AltRoute) */
+export declare const AltRouteRounded: AfroIcon;
+/** Itinéraire bis · Alternative route (Afroicons AltRoute) */
+export declare const AltRouteSharp: AfroIcon;
+/** Itinéraire bis · Alternative route (Afroicons AltRoute) */
+export declare const AltRouteTwoTone: AfroIcon;
+/** Direction à suivre · Directions (Afroicons Directions) */
+export declare const Directions: AfroIcon;
+/** Direction à suivre · Directions (Afroicons Directions) */
+export declare const DirectionsOutlined: AfroIcon;
+/** Direction à suivre · Directions (Afroicons Directions) */
+export declare const DirectionsRounded: AfroIcon;
+/** Direction à suivre · Directions (Afroicons Directions) */
+export declare const DirectionsSharp: AfroIcon;
+/** Direction à suivre · Directions (Afroicons Directions) */
+export declare const DirectionsTwoTone: AfroIcon;
+/** Tableau des départs · Departure board (Afroicons DepartureBoard) */
+export declare const DepartureBoard: AfroIcon;
+/** Tableau des départs · Departure board (Afroicons DepartureBoard) */
+export declare const DepartureBoardOutlined: AfroIcon;
+/** Tableau des départs · Departure board (Afroicons DepartureBoard) */
+export declare const DepartureBoardRounded: AfroIcon;
+/** Tableau des départs · Departure board (Afroicons DepartureBoard) */
+export declare const DepartureBoardSharp: AfroIcon;
+/** Tableau des départs · Departure board (Afroicons DepartureBoard) */
+export declare const DepartureBoardTwoTone: AfroIcon;
+/** Personne âgée · Elderly person (Afroicons Elderly) */
+export declare const Elderly: AfroIcon;
+/** Personne âgée · Elderly person (Afroicons Elderly) */
+export declare const ElderlyOutlined: AfroIcon;
+/** Personne âgée · Elderly person (Afroicons Elderly) */
+export declare const ElderlyRounded: AfroIcon;
+/** Personne âgée · Elderly person (Afroicons Elderly) */
+export declare const ElderlySharp: AfroIcon;
+/** Personne âgée · Elderly person (Afroicons Elderly) */
+export declare const ElderlyTwoTone: AfroIcon;
+/** Femme âgée · Elderly woman (Afroicons ElderlyWoman) */
+export declare const ElderlyWoman: AfroIcon;
+/** Femme âgée · Elderly woman (Afroicons ElderlyWoman) */
+export declare const ElderlyWomanOutlined: AfroIcon;
+/** Femme âgée · Elderly woman (Afroicons ElderlyWoman) */
+export declare const ElderlyWomanRounded: AfroIcon;
+/** Femme âgée · Elderly woman (Afroicons ElderlyWoman) */
+export declare const ElderlyWomanSharp: AfroIcon;
+/** Femme âgée · Elderly woman (Afroicons ElderlyWoman) */
+export declare const ElderlyWomanTwoTone: AfroIcon;
+/** Homme · Man (Afroicons Man) */
+export declare const Man: AfroIcon;
+/** Homme · Man (Afroicons Man) */
+export declare const ManOutlined: AfroIcon;
+/** Homme · Man (Afroicons Man) */
+export declare const ManRounded: AfroIcon;
+/** Homme · Man (Afroicons Man) */
+export declare const ManSharp: AfroIcon;
+/** Homme · Man (Afroicons Man) */
+export declare const ManTwoTone: AfroIcon;
+/** Femme · Woman (Afroicons Woman) */
+export declare const Woman: AfroIcon;
+/** Femme · Woman (Afroicons Woman) */
+export declare const WomanOutlined: AfroIcon;
+/** Femme · Woman (Afroicons Woman) */
+export declare const WomanRounded: AfroIcon;
+/** Femme · Woman (Afroicons Woman) */
+export declare const WomanSharp: AfroIcon;
+/** Femme · Woman (Afroicons Woman) */
+export declare const WomanTwoTone: AfroIcon;
+/** Garçon · Boy (Afroicons Boy) */
+export declare const Boy: AfroIcon;
+/** Garçon · Boy (Afroicons Boy) */
+export declare const BoyOutlined: AfroIcon;
+/** Garçon · Boy (Afroicons Boy) */
+export declare const BoyRounded: AfroIcon;
+/** Garçon · Boy (Afroicons Boy) */
+export declare const BoySharp: AfroIcon;
+/** Garçon · Boy (Afroicons Boy) */
+export declare const BoyTwoTone: AfroIcon;
+/** Fille · Girl (Afroicons Girl) */
+export declare const Girl: AfroIcon;
+/** Fille · Girl (Afroicons Girl) */
+export declare const GirlOutlined: AfroIcon;
+/** Fille · Girl (Afroicons Girl) */
+export declare const GirlRounded: AfroIcon;
+/** Fille · Girl (Afroicons Girl) */
+export declare const GirlSharp: AfroIcon;
+/** Fille · Girl (Afroicons Girl) */
+export declare const GirlTwoTone: AfroIcon;
+/** Masculin · Male (Afroicons Male) */
+export declare const Male: AfroIcon;
+/** Masculin · Male (Afroicons Male) */
+export declare const MaleOutlined: AfroIcon;
+/** Masculin · Male (Afroicons Male) */
+export declare const MaleRounded: AfroIcon;
+/** Masculin · Male (Afroicons Male) */
+export declare const MaleSharp: AfroIcon;
+/** Masculin · Male (Afroicons Male) */
+export declare const MaleTwoTone: AfroIcon;
+/** Féminin · Female (Afroicons Female) */
+export declare const Female: AfroIcon;
+/** Féminin · Female (Afroicons Female) */
+export declare const FemaleOutlined: AfroIcon;
+/** Féminin · Female (Afroicons Female) */
+export declare const FemaleRounded: AfroIcon;
+/** Féminin · Female (Afroicons Female) */
+export declare const FemaleSharp: AfroIcon;
+/** Féminin · Female (Afroicons Female) */
+export declare const FemaleTwoTone: AfroIcon;
+/** Femme enceinte · Pregnant woman (Afroicons PregnantWoman) */
+export declare const PregnantWoman: AfroIcon;
+/** Femme enceinte · Pregnant woman (Afroicons PregnantWoman) */
+export declare const PregnantWomanOutlined: AfroIcon;
+/** Femme enceinte · Pregnant woman (Afroicons PregnantWoman) */
+export declare const PregnantWomanRounded: AfroIcon;
+/** Femme enceinte · Pregnant woman (Afroicons PregnantWoman) */
+export declare const PregnantWomanSharp: AfroIcon;
+/** Femme enceinte · Pregnant woman (Afroicons PregnantWoman) */
+export declare const PregnantWomanTwoTone: AfroIcon;
+/** Toilettes familiales · Family restroom (Afroicons FamilyRestroom) */
+export declare const FamilyRestroom: AfroIcon;
+/** Toilettes familiales · Family restroom (Afroicons FamilyRestroom) */
+export declare const FamilyRestroomOutlined: AfroIcon;
+/** Toilettes familiales · Family restroom (Afroicons FamilyRestroom) */
+export declare const FamilyRestroomRounded: AfroIcon;
+/** Toilettes familiales · Family restroom (Afroicons FamilyRestroom) */
+export declare const FamilyRestroomSharp: AfroIcon;
+/** Toilettes familiales · Family restroom (Afroicons FamilyRestroom) */
+export declare const FamilyRestroomTwoTone: AfroIcon;
+/** Accès en fauteuil roulant · Wheelchair accessible (Afroicons Accessible) */
+export declare const Accessible: AfroIcon;
+/** Accès en fauteuil roulant · Wheelchair accessible (Afroicons Accessible) */
+export declare const AccessibleOutlined: AfroIcon;
+/** Accès en fauteuil roulant · Wheelchair accessible (Afroicons Accessible) */
+export declare const AccessibleRounded: AfroIcon;
+/** Accès en fauteuil roulant · Wheelchair accessible (Afroicons Accessible) */
+export declare const AccessibleSharp: AfroIcon;
+/** Accès en fauteuil roulant · Wheelchair accessible (Afroicons Accessible) */
+export declare const AccessibleTwoTone: AfroIcon;
+/** Malade · Sick (Afroicons Sick) */
+export declare const Sick: AfroIcon;
+/** Malade · Sick (Afroicons Sick) */
+export declare const SickOutlined: AfroIcon;
+/** Malade · Sick (Afroicons Sick) */
+export declare const SickRounded: AfroIcon;
+/** Malade · Sick (Afroicons Sick) */
+export declare const SickSharp: AfroIcon;
+/** Malade · Sick (Afroicons Sick) */
+export declare const SickTwoTone: AfroIcon;
+/** Restauration rapide · Fast food (Afroicons Fastfood) */
+export declare const Fastfood: AfroIcon;
+/** Restauration rapide · Fast food (Afroicons Fastfood) */
+export declare const FastfoodOutlined: AfroIcon;
+/** Restauration rapide · Fast food (Afroicons Fastfood) */
+export declare const FastfoodRounded: AfroIcon;
+/** Restauration rapide · Fast food (Afroicons Fastfood) */
+export declare const FastfoodSharp: AfroIcon;
+/** Restauration rapide · Fast food (Afroicons Fastfood) */
+export declare const FastfoodTwoTone: AfroIcon;
+/** Hamburger · Burger (Afroicons Burger) */
+export declare const LunchDining: AfroIcon;
+/** Hamburger · Burger (Afroicons Burger) */
+export declare const LunchDiningOutlined: AfroIcon;
+/** Hamburger · Burger (Afroicons Burger) */
+export declare const LunchDiningRounded: AfroIcon;
+/** Hamburger · Burger (Afroicons Burger) */
+export declare const LunchDiningSharp: AfroIcon;
+/** Hamburger · Burger (Afroicons Burger) */
+export declare const LunchDiningTwoTone: AfroIcon;
+/** Dîner · Dinner (Afroicons DinnerDining) */
+export declare const DinnerDining: AfroIcon;
+/** Dîner · Dinner (Afroicons DinnerDining) */
+export declare const DinnerDiningOutlined: AfroIcon;
+/** Dîner · Dinner (Afroicons DinnerDining) */
+export declare const DinnerDiningRounded: AfroIcon;
+/** Dîner · Dinner (Afroicons DinnerDining) */
+export declare const DinnerDiningSharp: AfroIcon;
+/** Dîner · Dinner (Afroicons DinnerDining) */
+export declare const DinnerDiningTwoTone: AfroIcon;
+/** Petit-déjeuner · Breakfast (Afroicons Toast) */
+export declare const BreakfastDining: AfroIcon;
+/** Petit-déjeuner · Breakfast (Afroicons Toast) */
+export declare const BreakfastDiningOutlined: AfroIcon;
+/** Petit-déjeuner · Breakfast (Afroicons Toast) */
+export declare const BreakfastDiningRounded: AfroIcon;
+/** Petit-déjeuner · Breakfast (Afroicons Toast) */
+export declare const BreakfastDiningSharp: AfroIcon;
+/** Petit-déjeuner · Breakfast (Afroicons Toast) */
+export declare const BreakfastDiningTwoTone: AfroIcon;
+/** Bol de riz · Rice bowl (Afroicons RiceBowl) */
+export declare const RiceBowl: AfroIcon;
+/** Bol de riz · Rice bowl (Afroicons RiceBowl) */
+export declare const RiceBowlOutlined: AfroIcon;
+/** Bol de riz · Rice bowl (Afroicons RiceBowl) */
+export declare const RiceBowlRounded: AfroIcon;
+/** Bol de riz · Rice bowl (Afroicons RiceBowl) */
+export declare const RiceBowlSharp: AfroIcon;
+/** Bol de riz · Rice bowl (Afroicons RiceBowl) */
+export declare const RiceBowlTwoTone: AfroIcon;
+/** Plat de poisson · Set meal (Afroicons SetMeal) */
+export declare const SetMeal: AfroIcon;
+/** Plat de poisson · Set meal (Afroicons SetMeal) */
+export declare const SetMealOutlined: AfroIcon;
+/** Plat de poisson · Set meal (Afroicons SetMeal) */
+export declare const SetMealRounded: AfroIcon;
+/** Plat de poisson · Set meal (Afroicons SetMeal) */
+export declare const SetMealSharp: AfroIcon;
+/** Plat de poisson · Set meal (Afroicons SetMeal) */
+export declare const SetMealTwoTone: AfroIcon;
+/** Repas à emporter · Takeout (Afroicons TakeoutBox) */
+export declare const TakeoutDining: AfroIcon;
+/** Repas à emporter · Takeout (Afroicons TakeoutBox) */
+export declare const TakeoutDiningOutlined: AfroIcon;
+/** Repas à emporter · Takeout (Afroicons TakeoutBox) */
+export declare const TakeoutDiningRounded: AfroIcon;
+/** Repas à emporter · Takeout (Afroicons TakeoutBox) */
+export declare const TakeoutDiningSharp: AfroIcon;
+/** Repas à emporter · Takeout (Afroicons TakeoutBox) */
+export declare const TakeoutDiningTwoTone: AfroIcon;
+/** E-mail avec pièce jointe · Attach email (Afroicons MailAttachment) */
+export declare const AttachEmail: AfroIcon;
+/** E-mail avec pièce jointe · Attach email (Afroicons MailAttachment) */
+export declare const AttachEmailOutlined: AfroIcon;
+/** E-mail avec pièce jointe · Attach email (Afroicons MailAttachment) */
+export declare const AttachEmailRounded: AfroIcon;
+/** E-mail avec pièce jointe · Attach email (Afroicons MailAttachment) */
+export declare const AttachEmailSharp: AfroIcon;
+/** E-mail avec pièce jointe · Attach email (Afroicons MailAttachment) */
+export declare const AttachEmailTwoTone: AfroIcon;
+/** Transférer l’e-mail · Forward to inbox (Afroicons MailForward) */
+export declare const ForwardToInbox: AfroIcon;
+/** Transférer l’e-mail · Forward to inbox (Afroicons MailForward) */
+export declare const ForwardToInboxOutlined: AfroIcon;
+/** Transférer l’e-mail · Forward to inbox (Afroicons MailForward) */
+export declare const ForwardToInboxRounded: AfroIcon;
+/** Transférer l’e-mail · Forward to inbox (Afroicons MailForward) */
+export declare const ForwardToInboxSharp: AfroIcon;
+/** Transférer l’e-mail · Forward to inbox (Afroicons MailForward) */
+export declare const ForwardToInboxTwoTone: AfroIcon;
+/** Se désabonner · Unsubscribe (Afroicons MailUnsubscribe) */
+export declare const Unsubscribe: AfroIcon;
+/** Se désabonner · Unsubscribe (Afroicons MailUnsubscribe) */
+export declare const UnsubscribeOutlined: AfroIcon;
+/** Se désabonner · Unsubscribe (Afroicons MailUnsubscribe) */
+export declare const UnsubscribeRounded: AfroIcon;
+/** Se désabonner · Unsubscribe (Afroicons MailUnsubscribe) */
+export declare const UnsubscribeSharp: AfroIcon;
+/** Se désabonner · Unsubscribe (Afroicons MailUnsubscribe) */
+export declare const UnsubscribeTwoTone: AfroIcon;
+/** Message lu · Mark chat read (Afroicons MessageSquareCheck) */
+export declare const MarkChatRead: AfroIcon;
+/** Message lu · Mark chat read (Afroicons MessageSquareCheck) */
+export declare const MarkChatReadOutlined: AfroIcon;
+/** Message lu · Mark chat read (Afroicons MessageSquareCheck) */
+export declare const MarkChatReadRounded: AfroIcon;
+/** Message lu · Mark chat read (Afroicons MessageSquareCheck) */
+export declare const MarkChatReadSharp: AfroIcon;
+/** Message lu · Mark chat read (Afroicons MessageSquareCheck) */
+export declare const MarkChatReadTwoTone: AfroIcon;
+/** Réponse rapide · Quick reply (Afroicons QuickReply) */
+export declare const Quickreply: AfroIcon;
+/** Réponse rapide · Quick reply (Afroicons QuickReply) */
+export declare const QuickreplyOutlined: AfroIcon;
+/** Réponse rapide · Quick reply (Afroicons QuickReply) */
+export declare const QuickreplyRounded: AfroIcon;
+/** Réponse rapide · Quick reply (Afroicons QuickReply) */
+export declare const QuickreplySharp: AfroIcon;
+/** Réponse rapide · Quick reply (Afroicons QuickReply) */
+export declare const QuickreplyTwoTone: AfroIcon;
+/** Rédiger un avis · Rate and review (Afroicons MessageSquarePen) */
+export declare const RateReview: AfroIcon;
+/** Rédiger un avis · Rate and review (Afroicons MessageSquarePen) */
+export declare const RateReviewOutlined: AfroIcon;
+/** Rédiger un avis · Rate and review (Afroicons MessageSquarePen) */
+export declare const RateReviewRounded: AfroIcon;
+/** Rédiger un avis · Rate and review (Afroicons MessageSquarePen) */
+export declare const RateReviewSharp: AfroIcon;
+/** Rédiger un avis · Rate and review (Afroicons MessageSquarePen) */
+export declare const RateReviewTwoTone: AfroIcon;
+/** Avis clients · Reviews (Afroicons MessageSquareStar) */
+export declare const Reviews: AfroIcon;
+/** Avis clients · Reviews (Afroicons MessageSquareStar) */
+export declare const ReviewsOutlined: AfroIcon;
+/** Avis clients · Reviews (Afroicons MessageSquareStar) */
+export declare const ReviewsRounded: AfroIcon;
+/** Avis clients · Reviews (Afroicons MessageSquareStar) */
+export declare const ReviewsSharp: AfroIcon;
+/** Avis clients · Reviews (Afroicons MessageSquareStar) */
+export declare const ReviewsTwoTone: AfroIcon;
+/** Discussion vidéo · Video chat (Afroicons MessageSquareVideo) */
+export declare const VideoChat: AfroIcon;
+/** Discussion vidéo · Video chat (Afroicons MessageSquareVideo) */
+export declare const VideoChatOutlined: AfroIcon;
+/** Discussion vidéo · Video chat (Afroicons MessageSquareVideo) */
+export declare const VideoChatRounded: AfroIcon;
+/** Discussion vidéo · Video chat (Afroicons MessageSquareVideo) */
+export declare const VideoChatSharp: AfroIcon;
+/** Discussion vidéo · Video chat (Afroicons MessageSquareVideo) */
+export declare const VideoChatTwoTone: AfroIcon;
+/** Télécopieur · Fax (Afroicons Fax) */
+export declare const Fax: AfroIcon;
+/** Télécopieur · Fax (Afroicons Fax) */
+export declare const FaxOutlined: AfroIcon;
+/** Télécopieur · Fax (Afroicons Fax) */
+export declare const FaxRounded: AfroIcon;
+/** Télécopieur · Fax (Afroicons Fax) */
+export declare const FaxSharp: AfroIcon;
+/** Télécopieur · Fax (Afroicons Fax) */
+export declare const FaxTwoTone: AfroIcon;
+/** Clavier numérique · Dialpad (Afroicons Dialpad) */
+export declare const Dialpad: AfroIcon;
+/** Clavier numérique · Dialpad (Afroicons Dialpad) */
+export declare const DialpadOutlined: AfroIcon;
+/** Clavier numérique · Dialpad (Afroicons Dialpad) */
+export declare const DialpadRounded: AfroIcon;
+/** Clavier numérique · Dialpad (Afroicons Dialpad) */
+export declare const DialpadSharp: AfroIcon;
+/** Clavier numérique · Dialpad (Afroicons Dialpad) */
+export declare const DialpadTwoTone: AfroIcon;
+/** Boîte d’envoi · Outbox (Afroicons Outbox) */
+export declare const Outbox: AfroIcon;
+/** Boîte d’envoi · Outbox (Afroicons Outbox) */
+export declare const OutboxOutlined: AfroIcon;
+/** Boîte d’envoi · Outbox (Afroicons Outbox) */
+export declare const OutboxRounded: AfroIcon;
+/** Boîte d’envoi · Outbox (Afroicons Outbox) */
+export declare const OutboxSharp: AfroIcon;
+/** Boîte d’envoi · Outbox (Afroicons Outbox) */
+export declare const OutboxTwoTone: AfroIcon;
+/** Appareils · Devices (Afroicons Devices) */
+export declare const Devices: AfroIcon;
+/** Appareils · Devices (Afroicons Devices) */
+export declare const DevicesOutlined: AfroIcon;
+/** Appareils · Devices (Afroicons Devices) */
+export declare const DevicesRounded: AfroIcon;
+/** Appareils · Devices (Afroicons Devices) */
+export declare const DevicesSharp: AfroIcon;
+/** Appareils · Devices (Afroicons Devices) */
+export declare const DevicesTwoTone: AfroIcon;
+/** Autres appareils · Other devices (Afroicons DevicesOther) */
+export declare const DevicesOther: AfroIcon;
+/** Autres appareils · Other devices (Afroicons DevicesOther) */
+export declare const DevicesOtherOutlined: AfroIcon;
+/** Autres appareils · Other devices (Afroicons DevicesOther) */
+export declare const DevicesOtherRounded: AfroIcon;
+/** Autres appareils · Other devices (Afroicons DevicesOther) */
+export declare const DevicesOtherSharp: AfroIcon;
+/** Autres appareils · Other devices (Afroicons DevicesOther) */
+export declare const DevicesOtherTwoTone: AfroIcon;
+/** Scanner à plat · Scanner (Afroicons Scanner) */
+export declare const Scanner: AfroIcon;
+/** Scanner à plat · Scanner (Afroicons Scanner) */
+export declare const ScannerOutlined: AfroIcon;
+/** Scanner à plat · Scanner (Afroicons Scanner) */
+export declare const ScannerRounded: AfroIcon;
+/** Scanner à plat · Scanner (Afroicons Scanner) */
+export declare const ScannerSharp: AfroIcon;
+/** Scanner à plat · Scanner (Afroicons Scanner) */
+export declare const ScannerTwoTone: AfroIcon;
+/** Carte SIM · SIM card (Afroicons SimCard) */
+export declare const SimCard: AfroIcon;
+/** Carte SIM · SIM card (Afroicons SimCard) */
+export declare const SimCardOutlined: AfroIcon;
+/** Carte SIM · SIM card (Afroicons SimCard) */
+export declare const SimCardRounded: AfroIcon;
+/** Carte SIM · SIM card (Afroicons SimCard) */
+export declare const SimCardSharp: AfroIcon;
+/** Carte SIM · SIM card (Afroicons SimCard) */
+export declare const SimCardTwoTone: AfroIcon;
+/** Carte mémoire SD · SD card (Afroicons SdCard) */
+export declare const SdCard: AfroIcon;
+/** Carte mémoire SD · SD card (Afroicons SdCard) */
+export declare const SdCardOutlined: AfroIcon;
+/** Carte mémoire SD · SD card (Afroicons SdCard) */
+export declare const SdCardRounded: AfroIcon;
+/** Carte mémoire SD · SD card (Afroicons SdCard) */
+export declare const SdCardSharp: AfroIcon;
+/** Carte mémoire SD · SD card (Afroicons SdCard) */
+export declare const SdCardTwoTone: AfroIcon;
+/** Installer sur le mobile · Install on mobile (Afroicons SmartphoneDown) */
+export declare const InstallMobile: AfroIcon;
+/** Installer sur le mobile · Install on mobile (Afroicons SmartphoneDown) */
+export declare const InstallMobileOutlined: AfroIcon;
+/** Installer sur le mobile · Install on mobile (Afroicons SmartphoneDown) */
+export declare const InstallMobileRounded: AfroIcon;
+/** Installer sur le mobile · Install on mobile (Afroicons SmartphoneDown) */
+export declare const InstallMobileSharp: AfroIcon;
+/** Installer sur le mobile · Install on mobile (Afroicons SmartphoneDown) */
+export declare const InstallMobileTwoTone: AfroIcon;
+/** Installer sur l’ordinateur · Install on desktop (Afroicons MonitorInstall) */
+export declare const InstallDesktop: AfroIcon;
+/** Installer sur l’ordinateur · Install on desktop (Afroicons MonitorInstall) */
+export declare const InstallDesktopOutlined: AfroIcon;
+/** Installer sur l’ordinateur · Install on desktop (Afroicons MonitorInstall) */
+export declare const InstallDesktopRounded: AfroIcon;
+/** Installer sur l’ordinateur · Install on desktop (Afroicons MonitorInstall) */
+export declare const InstallDesktopSharp: AfroIcon;
+/** Installer sur l’ordinateur · Install on desktop (Afroicons MonitorInstall) */
+export declare const InstallDesktopTwoTone: AfroIcon;
+/** Mise à jour du système · System update (Afroicons SmartphoneUpdate) */
+export declare const SystemUpdate: AfroIcon;
+/** Mise à jour du système · System update (Afroicons SmartphoneUpdate) */
+export declare const SystemUpdateOutlined: AfroIcon;
+/** Mise à jour du système · System update (Afroicons SmartphoneUpdate) */
+export declare const SystemUpdateRounded: AfroIcon;
+/** Mise à jour du système · System update (Afroicons SmartphoneUpdate) */
+export declare const SystemUpdateSharp: AfroIcon;
+/** Mise à jour du système · System update (Afroicons SmartphoneUpdate) */
+export declare const SystemUpdateTwoTone: AfroIcon;
+/** Monter en gamme · Upgrade (Afroicons Upgrade) */
+export declare const Upgrade: AfroIcon;
+/** Monter en gamme · Upgrade (Afroicons Upgrade) */
+export declare const UpgradeOutlined: AfroIcon;
+/** Monter en gamme · Upgrade (Afroicons Upgrade) */
+export declare const UpgradeRounded: AfroIcon;
+/** Monter en gamme · Upgrade (Afroicons Upgrade) */
+export declare const UpgradeSharp: AfroIcon;
+/** Monter en gamme · Upgrade (Afroicons Upgrade) */
+export declare const UpgradeTwoTone: AfroIcon;
+/** Franc suisse · Swiss franc (Afroicons SwissFranc) */
+export declare const CurrencyFranc: AfroIcon;
+/** Franc suisse · Swiss franc (Afroicons SwissFranc) */
+export declare const CurrencyFrancOutlined: AfroIcon;
+/** Franc suisse · Swiss franc (Afroicons SwissFranc) */
+export declare const CurrencyFrancRounded: AfroIcon;
+/** Franc suisse · Swiss franc (Afroicons SwissFranc) */
+export declare const CurrencyFrancSharp: AfroIcon;
+/** Franc suisse · Swiss franc (Afroicons SwissFranc) */
+export declare const CurrencyFrancTwoTone: AfroIcon;
+/** Déplacer vers la droite · Move right (Afroicons MoveRight) */
+export declare const TrendingFlat: AfroIcon;
+/** Déplacer vers la droite · Move right (Afroicons MoveRight) */
+export declare const TrendingFlatOutlined: AfroIcon;
+/** Déplacer vers la droite · Move right (Afroicons MoveRight) */
+export declare const TrendingFlatRounded: AfroIcon;
+/** Déplacer vers la droite · Move right (Afroicons MoveRight) */
+export declare const TrendingFlatSharp: AfroIcon;
+/** Déplacer vers la droite · Move right (Afroicons MoveRight) */
+export declare const TrendingFlatTwoTone: AfroIcon;

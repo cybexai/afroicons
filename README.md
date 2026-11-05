@@ -20,9 +20,9 @@
 | --- | --- |
 | [`afroicons`](packages/afroicons) | SVG, sprite, `icons.json`, fonction `toSvg()` (JS natif) |
 | [`afroicons-react`](packages/afroicons-react) | Un composant React par icône |
-| [`afroicons-ui`](packages/afroicons-ui) | 1557 icônes d'interface, compatibles `lucide-react` (mêmes noms, mêmes props) |
-| [`afroicons-mui`](packages/afroicons-mui) | les mêmes icônes sous les noms de `@mui/icons-material` (5 344 noms, mêmes props) |
-| [`afroicons-antd`](packages/afroicons-antd) | les mêmes icônes sous les noms de `@ant-design/icons` (547 noms, mêmes props) |
+| [`afroicons-ui`](packages/afroicons-ui) | 1810 icônes d'interface, compatibles `lucide-react` (mêmes noms, mêmes props) |
+| [`afroicons-mui`](packages/afroicons-mui) | les mêmes icônes sous les noms de `@mui/icons-material` (6 304 noms, mêmes props) |
+| [`afroicons-antd`](packages/afroicons-antd) | les mêmes icônes sous les noms de `@ant-design/icons` (668 noms, mêmes props) |
 | [`afroicons-angular`](packages/afroicons-angular) | Composant Angular autonome `<afroicon>`, toutes les icônes |
 
 `afroicons-mui` et `afroicons-antd` sont des projets indépendants, non affiliés à MUI (Material-UI SAS) ni au groupe Ant ; MUI, Material UI et Ant Design sont des marques de leurs propriétaires, citées uniquement pour indiquer la compatibilité. Les dessins sont originaux.

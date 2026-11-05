@@ -1,6 +1,6 @@
 # afroicons-angular
 
-Les icônes [Afroicons](https://afroicons.org) pour Angular (18 et plus) : un composant autonome `<afroicon>`, les **554 icônes culturelles** (au trait et remplies, dont les cartes des 54 pays et 42 monnaies), les **54 drapeaux africains**, les **452 emojis** et les **1557 icônes d'interface** (noms Lucide, comme [`afroicons-ui`](https://www.npmjs.com/package/afroicons-ui)).
+Les icônes [Afroicons](https://afroicons.org) pour Angular (18 et plus) : un composant autonome `<afroicon>`, les **554 icônes culturelles** (au trait et remplies, dont les cartes des 54 pays et 42 monnaies), les **54 drapeaux africains**, les **452 emojis** et les **1810 icônes d'interface** (noms Lucide, comme [`afroicons-ui`](https://www.npmjs.com/package/afroicons-ui)).
 
 ```bash
 npm install afroicons-angular

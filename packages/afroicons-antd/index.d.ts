@@ -478,6 +478,8 @@ export declare const MinusOutlined: AfroIcon;
 export declare const DashOutlined: AfroIcon;
 /** Retirer · Remove (Afroicons Minus) */
 export declare const SmallDashOutlined: AfroIcon;
+/** Retirer · Remove (Afroicons Minus) */
+export declare const LineOutlined: AfroIcon;
 /** Envoyer un fichier · Upload (Afroicons Upload) */
 export declare const UploadOutlined: AfroIcon;
 /** Envoyer un fichier · Upload (Afroicons Upload) */
@@ -1090,6 +1092,10 @@ export declare const FullscreenOutlined: AfroIcon;
 export declare const ExpandOutlined: AfroIcon;
 /** Choisir la taille du texte · Text size (Afroicons ALargeSmall) */
 export declare const FontSizeOutlined: AfroIcon;
+/** Numéro (dièse) · Number sign (Afroicons Hash) */
+export declare const NumberOutlined: AfroIcon;
+/** Présentation au tableau · Presentation (Afroicons Presentation) */
+export declare const FundProjectionScreenOutlined: AfroIcon;
 /** Document protégé par mot de passe · Password-protected document (Afroicons FileLock) */
 export declare const FileProtectOutlined: AfroIcon;
 /** Sélection à la souris · Mouse selection (Afroicons MousePointerSquareDashed) */
@@ -1100,3 +1106,239 @@ export declare const SortAscendingOutlined: AfroIcon;
 export declare const SortDescendingOutlined: AfroIcon;
 /** Code binaire · Binary code (Afroicons Binary) */
 export declare const FieldBinaryOutlined: AfroIcon;
+/** Flèche pleine vers le bas · Caret down (Afroicons CaretDown) */
+export declare const CaretDownOutlined: AfroIcon;
+/** Flèche pleine vers le bas · Caret down (Afroicons CaretDown) */
+export declare const CaretDownFilled: AfroIcon;
+/** Flèche pleine vers le haut · Caret up (Afroicons CaretUp) */
+export declare const CaretUpOutlined: AfroIcon;
+/** Flèche pleine vers le haut · Caret up (Afroicons CaretUp) */
+export declare const CaretUpFilled: AfroIcon;
+/** Flèche pleine vers la gauche · Caret left (Afroicons CaretLeft) */
+export declare const CaretLeftOutlined: AfroIcon;
+/** Flèche pleine vers la gauche · Caret left (Afroicons CaretLeft) */
+export declare const CaretLeftFilled: AfroIcon;
+/** Ajouter une vidéo · Add video (Afroicons VideoPlus) */
+export declare const VideoCameraAddOutlined: AfroIcon;
+/** Changer d'utilisateur · Switch user (Afroicons UserSwitch) */
+export declare const UserSwitchOutlined: AfroIcon;
+/** Ajouter au groupe · Add to group (Afroicons UsersPlus) */
+export declare const UsergroupAddOutlined: AfroIcon;
+/** Retirer du groupe · Remove from group (Afroicons UsersMinus) */
+export declare const UsergroupDeleteOutlined: AfroIcon;
+/** Ajouter une application · Add app (Afroicons LayoutGridPlus) */
+export declare const AppstoreAddOutlined: AfroIcon;
+/** Analyse de sécurité · Security scan (Afroicons ShieldSearch) */
+export declare const SecurityScanOutlined: AfroIcon;
+/** Analyse de sécurité · Security scan (Afroicons ShieldSearch) */
+export declare const SecurityScanFilled: AfroIcon;
+/** Analyse de sécurité · Security scan (Afroicons ShieldSearch) */
+export declare const SecurityScanTwoTone: AfroIcon;
+/** Assurance · Insurance (Afroicons ShieldUmbrella) */
+export declare const InsuranceOutlined: AfroIcon;
+/** Assurance · Insurance (Afroicons ShieldUmbrella) */
+export declare const InsuranceFilled: AfroIcon;
+/** Assurance · Insurance (Afroicons ShieldUmbrella) */
+export declare const InsuranceTwoTone: AfroIcon;
+/** Biens protégés · Property safety (Afroicons ShieldBanknote) */
+export declare const PropertySafetyOutlined: AfroIcon;
+/** Biens protégés · Property safety (Afroicons ShieldBanknote) */
+export declare const PropertySafetyFilled: AfroIcon;
+/** Biens protégés · Property safety (Afroicons ShieldBanknote) */
+export declare const PropertySafetyTwoTone: AfroIcon;
+/** Document Word · Word file (Afroicons FileWord) */
+export declare const FileWordOutlined: AfroIcon;
+/** Document Word · Word file (Afroicons FileWord) */
+export declare const FileWordFilled: AfroIcon;
+/** Document Word · Word file (Afroicons FileWord) */
+export declare const FileWordTwoTone: AfroIcon;
+/** Présentation PowerPoint · PowerPoint file (Afroicons FilePpt) */
+export declare const FilePptOutlined: AfroIcon;
+/** Présentation PowerPoint · PowerPoint file (Afroicons FilePpt) */
+export declare const FilePptFilled: AfroIcon;
+/** Présentation PowerPoint · PowerPoint file (Afroicons FilePpt) */
+export declare const FilePptTwoTone: AfroIcon;
+/** Photo JPEG · JPG file (Afroicons FileJpg) */
+export declare const FileJpgOutlined: AfroIcon;
+/** Image animée GIF · GIF file (Afroicons FileGif) */
+export declare const FileGifOutlined: AfroIcon;
+/** Fichier Markdown · Markdown file (Afroicons FileMarkdown) */
+export declare const FileMarkdownOutlined: AfroIcon;
+/** Fichier Markdown · Markdown file (Afroicons FileMarkdown) */
+export declare const FileMarkdownFilled: AfroIcon;
+/** Fichier Markdown · Markdown file (Afroicons FileMarkdown) */
+export declare const FileMarkdownTwoTone: AfroIcon;
+/** Synchroniser un document · File sync (Afroicons FileSync) */
+export declare const FileSyncOutlined: AfroIcon;
+/** Document en anomalie · Exception document (Afroicons FileException) */
+export declare const ExceptionOutlined: AfroIcon;
+/** Solution · Solution (Afroicons FileSolution) */
+export declare const SolutionOutlined: AfroIcon;
+/** Problème résolu · Issue closed (Afroicons IssuesClose) */
+export declare const IssuesCloseOutlined: AfroIcon;
+/** Extraits · Snippets (Afroicons Snippets) */
+export declare const SnippetsOutlined: AfroIcon;
+/** Extraits · Snippets (Afroicons Snippets) */
+export declare const SnippetsFilled: AfroIcon;
+/** Extraits · Snippets (Afroicons Snippets) */
+export declare const SnippetsTwoTone: AfroIcon;
+/** Voyant d'alerte · Alert beacon (Afroicons AlertBeacon) */
+export declare const AlertOutlined: AfroIcon;
+/** Voyant d'alerte · Alert beacon (Afroicons AlertBeacon) */
+export declare const AlertFilled: AfroIcon;
+/** Voyant d'alerte · Alert beacon (Afroicons AlertBeacon) */
+export declare const AlertTwoTone: AfroIcon;
+/** Montant en yens (rond) · Pay circle (Afroicons CircleJapaneseYen) */
+export declare const PayCircleOutlined: AfroIcon;
+/** Montant en yens (rond) · Pay circle (Afroicons CircleJapaneseYen) */
+export declare const PayCircleFilled: AfroIcon;
+/** Montant en euros (rond) · Euro circle (Afroicons CircleEuro) */
+export declare const EuroCircleOutlined: AfroIcon;
+/** Montant en euros (rond) · Euro circle (Afroicons CircleEuro) */
+export declare const EuroCircleFilled: AfroIcon;
+/** Montant en euros (rond) · Euro circle (Afroicons CircleEuro) */
+export declare const EuroCircleTwoTone: AfroIcon;
+/** Montant en livres (rond) · Pound circle (Afroicons CirclePoundSterling) */
+export declare const PoundCircleOutlined: AfroIcon;
+/** Montant en livres (rond) · Pound circle (Afroicons CirclePoundSterling) */
+export declare const PoundCircleFilled: AfroIcon;
+/** Montant en livres (rond) · Pound circle (Afroicons CirclePoundSterling) */
+export declare const PoundCircleTwoTone: AfroIcon;
+/** Enveloppe rouge · Red envelope (Afroicons RedEnvelope) */
+export declare const RedEnvelopeOutlined: AfroIcon;
+/** Enveloppe rouge · Red envelope (Afroicons RedEnvelope) */
+export declare const RedEnvelopeFilled: AfroIcon;
+/** Enveloppe rouge · Red envelope (Afroicons RedEnvelope) */
+export declare const RedEnvelopeTwoTone: AfroIcon;
+/** Fonds d'investissement · Fund (Afroicons Fund) */
+export declare const FundOutlined: AfroIcon;
+/** Fonds d'investissement · Fund (Afroicons Fund) */
+export declare const FundFilled: AfroIcon;
+/** Fonds d'investissement · Fund (Afroicons Fund) */
+export declare const FundTwoTone: AfroIcon;
+/** Suivi de fonds · Fund view (Afroicons FundView) */
+export declare const FundViewOutlined: AfroIcon;
+/** Lingots d'or · Gold bars (Afroicons GoldBars) */
+export declare const GoldOutlined: AfroIcon;
+/** Lingots d'or · Gold bars (Afroicons GoldBars) */
+export declare const GoldFilled: AfroIcon;
+/** Lingots d'or · Gold bars (Afroicons GoldBars) */
+export declare const GoldTwoTone: AfroIcon;
+/** Rapprochement · Reconciliation (Afroicons Reconciliation) */
+export declare const ReconciliationOutlined: AfroIcon;
+/** Rapprochement · Reconciliation (Afroicons Reconciliation) */
+export declare const ReconciliationFilled: AfroIcon;
+/** Rapprochement · Reconciliation (Afroicons Reconciliation) */
+export declare const ReconciliationTwoTone: AfroIcon;
+/** Graphique radar · Radar chart (Afroicons ChartRadar) */
+export declare const RadarChartOutlined: AfroIcon;
+/** Boîte à moustaches · Box plot (Afroicons ChartBoxPlot) */
+export declare const BoxPlotOutlined: AfroIcon;
+/** Boîte à moustaches · Box plot (Afroicons ChartBoxPlot) */
+export declare const BoxPlotFilled: AfroIcon;
+/** Boîte à moustaches · Box plot (Afroicons ChartBoxPlot) */
+export declare const BoxPlotTwoTone: AfroIcon;
+/** Carte de chaleur · Heat map (Afroicons ChartHeatMap) */
+export declare const HeatMapOutlined: AfroIcon;
+/** Graphique en entonnoir · Funnel chart (Afroicons ChartFunnel) */
+export declare const FunnelPlotOutlined: AfroIcon;
+/** Graphique en entonnoir · Funnel chart (Afroicons ChartFunnel) */
+export declare const FunnelPlotFilled: AfroIcon;
+/** Graphique en entonnoir · Funnel chart (Afroicons ChartFunnel) */
+export declare const FunnelPlotTwoTone: AfroIcon;
+/** Produits · Product (Afroicons Product) */
+export declare const ProductOutlined: AfroIcon;
+/** Produits · Product (Afroicons Product) */
+export declare const ProductFilled: AfroIcon;
+/** Bordure extérieure · Outer border (Afroicons BorderOuter) */
+export declare const BorderOutlined: AfroIcon;
+/** Bordure du haut · Top border (Afroicons BorderTop) */
+export declare const BorderTopOutlined: AfroIcon;
+/** Bordure du bas · Bottom border (Afroicons BorderBottom) */
+export declare const BorderBottomOutlined: AfroIcon;
+/** Bordure de gauche · Left border (Afroicons BorderLeft) */
+export declare const BorderLeftOutlined: AfroIcon;
+/** Bordure de droite · Right border (Afroicons BorderRight) */
+export declare const BorderRightOutlined: AfroIcon;
+/** Tableau sans bordure · Borderless table (Afroicons BorderlessTable) */
+export declare const BorderlessTableOutlined: AfroIcon;
+/** Aligner au milieu · Align middle (Afroicons VerticalAlignMiddle) */
+export declare const VerticalAlignMiddleOutlined: AfroIcon;
+/** Aligner en haut · Align top (Afroicons VerticalAlignTop) */
+export declare const VerticalAlignTopOutlined: AfroIcon;
+/** Aligner en bas · Align bottom (Afroicons VerticalAlignBottom) */
+export declare const VerticalAlignBottomOutlined: AfroIcon;
+/** Insérer une ligne au-dessus · Insert row above (Afroicons InsertRowAbove) */
+export declare const InsertRowAboveOutlined: AfroIcon;
+/** Insérer une ligne en dessous · Insert row below (Afroicons InsertRowBelow) */
+export declare const InsertRowBelowOutlined: AfroIcon;
+/** Insérer une colonne à gauche · Insert column left (Afroicons InsertRowLeft) */
+export declare const InsertRowLeftOutlined: AfroIcon;
+/** Insérer une colonne à droite · Insert column right (Afroicons InsertRowRight) */
+export declare const InsertRowRightOutlined: AfroIcon;
+/** Supprimer une colonne · Delete column (Afroicons DeleteColumn) */
+export declare const DeleteColumnOutlined: AfroIcon;
+/** Supprimer une ligne · Delete row (Afroicons DeleteRow) */
+export declare const DeleteRowOutlined: AfroIcon;
+/** Hauteur de ligne du tableau · Column height (Afroicons ColumnHeight) */
+export declare const ColumnHeightOutlined: AfroIcon;
+/** Largeur de colonne · Column width (Afroicons ColumnWidth) */
+export declare const ColumnWidthOutlined: AfroIcon;
+/** Interligne · Line height (Afroicons LineHeight) */
+export declare const LineHeightOutlined: AfroIcon;
+/** Couleur du texte · Font color (Afroicons FontColors) */
+export declare const FontColorsOutlined: AfroIcon;
+/** Demi-flèche vers la gauche · Swap left (Afroicons SwapLeft) */
+export declare const SwapLeftOutlined: AfroIcon;
+/** Demi-flèche vers la droite · Swap right (Afroicons SwapRight) */
+export declare const SwapRightOutlined: AfroIcon;
+/** Taille réelle (1:1) · One to one (Afroicons OneToOne) */
+export declare const OneToOneOutlined: AfroIcon;
+/** Basculer de fenêtre · Switcher (Afroicons Switcher) */
+export declare const SwitcherOutlined: AfroIcon;
+/** Basculer de fenêtre · Switcher (Afroicons Switcher) */
+export declare const SwitcherFilled: AfroIcon;
+/** Basculer de fenêtre · Switcher (Afroicons Switcher) */
+export declare const SwitcherTwoTone: AfroIcon;
+/** Champ numérique · Number field (Afroicons FieldNumber) */
+export declare const FieldNumberOutlined: AfroIcon;
+/** Champ texte · String field (Afroicons FieldString) */
+export declare const FieldStringOutlined: AfroIcon;
+/** Fonction (fx) · Function (Afroicons Function) */
+export declare const FunctionOutlined: AfroIcon;
+/** Console SQL · SQL console (Afroicons ConsoleSql) */
+export declare const ConsoleSqlOutlined: AfroIcon;
+/** Serveur cloud · Cloud server (Afroicons CloudServer) */
+export declare const CloudServerOutlined: AfroIcon;
+/** Synchroniser le cloud · Cloud sync (Afroicons CloudSync) */
+export declare const CloudSyncOutlined: AfroIcon;
+/** Passerelle · Gateway (Afroicons Gateway) */
+export declare const GatewayOutlined: AfroIcon;
+/** Unité de déploiement · Deployment unit (Afroicons DeploymentUnit) */
+export declare const DeploymentUnitOutlined: AfroIcon;
+/** Index de nœuds · Node index (Afroicons NodeIndex) */
+export declare const NodeIndexOutlined: AfroIcon;
+/** Interaction · Interaction (Afroicons Interaction) */
+export declare const InteractionOutlined: AfroIcon;
+/** Interaction · Interaction (Afroicons Interaction) */
+export declare const InteractionFilled: AfroIcon;
+/** Interaction · Interaction (Afroicons Interaction) */
+export declare const InteractionTwoTone: AfroIcon;
+/** Construire · Build (Afroicons Build) */
+export declare const BuildOutlined: AfroIcon;
+/** Construire · Build (Afroicons Build) */
+export declare const BuildFilled: AfroIcon;
+/** Construire · Build (Afroicons Build) */
+export declare const BuildTwoTone: AfroIcon;
+/** Balai · Broom (Afroicons Broom) */
+export declare const ClearOutlined: AfroIcon;
+/** Gobelet à jeter · Rest (Afroicons Rest) */
+export declare const RestOutlined: AfroIcon;
+/** Gobelet à jeter · Rest (Afroicons Rest) */
+export declare const RestFilled: AfroIcon;
+/** Gobelet à jeter · Rest (Afroicons Rest) */
+export declare const RestTwoTone: AfroIcon;
+/** Masculin · Male (Afroicons Male) */
+export declare const ManOutlined: AfroIcon;
+/** Féminin · Female (Afroicons Female) */
+export declare const WomanOutlined: AfroIcon;

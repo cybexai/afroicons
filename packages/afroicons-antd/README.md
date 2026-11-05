@@ -22,7 +22,7 @@ import EyeOutlined from "afroicons-antd/EyeOutlined";
 
 ## Ce qui change
 
-- **547 noms Ant Design** (279 icônes sur 481) redessinés au trait Afroicons (1,75, arrondi), variantes comprises : `DeleteOutlined`, `DeleteFilled` et `DeleteTwoTone` donnent la même poubelle.
+- **668 noms Ant Design** (355 icônes sur 481) redessinés au trait Afroicons (1,75, arrondi), variantes comprises : `DeleteOutlined`, `DeleteFilled` et `DeleteTwoTone` donnent la même poubelle.
 - Les props sont conservées : `className`, `style`, `spin`, `rotate`, `onClick`, `tabIndex` ; le rendu garde `<span role="img" class="anticon anticon-plus">`, donc vos styles et le thème Ant Design s'appliquent.
 - Des métaphores africaines : `HomeOutlined` → la case, `ShoppingCartOutlined` → le panier tressé, `ShopOutlined` → la boutique de quartier, `WalletOutlined` → le portefeuille au cauri…
 - **Toutes les autres** icônes Ant Design restent disponibles sous leur nom, ainsi que le composant `Icon` (export par défaut).
