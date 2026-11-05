@@ -1,0 +1,72 @@
+{
+  "capitale": [
+    "Alger",
+    "Algiers"
+  ],
+  "langues": [
+    "Arabe, tamazight",
+    "Arabic, Tamazight"
+  ],
+  "independance": [
+    "5 juillet 1962 (France)",
+    "5 July 1962 (France)"
+  ],
+  "fete": [
+    "5 juillet (indépendance de 1962)",
+    "5 July (1962 independence)"
+  ],
+  "frise": [
+    [
+      "IIe s. av. J.-C.",
+      "Massinissa unifie le royaume berbère de Numidie, qui devient ensuite une province romaine.",
+      "2nd c. BC",
+      "Masinissa unifies the Berber kingdom of Numidia, which later becomes a Roman province."
+    ],
+    [
+      "VIIe–VIIIe s.",
+      "La conquête arabe apporte l'islam et la langue arabe au Maghreb.",
+      "7th–8th c.",
+      "The Arab conquest brings Islam and the Arabic language to the Maghreb."
+    ],
+    [
+      "XVIe s.",
+      "Alger passe sous la suzeraineté ottomane : la régence d'Alger dure jusqu'en 1830.",
+      "16th c.",
+      "Algiers comes under Ottoman suzerainty: the Regency of Algiers lasts until 1830."
+    ],
+    [
+      "1830",
+      "Le 5 juillet, les troupes françaises prennent Alger ; la conquête du territoire dure plusieurs décennies. En 1848, l'Algérie est divisée en départements français.",
+      "1830",
+      "On 5 July, French troops take Algiers; the conquest of the territory lasts several decades. In 1848, Algeria is divided into French departments."
+    ],
+    [
+      "1954",
+      "Le 1er novembre, le Front de libération nationale (FLN) déclenche la guerre d'indépendance.",
+      "1954",
+      "On 1 November, the National Liberation Front (FLN) launches the war of independence."
+    ],
+    [
+      "1962",
+      "Les accords d'Évian du 18 mars sont suivis du référendum du 1er juillet ; l'indépendance est proclamée le 5 juillet.",
+      "1962",
+      "The Évian Accords of 18 March are followed by the 1 July referendum; independence is proclaimed on 5 July."
+    ],
+    [
+      "1989",
+      "La constitution approuvée par référendum le 23 février ouvre la voie au multipartisme.",
+      "1989",
+      "The constitution approved by referendum on 23 February opens the way to multi-party politics."
+    ],
+    [
+      "1992–2016",
+      "Le pays traverse une décennie de violence politique (1992–2002). Le tamazight devient langue nationale en 2002, puis langue officielle en 2016.",
+      "1992–2016",
+      "The country goes through a decade of political violence (1992–2002). Tamazight becomes a national language in 2002, then an official language in 2016."
+    ]
+  ],
+  "drapeau": [
+    "Le vert est associé à l'islam, le blanc à la pureté et à la paix ; le croissant et l'étoile rouges sont des symboles de l'islam. Issu du mouvement nationaliste (Étoile nord-africaine, années 1930), repris par le FLN, il est adopté officiellement le 3 juillet 1962.",
+    "Green is associated with Islam, white with purity and peace; the red crescent and star are symbols of Islam. Born of the nationalist movement (North African Star, 1930s) and taken up by the FLN, it was officially adopted on 3 July 1962."
+  ]
+}

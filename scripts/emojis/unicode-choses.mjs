@@ -68,22 +68,92 @@ function mangue() {
 }
 const BREAD = "#D9953F", BREAD_DARK = "#A8662A";
 
-/* ---------- lion ---------- */
+/* ---------- animaux de la savane (éléphant, lion, girafe) ---------- */
+// De profil, tête à gauche, comme le léopard : côté éloigné un ton plus foncé, pattes qui s'affinent, pas décalés.
+/** Trait épais « plein » : contour brun puis couleur par-dessus (queues, ossicônes). */
+const thickS = (d, col, w = 1.5) => line(d, O, w + 2 * W) + line(d, col, w);
+/** Contour festonné autour d'une ellipse (crinière) : n lobes bombés vers l'extérieur. */
+const lobes = (cx, cy, rx, ry, n, bulge = 1.3, rot = 0) => {
+  const at = (a, k = 1) => [r2(cx + rx * k * Math.cos((a * Math.PI) / 180)), r2(cy + ry * k * Math.sin((a * Math.PI) / 180))];
+  let d = `M${P(at(rot))}`;
+  for (let k = 0; k < n; k++) { const a0 = rot + (360 * k) / n, a1 = rot + (360 * (k + 1)) / n; d += `Q${P(at((a0 + a1) / 2, bulge))} ${P(at(a1))}`; }
+  return d + "Z";
+};
+
+// Éléphant d'Afrique : dos ensellé, grande oreille en forme de carte d'Afrique, défense, trompe qui touche presque le sol.
+const EL = "#A3ACB4", EL_FAR = "#858E97", EL_EAR = "#BAC2C9", EL_LINE = "#7B848D";
+/** Patte d'éléphant : colonne à peine évasée vers le pied, ongles clairs. */
+const elLeg = (x, top, bottom, w, col) => path(`M${x} ${top}L${x - 0.15} ${bottom - 0.5}Q${x - 0.15} ${bottom} ${x + 0.5} ${bottom}H${x + w - 0.3}Q${x + w + 0.15} ${bottom} ${x + w + 0.1} ${bottom - 0.5}L${x + w - 0.1} ${top}Z`, col)
+  + line(`M${x + 0.5} ${bottom - 0.55}h0.5M${x + w / 2 - 0.15} ${bottom - 0.55}h0.5`, C.cream, 0.55);
+const elephant = [
+  elLeg(10.6, 14, 21.2, 2.5, EL_FAR), elLeg(15.6, 14, 21.2, 2.5, EL_FAR),
+  thickS("M20.6 9.6Q22 10.8 21.9 14.4", EL, 0.55), path("M21.4 14.2L22.6 14.4L22.4 15.8L21.4 15.6Z", O, false),
+  path("M8.6 6.8Q10.6 4.2 14.6 4.4Q19.6 4.8 20.8 9.2Q21.6 13 20.2 15.6Q19 17.2 16 17.2H10.4Q7.6 16.8 7 14Z", EL),
+  line("M11 16.4Q13.6 17.4 16.6 16.6", EL_LINE, 0.6),
+  elLeg(7.8, 14.4, 21.8, 2.8, EL), elLeg(17.6, 14.4, 21.8, 2.8, EL),
+  // tête et trompe
+  path("M9.6 7.8Q8.8 4.4 5.6 4.4Q2.6 4.6 2.4 8.2Q2.2 10.8 2.8 13.2Q3 16.2 2.2 18.4Q1.8 19.8 2.8 20.2Q3.8 20.4 4.2 19.2Q5 16.6 5 14Q7.2 13.6 9.2 12.2Z", EL),
+  line("M2.9 15.4H4.6M2.8 17.2H4.4", EL_LINE, 0.55),
+  // défense
+  path("M5.6 12.6Q5.6 15.2 3 16.4Q6.4 16.8 7.2 13.2Z", C.cream, { w: 0.8 }),
+  // oreille : la carte de l'Afrique (corne à l'est, golfe de Guinée à l'ouest, pointe au sud)
+  path("M8 5.4Q10.4 4.4 12.8 5L13.6 7.2L14.8 8L13.6 9.8Q13.4 12.4 11.8 15.4Q10.8 13.8 10.6 12.2Q10.2 11 8.8 10.6Q7.2 10 7.1 8.6Q7 6.4 8 5.4Z", EL_EAR),
+  line("M8.4 6.6Q10.4 5.8 12.2 6.2", EL_LINE, 0.55),
+  circle(5.6, 8.2, 0.62, O, false), circle(5.45, 8.05, 0.18, C.white, false),
+  line("M5.6 12.2Q6.4 12.8 7.2 12.6", O, 0.55),
+].join("");
+
+// Lion : silhouette du léopard, mais crinière fauve foncé qui couvre tête, cou et poitrail, queue à houppe noire.
+const LION = "#E3A54E", LION_FAR = "#C4873A", LION_LIGHT = "#F4D39A", MANE = "#A3521F", MANE_DARK = "#7E3B16";
+/** Patte de félin : large à l'épaule, fine au poignet, pied rond. */
+const lionPaw = (x, col) => path(`M${x} 13.4Q${x + 0.1} 17.2 ${x + 0.25} 20.1H${x + 2.1}Q${x + 2.2} 16.8 ${x + 2.6} 13.4Z`, col, { w: 0.95 }) + ellipse(x + 1.2, 20.6, 1.25, 0.62, col, { w: 0.9 });
 function lion() {
-  const mane = [];
-  for (let k = 0; k < 14; k++) { const [x, y] = pt(12, 12, 7.9, (360 / 14) * k); mane.push(circle(x, y, 2.6, C.terre)); }
   return [
-    ...mane,
-    circle(12, 12, 8, C.terre, false),
-    circle(7.4, 7.4, 1.9, C.ocre), circle(16.6, 7.4, 1.9, C.ocre),
-    circle(7.4, 7.4, 0.8, C.terreDark, false), circle(16.6, 7.4, 0.8, C.terreDark, false),
-    ellipse(12, 12.6, 6, 6.2, C.ocre),
-    circle(9.6, 11, 1, O, false), circle(14.4, 11, 1, O, false),
-    ellipse(12, 15.6, 3.2, 2.3, C.cream),
-    path("M10.6 13.6H13.4L12 15.2Z", C.marron, { w: 0.8 }),
-    line("M12 15.2V16.1M11 16.6Q12 17.2 12 16.1Q12 17.2 13 16.6", O, 0.7),
+    lionPaw(12, LION_FAR), lionPaw(16.4, LION_FAR),
+    thickS("M19.8 10.2Q22.2 10.6 21.9 14.2Q21.7 16.2 22 17", LION, 1),
+    path("M22 16.4Q23.2 17.4 22.6 18.8Q21.8 19.6 21 18.8Q20.6 17.6 22 16.4Z", MANE_DARK, { w: 0.9 }),
+    path("M10.6 9Q12.4 8.2 15 8.4H17.4Q20.8 8.6 20.8 11.7Q20.8 14.8 17.8 15.2H12Q9.6 14.8 9.4 12.4Z", LION),
+    path("M11.8 15.1Q14.8 13.9 17.8 15.1Z", LION_LIGHT, false),
+    lionPaw(9.6, LION), lionPaw(18.4, LION),
+    // crinière festonnée, plus foncée au cœur
+    path(lobes(7.4, 8.8, 4.7, 5.3, 11, 1.32, -100), MANE),
+    path(lobes(7.6, 9, 3.2, 3.8, 8, 1.25, -80), MANE_DARK, false),
+    // tête : museau qui sort de la crinière, oreille ronde
+    circle(6.6, 5.2, 0.95, LION, { w: 0.85 }), circle(6.6, 5.3, 0.38, MANE_DARK, false),
+    path("M7 5.8Q4.4 5.2 3 7Q1.8 7.6 1.6 9Q1.4 10.8 2.6 11.6Q3.8 12.4 5.6 12.1Q7.8 11.6 8.2 9.4Q8.4 6.8 7 5.8Z", LION),
+    ellipse(3.1, 10.4, 1.6, 1.1, LION_LIGHT, { w: 0.7 }),
+    path("M1.5 9.1Q2.3 8.7 2.9 9.2Q2.6 10 1.9 9.9Z", O, { w: 0.4 }),
+    line("M2.2 11.5Q3.2 11.9 4.2 11.4", O, 0.5),
+    ellipse(4.8, 7.9, 0.62, 0.5, O, false), circle(4.65, 7.75, 0.17, C.white, false),
+    line("M4.2 8.5Q3.8 9.1 3.2 9.2", O, 0.4),
   ].join("");
 }
+
+// Girafe : très long cou, tête à ossicônes, réseau de taches polygonales brunes séparées par des lignes claires.
+const GIR = "#F2C14E", GIR_FAR = "#D9A23A", GIR_LIGHT = "#F8DE9C", PATCH = "#B5642C", PATCH_FAR = "#8E4D20", HOOF = "#4A3020";
+/** Longue patte fine, sabot sombre. */
+const girLeg = (x, top, w, xb, wb, col) => path(`M${x} ${top}Q${x + 0.15} ${top + 3.4} ${xb} 20.6H${xb + wb}Q${x + w - 0.1} ${top + 3.4} ${x + w} ${top}Z`, col, { w: 0.95 })
+  + rect(xb - 0.15, 20.4, wb + 0.3, 1.3, 0.45, HOOF, { w: 0.8 });
+const patches = (list, fill) => list.map((d) => path(d, fill, false)).join("");
+const girafe = [
+  girLeg(11.6, 14, 1.9, 11.2, 1.1, GIR_FAR), girLeg(17, 14, 1.9, 17.2, 1.1, GIR_FAR),
+  thickS("M20.2 11Q21.6 12.4 21.4 15.8", GIR, 0.55), path("M20.8 15.6L22 15.6L21.8 17.6L21 17.4Z", PATCH_FAR, { w: 0.8 }),
+  // cou et corps d'un seul tenant
+  path("M6.4 5.6L8.8 4.2Q10.8 7.4 13.6 10Q16 10 18.8 10.7Q21 11.5 20.6 13.6Q20.2 15.2 18.4 15.2H12.8Q11 15 10.8 13.4Q8.6 9 6.4 5.6Z", GIR),
+  patches(["M12 11.2L13.8 10.9L14.2 12.6L12.4 13.2Z", "M14.8 10.8L16.8 11L16.6 12.7L14.9 12.6Z", "M17.6 11.2L19.6 11.7L19.4 13.3L17.6 13.3Z",
+    "M12.8 13.9L14.6 13.4L14.6 15.1H12.9Z", "M15.4 13.4L17.2 13.7L17 15.1H15.4Z", "M18 14L19.8 14.1L19.2 15.1H18.1Z",
+    "M7.4 5.6L8.4 5L9 6.2L7.9 6.6Z", "M8.6 7.4L9.8 6.8L10.4 8.2L9.3 8.8Z", "M10.1 9.6L11.4 9L12 10.4L10.9 11.1Z", "M11.2 12L12 11.6L12.2 13L11.5 13.1Z"], PATCH),
+  line("M8.9 4.8Q10.8 7.6 13.2 9.7", PATCH_FAR, 0.7),
+  girLeg(12.8, 14.2, 2, 13.3, 1.2, GIR), girLeg(18.4, 14, 2, 19, 1.2, GIR),
+  // tête : ossicônes à bout sombre, oreille, museau plus clair
+  thickS("M5.4 3.8L5 2.2", GIR, 0.7), thickS("M6.9 3.6L7.1 1.9", GIR, 0.7),
+  circle(5, 2, 0.6, PATCH_FAR, { w: 0.6 }), circle(7.1, 1.8, 0.6, PATCH_FAR, { w: 0.6 }),
+  g("rotate(-24 9 4.6)", ellipse(9, 4.6, 1.3, 0.55, GIR, { w: 0.85 })),
+  path("M2.2 6.4Q2.2 4.8 4.2 3.9Q6.4 3 8.2 4Q9.2 5 8.4 6.3Q6.4 7.5 4.2 7.8Q2.2 7.9 2.2 6.4Z", GIR),
+  path("M2.3 6.6Q2.6 5.2 4 5.2Q4.8 6.2 4.4 7.7Q2.4 8 2.3 6.6Z", GIR_LIGHT, { w: 0.7 }),
+  circle(2.9, 6, 0.28, O, false),
+  ellipse(5.9, 5, 0.55, 0.48, O, false), circle(5.76, 4.86, 0.16, C.white, false),
+].join("");
 
 /* ---------- cotillon ---------- */
 function popper() {
@@ -209,39 +279,13 @@ const list = [
   {
     slug: "elephant", fr: "Éléphant", en: "Elephant", char: "🐘", group: "nature",
     tags: ["éléphant", "elephant", "savane", "savanna", "safari", "tembo"],
-    body: [
-      rect(16.6, 15, 2.8, 6.6, 1, C.gris), rect(10.2, 15, 2.8, 6.6, 1, C.gris),
-      line("M21 11.4Q22.2 13.4 21.6 15.4"),
-      ellipse(14.6, 12.2, 6.6, 5, C.gris),
-      rect(13.6, 15.4, 2.8, 6.6, 1, C.gris), rect(7.2, 15.4, 2.8, 6.6, 1, C.gris),
-      path("M4.4 11.4Q2.6 15 3 18.6Q3.2 20 4.6 19.6L5 19.4Q4.8 16.4 7.4 13.6Z", C.gris),
-      circle(7.2, 10, 4.4, C.gris),
-      path("M6 13.4Q5.6 15.4 7.4 16.2Q6.9 14.9 7.1 13.6Z", C.cream, { w: 0.9 }),
-      path("M8.4 5.4Q13.4 4.6 13.6 9.8Q13.4 14.4 9.8 14.2Q8.2 12 8.4 5.4Z", "#B9C1C7"),
-      circle(6.4, 9.2, 0.75, O, false),
-    ].join(""),
+    body: elephant,
   },
   { slug: "lion", fr: "Lion", en: "Lion", char: "🦁", group: "nature", tags: ["lion", "simba", "savane", "roi", "king", "safari"], body: lion() },
   {
     slug: "girafe", fr: "Girafe", en: "Giraffe", char: "🦒", group: "nature",
     tags: ["girafe", "giraffe", "savane", "twiga", "safari", "cou"],
-    body: [
-      path("M10.6 23L12.6 10.4H16.8L18.6 23Z", C.ocreLight),
-      line("M16.9 11.2L18.3 22.2", C.terre, 1.2),
-      path("M13.2 12.4L15.2 12.2L15 14.4L13.2 14.8Z", C.bois, false),
-      path("M12.4 16.6L14.8 16.4L14.6 19L12 19.2Z", C.bois, false),
-      path("M15.6 15.6L17.2 15.2L17.6 17.8L15.8 18Z", C.bois, false),
-      path("M11.6 21L14.4 20.8L14.6 23H11.4Z", C.bois, false),
-      path("M15.8 20.2L17.8 19.8L18.3 22.4L16 22.6Z", C.bois, false),
-      line("M14.2 5.8L13.8 2.8M16.6 6.2L17.2 3.2", O, 1.1),
-      circle(13.8, 2.6, 0.9, C.marron, { w: 0.8 }), circle(17.2, 3, 0.9, C.marron, { w: 0.8 }),
-      ellipse(18.4, 7, 1.8, 0.9, C.ocreLight, { w: 0.9 }),
-      g("rotate(-18 11.6 8.8)", ellipse(11.6, 8.8, 6.6, 3.4, C.ocreLight)),
-      g("rotate(-18 6.6 10.4)", ellipse(6.6, 10.4, 2.4, 2, C.sable)),
-      circle(5.8, 10, 0.4, O, false),
-      circle(12.6, 7.2, 0.8, O, false),
-      path("M9.6 9Q10.6 8.6 11 9.6", "none", { c: C.bois, w: 0.8 }),
-    ].join(""),
+    body: girafe,
   },
 
   /* ===================== nourriture ===================== */

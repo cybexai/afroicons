@@ -41,9 +41,13 @@ for (const [n, b] of lineIcons) {
 }
 // Drapeaux : les 54 États membres de l'ONU, chacun avec son code ISO, sans identifiant SVG
 // (un clipPath ou un masque nommé casse l'affichage quand sa première copie est cachée : sprite, menu fermé).
+// S'y ajoutent deux drapeaux du continent, sans code ISO : l'Union africaine (reliée à l'icône « afrique ») et le panafricain.
 const flags = names.filter((n) => icons[n].cat === "drapeaux");
-assert.equal(flags.length, 54, "54 drapeaux");
-assert.equal(new Set(flags.map((n) => icons[n].iso)).size, 54, "codes ISO uniques");
+const countryFlags = flags.filter((n) => icons[n].iso);
+assert.equal(countryFlags.length, 54, "54 drapeaux de pays");
+assert.equal(new Set(countryFlags.map((n) => icons[n].iso)).size, 54, "codes ISO uniques");
+assert.deepEqual(flags.filter((n) => !icons[n].iso).sort(), ["drapeau-panafricain", "drapeau-union-africaine"], "drapeaux du continent");
+assert.equal(icons["drapeau-union-africaine"].map, "afrique", "Union africaine ↔ carte de l'Afrique");
 for (const n of flags) {
   const i = icons[n];
   assert.doesNotMatch(i.body, /\bid="|url\(#|<clipPath|<mask/, `sans identifiant : ${n}`);

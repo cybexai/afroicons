@@ -6,6 +6,7 @@ import { Library } from "./components/Library";
 import { CommandPalette, Drawer, Help, Toast, ToTop, Tray, inert } from "./components/Overlays";
 import { Brand, Footer, Manifesto, Showcase, Studio, Usage } from "./components/Sections";
 import { IdeaBox, IdeaBoundary } from "./components/IdeaBox";
+import { AfricaMap } from "./components/AfricaMap";
 import { Changelog } from "./components/Changelog";
 import { Playground } from "./components/Playground";
 import { BodiesContext, ToneContext } from "./components/ui";
@@ -81,6 +82,7 @@ export default function App() {
         <Marquee />
         <main className="wrap">
           <Library />
+          <AfricaMap />
           <Studio />
           <Showcase />
           <Usage />

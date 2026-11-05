@@ -1,0 +1,72 @@
+{
+  "capitale": [
+    "Kigali",
+    "Kigali"
+  ],
+  "langues": [
+    "Kinyarwanda, anglais, français, swahili",
+    "Kinyarwanda, English, French, Swahili"
+  ],
+  "independance": [
+    "1er juillet 1962 (Belgique)",
+    "1 July 1962 (Belgium)"
+  ],
+  "fete": [
+    "1er juillet (indépendance de 1962)",
+    "1 July (1962 independence)"
+  ],
+  "frise": [
+    [
+      "XVIIe s.",
+      "Le royaume du Rwanda, gouverné par un mwami, s'affirme dans la région des Grands Lacs et s'étend jusqu'au XIXe siècle.",
+      "17th c.",
+      "The Kingdom of Rwanda, ruled by a mwami, rises in the Great Lakes region and expands until the 19th century."
+    ],
+    [
+      "1894",
+      "L'Allemand Gustav Adolf von Götzen est le premier Européen à atteindre la cour royale ; le Rwanda fait partie de l'Afrique orientale allemande.",
+      "1894",
+      "The German Gustav Adolf von Götzen becomes the first European to reach the royal court; Rwanda is part of German East Africa."
+    ],
+    [
+      "1916–1922",
+      "Les troupes belges occupent le pays pendant la Première Guerre mondiale ; la Belgique reçoit ensuite le Ruanda-Urundi sous mandat de la Société des Nations.",
+      "1916–1922",
+      "Belgian troops occupy the country during the First World War; Belgium then receives Ruanda-Urundi under a League of Nations mandate."
+    ],
+    [
+      "Années 1930",
+      "L'administration belge fait inscrire la mention « Hutu », « Tutsi » ou « Twa » sur les cartes d'identité.",
+      "1930s",
+      "The Belgian administration has “Hutu”, “Tutsi” or “Twa” recorded on identity cards."
+    ],
+    [
+      "1959–1961",
+      "Des violences éclatent en novembre 1959 et de nombreux Tutsi partent en exil. Le 28 janvier 1961, la monarchie est abolie à Gitarama et la République proclamée.",
+      "1959–1961",
+      "Violence breaks out in November 1959 and many Tutsi go into exile. On 28 January 1961, the monarchy is abolished at Gitarama and a republic is proclaimed."
+    ],
+    [
+      "1962",
+      "Le Rwanda devient indépendant le 1er juillet.",
+      "1962",
+      "Rwanda becomes independent on 1 July."
+    ],
+    [
+      "1994",
+      "D'avril à juillet a lieu le génocide perpétré contre les Tutsi, au cours duquel des Hutu et d'autres personnes qui s'y opposaient sont aussi tués. Il prend fin avec la victoire du Front patriotique rwandais.",
+      "1994",
+      "From April to July, the genocide against the Tutsi takes place, during which Hutu and others who opposed it are also killed. It ends with the victory of the Rwandan Patriotic Front."
+    ],
+    [
+      "2003–2009",
+      "Une nouvelle Constitution est adoptée par référendum en 2003. En 2009, le Rwanda rejoint le Commonwealth.",
+      "2003–2009",
+      "A new constitution is adopted by referendum in 2003. In 2009, Rwanda joins the Commonwealth."
+    ]
+  ],
+  "drapeau": [
+    "Le bleu pour le bonheur et la paix, le jaune pour le développement économique, le vert pour l'espoir de prospérité. Le soleil doré symbolise l'unité nationale, la transparence et l'éveil du peuple. Adopté en 2001, il remplace le tricolore rouge, jaune et vert frappé d'un « R » noir, en usage depuis 1961.",
+    "Blue for happiness and peace, yellow for economic development, green for the hope of prosperity. The golden sun stands for national unity, transparency and the enlightenment of the people. Adopted in 2001, it replaced the red, yellow and green tricolour bearing a black “R”, in use since 1961."
+  ]
+}

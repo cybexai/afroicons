@@ -1,0 +1,72 @@
+{
+  "capitale": [
+    "São Tomé",
+    "São Tomé"
+  ],
+  "langues": [
+    "Portugais",
+    "Portuguese"
+  ],
+  "independance": [
+    "12 juillet 1975 (Portugal)",
+    "12 July 1975 (Portugal)"
+  ],
+  "fete": [
+    "12 juillet (indépendance de 1975)",
+    "12 July (1975 independence)"
+  ],
+  "frise": [
+    [
+      "Vers 1470",
+      "Des navigateurs portugais découvrent les îles, alors inhabitées.",
+      "c. 1470",
+      "Portuguese navigators discover the islands, then uninhabited."
+    ],
+    [
+      "1493–1500",
+      "La colonisation de São Tomé commence en 1493, celle de Principe en 1500, avec des colons déportés et des esclaves venus du continent.",
+      "1493–1500",
+      "Settlement of São Tomé begins in 1493 and of Príncipe in 1500, with deported settlers and enslaved people from the mainland."
+    ],
+    [
+      "XVIe s.",
+      "Les plantations de canne font de l'archipel le premier exportateur de sucre d'Afrique, au prix d'un esclavage massif.",
+      "16th c.",
+      "Sugar plantations make the archipelago Africa's leading sugar exporter, at the cost of mass slavery."
+    ],
+    [
+      "XIXe s. – 1908",
+      "Le café puis le cacao s'imposent dans les grandes plantations (roças) ; en 1908, les îles sont le premier producteur mondial de cacao, grâce à un travail forcé qui survit à l'abolition de 1876.",
+      "19th c. – 1908",
+      "Coffee then cocoa take over the large plantations (roças); by 1908 the islands are the world's leading cocoa producer, relying on forced labour that outlives the 1876 abolition."
+    ],
+    [
+      "1953",
+      "Le 3 février, le massacre de Batepá est perpétré par les autorités coloniales ; son anniversaire est commémoré chaque année comme jour des Martyrs.",
+      "1953",
+      "On 3 February, the Batepá massacre is carried out by the colonial authorities; its anniversary is marked every year as Martyrs' Day."
+    ],
+    [
+      "1960–1972",
+      "Un comité de libération se forme en exil en 1960 ; il devient en 1972 le Mouvement de libération de São Tomé-et-Principe (MLSTP).",
+      "1960–1972",
+      "A liberation committee forms in exile in 1960; in 1972 it becomes the Movement for the Liberation of São Tomé and Príncipe (MLSTP)."
+    ],
+    [
+      "1975",
+      "Après la révolution des Œillets au Portugal, l'archipel devient indépendant le 12 juillet.",
+      "1975",
+      "After Portugal's Carnation Revolution, the archipelago becomes independent on 12 July."
+    ],
+    [
+      "1990–1991",
+      "Une révision constitutionnelle autorise le multipartisme ; les élections de 1991 amènent la première alternance.",
+      "1990–1991",
+      "A constitutional revision allows multiparty politics; the 1991 elections bring the first change of government."
+    ]
+  ],
+  "drapeau": [
+    "Le vert, le jaune et le rouge, couleurs panafricaines, évoquent le mouvement d'indépendance ; on lit souvent le vert comme la végétation et le jaune comme le soleil ou le cacao. Les deux étoiles noires représentent les deux îles. Adopté à l'indépendance en 1975.",
+    "Green, yellow and red, the Pan-African colours, recall the independence movement; green is often read as the vegetation and yellow as the sun or cocoa. The two black stars stand for the two islands. Adopted at independence in 1975."
+  ]
+}

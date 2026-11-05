@@ -1,0 +1,72 @@
+{
+  "capitale": [
+    "Ouagadougou",
+    "Ouagadougou"
+  ],
+  "langues": [
+    "Langues nationales (officielles depuis 2023) ; français et anglais (langues de travail)",
+    "National languages (official since 2023); French and English (working languages)"
+  ],
+  "independance": [
+    "5 août 1960 (France)",
+    "5 August 1960 (France)"
+  ],
+  "fete": [
+    "11 décembre (proclamation de la République, 1958)",
+    "11 December (proclamation of the Republic, 1958)"
+  ],
+  "frise": [
+    [
+      "Avant le XIXe s.",
+      "Les royaumes mossi, dont ceux de Ouagadougou et du Yatenga, dominent le centre du pays et résistent longtemps à leurs voisins. Au sud-ouest, les ruines de Loropéni témoignent du commerce de l'or.",
+      "Before the 19th c.",
+      "The Mossi kingdoms, among them Ouagadougou and Yatenga, dominate the centre of the country and long hold out against their neighbours. In the south-west, the ruins of Loropéni bear witness to the gold trade."
+    ],
+    [
+      "1896",
+      "Les troupes françaises occupent Ouagadougou, capitale du Mogho Naaba.",
+      "1896",
+      "French troops occupy Ouagadougou, seat of the Mogho Naaba."
+    ],
+    [
+      "1919–1947",
+      "La colonie de Haute-Volta est créée le 1er mars 1919, partagée entre ses voisines en 1932, puis reconstituée en 1947.",
+      "1919–1947",
+      "The colony of Upper Volta is created on 1 March 1919, divided among its neighbours in 1932, then re-established in 1947."
+    ],
+    [
+      "1958",
+      "Le 11 décembre, la République de Haute-Volta est proclamée, autonome au sein de la Communauté française.",
+      "1958",
+      "On 11 December, the Republic of Upper Volta is proclaimed, self-governing within the French Community."
+    ],
+    [
+      "1960",
+      "La Haute-Volta proclame son indépendance le 5 août.",
+      "1960",
+      "Upper Volta proclaims its independence on 5 August."
+    ],
+    [
+      "1984",
+      "Le 4 août, le pays prend le nom de Burkina Faso, « pays des hommes intègres », et adopte un nouveau drapeau.",
+      "1984",
+      "On 4 August, the country takes the name Burkina Faso, “land of upright people”, and adopts a new flag."
+    ],
+    [
+      "1991",
+      "Une nouvelle constitution rétablit le multipartisme.",
+      "1991",
+      "A new constitution restores multi-party politics."
+    ],
+    [
+      "2014",
+      "Fin octobre, un soulèvement populaire contre une révision de la constitution entraîne la démission du président et une transition.",
+      "2014",
+      "In late October, a popular uprising against a constitutional amendment forces the president to resign and opens a transition."
+    ]
+  ],
+  "drapeau": [
+    "Deux bandes horizontales : le rouge pour la lutte pour l'indépendance, le vert pour l'espoir et l'abondance ; l'étoile jaune évoque les richesses minérales et les principes de la révolution. Adopté le 4 août 1984 ; il remplace le drapeau noir, blanc et rouge de la Haute-Volta, aux couleurs des trois Volta.",
+    "Two horizontal bands: red for the struggle for independence, green for hope and abundance; the yellow star stands for mineral wealth and the principles of the revolution. Adopted on 4 August 1984, it replaced Upper Volta's black, white and red flag, coloured after the three Voltas."
+  ]
+}

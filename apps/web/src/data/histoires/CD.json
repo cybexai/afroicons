@@ -1,0 +1,72 @@
+{
+  "capitale": [
+    "Kinshasa",
+    "Kinshasa"
+  ],
+  "langues": [
+    "Français (officielle) ; lingala, kikongo, swahili, tshiluba (nationales)",
+    "French (official); Lingala, Kikongo, Swahili, Tshiluba (national)"
+  ],
+  "independance": [
+    "30 juin 1960 (Belgique)",
+    "30 June 1960 (Belgium)"
+  ],
+  "fete": [
+    "30 juin (indépendance de 1960)",
+    "30 June (1960 independence)"
+  ],
+  "frise": [
+    [
+      "Dès le XIVe s.",
+      "Le royaume du Kongo domine l'Ouest ; plus tard s'épanouissent dans l'intérieur les royaumes luba, lunda et kuba.",
+      "From the 14th c.",
+      "The Kingdom of Kongo dominates the west; later the Luba, Lunda and Kuba kingdoms flourish inland."
+    ],
+    [
+      "1482",
+      "Le navigateur portugais Diogo Cão atteint l'embouchure du fleuve Congo.",
+      "1482",
+      "The Portuguese navigator Diogo Cão reaches the mouth of the Congo River."
+    ],
+    [
+      "1885",
+      "Le roi des Belges Léopold II obtient la reconnaissance de l'État indépendant du Congo, sa possession personnelle. La récolte forcée du caoutchouc y entraîne de graves exactions.",
+      "1885",
+      "King Leopold II of the Belgians secures recognition of the Congo Free State as his personal possession. Forced rubber collection leads to grave abuses."
+    ],
+    [
+      "1908",
+      "La Belgique annexe le territoire, qui devient le Congo belge.",
+      "1908",
+      "Belgium annexes the territory, which becomes the Belgian Congo."
+    ],
+    [
+      "1959–1960",
+      "Les émeutes de Léopoldville, en janvier 1959, précipitent la décolonisation. L'indépendance est proclamée le 30 juin 1960, suivie de la crise congolaise.",
+      "1959–1960",
+      "The Léopoldville riots of January 1959 hasten decolonisation. Independence is proclaimed on 30 June 1960, followed by the Congo Crisis."
+    ],
+    [
+      "1971",
+      "Le 27 octobre, le pays prend le nom de Zaïre.",
+      "1971",
+      "On 27 October, the country is renamed Zaire."
+    ],
+    [
+      "1997",
+      "Le 17 mai, après la première guerre du Congo, le pays reprend le nom de République démocratique du Congo. Une seconde guerre suit, de 1998 à 2003.",
+      "1997",
+      "On 17 May, after the First Congo War, the country takes back the name Democratic Republic of the Congo. A second war follows, from 1998 to 2003."
+    ],
+    [
+      "2006",
+      "Une nouvelle constitution est promulguée en février ; les élections de la même année sont les premières élections pluralistes depuis les années 1960.",
+      "2006",
+      "A new constitution is promulgated in February; that year's elections are the first multi-party elections since the 1960s."
+    ]
+  ],
+  "drapeau": [
+    "Un fond bleu ciel pour la paix, une diagonale rouge pour le sang des martyrs, bordée de jaune pour les richesses du pays, et une étoile jaune pour l'avenir. Adopté le 18 février 2006, il reprend un modèle des années 1960 ; l'étoile jaune sur fond bleu remonte à l'État indépendant du Congo, et le Zaïre arborait un drapeau vert à la torche.",
+    "A sky-blue field for peace, a red diagonal for the blood of the martyrs, edged with yellow for the country's wealth, and a yellow star for the future. Adopted on 18 February 2006, it revives a 1960s design; the yellow star on blue dates back to the Congo Free State, and Zaire flew a green flag bearing a torch."
+  ]
+}

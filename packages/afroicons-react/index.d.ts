@@ -531,6 +531,32 @@ export declare const Pouletmoambe: Afroicon;
 export declare const Chikwangue: Afroicon;
 /** Mbongo tchobi · Mbongo tchobi */
 export declare const Mbongotchobi: Afroicon;
+/** Eru et water fufu · Eru and water fufu */
+export declare const Eru: Afroicon;
+/** Achu (sauce jaune) · Achu (yellow soup) */
+export declare const Achu: Afroicon;
+/** Okok · Okok */
+export declare const Okok: Afroicon;
+/** Sanga · Sanga */
+export declare const Sanga: Afroicon;
+/** Kondrè · Kondre */
+export declare const Kondre: Afroicon;
+/** Ekwang · Ekwang */
+export declare const Ekwang: Afroicon;
+/** Mintoumba · Mintumba */
+export declare const Mintumba: Afroicon;
+/** Miondo · Miondo */
+export declare const Miondo: Afroicon;
+/** Soya · Suya skewers */
+export declare const Soya: Afroicon;
+/** Beignets-haricots-bouillie · Puff-puff, beans and porridge */
+export declare const Bhb: Afroicon;
+/** Couscous de maïs, sauce gombo · Corn fufu with okra soup */
+export declare const Couscousmais: Afroicon;
+/** Pepper soup · Pepper soup */
+export declare const Peppersoup: Afroicon;
+/** Corn chaff · Corn chaff */
+export declare const Cornchaff: Afroicon;
 /** Maïs grillé · Grilled corn */
 export declare const Maisgrille: Afroicon;
 /** Boli · Boli */
@@ -1217,6 +1243,10 @@ export declare const DrapeauTunisie: Afroicon;
 export declare const DrapeauZambie: Afroicon;
 /** Drapeau du Zimbabwe · Flag of Zimbabwe */
 export declare const DrapeauZimbabwe: Afroicon;
+/** Drapeau de l'Union africaine · Flag of the African Union */
+export declare const DrapeauUnionAfricaine: Afroicon;
+/** Drapeau panafricain · Pan-African flag */
+export declare const DrapeauPanafricain: Afroicon;
 /** Baobab · Baobab */
 export declare const EmojiBaobab: Afroicon;
 /** Kilimandjaro · Kilimanjaro */
@@ -1817,6 +1847,32 @@ export declare const EmojiOeilOudjat: Afroicon;
 export declare const EmojiCroixCopte: Afroicon;
 /** Main de Fatma (khamsa) · Hamsa hand (khamsa) */
 export declare const EmojiMainKhamsa: Afroicon;
+/** Eru et water fufu · Eru and water fufu */
+export declare const EmojiEru: Afroicon;
+/** Achu (sauce jaune) · Achu (yellow soup) */
+export declare const EmojiAchu: Afroicon;
+/** Okok · Okok */
+export declare const EmojiOkok: Afroicon;
+/** Sanga · Sanga */
+export declare const EmojiSanga: Afroicon;
+/** Kondrè · Kondre */
+export declare const EmojiKondre: Afroicon;
+/** Ekwang · Ekwang */
+export declare const EmojiEkwang: Afroicon;
+/** Mintoumba · Mintumba */
+export declare const EmojiMintumba: Afroicon;
+/** Miondo · Miondo */
+export declare const EmojiMiondo: Afroicon;
+/** Soya · Suya skewers */
+export declare const EmojiSoya: Afroicon;
+/** Beignets-haricots-bouillie · Puff-puff, beans and porridge */
+export declare const EmojiBeignetsHaricots: Afroicon;
+/** Couscous de maïs, sauce gombo · Corn fufu with okra soup */
+export declare const EmojiCouscousMais: Afroicon;
+/** Pepper soup · Pepper soup */
+export declare const EmojiPepperSoup: Afroicon;
+/** Corn chaff · Corn chaff */
+export declare const EmojiCornChaff: Afroicon;
 /** Ugali et sukuma wiki · Ugali and sukuma wiki */
 export declare const EmojiUgaliSukuma: Afroicon;
 /** Nyama choma · Nyama choma */

@@ -1,12 +1,35 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { AFRO, CITIES, COMPAT_NAMES, FLAGS, LATEST, PAGE, EGROUPS, ICONS, REGNAME, TONES, TONE_LIST, VERSION, byId, catOf, codepoints, colOf, isColor, isEmoji, isFlag, isNew, lineLike, loadEmojiBodies, loadFills, type CityId, type Icon } from "../lib/constants";
+import { AFRO, CITIES, REPO, COMPAT_NAMES, FLAGS, LATEST, PAGE, EGROUPS, ICONS, REGNAME, TONES, TONE_LIST, VERSION, byId, catOf, codepoints, colOf, isColor, isEmoji, isFlag, isNew, lineLike, loadEmojiBodies, loadFills, type CityId, type Icon } from "../lib/constants";
 import { FACTS } from "../lib/i18n";
 import { norm, rank } from "../lib/search";
 import { animateDraw, codeLang, compatSnippet, cssStr, highlight, jsxSnippet, ngSnippet, spriteStr, svgStr, svgToPng, useStr } from "../lib/svg";
-import { goHome, store } from "../lib/platform";
+import { MOD, goHome, store } from "../lib/platform";
+import { loadStory, storyKey, type Story } from "../lib/histoires";
 import { useApp, useName } from "../state";
 import { CustomizeFields, exportSvg, type CustomValue } from "./Library";
 import { IChevron, IClose, IGrid, INext, IPrev, IReplay, ISearch, ISliders, IUp, Svg, T } from "./ui";
+
+/** Espaces insécables : avant : ; ! ? », après «, entre un jour et son mois, dans « XIXe s. ». */
+const MONTHS = "janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre|January|February|March|April|May|June|July|August|September|October|November|December";
+const nbsp = (s: string) => s.replace(/ ([:;!?»])/g, "\u00A0$1").replace(/« /g, "«\u00A0").replace(new RegExp(`(\\d{1,2}(?:er)?) (${MONTHS})`, "g"), "$1\u00A0$2").replace(/(\d) %/g, "$1\u00A0%").replace(/([IVXL]+e) s\./g, "$1\u00A0s.");
+
+/** Signaler une erreur dans l'histoire d'un pays : un ticket GitHub pré-rempli. */
+const storyIssue = (country: string, iso: string) => `${REPO}/issues/new?${new URLSearchParams({ title: `Correction histoire : ${country} (${iso})`, labels: "histoire", body: `**Pays :** ${country} (${iso})\n**Information à corriger :**\n\n**Correction proposée :**\n\n**Source (lien) :**\n` })}`;
+
+function History({ s, en, country, iso }: { s: Story; en: boolean; country: string; iso: string }) {
+  const L = (x: [string, string]) => nbsp(x[en ? 1 : 0]);
+  const std: [[string, string], [string, string] | undefined][] = [[["Capitale", "Capital"], s.capitale], [["Indépendance", "Independence"], s.independance], [["Langues officielles", "Official languages"], s.langues], [["Fête nationale", "National day"], s.fete]];
+  const facts = (s.reperes ?? std).filter((r): r is [[string, string], [string, string]] => !!r[1]).map(([k, v]) => [k[en ? 1 : 0], L(v)]);
+  return (
+    <section className="hist" aria-labelledby="hTitle">
+      <h4 id="hTitle">{en ? "History" : "Histoire"}</h4>
+      <dl className="hfacts">{facts.map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl>
+      <ol className="hline">{s.frise.map((d, k) => <li key={k}><b>{nbsp(en ? d[2] : d[0])}</b><span>{nbsp(en ? d[3] : d[1])}</span></li>)}</ol>
+      <p className="hflag"><b>{en ? "The flag" : "Le drapeau"}</b>{L(s.drapeau)}</p>
+      <p className="hnote">{en ? "If this information looks wrong to you, " : "Si cette information vous paraît incorrecte, "}<a href={storyIssue(country, iso)} target="_blank" rel="noopener">{en ? "contact us" : "contactez-nous"}</a>.</p>
+    </section>
+  );
+}
 
 /** Rend un élément inerte (ni focus ni lecteur d'écran) quand il est caché. */
 export const inert = (on: boolean) => (on ? ({ inert: "" } as Record<string, string>) : {});
@@ -37,6 +60,15 @@ export function Drawer() {
   const panel = useRef<HTMLElement>(null);
   const opener = useRef<HTMLElement | null>(null);
   useEffect(() => { if (i) setLast(i); }, [i]);
+  // Histoire des pays : chargée à la première fiche de drapeau ou de carte.
+  const [story, setStory] = useState<{ key: string; s: Story } | null>(null);
+  useEffect(() => {
+    const key = i && storyKey(i);
+    if (!key) return;
+    let live = true;
+    loadStory(key).then((s) => { if (live && s) setStory({ key, s }); });
+    return () => { live = false; };
+  }, [i?.id]); // eslint-disable-line react-hooks/exhaustive-deps
   const ic = i ?? last;
 
   useEffect(() => { if (i && a.style === "line" && !isColor(i)) animateDraw(big.current?.querySelector("svg") ?? null); }, [i?.id]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -85,6 +117,7 @@ export function Drawer() {
   // Même famille : même catégorie (même groupe pour un emoji).
   const others = ICONS.filter((x) => x.cat === ic.cat && (!isEmoji(ic) || x.group === ic.group) && x.id !== ic.id && !variants.includes(x));
   const fact = FACTS[ic.id];
+  const hist = story && story.key === storyKey(ic) ? story.s : undefined;
   const cn = ic.lucide ? COMPAT_NAMES[ic.lucide] : undefined;
   // Onglets Material UI et Ant Design : seulement pour les icônes d'interface qui ont un équivalent.
   const tabs = (["svg", "jsx", "ng", "use", "css", ...(cn?.mui.length ? ["mui"] : []), ...(cn?.antd.length ? ["antd"] : [])] as const) as readonly ("svg" | "jsx" | "ng" | "use" | "css" | "mui" | "antd")[];
@@ -123,7 +156,7 @@ export function Drawer() {
             // Monnaie ↔ drapeaux des pays qui l'utilisent.
             const money = ic.cat === "drapeaux" ? AFRO.find((x) => x.cat === "monnaies" && x.countries?.includes(ic.iso!))?.id : undefined;
             const lands = ic.cat === "monnaies" ? (ic.countries ?? []).map((c) => FLAGS.find((f) => f.iso === c)?.id) : [];
-            const twins = ([[ic.emoji, a.tt("Voir l'emoji", "See the emoji")], [ic.icon, a.tt("Voir l'icône au trait", "See the line icon")], [ic.flag, a.tt("Voir le drapeau", "See the flag")], [ic.map, a.tt("Voir la carte du pays", "See the country map")], [money, a.tt("Voir la monnaie", "See the currency")], ...lands.map((f) => [f, byId[f!]?.country ? (a.lang === "en" ? byId[f!].country!.en : byId[f!].country!.fr) : ""] as const)] as const).filter(([t]) => t && byId[t]);
+            const twins = ([[ic.emoji, a.tt("Voir l'emoji", "See the emoji")], [ic.icon, a.tt("Voir l'icône au trait", "See the line icon")], [ic.flag, a.tt("Voir le drapeau", "See the flag")], [ic.map, ic.iso ? a.tt("Voir la carte du pays", "See the country map") : a.tt("Voir la carte de l'Afrique", "See the map of Africa")], [money, a.tt("Voir la monnaie", "See the currency")], ...lands.map((f) => [f, byId[f!]?.country ? (a.lang === "en" ? byId[f!].country!.en : byId[f!].country!.fr) : ""] as const)] as const).filter(([t]) => t && byId[t]);
             return twins.length ? <div className="dtwins">{twins.map(([t, l]) => <button key={t} className="btn sm dtwin" onClick={() => a.openIcon(t!)}><Svg i={byId[t!]} o={{ s: 20 }} />{l}</button>)}</div> : null;
           })()}
           {ic.tone && <div className="dtone">{a.tt("Teinte de peau", "Skin tone")}<span className="tones" role="radiogroup" aria-label={a.tt("Teinte de peau", "Skin tone")}>{TONE_LIST.map((t) => <button key={t.id} role="radio" aria-checked={app.tone === t.id} aria-label={a.tt(t.fr, t.en)} title={a.tt(t.fr, t.en) + (ic.char ? " " + ic.char + t.mod : "")} className={app.tone === t.id ? "on" : ""} style={{ background: TONES[t.id][0] }} onClick={() => app.setTone(t.id)} />)}</span></div>}
@@ -151,6 +184,7 @@ export function Drawer() {
             <div className="ctabs" role="tablist">{tabs.map((k) => <button key={k} role="tab" aria-selected={cur === k} className={cur === k ? "on" : ""} onClick={() => setTab(k)}>{{ svg: "SVG", jsx: "React", ng: "Angular", use: "Sprite", css: "CSS", mui: "MUI", antd: "Ant" }[k]}</button>)}</div>
             <div className="codebox"><pre dangerouslySetInnerHTML={{ __html: highlight(codeShown, cur === "css") }} /><button className="cp" onClick={() => a.copy(codeShown)}><T k="cp" /></button></div>
           </div>
+          {hist && <History s={hist} en={a.lang === "en"} country={ic.country?.fr ?? ic.fr} iso={ic.iso ?? ic.id} />}
           {variants.length > 1 && <div className="sim"><h4>{a.tt("Variantes", "Variants")}</h4>
             <div className="vars">{variants.map((x) => <button key={x.id} className={x.id === ic.id ? "on" : ""} aria-current={x.id === ic.id ? "true" : undefined} onClick={() => a.openIcon(x.id)}><span style={{ color: lineInk }}><Svg i={x} o={{ s: 28, w: a.stroke }} /></span><small>{nm(x)}</small></button>)}</div>
           </div>}
@@ -293,7 +327,7 @@ export function Help() {
   const a = useApp();
   const box = useRef<HTMLDivElement>(null);
   useEffect(() => { if (a.helpOpen) box.current?.focus(); }, [a.helpOpen]);
-  const rows: [string, string][] = [["⌘K", "hk1"], ["/", "hk2"], ["←↑→↓", "hk3"], [a.tt("Entrée", "Enter"), "hk4"], ["C", "hk5"], ["F", "hk6"], ["X", "hk7"], ["T", "hk8"], ["Esc", "hk9"]];
+  const rows: [string, string][] = [[MOD + "K", "hk1"], ["/", "hk2"], ["←↑→↓", "hk3"], [a.tt("Entrée", "Enter"), "hk4"], ["C", "hk5"], ["F", "hk6"], ["X", "hk7"], ["T", "hk8"], ["Esc", "hk9"]];
   return (
     <div className={"help" + (a.helpOpen ? " open" : "")} {...inert(!a.helpOpen)} onClick={() => a.setHelpOpen(false)}>
       <div className="box" ref={box} tabIndex={-1} onClick={(e) => e.stopPropagation()} role="dialog" aria-modal="true" aria-labelledby="hkTitle"><h3 id="hkTitle"><T k="hk" /></h3><dl>{rows.map(([k, l]) => <div key={l} style={{ display: "contents" }}><dt><span className="kbd">{k}</span></dt><dd style={{ margin: 0 }}><T k={l} /></dd></div>)}</dl></div>

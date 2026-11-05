@@ -1,0 +1,72 @@
+{
+  "capitale": [
+    "Abuja",
+    "Abuja"
+  ],
+  "langues": [
+    "Anglais",
+    "English"
+  ],
+  "independance": [
+    "1er octobre 1960 (Royaume-Uni)",
+    "1 October 1960 (United Kingdom)"
+  ],
+  "fete": [
+    "1er octobre (indépendance de 1960)",
+    "1 October (1960 independence)"
+  ],
+  "frise": [
+    [
+      "Ier millénaire av. J.-C.",
+      "La culture de Nok produit certaines des plus anciennes sculptures en terre cuite d'Afrique et maîtrise la fonte du fer.",
+      "1st millennium BC",
+      "The Nok culture produces some of Africa's oldest terracotta sculptures and masters iron smelting."
+    ],
+    [
+      "XIIe–XVIIIe s.",
+      "Ife, le royaume du Bénin et l'empire d'Oyo prospèrent dans le Sud ; au Nord se développent les cités-États haoussa, comme Kano, et le Bornou.",
+      "12th–18th c.",
+      "Ife, the Kingdom of Benin and the Oyo Empire flourish in the South; in the North grow the Hausa city-states, such as Kano, and Bornu."
+    ],
+    [
+      "Début du XIXe s.",
+      "Ousman dan Fodio mène un djihad contre les royaumes haoussa et fonde le califat de Sokoto, l'un des plus grands États de l'Afrique précoloniale.",
+      "Early 19th c.",
+      "Usman dan Fodio leads a jihad against the Hausa kingdoms and founds the Sokoto Caliphate, one of the largest states of pre-colonial Africa."
+    ],
+    [
+      "1861–1903",
+      "Le Royaume-Uni annexe Lagos en 1861, puis étend son contrôle par la Royal Niger Company et des protectorats ; la prise de Kano et de Sokoto, en 1903, achève la conquête du Nord.",
+      "1861–1903",
+      "Britain annexes Lagos in 1861, then extends its control through the Royal Niger Company and protectorates; the capture of Kano and Sokoto in 1903 completes the conquest of the North."
+    ],
+    [
+      "1914",
+      "Le 1er janvier, les protectorats du Nord et du Sud sont unifiés : naît le Nigeria colonial.",
+      "1914",
+      "On 1 January, the Northern and Southern Protectorates are amalgamated, creating colonial Nigeria."
+    ],
+    [
+      "1960–1963",
+      "Le Nigeria devient indépendant le 1er octobre 1960, puis république fédérale le 1er octobre 1963.",
+      "1960–1963",
+      "Nigeria becomes independent on 1 October 1960, then a federal republic on 1 October 1963."
+    ],
+    [
+      "1967–1970",
+      "La sécession de la région de l'Est, proclamée « république du Biafra », entraîne une guerre civile qui s'achève en janvier 1970.",
+      "1967–1970",
+      "The secession of the Eastern Region, proclaimed the “Republic of Biafra”, leads to a civil war that ends in January 1970."
+    ],
+    [
+      "1991–1999",
+      "Abuja remplace Lagos comme capitale le 12 décembre 1991. Le 29 mai 1999, après de longues années de régime militaire, le pouvoir revient à un président civil élu.",
+      "1991–1999",
+      "Abuja replaces Lagos as capital on 12 December 1991. On 29 May 1999, after long years of military rule, power returns to an elected civilian president."
+    ]
+  ],
+  "drapeau": [
+    "Trois bandes verticales, verte, blanche et verte : le vert pour l'agriculture, le blanc pour l'unité et la paix. Dessiné par l'étudiant Taiwo Akinkunmi, lauréat d'un concours national, dont le jury retira le soleil rouge du projet. Hissé à l'indépendance, le 1er octobre 1960.",
+    "Three vertical bands, green, white and green: green for agriculture, white for unity and peace. Designed by the student Taiwo Akinkunmi, winner of a national competition, whose jury removed the red sun from his design. Raised at independence, on 1 October 1960."
+  ]
+}

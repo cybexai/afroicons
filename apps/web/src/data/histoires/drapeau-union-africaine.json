@@ -1,0 +1,19 @@
+{
+  "reperes": [
+    [["Siège", "Headquarters"], ["Addis-Abeba (Éthiopie)", "Addis Ababa (Ethiopia)"]],
+    [["Fondation", "Founded"], ["25 mai 1963 (OUA) · 9 juillet 2002 (Union africaine)", "25 May 1963 (OAU) · 9 July 2002 (African Union)"]],
+    [["États membres", "Member states"], ["55", "55"]],
+    [["Journée de l'Afrique", "Africa Day"], ["25 mai (fondation de l'OUA en 1963)", "25 May (founding of the OAU in 1963)"]]
+  ],
+  "frise": [
+    ["1900", "La première conférence panafricaine se tient à Londres, à l'initiative de l'avocat trinidadien Henry Sylvester Williams.", "1900", "The first Pan-African Conference is held in London, at the initiative of the Trinidadian lawyer Henry Sylvester Williams."],
+    ["1945", "Le cinquième congrès panafricain, à Manchester, réunit de futurs dirigeants des indépendances et réclame la fin de la colonisation.", "1945", "The fifth Pan-African Congress, in Manchester, brings together future independence leaders and calls for an end to colonial rule."],
+    ["1963", "Le 25 mai, 32 États indépendants fondent à Addis-Abeba l'Organisation de l'unité africaine (OUA).", "1963", "On 25 May, 32 independent states found the Organisation of African Unity (OAU) in Addis Ababa."],
+    ["1999–2000", "La déclaration de Syrte, en septembre 1999, appelle à créer une Union africaine ; son Acte constitutif est adopté à Lomé en juillet 2000.", "1999–2000", "The Sirte Declaration of September 1999 calls for an African Union; its Constitutive Act is adopted in Lomé in July 2000."],
+    ["2002", "Le 9 juillet, à Durban, l'Union africaine succède à l'OUA.", "2002", "On 9 July, in Durban, the African Union succeeds the OAU."],
+    ["2010", "Le 31 janvier, l'Union adopte son drapeau actuel, choisi parmi les projets soumis par des citoyens africains et de la diaspora.", "2010", "On 31 January, the Union adopts its current flag, chosen from designs submitted by African citizens and the diaspora."],
+    ["2017", "Le Maroc réintègre l'organisation en janvier : l'Union compte désormais 55 États membres.", "2017", "Morocco rejoins the organisation in January: the Union now has 55 member states."],
+    ["2023", "En septembre, l'Union africaine devient membre permanent du G20.", "2023", "In September, the African Union becomes a permanent member of the G20."]
+  ],
+  "drapeau": ["Sur un fond vert, couleur de l'espoir, la carte de l'Afrique se détache sur un soleil blanc, entourée d'un cercle d'étoiles dorées : une par État membre. Dessiné par Yadesa Bojia, il est adopté en 2010 avec 53 étoiles et en compte aujourd'hui 55 ; l'icône simplifie ce cercle pour rester lisible en petit.", "On a green field, the colour of hope, the map of Africa stands out on a white sun, ringed by gold stars: one per member state. Designed by Yadesa Bojia, it was adopted in 2010 with 53 stars and now has 55; the icon simplifies the ring to stay legible at small sizes."]
+}

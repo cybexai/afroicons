@@ -1,0 +1,72 @@
+{
+  "capitale": [
+    "Port-Louis",
+    "Port Louis"
+  ],
+  "langues": [
+    "Pas de langue officielle dans la Constitution ; anglais et français en usage officiel, créole mauricien le plus parlé",
+    "No official language in the constitution; English and French in official use, Mauritian Creole most widely spoken"
+  ],
+  "independance": [
+    "12 mars 1968 (Royaume-Uni)",
+    "12 March 1968 (United Kingdom)"
+  ],
+  "fete": [
+    "12 mars (indépendance de 1968 et république de 1992)",
+    "12 March (1968 independence and 1992 republic)"
+  ],
+  "frise": [
+    [
+      "Avant 1507",
+      "L'île est inhabitée. Des cartes anciennes la nomment Dina Arobi, nom associé aux navigateurs arabes. Les marins portugais y font escale en 1507.",
+      "Before 1507",
+      "The island is uninhabited. Early maps call it Dina Arobi, a name linked to Arab sailors. Portuguese sailors stop there in 1507."
+    ],
+    [
+      "1598–1710",
+      "Des Néerlandais en prennent possession en 1598 et la nomment d'après Maurice de Nassau ; leur colonie, fondée en 1638, est abandonnée en 1710.",
+      "1598–1710",
+      "The Dutch take possession in 1598 and name it after Maurice of Nassau; their colony, founded in 1638, is abandoned in 1710."
+    ],
+    [
+      "1715–1735",
+      "La France revendique l'île, rebaptisée Isle de France, et l'occupe à partir de 1721. Le gouverneur Mahé de La Bourdonnais, arrivé en 1735, développe Port-Louis et l'économie sucrière.",
+      "1715–1735",
+      "France claims the island, renamed Isle de France, and settles it from 1721. Governor Mahé de La Bourdonnais, who arrives in 1735, develops Port Louis and the sugar economy."
+    ],
+    [
+      "1810–1814",
+      "Les Britanniques prennent l'île, et les Français capitulent le 3 décembre 1810. Le traité de Paris de 1814 la cède au Royaume-Uni sous le nom de Mauritius.",
+      "1810–1814",
+      "The British take the island, and the French surrender on 3 December 1810. The 1814 Treaty of Paris cedes it to the United Kingdom as Mauritius."
+    ],
+    [
+      "1835",
+      "L'esclavage est aboli le 1er février. Commence l'arrivée massive de travailleurs engagés, venus surtout d'Inde.",
+      "1835",
+      "Slavery is abolished on 1 February. The large-scale arrival of indentured labourers, mostly from India, begins."
+    ],
+    [
+      "1968",
+      "Le 12 mars, Maurice devient indépendante. Trois ans plus tôt, en 1965, le Royaume-Uni en avait détaché l'archipel des Chagos.",
+      "1968",
+      "On 12 March, Mauritius becomes independent. Three years earlier, in 1965, the United Kingdom had separated the Chagos Archipelago from it."
+    ],
+    [
+      "1992",
+      "Le 12 mars, Maurice devient une république ; la reine cesse d'être chef de l'État.",
+      "1992",
+      "On 12 March, Mauritius becomes a republic; the Queen ceases to be head of state."
+    ],
+    [
+      "2025",
+      "En mai, un accord signé avec le Royaume-Uni reconnaît la souveraineté de Maurice sur les Chagos, Diego Garcia restant louée au Royaume-Uni.",
+      "2025",
+      "In May, an agreement signed with the United Kingdom recognises Mauritian sovereignty over the Chagos, with Diego Garcia remaining leased to the United Kingdom."
+    ]
+  ],
+  "drapeau": [
+    "Les « Quatre Bandes » : le rouge pour la lutte pour la liberté et l'indépendance, le bleu pour l'océan Indien, le jaune pour la lumière de la liberté, le vert pour l'agriculture et la verdure de l'île toute l'année. Adopté à l'indépendance, le 12 mars 1968.",
+    "“The Four Bands”: red for the struggle for freedom and independence, blue for the Indian Ocean, yellow for the light of freedom, green for agriculture and the island's year-round greenery. Adopted at independence, on 12 March 1968."
+  ]
+}

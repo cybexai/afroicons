@@ -31,6 +31,9 @@ function tube(pts, ws, sub = 3) {
   return `M${rd(L[0][0])} ${rd(L[0][1])}` + crSeg(L) + cap(L[n], R[n], tn[n], w[n]) + crSeg([...R].reverse()) + cap(R[0], L[0], tn[0].map((v) => -v), w[0]) + "Z";
 }
 
+/** Patte effilée (genou ou jarret au milieu) qui s'affine vers le sabot. */
+const limb = (pts, ws, fill, hoof) => path(tube(pts, ws), fill, { w: 0.95 }) + (hoof ? path(`M${rd(pts.at(-1)[0] - ws.at(-1) - 0.15)} ${rd(pts.at(-1)[1] - 0.9)}H${rd(pts.at(-1)[0] + ws.at(-1) + 0.15)}L${rd(pts.at(-1)[0] + ws.at(-1) + 0.3)} ${rd(pts.at(-1)[1] + 0.5)}H${rd(pts.at(-1)[0] - ws.at(-1) - 0.3)}Z`, hoof, { w: 0.8 }) : "");
+
 /* ---------- mamba noir : corps fin gris olive, tête « cercueil », gueule ouverte noire ---------- */
 const MAMBA = "#6F6B5C", MAMBA_BELLY = "#B9B39B", MAMBA_MOUTH = "#15100C";
 const mambaNoir = [
@@ -43,19 +46,21 @@ const mambaNoir = [
   circle(6.6, 5.1, 0.9, "#D8D2B8", { w: 0.6 }), eye(6.6, 5.1, 0.5),
 ].join("");
 
-/* ---------- python de Seba : corps épais enroulé, taches brunes, tête relevée ---------- */
-const PY = "#C2A46A", PY_DARK = "#5E4228", PY_EDGE = "#8A6A3E";
-const pySp = (f) => { const T = Math.PI * 2, th = Math.PI * 1.08 - T + T * f, rr = 1.1 + 7.3 * f; return [13.4 + rr * Math.cos(th), 13.6 + rr * 0.88 * Math.sin(th)]; };
-const pyPts = [], pyWs = [];
-for (let i = 0; i <= 14; i++) { const f = i / 14; pyPts.push(pySp(f)); pyWs.push(f < 0.45 ? 0.2 + (f / 0.45) * 1.8 : 2.05); }
-pyPts.push([4.8, 5.4], [2.6, 4.4]); pyWs.push(1.45, 1.3);
+/* ---------- python de Seba : corps épais enroulé en anneau, selles brunes, cou relevé ---------- */
+const PY = "#C2A46A", PY_DARK = "#5E4228", PY_EDGE = "#8A6A3E", PY_HOLE = "#7A5A34";
 const pythonSeba = [
-  path(tube(pyPts, pyWs), PY),
-  ...[0.5, 0.62, 0.74, 0.86].map((f) => { const [x, y] = pySp(f); return ellipse(rd(x), rd(y), 1.15, 0.85, PY_DARK, { c: PY_EDGE, w: 0.5 }); }),
-  ...[0.3, 0.4].map((f) => { const [x, y] = pySp(f); return circle(rd(x), rd(y), 0.55, PY_DARK, false); }),
-  // fer de lance sombre sur la tête
-  path("M2.4 4.4L5.6 4.6L4.6 5.6Z", PY_DARK, false),
-  circle(3.8, 3.9, 0.7, C.ocreLight, { w: 0.5 }), eye(3.8, 3.9, 0.38),
+  ellipse(12.8, 16.4, 9.4, 5.4, PY),
+  // tour intérieur de l'anneau
+  path("M17.8 16.6C17.8 18.4 15.4 19.2 12.6 19.2C9.6 19.2 7.6 18.2 7.6 16.6C7.6 15 9.8 13.8 12.8 13.8C15.2 13.8 16.6 14.6 16.4 15.8", PY_HOLE, { w: 0.9 }),
+  line("M16.4 15.8Q14.6 16.6 12.4 16.4", PY_DARK, 0.7),
+  ...[[16, 11.9, 1.5, 0.9], [20.6, 14.6, 1.1, 1.3], [20, 19.4, 1.3, 1], [13.6, 21, 1.6, 0.8], [6.6, 19.6, 1.4, 1]].map(([x, y, rx, ry]) => ellipse(x, y, rx, ry, PY_DARK, { c: PY_EDGE, w: 0.5 })),
+  // cou épais relevé
+  path("M10.6 12.6V8.4H14.6V12.6Q12.6 13.6 10.6 12.6Z", PY),
+  ellipse(12.6, 10.6, 1.3, 0.9, PY_DARK, { c: PY_EDGE, w: 0.5 }),
+  line("M5.6 8H4.2M4.2 8L3.4 7.2M4.2 8L3.4 8.8", "#B95A86", 0.6),
+  path("M10.6 9.4L6.6 9.2C5.2 9.1 4.8 7.6 5.9 6.9L9.6 5.2C11.8 4.4 14.6 5.2 14.6 7.6V9.4Z", PY),
+  path("M6.4 7.4L11.4 6.2L13.6 7.4L11.4 8.4Z", PY_DARK, false),
+  circle(10, 6.6, 0.65, C.ocreLight, { w: 0.5 }), eye(10, 6.6, 0.34),
 ].join("");
 
 /* ---------- vipère du Gabon : vue de dessus, tête énorme, motif géométrique ---------- */
@@ -68,25 +73,26 @@ const vipereGabon = [
     g(`rotate(${a} ${x} ${y})`, path(`M${x - 1.3} ${y - 1.1}L${x + 1.3} ${y - 1.1}L${x + 0.5} ${y}L${x + 1.3} ${y + 1.1}L${x - 1.3} ${y + 1.1}L${x - 0.5} ${y}Z`, VIP_DARK, { w: 0.5 }))),
   ...[[15.1, 6.1], [19, 8.6], [17.2, 13.6], [12.6, 14], [9, 16.8], [11.6, 20.8]].map(([x, y]) => circle(x, y, 0.55, VIP_PURPLE, false)),
   // tête pâle, trait brun central, petites cornes du museau
-  path("M2 6.6Q2.2 4 5.6 3.8Q8.4 4 9 6.6Q8.4 9.2 5.6 9.4Q2.2 9.2 2 6.6Z", VIP_HEAD, { w: 0.9 }),
-  line("M3.4 6.6H8.2", VIP_DARK, 0.7),
-  path("M2.4 5.6L1.6 5.2L2.2 6.2Z", VIP_DARK, { w: 0.5 }), path("M2.4 7.6L1.6 8L2.2 7Z", VIP_DARK, { w: 0.5 }),
-  eye(5.2, 4.8, 0.5), eye(5.2, 8.4, 0.5),
+  path("M10 1.8Q10.8 6.6 10 11.4Q5.6 10.4 2.2 7.4Q1.4 6.6 2.2 5.8Q5.6 2.8 10 1.8Z", VIP_HEAD),
+  line("M3 6.6H9.4", VIP_DARK, 0.8),
+  path("M9.6 3.2L6.8 4.2L9.6 5.2Z", VIP_DARK, false), path("M9.6 10L6.8 9L9.6 8Z", VIP_DARK, false),
+  path("M2.6 5.8L1.6 5.4L2 6.4Z", VIP_DARK, { w: 0.5 }), path("M2.6 7.4L1.6 7.8L2 6.8Z", VIP_DARK, { w: 0.5 }),
+  eye(5.4, 4.8, 0.55), eye(5.4, 8.4, 0.55),
 ].join("");
 
-/* ---------- cobra cracheur rouge : dressé, capuchon de face, collier noir, jet de venin ---------- */
+/* ---------- cobra cracheur rouge : capuchon déployé derrière une petite tête, corps au sol, jet de venin ---------- */
 const COB = "#D8714C", COB_DARK = "#A9502F", COB_LIGHT = "#F2B08E";
 const cobraCracheur = [
-  path("M10 17.4C5 17.6 3 19 3.2 20.4C3.4 21.6 5.4 22 8.4 22H16C19.2 22 20.8 21.2 20.6 20C20.4 18.6 18.4 17.8 14 17.6Z", COB),
-  line("M7.6 19.4Q12 20.6 17 19.2", COB_DARK, 0.7),
-  path("M12 2C13.8 2 14.8 3.2 14.8 4.6C17.8 6 19.2 9.2 18.4 12.2C17.6 14.8 15 15.6 14 18.2H10C9 15.6 6.4 14.8 5.6 12.2C4.8 9.2 6.2 6 9.2 4.6C9.2 3.2 10.2 2 12 2Z", COB),
-  path("M12 6.6Q13.8 8.6 13.6 12.6Q13.2 15.6 12 17.6Q10.8 15.6 10.4 12.6Q10.2 8.6 12 6.6Z", COB_LIGHT, false),
+  path("M10.6 16.4C10.2 19 11 21 13.6 21H19.6C21.6 21 22.4 19.2 21.2 18L18.6 18.6H14.8C13.6 18.6 13.2 17.8 13.4 16.4Z", COB),
+  line("M15 19.8H19.6", COB_DARK, 0.6),
+  path("M12 2.4C14 2.4 14.8 3.8 14.4 5.2C17.8 4.8 20.8 6.8 20.8 9.8C20.8 12.8 17 14 13.6 16.8H10.4C7 14 3.2 12.8 3.2 9.8C3.2 6.8 6.2 4.8 9.6 5.2C9.2 3.8 10 2.4 12 2.4Z", COB),
+  path("M10.4 16.4Q12 9.6 13.6 16.4Z", COB_LIGHT, false),
   // collier noir sous la gorge
-  path("M6.6 13.6Q12 15.6 17.4 13.6L16.4 15.2Q12 16.8 7.6 15.2Z", C.noir, { w: 0.7 }),
-  path("M9.6 4.6Q9.6 2.2 12 2.2Q14.4 2.2 14.4 4.6Q12 5.8 9.6 4.6Z", COB_DARK, false),
-  eye(10.9, 3.9, 0.45), eye(13.1, 3.9, 0.45),
+  path("M9.2 13.4H14.8L14 15H10Z", C.noir, { w: 0.6 }),
+  path("M9.8 6.8C9.2 4.4 10 2.6 12 2.6S14.8 4.4 14.2 6.8Q12 7.8 9.8 6.8Z", COB_DARK),
+  eye(11, 4.6, 0.5), eye(13, 4.6, 0.5),
   // gouttes de venin projetées
-  tear(6.4, 1, 0.65), tear(4, 2.4, 0.7), tear(2, 4.8, 0.6),
+  tear(6.8, 0.8, 0.6), tear(4.4, 1.8, 0.65), tear(2.2, 3.8, 0.55),
 ].join("");
 
 /* ---------- varan du Nil : olive sombre, bandes de points jaunes, langue fourchue ---------- */
@@ -168,18 +174,20 @@ const papillon = [
   line("M11.6 8.2L10 4.6M12.4 8.2L14 4.6", O, 0.7), circle(10, 4.6, 0.45, O, false), circle(14, 4.6, 0.45, O, false),
 ].join("");
 
-/* ---------- mouche tsé-tsé : vue de dessus, ailes repliées l'une sur l'autre, trompe droite ---------- */
+/* ---------- mouche tsé-tsé : de profil, longue trompe droite, ailes repliées à plat qui dépassent l'abdomen ---------- */
 const TSE = "#8A6A44", TSE_DARK = "#5E4630", TSE_WING = "#E2DACA", TSE_EYE = "#8E3A2A";
 const tsetse = [
-  thick("M9.6 9.2L7 7.4L6.2 5M9.6 10.6L6.2 11.2L4.8 13.6M10.2 12L7.6 15L7.4 17.8M14.4 9.2L17 7.4L17.8 5M14.4 10.6L17.8 11.2L19.2 13.6M13.8 12L16.4 15L16.6 17.8", TSE_DARK, 0.6),
-  line("M12 5V1.6", O, 1),
-  // abdomen caché, ailes en ciseaux
-  path("M12 10.6C9 11.6 8.6 16.8 10.4 21.8C11.6 21.4 12 19 12 16C12 19 12.4 21.4 13.6 21.8C15.4 16.8 15 11.6 12 10.6Z", TSE_WING, { w: 0.9 }),
-  line("M12 13V19.6M10.8 13.4Q10.2 16.4 10.8 19.4M13.2 13.4Q13.8 16.4 13.2 19.4", "#A99C80", 0.5),
-  ellipse(12, 10, 2.4, 1.8, TSE),
-  line("M11 9.2V10.8M13 9.2V10.8", TSE_DARK, 0.5),
-  path("M8.6 6.8C8.6 5.4 10.2 4.6 12 4.6S15.4 5.4 15.4 6.8C15.4 7.8 13.8 8.4 12 8.4S8.6 7.8 8.6 6.8Z", TSE_DARK),
-  ellipse(9.9, 6.5, 1.2, 1.3, TSE_EYE, { w: 0.6 }), ellipse(14.1, 6.5, 1.2, 1.3, TSE_EYE, { w: 0.6 }),
+  thick("M10 13.2L8.6 16.8L7.2 17.8M12 13.8L12.2 18.2M13.8 13.2L15.6 17.2L17 18", TSE_DARK, 0.7),
+  line("M4.6 11.2H1.4", O, 1),
+  path("M14.6 12.4C16.6 11.4 19.4 11.4 20.8 12.6C21.8 13.6 21.4 15.6 19.6 16.2C17.6 16.8 15.8 16.4 14.4 15Z", TSE),
+  line("M17 12V16.4M19.2 12.2V16", TSE_DARK, 0.8),
+  path("M8.8 10.6C8.8 8.6 10.2 7.2 12 7.2S15.2 8.6 15.2 10.6 13.8 13.8 12 13.8 8.8 12.6 8.8 10.6Z", TSE),
+  line("M10.6 8.6Q12 9.6 13.6 8.6M10.4 10.4Q12 11.4 13.8 10.4", TSE_DARK, 0.55),
+  // ailes repliées l'une sur l'autre
+  path("M13.4 7.6C16.8 6.2 20.4 6.2 22.4 7.2C23 7.6 22.8 8.8 22 9C19.2 9.8 16.2 9.8 14.4 9.4Z", TSE_WING, { w: 0.9 }),
+  line("M15.6 8.4H21", "#A99C80", 0.5),
+  path("M4.4 11.2C4.4 9.6 5.4 8.6 6.6 8.6S8.8 9.6 8.8 11.2 7.8 13.6 6.6 13.6 4.4 12.8 4.4 11.2Z", TSE_DARK),
+  ellipse(6.6, 10.8, 1.5, 1.7, TSE_EYE, { w: 0.6 }),
 ].join("");
 
 /* ---------- escargot géant africain : coquille conique brune à flammes sombres ---------- */
@@ -258,79 +266,76 @@ const tilapia = [
   circle(5.4, 11.2, 1, C.ocreLight, { w: 0.6 }), eye(5.4, 11.2, 0.45),
 ].join("");
 
-/* ---------- capitaine (perche du Nil) : argenté, dos gris-bleu, deux dorsales, gros œil doré ---------- */
+/* ---------- capitaine (perche du Nil) : long, front concave, bosse derrière la tête, deux dorsales, gros œil doré ---------- */
 const CAP = "#C9D1D8", CAP_BACK = "#7F94A6", CAP_FIN = "#8E9EAC";
 const capitaine = [
-  path("M8.8 8.4L10.4 3.6L13 7.8Z", CAP_FIN, { w: 0.9 }),
-  path("M13.4 7.8C15.4 5.4 17.6 6.2 18.6 9.6Z", CAP_FIN, { w: 0.9 }),
-  path("M1.4 12.8L4.4 10.2C6.6 7.6 9.6 6.8 12.4 7C15.4 7.2 17.6 8.6 19 10.4L22.4 8.2V16.8L19 14.2C17 16.2 13.6 17.4 9.8 17C6.6 16.6 3.8 15.2 1.4 12.8Z", CAP),
-  path("M4.4 10.2C6.6 7.6 9.6 6.8 12.4 7C15.4 7.2 17.6 8.6 19 10.4Q14 9.8 9 10.4Q6.2 10.8 4.4 10.2Z", CAP_BACK, false),
-  line("M1.4 12.8L5.4 12.6", O, 0.8),
-  line("M9.6 9.8C10.4 11.6 10.4 13.6 9.6 15.4", O, 0.8),
-  line("M11 13.2H18.6", "#9FB0BE", 0.5),
-  circle(6.6, 10.8, 1.25, C.ocreLight, { w: 0.6 }), eye(6.6, 10.8, 0.55),
+  path("M7.6 8L8.8 4.6L10.2 6.6L11.2 5L12.8 8.4Z", CAP_FIN, { w: 0.9 }),
+  path("M13.4 8.8C15 7.2 17 7.8 17.6 10.4Z", CAP_FIN, { w: 0.9 }),
+  path("M11.4 16.2L13 18.6L15.2 15.6Z", CAP_FIN, { w: 0.9 }),
+  path("M1.6 12C2.8 11.4 3.8 10.6 4.6 9.6C6 8 7.6 7.2 9.4 7.2C12.4 7.4 15.6 9 18.2 10.6L20.4 8.6C22.2 9.2 22.8 11.2 22.8 12.4S22.2 15.6 20.4 16.2L18.2 14.2C15.4 15.8 12.4 16.6 9.4 16.4C6.4 16.2 3.8 14.8 2 13.2Z", CAP),
+  path("M4.6 9.6C6 8 7.6 7.2 9.4 7.2C12.4 7.4 15.6 9 18.2 10.6Q13.4 10 8.6 10.6Q6 10.8 4.6 9.6Z", CAP_BACK, false),
+  line("M1.8 12.8L4.8 12.2", O, 0.8),
+  line("M8.4 9.4C9.2 11.2 9.2 13 8.2 14.8", O, 0.8),
+  line("M10.6 13H18", "#9FB0BE", 0.5),
+  circle(5.8, 10.8, 1.3, C.ocreLight, { w: 0.6 }), eye(5.8, 10.8, 0.6),
 ].join("");
 
-/* ---------- cheval barbe : robe baie, crins et extrémités noirs ---------- */
+/* ---------- cheval barbe : robe baie, encolure arquée, chanfrein busqué, crins et extrémités noirs ---------- */
 const BAY = "#8E4F2C", BAY_DARK = "#6E3B20", MANE = "#2A1E18";
 const cheval = [
-  leg(10.4, 15, 21.8, 1.6, BAY_DARK, MANE, 3.4), leg(17.2, 15, 21.8, 1.6, BAY_DARK, MANE, 3.4),
-  // longue queue noire
-  path("M20.4 11.4Q23.4 12.6 22.8 17.4Q22.6 19.6 21.4 20.6Q21.6 17.4 20.8 15.6Q20 13.6 19.6 12.4Z", MANE),
-  path("M8.8 11.6Q11.2 10.4 16.6 10.6Q21 10.8 21 13.6Q21 16.4 18.4 16.6H10.6Q8 16.4 7.8 14Z", BAY),
-  leg(19, 15.2, 22.2, 1.7, BAY, MANE, 3.6), leg(8.2, 15, 22.2, 1.7, BAY, MANE, 3.6),
-  // encolure arquée et tête
-  path("M8.2 14.8Q7.2 12 7.6 9.8L6.4 10.6Q4.8 11.6 3.2 10.6L2.2 9.8Q1.4 9 2 8.2L5.4 4.4Q6.8 3 8.2 3.8Q12 5.8 13.6 11.6Z", BAY),
-  path("M8.2 3.4Q12.8 5.2 14.2 11.6Q12.8 11 12.2 10.2Q11.4 7 8.4 5.2Z", MANE, { w: 0.9 }),
-  path("M7 3.6Q5.4 3.8 5.4 5.6Q6.8 5.2 7.6 4.4Z", MANE, { w: 0.7 }),
-  path("M7.4 3.8L7.8 1.4L9 3.6Z", BAY, { w: 0.8 }),
-  eye(5.8, 5.8, 0.5),
-  ellipse(2.6, 8.8, 0.35, 0.45, O, false),
-  line("M2.4 9.8Q3.2 10.4 4 10.2", O, 0.6),
+  limb([[11, 15.2], [11.6, 18.4], [11.2, 21.2]], [0.9, 0.65, 0.6], BAY_DARK, MANE), limb([[17, 15.2], [17.6, 18.4], [17, 21.2]], [0.9, 0.65, 0.6], BAY_DARK, MANE),
+  path("M20 10.2C22.4 10.8 22.8 14.6 22.2 18.4L21 20.8C20.8 17.6 20.6 14.6 19.8 12.6Z", MANE),
+  path("M7 3.6C9.8 5 11.4 7.6 12 9.8C14.4 10 16.6 9.6 18.4 9.8C20.2 10 21 11.4 20.6 13C20.4 14.4 19.4 15.2 18.6 15.4L10.4 15.6C9 15.4 8 14.6 7.8 13.4C7.6 12 7.2 10.8 6.4 9.8C5.6 9.8 4.6 10.4 3.6 10.4C2.4 10.4 1.6 9.6 1.8 8.6Q2.6 4.6 5.6 3.6C6.2 3.4 6.6 3.4 7 3.6Z", BAY),
+  limb([[8.8, 15], [8.7, 18.2], [8.6, 21.6]], [0.95, 0.7, 0.62], BAY, MANE), limb([[18.9, 14.8], [19.8, 18], [19.2, 21.6]], [1, 0.7, 0.62], BAY, MANE),
+  // crinière, toupet, oreille
+  path("M7.4 2.8C10.8 3.6 13.4 6.4 14.2 9.8L12 9.8C11.4 7.6 9.8 5 7 3.6Z", MANE, { w: 0.8 }),
+  path("M6.2 3.8L6.8 1.6L7.8 3.8Z", BAY, { w: 0.8 }),
+  path("M5.6 3.8Q4.4 4.6 4.6 6Q5.8 5.2 6.6 4.2Z", MANE, false),
+  eye(5, 6, 0.5),
+  ellipse(2.6, 8.6, 0.35, 0.45, O, false),
+  line("M2.2 9.6Q3 10.2 3.8 10", O, 0.6),
 ].join("");
 
-/* ---------- mouton peul (Ouda) : avant noir, arrière blanc, oreilles tombantes, hautes pattes ---------- */
-const SH_WHITE = "#F4EFE6", SH_SHADE = "#D8D0C2", SH_DARK = "#33261E", SH_EAR = "#56443A";
+/* ---------- mouton peul (Ouda) : avant noir, arrière blanc, cornes en spirale, poil ras, hautes pattes ---------- */
+const SH_WHITE = "#F4EFE6", SH_SHADE = "#D8D0C2", SH_DARK = "#33261E", SH_HORN = "#CDB68C", SH_FAR = "#241A14";
 const mouton = [
-  leg(10.6, 14.8, 21.8, 1.4, "#241A14", O, 0.9), leg(16.4, 14.8, 21.8, 1.4, SH_SHADE, O, 0.9),
-  thick("M20.2 12Q21.6 14.6 21.2 18.8", SH_WHITE, 1.1),
-  path("M8.6 11Q11 9.6 16.4 9.8Q21 10 21 12.8Q21 15.6 18.4 15.8H10.6Q8 15.6 7.8 13.4Z", SH_WHITE),
-  path("M8.6 11Q10.8 9.8 13.6 9.8Q12.6 12.8 13.4 15.8H10.6Q8 15.6 7.8 13.4Z", SH_DARK),
-  leg(18.2, 15, 22.2, 1.5, SH_WHITE, O, 0.9), leg(8.4, 15, 22.2, 1.5, SH_DARK, O, 0.9),
-  // tête au chanfrein busqué
-  path("M8.4 14Q7.4 12.6 7.4 11.4Q6.4 11.8 5.2 11.8Q3.2 12 2.2 11.4Q1.4 10.8 1.8 9.6L2.8 7Q3.6 5 5.6 5Q7.8 5.2 9 7.4L11.8 10.4Z", SH_DARK),
-  path("M6.6 6.4Q9 6.8 9.4 9.6Q9.4 11.4 8.6 12.2Q7.2 10.6 6.4 7.6Z", SH_EAR, { w: 0.8 }),
-  eye(4.8, 7.6, 0.5),
-  ellipse(2.4, 10, 0.32, 0.42, "#8A786C", false),
+  limb([[10.8, 14.4], [11.4, 17.6], [11, 21.2]], [0.8, 0.55, 0.5], SH_FAR, O), limb([[16.8, 14.4], [17.4, 17.4], [16.8, 21.2]], [0.8, 0.55, 0.5], SH_SHADE, O),
+  thick("M20.2 11.2C21 12.2 21.2 13.8 20.8 15.6", SH_WHITE, 0.9),
+  path("M7.6 7.6C8.4 8.8 9.4 9.6 11 9.8C13.6 10.2 16.4 9.6 18.4 9.8C20 10 20.8 11.2 20.4 12.6C20.2 13.6 19.4 14.2 18.6 14.4L10.4 14.6C9.2 14.4 8.4 13.6 8 12.6C7.6 11.6 7.2 10.8 6.6 10.2L4.4 10.4C3.4 10.6 2.6 10.2 2.6 9.4L3.6 6.4C4 5.4 5 4.8 6 5.2C6.8 5.6 7.4 6.6 7.6 7.6Z", SH_WHITE),
+  // avant-main et tête noirs
+  path("M7.6 7.6C8.4 8.8 9.4 9.6 11 9.8L13.2 10Q12.4 12.4 13.2 14.6H10.4C9.2 14.4 8.4 13.6 8 12.6C7.6 11.6 7.2 10.8 6.6 10.2L4.4 10.4C3.4 10.6 2.6 10.2 2.6 9.4L3.6 6.4C4 5.4 5 4.8 6 5.2C6.8 5.6 7.4 6.6 7.6 7.6Z", SH_DARK),
+  limb([[9, 14.2], [8.9, 17.6], [8.8, 21.6]], [0.85, 0.6, 0.52], SH_DARK, O), limb([[18.8, 14], [19.6, 17.4], [19, 21.6]], [0.9, 0.6, 0.52], SH_WHITE, O),
+  // corne spiralée
+  thick("M6.4 5.4C7.4 3 10.6 2.6 12 4.6C13.4 6.6 12 9.2 9.8 8.8C8.4 8.6 8 7 9.2 6.4", SH_HORN, 1.3),
+  line("M8 3.8L8.4 4.6M10.4 3.2L10.4 4.2M12.2 5.6L11.4 5.8", "#9C8560", 0.5),
+  circle(4.6, 7.2, 0.7, "#D9CBB0", { w: 0.5 }), eye(4.6, 7.2, 0.36),
+  ellipse(2.9, 9.4, 0.3, 0.4, "#8A786C", false),
 ].join("");
 
-/* ---------- basenji : robe fauve, poitrail, pieds et bout de queue blancs, queue en tire-bouchon ---------- */
+/* ---------- basenji : robe fauve, oreilles droites, front ridé, poitrail, pieds et bout de queue blancs, queue en tire-bouchon ---------- */
 const BAS = "#C2652F", BAS_DARK = "#9A4C22", BAS_EAR = "#E7A5A0";
 const basenji = [
-  leg(10.4, 14.8, 21.8, 1.3, BAS_DARK, C.white, 2.2), leg(16.2, 14.8, 21.8, 1.3, BAS_DARK, C.white, 2.2),
-  thick("M17.8 11.4C16.6 8.6 18.4 6.6 20.4 7C22.2 7.4 22.2 10 20.6 10.6C19.6 11 18.8 10.2 19.2 9.4", BAS, 1.3),
-  circle(19.2, 9.4, 0.6, C.white, { w: 0.6 }),
-  path("M8.6 11.6Q11 10.6 16.4 10.8Q19.6 11 19.6 13.4Q19.6 15.8 17.4 16H10.4Q8 15.8 7.8 13.6Z", BAS),
-  leg(17.8, 15, 22.2, 1.4, BAS, C.white, 2.4), leg(8.4, 15, 22.2, 1.4, BAS, C.white, 2.4),
-  // oreilles dressées, front ridé
-  path("M8.4 6.4L9.8 2.4L11 6.6Z", BAS_DARK, { w: 0.8 }),
-  path("M8.4 14Q7.6 12.4 7.8 10.8L7 10.4H3.6Q2 10.4 1.8 9.4Q1.8 8.6 2.8 8.2L4.6 7.2Q5.4 6.2 6.6 6L7.4 2.2L9.2 5.4Q9.8 6.8 9.8 8.4L11.8 11Z", BAS),
-  path("M7.4 3.4L7.1 5.6L8.4 5.8Z", BAS_EAR, false),
-  path("M7.8 11.2Q7.2 13.6 8.6 15.4L9.8 15.2Q9 13.2 9.6 11.4Z", C.white, false),
-  line("M5.6 6.6Q6.4 6.2 7 6.6M5.6 7.4Q6.2 7 6.8 7.4", BAS_DARK, 0.5),
-  eye(5.2, 7.8, 0.5),
-  ellipse(2.1, 8.9, 0.45, 0.4, O, false),
+  limb([[10.8, 15.4], [11.4, 18.4], [11, 21.2]], [0.75, 0.55, 0.5], BAS_DARK, C.white), limb([[16.6, 14.6], [17.2, 18.2], [16.6, 21.2]], [0.8, 0.55, 0.5], BAS_DARK, C.white),
+  thick("M18.4 11.2C17.2 8.6 18.8 6.6 20.6 7C22.2 7.4 22.2 9.8 20.6 10.2C19.8 10.4 19.2 9.8 19.4 9.2", BAS, 1.4),
+  circle(19.4, 9.2, 0.65, C.white, { w: 0.6 }),
+  path("M7.4 8.4C8.6 10 10 10.8 12 11C14 11.2 16 10.8 17.6 11C19.2 11.2 19.8 12.6 19.4 13.8C19.2 14.4 18.6 14.8 17.8 14.8C16.4 14.8 15.4 14 14 14.2C12.6 14.4 11.8 15.6 10.4 15.6C9.2 15.4 8.4 14.6 8.2 13.6C8 12.6 7.6 11.8 7 11.2L5.4 10.4H3C2 10.4 1.8 9.4 2.6 9L4.6 7.4L5 3.4L7 5.8L8.4 3.2L8.8 6.6C8.6 7.4 8 7.8 7.4 8.4Z", BAS),
+  path("M5.4 5L5.3 7L6.4 6.2Z", BAS_EAR, false), path("M8.2 4.6L7.6 6.4L8.6 6.6Z", BAS_EAR, false),
+  path("M7 11.2Q7.4 13.8 8.6 15.4L10 15.4Q9.2 13.2 9.4 11.2Q8.2 10.8 7 11.2Z", C.white, false),
+  limb([[8.8, 15.2], [8.7, 18.2], [8.6, 21.6]], [0.8, 0.6, 0.52], BAS, C.white), limb([[18.4, 14.4], [19.2, 17.8], [18.6, 21.6]], [0.85, 0.6, 0.52], BAS, C.white),
+  line("M5.6 7.2Q6.4 6.8 7.2 7.2M5.8 8Q6.4 7.6 7 8", BAS_DARK, 0.5),
+  eye(4.8, 8.4, 0.5),
+  ellipse(2.2, 9.6, 0.45, 0.4, O, false),
 ].join("");
 
 // Recadrage mesuré : ces dessins dépassaient un peu la zone utile 1–23 (contour compris), ils sont décalés ou réduits juste assez.
-const FIT = { "mamba-noir": [-0.19, 0.65, 0.95], "python-de-seba": [0.25, 0, 1], "vipere-du-gabon": [0.55, -0.09, 0.989], "cobra-cracheur": [0, 0.4, 1],
+const FIT = { "mamba-noir": [-0.19, 0.65, 0.95], "vipere-du-gabon": [0.55, -0.09, 0.989],
   "escargot-geant": [-0.15, 0, 1], "lamantin": [-0.41, 0, 1], "baleine-a-bosse": [0.18, 0.39, 0.969], "requin-baleine": [0.17, 0.29, 0.977],
-  "silure": [0.44, 0.3, 0.975], "capitaine": [0.15, 0.05, 0.995], "cheval-barbe": [-0.18, 0.14, 0.988], "basenji": [-0.23, 0.15, 0.988] };
+  "silure": [0.44, 0.3, 0.975] };
 const A = (slug, fr, en, char, tags, body) => ({ slug, fr, en, char, group: "animaux", tags, tone: false,
   body: FIT[slug] ? g(`translate(${FIT[slug][0]} ${FIT[slug][1]}) scale(${FIT[slug][2]})`, body) : body });
 /** Recadrage (audit du dessin) : ces dessins débordaient de la grille 24 × 24 (ou étaient décentrés) ;
  *  ils sont réduits et décalés juste assez pour y tenir : [échelle, décalage x, décalage y]. */
-const CADRE = { "capitaine": [1, 0, 1.6] };
+const CADRE = {};
 const cadre = (e) => { const f = CADRE[e.slug]; return f ? { ...e, body: `<g transform="translate(${Math.round((12 + f[1]) * 100) / 100} ${Math.round((12 + f[2]) * 100) / 100}) scale(${f[0]}) translate(-12 -12)">${e.body}</g>` } : e; };
 export default [
   A("mamba-noir", "Mamba noir", "Black mamba", "🐍", ["mamba noir", "black mamba", "mamba", "serpent", "snake", "koboko", "imamba", "venimeux", "venomous", "savane", "kenya", "afrique du sud"], mambaNoir),

@@ -1,0 +1,72 @@
+{
+  "capitale": [
+    "Bangui",
+    "Bangui"
+  ],
+  "langues": [
+    "Français, sango",
+    "French, Sango"
+  ],
+  "independance": [
+    "13 août 1960 (France)",
+    "13 August 1960 (France)"
+  ],
+  "fete": [
+    "1er décembre (proclamation de la République, 1958)",
+    "1 December (proclamation of the Republic, 1958)"
+  ],
+  "frise": [
+    [
+      "Avant la colonisation",
+      "Les mégalithes de Bouar témoignent d'une civilisation ancienne. Au XIXe siècle, les sultanats zandé (Bangassou, Rafaï, Zémio) et le Dar el-Kouti dominent l'Est, marqué par les razzias esclavagistes.",
+      "Before colonisation",
+      "The megaliths of Bouar bear witness to an ancient civilisation. In the 19th century, the Zande sultanates (Bangassou, Rafaï, Zémio) and Dar al-Kuti dominate the east, scarred by slave raids."
+    ],
+    [
+      "1889",
+      "Les Français fondent un poste sur l'Oubangui : c'est l'origine de Bangui.",
+      "1889",
+      "The French found a post on the Ubangi River: the origin of Bangui."
+    ],
+    [
+      "1903–1910",
+      "Le territoire de l'Oubangui-Chari, créé en 1903, est intégré en 1910 à l'Afrique-Équatoriale française. Il est livré aux compagnies concessionnaires et au travail forcé.",
+      "1903–1910",
+      "The territory of Ubangi-Shari, created in 1903, becomes part of French Equatorial Africa in 1910. It is handed over to concession companies and forced labour."
+    ],
+    [
+      "1928–1931",
+      "La guerre du Kongo-Wara soulève l'Ouest contre le travail forcé et l'administration coloniale.",
+      "1928–1931",
+      "In the Kongo-Wara war, the west rises up against forced labour and colonial rule."
+    ],
+    [
+      "1958",
+      "Le 1er décembre, Barthélemy Boganda, fondateur du MESAN, proclame la République centrafricaine. Il meurt en 1959.",
+      "1958",
+      "On 1 December, Barthélemy Boganda, founder of MESAN, proclaims the Central African Republic. He dies in 1959."
+    ],
+    [
+      "1960",
+      "La République centrafricaine devient indépendante le 13 août.",
+      "1960",
+      "The Central African Republic becomes independent on 13 August."
+    ],
+    [
+      "1976–1979",
+      "Le pays devient l'Empire centrafricain le 4 décembre 1976 ; la République est rétablie en septembre 1979.",
+      "1976–1979",
+      "The country becomes the Central African Empire on 4 December 1976; the Republic is restored in September 1979."
+    ],
+    [
+      "2023",
+      "Une nouvelle constitution est adoptée par le référendum du 30 juillet.",
+      "2023",
+      "A new constitution is approved in the 30 July referendum."
+    ]
+  ],
+  "drapeau": [
+    "Conçu par Barthélemy Boganda : quatre bandes horizontales, bleu, blanc, vert et jaune, traversées d'une bande verticale rouge pour le sang des martyrs. Il unit les couleurs françaises et panafricaines, et l'étoile jaune guide vers la liberté et l'émancipation. Présenté le 1er décembre 1958.",
+    "Designed by Barthélemy Boganda: four horizontal bands of blue, white, green and yellow, crossed by a vertical red band for the blood of the martyrs. It unites the French and Pan-African colours, and the yellow star guides the way to freedom and emancipation. Presented on 1 December 1958."
+  ]
+}

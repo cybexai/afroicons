@@ -1,0 +1,72 @@
+{
+  "capitale": [
+    "Praia",
+    "Praia"
+  ],
+  "langues": [
+    "Portugais (officielle), créole capverdien (nationale)",
+    "Portuguese (official), Cape Verdean Creole (national)"
+  ],
+  "independance": [
+    "5 juillet 1975 (Portugal)",
+    "5 July 1975 (Portugal)"
+  ],
+  "fete": [
+    "5 juillet (indépendance de 1975)",
+    "5 July (1975 independence)"
+  ],
+  "frise": [
+    [
+      "1456–1462",
+      "Des navigateurs au service du Portugal découvrent l'archipel, alors inhabité.",
+      "1456–1462",
+      "Navigators in Portuguese service discover the archipelago, then uninhabited."
+    ],
+    [
+      "1462",
+      "Fondation de Ribeira Grande, sur l'île de Santiago. L'archipel devient une étape majeure de la traite atlantique des esclaves.",
+      "1462",
+      "Ribeira Grande is founded on the island of Santiago. The archipelago becomes a major stopover in the Atlantic slave trade."
+    ],
+    [
+      "1956",
+      "Amílcar Cabral cofonde le Parti africain pour l'indépendance de la Guinée et du Cap-Vert (PAIGC), qui mène la lutte contre le Portugal.",
+      "1956",
+      "Amílcar Cabral co-founds the African Party for the Independence of Guinea and Cape Verde (PAIGC), which leads the struggle against Portugal."
+    ],
+    [
+      "1973",
+      "Le 20 janvier, Amílcar Cabral est assassiné à Conakry.",
+      "1973",
+      "On 20 January, Amílcar Cabral is assassinated in Conakry."
+    ],
+    [
+      "1975",
+      "Le 5 juillet, le Cap-Vert devient indépendant, dirigé par le PAIGC.",
+      "1975",
+      "On 5 July, Cape Verde becomes independent, led by the PAIGC."
+    ],
+    [
+      "1980–1981",
+      "Après le coup d'État de novembre 1980 en Guinée-Bissau, le projet d'union entre les deux pays est abandonné ; la branche capverdienne devient le PAICV.",
+      "1980–1981",
+      "After the November 1980 coup in Guinea-Bissau, the plan to unite the two countries is dropped; the Cape Verdean branch becomes the PAICV."
+    ],
+    [
+      "1990–1991",
+      "Le parti unique est aboli en septembre 1990 ; les premières élections pluralistes ont lieu en janvier 1991.",
+      "1990–1991",
+      "The one-party state is abolished in September 1990; the first multi-party elections are held in January 1991."
+    ],
+    [
+      "1992",
+      "Une nouvelle constitution entre en vigueur en septembre, avec un nouveau drapeau.",
+      "1992",
+      "A new constitution comes into force in September, together with a new flag."
+    ]
+  ],
+  "drapeau": [
+    "Le bleu pour le ciel et la mer, le blanc pour la paix, le rouge pour l'effort de construction nationale. Les dix étoiles en cercle figurent les dix îles et leur unité. Adopté en 1992, il remplace le drapeau de 1975, inspiré de celui du PAIGC (bandes jaune et verte, bande rouge avec étoile noire).",
+    "Blue for the sky and the sea, white for peace, red for the effort of building the nation. The ten stars in a circle stand for the ten islands and their unity. Adopted in 1992, it replaced the 1975 flag, modelled on the PAIGC's (yellow and green bands, red band with a black star)."
+  ]
+}

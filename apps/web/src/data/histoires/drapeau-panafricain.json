@@ -1,0 +1,16 @@
+{
+  "reperes": [
+    [["Création", "Created"], ["13 août 1920, à New York", "13 August 1920, in New York"]],
+    [["Origine", "Origin"], ["Convention de l'UNIA, l'association de Marcus Garvey", "Convention of the UNIA, Marcus Garvey's association"]],
+    [["Autres noms", "Other names"], ["Drapeau de l'UNIA, drapeau afro-américain", "UNIA flag, Afro-American flag"]]
+  ],
+  "frise": [
+    ["1914", "Le Jamaïcain Marcus Garvey fonde à Kingston l'Universal Negro Improvement Association (UNIA).", "1914", "The Jamaican Marcus Garvey founds the Universal Negro Improvement Association (UNIA) in Kingston."],
+    ["1916–1920", "Garvey s'installe à New York ; l'UNIA y devient un vaste mouvement de la diaspora africaine.", "1916–1920", "Garvey moves to New York, where the UNIA becomes a vast movement of the African diaspora."],
+    ["1920", "Le 13 août, la convention de l'UNIA adopte la Déclaration des droits des peuples noirs du monde ; son article 39 fait du rouge, du noir et du vert les couleurs des peuples noirs.", "1920", "On 13 August, the UNIA convention adopts the Declaration of the Rights of the Negro Peoples of the World; its Article 39 makes red, black and green the colours of Black peoples."],
+    ["1921", "Le catéchisme de l'UNIA donne un sens aux trois couleurs : le sang versé pour la liberté, les peuples noirs, la végétation de la terre d'Afrique.", "1921", "The UNIA catechism gives the three colours a meaning: blood shed for freedom, Black peoples, the vegetation of the African land."],
+    ["1963–1964", "Le Kenya puis le Malawi accèdent à l'indépendance avec des drapeaux qui reprennent le noir, le rouge et le vert.", "1963–1964", "Kenya and then Malawi become independent with flags that use black, red and green."],
+    ["Années 1960", "Aux États-Unis, le mouvement des droits civiques et le Black Power en font un emblème de la fierté noire.", "1960s", "In the United States, the civil rights and Black Power movements make it an emblem of Black pride."]
+  ],
+  "drapeau": ["Trois bandes horizontales : rouge, noir et vert. La Déclaration de 1920 ne précise pas leur sens ; selon le catéchisme de l'UNIA, le rouge est le sang versé pour la liberté, le noir les peuples noirs et le vert la végétation luxuriante de l'Afrique. Il ne faut pas le confondre avec les couleurs panafricaines vert, jaune et rouge, venues du drapeau éthiopien.", "Three horizontal bands: red, black and green. The 1920 Declaration does not give their meaning; according to the UNIA catechism, red is the blood shed for freedom, black the Black peoples and green the lush vegetation of Africa. It should not be confused with the Pan-African colours green, gold and red, taken from the Ethiopian flag."]
+}

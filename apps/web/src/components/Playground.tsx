@@ -1,6 +1,6 @@
 import { createContext, createElement, useCallback, useContext, useEffect, useMemo, useRef, useState, type ComponentType, type CSSProperties } from "react";
 import { AFRO, DEFAULT_TONE, EMOJIS, FLAGS, ICONS, TONE_LIST, TONES, UI, byId, colOf, isColor, type Collection, type Icon, type Style, type Tone } from "../lib/constants";
-import { store } from "../lib/platform";
+import { IS_MAC, MOD, store } from "../lib/platform";
 import { rank } from "../lib/search";
 import { highlight, pascal } from "../lib/svg";
 import { useApp } from "../state";
@@ -197,7 +197,7 @@ export function Playground() {
     const n = Object.values(slots).filter((v) => AFRICA[v]).length;
     if (!n) { a.toast(a.tt("Déjà 100 % africain", "Already 100% African")); return; }
     setSlots((sl) => Object.fromEntries(Object.entries(sl).map(([k, v]) => [k, AFRICA[v] ?? v])));
-    a.toast(a.tt(`${n} icônes remplacées par leur équivalent africain (⌘Z pour annuler)`, `${n} icons replaced by their African counterpart (⌘Z to undo)`));
+    a.toast(a.tt(`${n} icônes remplacées par leur équivalent africain (${MOD}Z pour annuler)`, `${n} icons replaced by their African counterpart (${MOD}Z to undo)`));
   };
   // Logo importé : affiché dans les maquettes ; ses couleurs deviennent une palette.
   const logoTurn = useRef(0);
@@ -246,7 +246,7 @@ export function Playground() {
   const fixable = report.some((x) => x.r < x.min && x.id !== "muted");
   const fix = () => {
     const c = fixPrimary(cfg.primary, (p) => pairs(p).every((x) => x.id === "muted" || ratio(x.fg, x.bg) >= x.min));
-    if (c) { set({ primary: c }); a.toast(a.tt(`Couleur ajustée : ${c} (⌘Z pour annuler)`, `Colour adjusted: ${c} (⌘Z to undo)`)); }
+    if (c) { set({ primary: c }); a.toast(a.tt(`Couleur ajustée : ${c} (${MOD}Z pour annuler)`, `Colour adjusted: ${c} (${MOD}Z to undo)`)); }
     else a.toast(a.tt("Pas de nuance de cette couleur qui passe tous les contrôles : essayez-en une autre.", "No shade of this colour passes every check: try another one."));
   };
   void iconInk;
@@ -424,8 +424,8 @@ export function Playground() {
           ))}</ul>
           {fixable ? <button className="btn pgfix" onClick={fix}>{a.tt("Corriger la couleur automatiquement", "Fix the colour automatically")}</button> : <small className="pgnote">{a.tt("Contrastes conformes aux règles WCAG pour les icônes (3 : 1) et le texte des boutons (4,5 : 1).", "Contrast meets WCAG rules for icons (3:1) and button text (4.5:1).")}</small>}
           <div className="pgacts">
-            <button className="btn" disabled={!hist.current.past.length} onClick={() => step(true)} title="⌘Z">{a.tt("↶ Annuler", "↶ Undo")}</button>
-            <button className="btn" disabled={!hist.current.future.length} onClick={() => step(false)} title="⇧⌘Z">{a.tt("↷ Rétablir", "↷ Redo")}</button>
+            <button className="btn" disabled={!hist.current.past.length} onClick={() => step(true)} title={MOD + "Z"}>{a.tt("↶ Annuler", "↶ Undo")}</button>
+            <button className="btn" disabled={!hist.current.future.length} onClick={() => step(false)} title={IS_MAC ? "⇧⌘Z" : "Ctrl Y"}>{a.tt("↷ Rétablir", "↷ Redo")}</button>
           </div>
           <div className="pgacts">
             <button className="btn" onClick={share}>{a.tt("Copier le lien", "Copy link")}</button>

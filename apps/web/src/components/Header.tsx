@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { AFRO, CITIES, EMOJIS, FLAGS, ICONS, PAGE, UI, REGNAME, ROT_CITIES, SHOWCASE, VERSION, byId, catOf, type CityId } from "../lib/constants";
+import { AFRO, CITIES, COUNTRIES, EMOJIS, FLAGS, ICONS, PAGE, UI, REGNAME, ROT_CITIES, SHOWCASE, VERSION, byId, catOf, type CityId } from "../lib/constants";
 import { animateDraw, logoSvg, svgStr } from "../lib/svg";
+import { MOD } from "../lib/platform";
 import { useApp, useName } from "../state";
 import { IClose, IDown, IMenu, IMoon, ISearch, ISun, Raw, Svg, T } from "./ui";
 import { inert } from "./Overlays";
@@ -10,7 +11,6 @@ export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [cityOpen, setCityOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const isMac = /Mac|iPhone|iPad/.test(navigator.platform);
   useEffect(() => {
     const f = () => setScrolled(scrollY > 8);
     addEventListener("scroll", f, { passive: true });
@@ -39,10 +39,10 @@ export function Nav() {
   const [active, setActive] = useState("");
   useEffect(() => {
     const io = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && setActive(e.target.id)), { rootMargin: "-45% 0px -50% 0px" });
-    ["top", "icones", "atelier", "vitrine", "utiliser", "marque", "idees", "manifeste"].forEach((id) => { const el = document.getElementById(id); if (el) io.observe(el); });
+    ["top", "icones", "carte", "atelier", "vitrine", "utiliser", "marque", "idees", "manifeste"].forEach((id) => { const el = document.getElementById(id); if (el) io.observe(el); });
     return () => io.disconnect();
   }, []);
-  const links = [["icones", "nav1"], ["atelier", "nav2"], ["vitrine", "nav5"], ["utiliser", "nav3"], ["marque", "nav6"], ["idees", "nav7"]];
+  const links = [["icones", "nav1"], ["carte", "nav8"], ["atelier", "nav2"], ["vitrine", "nav5"], ["utiliser", "nav3"], ["marque", "nav6"], ["idees", "nav7"]];
   // Hors de l'accueil, les liens du menu ramènent aux sections de l'accueil.
   const home = PAGE === "home", sec = (h: string) => (home ? "#" : "/#") + h;
   const news = <a href="/nouveautes/" className={PAGE === "news" ? "on" : ""} aria-current={PAGE === "news" ? "page" : undefined}><T k="newsT" /></a>;
@@ -59,7 +59,7 @@ export function Nav() {
         {news}
       </div>
       <div className="navr">
-        <button className="kbtn" aria-label={a.t("cmdLbl")} onClick={() => a.setCmdOpen(true)}><ISearch s={17} /><span className="lbl"><T k="cmdLbl" /></span><span className="kbd" aria-hidden="true">{isMac ? "⌘K" : "Ctrl K"}</span></button>
+        <button className="kbtn" aria-label={a.t("cmdLbl")} onClick={() => a.setCmdOpen(true)}><ISearch s={17} /><span className="lbl"><T k="cmdLbl" /></span><span className="kbd" aria-hidden="true">{MOD + "K"}</span></button>
         <div className="citym">
           <button className="ib" title={a.tt("Ambiance", "Mood")} aria-label={a.tt("Ambiance de couleurs", "Colour mood")} aria-expanded={cityOpen} onClick={(e) => { e.stopPropagation(); setCityOpen((o) => !o); }}>
             <span className="dots">{CITIES[a.city].c.slice(0, 3).map((c) => <i key={c} style={{ background: c }} />)}</span>
@@ -129,7 +129,7 @@ export function Hero() {
     <header className="hero wrap" id="top">
       <div>
         <div className="eyebrows">
-        <a className="eyebrow" href="/nouveautes/" title={a.tt("Voir les nouveautés", "See what's new")}><b>v{VERSION}</b><span>{a.tt(`${ICONS.length} icônes libres · ${FLAGS.length} drapeaux`, `${ICONS.length} free icons · ${FLAGS.length} flags`)}</span></a>
+        <a className="eyebrow" href="/nouveautes/" title={a.tt("Voir les nouveautés", "See what's new")}><b>v{VERSION}</b><span>{a.tt(`${ICONS.length} icônes libres · ${COUNTRIES} drapeaux`, `${ICONS.length} free icons · ${COUNTRIES} flags`)}</span></a>
         <button className="eyebrow iod" onClick={() => a.openIcon(iod.id)}>
           <Svg i={iod} o={{ s: 18, w: 2 }} /><span>{a.tt("Icône du jour", "Icon of the day")} : <strong style={{ color: "var(--ink)" }}>{nm(iod)}</strong></span>
         </button>

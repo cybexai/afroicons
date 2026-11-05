@@ -1,6 +1,6 @@
 # afroicons
 
-554 icônes SVG libres qui racontent l'Afrique, au trait et remplies (dont les cartes des 54 pays et 42 monnaies), les 54 drapeaux africains et 452 emojis aux couleurs officielles. Grille 24 px, trait 1,75, `currentColor`.
+554 icônes SVG libres qui racontent l'Afrique, au trait et remplies (dont les cartes des 54 pays et 42 monnaies), les 56 drapeaux (54 pays, l'Union africaine et le panafricain) et 452 emojis aux couleurs officielles. Grille 24 px, trait 1,75, `currentColor`.
 
 ```bash
 npm install afroicons

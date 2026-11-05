@@ -11,7 +11,8 @@ const branch = (d = "M1.6 20.6H22.4") => thick(d, C.bois, 1.4);
 /* ---------- grue couronnée ---------- */
 const CRANE = "#8E98A2", CRANE_DARK = "#5E6670", CRANE_GOLD = "#E8B23A";
 const grueCouronnee = [
-  thick("M12.6 15.6L12.4 22.4M15.6 15.4L16 22.4", C.noir, 0.55),
+  line("M12.6 15.8L12.4 22.4M15.6 15.6L16 22.4", O, 1.1),
+  line("M11.4 22.4H13.2M15.2 22.4H17", O, 0.9),
   // corps gris, ailes blanches et dorées, queue tombante
   path("M9.4 11Q11 8.4 15 8.4Q19.6 8.6 21.6 13Q22.6 15.4 22 16.4Q19.6 15.4 17.6 15.8Q14 16.8 11.4 15.6Q8.8 14 9.4 11Z", CRANE),
   path("M12.6 11.4Q16.6 10.2 20.4 12.8Q21.4 14.2 21.2 15.2Q18.6 14.6 16.4 14.8Q13.4 14.6 12.6 11.4Z", C.white, { w: 0.8 }),
@@ -67,17 +68,22 @@ const becEnSabot = [
 /* ---------- marabout ---------- */
 const MARA = "#454C55", MARA_HEAD = "#E7AFA3", MARA_SAC = "#E8807F", MARA_BILL = "#D9CBA8";
 const marabout = [
-  thick("M12.6 16.4V22.4M15.8 16.4V22.4", "#D8D3CC", 0.8),
-  // dos sombre voûté, ventre blanc
-  path("M8.6 10.6Q9.4 5.6 15 4.8Q20.8 4.6 22 10Q22.6 14.6 18.6 16.6Q14 17.4 11 16Q8.4 14.6 8.6 10.6Z", MARA),
-  path("M10 13Q12.6 13.6 15.2 16.8Q12.6 17.2 11 16.2Q9.8 15.2 10 13Z", C.white, { w: 0.8 }),
-  line("M12 8.6Q16.8 7.6 20.6 11", "#2F343A", 0.7),
-  // poche rose pendante, tête chauve rose tachée, bec énorme
-  ellipse(9.4, 14, 1.7, 2.1, MARA_SAC),
-  path("M10.2 9.4Q10.2 6.8 7.8 6.6Q5.6 6.6 5.2 8.8L1.6 16.4Q1.4 17.4 2.4 17L7.6 12Q10.2 11.6 10.2 9.4Z", MARA_HEAD),
-  path("M5.4 8.4L1.6 16.4Q1.4 17.4 2.4 17L7 12.4Q5.4 11.4 5.4 8.4Z", MARA_BILL, { w: 0.9 }),
-  dots([[8.2, 8], [9.2, 9.6], [7.2, 10.6]], 0.3, "#7A4A3A"),
-  eye(7.2, 8.6, 0.5),
+  // longues pattes pâles
+  line("M15.6 17.8L15.4 22.4M18.8 17.6L19.2 22.4", "#8E8880", 1.2),
+  line("M14.6 22.4H16.2M18.4 22.4H20", O, 0.8),
+  // manteau sombre au dos voûté, pointes des ailes qui tombent, ventre blanc
+  path("M13 9.4C13.4 6.2 15.6 4.4 18.2 4.6C20.8 4.8 22.4 7.2 22.4 10.4C22.4 13 21.8 15.2 22.6 17.8C21 18 19.8 17.4 18.8 17.8C16.6 18.6 14.6 17.6 13.6 15.6C12.8 13.6 12.6 11.4 13 9.4Z", MARA),
+  path("M13 11.6Q14 15.8 18.2 17.2Q15.6 18.2 13.6 15.6Q12.8 13.8 13 11.6Z", C.white, { w: 0.7 }),
+  line("M15.2 8.4Q17.4 7.4 20.8 10.8M18 11.6Q20 12.8 21 15.6", "#2F343A", 0.8),
+  // cou court rentré, poche rose pendue sous la gorge
+  thick("M11 9.6L13.2 9.8", MARA_HEAD, 0.9),
+  line("M9.8 10.4V12.8", MARA_SAC, 1.2),
+  path("M9.6 12.4C10.8 12.4 11.4 13.4 11.4 14.6C11.4 15.9 10.6 16.8 9.6 16.8C8.6 16.8 7.8 15.9 7.8 14.6C7.8 13.4 8.4 12.4 9.6 12.4Z", MARA_SAC),
+  // énorme bec pointé vers le bas, tête chauve rose tachée
+  path("M8 8.8L2.2 16.8Q2 17.8 3 17.4L10 10.2Z", MARA_BILL),
+  circle(9.6, 8.4, 2.1, MARA_HEAD),
+  dots([[10.6, 7.4], [11, 9], [8.8, 9.8]], 0.3, "#7A4A3A"),
+  eye(9.4, 8.1, 0.5),
 ].join("");
 
 /* ---------- vautour africain ---------- */
@@ -293,30 +299,31 @@ const rollier = [
 /* ---------- souimanga ---------- */
 const SUN = "#1F9A6A", SUN_DARK = "#14684A", SUN_RED = "#D93A2B", FLOW = "#F07A2B";
 const souimanga = [
-  // fleur orange sur sa tige, branche où le souimanga est perché
-  thick("M5.6 10.6V22.4M5.6 19.4H14.6", C.feuille, 0.8),
-  path("M5.6 11Q3.6 9.6 3.2 5.6L4.6 6.6L5.6 4.2L6.8 6.6L8.2 5.6Q7.8 9.6 5.6 11Z", FLOW),
-  path("M5.6 10Q4.6 8.6 4.6 7.2L5.6 8.2L6.6 7.2Q6.6 8.6 5.6 10Z", C.ocreLight, false),
-  path("M5.6 15.4Q3.2 14.4 2.4 12.4Q4.8 12.4 5.6 14.2Z", C.feuille, { w: 0.8 }),
-  // queue
-  path("M15.4 16.6L20.4 21.2L21.6 20.2L17.2 15.2Z", SUN_DARK, { w: 0.9 }),
+  // tige, feuille, rameau où se tient l'oiseau
+  thick("M7 11V22.4", C.feuille, 0.8),
+  path("M7 16.4Q4.6 16.4 2.8 14Q5.2 13.4 7 15.4Z", C.feuille, { w: 0.8 }),
+  thick("M7 19.6H15.4", C.bois, 0.8),
+  // fleur orange en trompette
+  path("M7.2 11.4C5.4 10.8 4.2 8.8 3.8 6.4L5.6 7.2L6.4 4.4L7.8 6.8L9.6 5.8C9.6 8.4 8.8 10.6 7.2 11.4Z", FLOW),
+  path("M7.1 10.2Q5.8 9.2 5.6 7.8L6.4 8.4L7.2 7.4L8.2 8.4Q8.2 9.6 7.1 10.2Z", C.ocreLight, false),
+  // queue fine
+  path("M15.2 15.6L20.6 19.6L19.6 20.8L14.4 16.8Z", SUN_DARK, { w: 0.8 }),
   // corps vert métallique, plastron rouge
-  path("M12.4 8.6Q15.6 7.6 17.4 10.4Q18.6 13.6 17 16.4Q14.6 18.6 12.4 17.6Q10.6 16.4 10.8 12.8Q10.8 9.8 12.4 8.6Z", SUN),
-  path("M10.8 11.6Q12 11 13.6 12Q13.8 14 13 15.8Q11.4 15.6 11 14Z", SUN_RED, { w: 0.7 }),
-  path("M14.2 10.2Q16.8 10.6 17.4 13.4Q17.2 15.6 16.2 16.4Q14.4 13.8 14.2 10.2Z", SUN_DARK, { w: 0.7 }),
-  line("M12.6 17.8V19.4M14.2 17.8V19.4", O, 0.8),
-  // long bec arqué jusqu'à la fleur
-  thick("M11.2 10.4Q9.4 9.4 7.6 10", C.noir, 0.4),
-  path("M11.2 10.6Q11.8 9.4 13 9.6", "none", { c: "#4A2E8A", w: 0.7 }),
-  eye(12.8, 9.8, 0.45),
+  path("M12.2 10.2C12.2 8.8 13.4 7.6 14.8 7.6C16.4 7.6 17.6 9 17.6 10.8C17.6 13.4 16.4 15.8 14.6 16.4C13 16.4 11.8 15 11.6 13.4C11.4 12.2 11.6 11 12.2 10.2Z", SUN),
+  path("M11.8 11.8Q13.4 11.2 14.6 12.4Q14.6 14 13.8 15.4Q12.2 15 11.8 13.4Z", SUN_RED, { w: 0.7 }),
+  path("M15.4 10.4Q17.4 11.2 17.2 13.6Q16.6 15.4 15.4 16Q14.8 13 15.4 10.4Z", SUN_DARK, { w: 0.7 }),
+  line("M13.4 16.4V19.6M14.8 16.2V19.6", O, 0.8),
+  // long bec arqué plongé dans la fleur
+  thick("M12.4 10Q10.6 9.6 8.6 10.8", C.noir, 0.4),
+  eye(14.2, 9.6, 0.5),
 ].join("");
 
 /* ---------- jabiru d'Afrique ---------- */
 const JAB_BILL = "#D93A2B", JAB_SADDLE = "#F2C14E";
 const jabiru = [
   // longues pattes noires, genoux et pieds rouges
-  thick("M13.6 14.8V22M17.6 14.4V22", C.noir, 0.5),
-  dots([[13.6, 18.4], [17.6, 18.4]], 0.55, C.rose),
+  line("M13.8 15.2L13.6 22M17.4 14.8L17.8 22", O, 1.1),
+  dots([[13.7, 18.4], [17.6, 18.4]], 0.5, C.rose),
   line("M12.6 22.4H14.6M16.6 22.4H18.6", C.rose, 1),
   // corps blanc, rémiges noires
   path("M10.6 9.6Q12.4 7.6 16.4 7.8Q20.8 8.2 22.2 11.8Q22.2 13.2 20.8 13.6Q18.6 14 17.4 14.8Q14 16 11.8 14.4Q10 12.4 10.6 9.6Z", C.white),
@@ -395,7 +402,7 @@ const A = (slug, fr, en, char, tags, body) => ({ slug, fr, en, char, group: "ani
   body: FIT[slug] ? g(`translate(${FIT[slug][0]} ${FIT[slug][1]}) scale(${FIT[slug][2]})`, body) : body });
 /** Recadrage (audit du dessin) : ces dessins débordaient de la grille 24 × 24 (ou étaient décentrés) ;
  *  ils sont réduits et décalés juste assez pour y tenir : [échelle, décalage x, décalage y]. */
-const CADRE = { "bec-en-sabot": [1, 0, -0.3], "marabout": [1, 0, -0.3], "outarde-kori": [1, 0, -0.3], "souimanga": [1, 0, -0.3] };
+const CADRE = { "bec-en-sabot": [1, 0, -0.3], "outarde-kori": [1, 0, -0.3] };
 const cadre = (e) => { const f = CADRE[e.slug]; return f ? { ...e, body: `<g transform="translate(${Math.round((12 + f[1]) * 100) / 100} ${Math.round((12 + f[2]) * 100) / 100}) scale(${f[0]}) translate(-12 -12)">${e.body}</g>` } : e; };
 export default [
   A("grue-couronnee", "Grue couronnée", "Grey crowned crane", null, ["grue couronnée", "crowned crane", "grue", "crane", "korongo", "ngaali", "ouganda", "uganda", "kenya", "zones humides", "wetlands", "oiseau", "bird"], grueCouronnee),

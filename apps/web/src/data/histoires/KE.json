@@ -1,0 +1,66 @@
+{
+  "capitale": [
+    "Nairobi",
+    "Nairobi"
+  ],
+  "langues": [
+    "Swahili, anglais",
+    "Swahili, English"
+  ],
+  "independance": [
+    "12 décembre 1963 (Royaume-Uni)",
+    "12 December 1963 (United Kingdom)"
+  ],
+  "fete": [
+    "12 décembre (Jamhuri Day : indépendance de 1963 et République de 1964)",
+    "12 December (Jamhuri Day: 1963 independence and 1964 republic)"
+  ],
+  "frise": [
+    [
+      "Avant le XVe s.",
+      "Sur la côte prospèrent des cités swahilies, dont Mombasa, Malindi et Lamu, tournées vers le commerce de l'océan Indien. L'intérieur est peuplé de peuples bantous, nilotiques et couchitiques.",
+      "Before the 15th c.",
+      "Swahili city-states thrive on the coast, among them Mombasa, Malindi and Lamu, trading across the Indian Ocean. The interior is home to Bantu, Nilotic and Cushitic peoples."
+    ],
+    [
+      "1498–1730",
+      "Malindi accueille Vasco de Gama en 1498. Les Portugais bâtissent Fort Jesus à Mombasa en 1593, avant d'être chassés de la côte par les Omanais vers 1730.",
+      "1498–1730",
+      "Malindi welcomes Vasco da Gama in 1498. The Portuguese build Fort Jesus at Mombasa in 1593, before being driven from the coast by the Omanis around 1730."
+    ],
+    [
+      "1895–1920",
+      "Le Royaume-Uni établit le protectorat de l'Afrique de l'Est en 1895, qui devient la colonie du Kenya en 1920.",
+      "1895–1920",
+      "Britain establishes the East Africa Protectorate in 1895, which becomes the Colony of Kenya in 1920."
+    ],
+    [
+      "1952",
+      "Début du soulèvement Mau Mau ; les autorités coloniales décrètent l'état d'urgence en octobre.",
+      "1952",
+      "The Mau Mau uprising begins; the colonial authorities declare a state of emergency in October."
+    ],
+    [
+      "1963–1964",
+      "Le Kenya devient indépendant le 12 décembre 1963, puis république le 12 décembre 1964.",
+      "1963–1964",
+      "Kenya becomes independent on 12 December 1963, then a republic on 12 December 1964."
+    ],
+    [
+      "1991",
+      "Retour au multipartisme après des années de parti unique.",
+      "1991",
+      "Multiparty politics returns after years of single-party rule."
+    ],
+    [
+      "2010",
+      "Une nouvelle Constitution, approuvée par référendum le 4 août, est promulguée le 27 août.",
+      "2010",
+      "A new constitution, approved by referendum on 4 August, is promulgated on 27 August."
+    ]
+  ],
+  "drapeau": [
+    "Trois bandes horizontales noire, rouge et verte, séparées par des liserés blancs : le noir pour le peuple kényan, le rouge pour le sang versé dans la lutte pour l'indépendance, le vert pour la terre et ses richesses, le blanc pour la paix et l'honnêteté. Au centre, un bouclier massaï et deux lances croisées symbolisent la défense de la liberté. Adopté le 12 décembre 1963, il s'inspire du drapeau du parti KANU.",
+    "Three horizontal bands of black, red and green, separated by white fimbriations: black for the people of Kenya, red for the blood shed in the struggle for independence, green for the land and its wealth, white for peace and honesty. In the centre, a Maasai shield and two crossed spears symbolise the defence of freedom. Adopted on 12 December 1963, it is based on the flag of the KANU party."
+  ]
+}

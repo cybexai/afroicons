@@ -1,0 +1,72 @@
+{
+  "capitale": [
+    "Djibouti",
+    "Djibouti"
+  ],
+  "langues": [
+    "Français, arabe",
+    "French, Arabic"
+  ],
+  "independance": [
+    "27 juin 1977 (France)",
+    "27 June 1977 (France)"
+  ],
+  "fete": [
+    "27 juin (indépendance de 1977)",
+    "27 June (1977 independence)"
+  ],
+  "frise": [
+    [
+      "Avant le XIXe s.",
+      "Le territoire est peuplé d'Afars et d'Issas (Somalis). Il relève tour à tour des sultanats d'Ifat et d'Adal, puis de sultanats afars comme celui de Tadjourah.",
+      "Before the 19th c.",
+      "The territory is home to Afars and Issas (Somalis). It falls in turn under the sultanates of Ifat and Adal, then Afar sultanates such as Tadjourah."
+    ],
+    [
+      "1862",
+      "Le 11 mars, un traité avec des chefs afars cède à la France le mouillage d'Obock.",
+      "1862",
+      "On 11 March, a treaty with Afar leaders cedes the anchorage of Obock to France."
+    ],
+    [
+      "1896",
+      "La colonie prend le nom de Côte française des Somalis ; Djibouti en devient le chef-lieu.",
+      "1896",
+      "The colony takes the name French Somaliland; Djibouti becomes its capital."
+    ],
+    [
+      "1917",
+      "Achèvement du chemin de fer Djibouti–Addis-Abeba, qui fait du port le débouché de l'Éthiopie.",
+      "1917",
+      "The Djibouti–Addis Ababa railway is completed, making the port Ethiopia's outlet to the sea."
+    ],
+    [
+      "1967",
+      "Après le référendum du 19 mars, le territoire est rebaptisé Territoire français des Afars et des Issas.",
+      "1967",
+      "After the 19 March referendum, the territory is renamed the French Territory of the Afars and the Issas."
+    ],
+    [
+      "1977",
+      "Le référendum du 8 mai approuve l'indépendance, proclamée le 27 juin : naît la République de Djibouti.",
+      "1977",
+      "The 8 May referendum approves independence, proclaimed on 27 June: the Republic of Djibouti is born."
+    ],
+    [
+      "1991–2001",
+      "Une guerre civile oppose le gouvernement au Front pour la restauration de l'unité et de la démocratie (FRUD) ; un premier accord est signé en 1994, la paix définitive le 12 mai 2001.",
+      "1991–2001",
+      "A civil war pits the government against the Front for the Restoration of Unity and Democracy (FRUD); a first agreement is signed in 1994, and a final peace on 12 May 2001."
+    ],
+    [
+      "1992",
+      "La constitution approuvée par référendum le 4 septembre rétablit le multipartisme, d'abord limité à quatre partis.",
+      "1992",
+      "The constitution approved by referendum on 4 September restores multi-party politics, at first limited to four parties."
+    ]
+  ],
+  "drapeau": [
+    "Le bleu ciel pour le ciel, la mer et les Issas, le vert pour la terre et les Afars, le triangle blanc pour la paix. L'étoile rouge symbolise l'unité nationale. Adopté le 27 juin 1977, jour de l'indépendance.",
+    "Light blue for the sky, the sea and the Issas, green for the land and the Afars, the white triangle for peace. The red star stands for national unity. Adopted on 27 June 1977, independence day."
+  ]
+}

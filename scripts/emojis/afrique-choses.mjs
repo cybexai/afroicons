@@ -37,24 +37,32 @@ const kilimandjaro = [
   path("M19 21V18.4M19 19.5L17.9 18.5M19 19.5L20.1 18.5", "none", { c: C.vert, w: 0.8 }),
 ].join("");
 
-const OKAPI = "#4E2A20", OKAPI_FACE = "#E9D6B8";
-const okLeg = (x, top) => rect(x, top, 1.8, 21.4 - top, 0.8, C.white)
-  + line(`M${x} ${top + 1.4}H${x + 1.8}M${x} ${top + 2.8}H${x + 1.8}M${x} ${top + 4.2}H${x + 1.8}`, OKAPI, 0.9)
-  + rect(x, 20.2, 1.8, 1.4, 0.6, C.noir, { w: 0.8 });
+// Okapi : corps velours chocolat, dos qui descend vers la croupe, tête de girafe (joues claires, grandes oreilles,
+// petites ossicônes), rayures blanches seulement sur la croupe et les pattes arrière, chaussettes blanches devant.
+const OKAPI = "#4E2A20", OKAPI_FAR = "#3A1F17", OKAPI_FACE = "#E9D6B8";
+/** Patte fine d'okapi, blanche ; haut couleur du corps (devant) ou rayé en travers (derrière), sabot sombre. */
+const okLeg = (x, top, xb, col, hind) => {
+  const w = 1.9, mid = (y) => { const t = (y - top) / (20.4 - top); return [x + (xb - x) * t, w + (1.3 - w) * t]; };
+  const band = (y, c, lw) => { const [l, ww] = mid(y); return line(`M${l + 0.25} ${y}H${l + ww - 0.25}`, c, lw); };
+  return path(`M${x} ${top}Q${x + 0.1} ${top + 3.4} ${xb} 20.4H${xb + 1.3}Q${x + w - 0.1} ${top + 3.4} ${x + w} ${top}Z`, C.white, { w: 0.95 })
+    + (hind ? band(top + 1.2, col, 0.9) + band(top + 2.6, col, 0.9) + band(top + 4, col, 0.8)
+      : path(`M${x + 0.05} ${top}L${x + 0.12} ${top + 2.2}H${x + w - 0.12}L${x + w} ${top}Z`, col, false) + band(top + 4.2, col, 0.7))
+    + rect(xb - 0.1, 20.2, 1.5, 1.3, 0.45, C.noir, { w: 0.8 });
+};
 const okapi = [
-  okLeg(6.2, 13.6), okLeg(8.6, 14), okLeg(15.2, 14), okLeg(17.6, 13.8),
-  line("M20.4 11.4Q21.8 12.6 21.4 15", O, 0.9),
-  // corps velours sombre, croupe rayée de blanc à l'horizontale
-  path("M5.8 9.8Q11.6 8.4 17.6 9.6Q20.8 10.4 20.6 13.2Q20.2 15.8 17.2 15.8H8Q5.4 15.6 5.4 12.6Z", OKAPI),
-  line("M16.4 11.4H19.4M16 13H20M16.4 14.6H19.4", C.white, 0.9),
-  // cou et tête de girafe
-  path("M5.4 12.2L4 6.4L7.2 5.4L9 10Z", OKAPI),
-  path("M1.6 7.8Q2.2 4.8 6.2 4.4Q7.6 4.6 7.8 6.2Q6 8.4 3.4 9.4Q1.4 9.6 1.6 7.8Z", OKAPI),
-  path("M1.6 7.8Q1.4 9.6 3.4 9.4Q5.2 8.8 6.2 7.6Q4.8 6.6 3 6.4Q1.8 6.8 1.6 7.8Z", OKAPI_FACE, { w: 0.8 }),
-  // ossicônes et grandes oreilles
-  thick("M4.8 4.6L4.6 2.8M6 4.4L6.2 2.6", OKAPI, 0.7),
-  g("rotate(35 8.2 4.2)", ellipse(8.2, 4.2, 1, 2.1, OKAPI), ellipse(8.2, 4.4, 0.45, 1.3, OKAPI_FACE, false)),
-  eye(4.6, 5.9),
+  okLeg(11.6, 14.4, 11.4, OKAPI_FAR, false), okLeg(16.6, 15, 16.9, OKAPI_FAR, true),
+  thick("M20.4 11.2Q21.6 12.4 21.4 15.2", OKAPI, 0.5),
+  // cou et corps d'un seul tenant, croupe rayée de blanc
+  path("M6 7.6L7.8 5.6Q9.6 7.8 11.6 9Q15 9.2 18.6 10.2Q20.8 10.8 20.7 13.4Q20.6 16 18.4 16.2Q17 16 16.2 15.2H11.6Q10 15 9.6 13.4Q8.2 9.8 6 7.6Z", OKAPI),
+  line("M16.8 11.4Q18.8 11 20.3 11.8M17 13.1Q19 12.7 20.6 13.5M17.4 14.8Q18.8 14.4 20.1 15.1", C.white, 0.85),
+  okLeg(9.8, 14.4, 9.6, OKAPI, false), okLeg(18.6, 15.4, 19, OKAPI, true),
+  // tête de girafe : joues claires, museau sombre, grandes oreilles
+  g("rotate(-35 8.6 4.4)", ellipse(8.6, 4.4, 0.95, 1.9, OKAPI), ellipse(8.6, 4.6, 0.42, 1.2, OKAPI_FACE, false)),
+  thick("M6.1 5.4L5.9 3.8", OKAPI, 0.6),
+  path("M1.8 8.6Q2 7 3.8 6Q6 4.8 7.8 5.6Q8.8 6.6 7.8 7.8Q5.6 9 3.6 9.8Q1.8 10.2 1.8 8.6Z", OKAPI),
+  path("M2 8.7Q2.6 7.3 4.6 7Q6.2 7.3 6.8 8.1Q5.2 9.2 3.6 9.7Q1.9 10 2 8.7Z", OKAPI_FACE, { w: 0.8 }),
+  circle(2.2, 8.7, 0.5, O, false),
+  circle(4.7, 6.5, 0.75, OKAPI_FACE, false), eye(4.7, 6.5, 0.5),
 ].join("");
 
 const PANGO = "#A0663A", PANGO_LIGHT = "#C68A52", PANGO_SKIN = "#E3C9A6";
@@ -83,6 +91,8 @@ const cameleon = [
   path("M5.4 11.6Q6.2 6.6 11 6.4Q15.8 6.4 17 10.6Q17.4 14.6 13.4 15.4H8.4Q5.4 15 5.4 11.6Z", C.vertLight),
   line("M9 7.4L10.2 14.8M12.4 6.8L13.2 15.2", C.ocreLight, 1),
   line("M7.6 8.6Q8.4 7 9.8 6.6", C.vert, 0.8),
+  path("M4.4 9.4Q4.6 5.6 8.2 4.4Q8.4 6.6 9.4 8.2Z", C.vertLight),
+  line("M5.6 7.6Q6.6 6.2 7.8 5.6", C.vert, 0.7),
   path("M6.6 7.6L1.8 10.6Q2.2 13 6.2 13.4Z", C.vertLight),
   line("M2.4 11.8H4.6", O, 0.8),
   circle(5.4, 9.9, 1.6, C.ocreLight),
@@ -106,36 +116,55 @@ const calao = [
   eye(15.4, 7.6, 0.5),
 ].join("");
 
-const GOR = "#2E2A28", GOR_FACE = "#9A928A", GOR_CHEST = "#6E6760", GOR_NOSE = "#5A524C";
+// Gorille dos argenté, de face : crête sagittale, arcade marquée, épaules massives, longs bras posés sur les poings.
+// Le dos argenté se devine en bande claire au-dessus des épaules.
+const GOR = "#3A3431", GOR_LINE = "#5E5650", GOR_FACE = "#8E8580", GOR_CHEST = "#4E4743", GOR_NOSE = "#5A524C", GOR_SILVER = "#AAA49F";
+const GOR_BODY = "M12 2.8C13.6 3.2 15 4.4 15.2 6.4C17 6.4 19 7 19.8 8.8C20.6 11 21 15.6 21.4 19.6C21.4 20.4 21 20.8 20.4 20.8H18.6C18 20.8 17.6 20.4 17.6 19.8L16.8 13.4C16.4 14.4 16 15.4 15.8 16.4L16 20C16 20.5 15.6 20.8 15.2 20.8H13.4C13 20.8 12.6 20.4 12.6 20L12 16.8L11.4 20C11.4 20.4 11 20.8 10.6 20.8H8.8C8.4 20.8 8 20.5 8 20L8.2 16.4C8 15.4 7.6 14.4 7.2 13.4L6.4 19.8C6.4 20.4 6 20.8 5.4 20.8H3.6C3 20.8 2.6 20.4 2.6 19.6C3 15.6 3.4 11 4.2 8.8C5 7 7 6.4 8.8 6.4C9 4.4 10.4 3.2 12 2.8Z";
 const gorille = [
-  // épaules et poitrine plus claire
-  path("M1.6 23Q1.6 16 7.6 15.4H16.4Q22.4 16 22.4 23Z", GOR),
-  path("M8.2 23Q8.2 19 12 18.6Q15.8 19 15.8 23Z", GOR_CHEST, { w: 0.9 }),
-  // tête à crête sagittale
-  path("M12 1.6Q15.6 1.6 17.8 5Q20.4 7.8 19.6 11.6Q19.4 18.4 12 19Q4.6 18.4 4.4 11.6Q3.6 7.8 6.2 5Q8.4 1.6 12 1.6Z", GOR),
-  ellipse(4.2, 11.4, 1.1, 1.5, GOR_FACE, { w: 0.9 }), ellipse(19.8, 11.4, 1.1, 1.5, GOR_FACE, { w: 0.9 }),
-  // visage gris clair
-  path("M12 7.4Q17.2 6.2 17.6 10.2Q18 13 16.4 15.4Q15.2 18.2 12 18.2Q8.8 18.2 7.6 15.4Q6 13 6.4 10.2Q6.8 6.2 12 7.4Z", GOR_FACE),
-  // arcade sourcilière marquée
-  path("M5.8 10.2Q8.4 6.8 12 8.8Q15.6 6.8 18.2 10.2Q15.2 9.8 12 11.2Q8.8 9.8 5.8 10.2Z", GOR),
-  circle(9.4, 11.8, 0.95, C.white, { w: 0.6 }), circle(14.6, 11.8, 0.95, C.white, { w: 0.6 }),
-  eye(9.5, 11.9, 0.55), eye(14.5, 11.9, 0.55),
-  // gros nez et narines
-  path("M9.6 15.2Q9.4 12.4 12 12.4Q14.6 12.4 14.4 15.2Q12 16.4 9.6 15.2Z", GOR_NOSE, { w: 0.9 }),
-  ellipse(11, 14.6, 0.75, 0.55, O, false), ellipse(13, 14.6, 0.75, 0.55, O, false),
-  line("M9.8 17Q12 17.8 14.2 17", O, 0.9),
+  path(GOR_BODY, GOR, false),
+  path("M4.9 9.2Q5.8 7.2 8.8 6.9H15.2Q18.2 7.2 19.1 9.2Q17.6 8.6 15.6 8.8H8.4Q6.4 8.6 4.9 9.2Z", GOR_SILVER, false),
+  path("M8.6 14Q10.4 15.6 12 14.4Q13.6 15.6 15.4 14Q15.2 12.4 12 12.4Q8.8 12.4 8.6 14Z", GOR_CHEST, false),
+  line("M7.3 13.4Q7.6 11.2 8.6 10.2M16.7 13.4Q16.4 11.2 15.4 10.2", GOR_LINE, 0.8),
+  line("M3.6 19.6Q4.5 19 5.4 19.6M18.6 19.6Q19.5 19 20.4 19.6M9 19.8Q9.7 19.3 10.5 19.8M13.5 19.8Q14.3 19.3 15 19.8", GOR_LINE, 0.6),
+  path(GOR_BODY, "none"),
+  // tête à crête, visage gris
+  path("M12 1.8Q14.6 2.2 15.6 5.2Q16.6 7.8 15.8 10.2Q15 13 12 13.4Q9 13 8.2 10.2Q7.4 7.8 8.4 5.2Q9.4 2.2 12 1.8Z", GOR),
+  path("M12 6.8Q15 6 15.2 8.6Q15.4 11 14.2 12.2Q13.2 13 12 13Q10.8 13 9.8 12.2Q8.6 11 8.8 8.6Q9 6 12 6.8Z", GOR_FACE, { w: 0.8 }),
+  path("M8.5 8.5Q10 6.6 12 7.6Q14 6.6 15.5 8.5Q13.8 8.3 12 9.1Q10.2 8.3 8.5 8.5Z", GOR, { w: 0.8 }),
+  eye(10.5, 9.5, 0.5), eye(13.5, 9.5, 0.5), circle(10.35, 9.35, 0.15, C.white, false), circle(13.35, 9.35, 0.15, C.white, false),
+  path("M10.6 11.2Q10.6 9.9 12 9.9Q13.4 9.9 13.4 11.2Q12 11.8 10.6 11.2Z", GOR_NOSE, { w: 0.7 }),
+  ellipse(11.4, 10.9, 0.38, 0.28, O, false), ellipse(12.6, 10.9, 0.38, 0.28, O, false),
+  line("M10.8 12.3Q12 12.7 13.2 12.3", O, 0.6),
 ].join("");
 
+// Zèbre : silhouette de cheval de profil, crinière dressée rayée, rayures noires qui suivent le corps
+// (verticales sur le ventre, obliques sur la croupe, en travers sur les pattes), museau noir.
+const ZB_FAR = "#E2DED8", ZK = C.noir;
+/** Patte de zèbre : fine, rayée en travers, sabot noir. */
+const zLeg = (x, top, xb, col) => {
+  const mid = (t) => [x + (xb - x) * t + 0.3, 1.9 + (1.3 - 1.9) * t - 0.6];
+  const band = (t) => { const [l, w] = mid(t), y = top + (20.4 - top) * t; return line(`M${l} ${y}h${w}`, ZK, 0.85); };
+  return path(`M${x} ${top}Q${x + 0.1} ${top + 3.4} ${xb} 20.4H${xb + 1.3}Q${x + 1.8} ${top + 3.4} ${x + 1.9} ${top}Z`, col, { w: 0.95 })
+    + band(0.25) + band(0.5) + band(0.72) + rect(xb - 0.1, 20.2, 1.5, 1.3, 0.45, ZK, { w: 0.8 });
+};
 const zebre = [
-  path("M14.6 3.4Q19.6 3 21.2 9L22.6 21.6H13.6L12.6 16.8Q9.4 19 6.2 20.6Q3.6 21.4 2.8 19.6Q2.4 17.8 4.4 16.6L11 7Q12.2 3.8 14.6 3.4Z", C.white),
-  line("M10.2 9.6Q11.8 10.6 12.8 10M8.6 12Q10.8 13.6 12.8 13M6.8 14.6Q9 16.2 11.4 15.8", O, 1),
-  line("M14.4 9.6Q16.8 8.6 19.2 10M14 12.6Q17 11.6 19.8 13.2M13.8 15.6Q17 14.6 20.4 16.4M14 18.6Q17.4 17.6 20.8 19.4", O, 1),
-  // crinière dressée : bande lisse, rayée comme le pelage
-  path("M14.4 3.2Q19.8 2 21.8 8.6L23 21.6H21.2L19.6 9.2Q18.2 5.4 14.6 4.8Z", C.noir),
-  line("M17.2 3.6L16.6 4.9M19.4 5L18.4 5.9M20.9 7.6L19.6 8.2M21.6 10.8L20.2 11.2M22 14.2L20.6 14.4M22.3 17.6L20.9 17.7", C.white, 0.7),
-  path("M13.4 5L12.6 1.6L15.6 4.2Z", C.white),
-  path("M4.4 16.6Q2.4 17.8 2.8 19.6Q3.6 21.4 6.2 20.6Q6.4 18 4.4 16.6Z", C.noir, { w: 0.9 }),
-  eye(11.6, 8.4, 0.65),
+  zLeg(12.4, 14.2, 12.2, ZB_FAR), zLeg(16.6, 14.4, 16.9, ZB_FAR),
+  thick("M20.4 10Q21.6 11.2 21.6 14.2", C.white, 0.5), path("M21 13.8L22.2 13.8L22 16.2L21.2 16Z", ZK, { w: 0.8 }),
+  // tête (sous le cou), museau noir
+  path("M7.8 4.2Q6 4 4.2 5.8Q2.6 7.4 1.8 9Q1.4 10.6 2.6 11.2Q4 11.6 5.6 10.6Q7.2 10 8.8 10.6Q9.6 8 7.8 4.2Z", C.white),
+  line("M4.6 6.4Q5.6 7.6 5.2 9.6M6.4 5.2Q7.4 6.8 7 9.8", ZK, 0.8),
+  path("M1.8 9Q1.4 10.6 2.6 11.2Q3.8 11.6 4.6 10.8Q4.4 9.2 3 8.2Q2.2 8.4 1.8 9Z", "#3A3330", { w: 0.8 }),
+  // cou et corps
+  path("M7.2 4.6Q9.4 5.6 12.8 8.8Q15.4 9 18.6 9.2Q20.8 9.6 20.7 12.2Q20.6 14.6 18.6 15H12.4Q10.8 14.8 10.2 13.2Q9 11.6 7.6 10.8Z", C.white),
+  line("M9.3 6.4Q9.8 8.6 8.9 10.6M10.9 7.8Q11.2 10.2 10.1 12.6M12.4 9.2Q12.6 11.6 11.6 14.4", ZK, 0.95),
+  line("M14.2 9.3Q13.6 12 14 14.6M16.2 9.4Q15.6 12 16 14.7M18 9.6Q17.6 11.6 18.2 13.4", ZK, 0.95),
+  line("M19.6 10Q20.4 11 20.5 11.8M20.5 13.2Q19.6 13.6 18.8 14.6", ZK, 0.85),
+  zLeg(10.6, 14, 10.4, C.white), zLeg(18.4, 14.2, 18.9, C.white),
+  // crinière dressée rayée, oreille
+  g("rotate(18 7.6 3.2)", ellipse(7.6, 3.2, 0.6, 1.3, C.white, { w: 0.85 })),
+  path("M6.8 4.4Q7.6 3 9.4 4.2L13.4 8L12.6 9Q10.2 6.6 7.6 5.2Z", ZK, { w: 0.8 }),
+  line("M8.7 3.9L8.2 4.8M10.3 5L9.7 5.8M11.9 6.6L11.3 7.4", C.white, 0.6),
+  eye(5.1, 7.4, 0.55),
 ].join("");
 
 const termitiere = [
@@ -493,7 +522,7 @@ const mafe = [
   peanut(4.2, 21.2, -20), peanut(19.8, 21.2, 25),
 ].join("");
 
-const shrimp = (x, y, flip = 1) => line(`M${x} ${y}q${1.6 * flip} -1.6 ${2.8 * flip} 0q0.4 1.4 -${0.6 * flip} 1.8`, O, 2.4) + line(`M${x} ${y}q${1.6 * flip} -1.6 ${2.8 * flip} 0q0.4 1.4 -${0.6 * flip} 1.8`, "#F08A5D", 1.2);
+const shrimp = (x, y, flip = 1) => line(`M${x} ${y}q${1.6 * flip} -1.6 ${2.8 * flip} 0q0.4 1.4 ${-0.6 * flip} 1.8`, O, 2.4) + line(`M${x} ${y}q${1.6 * flip} -1.6 ${2.8 * flip} 0q0.4 1.4 ${-0.6 * flip} 1.8`, "#F08A5D", 1.2);
 const ndole = [
   bowl(C.white, [
     // dôme de feuilles amères (vert sombre), quelques crevettes et arachides en accent

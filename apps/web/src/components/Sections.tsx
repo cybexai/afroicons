@@ -230,7 +230,7 @@ export function Footer() {
   return (
     <>
       <footer className="wrap">
-        <span>© 2026 THAFAM HOLDING SARL · <T k="f1" /> · <a className="ul" href="https://nafaerp.com"><T k="f2" /></a></span>
+        <span>© 2026 THAFAM HOLDING SARL · <T k="f1" /> <span className="fflag" role="img" aria-label={a.tt("Drapeau du Cameroun", "Flag of Cameroon")}><Svg i={byId["drapeau-cameroun"]} o={{ s: 18 }} /></span> · <a className="ul" href="https://nafaerp.com"><T k="f2" /></a></span>
         <span className="fr"><a className="ul" href="/icones/">{a.tt("Liste des icônes", "Icon index")}</a><a className="ul" href="/nouveautes/">{a.tt("Nouveautés", "What's new")}</a><a className="ul" href="/playground/">{a.tt("Bac à sable", "Playground")}</a><a className="ul" href={`${REPO}/blob/main/CONTRIBUTING.md`}>{a.tt("Contribuer", "Contribute")}</a><a className="ul" href={REPO}>{a.tt("Code source", "Source code")}</a><span className="mono">v{VERSION} · {ICONS.length} {a.tt("icônes", "icons")}</span></span>
       </footer>
       <div className="band" />

@@ -1,0 +1,72 @@
+{
+  "capitale": [
+    "Tunis",
+    "Tunis"
+  ],
+  "langues": [
+    "Arabe",
+    "Arabic"
+  ],
+  "independance": [
+    "20 mars 1956 (France)",
+    "20 March 1956 (France)"
+  ],
+  "fete": [
+    "20 mars (indépendance de 1956)",
+    "20 March (1956 independence)"
+  ],
+  "frise": [
+    [
+      "814 av. J.-C.",
+      "Date traditionnelle de la fondation de Carthage par des colons phéniciens venus de Tyr.",
+      "814 BC",
+      "Traditional date for the founding of Carthage by Phoenician settlers from Tyre."
+    ],
+    [
+      "146 av. J.-C.",
+      "Au terme de la troisième guerre punique, Rome détruit Carthage ; la région devient la province romaine d'Afrique.",
+      "146 BC",
+      "At the end of the Third Punic War, Rome destroys Carthage; the region becomes the Roman province of Africa."
+    ],
+    [
+      "670",
+      "Oqba Ibn Nafi fonde Kairouan lors de la conquête arabe : l'islam et l'arabe s'implantent durablement.",
+      "670",
+      "Uqba ibn Nafi founds Kairouan during the Arab conquest: Islam and Arabic take lasting root."
+    ],
+    [
+      "1574–1705",
+      "La Tunisie passe sous domination ottomane ; en 1705 s'installe la dynastie des Husseinites, qui règne jusqu'en 1957.",
+      "1574–1705",
+      "Tunisia comes under Ottoman rule; in 1705 the Husainid dynasty takes power, reigning until 1957."
+    ],
+    [
+      "1881",
+      "Le 12 mai, le traité du Bardo établit le protectorat français.",
+      "1881",
+      "On 12 May, the Treaty of Bardo establishes the French protectorate."
+    ],
+    [
+      "1934",
+      "Le 2 mars, le Néo-Destour est fondé au congrès de Ksar Hellal ; il mène la lutte pour l'indépendance.",
+      "1934",
+      "On 2 March, the Neo Destour is founded at the Ksar Hellal congress; it leads the struggle for independence."
+    ],
+    [
+      "1956–1957",
+      "La Tunisie devient indépendante le 20 mars 1956 ; la monarchie est abolie et la République proclamée le 25 juillet 1957.",
+      "1956–1957",
+      "Tunisia becomes independent on 20 March 1956; the monarchy is abolished and the republic proclaimed on 25 July 1957."
+    ],
+    [
+      "2011",
+      "Après un mois de soulèvement, le président Ben Ali quitte le pays le 14 janvier : c'est la révolution tunisienne.",
+      "2011",
+      "After a month of uprising, President Ben Ali leaves the country on 14 January: this is the Tunisian Revolution."
+    ]
+  ],
+  "drapeau": [
+    "Fond rouge portant un disque blanc, avec un croissant et une étoile rouges. Selon les autorités tunisiennes, le rouge rappelle le sang des martyrs, le blanc la paix ; le croissant symbolise l'unité des musulmans et l'étoile à cinq branches les cinq piliers de l'islam. Créé par le bey Hussein II après la bataille de Navarin (1827), il est adopté vers 1831 et fixé par la loi en 1999.",
+    "A red field bearing a white disc with a red crescent and star. According to the Tunisian authorities, red recalls the blood of martyrs and white stands for peace; the crescent symbolises the unity of Muslims and the five-pointed star the Five Pillars of Islam. Created by Hussein II Bey after the Battle of Navarino (1827), it was adopted around 1831 and set in law in 1999."
+  ]
+}

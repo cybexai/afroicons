@@ -43,8 +43,11 @@ export const VERSION = __AFROICONS_VERSION__.split(".").slice(0, 2).join(".");
 const ORDER = ["nature", "faune", "musique", "symboles", "cuisine", "vie", "architecture", "personnes", "cartes", "monnaies"];
 /** Les icônes culturelles (paquets afroicons et afroicons-react). */
 export const AFRO: Icon[] = (AFRO_DATA as Icon[]).filter((i) => !isColor(i)).sort((a, b) => ORDER.indexOf(a.cat) - ORDER.indexOf(b.cat));
-/** Les drapeaux des 54 pays, par ordre alphabétique (même paquets ; leur version remplie est la même). */
-export const FLAGS: Icon[] = (AFRO_DATA as Icon[]).filter(isFlag).map((i) => ({ ...i, fill: i.body })).sort((a, b) => a.country!.fr.localeCompare(b.country!.fr, "fr"));
+/** Les drapeaux : ceux du continent (Union africaine, panafricain) d'abord, puis les 54 pays par ordre alphabétique
+ *  (mêmes paquets ; leur version remplie est la même). */
+export const FLAGS: Icon[] = (AFRO_DATA as Icon[]).filter(isFlag).map((i) => ({ ...i, fill: i.body })).sort((a, b) => Number(!!a.iso) - Number(!!b.iso) || Number(a.id !== "drapeau-union-africaine") - Number(b.id !== "drapeau-union-africaine") || a.country!.fr.localeCompare(b.country!.fr, "fr"));
+/** Nombre de pays (les drapeaux du continent ne comptent pas). */
+export const COUNTRIES = FLAGS.filter((f) => f.iso).length;
 
 /** Charge (une seule fois) les versions remplies des icônes culturelles. */
 let fillsLoading: Promise<void> | null = null;
@@ -150,6 +153,14 @@ export const PALS: Record<string, { n: string; bg: string; c: string[] }> = {
   nuit: { n: "Nuit", bg: "#14110E", c: ["#E3A22F", "#C24E2A", "#F3EADC", "#3FA37E"] },
   bogolan: { n: "Bogolan", bg: "#2B1E14", c: ["#E9DCC3", "#C9A27A", "#E9DCC3", "#8C6A4A"] },
   indigo: { n: "Adire", bg: "#1C2A4E", c: ["#DCE6F5", "#8FA9D8", "#DCE6F5", "#5E7BBE"] },
+  // Tissus, arts et paysages : kente ashanti, peintures murales ndebele, shuka maasaï, banco de Tombouctou,
+  // savane du Serengeti, temples et faïences de Louxor.
+  kente: { n: "Kente", bg: "#FBF0D9", c: ["#D99A00", "#1E7B3B", "#C8102E", "#1A1A1A"] },
+  ndebele: { n: "Ndebele", bg: "#FAFAF7", c: ["#1F4FA3", "#F2B90F", "#D6342C", "#1A1A1A"] },
+  maasai: { n: "Maasaï", bg: "#F6EFE6", c: ["#C8282E", "#2D5DA8", "#F08A24", "#1F1A15"] },
+  tombouctou: { n: "Tombouctou", bg: "#F3E4CC", c: ["#B5562B", "#C98A2E", "#8C5A3C", "#4A2E1C"] },
+  serengeti: { n: "Serengeti", bg: "#F2EEDD", c: ["#7D8B2E", "#D49A2A", "#5B3A1E", "#2F5D50"] },
+  louxor: { n: "Louxor", bg: "#F3E9D2", c: ["#1E3F8A", "#1F9C94", "#C99212", "#B4472E"] },
 };
 
 export const REPO = "https://github.com/cybexai/afroicons";

@@ -1,0 +1,72 @@
+{
+  "capitale": [
+    "Le Caire",
+    "Cairo"
+  ],
+  "langues": [
+    "Arabe",
+    "Arabic"
+  ],
+  "independance": [
+    "28 février 1922 (Royaume-Uni, déclaration unilatérale)",
+    "28 February 1922 (United Kingdom, unilateral declaration)"
+  ],
+  "fete": [
+    "23 juillet (révolution de 1952)",
+    "23 July (1952 revolution)"
+  ],
+  "frise": [
+    [
+      "Vers 3100 av. J.-C.",
+      "La Haute et la Basse-Égypte sont unifiées : commencent trois millénaires de dynasties pharaoniques.",
+      "c. 3100 BC",
+      "Upper and Lower Egypt are unified, beginning three millennia of pharaonic dynasties."
+    ],
+    [
+      "332–30 av. J.-C.",
+      "Alexandre le Grand conquiert l'Égypte ; la dynastie grecque des Ptolémées règne jusqu'à la mort de Cléopâtre VII et l'annexion par Rome.",
+      "332–30 BC",
+      "Alexander the Great conquers Egypt; the Greek Ptolemaic dynasty rules until the death of Cleopatra VII and annexation by Rome."
+    ],
+    [
+      "639–642",
+      "La conquête arabe apporte l'islam et la langue arabe.",
+      "639–642",
+      "The Arab conquest brings Islam and the Arabic language."
+    ],
+    [
+      "1517",
+      "Les Ottomans battent les Mamelouks : l'Égypte devient une province ottomane.",
+      "1517",
+      "The Ottomans defeat the Mamluks: Egypt becomes an Ottoman province."
+    ],
+    [
+      "1869–1914",
+      "Le canal de Suez est inauguré en 1869 ; en 1882, le Royaume-Uni occupe le pays, dont il fait un protectorat en 1914.",
+      "1869–1914",
+      "The Suez Canal opens in 1869; in 1882, Britain occupies the country, making it a protectorate in 1914."
+    ],
+    [
+      "1922",
+      "Le Royaume-Uni reconnaît l'indépendance de l'Égypte, qui devient un royaume.",
+      "1922",
+      "Britain recognises Egypt's independence, and it becomes a kingdom."
+    ],
+    [
+      "1952–1953",
+      "Les Officiers libres prennent le pouvoir le 23 juillet 1952 ; la monarchie est abolie et la république proclamée le 18 juin 1953.",
+      "1952–1953",
+      "The Free Officers seize power on 23 July 1952; the monarchy is abolished and a republic proclaimed on 18 June 1953."
+    ],
+    [
+      "1956",
+      "Le 26 juillet, le canal de Suez est nationalisé, ce qui déclenche la crise de Suez.",
+      "1956",
+      "On 26 July, the Suez Canal is nationalised, triggering the Suez Crisis."
+    ]
+  ],
+  "drapeau": [
+    "Le rouge pour le sang versé contre la colonisation, le blanc pour la pureté des cœurs, le noir pour l'oppression surmontée ; ces couleurs datent de la révolution de 1952. L'aigle de Saladin, au centre, est adopté le 4 octobre 1984. De 1923 à 1958, le drapeau était vert, avec un croissant et trois étoiles blancs.",
+    "Red for the blood shed against colonisation, white for purity of heart, black for oppression overcome; these colours date from the 1952 revolution. The Eagle of Saladin at the centre was adopted on 4 October 1984. From 1923 to 1958 the flag was green, with a white crescent and three stars."
+  ]
+}

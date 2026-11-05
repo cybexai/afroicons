@@ -47,3 +47,7 @@ export async function saveFile(downloads: any, filename: string, data: string | 
 
 /** Sur Claude, les téléchargements passent par la capacité ; sur le site statique, un lien suffit. */
 export const isHosted = () => runtime() !== null;
+
+/** Raccourcis clavier : ⌘ sur Mac, Ctrl ailleurs (Windows, Linux). */
+export const IS_MAC = typeof navigator !== "undefined" && /Mac|iPhone|iPad/.test(navigator.platform);
+export const MOD = IS_MAC ? "⌘" : "Ctrl ";

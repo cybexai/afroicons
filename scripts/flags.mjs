@@ -186,5 +186,28 @@ const RETOUCHES = JSON.parse(readFileSync(join(root, "scripts/flags-retouches.js
 for (const f of flags) if (RETOUCHES[f.id]) f.body = f.fill = RETOUCHES[f.id];
 
 if (flags.length !== 54 || new Set(flags.map((f) => f.id)).size !== 54) throw new Error(`54 drapeaux attendus, ${flags.length} obtenus`);
+
+// Les drapeaux du continent : ni pays ni code ISO (celui de l'Union africaine serait « AU », déjà pris par l'Australie).
+// Le cercle des 55 étoiles de l'Union africaine est simplifié en anneau de points dorés, lisible à 24 px.
+const AFRICA = "M4.6 4.4C5.26 3.92 6.39 3.49 7.2 3.4C8.01 3.31 9.4 3.83 10 3.8C10.6 3.77 10.81 3.08 11.2 3.2C11.59 3.32 11.91 4.45 12.6 4.6C13.29 4.75 15.08 3.9 15.8 4.2C16.52 4.5 16.92 5.82 17.4 6.6C17.88 7.38 18.37 8.92 19 9.4C19.63 9.88 21.42 9.32 21.6 9.8C21.78 10.28 20.8 11.79 20.2 12.6C19.6 13.41 18.11 14.42 17.6 15.2C17.09 15.98 17.13 17.11 16.8 17.8C16.47 18.49 15.97 19.26 15.4 19.8C14.83 20.34 13.57 21.46 13 21.4C12.43 21.34 11.87 20.12 11.6 19.4C11.33 18.68 11.35 17.44 11.2 16.6C11.05 15.76 10.84 14.55 10.6 13.8C10.36 13.05 10.11 11.96 9.6 11.6C9.09 11.24 7.92 11.52 7.2 11.4C6.48 11.28 5.49 11.19 4.8 10.8C4.11 10.41 2.9 9.43 2.6 8.8C2.3 8.17 2.5 7.26 2.8 6.6C3.1 5.94 3.94 4.88 4.6 4.4ZM21.09 17.72C20.7 18.81 19.97 19.55 19.48 19.37C18.99 19.19 18.91 18.16 19.31 17.08C19.7 15.99 20.43 15.25 20.92 15.43C21.41 15.61 21.49 16.64 21.09 17.72Z"; // tracé de l'icône « afrique » (continent et Madagascar)
+/** Met un tracé (commandes absolues M, C, L, Z) à l'échelle, sans attribut transform. */
+const scaled = (d, k, dx, dy) => { let n = 0; return d.replace(/-?\d*\.?\d+/g, (v) => String(r2(+v * k + (n++ % 2 ? dy : dx)))); };
+const continent = [
+  {
+    id: "drapeau-union-africaine", fr: "Drapeau de l'Union africaine", en: "Flag of the African Union", country: { fr: "Union africaine", en: "African Union" },
+    tags: ["drapeau", "flag", "union africaine", "african union", "ua", "au", "oua", "afrique", "africa", "continent", "panafricain"],
+    shapes: fill("#078930") + Array.from({ length: 24 }, (_, k) => { const a = (k * 15 * Math.PI) / 180; return `<circle cx="${r2(12 + 5.9 * Math.cos(a))}" cy="${r2(12 + 5.9 * Math.sin(a))}" r=".5" fill="#FCD116"/>`; }).join("") + circle(0.5, 0.5, 4.6, "#FFFFFF") + `<path d="${scaled(AFRICA, 0.36, 7.57, 7.57)}" fill="#078930"/>`,
+  },
+  {
+    id: "drapeau-panafricain", fr: "Drapeau panafricain", en: "Pan-African flag", country: { fr: "Panafricain", en: "Pan-African" },
+    tags: ["drapeau", "flag", "panafricain", "pan-african", "unia", "garvey", "rouge noir vert", "red black green", "afrique", "africa", "diaspora"],
+    shapes: hs(["#D21034", "#000000", "#00853F"]),
+  },
+];
+
+for (const c of continent) {
+  const body = `<g stroke="none" stroke-linecap="butt">${c.shapes}</g>${OUTLINE}`;
+  flags.push({ id: c.id, fr: c.fr, en: c.en, country: c.country, cat: "drapeaux", region: "pan", tags: c.tags, since: "0.11", body, fill: body });
+}
 writeFileSync(join(root, "src/flags.json"), JSON.stringify(flags, null, 1) + "\n");
-console.log(`✔ ${flags.length} drapeaux → src/flags.json`);
+console.log(`✔ ${flags.length} drapeaux (54 pays et ${continent.length} du continent) → src/flags.json`);

@@ -1,0 +1,72 @@
+{
+  "capitale": [
+    "Khartoum",
+    "Khartoum"
+  ],
+  "langues": [
+    "Arabe, anglais",
+    "Arabic, English"
+  ],
+  "independance": [
+    "1er janvier 1956 (condominium anglo-égyptien)",
+    "1 January 1956 (Anglo-Egyptian condominium)"
+  ],
+  "fete": [
+    "1er janvier (indépendance de 1956)",
+    "1 January (1956 independence)"
+  ],
+  "frise": [
+    [
+      "Vers 2500–1500 av. J.-C.",
+      "La culture de Kerma, en Nubie, forme l'une des premières sociétés complexes d'Afrique, rivale de l'Égypte.",
+      "c. 2500–1500 BC",
+      "The Kerma culture in Nubia forms one of Africa's earliest complex societies, a rival to Egypt."
+    ],
+    [
+      "VIIIe s. av. J.-C. – IVe s. apr. J.-C.",
+      "Le royaume de Koush domine un temps l'Égypte (XXVe dynastie), puis prospère autour de Méroé jusque vers 350.",
+      "8th c. BC – 4th c. AD",
+      "The Kingdom of Kush rules Egypt for a time (25th Dynasty), then flourishes around Meroë until about 350."
+    ],
+    [
+      "Moyen Âge – 1504",
+      "Les royaumes chrétiens de Nubie (Nobatie, Makurie, Alodie) déclinent ; en 1504 naît le sultanat Fung de Sennar.",
+      "Middle Ages – 1504",
+      "The Christian kingdoms of Nubia (Nobatia, Makuria, Alodia) decline; in 1504 the Funj Sultanate of Sennar is founded."
+    ],
+    [
+      "1820–1885",
+      "L'Égypte de Méhémet Ali conquiert le pays en 1820–1821. La révolte mahdiste prend Khartoum en 1885.",
+      "1820–1885",
+      "Muhammad Ali's Egypt conquers the country in 1820–1821. The Mahdist revolt takes Khartoum in 1885."
+    ],
+    [
+      "1899",
+      "Après la défaite mahdiste de 1898, le Soudan devient un condominium anglo-égyptien, dirigé de fait par les Britanniques.",
+      "1899",
+      "After the Mahdist defeat of 1898, Sudan becomes an Anglo-Egyptian condominium, in practice run by the British."
+    ],
+    [
+      "1956",
+      "Indépendance le 1er janvier ; la première guerre civile, commencée en 1955, dure jusqu'à l'accord d'Addis-Abeba de 1972.",
+      "1956",
+      "Independence on 1 January; the first civil war, begun in 1955, lasts until the 1972 Addis Ababa Agreement."
+    ],
+    [
+      "1983–2011",
+      "Une seconde guerre civile éclate en 1983 et s'achève par l'accord de paix de 2005. En 2011, le Soudan du Sud fait sécession.",
+      "1983–2011",
+      "A second civil war breaks out in 1983 and ends with the 2005 peace agreement. In 2011, South Sudan secedes."
+    ],
+    [
+      "2019–2023",
+      "Une révolution populaire renverse le régime en 2019. En avril 2023, une guerre éclate entre l'armée et les Forces de soutien rapide.",
+      "2019–2023",
+      "A popular revolution topples the regime in 2019. In April 2023, war breaks out between the army and the Rapid Support Forces."
+    ]
+  ],
+  "drapeau": [
+    "Inspiré du drapeau de la Libération arabe : le rouge pour les sacrifices de la lutte, le blanc pour la paix et l'optimisme, le noir pour le Soudan lui-même, le vert pour l'islam et la prospérité. Adopté en 1970, il remplace le tricolore bleu, jaune et vert de 1956 (le Nil, le désert, les terres cultivées).",
+    "Inspired by the Arab Liberation Flag: red for the sacrifices of the struggle, white for peace and optimism, black for Sudan itself, green for Islam and prosperity. Adopted in 1970, it replaced the 1956 blue, yellow and green tricolour (the Nile, the desert, the farmland)."
+  ]
+}

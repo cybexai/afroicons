@@ -264,6 +264,19 @@ export type AfroiconName =
   | "pouletmoambe"
   | "chikwangue"
   | "mbongotchobi"
+  | "eru"
+  | "achu"
+  | "okok"
+  | "sanga"
+  | "kondre"
+  | "ekwang"
+  | "mintumba"
+  | "miondo"
+  | "soya"
+  | "bhb"
+  | "couscousmais"
+  | "peppersoup"
+  | "cornchaff"
   | "maisgrille"
   | "boli"
   | "bolderiz"
@@ -607,6 +620,8 @@ export type AfroiconName =
   | "drapeau-tunisie"
   | "drapeau-zambie"
   | "drapeau-zimbabwe"
+  | "drapeau-union-africaine"
+  | "drapeau-panafricain"
   | "emoji-baobab"
   | "emoji-kilimandjaro"
   | "emoji-okapi"
@@ -907,6 +922,19 @@ export type AfroiconName =
   | "emoji-oeil-oudjat"
   | "emoji-croix-copte"
   | "emoji-main-khamsa"
+  | "emoji-eru"
+  | "emoji-achu"
+  | "emoji-okok"
+  | "emoji-sanga"
+  | "emoji-kondre"
+  | "emoji-ekwang"
+  | "emoji-mintumba"
+  | "emoji-miondo"
+  | "emoji-soya"
+  | "emoji-beignets-haricots"
+  | "emoji-couscous-mais"
+  | "emoji-pepper-soup"
+  | "emoji-corn-chaff"
   | "emoji-ugali-sukuma"
   | "emoji-nyama-choma"
   | "emoji-pilau"
@@ -1064,7 +1092,7 @@ export type AfroiconCategory = "nature" | "faune" | "musique" | "symboles" | "cu
 export type AfroiconTone = "light" | "medium-light" | "medium" | "medium-dark" | "dark";
 export type AfroiconEmojiGroup = "visages" | "mains" | "personnes" | "coeurs" | "animaux" | "nature" | "fruits" | "nourriture" | "boissons" | "objets" | "lieux";
 export type AfroiconRegion = "pan" | "ouest" | "centre" | "est" | "nord" | "australe";
-export interface AfroiconData { id: AfroiconName; fr: string; en: string; cat: AfroiconCategory; region: AfroiconRegion; tags: string[]; since: string; /** Icône dont celle-ci est une variante (épluchée, coupée, ouverte…). */ variantOf?: AfroiconName; /** Drapeaux et cartes : code ISO du pays et son nom. */ iso?: string; country?: { fr: string; en: string }; /** Emojis : caractère Unicode équivalent (null pour un emoji africain original), groupe, et teinte de peau réglable. */ char?: string | null; group?: AfroiconEmojiGroup; tone?: boolean; /** Icône au trait équivalente (pour un emoji) ou emoji équivalent (pour une icône). */ icon?: AfroiconName; emoji?: AfroiconName; /** Carte d'un pays : son drapeau ; drapeau : la carte du pays. */ flag?: AfroiconName; map?: AfroiconName; /** Monnaies : code ISO 4217 et pays (ISO 3166) qui l'utilisent. */ code?: string; countries?: string[]; /** Dessin au trait. */ body: string; /** Version remplie. */ fill: string; }
+export interface AfroiconData { id: AfroiconName; fr: string; en: string; cat: AfroiconCategory; region: AfroiconRegion; tags: string[]; since: string; /** Icône dont celle-ci est une variante (épluchée, coupée, ouverte…). */ variantOf?: AfroiconName; /** Drapeaux et cartes : code ISO du pays et son nom. */ iso?: string; country?: { fr: string; en: string }; /** Emojis : caractère Unicode équivalent (null pour un emoji africain original), groupe, et teinte de peau réglable. */ char?: string | null; group?: AfroiconEmojiGroup; tone?: boolean; /** Icône au trait équivalente (pour un emoji) ou emoji équivalent (pour une icône). */ icon?: AfroiconName; emoji?: AfroiconName; /** Carte d'un pays (ou icône « afrique ») : son drapeau ; drapeau : la carte du pays (ou du continent). */ flag?: AfroiconName; map?: AfroiconName; /** Monnaies : code ISO 4217 et pays (ISO 3166) qui l'utilisent. */ code?: string; countries?: string[]; /** Dessin au trait. */ body: string; /** Version remplie. */ fill: string; }
 export const icons: Record<AfroiconName, AfroiconData>;
 export const names: AfroiconName[];
 export type AfroiconVariant = "line" | "fill";

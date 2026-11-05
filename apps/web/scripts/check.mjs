@@ -12,7 +12,7 @@ const afro = JSON.parse(readFileSync(join(repo, "packages/afroicons/icons.json")
 const ui = JSON.parse(readFileSync(join(repo, "packages/afroicons-ui/icons.json"), "utf8"));
 const kebab = (n) => n.replace(/([a-z0-9])([A-Z])/g, "$1-$2").replace(/([a-zA-Z])(\d)/g, "$1-$2").toLowerCase();
 const slugs = [...afro.map((i) => i.id), ...ui.map((u) => "ui-" + kebab(u.id))];
-const total = slugs.length, flags = afro.filter((i) => i.cat === "drapeaux").length;
+const total = slugs.length, flags = afro.filter((i) => i.cat === "drapeaux" && i.iso).length;
 const broken = /undefined|NaN|\[object |\$\{/;
 
 // Accueil : compteurs de la description, application et image de partage.
@@ -44,7 +44,7 @@ assert.ok(!cm.includes('variant="fill"'), "drapeau : pas de version remplie prop
 
 // Liste, nouveautés, plan du site.
 const list = read("icones/index.html");
-assert.ok(list.includes(`Toutes les icônes (${total})`) && list.includes(`Drapeaux (${flags})`), "liste des icônes");
+assert.ok(list.includes(`Toutes les icônes (${total})`) && list.includes(`Drapeaux (${afro.filter((i) => i.cat === "drapeaux").length})`), "liste des icônes");
 assert.ok(!/<script type="module"/.test(list), "liste : page statique, sans l'application");
 const news = read("nouveautes/index.html");
 const versions = [...readFileSync(join(repo, "CHANGELOG.md"), "utf8").matchAll(/^## (\d+\.\d+\.\d+)/gm)].map((m) => m[1]);

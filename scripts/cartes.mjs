@@ -15,7 +15,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const src = process.argv[2];
 if (!src) { console.error("Usage : node scripts/cartes.mjs <ne_50m_admin_0_countries.geojson>"); process.exit(1); }
 const geo = JSON.parse(readFileSync(src, "utf8"));
-const flags = JSON.parse(readFileSync(join(root, "src/flags.json"), "utf8"));
+const flags = JSON.parse(readFileSync(join(root, "src/flags.json"), "utf8")).filter((f) => f.iso); // les 54 pays
 const isoOf = (p) => (p.ISO_A2 && p.ISO_A2 !== "-99" ? p.ISO_A2 : p.ISO_A2_EH);
 
 // Polygones (anneaux extérieurs) d'un pays, en [lon, lat].

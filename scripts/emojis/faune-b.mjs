@@ -7,7 +7,28 @@ const thick = (d, col, w = 1.5) => line(d, O, w + 2 * W) + line(d, col, w);
 const dots = (pts, r, fill) => pts.map(([x, y]) => circle(x, y, r, fill, false)).join("");
 const eye = (x, y, r = 0.55) => circle(x, y, r, O, false);
 /** Patte droite arrondie, avec sabot ou pied plus sombre. */
-const leg = (x, top, bottom, w, fill, foot) => rect(x, top, w, bottom - top, w / 2.2, fill) + (foot ? rect(x, bottom - 1.2, w, 1.2, 0.4, foot, { w: 0.8 }) : "");
+/** Patte effilée : large en haut, plus fine en bas (sabot ou pied plus sombre en option). */
+const leg = (x, top, bottom, w, fill, foot) => {
+  const b = w * 0.68, l = x + (w - b) / 2 + 0.15, R = b / 2;
+  const shape = path(`M${x} ${top}H${x + w}L${l + b} ${bottom - R}Q${l + b} ${bottom} ${l + R} ${bottom}Q${l} ${bottom} ${l} ${bottom - R}Z`, fill);
+  return shape + (foot ? path(`M${l - 0.05} ${bottom - 1.1}H${l + b + 0.05}V${bottom - R}Q${l + b} ${bottom} ${l + R} ${bottom}Q${l} ${bottom} ${l} ${bottom - R}Z`, foot, { w: 0.8 }) : "");
+};
+
+/** Membre effilé de (x1,y1) à (x2,y2), largeur w1 en haut, w2 en bas, bout arrondi ; sabot/pied sombre en option. */
+const limb = (x1, y1, x2, y2, w1, w2, fill, foot, fl = 1.1) => {
+  const dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy), nx = -dy / L, ny = dx / L;
+  const P = (x, y, w, sgn) => `${Math.round((x + sgn * nx * w / 2) * 100) / 100} ${Math.round((y + sgn * ny * w / 2) * 100) / 100}`;
+  const seg = (t0, wa) => `M${P(x1 + dx * t0, y1 + dy * t0, wa, 1)}L${P(x2, y2, w2, 1)}A${w2 / 2} ${w2 / 2} 0 0 0 ${P(x2, y2, w2, -1)}L${P(x1 + dx * t0, y1 + dy * t0, wa, -1)}Z`;
+  const t = 1 - fl / L, wt = w1 + (w2 - w1) * t;
+  return path(seg(0, w1), fill) + (foot ? path(seg(t, wt), foot, { w: 0.8 }) : "");
+};
+/** Anneaux sur une queue : tirets sans contour le long d'une cubique. */
+const rings = (p0, c1, c2, p3, n, on, col, w) => {
+  const B = (t) => [0, 1].map((k) => (1 - t) ** 3 * p0[k] + 3 * (1 - t) ** 2 * t * c1[k] + 3 * (1 - t) * t * t * c2[k] + t ** 3 * p3[k]);
+  let d = "";
+  for (let i = 0; i < n; i++) { const a = (i + 0.5) / n - on / (2 * n), b = a + on / n; const q = [0, 1, 2, 3].map((k) => B(a + ((b - a) * k) / 3)); d += "M" + q.map(([x, y]) => `${Math.round(x * 100) / 100} ${Math.round(y * 100) / 100}`).join("L"); }
+  return `<path d="${d}" fill="none" stroke="${col}" stroke-width="${w}" stroke-linecap="butt"/>`;
+};
 
 /* ---------- chimpanzé : visage clair, grandes oreilles ---------- */
 const CHIMP = "#2F2723", CHIMP_FACE = "#C9A57E", CHIMP_SHADE = "#A9845E";
@@ -41,23 +62,22 @@ const bonobo = [
   line("M9.8 16.6Q12 17.2 14.2 16.6", O, 0.6),
 ].join("");
 
-/* ---------- babouin olive : museau de chien, queue « cassée » ---------- */
+/* ---------- babouin olive : épaules à crinière plus hautes que la croupe, museau de chien, queue « cassée » ---------- */
 const BAB = "#8E8858", BAB_DARK = "#6A6542", BAB_MUZ = "#4C4640";
 const babouin = [
-  leg(16.6, 14, 21.4, 2, BAB_DARK, BAB_MUZ), leg(9.4, 13.4, 21.4, 2, BAB_DARK, BAB_MUZ),
-  // queue relevée puis tombante
-  thick("M19.6 13.4Q20.4 10.6 21.6 10.8Q22.4 11.4 22.2 17.4", BAB, 1.1),
-  path("M7.4 9.6Q10.4 6.6 14 9.4Q17.6 11 20 12.6Q21.6 14.2 20.8 16Q20 17 18.6 17H10.4Q7.6 16.6 7 13.4Z", BAB),
-  // crinière des épaules
-  path("M7.4 9.6Q10.4 6.6 13.4 9Q12.6 12 13 15.4Q10.4 14.6 9.4 16.2Q8.4 14.2 7.2 13.6Z", BAB_DARK, { w: 0.9 }),
-  path("M19.4 13.2Q21 13.6 20.8 15.6Q19.6 16 19 14.6Z", "#C98A7A", { w: 0.7 }),
-  leg(18.6, 14.6, 21.8, 2, BAB, BAB_MUZ), leg(11.4, 14.4, 21.8, 2, BAB, BAB_MUZ),
-  // tête basse, long museau sombre
-  path("M9.6 9.8Q8.6 7.6 6.4 7.8Q4.6 8 4.2 9.8L1.8 13.2Q1.2 14.6 2.2 15.4Q3.4 16.2 5.6 15.4Q8.8 14.2 9.8 12Z", BAB),
-  path("M3.6 11L1.8 13.2Q1.2 14.6 2.2 15.4Q3.2 16 4.8 15.4Q5 13.2 4.6 11.6Z", BAB_MUZ, { w: 0.8 }),
-  ellipse(1.9, 13.7, 0.35, 0.3, O, false),
-  line("M7.4 9.6Q6.2 9 5.2 9.8", O, 0.8),
-  circle(6.4, 10.6, 0.75, "#E3A22F", { w: 0.6 }), eye(6.4, 10.7, 0.42),
+  limb(8.8, 12.6, 8.4, 20.6, 1.6, 1.1, BAB_DARK, BAB_MUZ), limb(15.6, 13.6, 15.8, 20.6, 1.7, 1.1, BAB_DARK, BAB_MUZ),
+  // queue : elle monte, se casse net, puis pend
+  thick("M19.2 11C19.8 9.6 20.6 8.6 21.4 8.8C22 9.2 22.2 10.6 22.1 12.4L22.2 15.8", BAB, 1.1),
+  path("M1.8 12C1.8 11.2 2.4 10.6 3.4 10.2C3.8 9 4.8 8.4 6 8.4C6.8 8.4 7.4 8.2 8 7.6C8.8 6.8 10.2 6.6 11.4 7.2C13.6 8.4 16.4 9.4 18.4 10.2C19.8 10.8 20.2 12.6 19.4 13.8C19 14.4 18.4 14.6 17.8 14.6H11C10 14.4 9.2 13.8 8.6 13.2C7.6 13.2 6.6 13.2 5.6 13.2C4.4 13.4 3.2 13.6 2.4 13.2C2 13 1.8 12.6 1.8 12Z", BAB),
+  // crinière des épaules, plus sombre
+  path("M8 7.6C8.8 6.8 10.2 6.6 11.4 7.2C12.6 7.8 13 9.6 12.6 11.4C12.4 12.6 11.8 13.6 11 14.2C10.2 13.8 9.4 13.4 8.8 12.8C8.8 11 8.6 9.2 8 7.6Z", BAB_DARK, { w: 0.8 }),
+  path("M19.6 11.6Q20.6 12.4 20 13.6Q19.2 13.4 19.2 12.4Z", "#C98A7A", { w: 0.6 }),
+  limb(11.6, 13.6, 11.8, 20.6, 1.6, 1.1, BAB, BAB_MUZ), limb(18.4, 13.4, 19, 20.6, 1.7, 1.1, BAB, BAB_MUZ),
+  // long museau sombre, nez au bout
+  path("M1.8 12C1.8 11.2 2.4 10.6 3.4 10.2L5.2 9.8Q5.8 11.6 5.2 13.2C4.2 13.4 3.2 13.6 2.4 13.2C2 13 1.8 12.6 1.8 12Z", BAB_MUZ, { w: 0.8 }),
+  ellipse(2.1, 11.4, 0.35, 0.3, O, false), line("M2.4 12.4Q3.6 12.4 4.6 11.9", O, 0.5),
+  line("M5.2 9.2Q6.2 8.8 7.2 9.2", O, 0.6),
+  circle(6.2, 10.2, 0.7, "#E3A22F", { w: 0.55 }), eye(6.2, 10.25, 0.38),
 ].join("");
 
 /* ---------- mandrill : nez rouge, joues bleues côtelées, barbe jaune ---------- */
@@ -80,14 +100,14 @@ const mandrill = [
 /* ---------- maki catta : queue annelée noir et blanc ---------- */
 const LEM = "#A8A39B", LEM_DARK = "#86817A", LEM_BELLY = "#ECE8E1";
 const makiCatta = [
-  leg(14.6, 15.6, 21.4, 1.6, LEM_DARK), leg(7.4, 15.6, 21.4, 1.6, LEM_DARK),
+  limb(7.4, 15.6, 7, 21.4, 1.5, 1.1, LEM_DARK, C.noir, 0.9), limb(13.4, 15.6, 13, 21.4, 1.5, 1.1, LEM_DARK, C.noir, 0.9),
   // queue dressée en crosse, anneaux noirs et blancs
   path("M14.6 14.6Q21.6 14.6 21.8 8.6Q22 3.6 17.4 2.6Q15 2.2 14.4 3.8Q14.2 5.2 16.4 5.4Q18.8 5.8 18.8 8.6Q18.6 11.4 14.6 11.6Z", C.white),
   path("M19 12.8L21 14.2Q21.8 13.2 22 12L19.6 11.6ZM18.8 8.8H21.8Q21.8 7.6 21.6 6.8L18.6 7.4ZM17.4 5.6L19.2 3.4Q18.4 2.8 17.4 2.6L16.4 5.4Z", C.noir, false),
   path("M14.6 14.6Q21.6 14.6 21.8 8.6Q22 3.6 17.4 2.6Q15 2.2 14.4 3.8Q14.2 5.2 16.4 5.4Q18.8 5.8 18.8 8.6Q18.6 11.4 14.6 11.6Z", "none"),
   path("M6.4 12.6Q10 10.8 14.4 11.6Q17.6 12.2 17.2 15Q16.8 17.4 14.4 17.4H8.4Q6 17 6 14.6Z", LEM),
   path("M7 15.6Q10 14.8 12.8 15.6Q14.4 16.2 15.6 17.4H8.4Q7.2 17.2 7 15.6Z", LEM_BELLY, false),
-  leg(16, 16, 21.8, 1.6, LEM, C.noir), leg(8.8, 16, 21.8, 1.6, LEM, C.noir),
+  limb(10, 16, 10.2, 21.8, 1.5, 1.1, LEM, C.noir, 0.9), limb(16, 16, 16.4, 21.8, 1.5, 1.1, LEM, C.noir, 0.9),
   // tête de renard : masque blanc, cercles noirs autour des yeux, museau noir
   path("M8.6 11.6Q7.8 9 5.4 9.2Q3.6 9.4 3.2 11L1.6 13Q1.2 14 2 14.4Q3.6 15 6 14.6Q8.6 14 8.6 11.6Z", C.white),
   path("M1.6 13Q1.2 14 2 14.4Q2.8 14.6 3.4 14.4Q3.2 13.2 2.4 12.2Z", C.noir, { w: 0.6 }),
@@ -118,21 +138,18 @@ const ayeAye = [
   circle(21.2, 10.2, 0.45, "#B9AA9C", { w: 0.6 }),
 ].join("");
 
-/* ---------- fossa : long corps roux, longue queue ---------- */
+/* ---------- fossa : corps bas et long, petite tête ronde, queue aussi longue que le corps ---------- */
 const FOS = "#A0603A", FOS_DARK = "#7E4626", FOS_LIGHT = "#C98A5E";
 const fossa = [
-  leg(15.6, 14.4, 21, 1.8, FOS_DARK), leg(8.4, 14.4, 21, 1.8, FOS_DARK),
-  // queue presque aussi longue que le corps, recourbée
-  thick("M17 13Q21.4 12.4 21.6 16.8Q21.8 20 20.4 21", FOS, 1.4),
-  path("M6.6 11.8Q11 10.4 16 11Q19 11.6 18.6 14.4Q18.2 16.6 15.8 16.6H9Q6.4 16.4 6 14.4Z", FOS),
-  path("M8.4 16.6H15.6Q14 15.4 12 15.4Q9.8 15.4 8.4 16.6Z", FOS_LIGHT, false),
-  leg(17, 14.8, 21.6, 1.8, FOS, FOS_DARK), leg(9.8, 14.8, 21.6, 1.8, FOS, FOS_DARK),
-  // petite tête ronde, oreilles rondes, museau court
-  circle(6.6, 8.2, 1.2, FOS, { w: 0.9 }), circle(6.6, 8.3, 0.55, FOS_DARK, false),
-  path("M8.6 11.4Q8.6 8.6 5.6 8.8Q3.8 9 3.4 10.6L1.8 12Q1.4 13.2 2.4 13.6Q5 14.2 7 13.6Q8.6 13 8.6 11.4Z", FOS),
-  path("M1.8 12Q1.4 13.2 2.4 13.6Q3.6 13.8 4.4 13.4Q3.6 12.4 2.6 11.6Z", FOS_LIGHT, { w: 0.6 }),
-  ellipse(1.9, 12.1, 0.4, 0.32, O, false),
-  circle(5, 10.6, 0.75, "#E3A22F", { w: 0.6 }), eye(4.95, 10.65, 0.4),
+  limb(8.4, 13.6, 8, 19.6, 1.6, 1.1, FOS_DARK), limb(14, 13.8, 13.6, 19.6, 1.6, 1.1, FOS_DARK),
+  thick("M18.6 11.6C21 12 22.2 14 22.1 16.6C22 19 20.8 20.6 18.8 20.6", FOS, 1.15),
+  path("M2 11.6C2.4 10.6 3.4 10 4.6 9.8C5 8.6 5.8 7.8 6.8 8C7.8 8.2 8.2 9.2 8 10.2C10.4 10.6 13.4 10.4 16 10.4C17.8 10.4 19 11.4 18.8 12.8C18.6 13.8 17.8 14.4 16.8 14.6H9.4C8.2 14.4 7.2 13.6 6.4 12.8C5.2 12.8 3.8 12.8 2.8 12.6C2.2 12.4 1.8 12 2 11.6Z", FOS),
+  path("M9.6 14.4Q13 13.4 16.6 14.4Z", FOS_LIGHT, false),
+  limb(11.2, 14, 11.4, 19.6, 1.6, 1.1, FOS), limb(16.8, 13.8, 17.2, 19.6, 1.6, 1.1, FOS),
+  circle(6.8, 9, 0.5, FOS_DARK, false),
+  path("M2 11.6C2.2 11 2.8 10.6 3.4 10.6Q3.8 11.6 3.6 12.6C3.2 12.6 2.6 12.4 2.3 12.2Q1.9 11.9 2 11.6Z", FOS_LIGHT, { w: 0.5 }),
+  ellipse(2.1, 11.3, 0.38, 0.3, O, false),
+  circle(4.9, 10.8, 0.62, "#E3A22F", { w: 0.5 }), eye(4.85, 10.85, 0.34),
 ].join("");
 
 /* ---------- propithèque de Verreaux : pelage blanc, visage noir, saut dansé ---------- */
@@ -153,89 +170,81 @@ const propitheque = g("translate(12 12) scale(0.94) translate(-12.65 -12.5)", [
   dots([[4, 4.6], [19.6, 5], [3.8, 21.4], [13.8, 22]], 0.6, C.noir),
 ].join(""));
 
-/* ---------- bongo : robe rousse, rayures blanches, cornes en spirale ---------- */
+/* ---------- bongo : robe rousse, fines rayures blanches, grandes cornes spiralées ---------- */
 const BON = "#B4502A", BON_DARK = "#8A3A1C", BON_HORN = "#6E5A44";
 const bongo = [
-  leg(16.8, 14.4, 21.4, 1.6, BON_DARK, C.noir), leg(9.8, 14.4, 21.4, 1.6, BON_DARK, C.noir),
-  thick("M20.6 11.4Q21.8 12.8 21.6 15.4", BON, 0.6),
-  path("M8 10.8Q12 8.8 17.2 9.4Q21.2 9.8 21 12.8Q20.8 15.8 17.8 15.8H10.4Q7.6 15.4 7.4 13Z", BON),
-  line("M11.6 9.8V15.2M14 9.4V15.4M16.4 9.6V15.4M18.8 10V15.2", C.white, 0.75),
-  path("M8.4 10.6L12 8.8L15.6 9L16 9.6Q12 9.4 8.6 11.4Z", BON_DARK, false),
-  leg(18.6, 14.8, 21.8, 1.6, BON, C.noir), leg(11.6, 14.8, 21.8, 1.6, BON, C.noir),
-  rect(18.6, 17.6, 1.6, 1, 0.3, C.white, { w: 0.6 }), rect(11.6, 17.6, 1.6, 1, 0.3, C.white, { w: 0.6 }),
-  // cou et tête, chevron blanc, grandes oreilles
-  path("M10 11.2Q8.6 8.6 6.8 7.6L4.6 9Q6.2 11 7.4 13.6Z", BON),
-  path("M7.2 7.6Q6 5.6 4 6.6L1.6 9.2Q1.2 10.4 2.4 10.8Q3.8 11 5.2 9.8Z", BON),
-  path("M2.2 9.4Q3 10 4.6 9.4", "none", { c: C.white, w: 0.8 }),
-  path("M7.4 11.4L9 10.6L8.6 12.2Z", C.white, { w: 0.5 }),
-  // cornes torsadées, pointes ivoire
-  thick("M5.8 6.4Q7.4 5.8 7 4.6Q6.8 3.4 8.2 3Q9.6 2.6 9.6 1.9", BON_HORN, 0.6),
-  thick("M9.4 2.4L9.6 1.9", C.cream, 0.6),
-  path("M6.8 7L9.4 6.4L8 8.4Z", BON, { w: 0.8 }),
-  eye(4.6, 7.8, 0.5),
+  limb(9.4, 14.2, 9.2, 20.8, 1.4, 0.9, BON_DARK, C.noir), limb(16, 14.4, 16.2, 20.8, 1.5, 0.9, BON_DARK, C.noir),
+  thick("M20.1 11.4L21.4 14", BON, 0.6),
+  path("M2.4 9.6C2 9 2.4 8.2 3.2 7.6L5 6.2C5.8 5.8 6.6 6 7.2 6.6C8 7.8 8.6 9 9.4 9.8C12 10 15 9.6 17.6 9.8C19.4 10 20.4 11.2 20.2 12.8C20 14.2 19 15 17.6 15.2H10.4C9.2 15 8.4 14.2 7.8 13.2C7 11.8 6 10.6 4.8 9.8C4 10 3 10 2.4 9.6Z", BON),
+  path("M9.4 9.8C12 10 15 9.6 17.6 9.8L17.4 10.6C14.8 10.4 12 10.8 9.8 10.6Z", BON_DARK, false),
+  line("M12.4 10.8V14.6M14.8 10.6V14.8M17.2 10.6V14.8", C.white, 0.7),
+  path("M7.6 11.6L9 11.2L8.4 12.8Z", C.white, false),
+  limb(12.2, 14.4, 12, 20.8, 1.4, 0.9, BON, C.noir), limb(18.8, 14.2, 19.2, 20.8, 1.5, 0.9, BON, C.noir),
+  line("M11.6 18.2H12.6M18.6 18.2H19.6", C.white, 0.6),
+  // museau sombre, joues blanches
+  path("M2.4 9.6C2 9 2.4 8.2 3.2 7.6L3.8 7.2Q4.2 8.6 3.6 9.9C3.2 9.9 2.7 9.8 2.4 9.6Z", "#4A2E1E", { w: 0.6 }),
+  line("M4.2 9.2Q5 9.4 5.8 8.8", C.white, 0.6),
+  // cornes torsadées en lyre, pointes ivoire
+  thick("M5.6 5.8C6.6 4.8 5.6 3.6 6.8 2.8C7.8 2.2 8.6 2.8 9.4 2", BON_HORN, 0.65),
+  circle(9.4, 2, 0.4, C.cream, { w: 0.5 }),
+  path("M6.8 6.4L9.4 5.4Q9.6 6.8 7.6 7.2Z", BON, { w: 0.8 }),
+  eye(4.7, 7.5, 0.48),
 ].join("");
 
-/* ---------- sitatunga : antilope des marais, pelage hirsute, dans l'eau ---------- */
+/* ---------- sitatunga : antilope des marais, croupe haute, pelage brun hirsute, pattes dans l'eau ---------- */
 const SIT = "#7C6048", SIT_DARK = "#5E4634", SIT_HORN = "#5A4A3A";
 const sitatunga = [
-  leg(16.6, 14.2, 19.4, 1.5, SIT_DARK), leg(9.8, 14.2, 19.4, 1.5, SIT_DARK),
-  thick("M20.4 11.2Q21.6 12.6 21.4 14.8", SIT, 0.6),
-  path("M8 10.6Q12 8.6 17 9.2Q21 9.6 20.8 12.6Q20.6 15.4 17.6 15.4H10.4Q7.6 15 7.4 12.8Z", SIT),
-  line("M11 15.6L10.8 16.4M13.6 15.6L13.6 16.4M16.2 15.6L16.4 16.4", O, 0.7),
-  dots([[12, 12], [15.4, 12.2]], 0.5, "#EDE3D0"),
-  leg(18.4, 14.6, 19.8, 1.5, SIT), leg(11.6, 14.6, 19.8, 1.5, SIT),
-  path("M10 11Q8.6 8.4 6.8 7.4L4.6 8.8Q6.2 10.8 7.4 13.4Z", SIT),
-  path("M7.2 7.4Q6 5.4 4 6.4L1.6 9Q1.2 10.2 2.4 10.6Q3.8 10.8 5.2 9.6Z", SIT),
-  path("M4.4 6.8L5.6 7.6", "none", { c: C.white, w: 0.8 }),
-  thick("M5.8 6.2Q7.2 5.4 6.8 4.2Q6.6 3 8 2.6Q9.2 2.4 9.4 1.8", SIT_HORN, 0.55),
-  thick("M9.1 2.3L9.4 1.8", C.cream, 0.55),
-  path("M6.8 6.8L9.2 6.4L7.8 8.2Z", SIT, { w: 0.8 }),
-  eye(4.6, 7.6, 0.5),
+  limb(9.8, 14.4, 9.4, 19.4, 1.4, 1, SIT_DARK), limb(16.4, 14.6, 17, 19.4, 1.5, 1, SIT_DARK),
+  thick("M20.2 11L21.2 12.8", SIT, 0.6),
+  path("M2.6 10.6C2.2 10 2.6 9.2 3.4 8.6L5.2 7.2C6 6.8 6.8 7 7.4 7.6C8.2 8.8 8.8 9.8 9.6 10.4C12 10 14.6 8.8 17 8.8C19.2 8.8 20.6 10.4 20.4 12.4C20.2 14 19.2 15 17.6 15.2H10.6C9.4 15 8.6 14.2 8 13.2C7.2 12 6.2 11.2 5 10.8C4.2 11 3.2 11 2.6 10.6Z", SIT),
+  line("M7.2 9.4L6.6 10.6M8.4 10.8L7.8 12M10.4 14.8L10.2 15.6M13 15.2L12.9 16M15.6 15.2L15.6 16", SIT_DARK, 0.6),
+  dots([[13.6, 12.2], [16.4, 11.8], [18.6, 12.4]], 0.5, "#EDE3D0"),
+  limb(12.6, 14.6, 12.4, 19.4, 1.4, 1, SIT), limb(19.2, 14.4, 19.8, 19.4, 1.5, 1, SIT),
+  path("M4.4 8.2L5.6 8.8", "none", { c: C.white, w: 0.7 }),
+  thick("M5.8 6.8C6.4 5.4 6 4.2 7.4 3.4C8.6 2.8 9.6 3 10.6 2.2", SIT_HORN, 0.6),
+  circle(10.6, 2.2, 0.38, C.cream, { w: 0.5 }),
+  path("M7.2 7.4L9.6 6.8Q9.8 8 7.8 8.4Z", SIT, { w: 0.8 }),
+  eye(4.8, 8.6, 0.48),
   // eau du marais, roseaux
-  path("M1.4 19.2Q3.2 18.2 5 19.2T9 19.2T13 19.2T17 19.2T21 19.2Q21.8 18.8 22.6 19.2V22.4H1.4Z", C.eau),
+  path("M1.4 19.4Q3.2 18.4 5 19.4T9 19.4T13 19.4T17 19.4T21 19.4Q21.8 19 22.6 19.4V22.2H1.4Z", C.eau),
   line("M3 21Q5 20.2 7 21M12.4 21.2Q14.4 20.4 16.4 21.2", C.white, 0.7),
-  thick("M21.2 18.8L20.8 13.6M22 18.8L22.2 15", C.feuille, 0.5),
+  thick("M21.6 19L21.4 14.6M22.4 19L22.6 16", C.feuille, 0.45),
 ].join("");
 
-/* ---------- potamochère roux : robe orange, oreilles à pinceaux blancs ---------- */
-const POT = "#C8572C", POT_DARK = "#2B211C", POT_FACE = "#3A2E28";
+/* ---------- potamochère roux : robe orange, masque noir et blanc, oreilles pointues à long pinceau ---------- */
+const POT = "#C8572C", POT_DARK = "#2B211C", POT_FACE = "#3A2E28", POT_FAR = "#A24420";
 const potamochere = [
-  leg(16.8, 14, 21.4, 1.6, POT_DARK), leg(10.8, 14, 21.4, 1.6, POT_DARK),
-  thick("M20.8 10.8Q22.2 12 21.8 14.4", POT, 0.5),
-  path("M21.8 13.8L22.4 15.6L21.2 15.2Z", POT_DARK, { w: 0.6 }),
-  path("M8.2 9.8Q12.6 7.4 17.8 8.2Q21.6 8.8 21.2 12.4Q20.8 15.4 18 15.4H10.6Q7.8 15 7.8 12.4Z", POT),
+  limb(9.6, 15, 9.4, 20.2, 1.6, 1.1, "#1E1916"), limb(15.8, 15, 15.6, 20.2, 1.7, 1.1, "#1E1916"),
+  thick("M20.4 11.2C21.6 11.6 22.2 12.8 21.8 14.4", POT, 0.5),
+  path("M21.4 14L22.4 15.6L21.2 15.4Z", POT_DARK, { w: 0.5 }),
+  path("M1.8 14.6C1.6 13.6 2.2 12.6 3.2 12L6 10.4C7.4 9.6 8.8 9.4 10 9.6C12.6 8.6 15.4 8.4 17.8 9C20 9.6 21 11.4 20.6 13.4C20.2 15 19 15.8 17.6 15.8H10.4C9.4 15.6 8.6 15 8 14.4C6.4 14.8 4.6 15.2 3.2 15.4C2.4 15.4 1.9 15.1 1.8 14.6Z", POT),
   // crête dorsale blanche
-  path("M9.4 9Q13.6 7 18.4 8.2Q13.6 8 9.6 9.8Z", C.white, { w: 0.7 }),
-  leg(18.8, 14.4, 21.8, 1.6, POT_DARK), leg(9, 14.2, 21.8, 1.6, POT_DARK),
-  // tête : masque noir et blanc, groin
-  path("M10.2 9.4Q7.6 8.6 5.6 9.6Q4.2 10.8 3.4 12.6L1.6 14.6Q1.4 16.6 3 16.6Q7.4 16.4 10.4 13.8Z", POT_FACE),
-  path("M9.6 10.2Q7.4 10 6 10.8Q7.6 11.4 9.4 11.4Z", C.white, { w: 0.6 }),
-  path("M4.8 14.6Q6.8 14.4 8.2 13.4Q7.4 15.4 5 15.6Z", C.white, { w: 0.6 }),
-  ellipse(1.9, 15.6, 0.8, 1.1, "#5A4840", { w: 0.8 }),
-  // oreille pointue à long pinceau blanc
-  path("M8.6 9.4Q9.2 6.4 11.4 4.8Q11.8 7.6 10.6 9.8Z", POT),
-  path("M10.8 5.4Q11.6 3.2 13.4 2.6Q13.2 4.6 11.4 6.2Z", C.white, { w: 0.7 }),
-  circle(6.8, 11.4, 0.6, C.white, false), eye(6.7, 11.4, 0.42),
+  path("M10.4 9.8C12.8 9 15.4 8.8 17.8 9.4L17.6 10C15.4 9.6 12.8 9.8 10.6 10.6Z", C.white, false),
+  limb(12.4, 15.2, 12.6, 20.2, 1.6, 1.1, POT_DARK), limb(18.6, 14.8, 19, 20.2, 1.7, 1.1, POT_DARK),
+  // tête noire, trait blanc sur la joue et autour de l'œil
+  path("M1.8 14.6C1.6 13.6 2.2 12.6 3.2 12L6 10.4C7 9.8 8 9.6 8.8 9.6Q9.6 11.8 8.2 14.4C6.4 14.8 4.6 15.2 3.2 15.4C2.4 15.4 1.9 15.1 1.8 14.6Z", POT_FACE),
+  line("M4.2 13.8L7.4 12.8", C.white, 0.7),
+  circle(6.2, 11.6, 0.8, C.white, false), eye(6.15, 11.6, 0.42),
+  ellipse(1.9, 14.2, 0.55, 0.85, "#5A4840", { w: 0.6 }),
+  // oreille pointue et son pinceau blanc
+  path("M7.6 10.4L9.4 5.8L10.8 9.6Z", POT, { w: 0.9 }),
+  thick("M9.4 5.8C10.6 4.6 12.2 4.8 12.8 6.4", C.white, 0.6),
 ].join("");
 
-/* ---------- hylochère : très grand porc noir hirsute ---------- */
-const HYL = "#2E2621", HYL_HAIR = "#4A3E36", HYL_SKIN = "#5E534C";
+/* ---------- hylochère : très grand porc noir, poil long hérissé sur le dos, joues renflées ---------- */
+const HYL = "#2E2621", HYL_FAR = "#1E1916", HYL_SKIN = "#5E534C";
 const hylochere = [
-  leg(16.8, 14.6, 21.4, 2, "#1E1916"), leg(10.6, 14.6, 21.4, 2, "#1E1916"),
-  thick("M21 11Q22.4 12.4 22 14.6", HYL, 0.5),
-  path("M7.8 8.6Q12.2 5.2 17.8 6.6Q21.8 7.8 21.4 12.4Q21 15.8 18 16.2H10.4Q7.6 15.8 7.4 12.6Z", HYL),
-  // longs poils raides
-  line("M10.4 8.2L9.8 6.4M12.6 7L12.4 5.2M15 6.6L15.4 4.8M17.6 7L18.4 5.4M19.8 8.2L20.8 7.2", HYL, 1.2),
-  line("M11 11.6L10.6 13.8M13.6 10.4L13.4 13.2M16.2 10.6L16.4 13.4M18.6 11.4L19 13.6", HYL_HAIR, 0.7),
-  path("M10.4 16.2L11 17.2L11.8 16.2L12.6 17.2L13.4 16.2L14.2 17.2L15 16.2L15.8 17.2L16.6 16.2Z", HYL, { w: 0.7 }),
-  leg(18.8, 15.2, 21.8, 2, HYL), leg(8.8, 15.2, 21.8, 2, HYL),
-  // grosse tête, joues renflées, groin large, petites défenses
-  path("M10.4 8.6Q7.4 7.4 5.4 8.8Q3.8 10.2 3 12.2L1.4 14.4Q1.2 16.6 3 16.6Q7.6 16.8 10.8 13.6Z", HYL),
-  ellipse(6.6, 13.2, 2, 1.5, HYL_SKIN, { w: 0.8 }),
-  ellipse(1.8, 15.4, 0.8, 1.2, HYL_SKIN, { w: 0.8 }),
-  path("M3.8 15.4Q2.8 13.8 3.4 12.6Q4 14 4.8 14.6Z", C.cream, { w: 0.6 }),
-  path("M8.8 8.6L9.6 5.6L11.2 8.6Z", HYL, { w: 0.9 }),
-  circle(6.6, 10.6, 0.55, "#C9A88A", false), eye(6.6, 10.6, 0.38),
+  limb(9.8, 15.6, 9.6, 21, 1.8, 1.3, HYL_FAR), limb(16, 15.8, 15.8, 21, 1.9, 1.3, HYL_FAR),
+  thick("M21.2 12C22.4 12.6 22.7 13.8 22.3 15", HYL, 0.5),
+  path("M1.6 15.2C1.4 14 2 13 3 12.2L5.4 10.2C6.4 9.2 7.6 8.6 8.8 8.4L9.4 6.4L11 7.8L12.2 5.6L13.8 7.2L15.2 5.4L16.4 7.2L18.2 6L18.6 8.2C20.6 9.4 21.8 11.4 21.4 13.6C21 15.4 19.6 16.4 18 16.4H10.6C9.4 16.2 8.6 15.4 8 14.6C6.6 15.2 4.8 15.8 3.2 16C2.2 16 1.7 15.7 1.6 15.2Z", HYL),
+  line("M11.4 10.4L11 12.4M14 9.4L13.8 11.6M16.6 9.6L16.8 11.8M19 11L19.4 12.8", "#4A3E36", 0.6),
+  limb(12.6, 15.8, 12.8, 21, 1.8, 1.3, HYL), limb(18.8, 15.4, 19.2, 21, 1.9, 1.3, HYL),
+  // joue renflée nue, groin large, petite défense
+  path("M4.4 13.8Q5.8 12 7.8 13.2Q7.4 14.8 5.4 15.2Q4.4 15 4.4 13.8Z", HYL_SKIN, { w: 0.7 }),
+  ellipse(1.9, 14.6, 0.6, 0.9, HYL_SKIN, { w: 0.7 }),
+  path("M3.4 14.8Q3 13.6 3.6 12.8Q4 13.8 4.4 14.4Z", C.cream, { w: 0.5 }),
+  path("M7.6 9.8L8.4 7.8L9.8 9.4Z", HYL, { w: 0.8 }),
+  circle(6.2, 11.2, 0.62, "#C9A88A", false), eye(6.2, 11.2, 0.38),
 ].join("");
 
 /* ---------- chat doré africain : assis, robe dorée, taches discrètes ---------- */
@@ -260,45 +269,41 @@ const chatDore = [
   eye(7, 7.6, 0.35), eye(10.6, 7.6, 0.35),
 ].join("");
 
-/* ---------- genette commune : taches en lignes, queue annelée ---------- */
-const GEN = "#DCCFB2", GEN_DARK = "#2B211C";
+/* ---------- genette commune : fine et basse, taches en lignes, très longue queue annelée ---------- */
+const GEN = "#DCCFB2", GEN_FAR = "#BFB094", GEN_DARK = "#2B211C";
 const genette = [
-  leg(15.2, 14.6, 20.4, 1.4, "#BFB094"), leg(8.6, 14.6, 20.4, 1.4, "#BFB094"),
-  // longue queue annelée
-  path("M16.4 14.2Q20.6 13.4 21.6 17Q22.2 19.6 21.4 22.2Q20 22 19.8 19.4Q19.6 16.4 16.6 16.6Z", GEN),
-  path("M18.4 13.9L18.9 16.5L20.2 16.6L20.4 14.4ZM21.4 17.4L19.8 17.8L19.8 19.4L21.8 19.2ZM21.8 20.6L19.9 20.6L20.4 21.6L21.4 22.2Z", GEN_DARK, false),
-  path("M16.4 14.2Q20.6 13.4 21.6 17Q22.2 19.6 21.4 22.2Q20 22 19.8 19.4Q19.6 16.4 16.6 16.6Z", "none"),
-  path("M6.2 12Q10.4 10.8 15.2 11.2Q18.2 11.6 17.8 14.2Q17.4 16.4 15 16.4H8.4Q5.8 16 5.6 14Z", GEN),
-  line("M7.4 11.6Q11.6 10.8 16.6 11.6", GEN_DARK, 0.8),
-  dots([[8.6, 13.2], [10.6, 12.8], [12.6, 12.8], [14.6, 13], [16.4, 13.4], [9.6, 14.8], [11.6, 14.6], [13.6, 14.6], [15.6, 14.8]], 0.5, GEN_DARK),
-  leg(16.6, 15, 21, 1.4, GEN, GEN_DARK), leg(10, 15, 21, 1.4, GEN, GEN_DARK),
-  // tête pointue, grandes oreilles, masque
-  path("M4.8 9.6L5.2 6.4L7.6 8.8Z", GEN, { w: 0.9 }),
-  path("M8 12Q8 9 5.4 9.2Q3.8 9.4 3.2 10.8L1.4 12.6Q1 13.6 1.8 14Q4.4 14.6 6.4 14Q8 13.4 8 12Z", GEN),
-  path("M3.6 11.2Q5 10.6 6 11.6Q5.2 12.6 3.8 12.4Z", "#7A6A58", false),
-  ellipse(1.6, 12.8, 0.4, 0.32, O, false),
-  circle(4.8, 11.6, 0.6, C.white, false), eye(4.8, 11.6, 0.38),
+  limb(7.4, 14, 7.2, 19, 1.3, 0.9, GEN_FAR, GEN_DARK, 0.9), limb(12.6, 14.2, 12.4, 19, 1.4, 0.9, GEN_FAR, GEN_DARK, 0.9),
+  // très longue queue, anneaux noirs
+  thick("M16.4 12.2C19 12.2 21 13.4 22.4 15.6", GEN, 1.3),
+  rings([16.4, 12.2], [19, 12.2], [21, 13.4], [22.4, 15.6], 4, 0.45, GEN_DARK, 1.3),
+  path("M1.6 12.6C1.8 12 2.6 11.4 3.6 11L4.6 8.6L6 10.4C7 10.4 8 10.8 9 11C11 11 13 10.8 14.6 11C16 11.2 16.8 12 16.6 13.2C16.4 14.2 15.6 14.6 14.6 14.6H8.4C7.4 14.4 6.6 13.8 6 13.4C4.8 13.4 3.4 13.4 2.4 13.2C1.8 13.1 1.5 12.9 1.6 12.6Z", GEN),
+  line("M7.4 11.2Q11.6 10.6 15.8 11.4", GEN_DARK, 0.6),
+  dots([[9, 12.6], [11.3, 12.4], [13.6, 12.6], [10.2, 13.8], [12.6, 13.8], [14.8, 13.4]], 0.45, GEN_DARK),
+  limb(10, 14.2, 10.2, 19, 1.3, 0.9, GEN, GEN_DARK, 0.9), limb(15.2, 14, 15.6, 19, 1.4, 0.9, GEN, GEN_DARK, 0.9),
+  path("M4.4 9.4L4.7 9L5.4 10.2Z", "#C9A88A", false),
+  path("M2.6 11.6Q3.8 11 5.2 11.8Q4.4 12.8 3 12.6Z", "#7A6A58", false),
+  ellipse(1.75, 12.6, 0.36, 0.3, O, false),
+  circle(3.9, 11.9, 0.52, C.white, false), eye(3.9, 11.9, 0.34),
 ].join("");
 
-/* ---------- civette africaine : masque noir, bandes, crête dorsale ---------- */
+/* ---------- civette africaine : massive, dos voûté à crête, masque et pattes noirs, queue épaisse ---------- */
 const CIV = "#B3AA98", CIV_DARK = "#26201C";
 const civette = [
-  leg(15.6, 14.6, 21.4, 1.7, CIV_DARK), leg(9, 14.6, 21.4, 1.7, CIV_DARK),
-  // queue épaisse annelée
-  path("M17.4 13Q21.6 12.6 22.4 17Q22.6 19.4 21.6 21Q20.2 20 20.2 17.6Q20 15.4 17.4 15.6Z", CIV),
-  path("M19.8 12.9L19.6 15.8L21 16.6L21.8 14.4ZM22.4 18.2L20.2 18.4L20.6 19.8L22 20Z", CIV_DARK, false),
-  path("M17.4 13Q21.6 12.6 22.4 17Q22.6 19.4 21.6 21Q20.2 20 20.2 17.6Q20 15.4 17.4 15.6Z", "none"),
-  // dos voûté, crête de poils noirs
-  path("M6.2 11.4Q9.2 7.6 14 8.2Q18.6 9 18.6 13Q18.4 16.6 15.4 16.6H8.6Q5.8 16.2 5.8 13.8Z", CIV),
-  path("M8.4 9Q12.4 6 18 9.4L17.4 7.6L16.2 8.4L15.8 6.6L14.4 7.8L13.6 6L12.4 7.6L11.4 6.2L10.6 8L9.4 7.2Z", CIV_DARK, { w: 0.6 }),
-  dots([[12.4, 11.4], [14.4, 11], [16.4, 11.8], [13.4, 13.4], [15.6, 13.6], [11.6, 14.6], [17.2, 14.6]], 0.6, CIV_DARK),
-  path("M8 10.8Q10.2 12.6 10 16.6H8.6Q8.6 13.6 7 12Z", CIV_DARK, { w: 0.6 }),
-  leg(17, 15, 21.8, 1.7, CIV_DARK), leg(10.4, 15, 21.8, 1.7, CIV_DARK),
-  // tête : museau pointu, masque noir, gorge noire
-  path("M8.4 11.4Q7.4 9 5 9.4Q3.4 9.8 2.8 11.4L1.4 13.4Q1.2 14.6 2.2 14.8Q4.8 15.2 6.8 14.4Q8.6 13.6 8.4 11.4Z", "#DCD6CA"),
-  path("M3.6 11Q5.2 10.2 7.2 11.4Q7.8 13.4 6.4 14.6Q4.4 14.2 3.2 12.4Z", CIV_DARK, false), ellipse(1.7, 13.6, 0.5, 0.4, O, false),
-  path("M6 9.6Q6.2 7.8 7.6 7.8Q8 9.2 7.4 10.2Z", CIV_DARK, { w: 0.7 }),
-  circle(5, 11.6, 0.55, C.ocreLight, false), eye(5, 11.6, 0.3),
+  limb(10, 15.6, 9.8, 20.8, 1.7, 1.2, "#151210"), limb(15.8, 15.8, 15.6, 20.8, 1.8, 1.2, "#151210"),
+  thick("M20.2 12.8C21.8 13.8 22.4 15.8 22 18.2", CIV, 1.5),
+  rings([20.2, 12.8], [21.8, 13.8], [22.4, 15.8], [22, 18.2], 3, 0.42, CIV_DARK, 1.5),
+  path("M1.6 14.8C1.6 14 2.2 13.4 3.2 13L5.2 11.6C6 11 7 11 7.8 11.4C9.4 9 12 7.6 15 7.8C18.4 8.2 20.6 10.6 20.4 13.6C20.2 15.6 18.8 16.4 17.4 16.4H10.4C9.2 16.2 8.4 15.4 7.8 14.8C6.4 15.2 4.8 15.6 3.4 15.6C2.4 15.6 1.7 15.3 1.6 14.8Z", CIV),
+  // crête de poils noirs sur le dos
+  path("M9.2 9.8C11 8.2 13 7.6 15 7.8C17 8 18.6 8.8 19.6 10.2L18.8 10.4C17.6 9.4 16.2 8.8 14.8 8.8C12.8 8.8 11 9.4 9.8 10.6Z", CIV_DARK, false),
+  dots([[12.6, 11.6], [15.2, 11], [17.6, 12.2], [14.2, 13.6], [16.8, 14.4], [11.6, 13.8]], 0.6, CIV_DARK),
+  path("M8.4 11.6Q10 13.2 9.8 16H8.6Q8.4 14 7.4 12.6Z", CIV_DARK, false),
+  limb(12.8, 15.8, 13, 20.8, 1.7, 1.2, CIV_DARK), limb(18.6, 15.4, 19, 20.8, 1.8, 1.2, CIV_DARK),
+  // masque noir, museau clair
+  path("M3.2 13L5.2 11.6C6 11 7 11 7.8 11.4Q8.4 13.4 7.8 14.8C6.4 15.2 4.8 15.6 3.6 15.6Q2.8 14.4 3.2 13Z", CIV_DARK, false),
+  path("M1.6 14.8C1.6 14 2.2 13.4 3.2 13Q3.6 14.4 3.4 15.6C2.4 15.6 1.7 15.3 1.6 14.8Z", "#DCD6CA", { w: 0.5 }),
+  ellipse(1.75, 14.6, 0.36, 0.3, O, false),
+  path("M6.4 11.2Q6.4 9.8 7.6 9.8Q8 10.8 7.6 11.4Z", "#DCD6CA", { w: 0.6 }),
+  circle(5.2, 12.6, 0.55, C.ocreLight, false), eye(5.2, 12.6, 0.3),
 ].join("");
 
 /* ---------- galago : immenses yeux, grandes oreilles, accroché à une branche ---------- */
@@ -326,14 +331,14 @@ const galago = g("translate(12.35 12) scale(0.91) translate(-12.35 -12)", [
 /* ---------- tenrec rayé : piquants noirs et jaunes, long museau ---------- */
 const TEN = "#262019", TEN_Y = "#F0C43C";
 const tenrec = [
-  leg(16.4, 15.6, 19.6, 1.4, TEN), leg(9.6, 15.6, 19.6, 1.4, TEN),
+  limb(9.2, 15.6, 9, 19.6, 1.4, 1, "#151210"), limb(15.6, 15.6, 15.4, 19.6, 1.4, 1, "#151210"),
   // dos hérissé
   path("M21.4 16.6Q22 13 19.8 11.4L20.4 9.4L18.6 10L18.6 7.8L17 9L16.6 6.6L15.2 8.4L14.2 6.2L13 8.2L11.6 6.4L10.8 8.6L9.2 7.4L8.8 9.6L7.2 9.2L7.4 11Q6 11.8 5 13.2L2 15.2Q1.4 16 2.2 16.6L5.6 17.2Q12.6 18.2 21.4 16.6Z", TEN),
   // rayures jaunes
   path("M8.4 11.6Q13.6 8.6 19.4 11.8", "none", { c: TEN_Y, w: 0.9 }),
   path("M7.4 13.8Q13.4 11.2 20.6 14", "none", { c: TEN_Y, w: 0.9 }),
   path("M12 8.6L12.4 10.4M15.4 8.4L15.4 10.2", "none", { c: TEN_Y, w: 0.7 }),
-  leg(18, 16, 20, 1.4, TEN), leg(11.2, 16.2, 20, 1.4, TEN),
+  limb(11.8, 16, 12, 20, 1.4, 1, TEN), limb(18, 16, 18.4, 20, 1.4, 1, TEN),
   // museau pointu jaune
   path("M7.6 12.4Q4.6 13 2 15.2Q1.4 16 2.2 16.6L5.6 17.2Q7.6 16.4 8 14.4Z", TEN_Y, { w: 0.9 }),
   ellipse(1.6, 15.8, 0.4, 0.35, O, false),
@@ -375,25 +380,21 @@ const grenouille = [
   ellipse(9.2, 5.5, 0.8, 0.4, O, false), ellipse(14.8, 5.5, 0.8, 0.4, O, false),
 ].join("");
 
-/* ---------- céphalophe roux : petite antilope de forêt, dos voûté ---------- */
-const CEP = "#B4502A", CEP_DARK = "#8A3A1C";
+/* ---------- céphalophe roux : petite antilope de forêt, dos très arrondi, tête basse, toupet entre deux cornes courtes ---------- */
+const CEP = "#B4502A", CEP_DARK = "#8A3A1C", CEP_TUFT = "#2B211C";
 const cephalophe = [
-  thick("M17.8 15.4L18.4 21.6M10.4 15.4L9.8 21.6", CEP_DARK, 0.7),
-  // dos voûté, croupe haute
-  path("M8 11.4Q12.2 8.4 17.6 9.4Q21 10.4 20.4 13.6Q19.8 16 17.4 16H10.4Q7.8 15.6 7.6 13.4Z", CEP),
-  path("M8.4 10.8Q12.6 8 17.6 9.4Q13 9.2 8.8 11.6Z", "#2B211C", false),
-  path("M20.2 11.2L21.4 10.6L21 12Z", C.white, { w: 0.6 }),
-  thick("M19.4 15.4L20.2 22M11.6 15.6L11.2 22", CEP, 0.8),
-  line("M10.4 22H12M19.6 22H21.2", O, 0.9),
-  // tête basse, toupet entre deux petites cornes droites
-  path("M10 12.4Q8.6 10 7 9.4L5 10.8Q6.6 12.6 7.8 14.6Z", CEP),
-  thick("M5.4 8.8L8 6.8M6.4 9L9.2 7.4", "#4A3A2E", 0.5),
-  path("M7.8 9.6Q6.4 7.8 4.4 8.4L1.8 10.8Q1.2 12 2.4 12.6Q4.4 13.2 6.6 12Q8 11.2 7.8 9.6Z", CEP),
-  path("M1.8 10.8Q1.2 12 2.4 12.6Q3.4 12.8 4 12.2Q2.6 11.6 1.8 10.8Z", "#2B211C", { w: 0.6 }),
-  ellipse(6.2, 8.4, 0.9, 0.6, "#2B211C", false),
-  path("M7.2 9.2Q8.8 7.6 10.4 8.2Q9.6 9.8 7.8 10.2Z", CEP, { w: 0.8 }),
-  eye(4.4, 9.8, 0.45),
-  line("M3.4 9.6L4.4 10.6", "#2B211C", 0.6),
+  limb(9.4, 15, 9.2, 20.6, 1.3, 0.85, CEP_DARK, CEP_TUFT, 0.9), limb(16.2, 15.2, 16.6, 20.6, 1.4, 0.85, CEP_DARK, CEP_TUFT, 0.9),
+  thick("M20.2 12.6L21.4 12", CEP, 0.5), circle(21.5, 11.95, 0.4, C.white, { w: 0.5 }),
+  path("M2 15C1.8 14.2 2.4 13.6 3.2 13.2L5.4 12C6 11.6 6.6 11.4 7.2 11.6C8.8 9.8 11.4 8.6 14.4 8.6C17.6 8.8 19.8 10.6 20.2 13C20.4 14.6 19.4 15.6 17.8 15.6H10.4C9.4 15.4 8.8 14.8 8.4 14.2C7 14.8 5.2 15.6 3.6 15.8C2.6 15.8 2.1 15.5 2 15Z", CEP),
+  path("M8.6 10.6C10.4 9.2 12.4 8.6 14.4 8.6C16.8 8.8 18.6 9.8 19.6 11.2L18.8 11.4C17.6 10.2 16 9.6 14.4 9.6C12.4 9.6 10.6 10.2 9.2 11.2Z", CEP_DARK, false),
+  limb(12.2, 15.2, 12.4, 20.6, 1.3, 0.85, CEP, CEP_TUFT, 0.9), limb(18.8, 14.8, 19.4, 20.6, 1.4, 0.85, CEP, CEP_TUFT, 0.9),
+  // cornes courtes vers l'arrière, toupet noir, oreille
+  thick("M5.4 11.8L7.6 8.6", "#4A3A2E", 0.5),
+  path("M5.4 11.4Q5.6 9.8 6.8 9.6Q7.6 10.6 6.8 11.6Z", CEP_TUFT, { w: 0.6 }),
+  path("M7.2 12.2L10 11.2Q10 12.4 8 13Z", CEP, { w: 0.8 }),
+  path("M2 15C1.8 14.2 2.4 13.6 3.2 13.2Q3.6 14.6 3.2 15.8C2.6 15.7 2.1 15.4 2 15Z", CEP_TUFT, { w: 0.5 }),
+  line("M3.4 13.4L4.6 14", CEP_TUFT, 0.5),
+  eye(4.1, 13.5, 0.45),
 ].join("");
 
 const A = (slug, fr, en, char, tags, body) => ({ slug, fr, en, char, group: "animaux", tags, tone: false, body });

@@ -1,7 +1,7 @@
 // Après `vite build` : une vraie page HTML par icône (afroicons.org/icones/baobab/), une page qui les liste toutes,
 // et le plan du site. Chaque page a son titre, sa description et son contenu lisible sans JavaScript ;
 // l'application se charge ensuite par-dessus et ouvre la fiche de l'icône.
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -28,6 +28,18 @@ function equivalents(id) {
   return `<h2>Équivalents ${[mui.length && "Material UI", ant.length && "Ant Design"].filter(Boolean).join(" et ")}</h2><p>${parts.join(" ")} Projet${mui.length && ant.length ? "s" : ""} indépendant${mui.length && ant.length ? "s" : ""}, non affilié${mui.length && ant.length ? "s" : ""} ${who} : les noms sont cités pour indiquer la compatibilité, les dessins sont originaux.</p>`;
 }
 const i18n = read("apps/web/src/lib/i18n.ts");
+// Histoire des pays (fiches drapeau et carte).
+const REPO_URL = "https://github.com/cybexai/afroicons";
+const HIST = Object.fromEntries(readdirSync(join(repo, "apps/web/src/data/histoires")).filter((f) => f.endsWith(".json")).map((f) => [f.replace(".json", ""), JSON.parse(read("apps/web/src/data/histoires/" + f))]));
+/** Espaces insécables : avant : ; ! ? », après «, entre un jour et son mois, dans « XIXe s. ». */
+const MONTHS = "janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre|January|February|March|April|May|June|July|August|September|October|November|December";
+const nbsp = (s) => s.replace(/ ([:;!?»])/g, "\u00A0$1").replace(/« /g, "«\u00A0").replace(new RegExp(`(\\d{1,2}(?:er)?) (${MONTHS})`, "g"), "$1\u00A0$2").replace(/(\d) %/g, "$1\u00A0%").replace(/([IVXL]+e) s\./g, "$1\u00A0s.");
+function history(i) {
+  const h = (i.cat === "drapeaux" || i.cat === "cartes") && HIST[i.iso ?? i.id];
+  if (!h) return "";
+  const dl = (h.reperes ?? [[["Capitale"], h.capitale], [["Indépendance"], h.independance], [["Langues officielles"], h.langues], [["Fête nationale"], h.fete]]).filter(([, v]) => v).map(([k, v]) => [k[0], v]);
+  return `<h2>Histoire</h2><ul>${dl.map(([k, v]) => `<li><b>${k}</b>\u00A0: ${esc(nbsp(v[0]))}</li>`).join("")}</ul><ol>${h.frise.map((d) => `<li><b>${esc(nbsp(d[0]))}</b> — ${esc(nbsp(d[1]))}</li>`).join("")}</ol><h3>Le drapeau</h3><p>${esc(nbsp(h.drapeau[0]))}</p><p><small>Si cette information vous paraît incorrecte, <a href="${esc(`${REPO_URL}/issues/new?${new URLSearchParams({ title: `Correction histoire : ${i.country?.fr ?? i.fr} (${i.iso ?? i.id})`, labels: "histoire", body: `**Pays :** ${i.country?.fr ?? i.fr} (${i.iso ?? i.id})\n**Information à corriger :**\n\n**Correction proposée :**\n\n**Source (lien) :**\n` })}`)}">contactez-nous</a>.</small></p>`;
+}
 const factsStart = i18n.indexOf("{", i18n.indexOf("export const FACTS"));
 let depth = 0, factsEnd = factsStart;
 for (; factsEnd < i18n.length; factsEnd++) { if (i18n[factsEnd] === "{") depth++; if (i18n[factsEnd] === "}" && !--depth) break; }
@@ -46,7 +58,7 @@ const icons = [
   ...ui.map((u) => ({ slug: "ui-" + kebab(u.id), lucide: u.id, fr: u.fr, en: u.en, cat: "interface", region: null, tags: [u.family], body: u.body, afro: u.afro, extra: !!u.extra })),
 ];
 const bySlug = Object.fromEntries(icons.map((i) => [i.slug, i]));
-const byIso = Object.fromEntries(icons.filter((i) => i.cat === "drapeaux").map((i) => [i.iso, i]));
+const byIso = Object.fromEntries(icons.filter((i) => i.cat === "drapeaux" && i.iso).map((i) => [i.iso, i]));
 const url = (i) => `${SITE}/icones/${i.slug}/`;
 const draw = (i, body, size = 120, idSuffix = "") =>
   `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" color="currentColor" role="img" aria-label="${esc(i.fr)}">${idSuffix ? body.replaceAll(`afm-${i.slug}"`, `afm-${i.slug}${idSuffix}"`).replaceAll(`#afm-${i.slug})`, `#afm-${i.slug}${idSuffix})`) : body}</svg>`;
@@ -55,7 +67,7 @@ function describe(i) {
   if (i.cat === "emojis") return `Emoji ${i.char ? `${i.char} ` : "africain original "}« ${i.fr} » (${i.en}) en SVG, dessiné dans le style Afroicons${i.tone ? ", dans les 5 teintes de peau Unicode" : ""}. Gratuit pour React, Angular et HTML, licence MIT.`;
   if (i.cat === "monnaies") return `${i.fr} (${i.code}) : la pièce et son symbole en icône SVG, au trait ou remplie, pour React, Angular et HTML, et en icône d'interface (afroicons-ui). Utilisée par : ${i.countries.map((c) => byIso[c]?.country?.fr ?? c).join(", ")}. Licence MIT.`;
   if (i.cat === "cartes") return `${i.fr} (${i.iso}) : le contour du pays en icône SVG, au trait ou remplie, pour React, Angular et HTML. Tracée d'après Natural Earth (domaine public), frontières de l'ONU. Licence MIT.`;
-  if (i.cat === "drapeaux") return `${i.fr} (${i.iso}) en SVG, aux couleurs officielles. Icône gratuite pour React, Angular et HTML, lisible dès 16 px. ${REG[i.region][0].toUpperCase() + REG[i.region].slice(1)}. Licence MIT.`;
+  if (i.cat === "drapeaux") return `${i.fr}${i.iso ? ` (${i.iso})` : ""} en SVG, aux couleurs officielles. Icône gratuite pour React, Angular et HTML, lisible dès 16 px. ${REG[i.region][0].toUpperCase() + REG[i.region].slice(1)}. Licence MIT.`;
   if (i.lucide && i.extra) return `Icône SVG « ${i.fr} » (${i.en}) dans le style Afroicons, du paquet afroicons-ui (composant React aux mêmes props que lucide-react), et sous ses noms Material UI et Ant Design dans afroicons-mui et afroicons-antd.${i.afro ? " " + i.afro : ""} Libre et gratuite, licence MIT.`;
   if (i.lucide) return `Icône SVG « ${i.fr} » (${i.en}) dans le style Afroicons, compatible Lucide : remplacez l'import de lucide-react par afroicons-ui.${i.afro ? " " + i.afro : ""} Libre et gratuite, licence MIT.`;
   const fact = FACTS[i.id]?.[0];
@@ -63,7 +75,7 @@ function describe(i) {
 }
 
 // Les compteurs de l'accueil (description, partage) sont calculés ici : ils suivent les icônes ajoutées.
-const counts = { __TOTAL__: icons.length, __FLAGS__: icons.filter((i) => i.cat === "drapeaux").length, __EMOJIS__: icons.filter((i) => i.cat === "emojis").length };
+const counts = { __TOTAL__: icons.length, __FLAGS__: icons.filter((i) => i.cat === "drapeaux" && i.iso).length, __EMOJIS__: icons.filter((i) => i.cat === "emojis").length };
 const template = readFileSync(join(dist, "index.html"), "utf8").replace(/__(TOTAL|FLAGS|EMOJIS)__/g, (m) => counts[m]);
 writeFileSync(join(dist, "index.html"), template);
 function page({ path, title, desc, canonical, body, app = true }) {
@@ -94,7 +106,7 @@ for (const i of icons) {
   const at = fam.findIndex((x) => x.slug === i.slug);
   const similar = [...fam.slice(at + 1), ...fam.slice(0, at)].filter((x) => !variants.includes(x)).slice(0, 12);
   // Icône ↔ emoji, drapeau ↔ carte.
-  const twins = [[i.emoji, "Voir l'emoji"], [i.icon, "Voir l'icône au trait"], [i.map, "Voir la carte du pays"], [i.flag, "Voir le drapeau"]].filter(([id]) => id && bySlug[id]);
+  const twins = [[i.emoji, "Voir l'emoji"], [i.icon, "Voir l'icône au trait"], [i.map, i.iso ? "Voir la carte du pays" : "Voir la carte de l'Afrique"], [i.flag, "Voir le drapeau"]].filter(([id]) => id && bySlug[id]);
   // Une monnaie mène aux drapeaux des pays qui l'utilisent ; un drapeau, à la monnaie du pays.
   if (i.cat === "monnaies") for (const c of i.countries) if (byIso[c]) twins.push([byIso[c].slug, "Pays"]);
   if (i.cat === "drapeaux") { const m = icons.find((x) => x.cat === "monnaies" && x.countries.includes(i.iso)); if (m) twins.push([m.slug, "Voir la monnaie"]); }
@@ -120,6 +132,7 @@ ${i.lucide ? equivalents(i.lucide) : ""}
 <p>Angular :</p><pre><code>${esc(`npm install afroicons-angular\n\nimport { AfroiconComponent, provideAfroicons, ${i.lucide ?? pascal(i.id)} } from "afroicons-angular";\n\nproviders: [provideAfroicons({ ${i.lucide ?? pascal(i.id)} })]\n\n<afroicon name="${i.lucide ?? i.slug}"${i.tone ? ' tone="light"' : ""} />`)}</code></pre>
 <p>Icône libre et gratuite, licence MIT, utilisation commerciale comprise. <a href="/#${i.slug}">Personnaliser et télécharger sur afroicons.org</a></p>
 ${twins.length ? `<p>${twins.map(([id, t]) => `<a href="/icones/${bySlug[id].slug}/">${t} : ${esc(bySlug[id].fr)}</a>`).join(" · ")}</p>` : ""}
+${history(i)}
 ${variants.length ? `<h2>Variantes</h2>${links(variants)}` : ""}
 <h2>Dans la même famille</h2>${links(similar)}`,
   });

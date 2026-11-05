@@ -1,0 +1,66 @@
+{
+  "capitale": [
+    "N'Djaména",
+    "N'Djamena"
+  ],
+  "langues": [
+    "Français, arabe",
+    "French, Arabic"
+  ],
+  "independance": [
+    "11 août 1960 (France)",
+    "11 August 1960 (France)"
+  ],
+  "fete": [
+    "11 août (indépendance de 1960)",
+    "11 August (1960 independence)"
+  ],
+  "frise": [
+    [
+      "IXe s.",
+      "Le royaume du Kanem naît au nord-est du lac Tchad. Il devient plus tard le Kanem-Bornou, tandis que se forment les sultanats du Baguirmi, au sud-est, et du Ouaddaï, à l'est.",
+      "9th c.",
+      "The Kanem kingdom emerges north-east of Lake Chad. It later becomes Kanem-Bornu, while the sultanates of Baguirmi, to the south-east, and Wadai, to the east, take shape."
+    ],
+    [
+      "1900",
+      "Le 22 avril, la bataille de Kousséri ouvre la voie à la conquête française de la région.",
+      "1900",
+      "On 22 April, the Battle of Kousséri opens the way to the French conquest of the region."
+    ],
+    [
+      "1920",
+      "Rattaché à l'Afrique-Équatoriale française, le Tchad devient une colonie distincte, administrée depuis Fort-Lamy.",
+      "1920",
+      "Part of French Equatorial Africa, Chad becomes a separate colony, run from Fort-Lamy."
+    ],
+    [
+      "1940",
+      "Le 26 août, sous le gouverneur Félix Éboué, le Tchad est la première colonie française à rallier la France libre.",
+      "1940",
+      "On 26 August, under Governor Félix Éboué, Chad becomes the first French colony to rally to Free France."
+    ],
+    [
+      "1960",
+      "Le Tchad devient indépendant le 11 août.",
+      "1960",
+      "Chad becomes independent on 11 August."
+    ],
+    [
+      "1965–1966",
+      "Une révolte fiscale en 1965, puis la création du Frolinat en 1966, ouvrent une longue période de guerre civile.",
+      "1965–1966",
+      "A tax revolt in 1965, then the founding of FROLINAT in 1966, open a long period of civil war."
+    ],
+    [
+      "1994",
+      "En février, la Cour internationale de justice reconnaît la souveraineté du Tchad sur la bande d'Aozou ; la Libye s'en retire dans les mois suivants.",
+      "1994",
+      "In February, the International Court of Justice upholds Chad's sovereignty over the Aouzou Strip; Libya withdraws in the following months."
+    ]
+  ],
+  "drapeau": [
+    "Trois bandes verticales bleue, jaune et rouge, adoptées le 6 novembre 1959. Selon l'interprétation courante, le bleu évoque le ciel, l'eau et le lac Tchad, le jaune le soleil et le désert, le rouge le sang versé pour l'indépendance. Le bleu a remplacé le vert prévu à l'origine, pour éviter la confusion avec le drapeau du Mali.",
+    "Three vertical bands of blue, yellow and red, adopted on 6 November 1959. In the usual reading, blue stands for the sky, water and Lake Chad, yellow for the sun and the desert, red for the blood shed for independence. Blue replaced the green first proposed, to avoid confusion with Mali's flag."
+  ]
+}
