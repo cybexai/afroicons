@@ -1265,7 +1265,7 @@ export const GanttChart = /*#__PURE__*/ make("gantt-chart", [["path",{"d":"M4 6.
 export { GanttChart as GanttChartIcon, GanttChart as LucideGanttChart, GanttChart as ChartNoAxesGantt, GanttChart as ChartNoAxesGanttIcon, GanttChart as LucideChartNoAxesGantt };
 export const GanttChartSquare = /*#__PURE__*/ make("gantt-chart-square", [["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"3"}],["path",{"d":"M7.5 8H12.5M9.5 12H14.5M12 16H16.5"}]]);
 export { GanttChartSquare as GanttChartSquareIcon, GanttChartSquare as LucideGanttChartSquare, GanttChartSquare as SquareChartGantt, GanttChartSquare as SquareChartGanttIcon, GanttChartSquare as LucideSquareChartGantt, GanttChartSquare as SquareGanttChart, GanttChartSquare as SquareGanttChartIcon, GanttChartSquare as LucideSquareGanttChart };
-export const Kanban = /*#__PURE__*/ make("kanban", [["rect",{"x":"4","y":"4","width":"4","height":"14","rx":"1.5"}],["rect",{"x":"10","y":"4","width":"4","height":"9","rx":"1.5"}],["rect",{"x":"16","y":"4","width":"4","height":"11","rx":"1.5"}]]);
+export const Kanban = /*#__PURE__*/ make("kanban", [["rect",{"x":"3.7","y":"4","width":"3.5","height":"14","rx":"1.5"}],["rect",{"x":"10.2","y":"4","width":"3.5","height":"9","rx":"1.5"}],["rect",{"x":"16.7","y":"4","width":"3.5","height":"11","rx":"1.5"}]]);
 export { Kanban as KanbanIcon, Kanban as LucideKanban };
 export const KanbanSquare = /*#__PURE__*/ make("kanban-square", [["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"3"}],["path",{"d":"M8 7.5V16M12 7.5V12M16 7.5V14"}]]);
 export { KanbanSquare as KanbanSquareIcon, KanbanSquare as LucideKanbanSquare, KanbanSquare as SquareKanban, KanbanSquare as SquareKanbanIcon, KanbanSquare as LucideSquareKanban };
@@ -1329,15 +1329,15 @@ export const BriefcaseConveyorBelt = /*#__PURE__*/ make("briefcase-conveyor-belt
 export { BriefcaseConveyorBelt as BriefcaseConveyorBeltIcon, BriefcaseConveyorBelt as LucideBriefcaseConveyorBelt };
 export const BriefcaseMedical = /*#__PURE__*/ make("briefcase-medical", [["rect",{"x":"3","y":"7","width":"18","height":"13","rx":"2.5"}],["path",{"d":"M8.5 7V5.5C8.5 4.4 9.4 3.5 10.5 3.5H13.5C14.6 3.5 15.5 4.4 15.5 5.5V7"}],["path",{"d":"M12 10.5V16.5M9 13.5H15"}]]);
 export { BriefcaseMedical as BriefcaseMedicalIcon, BriefcaseMedical as LucideBriefcaseMedical };
-export const Currency = /*#__PURE__*/ make("currency", [["circle",{"cx":"12","cy":"12","r":"5"}],["path",{"d":"M4.5 4.5L8.5 8.5M19.5 4.5L15.5 8.5M4.5 19.5L8.5 15.5M19.5 19.5L15.5 15.5"}]]);
+export const Currency = /*#__PURE__*/ make("currency", [["circle",{"cx":"14","cy":"14","r":"7"}],["path",{"d":"M10.2 14A3.8 3.8 0 0 1 14 10.2"}],["path",{"d":"M16.2 7.2A7 7 0 1 0 7.2 16.2"}]]);
 export { Currency as CurrencyIcon, Currency as LucideCurrency };
 export const Euro = /*#__PURE__*/ make("euro", [["path",{"d":"M17.8 7A6.5 6.5 0 1 0 17.8 17"}],["path",{"d":"M4.5 10H13M4.5 14H13"}]]);
 export { Euro as EuroIcon, Euro as LucideEuro };
 export const HandHeart = /*#__PURE__*/ make("hand-heart", [["path",{"d":"M2.5 14.5H6L10.5 17H14.2C15.1 17 15.8 16.3 15.8 15.4S15.1 13.8 14.2 13.8H10.5"}],["path",{"d":"M15.8 15.6L19.6 13.4C20.4 13 21.3 13.3 21.6 14.1S21.4 15.7 20.7 16.1L14.5 20H9L6 18.5H2.5"}],["path",{"d":"M12.6 10.8C12.6 10.8 9.1 8.7 9.1 6.3C9.1 5 10 4.2 11 4.2C11.7 4.2 12.3 4.6 12.6 5.2C13 4.6 13.6 4.2 14.3 4.2C15.3 4.2 16.2 5 16.2 6.3C16.2 8.7 12.6 10.8 12.6 10.8Z"}]]);
 export { HandHeart as HandHeartIcon, HandHeart as LucideHandHeart };
-export const HandHelping = /*#__PURE__*/ make("hand-helping", [["path",{"d":"M2.5 14.5H6L10.5 17H14.2C15.1 17 15.8 16.3 15.8 15.4S15.1 13.8 14.2 13.8H10.5"}],["path",{"d":"M15.8 15.6L19.6 13.4C20.4 13 21.3 13.3 21.6 14.1S21.4 15.7 20.7 16.1L14.5 20H9L6 18.5H2.5"}],["path",{"d":"M21.5 9.5H18L13.5 7H9.8C8.9 7 8.2 7.7 8.2 8.6S8.9 10.2 9.8 10.2H13.5"}]]);
+export const HandHelping = /*#__PURE__*/ make("hand-helping", [["path",{"d":"M2.5 14.5H6L10.5 17H14.2C15.1 17 15.8 16.3 15.8 15.4S15.1 13.8 14.2 13.8H10.5"}],["path",{"d":"M15.8 15.6L19.6 13.4C20.4 13 21.3 13.3 21.6 14.1S21.4 15.7 20.7 16.1L14.5 20H9L6 18.5H2.5"}],["path",{"d":"M7.5 4.5L13.5 10.5A2.1 2.1 0 0 1 10.5 13.5L4.5 7.5"}]]);
 export { HandHelping as HandHelpingIcon, HandHelping as LucideHandHelping, HandHelping as HelpingHand, HandHelping as HelpingHandIcon, HandHelping as LucideHelpingHand };
-export const HandMetal = /*#__PURE__*/ make("hand-metal", [["path",{"d":"M7 12.8V5A1.5 1.5 0 0 1 10 5V11.5"}],["path",{"d":"M10 11.5V10.5A1.5 1.5 0 0 1 13 10.5V12M13 11.5V10.5A1.5 1.5 0 0 1 16 10.5V12"}],["path",{"d":"M16 11.5V6.5A1.5 1.5 0 0 1 19 6.5V14C19 18 16.5 21 12.8 21H12.2C9.9 21 8.4 20 7.2 18.4L4.3 14.6C3.7 13.8 3.9 12.8 4.6 12.3C5.3 11.8 6.3 12 6.9 12.6L7 12.8"}]]);
+export const HandMetal = /*#__PURE__*/ make("hand-metal", [["path",{"d":"M6.5 15V5.5A1.5 1.5 0 0 1 9.5 5.5V10.5H14.5V7A1.5 1.5 0 0 1 17.5 7V15C17.5 18.3 15.3 20.5 12 20.5S6.5 18.3 6.5 15Z"}],["path",{"d":"M6.5 13.5H12"}]]);
 export { HandMetal as HandMetalIcon, HandMetal as LucideHandMetal };
 export const HandPlatter = /*#__PURE__*/ make("hand-platter", [["path",{"d":"M6 10.5A6 6 0 0 1 18 10.5"}],["path",{"d":"M4 10.5H20"}],["circle",{"cx":"12","cy":"3.3","r":"1","fill":"currentColor","stroke":"none"}],["path",{"d":"M2.5 14.5H6L10.5 17H14.2C15.1 17 15.8 16.3 15.8 15.4S15.1 13.8 14.2 13.8H10.5"}],["path",{"d":"M15.8 15.6L19.6 13.4C20.4 13 21.3 13.3 21.6 14.1S21.4 15.7 20.7 16.1L14.5 20H9L6 18.5H2.5"}]]);
 export { HandPlatter as HandPlatterIcon, HandPlatter as LucideHandPlatter };
@@ -1373,7 +1373,7 @@ export const TicketPercent = /*#__PURE__*/ make("ticket-percent", [["path",{"d":
 export { TicketPercent as TicketPercentIcon, TicketPercent as LucideTicketPercent };
 export const TicketPlus = /*#__PURE__*/ make("ticket-plus", [["path",{"d":"M3.5 7C3.5 6.2 4.2 5.5 5 5.5H19C19.8 5.5 20.5 6.2 20.5 7V10A2 2 0 0 0 20.5 14V17C20.5 17.8 19.8 18.5 19 18.5H5C4.2 18.5 3.5 17.8 3.5 17V14A2 2 0 0 0 3.5 10Z"}],["path",{"d":"M12 9V15M9 12H15"}]]);
 export { TicketPlus as TicketPlusIcon, TicketPlus as LucideTicketPlus };
-export const TicketSlash = /*#__PURE__*/ make("ticket-slash", [["path",{"d":"M3.5 7C3.5 6.2 4.2 5.5 5 5.5H19C19.8 5.5 20.5 6.2 20.5 7V10A2 2 0 0 0 20.5 14V17C20.5 17.8 19.8 18.5 19 18.5H5C4.2 18.5 3.5 17.8 3.5 17V14A2 2 0 0 0 3.5 10Z"}],["path",{"d":"M10 15.2L14 8.8"}]]);
+export const TicketSlash = /*#__PURE__*/ make("ticket-slash", [["path",{"d":"M8 5.5H19C19.8 5.5 20.5 6.2 20.5 7V10A2 2 0 0 0 20.5 14V16.5"}],["path",{"d":"M16 18.5H5C4.2 18.5 3.5 17.8 3.5 17V14A2 2 0 0 0 3.5 10V7.5"}],["path",{"d":"M4 4L20 20"}]]);
 export { TicketSlash as TicketSlashIcon, TicketSlash as LucideTicketSlash };
 export const TicketX = /*#__PURE__*/ make("ticket-x", [["path",{"d":"M3.5 7C3.5 6.2 4.2 5.5 5 5.5H19C19.8 5.5 20.5 6.2 20.5 7V10A2 2 0 0 0 20.5 14V17C20.5 17.8 19.8 18.5 19 18.5H5C4.2 18.5 3.5 17.8 3.5 17V14A2 2 0 0 0 3.5 10Z"}],["path",{"d":"M9.8 9.8L14.2 14.2M14.2 9.8L9.8 14.2"}]]);
 export { TicketX as TicketXIcon, TicketX as LucideTicketX };
