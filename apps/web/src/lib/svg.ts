@@ -27,7 +27,7 @@ export const pascal = (id: string) => id.replace(/(^|[-_])(\w)/g, (_, _a, b) => 
 export function jsxSnippet(i: Icon, stroke: number, fill = false, tone?: Tone) {
   if (isEmoji(i)) return `// npm install afroicons-react\nimport { ${pascal(i.id)} } from "afroicons-react";\n\n<${pascal(i.id)} size={32}${i.tone ? ` tone="${tone ?? DEFAULT_TONE}"` : ""} title="${i.fr}" />${i.char ? `\n\n// Emoji Unicode équivalent : ${i.char}` : "\n\n// Emoji africain original Afroicons (pas d'équivalent Unicode)"}${i.tone ? `\n// tone : light, medium-light, medium, medium-dark (par défaut), dark` : ""}`;
   if (i.cat === "drapeaux") return `// npm install afroicons-react\nimport { ${pascal(i.id)} } from "afroicons-react";\n\n<${pascal(i.id)} size={24} title="${i.country?.fr ?? i.fr}" />\n\n// Aux couleurs officielles : color, strokeWidth et variant ne changent pas un drapeau.`;
-  if (i.lucide) return `// npm install afroicons-ui lucide-react\n// Mêmes noms que lucide-react : remplacez simplement l'import.\nimport { ${i.lucide} } from "afroicons-ui";\n\n<${i.lucide} size={24} strokeWidth={${stroke}} />`;
+  if (i.lucide) return `// npm install afroicons-ui lucide-react\n// ${i.extra ? "Icône en plus, sans équivalent lucide-react : mêmes props (size, color, strokeWidth)." : "Mêmes noms que lucide-react : remplacez simplement l'import."}\nimport { ${i.lucide} } from "afroicons-ui";\n\n<${i.lucide} size={24} strokeWidth={${stroke}} />`;
   return `import { ${pascal(i.id)} } from "afroicons-react";\n\n<${pascal(i.id)} size={24} ${fill ? 'variant="fill"' : `strokeWidth={${stroke}}`} />\n\n// ou, sans dépendance :\nexport function ${pascal(i.id)}({ size = 24, color = "currentColor", strokeWidth = ${stroke}, ...props }) {\n  return (\n    <svg width={size} height={size} viewBox="0 0 24 24" fill="none"\n      stroke={color} strokeWidth={strokeWidth}\n      strokeLinecap="round" strokeLinejoin="round" {...props}>\n      ${i.body.replace(/ ([a-z]+)-([a-z])/g, (_, x, y) => " " + x + y.toUpperCase())}\n    </svg>\n  );\n}`;
 }
 
@@ -121,6 +121,7 @@ const EN: [RegExp | string, string][] = [
   ["Mêmes noms et mêmes props que @ant-design/icons : remplacez l'import.", "Same names and props as @ant-design/icons: just change the import."],
   ["Mêmes noms et mêmes props que @mui/icons-material : remplacez l'import.", "Same names and props as @mui/icons-material: just change the import."],
   ["Mêmes noms que lucide-react : remplacez simplement l'import.", "Same names as lucide-react: just change the import."],
+  ["Icône en plus, sans équivalent lucide-react : mêmes props (size, color, strokeWidth).", "Extra icon, with no lucide-react equivalent: same props (size, color, strokeWidth)."],
   ["Noms Ant Design de cette icône (en Outlined, et selon les cas Filled et TwoTone) :", "Ant Design names for this icon (Outlined, and Filled / TwoTone where available):"],
   ["Noms Material UI de cette icône (et leurs variantes Outlined, Rounded, Sharp, TwoTone) :", "Material UI names for this icon (and their Outlined, Rounded, Sharp, TwoTone variants):"],
   ["Projet indépendant, non affilié au groupe Ant. Dessins originaux.", "Independent project, not affiliated with Ant Group. Original drawings."],

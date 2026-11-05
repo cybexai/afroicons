@@ -172,6 +172,9 @@ mkdirSync(join(U, "svg"), { recursive: true });
 for (const i of ui) writeFileSync(join(U, "svg", `${i.id}.svg`),
   `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${STROKE}" stroke-linecap="round" stroke-linejoin="round" class="afroicon afroicon-ui-${kebab(i.id)}">${i.body}</svg>\n`);
 writeFileSync(join(U, "icons.json"), JSON.stringify(ui.map(({ id, fr, en, family, afro, extra, body }) => ({ id, fr, en, family, afro, ...(extra ? { extra } : {}), body })), null, 1));
+// Pour le site : les dessins d'interface à part (≈ 120 Ko gzip), chargés juste après le premier affichage, comme les emojis.
+writeFileSync(join(G, "ui.json"), JSON.stringify(ui.map(({ id, fr, en, family, afro, extra }) => ({ id, fr, en, family, afro, ...(extra ? { extra } : {}) }))));
+writeFileSync(join(G, "ui-bodies.json"), JSON.stringify(Object.fromEntries(ui.map((i) => [i.id, i.body]))));
 let ujs = `// afroicons-ui v${version} — généré, ne pas modifier à la main.
 import { createElement, forwardRef } from "react";
 export * from "lucide-react";

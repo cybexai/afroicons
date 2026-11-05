@@ -5,7 +5,7 @@ export const norm = (s: string) => s.replace(/\uFE0F/g, "").toLowerCase().replac
 for (const i of ICONS) {
   const c = catOf(i.cat), r = REGNAME[i.region] ?? REGNAME.pan;
   // Les emojis se trouvent aussi en tapant le caractère lui-même (🐘).
-  i._hay = norm([i.id, i.fr, i.en, ...i.tags, c.fr, c.en, r.fr, r.en, i.char ? i.char.replace(/\uFE0F/g, "") : ""].join(" "));
+  i._hay = norm([i.id, i.fr, i.en, ...i.tags, ...(i.alt ?? []), c.fr, c.en, r.fr, r.en, i.char ? i.char.replace(/\uFE0F/g, "") : ""].join(" "));
   i._n = norm(i.fr + " " + i.en);
 }
 

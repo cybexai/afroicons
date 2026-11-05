@@ -1,13 +1,13 @@
 import type { AfroiconData } from "afroicons";
 import AFRO_DATA from "../generated/afro.json";
 import TONES_DATA from "../generated/tones.json";
-import UI_ICONS from "afroicons-ui/icons.json";
+import UI_ICONS from "../generated/ui.json";
 import COMPAT from "../../../../src/compat.json";
 /** Noms Material UI et Ant Design de chaque icône d'interface (paquets afroicons-mui et afroicons-antd). */
 export const COMPAT_NAMES = COMPAT as Record<string, { mui: string[]; antd: string[] }>;
 
 /** Une icône du site : icône Afroicons, ou icône d'interface (paquet afroicons-ui, nom Lucide dans `lucide`). */
-export type Icon = Omit<AfroiconData, "id" | "cat" | "region" | "fill" | "variantOf" | "group" | "icon" | "emoji" | "flag" | "map"> & { group?: string; icon?: string; emoji?: string; flag?: string; map?: string; id: string; cat: string; region: string; fill?: string; variantOf?: string; lucide?: string; family?: string; _hay?: string; _n?: string };
+export type Icon = Omit<AfroiconData, "id" | "cat" | "region" | "fill" | "variantOf" | "group" | "icon" | "emoji" | "flag" | "map"> & { group?: string; icon?: string; emoji?: string; flag?: string; map?: string; id: string; cat: string; region: string; fill?: string; variantOf?: string; lucide?: string; extra?: boolean; alt?: string[]; family?: string; _hay?: string; _n?: string };
 /** Les drapeaux gardent leurs couleurs officielles : ni couleur, ni style, ni épaisseur ne s'y appliquent. */
 export const isFlag = (i: Icon) => i.cat === "drapeaux";
 /** Les emojis aussi sont en couleur ; ceux qui ont une teinte de peau (tone) existent dans les 5 teintes Unicode. */
@@ -54,9 +54,11 @@ export const loadFills = () => (fillsLoading ??= import("../generated/fills.json
 }));
 const uiId = (n: string) => "ui-" + n.replace(/([a-z0-9])([A-Z])/g, "$1-$2").replace(/([a-zA-Z])(\d)/g, "$1-$2").toLowerCase();
 /** Les icônes d'interface (paquet afroicons-ui), placées dans la catégorie « Interface ». */
-export const UI: Icon[] = (UI_ICONS as { id: string; fr: string; en: string; family: string; afro: string | null; body: string }[]).map((u) => ({
-  id: uiId(u.id), lucide: u.id, family: u.family, fr: u.fr, en: u.en, cat: "interface", region: "pan", since: "ui", body: u.body,
+export const UI: Icon[] = (UI_ICONS as { id: string; fr: string; en: string; family: string; afro: string | null; extra?: boolean }[]).map((u) => ({
+  id: uiId(u.id), lucide: u.id, ...(u.extra ? { extra: true } : {}), family: u.family, fr: u.fr, en: u.en, cat: "interface", region: "pan", since: "ui", body: "",
   // Sans doublon : les mots-clés servent de clé aux étiquettes de la fiche.
+  // Les noms Material UI et Ant Design de l'icône servent à la recherche (« Delete », « CalendarMonth »), pas aux étiquettes.
+  alt: COMPAT_NAMES[u.id] ? [...COMPAT_NAMES[u.id].mui, ...COMPAT_NAMES[u.id].antd] : undefined,
   tags: [...new Set([u.id, u.family, ...(u.afro ? ["afrique", ...(u.afro.toLowerCase().match(/[a-zà-ÿ]{4,}/g) ?? [])] : [])])],
 }));
 /** Les emojis : d'abord les africains originaux, puis les Unicode, par groupe. */
@@ -65,10 +67,17 @@ export const EMOJIS: Icon[] = (AFRO_DATA as Icon[]).filter(isEmoji).map((i) => (
 export const ICONS: Icon[] = [...AFRO, ...FLAGS, ...EMOJIS, ...UI];
 /** Charge (une seule fois) les dessins des emojis, à part du reste pour alléger le premier affichage. */
 let emojisLoading: Promise<void> | null = null;
-export const loadEmojiBodies = () => (emojisLoading ??= import("../generated/emoji-bodies.json").then((m) => {
-  const b = m.default as Record<string, string>;
-  for (const i of EMOJIS) i.body = i.fill = b[i.id] ?? "";
-}));
+// Les dessins d'interface arrivent avec eux (≈ 120 Ko gzip à part du premier affichage).
+export const loadEmojiBodies = () => (emojisLoading ??= Promise.all([
+  import("../generated/emoji-bodies.json").then((m) => {
+    const b = m.default as Record<string, string>;
+    for (const i of EMOJIS) i.body = i.fill = b[i.id] ?? "";
+  }),
+  import("../generated/ui-bodies.json").then((m) => {
+    const b = m.default as Record<string, string>;
+    for (const i of UI) i.body = b[i.lucide!] ?? "";
+  }),
+]).then(() => {}));
 export type Collection = "afro" | "flags" | "emojis" | "ui";
 export const colOf = (id: string): Collection => (id.startsWith("ui-") ? "ui" : id.startsWith("drapeau-") ? "flags" : id.startsWith("emoji-") ? "emojis" : "afro");
 export const byId: Record<string, Icon> = Object.fromEntries(ICONS.map((i) => [i.id, i]));

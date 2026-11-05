@@ -43,7 +43,7 @@ const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&l
 // Mêmes identifiants que sur le site : id Afroicons, ou « ui- » + nom Lucide en kebab-case.
 const icons = [
   ...afro.map((i) => ({ ...i, slug: i.id })),
-  ...ui.map((u) => ({ slug: "ui-" + kebab(u.id), lucide: u.id, fr: u.fr, en: u.en, cat: "interface", region: null, tags: [u.family], body: u.body, afro: u.afro })),
+  ...ui.map((u) => ({ slug: "ui-" + kebab(u.id), lucide: u.id, fr: u.fr, en: u.en, cat: "interface", region: null, tags: [u.family], body: u.body, afro: u.afro, extra: !!u.extra })),
 ];
 const bySlug = Object.fromEntries(icons.map((i) => [i.slug, i]));
 const byIso = Object.fromEntries(icons.filter((i) => i.cat === "drapeaux").map((i) => [i.iso, i]));
@@ -56,6 +56,7 @@ function describe(i) {
   if (i.cat === "monnaies") return `${i.fr} (${i.code}) : la pièce et son symbole en icône SVG, au trait ou remplie, pour React, Angular et HTML, et en icône d'interface (afroicons-ui). Utilisée par : ${i.countries.map((c) => byIso[c]?.country?.fr ?? c).join(", ")}. Licence MIT.`;
   if (i.cat === "cartes") return `${i.fr} (${i.iso}) : le contour du pays en icône SVG, au trait ou remplie, pour React, Angular et HTML. Tracée d'après Natural Earth (domaine public), frontières de l'ONU. Licence MIT.`;
   if (i.cat === "drapeaux") return `${i.fr} (${i.iso}) en SVG, aux couleurs officielles. Icône gratuite pour React, Angular et HTML, lisible dès 16 px. ${REG[i.region][0].toUpperCase() + REG[i.region].slice(1)}. Licence MIT.`;
+  if (i.lucide && i.extra) return `Icône SVG « ${i.fr} » (${i.en}) dans le style Afroicons, du paquet afroicons-ui (composant React aux mêmes props que lucide-react), et sous ses noms Material UI et Ant Design dans afroicons-mui et afroicons-antd.${i.afro ? " " + i.afro : ""} Libre et gratuite, licence MIT.`;
   if (i.lucide) return `Icône SVG « ${i.fr} » (${i.en}) dans le style Afroicons, compatible Lucide : remplacez l'import de lucide-react par afroicons-ui.${i.afro ? " " + i.afro : ""} Libre et gratuite, licence MIT.`;
   const fact = FACTS[i.id]?.[0];
   return `Icône SVG « ${i.fr} » (${i.en}), ${CATS[i.cat].toLowerCase()}, ${REG[i.region] ?? "Afrique"}. Au trait ou remplie, pour React, Angular et HTML. Libre et gratuite, licence MIT.${fact ? " " + fact : ""}`.slice(0, 300);
@@ -104,7 +105,7 @@ for (const i of icons) {
   const links = (list) => `<ul class="g">${list.map((x) => `<li><a href="/icones/${x.slug}/">${esc(x.fr)}</a></li>`).join("")}</ul>`;
   page({
     path: `icones/${i.slug}`,
-    title: i.cat === "emojis" ? `${i.char ? i.char + " " : ""}${i.fr} — emoji SVG gratuit | Afroicons` : i.cat === "drapeaux" ? `${i.fr} — SVG gratuit, couleurs officielles | Afroicons` : `${i.fr} — icône SVG gratuite${i.lucide ? " compatible Lucide" : ""} | Afroicons`,
+    title: i.cat === "emojis" ? `${i.char ? i.char + " " : ""}${i.fr} — emoji SVG gratuit | Afroicons` : i.cat === "drapeaux" ? `${i.fr} — SVG gratuit, couleurs officielles | Afroicons` : `${i.fr} — icône SVG gratuite${i.lucide && !i.extra ? " compatible Lucide" : ""} | Afroicons`,
     desc: describe(i),
     canonical: url(i),
     body: `${nav}
