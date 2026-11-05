@@ -557,6 +557,42 @@ export declare const Couscousmais: Afroicon;
 export declare const Peppersoup: Afroicon;
 /** Corn chaff · Corn chaff */
 export declare const Cornchaff: Afroicon;
+/** Seswaa · Seswaa */
+export declare const Seswaa: Afroicon;
+/** Isombe · Isombe */
+export declare const Isombe: Afroicon;
+/** Cachupa · Cachupa */
+export declare const Cachupa: Afroicon;
+/** Ngunza et gozo · Ngunza with gozo */
+export declare const Ngunza: Afroicon;
+/** Boule et daraba · Boule with daraba */
+export declare const Bouledaraba: Afroicon;
+/** Mataba · Mataba */
+export declare const Mataba: Afroicon;
+/** Skoudehkaris · Skoudehkaris */
+export declare const Skoudehkaris: Afroicon;
+/** Sishwala · Sishwala */
+export declare const Sishwala: Afroicon;
+/** Domoda · Domoda */
+export declare const Domoda: Afroicon;
+/** Sauce feuille · Cassava leaf stew */
+export declare const Saucefeuille: Afroicon;
+/** Papa le moroho · Papa with moroho */
+export declare const Papamoroho: Afroicon;
+/** Palm butter · Palm butter soup */
+export declare const Palmbutter: Afroicon;
+/** Bazeen · Bazeen */
+export declare const Bazeen: Afroicon;
+/** Méchoui · Mechoui */
+export declare const Mechoui: Afroicon;
+/** Calulu · Calulu */
+export declare const Calulu: Afroicon;
+/** Kari zourit · Octopus curry */
+export declare const Karizourit: Afroicon;
+/** Kisra · Kisra */
+export declare const Kisra: Afroicon;
+/** Akoumé et gboma dessi · Akume with gboma dessi */
+export declare const Akoume: Afroicon;
 /** Maïs grillé · Grilled corn */
 export declare const Maisgrille: Afroicon;
 /** Boli · Boli */
@@ -1847,6 +1883,42 @@ export declare const EmojiOeilOudjat: Afroicon;
 export declare const EmojiCroixCopte: Afroicon;
 /** Main de Fatma (khamsa) · Hamsa hand (khamsa) */
 export declare const EmojiMainKhamsa: Afroicon;
+/** Seswaa · Seswaa */
+export declare const EmojiSeswaa: Afroicon;
+/** Isombe · Isombe */
+export declare const EmojiIsombe: Afroicon;
+/** Cachupa · Cachupa */
+export declare const EmojiCachupa: Afroicon;
+/** Ngunza et gozo · Ngunza with gozo */
+export declare const EmojiNgunza: Afroicon;
+/** Boule et daraba · Boule with daraba */
+export declare const EmojiBouleDaraba: Afroicon;
+/** Mataba · Mataba */
+export declare const EmojiMataba: Afroicon;
+/** Skoudehkaris · Skoudehkaris */
+export declare const EmojiSkoudehkaris: Afroicon;
+/** Sishwala · Sishwala */
+export declare const EmojiSishwala: Afroicon;
+/** Domoda · Domoda */
+export declare const EmojiDomoda: Afroicon;
+/** Sauce feuille · Cassava leaf stew */
+export declare const EmojiSauceFeuille: Afroicon;
+/** Papa le moroho · Papa with moroho */
+export declare const EmojiPapaMoroho: Afroicon;
+/** Palm butter · Palm butter soup */
+export declare const EmojiPalmButter: Afroicon;
+/** Akoumé et gboma dessi · Akume with gboma dessi */
+export declare const EmojiAkoume: Afroicon;
+/** Kisra · Kisra */
+export declare const EmojiKisra: Afroicon;
+/** Kari zourit · Octopus curry */
+export declare const EmojiKariZourit: Afroicon;
+/** Calulu · Calulu */
+export declare const EmojiCalulu: Afroicon;
+/** Méchoui · Mechoui */
+export declare const EmojiMechoui: Afroicon;
+/** Bazeen · Bazeen */
+export declare const EmojiBazeen: Afroicon;
 /** Eru et water fufu · Eru and water fufu */
 export declare const EmojiEru: Afroicon;
 /** Achu (sauce jaune) · Achu (yellow soup) */
