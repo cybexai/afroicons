@@ -2740,6 +2740,978 @@ export const PackageMinus: AfroiconNode = { name: "PackageMinus", nodes: [["path
 export const PackagePlus: AfroiconNode = { name: "PackagePlus", nodes: [["path",{"d":"M20.5 11.5V7.5L12 3.5L3.5 7.5V16.5L12 20.5L13 20"}],["path",{"d":"M3.5 7.5L12 11.5L20.5 7.5M12 11.5V20.5"}],["path",{"d":"M7.8 5.5L16.2 9.5V12"}],["path",{"d":"M18 14.5V20.5M15 17.5H21"}]] };
 /** Flamme · Cooking */
 export const Flame: AfroiconNode = { name: "Flame", nodes: [["path",{"d":"M12 21C8.4 21 5.5 18.4 5.5 14.6C5.5 11.2 7.6 9.3 8.5 7C9.4 8.4 10 9.4 10.4 10.8C11.6 8.4 12 5.5 11.2 3C15.6 5 18.5 9.4 18.5 14.6C18.5 18.4 15.6 21 12 21Z"}],["path",{"d":"M12 21C10.3 21 9.2 19.8 9.2 18.2C9.2 16.4 10.6 15.5 12 13.8C13.4 15.5 14.8 16.4 14.8 18.2C14.8 19.8 13.7 21 12 21Z"}]] };
+/** Fichier audio · Audio file */
+export const FileAudio: AfroiconNode = { name: "FileAudio", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M9 13V16M12 10.5V18.5M15 12.5V16.5"}]] };
+/** Enregistrement audio · Audio recording */
+export const FileAudio2: AfroiconNode = { name: "FileAudio2", nodes: [["path",{"d":"M5 10V5C5 3.9 5.9 3 7 3H14L19 8V19C19 20.1 18.1 21 17 21H13"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M3.5 16V19M6.5 13.5V21M9.5 15V19.5"}]] };
+/** Modèle 3D · 3D model */
+export const FileAxis3D: AfroiconNode = { name: "FileAxis3D", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M8.5 10.5V18H16"}],["path",{"d":"M8.5 18L13 13.5"}]] };
+/** Document certifié · Certified document */
+export const FileBadge: AfroiconNode = { name: "FileBadge", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["circle",{"cx":"12","cy":"13","r":"2.8"}],["path",{"d":"M10.3 15.2L9.6 19L12 17.9L14.4 19L13.7 15.2"}]] };
+/** Attestation · Certificate */
+export const FileBadge2: AfroiconNode = { name: "FileBadge2", nodes: [["path",{"d":"M5 10V5C5 3.9 5.9 3 7 3H14L19 8V19C19 20.1 18.1 21 17 21H13"}],["path",{"d":"M14 3V8H19"}],["circle",{"cx":"6.5","cy":"15.5","r":"2.6"}],["path",{"d":"M4.9 17.6L4.4 21L6.5 20L8.6 21L8.1 17.6"}]] };
+/** Rapport en barres · Bar chart report */
+export const FileBarChart2: AfroiconNode = { name: "FileBarChart2", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M8.5 10.5V18H16.5"}],["path",{"d":"M11.5 15.3V12.5M14.5 15.3V10.5"}]] };
+/** Bordereau de colis · Package slip */
+export const FileBox: AfroiconNode = { name: "FileBox", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M12 10.7L15.5 12.4V16.6L12 18.3L8.5 16.6V12.4Z"}],["path",{"d":"M8.5 12.4L12 14.1L15.5 12.4M12 14.1V18.3"}]] };
+/** Rapport d’évolution · Trend report */
+export const FileChartLine: AfroiconNode = { name: "FileChartLine", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M8.5 10.5V18H16.5"}],["path",{"d":"M10.8 15.3L12.6 12.8L14 14.2L16.3 11"}]] };
+/** Rapport de répartition · Breakdown report */
+export const FileChartPie: AfroiconNode = { name: "FileChartPie", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["circle",{"cx":"12","cy":"14.5","r":"3.8"}],["path",{"d":"M12 10.7V14.5H15.8"}]] };
+/** Pièce conforme · Compliant document */
+export const FileCheck2: AfroiconNode = { name: "FileCheck2", nodes: [["path",{"d":"M5 10V5C5 3.9 5.9 3 7 3H14L19 8V19C19 20.1 18.1 21 17 21H13"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M3 17L5.3 19.3L10 14.5"}]] };
+/** Document en attente · Pending document */
+export const FileClock: AfroiconNode = { name: "FileClock", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H10.5"}],["path",{"d":"M14 3L19 8V10.5"}],["path",{"d":"M14 3V8H19"}],["circle",{"cx":"16","cy":"16.5","r":"4"}],["path",{"d":"M16 14.5V16.5L17.4 17.4"}]] };
+/** Fichier de code · Code file */
+export const FileCode: AfroiconNode = { name: "FileCode", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M10.3 12L8.3 14.5L10.3 17M13.7 12L15.7 14.5L13.7 17"}]] };
+/** Script · Script */
+export const FileCode2: AfroiconNode = { name: "FileCode2", nodes: [["path",{"d":"M5 10V5C5 3.9 5.9 3 7 3H14L19 8V19C19 20.1 18.1 21 17 21H13"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M5 14L2.8 16.7L5 19.4M9 14L11.2 16.7L9 19.4"}]] };
+/** Fichier de configuration · Config file */
+export const FileCog: AfroiconNode = { name: "FileCog", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H10.5"}],["path",{"d":"M14 3L19 8V10.5"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M15 12.6A4 4 0 0 1 17 12.6L17 13.8A2.9 2.9 0 0 1 17.9 14.3L18.9 13.7A4 4 0 0 1 19.9 15.4L18.9 16A2.9 2.9 0 0 1 18.9 17L19.9 17.6A4 4 0 0 1 18.9 19.3L17.9 18.7A2.9 2.9 0 0 1 17 19.2L17 20.4A4 4 0 0 1 15 20.4L15 19.2A2.9 2.9 0 0 1 14.1 18.7L13.1 19.3A4 4 0 0 1 12.2 17.6L13.1 17A2.9 2.9 0 0 1 13.1 16L12.2 15.4A4 4 0 0 1 13.1 13.7L14.1 14.3A2.9 2.9 0 0 1 15 13.8Z"}],["circle",{"cx":"16","cy":"16.5","r":"0.9","fill":"currentColor","stroke":"none"}]] };
+/** Comparer des versions · Compare versions */
+export const FileDiff: AfroiconNode = { name: "FileDiff", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M12 10.5V15M9.8 12.8H14.2"}],["path",{"d":"M9.8 17.5H14.2"}]] };
+/** Données chiffrées · Numeric data */
+export const FileDigit: AfroiconNode = { name: "FileDigit", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["rect",{"x":"8.3","y":"11","width":"3.4","height":"7","rx":"1.7"}],["path",{"d":"M13.8 12.4L15.5 11V18"}]] };
+/** Télécharger le document · Download document */
+export const FileDown: AfroiconNode = { name: "FileDown", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M12 11.5V18M9.3 15.3L12 18L14.7 15.3"}]] };
+/** Document favori · Favorite document */
+export const FileHeart: AfroiconNode = { name: "FileHeart", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M12 18.1C12 18.1 8.4 16 8.4 13.6C8.4 12.3 9.3 11.5 10.4 11.5C11.1 11.5 11.7 11.9 12 12.5C12.3 11.9 12.9 11.5 13.6 11.5C14.7 11.5 15.6 12.3 15.6 13.6C15.6 16 12 18.1 12 18.1Z"}]] };
+/** Fichier JSON · JSON file */
+export const FileJson: AfroiconNode = { name: "FileJson", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M10.7 11C9.4 11 9.4 11.5 9.4 12.3V13.5C9.4 14.1 9 14.5 8.5 14.5C9 14.5 9.4 14.9 9.4 15.5V16.7C9.4 17.5 9.4 18 10.7 18M13.3 11C14.6 11 14.6 11.5 14.6 12.3V13.5C14.6 14.1 15 14.5 15.5 14.5C15 14.5 14.6 14.9 14.6 15.5V16.7C14.6 17.5 14.6 18 13.3 18"}]] };
+/** Données JSON · JSON data */
+export const FileJson2: AfroiconNode = { name: "FileJson2", nodes: [["path",{"d":"M5 10V5C5 3.9 5.9 3 7 3H14L19 8V19C19 20.1 18.1 21 17 21H13"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M5.3 13.5C4 13.5 4 14 4 14.8V16C4 16.6 3.6 17 3.1 17C3.6 17 4 17.4 4 18V19.2C4 20 4 20.5 5.3 20.5M7.9 13.5C9.2 13.5 9.2 14 9.2 14.8V16C9.2 16.6 9.6 17 10.1 17C9.6 17 9.2 17.4 9.2 18V19.2C9.2 20 9.2 20.5 7.9 20.5"}]] };
+/** Clé de licence · License key */
+export const FileKey: AfroiconNode = { name: "FileKey", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["circle",{"cx":"9.6","cy":"14.5","r":"2"}],["path",{"d":"M11.6 14.5H16.5M16 14.5V17M13.4 14.5V16.3"}]] };
+/** Fichier de clé · Key file */
+export const FileKey2: AfroiconNode = { name: "FileKey2", nodes: [["path",{"d":"M5 10V5C5 3.9 5.9 3 7 3H14L19 8V19C19 20.1 18.1 21 17 21H13"}],["path",{"d":"M14 3V8H19"}],["circle",{"cx":"4.8","cy":"17.5","r":"2.3"}],["path",{"d":"M7.1 17.5H12M11.5 17.5V19.8M9.3 17.5V19"}]] };
+/** Document protégé par mot de passe · Password-protected document */
+export const FileLock: AfroiconNode = { name: "FileLock", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["rect",{"x":"9","y":"13.5","width":"6","height":"5","rx":"1.2"}],["path",{"d":"M10.3 13.5V12A1.7 1.7 0 0 1 13.7 12V13.5"}]] };
+/** Document verrouillé · Locked document */
+export const FileLock2: AfroiconNode = { name: "FileLock2", nodes: [["path",{"d":"M5 10V5C5 3.9 5.9 3 7 3H14L19 8V19C19 20.1 18.1 21 17 21H13"}],["path",{"d":"M14 3V8H19"}],["rect",{"x":"2.5","y":"15.8","width":"7.5","height":"5.2","rx":"1.3"}],["path",{"d":"M4.5 15.8V14.3A1.75 1.75 0 0 1 8 14.3V15.8"}]] };
+/** Retirer un document · Remove document */
+export const FileMinus: AfroiconNode = { name: "FileMinus", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M9 14.5H15"}]] };
+/** Document retiré · Removed document */
+export const FileMinus2: AfroiconNode = { name: "FileMinus2", nodes: [["path",{"d":"M5 10V5C5 3.9 5.9 3 7 3H14L19 8V19C19 20.1 18.1 21 17 21H13"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M3 17H10"}]] };
+/** Fichier musical · Music file */
+export const FileMusic: AfroiconNode = { name: "FileMusic", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["circle",{"cx":"9.5","cy":"17","r":"1.5"}],["circle",{"cx":"14.5","cy":"16","r":"1.5"}],["path",{"d":"M11 17V11.5L16 10.5V16"}]] };
+/** Exporter un fichier · Export file */
+export const FileOutput: AfroiconNode = { name: "FileOutput", nodes: [["path",{"d":"M5 10.5V5C5 3.9 5.9 3 7 3H14L19 8V19C19 20.1 18.1 21 17 21H7C5.9 21 5 20.1 5 19V17.5"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M11.5 14H2.5M5.5 11L2.5 14L5.5 17"}]] };
+/** Modifier un document · Edit document */
+export const FilePen: AfroiconNode = { name: "FilePen", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M14.6 10.9C15.1 10.4 15.9 10.4 16.4 10.9C16.9 11.4 16.9 12.2 16.4 12.7L11 18.1L8.5 18.7L9.1 16.2Z"}]] };
+/** Nouveau document · New document */
+export const FilePlus: AfroiconNode = { name: "FilePlus", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M12 11.5V17.5M9 14.5H15"}]] };
+/** Ajouter un document · Add document */
+export const FilePlus2: AfroiconNode = { name: "FilePlus2", nodes: [["path",{"d":"M5 10V5C5 3.9 5.9 3 7 3H14L19 8V19C19 20.1 18.1 21 17 21H13"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M6.5 13.5V20.5M3 17H10"}]] };
+/** Document inconnu · Unknown document */
+export const FileQuestion: AfroiconNode = { name: "FileQuestion", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M9.8 12.4C9.8 11.2 10.8 10.5 12 10.5C13.2 10.5 14.2 11.3 14.2 12.4C14.2 13.4 13.5 13.9 12.8 14.3C12.3 14.6 12 15 12 15.5"}],["circle",{"cx":"12","cy":"18.4","r":"0.95","fill":"currentColor","stroke":"none"}]] };
+/** Numériser un document · Scan document */
+export const FileScan: AfroiconNode = { name: "FileScan", nodes: [["path",{"d":"M5 12.5V5C5 3.9 5.9 3 7 3H14L19 8V12.5"}],["path",{"d":"M5 16.5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V16.5"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M2.5 14.5H21.5"}]] };
+/** Chercher dans un document · Search in document */
+export const FileSearch2: AfroiconNode = { name: "FileSearch2", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["circle",{"cx":"11.3","cy":"13.8","r":"2.8"}],["path",{"d":"M13.4 15.9L15.5 18"}]] };
+/** Paramètres du document · Document settings */
+export const FileSliders: AfroiconNode = { name: "FileSliders", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M8.5 12H15.5M8.5 17H15.5"}],["circle",{"cx":"13.2","cy":"12","r":"1.6","fill":"currentColor","stroke":"none"}],["circle",{"cx":"10.3","cy":"17","r":"1.6","fill":"currentColor","stroke":"none"}]] };
+/** Pile de documents · Document stack */
+export const FileStack: AfroiconNode = { name: "FileStack", nodes: [["path",{"d":"M16.5 9H11C9.9 9 9 9.9 9 11V19.5C9 20.6 9.9 21.5 11 21.5H19C20.1 21.5 21 20.6 21 19.5V13.5Z"}],["path",{"d":"M16.5 9V13.5H21"}],["path",{"d":"M5.8 18.5V7.8C5.8 6.7 6.7 5.8 7.8 5.8H15"}],["path",{"d":"M2.6 15.5V4.6C2.6 3.5 3.5 2.6 4.6 2.6H11.5"}]] };
+/** Raccourci de fichier · File shortcut */
+export const FileSymlink: AfroiconNode = { name: "FileSymlink", nodes: [["path",{"d":"M5 10V5C5 3.9 5.9 3 7 3H14L19 8V19C19 20.1 18.1 21 17 21H13"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M3 20.5V17.5C3 15.8 4.3 14.5 6 14.5H10.5M8 12L10.5 14.5L8 17"}]] };
+/** Script de commande · Command script */
+export const FileTerminal: AfroiconNode = { name: "FileTerminal", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M8.5 12L11 14.5L8.5 17M12.5 17.5H15.5"}]] };
+/** Fichier texte · Text file */
+export const FileType: AfroiconNode = { name: "FileType", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M9 11.5H15M12 11.5V18M10.8 18H13.2"}]] };
+/** Format de texte · Text format */
+export const FileType2: AfroiconNode = { name: "FileType2", nodes: [["path",{"d":"M5 10V5C5 3.9 5.9 3 7 3H14L19 8V19C19 20.1 18.1 21 17 21H13"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M3 14H10M6.5 14V20.5"}]] };
+/** Fiche personnelle · Personal record */
+export const FileUser: AfroiconNode = { name: "FileUser", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["circle",{"cx":"12","cy":"12.8","r":"1.9"}],["path",{"d":"M8.6 18.5C8.6 16.6 10.1 15.6 12 15.6S15.4 16.6 15.4 18.5"}]] };
+/** Fichier vidéo · Video file */
+export const FileVideo: AfroiconNode = { name: "FileVideo", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M9.7 11.8C9.7 11.2 10.3 10.9 10.8 11.2L15.1 13.9C15.6 14.2 15.6 14.8 15.1 15.1L10.8 17.8C10.3 18.1 9.7 17.8 9.7 17.2Z"}]] };
+/** Enregistrement vidéo · Video recording */
+export const FileVideo2: AfroiconNode = { name: "FileVideo2", nodes: [["path",{"d":"M5 10V5C5 3.9 5.9 3 7 3H14L19 8V19C19 20.1 18.1 21 17 21H13"}],["path",{"d":"M14 3V8H19"}],["rect",{"x":"2.5","y":"14.5","width":"6","height":"5","rx":"1.2"}],["path",{"d":"M8.5 16.3L10.6 15.1C11 14.9 11.5 15.2 11.5 15.6V18.4C11.5 18.8 11 19.1 10.6 18.9L8.5 17.7"}]] };
+/** Fichier sonore · Sound file */
+export const FileVolume: AfroiconNode = { name: "FileVolume", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M8.3 13.4H9.6L12 11.4V17.6L9.6 15.6H8.3Z"}],["path",{"d":"M14.3 12.5A2.8 2.8 0 0 1 14.3 16.5"}]] };
+/** Annonce sonore · Audio announcement */
+export const FileVolume2: AfroiconNode = { name: "FileVolume2", nodes: [["path",{"d":"M5 10V5C5 3.9 5.9 3 7 3H14L19 8V19C19 20.1 18.1 21 17 21H13"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M2.5 16H3.9L6.4 13.9V20.1L3.9 18H2.5Z"}],["path",{"d":"M8.8 15A2.8 2.8 0 0 1 8.8 19"}]] };
+/** Document refusé · Rejected document */
+export const FileX: AfroiconNode = { name: "FileX", nodes: [["path",{"d":"M14 3H7C5.9 3 5 3.9 5 5V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V8Z"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M9.8 12.3L14.2 16.7M14.2 12.3L9.8 16.7"}]] };
+/** Supprimer un document · Delete document */
+export const FileX2: AfroiconNode = { name: "FileX2", nodes: [["path",{"d":"M5 10V5C5 3.9 5.9 3 7 3H14L19 8V19C19 20.1 18.1 21 17 21H13"}],["path",{"d":"M14 3V8H19"}],["path",{"d":"M4 14.5L9 19.5M9 14.5L4 19.5"}]] };
+/** Fichiers · Files */
+export const Files: AfroiconNode = { name: "Files", nodes: [["path",{"d":"M15.5 6.5H10C8.9 6.5 8 7.4 8 8.5V19.5C8 20.6 8.9 21.5 10 21.5H17.5C18.6 21.5 19.5 20.6 19.5 19.5V10.5Z"}],["path",{"d":"M15.5 6.5V10.5H19.5"}],["path",{"d":"M4.5 17.5V4.5C4.5 3.4 5.4 2.5 6.5 2.5H13.5"}]] };
+/** Restaurer des archives · Restore from archive */
+export const ArchiveRestore: AfroiconNode = { name: "ArchiveRestore", nodes: [["rect",{"x":"3","y":"4","width":"18","height":"5","rx":"1.5"}],["path",{"d":"M4.5 9V18.5C4.5 19.6 5.4 20.5 6.5 20.5H17.5C18.6 20.5 19.5 19.6 19.5 18.5V9"}],["path",{"d":"M12 18.5V12.3M9.6 14.7L12 12.3L14.4 14.7"}]] };
+/** Supprimer des archives · Delete archive */
+export const ArchiveX: AfroiconNode = { name: "ArchiveX", nodes: [["rect",{"x":"3","y":"4","width":"18","height":"5","rx":"1.5"}],["path",{"d":"M4.5 9V18.5C4.5 19.6 5.4 20.5 6.5 20.5H17.5C18.6 20.5 19.5 19.6 19.5 18.5V9"}],["path",{"d":"M10 12.7L14 16.7M14 12.7L10 16.7"}]] };
+/** Presse-papiers · Clipboard */
+export const Clipboard: AfroiconNode = { name: "Clipboard", nodes: [["path",{"d":"M9 4.5H6.5C5.4 4.5 4.5 5.4 4.5 6.5V19C4.5 20.1 5.4 21 6.5 21H17.5C18.6 21 19.5 20.1 19.5 19V6.5C19.5 5.4 18.6 4.5 17.5 4.5H15"}],["rect",{"x":"9","y":"3","width":"6","height":"3.5","rx":"1"}]] };
+/** Copier dans le presse-papiers · Copy to clipboard */
+export const ClipboardCopy: AfroiconNode = { name: "ClipboardCopy", nodes: [["path",{"d":"M9 4.5H6.5C5.4 4.5 4.5 5.4 4.5 6.5V19C4.5 20.1 5.4 21 6.5 21H17.5C18.6 21 19.5 20.1 19.5 19V17.5"}],["path",{"d":"M15 4.5H17.5C18.6 4.5 19.5 5.4 19.5 6.5V8.5"}],["rect",{"x":"9","y":"3","width":"6","height":"3.5","rx":"1"}],["path",{"d":"M9.5 13H21M18 10L21 13L18 16"}]] };
+/** Retirer de la fiche · Remove from sheet */
+export const ClipboardMinus: AfroiconNode = { name: "ClipboardMinus", nodes: [["path",{"d":"M9 4.5H6.5C5.4 4.5 4.5 5.4 4.5 6.5V19C4.5 20.1 5.4 21 6.5 21H17.5C18.6 21 19.5 20.1 19.5 19V6.5C19.5 5.4 18.6 4.5 17.5 4.5H15"}],["rect",{"x":"9","y":"3","width":"6","height":"3.5","rx":"1"}],["path",{"d":"M9.2 13.8H14.8"}]] };
+/** Coller · Paste */
+export const ClipboardPaste: AfroiconNode = { name: "ClipboardPaste", nodes: [["path",{"d":"M9 4.5H6.5C5.4 4.5 4.5 5.4 4.5 6.5V19C4.5 20.1 5.4 21 6.5 21H17.5C18.6 21 19.5 20.1 19.5 19V17.5"}],["path",{"d":"M15 4.5H17.5C18.6 4.5 19.5 5.4 19.5 6.5V8.5"}],["rect",{"x":"9","y":"3","width":"6","height":"3.5","rx":"1"}],["path",{"d":"M21 13H9.5M12.5 10L9.5 13L12.5 16"}]] };
+/** Remplir une fiche · Fill in form */
+export const ClipboardPen: AfroiconNode = { name: "ClipboardPen", nodes: [["path",{"d":"M9 4.5H6.5C5.4 4.5 4.5 5.4 4.5 6.5V19C4.5 20.1 5.4 21 6.5 21H10"}],["path",{"d":"M15 4.5H17.5C18.6 4.5 19.5 5.4 19.5 6.5V9"}],["rect",{"x":"9","y":"3","width":"6","height":"3.5","rx":"1"}],["path",{"d":"M18 12.6C18.6 12 19.5 12 20.1 12.6L20.4 12.9C21 13.5 21 14.4 20.4 15L14.8 20.6L12 21.2L12.6 18.4Z"}]] };
+/** Annoter une fiche · Annotate sheet */
+export const ClipboardPenLine: AfroiconNode = { name: "ClipboardPenLine", nodes: [["path",{"d":"M9 4.5H6.5C5.4 4.5 4.5 5.4 4.5 6.5V19C4.5 20.1 5.4 21 6.5 21H10"}],["path",{"d":"M15 4.5H17.5C18.6 4.5 19.5 5.4 19.5 6.5V9"}],["rect",{"x":"9","y":"3","width":"6","height":"3.5","rx":"1"}],["path",{"d":"M18 12.6C18.6 12 19.5 12 20.1 12.6L20.4 12.9C21 13.5 21 14.4 20.4 15L14.8 20.6L12 21.2L12.6 18.4Z"}],["path",{"d":"M8 10.5H13.5M8 14H11.5"}]] };
+/** Ajouter à la fiche · Add to sheet */
+export const ClipboardPlus: AfroiconNode = { name: "ClipboardPlus", nodes: [["path",{"d":"M9 4.5H6.5C5.4 4.5 4.5 5.4 4.5 6.5V19C4.5 20.1 5.4 21 6.5 21H17.5C18.6 21 19.5 20.1 19.5 19V6.5C19.5 5.4 18.6 4.5 17.5 4.5H15"}],["rect",{"x":"9","y":"3","width":"6","height":"3.5","rx":"1"}],["path",{"d":"M12 11V16.6M9.2 13.8H14.8"}]] };
+/** Fiche de saisie · Entry form */
+export const ClipboardType: AfroiconNode = { name: "ClipboardType", nodes: [["path",{"d":"M9 4.5H6.5C5.4 4.5 4.5 5.4 4.5 6.5V19C4.5 20.1 5.4 21 6.5 21H17.5C18.6 21 19.5 20.1 19.5 19V6.5C19.5 5.4 18.6 4.5 17.5 4.5H15"}],["rect",{"x":"9","y":"3","width":"6","height":"3.5","rx":"1"}],["path",{"d":"M9 10.8H15M12 10.8V17.2"}]] };
+/** Dossier archivé · Archived folder */
+export const FolderArchive: AfroiconNode = { name: "FolderArchive", nodes: [["path",{"d":"M11 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5V7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V11"}],["path",{"d":"M3.5 10.2H20.5"}],["rect",{"x":"12.8","y":"13.2","width":"8.5","height":"2.3","rx":"0.7"}],["path",{"d":"M13.5 15.6V20.1C13.5 20.6 13.9 21 14.4 21H19.6C20.1 21 20.5 20.6 20.5 20.1V15.6"}],["path",{"d":"M16.1 17.5H17.9"}]] };
+/** Dossier validé · Approved folder */
+export const FolderCheck: AfroiconNode = { name: "FolderCheck", nodes: [["path",{"d":"M3.5 7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V17.5C20.5 18.6 19.6 19.5 18.5 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5Z"}],["path",{"d":"M3.5 10.2H20.5"}],["path",{"d":"M9.2 14.9L11.2 16.9L14.8 13.3"}]] };
+/** Dossier en attente · Pending folder */
+export const FolderClock: AfroiconNode = { name: "FolderClock", nodes: [["path",{"d":"M11 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5V7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V11"}],["path",{"d":"M3.5 10.2H20.5"}],["circle",{"cx":"17","cy":"17","r":"4.5"}],["path",{"d":"M17 15V17L18.4 18"}]] };
+/** Dossier fermé · Closed folder */
+export const FolderClosed: AfroiconNode = { name: "FolderClosed", nodes: [["path",{"d":"M3.5 7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V17.5C20.5 18.6 19.6 19.5 18.5 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5Z"}],["path",{"d":"M3.5 10.2H20.5"}],["path",{"d":"M10.6 10.2V12.4C10.6 13.2 11.2 13.8 12 13.8S13.4 13.2 13.4 12.4V10.2"}]] };
+/** Dossier de code source · Source code folder */
+export const FolderCode: AfroiconNode = { name: "FolderCode", nodes: [["path",{"d":"M3.5 7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V17.5C20.5 18.6 19.6 19.5 18.5 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5Z"}],["path",{"d":"M3.5 10.2H20.5"}],["path",{"d":"M10 12.7L7.9 14.8L10 16.9M14 12.7L16.1 14.8L14 16.9"}]] };
+/** Réglages du dossier · Folder settings */
+export const FolderCog: AfroiconNode = { name: "FolderCog", nodes: [["path",{"d":"M11 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5V7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V11"}],["path",{"d":"M3.5 10.2H20.5"}],["circle",{"cx":"17","cy":"17","r":"2.6"}],["path",{"d":"M19.3 18.3L20.5 19M17 19.6V21M14.7 18.3L13.5 19M14.7 15.7L13.5 15M17 14.4V13M19.3 15.7L20.5 15"}]] };
+/** Dossier actif · Active folder */
+export const FolderDot: AfroiconNode = { name: "FolderDot", nodes: [["path",{"d":"M3.5 7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V17.5C20.5 18.6 19.6 19.5 18.5 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5Z"}],["path",{"d":"M3.5 10.2H20.5"}],["circle",{"cx":"12","cy":"14.8","r":"1.5","fill":"currentColor","stroke":"none"}]] };
+/** Télécharger un dossier · Download folder */
+export const FolderDown: AfroiconNode = { name: "FolderDown", nodes: [["path",{"d":"M3.5 7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V17.5C20.5 18.6 19.6 19.5 18.5 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5Z"}],["path",{"d":"M3.5 10.2H20.5"}],["path",{"d":"M12 12.2V17.4M9.6 15L12 17.4L14.4 15"}]] };
+/** Dépôt de versions · Repository */
+export const FolderGit: AfroiconNode = { name: "FolderGit", nodes: [["path",{"d":"M3.5 7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V17.5C20.5 18.6 19.6 19.5 18.5 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5Z"}],["path",{"d":"M3.5 10.2H20.5"}],["circle",{"cx":"12","cy":"14.8","r":"2"}],["path",{"d":"M7 14.8H10M14 14.8H17"}]] };
+/** Branche du dépôt · Repository branch */
+export const FolderGit2: AfroiconNode = { name: "FolderGit2", nodes: [["path",{"d":"M11 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5V7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V11"}],["path",{"d":"M3.5 10.2H20.5"}],["circle",{"cx":"14.5","cy":"19.5","r":"1.5"}],["circle",{"cx":"19.5","cy":"14.5","r":"1.5"}],["path",{"d":"M14.5 12.5V18M19.5 16C19.5 17.1 18.6 18 17.5 18H14.5"}]] };
+/** Dossier favori · Favorite folder */
+export const FolderHeart: AfroiconNode = { name: "FolderHeart", nodes: [["path",{"d":"M3.5 7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V17.5C20.5 18.6 19.6 19.5 18.5 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5Z"}],["path",{"d":"M3.5 10.2H20.5"}],["path",{"d":"M12 18.4C12 18.4 8.6 16.5 8.6 14.1C8.6 12.9 9.4 12.1 10.5 12.1C11.2 12.1 11.7 12.5 12 13.1C12.3 12.5 12.8 12.1 13.5 12.1C14.6 12.1 15.4 12.9 15.4 14.1C15.4 16.5 12 18.4 12 18.4Z"}]] };
+/** Importer dans un dossier · Import into folder */
+export const FolderInput: AfroiconNode = { name: "FolderInput", nodes: [["path",{"d":"M3.5 13V7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V17.5C20.5 18.6 19.6 19.5 18.5 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5V16.6"}],["path",{"d":"M3.5 10.2H20.5"}],["path",{"d":"M2.5 14.8H13M10.5 12.3L13 14.8L10.5 17.3"}]] };
+/** Dossier à clé · Key-protected folder */
+export const FolderKey: AfroiconNode = { name: "FolderKey", nodes: [["path",{"d":"M11 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5V7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V11"}],["path",{"d":"M3.5 10.2H20.5"}],["circle",{"cx":"15.4","cy":"15.4","r":"2.3"}],["path",{"d":"M17 17L21 21M19.2 19.2L20.7 17.7"}]] };
+/** Dossier verrouillé · Locked folder */
+export const FolderLock: AfroiconNode = { name: "FolderLock", nodes: [["path",{"d":"M11 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5V7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V11"}],["path",{"d":"M3.5 10.2H20.5"}],["rect",{"x":"13.5","y":"15.5","width":"7","height":"5.5","rx":"1.5"}],["path",{"d":"M15 15.5V14A2 2 0 0 1 19 14V15.5"}]] };
+/** Retirer un dossier · Remove folder */
+export const FolderMinus: AfroiconNode = { name: "FolderMinus", nodes: [["path",{"d":"M3.5 7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V17.5C20.5 18.6 19.6 19.5 18.5 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5Z"}],["path",{"d":"M3.5 10.2H20.5"}],["path",{"d":"M9.4 14.8H14.6"}]] };
+/** Dossier ouvert actif · Active open folder */
+export const FolderOpenDot: AfroiconNode = { name: "FolderOpenDot", nodes: [["path",{"d":"M3.5 17.5V7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H16.5C17.6 7.2 18.5 8.1 18.5 9.2V10.5"}],["path",{"d":"M3.5 17.5L6 11.9C6.3 11 7 10.5 7.9 10.5H19.6C20.7 10.5 21.4 11.6 21 12.6L18.9 18.2C18.6 19 17.9 19.5 17 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5Z"}],["circle",{"cx":"13.2","cy":"15","r":"1.5","fill":"currentColor","stroke":"none"}]] };
+/** Exporter un dossier · Export folder */
+export const FolderOutput: AfroiconNode = { name: "FolderOutput", nodes: [["path",{"d":"M3.5 11.6V7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V17.5C20.5 18.6 19.6 19.5 18.5 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5"}],["path",{"d":"M3.5 10.2H20.5"}],["path",{"d":"M13 14.8H2.5M5 12.3L2.5 14.8L5 17.3"}]] };
+/** Renommer un dossier · Rename folder */
+export const FolderPen: AfroiconNode = { name: "FolderPen", nodes: [["path",{"d":"M10.5 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5V7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V10.2"}],["path",{"d":"M3.5 10.2H20.5"}],["path",{"d":"M18 12.6C18.6 12 19.5 12 20.1 12.6L20.4 12.9C21 13.5 21 14.4 20.4 15L14.8 20.6L12 21.2L12.6 18.4Z"}]] };
+/** Nouveau dossier · New folder */
+export const FolderPlus: AfroiconNode = { name: "FolderPlus", nodes: [["path",{"d":"M3.5 7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V17.5C20.5 18.6 19.6 19.5 18.5 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5Z"}],["path",{"d":"M3.5 10.2H20.5"}],["path",{"d":"M12 12.2V17.4M9.4 14.8H14.6"}]] };
+/** Dossier racine · Root folder */
+export const FolderRoot: AfroiconNode = { name: "FolderRoot", nodes: [["path",{"d":"M10.6 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5V7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V17.5C20.5 18.6 19.6 19.5 18.5 19.5H13.4"}],["path",{"d":"M3.5 10.2H20.5"}],["circle",{"cx":"12","cy":"14.3","r":"2"}],["path",{"d":"M12 16.3V21.5"}]] };
+/** Rechercher un dossier · Find folder */
+export const FolderSearch: AfroiconNode = { name: "FolderSearch", nodes: [["path",{"d":"M11 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5V7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V11"}],["path",{"d":"M3.5 10.2H20.5"}],["circle",{"cx":"16.5","cy":"16.5","r":"3"}],["path",{"d":"M18.7 18.7L21 21"}]] };
+/** Rechercher dans un dossier · Search in folder */
+export const FolderSearch2: AfroiconNode = { name: "FolderSearch2", nodes: [["path",{"d":"M3.5 7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V17.5C20.5 18.6 19.6 19.5 18.5 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5Z"}],["path",{"d":"M3.5 10.2H20.5"}],["circle",{"cx":"11.4","cy":"14.4","r":"2.4"}],["path",{"d":"M13.2 16.2L15.2 18.2"}]] };
+/** Raccourci vers un dossier · Folder shortcut */
+export const FolderSymlink: AfroiconNode = { name: "FolderSymlink", nodes: [["path",{"d":"M3.5 7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V17.5C20.5 18.6 19.6 19.5 18.5 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5Z"}],["path",{"d":"M3.5 10.2H20.5"}],["path",{"d":"M8.5 18V16.6C8.5 15.3 9.5 14.3 10.8 14.3H15.5M13.5 12.3L15.5 14.3L13.5 16.3"}]] };
+/** Synchroniser un dossier · Sync folder */
+export const FolderSync: AfroiconNode = { name: "FolderSync", nodes: [["path",{"d":"M11 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5V7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V11"}],["path",{"d":"M3.5 10.2H20.5"}],["path",{"d":"M20.6 16.6A3.6 3.6 0 0 0 14.1 14.6L13.2 15.4"}],["path",{"d":"M13.2 13.4V15.4H15.2"}],["path",{"d":"M13.4 17.5A3.6 3.6 0 0 0 19.9 19.4L20.8 18.6"}],["path",{"d":"M20.8 20.6V18.6H18.8"}]] };
+/** Dossier parent · Parent folder */
+export const FolderUp: AfroiconNode = { name: "FolderUp", nodes: [["path",{"d":"M3.5 7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V17.5C20.5 18.6 19.6 19.5 18.5 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5Z"}],["path",{"d":"M3.5 10.2H20.5"}],["path",{"d":"M12 17.4V12.2M9.6 14.6L12 12.2L14.4 14.6"}]] };
+/** Supprimer un dossier · Delete folder */
+export const FolderX: AfroiconNode = { name: "FolderX", nodes: [["path",{"d":"M3.5 7C3.5 5.9 4.4 5 5.5 5H9.3L11.3 7.2H18.5C19.6 7.2 20.5 8.1 20.5 9.2V17.5C20.5 18.6 19.6 19.5 18.5 19.5H5.5C4.4 19.5 3.5 18.6 3.5 17.5Z"}],["path",{"d":"M3.5 10.2H20.5"}],["path",{"d":"M10 12.8L14 16.8M14 12.8L10 16.8"}]] };
+/** Plusieurs dossiers · Folders */
+export const Folders: AfroiconNode = { name: "Folders", nodes: [["path",{"d":"M3 16.5V5.5C3 4.4 3.9 3.5 5 3.5H8L9.8 5.4H16C17.1 5.4 18 6.3 18 7.4"}],["path",{"d":"M6.5 9.5C6.5 8.4 7.4 7.5 8.5 7.5H11.5L13.3 9.4H19.5C20.6 9.4 21.5 10.3 21.5 11.4V18.5C21.5 19.6 20.6 20.5 19.5 20.5H8.5C7.4 20.5 6.5 19.6 6.5 18.5Z"}],["path",{"d":"M6.5 12.4H21.5"}]] };
+/** Texte aligné à gauche · Align text left */
+export const AlignLeft: AfroiconNode = { name: "AlignLeft", nodes: [["path",{"d":"M4 5.5H20M4 10H14M4 14.5H18M4 19H11.5"}]] };
+/** Texte centré · Center text */
+export const AlignCenter: AfroiconNode = { name: "AlignCenter", nodes: [["path",{"d":"M4 5.5H20M7.5 10H16.5M5.5 14.5H18.5M8.5 19H15.5"}]] };
+/** Texte aligné à droite · Align text right */
+export const AlignRight: AfroiconNode = { name: "AlignRight", nodes: [["path",{"d":"M4 5.5H20M10 10H20M6 14.5H20M12.5 19H20"}]] };
+/** Texte justifié · Justify text */
+export const AlignJustify: AfroiconNode = { name: "AlignJustify", nodes: [["path",{"d":"M4 5.5H20M4 10H20M4 14.5H20M4 19H20"}]] };
+/** Aligner les objets en haut · Align objects to top */
+export const AlignStartHorizontal: AfroiconNode = { name: "AlignStartHorizontal", nodes: [["path",{"d":"M3 3.5H21"}],["rect",{"x":"4.5","y":"6.5","width":"6","height":"14","rx":"1.5"}],["rect",{"x":"13.5","y":"6.5","width":"6","height":"8.5","rx":"1.5"}]] };
+/** Aligner les objets à gauche · Align objects to left */
+export const AlignStartVertical: AfroiconNode = { name: "AlignStartVertical", nodes: [["path",{"d":"M3.5 3V21"}],["rect",{"x":"6.5","y":"4.5","width":"14","height":"6","rx":"1.5"}],["rect",{"x":"6.5","y":"13.5","width":"8.5","height":"6","rx":"1.5"}]] };
+/** Aligner les objets en bas · Align objects to bottom */
+export const AlignEndHorizontal: AfroiconNode = { name: "AlignEndHorizontal", nodes: [["path",{"d":"M3 20.5H21"}],["rect",{"x":"4.5","y":"3.5","width":"6","height":"14","rx":"1.5"}],["rect",{"x":"13.5","y":"9","width":"6","height":"8.5","rx":"1.5"}]] };
+/** Aligner les objets à droite · Align objects to right */
+export const AlignEndVertical: AfroiconNode = { name: "AlignEndVertical", nodes: [["path",{"d":"M20.5 3V21"}],["rect",{"x":"3.5","y":"4.5","width":"14","height":"6","rx":"1.5"}],["rect",{"x":"9","y":"13.5","width":"8.5","height":"6","rx":"1.5"}]] };
+/** Centrer les objets sur l'axe horizontal · Align objects to horizontal center */
+export const AlignCenterHorizontal: AfroiconNode = { name: "AlignCenterHorizontal", nodes: [["path",{"d":"M2.5 12H5M10.5 12H13.5M19 12H21.5"}],["rect",{"x":"5","y":"3.5","width":"5.5","height":"17","rx":"1.5"}],["rect",{"x":"13.5","y":"7","width":"5.5","height":"10","rx":"1.5"}]] };
+/** Centrer les objets sur l'axe vertical · Align objects to vertical center */
+export const AlignCenterVertical: AfroiconNode = { name: "AlignCenterVertical", nodes: [["path",{"d":"M12 2.5V5M12 10.5V13.5M12 19V21.5"}],["rect",{"x":"3.5","y":"5","width":"17","height":"5.5","rx":"1.5"}],["rect",{"x":"7","y":"13.5","width":"10","height":"5.5","rx":"1.5"}]] };
+/** Répartir en rangée par les bords gauches · Distribute horizontally by left edges */
+export const AlignHorizontalDistributeStart: AfroiconNode = { name: "AlignHorizontalDistributeStart", nodes: [["path",{"d":"M4 2.5V21.5M14 2.5V21.5"}],["rect",{"x":"4","y":"5.5","width":"6","height":"13","rx":"1.5"}],["rect",{"x":"14","y":"8","width":"6","height":"8","rx":"1.5"}]] };
+/** Répartir en colonne par les bords hauts · Distribute vertically by top edges */
+export const AlignVerticalDistributeStart: AfroiconNode = { name: "AlignVerticalDistributeStart", nodes: [["path",{"d":"M2.5 4H21.5M2.5 14H21.5"}],["rect",{"x":"5.5","y":"4","width":"13","height":"6","rx":"1.5"}],["rect",{"x":"8","y":"14","width":"8","height":"6","rx":"1.5"}]] };
+/** Répartir en rangée par les bords droits · Distribute horizontally by right edges */
+export const AlignHorizontalDistributeEnd: AfroiconNode = { name: "AlignHorizontalDistributeEnd", nodes: [["path",{"d":"M10 2.5V21.5M20 2.5V21.5"}],["rect",{"x":"4","y":"5.5","width":"6","height":"13","rx":"1.5"}],["rect",{"x":"14","y":"8","width":"6","height":"8","rx":"1.5"}]] };
+/** Répartir en colonne par les bords bas · Distribute vertically by bottom edges */
+export const AlignVerticalDistributeEnd: AfroiconNode = { name: "AlignVerticalDistributeEnd", nodes: [["path",{"d":"M2.5 10H21.5M2.5 20H21.5"}],["rect",{"x":"5.5","y":"4","width":"13","height":"6","rx":"1.5"}],["rect",{"x":"8","y":"14","width":"8","height":"6","rx":"1.5"}]] };
+/** Répartir en rangée par les centres · Distribute horizontally by centers */
+export const AlignHorizontalDistributeCenter: AfroiconNode = { name: "AlignHorizontalDistributeCenter", nodes: [["path",{"d":"M7 2.5V5.5M7 18.5V21.5M17 2.5V8M17 16V21.5"}],["rect",{"x":"4","y":"5.5","width":"6","height":"13","rx":"1.5"}],["rect",{"x":"14","y":"8","width":"6","height":"8","rx":"1.5"}]] };
+/** Répartir en colonne par les centres · Distribute vertically by centers */
+export const AlignVerticalDistributeCenter: AfroiconNode = { name: "AlignVerticalDistributeCenter", nodes: [["path",{"d":"M2.5 7H5.5M18.5 7H21.5M2.5 17H8M16 17H21.5"}],["rect",{"x":"5.5","y":"4","width":"13","height":"6","rx":"1.5"}],["rect",{"x":"8","y":"14","width":"8","height":"6","rx":"1.5"}]] };
+/** Rangée calée à gauche · Justify row to left */
+export const AlignHorizontalJustifyStart: AfroiconNode = { name: "AlignHorizontalJustifyStart", nodes: [["path",{"d":"M3.5 2.5V21.5"}],["rect",{"x":"6.5","y":"4","width":"5","height":"16","rx":"1.5"}],["rect",{"x":"14.5","y":"7","width":"5.5","height":"10","rx":"1.5"}]] };
+/** Colonne calée en haut · Justify column to top */
+export const AlignVerticalJustifyStart: AfroiconNode = { name: "AlignVerticalJustifyStart", nodes: [["path",{"d":"M2.5 3.5H21.5"}],["rect",{"x":"4","y":"6.5","width":"16","height":"5","rx":"1.5"}],["rect",{"x":"7","y":"14.5","width":"10","height":"5.5","rx":"1.5"}]] };
+/** Rangée calée à droite · Justify row to right */
+export const AlignHorizontalJustifyEnd: AfroiconNode = { name: "AlignHorizontalJustifyEnd", nodes: [["path",{"d":"M20.5 2.5V21.5"}],["rect",{"x":"4","y":"7","width":"5.5","height":"10","rx":"1.5"}],["rect",{"x":"12.5","y":"4","width":"5","height":"16","rx":"1.5"}]] };
+/** Colonne calée en bas · Justify column to bottom */
+export const AlignVerticalJustifyEnd: AfroiconNode = { name: "AlignVerticalJustifyEnd", nodes: [["path",{"d":"M2.5 20.5H21.5"}],["rect",{"x":"7","y":"4","width":"10","height":"5.5","rx":"1.5"}],["rect",{"x":"4","y":"12.5","width":"16","height":"5","rx":"1.5"}]] };
+/** Rangée resserrée au centre · Justify row to center */
+export const AlignHorizontalJustifyCenter: AfroiconNode = { name: "AlignHorizontalJustifyCenter", nodes: [["path",{"d":"M12 2.5V21.5"}],["rect",{"x":"4","y":"4","width":"5.5","height":"16","rx":"1.5"}],["rect",{"x":"14.5","y":"7","width":"5.5","height":"10","rx":"1.5"}]] };
+/** Colonne resserrée au centre · Justify column to center */
+export const AlignVerticalJustifyCenter: AfroiconNode = { name: "AlignVerticalJustifyCenter", nodes: [["path",{"d":"M2.5 12H21.5"}],["rect",{"x":"4","y":"4","width":"16","height":"5.5","rx":"1.5"}],["rect",{"x":"7","y":"14.5","width":"10","height":"5.5","rx":"1.5"}]] };
+/** Espace égal autour, en rangée · Space around horizontally */
+export const AlignHorizontalSpaceAround: AfroiconNode = { name: "AlignHorizontalSpaceAround", nodes: [["path",{"d":"M3.5 2.5V21.5M20.5 2.5V21.5"}],["rect",{"x":"8.5","y":"5","width":"7","height":"14","rx":"1.5"}]] };
+/** Espace égal autour, en colonne · Space around vertically */
+export const AlignVerticalSpaceAround: AfroiconNode = { name: "AlignVerticalSpaceAround", nodes: [["path",{"d":"M2.5 3.5H21.5M2.5 20.5H21.5"}],["rect",{"x":"5","y":"8.5","width":"14","height":"7","rx":"1.5"}]] };
+/** Espace égal entre, en rangée · Space between horizontally */
+export const AlignHorizontalSpaceBetween: AfroiconNode = { name: "AlignHorizontalSpaceBetween", nodes: [["path",{"d":"M3 2.5V21.5M21 2.5V21.5"}],["rect",{"x":"6","y":"4.5","width":"4.5","height":"15","rx":"1.5"}],["rect",{"x":"13.5","y":"7","width":"4.5","height":"10","rx":"1.5"}]] };
+/** Espace égal entre, en colonne · Space between vertically */
+export const AlignVerticalSpaceBetween: AfroiconNode = { name: "AlignVerticalSpaceBetween", nodes: [["path",{"d":"M2.5 3H21.5M2.5 21H21.5"}],["rect",{"x":"4.5","y":"6","width":"15","height":"4.5","rx":"1.5"}],["rect",{"x":"7","y":"13.5","width":"10","height":"4.5","rx":"1.5"}]] };
+/** Insérer entre deux lignes, par la gauche · Insert between rows from left */
+export const BetweenHorizonalStart: AfroiconNode = { name: "BetweenHorizonalStart", nodes: [["path",{"d":"M3.5 8.5L7 12L3.5 15.5"}],["rect",{"x":"9.5","y":"3.5","width":"11","height":"6","rx":"1.5"}],["rect",{"x":"9.5","y":"14.5","width":"11","height":"6","rx":"1.5"}]] };
+/** Insérer entre deux colonnes, par le haut · Insert between columns from top */
+export const BetweenVerticalStart: AfroiconNode = { name: "BetweenVerticalStart", nodes: [["path",{"d":"M8.5 3.5L12 7L15.5 3.5"}],["rect",{"x":"3.5","y":"9.5","width":"6","height":"11","rx":"1.5"}],["rect",{"x":"14.5","y":"9.5","width":"6","height":"11","rx":"1.5"}]] };
+/** Insérer entre deux lignes, par la droite · Insert between rows from right */
+export const BetweenHorizonalEnd: AfroiconNode = { name: "BetweenHorizonalEnd", nodes: [["path",{"d":"M20.5 8.5L17 12L20.5 15.5"}],["rect",{"x":"3.5","y":"3.5","width":"11","height":"6","rx":"1.5"}],["rect",{"x":"3.5","y":"14.5","width":"11","height":"6","rx":"1.5"}]] };
+/** Insérer entre deux colonnes, par le bas · Insert between columns from bottom */
+export const BetweenVerticalEnd: AfroiconNode = { name: "BetweenVerticalEnd", nodes: [["path",{"d":"M8.5 20.5L12 17L15.5 20.5"}],["rect",{"x":"3.5","y":"3.5","width":"6","height":"11","rx":"1.5"}],["rect",{"x":"14.5","y":"3.5","width":"6","height":"11","rx":"1.5"}]] };
+/** Séparateur horizontal · Horizontal separator */
+export const SeparatorHorizontal: AfroiconNode = { name: "SeparatorHorizontal", nodes: [["path",{"d":"M3.5 12H20.5M8.5 7L12 3.5L15.5 7M8.5 17L12 20.5L15.5 17"}]] };
+/** Séparateur vertical · Vertical separator */
+export const SeparatorVertical: AfroiconNode = { name: "SeparatorVertical", nodes: [["path",{"d":"M12 3.5V20.5M7 8.5L3.5 12L7 15.5M17 8.5L20.5 12L17 15.5"}]] };
+/** Barre d'espace · Space bar */
+export const Space: AfroiconNode = { name: "Space", nodes: [["path",{"d":"M3.5 9V14.5C3.5 15.6 4.4 16.5 5.5 16.5H18.5C19.6 16.5 20.5 15.6 20.5 14.5V9"}]] };
+/** Ligne de base du texte · Text baseline */
+export const Baseline: AfroiconNode = { name: "Baseline", nodes: [["path",{"d":"M6 15.5L12 3.5L18 15.5M8.3 10.9H15.7"}],["path",{"d":"M4 20.5H20"}]] };
+/** Gras · Bold */
+export const Bold: AfroiconNode = { name: "Bold", nodes: [["path",{"d":"M7 4.5H12.6A3.75 3.75 0 0 1 12.6 12H7Z"}],["path",{"d":"M7 12H13.6A3.75 3.75 0 0 1 13.6 19.5H7Z"}]] };
+/** Minuscules · Lowercase */
+export const CaseLower: AfroiconNode = { name: "CaseLower", nodes: [["circle",{"cx":"6.5","cy":"14.4","r":"3.4"}],["path",{"d":"M9.9 11V18M13.6 6V18"}],["circle",{"cx":"17","cy":"14.4","r":"3.4"}]] };
+/** Respecter la casse · Match case */
+export const CaseSensitive: AfroiconNode = { name: "CaseSensitive", nodes: [["path",{"d":"M2.5 18L6.8 6L11 18M4.1 13.4H9.4"}],["circle",{"cx":"16.6","cy":"14.4","r":"3.4"}],["path",{"d":"M20 11V18"}]] };
+/** Majuscules · Uppercase */
+export const CaseUpper: AfroiconNode = { name: "CaseUpper", nodes: [["path",{"d":"M2.5 18L6.8 6L11 18M4.1 13.4H9.4"}],["path",{"d":"M14 6H17.4A2.8 2.8 0 0 1 17.4 11.6H14Z"}],["path",{"d":"M14 11.6H17.9A3.2 3.2 0 0 1 17.9 18H14Z"}]] };
+/** Titre de section · Heading */
+export const Heading: AfroiconNode = { name: "Heading", nodes: [["path",{"d":"M6.5 4.5V19.5M17.5 4.5V19.5M6.5 12H17.5"}]] };
+/** Titre de niveau 1 · Heading 1 */
+export const Heading1: AfroiconNode = { name: "Heading1", nodes: [["path",{"d":"M3.5 6V18M11 6V18M3.5 12H11"}],["path",{"d":"M15 8.6L18 6V18"}]] };
+/** Titre de niveau 2 · Heading 2 */
+export const Heading2: AfroiconNode = { name: "Heading2", nodes: [["path",{"d":"M3.5 6V18M11 6V18M3.5 12H11"}],["path",{"d":"M14.9 8.9A2.9 2.9 0 0 1 20.6 8.9C20.6 12 14.9 13.6 14.9 18H20.6"}]] };
+/** Titre de niveau 3 · Heading 3 */
+export const Heading3: AfroiconNode = { name: "Heading3", nodes: [["path",{"d":"M3.5 6V18M11 6V18M3.5 12H11"}],["path",{"d":"M15 6H20.3L17.2 10.6C19.2 10.6 20.6 12 20.6 14.2C20.6 16.4 19.1 18 17.4 18C16.4 18 15.6 17.6 14.9 17"}]] };
+/** Titre de niveau 4 · Heading 4 */
+export const Heading4: AfroiconNode = { name: "Heading4", nodes: [["path",{"d":"M3.5 6V18M11 6V18M3.5 12H11"}],["path",{"d":"M19 18V6L14.5 14.5H21"}]] };
+/** Titre de niveau 5 · Heading 5 */
+export const Heading5: AfroiconNode = { name: "Heading5", nodes: [["path",{"d":"M3.5 6V18M11 6V18M3.5 12H11"}],["path",{"d":"M20.3 6H15.6L15.1 11.3C15.7 10.9 16.5 10.6 17.4 10.6C19.2 10.6 20.6 12.1 20.6 14.3C20.6 16.5 19.2 18 17.4 18C16.4 18 15.6 17.6 14.9 17"}]] };
+/** Titre de niveau 6 · Heading 6 */
+export const Heading6: AfroiconNode = { name: "Heading6", nodes: [["path",{"d":"M3.5 6V18M11 6V18M3.5 12H11"}],["path",{"d":"M19.9 6.6C17.3 5.1 14.9 7.2 14.9 12.5V15.1"}],["circle",{"cx":"17.75","cy":"15.15","r":"2.85"}]] };
+/** Surligner le texte · Highlight text */
+export const Highlighter: AfroiconNode = { name: "Highlighter", nodes: [["path",{"d":"M7.2 12.2L14.2 5.2A3.2 3.2 0 0 1 18.8 9.8L11.8 16.8Z"}],["path",{"d":"M8.6 13.6L5.6 16.6L7.4 18.4L10.4 15.4"}],["path",{"d":"M3.5 21H20.5"}]] };
+/** Augmenter le retrait · Increase indent */
+export const Indent: AfroiconNode = { name: "Indent", nodes: [["path",{"d":"M3.5 5H20.5M11 9.7H20.5M11 14.3H20.5M3.5 19H20.5"}],["path",{"d":"M3.5 9.5L7 12L3.5 14.5"}]] };
+/** Italique · Italic */
+export const Italic: AfroiconNode = { name: "Italic", nodes: [["path",{"d":"M10 4.5H18M6 19.5H14M14.4 4.5L9.6 19.5"}]] };
+/** Lettrine · Drop cap */
+export const LetterText: AfroiconNode = { name: "LetterText", nodes: [["path",{"d":"M3 13.5L7 4.5L11 13.5M4.5 10.1H9.5"}],["path",{"d":"M14.5 6H20.5M14.5 12H20.5M3.5 18.5H20.5"}]] };
+/** Ligature typographique · Ligature */
+export const Ligature: AfroiconNode = { name: "Ligature", nodes: [["path",{"d":"M8 19.5V8.5A4 4 0 0 1 12 4.5H16.5V19.5"}],["path",{"d":"M5 10.5H11"}],["path",{"d":"M5.5 19.5H10.5M14 19.5H19"}]] };
+/** Liste cochée · Checked list */
+export const ListCheck: AfroiconNode = { name: "ListCheck", nodes: [["path",{"d":"M3.5 5.5H20.5M3.5 11.5H12M3.5 17.5H12"}],["path",{"d":"M14.5 15.5L16.6 17.6L20.5 13.5"}]] };
+/** Replier la liste · Collapse list */
+export const ListCollapse: AfroiconNode = { name: "ListCollapse", nodes: [["path",{"d":"M3.5 4.5L6 7L3.5 9.5M3.5 15L6 17.5L3.5 20"}],["path",{"d":"M10 7H20.5M10 12.2H20.5M10 17.5H20.5"}]] };
+/** Envoyer en fin de liste · Move to end */
+export const ListEnd: AfroiconNode = { name: "ListEnd", nodes: [["path",{"d":"M3.5 6.5H14.5M3.5 12H14.5M3.5 17.5H10"}],["path",{"d":"M19.5 6V15.5C19.5 16.6 18.6 17.5 17.5 17.5H14"}],["path",{"d":"M16 15.3L13.8 17.5L16 19.7"}]] };
+/** Filtrer la liste · Filter list */
+export const ListFilter: AfroiconNode = { name: "ListFilter", nodes: [["path",{"d":"M3.5 6.5H20.5M6.5 12H17.5M10 17.5H14"}]] };
+/** Retirer de la liste · Remove from list */
+export const ListMinus: AfroiconNode = { name: "ListMinus", nodes: [["path",{"d":"M3.5 5.5H20.5M3.5 11.5H12M3.5 17.5H12"}],["path",{"d":"M14.5 15.5H20.5"}]] };
+/** Liste de lecture · Playlist */
+export const ListMusic: AfroiconNode = { name: "ListMusic", nodes: [["path",{"d":"M3.5 5.5H15.5M3.5 11.5H12M3.5 17.5H12"}],["circle",{"cx":"17","cy":"17.5","r":"2"}],["path",{"d":"M19 17.5V5L21.5 6.2"}]] };
+/** Liste numérotée · Numbered list */
+export const ListOrdered: AfroiconNode = { name: "ListOrdered", nodes: [["path",{"d":"M3.8 5L5.6 3.8V9.2"}],["path",{"d":"M3.3 16.6A2.5 2.5 0 0 1 8.3 16.6C8.3 18.5 3.3 18.8 3.3 20.5H8.3"}],["path",{"d":"M11 6.5H20.5M11 12H20.5M11 17.5H20.5"}]] };
+/** Ajouter à la liste · Add to list */
+export const ListPlus: AfroiconNode = { name: "ListPlus", nodes: [["path",{"d":"M3.5 5.5H20.5M3.5 11.5H12M3.5 17.5H12"}],["path",{"d":"M17.5 12.5V18.5M14.5 15.5H20.5"}]] };
+/** Reprendre la liste · Restart list */
+export const ListRestart: AfroiconNode = { name: "ListRestart", nodes: [["path",{"d":"M3.5 5.5H20.5M3.5 11.5H8.5M3.5 17.5H8.5"}],["path",{"d":"M11.5 15.3A4.8 4.8 0 1 0 13.1 11.8L11.5 13.2"}],["path",{"d":"M11.5 10.5V13.2H14.2"}]] };
+/** Placer en tête de liste · Move to top */
+export const ListStart: AfroiconNode = { name: "ListStart", nodes: [["path",{"d":"M3.5 6.5H10M3.5 12H14.5M3.5 17.5H14.5"}],["path",{"d":"M19.5 18V8.5C19.5 7.4 18.6 6.5 17.5 6.5H14"}],["path",{"d":"M16 4.3L13.8 6.5L16 8.7"}]] };
+/** Liste de tâches à faire · To-do list */
+export const ListTodo: AfroiconNode = { name: "ListTodo", nodes: [["rect",{"x":"3","y":"3.5","width":"5.5","height":"5.5","rx":"1.2"}],["path",{"d":"M3.3 17.4L5.2 19.3L8.8 15.7"}],["path",{"d":"M12 6.25H20.5M12 12H20.5M12 17.5H20.5"}]] };
+/** Liste de vidéos · Video list */
+export const ListVideo: AfroiconNode = { name: "ListVideo", nodes: [["path",{"d":"M3.5 5.5H20.5M3.5 11.5H12M3.5 17.5H12"}],["path",{"d":"M15 13C15 12.3 15.7 11.9 16.3 12.3L19.9 14.6C20.4 14.9 20.4 15.6 19.9 15.9L16.3 18.2C15.7 18.6 15 18.2 15 17.5Z"}]] };
+/** Vider la liste · Clear list */
+export const ListX: AfroiconNode = { name: "ListX", nodes: [["path",{"d":"M3.5 5.5H20.5M3.5 11.5H12M3.5 17.5H12"}],["path",{"d":"M15 13L20 18M20 13L15 18"}]] };
+/** Réduire le retrait · Decrease indent */
+export const Outdent: AfroiconNode = { name: "Outdent", nodes: [["path",{"d":"M3.5 5H20.5M11 9.7H20.5M11 14.3H20.5M3.5 19H20.5"}],["path",{"d":"M7 9.5L3.5 12L7 14.5"}]] };
+/** Marque de paragraphe · Paragraph mark */
+export const Pilcrow: AfroiconNode = { name: "Pilcrow", nodes: [["path",{"d":"M12.5 4.5V19.5M16.5 4.5V19.5"}],["path",{"d":"M18.5 4.5H10A3.75 3.75 0 0 0 10 12H12.5"}]] };
+/** Paragraphe de droite à gauche · Right-to-left paragraph */
+export const PilcrowLeft: AfroiconNode = { name: "PilcrowLeft", nodes: [["path",{"d":"M13 3.5V13M16.5 3.5V13"}],["path",{"d":"M18.5 3.5H11A2.75 2.75 0 0 0 11 9H13"}],["path",{"d":"M20.5 18H3.5M6.5 15L3.5 18L6.5 21"}]] };
+/** Paragraphe de gauche à droite · Left-to-right paragraph */
+export const PilcrowRight: AfroiconNode = { name: "PilcrowRight", nodes: [["path",{"d":"M9.5 3.5V13M13 3.5V13"}],["path",{"d":"M15 3.5H7.5A2.75 2.75 0 0 0 7.5 9H9.5"}],["path",{"d":"M3.5 18H20.5M17.5 15L20.5 18L17.5 21"}]] };
+/** Afficher les marques de paragraphe · Show formatting marks */
+export const PilcrowSquare: AfroiconNode = { name: "PilcrowSquare", nodes: [["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"3"}],["path",{"d":"M12 7.5V16.5M15 7.5V16.5"}],["path",{"d":"M16.5 7.5H10.5A2.5 2.5 0 0 0 10.5 12.5H12"}]] };
+/** Effacer la mise en forme · Clear formatting */
+export const RemoveFormatting: AfroiconNode = { name: "RemoveFormatting", nodes: [["path",{"d":"M4 6.5V4.5H18V6.5"}],["path",{"d":"M11 4.5V19.5M8.5 19.5H13"}],["path",{"d":"M15 14.5L20.5 20M20.5 14.5L15 20"}]] };
+/** Correction orthographique · Spell check */
+export const SpellCheck: AfroiconNode = { name: "SpellCheck", nodes: [["path",{"d":"M2.5 12.5L6.5 3L10.5 12.5M4 8.9H9"}],["path",{"d":"M13.5 3V12.5"}],["circle",{"cx":"16.4","cy":"9.6","r":"2.9"}],["path",{"d":"M11 17.5L13.8 20.3L19.5 14.6"}]] };
+/** Faute d'orthographe soulignée · Spelling error */
+export const SpellCheck2: AfroiconNode = { name: "SpellCheck2", nodes: [["path",{"d":"M6 15L12 3.5L18 15M8.3 10.6H15.7"}],["path",{"d":"M3.5 19.5C4.6 19.5 5.2 18 6.3 18S8 19.5 9.1 19.5 10.8 18 11.9 18 13.6 19.5 14.7 19.5 16.4 18 17.5 18 19.2 19.5 20.3 19.5"}]] };
+/** Barrer le texte · Strikethrough */
+export const Strikethrough: AfroiconNode = { name: "Strikethrough", nodes: [["path",{"d":"M16.5 6.6C15.7 5.2 14.1 4.5 12 4.5C9.2 4.5 7.5 5.9 7.5 7.8C7.5 9.5 8.7 10.5 11.2 11.3"}],["path",{"d":"M15.8 14.6C16.3 15.1 16.5 15.7 16.5 16.4C16.5 18.3 14.6 19.5 12 19.5C9.7 19.5 8.1 18.7 7.3 17.4"}],["path",{"d":"M4 12H20"}]] };
+/** Indice · Subscript */
+export const Subscript: AfroiconNode = { name: "Subscript", nodes: [["path",{"d":"M3.5 5L12 15M12 5L3.5 15"}],["path",{"d":"M15.5 16.6A2.5 2.5 0 0 1 20.5 16.6C20.5 18.5 15.5 18.8 15.5 20.5H20.5"}]] };
+/** Exposant · Superscript */
+export const Superscript: AfroiconNode = { name: "Superscript", nodes: [["path",{"d":"M3.5 9L12 19M12 9L3.5 19"}],["path",{"d":"M15.5 5.6A2.5 2.5 0 0 1 20.5 5.6C20.5 7.5 15.5 7.8 15.5 9.5H20.5"}]] };
+/** Paragraphe de texte · Text block */
+export const Text: AfroiconNode = { name: "Text", nodes: [["path",{"d":"M4 6.5H20M4 12H20M4 17.5H14"}]] };
+/** Curseur de texte · Text cursor */
+export const TextCursor: AfroiconNode = { name: "TextCursor", nodes: [["path",{"d":"M8.5 4.5H9.5C10.9 4.5 12 5.6 12 7V17C12 18.4 10.9 19.5 9.5 19.5H8.5"}],["path",{"d":"M15.5 4.5H14.5C13.1 4.5 12 5.6 12 7M15.5 19.5H14.5C13.1 19.5 12 18.4 12 17"}]] };
+/** Champ de saisie · Input field */
+export const TextCursorInput: AfroiconNode = { name: "TextCursorInput", nodes: [["path",{"d":"M6.5 8H4.5C3.4 8 2.5 8.9 2.5 10V14C2.5 15.1 3.4 16 4.5 16H6.5"}],["path",{"d":"M11.5 8H19.5C20.6 8 21.5 8.9 21.5 10V14C21.5 15.1 20.6 16 19.5 16H11.5"}],["path",{"d":"M7 4.5C8.1 4.5 9 5.4 9 6.5V17.5C9 18.6 8.1 19.5 7 19.5M11 4.5C9.9 4.5 9 5.4 9 6.5M11 19.5C9.9 19.5 9 18.6 9 17.5"}]] };
+/** Bloc de citation · Block quote */
+export const TextQuote: AfroiconNode = { name: "TextQuote", nodes: [["path",{"d":"M4 5H20M4.5 10V19M9 10H20M9 14.5H20M9 19H16"}]] };
+/** Rechercher dans le texte · Search text */
+export const TextSearch: AfroiconNode = { name: "TextSearch", nodes: [["path",{"d":"M3.5 5.5H20.5M3.5 11.5H10M3.5 17.5H9"}],["circle",{"cx":"15.8","cy":"15","r":"3.5"}],["path",{"d":"M18.4 17.6L20.8 20"}]] };
+/** Sélectionner le texte · Select text */
+export const TextSelect: AfroiconNode = { name: "TextSelect", nodes: [["path",{"d":"M3.5 7V5.5C3.5 4.4 4.4 3.5 5.5 3.5H7M17 3.5H18.5C19.6 3.5 20.5 4.4 20.5 5.5V7M20.5 17V18.5C20.5 19.6 19.6 20.5 18.5 20.5H17M7 20.5H5.5C4.4 20.5 3.5 19.6 3.5 18.5V17"}],["path",{"d":"M10.5 3.5H13.5M10.5 20.5H13.5M3.5 10.5V13.5M20.5 10.5V13.5"}],["path",{"d":"M8 8.5H16M8 12H16M8 15.5H13.5"}]] };
+/** Police de caractères · Font */
+export const Type: AfroiconNode = { name: "Type", nodes: [["path",{"d":"M5 7V5.5C5 4.9 5.4 4.5 6 4.5H18C18.6 4.5 19 4.9 19 5.5V7"}],["path",{"d":"M12 4.5V19.5M9.5 19.5H14.5"}]] };
+/** Texte en contour · Outlined text */
+export const TypeOutline: AfroiconNode = { name: "TypeOutline", nodes: [["path",{"d":"M4.5 6C4.5 5.2 5.2 4.5 6 4.5H18C18.8 4.5 19.5 5.2 19.5 6V7.5C19.5 8.3 18.8 9 18 9H14.5V18C14.5 18.8 13.8 19.5 13 19.5H11C10.2 19.5 9.5 18.8 9.5 18V9H6C5.2 9 4.5 8.3 4.5 7.5Z"}]] };
+/** Retour à la ligne automatique · Wrap text */
+export const WrapText: AfroiconNode = { name: "WrapText", nodes: [["path",{"d":"M3.5 6H20.5M3.5 18.5H9"}],["path",{"d":"M3.5 12H16.75A3.25 3.25 0 0 1 16.75 18.5H13"}],["path",{"d":"M15.3 16.2L13 18.5L15.3 20.8"}]] };
+/** Trois colonnes · Three columns */
+export const Columns3: AfroiconNode = { name: "Columns3", nodes: [["rect",{"x":"3.5","y":"3.5","width":"17","height":"17","rx":"2.5"}],["path",{"d":"M9.2 3.5V20.5M14.8 3.5V20.5"}]] };
+/** Quatre colonnes · Four columns */
+export const Columns4: AfroiconNode = { name: "Columns4", nodes: [["rect",{"x":"3.5","y":"3.5","width":"17","height":"17","rx":"2.5"}],["path",{"d":"M7.8 3.5V20.5M12 3.5V20.5M16.2 3.5V20.5"}]] };
+/** Quadrillage · Grid */
+export const Grid: AfroiconNode = { name: "Grid", nodes: [["rect",{"x":"3.5","y":"3.5","width":"17","height":"17","rx":"2.5"}],["path",{"d":"M9.2 3.5V20.5M14.8 3.5V20.5M3.5 9.2H20.5M3.5 14.8H20.5"}]] };
+/** Grille de quatre cases · Four-cell grid */
+export const Grid2X2: AfroiconNode = { name: "Grid2X2", nodes: [["rect",{"x":"3.5","y":"3.5","width":"17","height":"17","rx":"2.5"}],["path",{"d":"M12 3.5V20.5M3.5 12H20.5"}]] };
+/** Case de grille validée · Grid cell checked */
+export const Grid2x2Check: AfroiconNode = { name: "Grid2x2Check", nodes: [["path",{"d":"M12 20.5H6C4.6 20.5 3.5 19.4 3.5 18V6C3.5 4.6 4.6 3.5 6 3.5H18C19.4 3.5 20.5 4.6 20.5 6V12"}],["path",{"d":"M12 3.5V20.5M3.5 12H20.5"}],["path",{"d":"M14.5 17L16.5 19L20 15"}]] };
+/** Ajouter une case de grille · Add grid cell */
+export const Grid2x2Plus: AfroiconNode = { name: "Grid2x2Plus", nodes: [["path",{"d":"M12 20.5H6C4.6 20.5 3.5 19.4 3.5 18V6C3.5 4.6 4.6 3.5 6 3.5H18C19.4 3.5 20.5 4.6 20.5 6V12"}],["path",{"d":"M12 3.5V20.5M3.5 12H20.5"}],["path",{"d":"M17.2 14V20.4M14 17.2H20.4"}]] };
+/** Retirer une case de grille · Remove grid cell */
+export const Grid2x2X: AfroiconNode = { name: "Grid2x2X", nodes: [["path",{"d":"M12 20.5H6C4.6 20.5 3.5 19.4 3.5 18V6C3.5 4.6 4.6 3.5 6 3.5H18C19.4 3.5 20.5 4.6 20.5 6V12"}],["path",{"d":"M12 3.5V20.5M3.5 12H20.5"}],["path",{"d":"M14.6 14.6L19.6 19.6M19.6 14.6L14.6 19.6"}]] };
+/** Mise en page · Layout */
+export const Layout: AfroiconNode = { name: "Layout", nodes: [["rect",{"x":"3.5","y":"3.5","width":"17","height":"17","rx":"2.5"}],["path",{"d":"M3.5 9H20.5M9 9V20.5"}]] };
+/** Liste à vignettes · Thumbnail list */
+export const LayoutList: AfroiconNode = { name: "LayoutList", nodes: [["rect",{"x":"3.5","y":"4","width":"6.5","height":"6.5","rx":"1.5"}],["rect",{"x":"3.5","y":"13.5","width":"6.5","height":"6.5","rx":"1.5"}],["path",{"d":"M13.5 5.5H20.5M13.5 9H18M13.5 15H20.5M13.5 18.5H18"}]] };
+/** Disposition à volet gauche · Left panel layout */
+export const LayoutPanelLeft: AfroiconNode = { name: "LayoutPanelLeft", nodes: [["rect",{"x":"3.5","y":"3.5","width":"7","height":"17","rx":"1.5"}],["rect",{"x":"13.5","y":"3.5","width":"7","height":"7","rx":"1.5"}],["rect",{"x":"13.5","y":"13.5","width":"7","height":"7","rx":"1.5"}]] };
+/** Disposition à bandeau haut · Top banner layout */
+export const LayoutPanelTop: AfroiconNode = { name: "LayoutPanelTop", nodes: [["rect",{"x":"3.5","y":"3.5","width":"17","height":"7","rx":"1.5"}],["rect",{"x":"3.5","y":"13.5","width":"7","height":"7","rx":"1.5"}],["rect",{"x":"13.5","y":"13.5","width":"7","height":"7","rx":"1.5"}]] };
+/** Modèle de page · Page template */
+export const LayoutTemplate: AfroiconNode = { name: "LayoutTemplate", nodes: [["rect",{"x":"3.5","y":"3.5","width":"17","height":"6.5","rx":"1.5"}],["rect",{"x":"3.5","y":"13","width":"9.5","height":"7.5","rx":"1.5"}],["rect",{"x":"16","y":"13","width":"4.5","height":"7.5","rx":"1.5"}]] };
+/** Panneau du bas · Bottom panel */
+export const PanelBottom: AfroiconNode = { name: "PanelBottom", nodes: [["rect",{"x":"3","y":"4","width":"18","height":"16","rx":"2.5"}],["path",{"d":"M3 15H21"}]] };
+/** Replier le panneau du bas · Collapse bottom panel */
+export const PanelBottomClose: AfroiconNode = { name: "PanelBottomClose", nodes: [["rect",{"x":"3","y":"4","width":"18","height":"16","rx":"2.5"}],["path",{"d":"M3 15H21"}],["path",{"d":"M9.5 8.3L12 10.8L14.5 8.3"}]] };
+/** Emplacement du panneau du bas · Bottom panel slot */
+export const PanelBottomDashed: AfroiconNode = { name: "PanelBottomDashed", nodes: [["rect",{"x":"3","y":"4","width":"18","height":"16","rx":"2.5"}],["path",{"d":"M6.2 15H7.8M11.2 15H12.8M16.2 15H17.8"}]] };
+/** Déplier le panneau du bas · Expand bottom panel */
+export const PanelBottomOpen: AfroiconNode = { name: "PanelBottomOpen", nodes: [["rect",{"x":"3","y":"4","width":"18","height":"16","rx":"2.5"}],["path",{"d":"M3 15H21"}],["path",{"d":"M9.5 10.8L12 8.3L14.5 10.8"}]] };
+/** Emplacement du volet gauche · Left panel slot */
+export const PanelLeftDashed: AfroiconNode = { name: "PanelLeftDashed", nodes: [["rect",{"x":"3","y":"4","width":"18","height":"16","rx":"2.5"}],["path",{"d":"M9 7.2V8.8M9 11.2V12.8M9 15.2V16.8"}]] };
+/** Replier le volet droit · Collapse right panel */
+export const PanelRightClose: AfroiconNode = { name: "PanelRightClose", nodes: [["rect",{"x":"3","y":"4","width":"18","height":"16","rx":"2.5"}],["path",{"d":"M15 4V20"}],["path",{"d":"M8.5 9.5L11 12L8.5 14.5"}]] };
+/** Emplacement du volet droit · Right panel slot */
+export const PanelRightDashed: AfroiconNode = { name: "PanelRightDashed", nodes: [["rect",{"x":"3","y":"4","width":"18","height":"16","rx":"2.5"}],["path",{"d":"M15 7.2V8.8M15 11.2V12.8M15 15.2V16.8"}]] };
+/** Déplier le volet droit · Expand right panel */
+export const PanelRightOpen: AfroiconNode = { name: "PanelRightOpen", nodes: [["rect",{"x":"3","y":"4","width":"18","height":"16","rx":"2.5"}],["path",{"d":"M15 4V20"}],["path",{"d":"M11 9.5L8.5 12L11 14.5"}]] };
+/** Panneau du haut · Top panel */
+export const PanelTop: AfroiconNode = { name: "PanelTop", nodes: [["rect",{"x":"3","y":"4","width":"18","height":"16","rx":"2.5"}],["path",{"d":"M3 9H21"}]] };
+/** Replier le panneau du haut · Collapse top panel */
+export const PanelTopClose: AfroiconNode = { name: "PanelTopClose", nodes: [["rect",{"x":"3","y":"4","width":"18","height":"16","rx":"2.5"}],["path",{"d":"M3 9H21"}],["path",{"d":"M9.5 15.7L12 13.2L14.5 15.7"}]] };
+/** Emplacement du panneau du haut · Top panel slot */
+export const PanelTopDashed: AfroiconNode = { name: "PanelTopDashed", nodes: [["rect",{"x":"3","y":"4","width":"18","height":"16","rx":"2.5"}],["path",{"d":"M6.2 9H7.8M11.2 9H12.8M16.2 9H17.8"}]] };
+/** Déplier le panneau du haut · Expand top panel */
+export const PanelTopOpen: AfroiconNode = { name: "PanelTopOpen", nodes: [["rect",{"x":"3","y":"4","width":"18","height":"16","rx":"2.5"}],["path",{"d":"M3 9H21"}],["path",{"d":"M9.5 13.2L12 15.7L14.5 13.2"}]] };
+/** Volet gauche et panneau du bas · Left and bottom panels */
+export const PanelsLeftBottom: AfroiconNode = { name: "PanelsLeftBottom", nodes: [["rect",{"x":"3","y":"4","width":"18","height":"16","rx":"2.5"}],["path",{"d":"M9 4V20M9 15H21"}]] };
+/** Volet droit et panneau du bas · Right and bottom panels */
+export const PanelsRightBottom: AfroiconNode = { name: "PanelsRightBottom", nodes: [["rect",{"x":"3","y":"4","width":"18","height":"16","rx":"2.5"}],["path",{"d":"M15 4V20M3 15H15"}]] };
+/** Deux lignes · Two rows */
+export const Rows: AfroiconNode = { name: "Rows", nodes: [["rect",{"x":"3.5","y":"3.5","width":"17","height":"17","rx":"2.5"}],["path",{"d":"M3.5 12H20.5"}]] };
+/** Trois lignes · Three rows */
+export const Rows3: AfroiconNode = { name: "Rows3", nodes: [["rect",{"x":"3.5","y":"3.5","width":"17","height":"17","rx":"2.5"}],["path",{"d":"M3.5 9.2H20.5M3.5 14.8H20.5"}]] };
+/** Quatre lignes · Four rows */
+export const Rows4: AfroiconNode = { name: "Rows4", nodes: [["rect",{"x":"3.5","y":"3.5","width":"17","height":"17","rx":"2.5"}],["path",{"d":"M3.5 7.8H20.5M3.5 12H20.5M3.5 16.2H20.5"}]] };
+/** Barre latérale de navigation · Navigation sidebar */
+export const Sidebar: AfroiconNode = { name: "Sidebar", nodes: [["rect",{"x":"3","y":"4","width":"18","height":"16","rx":"2.5"}],["path",{"d":"M9 4V20"}],["path",{"d":"M5.6 8H6.4M5.6 11.5H6.4"}]] };
+/** Tableau à en-tête · Table with header */
+export const Table: AfroiconNode = { name: "Table", nodes: [["rect",{"x":"3.5","y":"3.5","width":"17","height":"17","rx":"2.5"}],["path",{"d":"M3.5 9H20.5M3.5 14.8H20.5M9.2 9V20.5M14.8 9V20.5"}]] };
+/** Fusionner des cellules · Merge cells */
+export const TableCellsMerge: AfroiconNode = { name: "TableCellsMerge", nodes: [["rect",{"x":"3.5","y":"3.5","width":"17","height":"17","rx":"2.5"}],["path",{"d":"M3.5 9H20.5M3.5 15H20.5M12 3.5V9M12 15V20.5"}]] };
+/** Scinder une cellule · Split cell */
+export const TableCellsSplit: AfroiconNode = { name: "TableCellsSplit", nodes: [["rect",{"x":"3.5","y":"3.5","width":"17","height":"17","rx":"2.5"}],["path",{"d":"M3.5 9H20.5M3.5 15H20.5M12 9V15"}]] };
+/** Scinder une colonne · Split column */
+export const TableColumnsSplit: AfroiconNode = { name: "TableColumnsSplit", nodes: [["rect",{"x":"3.5","y":"3.5","width":"17","height":"17","rx":"2.5"}],["path",{"d":"M8.7 3.5V20.5M15.3 3.5V20.5"}],["path",{"d":"M12 6.5V7.5M12 11.5V12.5M12 16.5V17.5"}]] };
+/** Table des matières · Table of contents */
+export const TableOfContents: AfroiconNode = { name: "TableOfContents", nodes: [["path",{"d":"M4 6H15M4 12H15M4 18H15"}],["circle",{"cx":"19.5","cy":"6","r":"1.1","fill":"currentColor","stroke":"none"}],["circle",{"cx":"19.5","cy":"12","r":"1.1","fill":"currentColor","stroke":"none"}],["circle",{"cx":"19.5","cy":"18","r":"1.1","fill":"currentColor","stroke":"none"}]] };
+/** Propriétés du tableau · Table properties */
+export const TableProperties: AfroiconNode = { name: "TableProperties", nodes: [["rect",{"x":"3.5","y":"3.5","width":"17","height":"17","rx":"2.5"}],["path",{"d":"M3.5 9H20.5M3.5 15H20.5M15 3.5V20.5"}]] };
+/** Scinder une ligne · Split row */
+export const TableRowsSplit: AfroiconNode = { name: "TableRowsSplit", nodes: [["rect",{"x":"3.5","y":"3.5","width":"17","height":"17","rx":"2.5"}],["path",{"d":"M3.5 8.7H20.5M3.5 15.3H20.5"}],["path",{"d":"M6.5 12H7.5M11.5 12H12.5M16.5 12H17.5"}]] };
+/** Mention (arobase) · Mention */
+export const AtSign: AfroiconNode = { name: "AtSign", nodes: [["circle",{"cx":"12","cy":"12","r":"3.5"}],["path",{"d":"M15.5 8.5V13.2C15.5 14.6 16.4 15.5 17.7 15.5C19.3 15.5 20.5 14 20.5 12A8.5 8.5 0 1 0 16.8 19"}]] };
+/** Notification non lue · Unread notification */
+export const BellDot: AfroiconNode = { name: "BellDot", nodes: [["path",{"d":"M14.4 5.5A6 6 0 0 0 6 11V16.5L4.5 18H19.5L18 16.5V11.5"}],["path",{"d":"M10 20.5C10.4 21.2 11.1 21.5 12 21.5S13.6 21.2 14 20.5"}],["path",{"d":"M12 3V5"}],["circle",{"cx":"18.6","cy":"5.6","r":"2.4","fill":"currentColor","stroke":"none"}]] };
+/** Sonnerie électrique · Electric bell */
+export const BellElectric: AfroiconNode = { name: "BellElectric", nodes: [["circle",{"cx":"12","cy":"9.5","r":"6.5"}],["circle",{"cx":"12","cy":"9.5","r":"1.5","fill":"currentColor","stroke":"none"}],["rect",{"x":"8","y":"18","width":"8","height":"3.5","rx":"1.2"}],["path",{"d":"M13.5 18L16.2 15.2"}],["circle",{"cx":"16.8","cy":"14.6","r":"1.3","fill":"currentColor","stroke":"none"}]] };
+/** Retirer une notification · Remove notification */
+export const BellMinus: AfroiconNode = { name: "BellMinus", nodes: [["path",{"d":"M6 16.5V11A6 6 0 0 1 18 11V16.5L19.5 18H4.5Z"}],["path",{"d":"M10 20.5C10.4 21.2 11.1 21.5 12 21.5S13.6 21.2 14 20.5"}],["path",{"d":"M12 3V5"}],["path",{"d":"M9.5 11.5H14.5"}]] };
+/** Ajouter une notification · Add notification */
+export const BellPlus: AfroiconNode = { name: "BellPlus", nodes: [["path",{"d":"M6 16.5V11A6 6 0 0 1 18 11V16.5L19.5 18H4.5Z"}],["path",{"d":"M10 20.5C10.4 21.2 11.1 21.5 12 21.5S13.6 21.2 14 20.5"}],["path",{"d":"M12 3V5"}],["path",{"d":"M12 9V14M9.5 11.5H14.5"}]] };
+/** Fiche contact · Contact card */
+export const Contact: AfroiconNode = { name: "Contact", nodes: [["rect",{"x":"3.5","y":"5","width":"17","height":"15","rx":"2.5"}],["path",{"d":"M8 3V5M16 3V5"}],["circle",{"cx":"12","cy":"10.6","r":"2.3"}],["path",{"d":"M7.8 17C8.3 15.4 10 14.3 12 14.3S15.7 15.4 16.2 17"}]] };
+/** Carnet de contacts · Address book */
+export const Contact2: AfroiconNode = { name: "Contact2", nodes: [["rect",{"x":"3.5","y":"5","width":"17","height":"15","rx":"2.5"}],["path",{"d":"M8 3V5M16 3V5"}],["circle",{"cx":"12","cy":"10.2","r":"2.6"}],["path",{"d":"M6.8 20A5.2 5.2 0 0 1 17.2 20"}]] };
+/** Retirer un e-mail · Remove email */
+export const MailMinus: AfroiconNode = { name: "MailMinus", nodes: [["path",{"d":"M20.5 12V7.5C20.5 6.1 19.4 5 18 5H6C4.6 5 3.5 6.1 3.5 7.5V16.5C3.5 17.9 4.6 19 6 19H12.5"}],["path",{"d":"M4 7.5L12 13L20 7.5"}],["path",{"d":"M15 17.5H21"}]] };
+/** Nouvel e-mail · New email */
+export const MailPlus: AfroiconNode = { name: "MailPlus", nodes: [["path",{"d":"M20.5 12V7.5C20.5 6.1 19.4 5 18 5H6C4.6 5 3.5 6.1 3.5 7.5V16.5C3.5 17.9 4.6 19 6 19H12.5"}],["path",{"d":"M4 7.5L12 13L20 7.5"}],["path",{"d":"M18 14.5V20.5M15 17.5H21"}]] };
+/** Question par e-mail · Email question */
+export const MailQuestion: AfroiconNode = { name: "MailQuestion", nodes: [["path",{"d":"M20.5 12V7.5C20.5 6.1 19.4 5 18 5H6C4.6 5 3.5 6.1 3.5 7.5V16.5C3.5 17.9 4.6 19 6 19H12.5"}],["path",{"d":"M4 7.5L12 13L20 7.5"}],["path",{"d":"M16.1 15.3A2 2 0 0 1 19.9 15.8C19.9 16.9 18 17.2 18 18.3"}],["circle",{"cx":"18","cy":"20.6","r":"0.95","fill":"currentColor","stroke":"none"}]] };
+/** Rechercher un e-mail · Search email */
+export const MailSearch: AfroiconNode = { name: "MailSearch", nodes: [["path",{"d":"M20.5 12V7.5C20.5 6.1 19.4 5 18 5H6C4.6 5 3.5 6.1 3.5 7.5V16.5C3.5 17.9 4.6 19 6 19H12.5"}],["path",{"d":"M4 7.5L12 13L20 7.5"}],["circle",{"cx":"17","cy":"16.5","r":"2.5"}],["path",{"d":"M18.8 18.3L20.8 20.3"}]] };
+/** E-mail rejeté · Email rejected */
+export const MailX: AfroiconNode = { name: "MailX", nodes: [["path",{"d":"M20.5 12V7.5C20.5 6.1 19.4 5 18 5H6C4.6 5 3.5 6.1 3.5 7.5V16.5C3.5 17.9 4.6 19 6 19H12.5"}],["path",{"d":"M4 7.5L12 13L20 7.5"}],["path",{"d":"M15.5 15L20.5 20M20.5 15L15.5 20"}]] };
+/** Boîte aux lettres · Mailbox */
+export const Mailbox: AfroiconNode = { name: "Mailbox", nodes: [["path",{"d":"M7.5 6.5H16.5C18.7 6.5 20.5 8.3 20.5 10.5V17.5H3.5V10.5C3.5 8.3 5.3 6.5 7.5 6.5S11.5 8.3 11.5 10.5V17.5"}],["path",{"d":"M15 14.5V9.5L18.3 11L15 12.5"}],["path",{"d":"M16 17.5V21.5"}]] };
+/** Plusieurs e-mails · Emails */
+export const Mails: AfroiconNode = { name: "Mails", nodes: [["rect",{"x":"6","y":"8","width":"15","height":"12","rx":"2.5"}],["path",{"d":"M6.5 10L13.5 15L20.5 10"}],["path",{"d":"M6 16.5H5.5C4.1 16.5 3 15.4 3 14V7C3 5.6 4.1 4.5 5.5 4.5H15.5C16.9 4.5 18 5.6 18 7V8"}]] };
+/** Annonces coupées · Announcements off */
+export const MegaphoneOff: AfroiconNode = { name: "MegaphoneOff", nodes: [["path",{"d":"M4.5 9H7.5L16.5 4.5V18.5L7.5 14H4.5C3.7 14 3 13.3 3 12.5V10.5C3 9.7 3.7 9 4.5 9Z"}],["path",{"d":"M7 14L8.3 19.8C8.4 20.2 8.7 20.5 9.1 20.5H10.2C10.7 20.5 11.1 20 11 19.5L10 15.2"}],["path",{"d":"M19.5 9A3.5 3.5 0 0 1 19.5 14"}],["path",{"d":"M4 4L20 20"}]] };
+/** Discussion technique (code) · Code chat */
+export const MessageCircleCode: AfroiconNode = { name: "MessageCircleCode", nodes: [["path",{"d":"M20.5 11.8A8.5 8.5 0 0 1 8.2 19.4L3.5 20.5L4.7 16.2A8.5 8.5 0 1 1 20.5 11.8Z"}],["path",{"d":"M9.5 9L7 11.8L9.5 14.6M14.5 9L17 11.8L14.5 14.6"}]] };
+/** Brouillon de discussion · Chat draft */
+export const MessageCircleDashed: AfroiconNode = { name: "MessageCircleDashed", nodes: [["path",{"d":"M3.9 14.4A8.5 8.5 0 0 1 3.8 9.8"}],["path",{"d":"M4.4 7.9A8.5 8.5 0 0 1 7.6 4.5"}],["path",{"d":"M9.4 3.7A8.5 8.5 0 0 1 14 3.5"}],["path",{"d":"M15.8 4.2A8.5 8.5 0 0 1 19.3 7.4"}],["path",{"d":"M20.1 9.1A8.5 8.5 0 0 1 20.3 13.8"}],["path",{"d":"M19.6 15.6A8.5 8.5 0 0 1 16.4 19.1"}],["path",{"d":"M14.7 19.9A8.5 8.5 0 0 1 10 20.1"}],["path",{"d":"M8.2 19.4L3.5 20.5L4.7 16.2"}]] };
+/** Discussion appréciée · Loved chat */
+export const MessageCircleHeart: AfroiconNode = { name: "MessageCircleHeart", nodes: [["path",{"d":"M20.5 11.8A8.5 8.5 0 0 1 8.2 19.4L3.5 20.5L4.7 16.2A8.5 8.5 0 1 1 20.5 11.8Z"}],["path",{"d":"M12 15.5C12 15.5 8 13.2 8 10.4C8 9.1 9 8.1 10.2 8.1C11 8.1 11.6 8.5 12 9.2C12.4 8.5 13 8.1 13.8 8.1C15 8.1 16 9.1 16 10.4C16 13.2 12 15.5 12 15.5Z"}]] };
+/** Saisie en cours (discussion) · Typing in chat */
+export const MessageCircleMore: AfroiconNode = { name: "MessageCircleMore", nodes: [["path",{"d":"M20.5 11.8A8.5 8.5 0 0 1 8.2 19.4L3.5 20.5L4.7 16.2A8.5 8.5 0 1 1 20.5 11.8Z"}],["circle",{"cx":"8","cy":"11.8","r":"1.1","fill":"currentColor","stroke":"none"}],["circle",{"cx":"12","cy":"11.8","r":"1.1","fill":"currentColor","stroke":"none"}],["circle",{"cx":"16","cy":"11.8","r":"1.1","fill":"currentColor","stroke":"none"}]] };
+/** Discussion désactivée · Chat off */
+export const MessageCircleOff: AfroiconNode = { name: "MessageCircleOff", nodes: [["path",{"d":"M20.5 11.8A8.5 8.5 0 0 1 8.2 19.4L3.5 20.5L4.7 16.2A8.5 8.5 0 1 1 20.5 11.8Z"}],["path",{"d":"M4 4L20 20"}]] };
+/** Nouvelle discussion · New chat */
+export const MessageCirclePlus: AfroiconNode = { name: "MessageCirclePlus", nodes: [["path",{"d":"M20.5 11.8A8.5 8.5 0 0 1 8.2 19.4L3.5 20.5L4.7 16.2A8.5 8.5 0 1 1 20.5 11.8Z"}],["path",{"d":"M12 8.3V15.3M8.5 11.8H15.5"}]] };
+/** Question en discussion · Chat question */
+export const MessageCircleQuestion: AfroiconNode = { name: "MessageCircleQuestion", nodes: [["path",{"d":"M20.5 11.8A8.5 8.5 0 0 1 8.2 19.4L3.5 20.5L4.7 16.2A8.5 8.5 0 1 1 20.5 11.8Z"}],["path",{"d":"M9.8 9.6A2.3 2.3 0 0 1 14.3 10.2C14.3 11.6 12 12 12 13.4"}],["circle",{"cx":"12","cy":"15.9","r":"0.95","fill":"currentColor","stroke":"none"}]] };
+/** Répondre dans la discussion · Reply in chat */
+export const MessageCircleReply: AfroiconNode = { name: "MessageCircleReply", nodes: [["path",{"d":"M20.5 11.8A8.5 8.5 0 0 1 8.2 19.4L3.5 20.5L4.7 16.2A8.5 8.5 0 1 1 20.5 11.8Z"}],["path",{"d":"M10.5 8.6L7.6 11.5L10.5 14.4"}],["path",{"d":"M7.8 11.5H13.5A3 3 0 0 1 16.5 14.5V15"}]] };
+/** Discussion signalée · Flagged chat */
+export const MessageCircleWarning: AfroiconNode = { name: "MessageCircleWarning", nodes: [["path",{"d":"M20.5 11.8A8.5 8.5 0 0 1 8.2 19.4L3.5 20.5L4.7 16.2A8.5 8.5 0 1 1 20.5 11.8Z"}],["path",{"d":"M12 7.8V12.6"}],["circle",{"cx":"12","cy":"15.6","r":"0.95","fill":"currentColor","stroke":"none"}]] };
+/** Fermer la discussion · Close chat */
+export const MessageCircleX: AfroiconNode = { name: "MessageCircleX", nodes: [["path",{"d":"M20.5 11.8A8.5 8.5 0 0 1 8.2 19.4L3.5 20.5L4.7 16.2A8.5 8.5 0 1 1 20.5 11.8Z"}],["path",{"d":"M9.5 9.3L14.5 14.3M14.5 9.3L9.5 14.3"}]] };
+/** Message de code · Code message */
+export const MessageSquareCode: AfroiconNode = { name: "MessageSquareCode", nodes: [["path",{"d":"M20.5 15C20.5 16.1 19.6 17 18.5 17H8L3.5 20.5V5.5C3.5 4.4 4.4 3.5 5.5 3.5H18.5C19.6 3.5 20.5 4.4 20.5 5.5Z"}],["path",{"d":"M9.5 7.5L7 10.25L9.5 13M14.5 7.5L17 10.25L14.5 13"}]] };
+/** Brouillon de message · Message draft */
+export const MessageSquareDashed: AfroiconNode = { name: "MessageSquareDashed", nodes: [["path",{"d":"M3.5 7.5V5.5C3.5 4.4 4.4 3.5 5.5 3.5H7.5"}],["path",{"d":"M10.5 3.5H13.5"}],["path",{"d":"M16.5 3.5H18.5C19.6 3.5 20.5 4.4 20.5 5.5V7.5"}],["path",{"d":"M20.5 9.8V11.7"}],["path",{"d":"M20.5 14V15C20.5 16.1 19.6 17 18.5 17H17.5"}],["path",{"d":"M14.8 17H11.8"}],["path",{"d":"M9 17H8L3.5 20.5V18.5"}],["path",{"d":"M3.5 15.5V10.5"}]] };
+/** Modifications du message · Message changes */
+export const MessageSquareDiff: AfroiconNode = { name: "MessageSquareDiff", nodes: [["path",{"d":"M20.5 15C20.5 16.1 19.6 17 18.5 17H8L3.5 20.5V5.5C3.5 4.4 4.4 3.5 5.5 3.5H18.5C19.6 3.5 20.5 4.4 20.5 5.5Z"}],["path",{"d":"M12 5.8V9.8M10 7.8H14"}],["path",{"d":"M10 12.8H14"}]] };
+/** Message non lu · Unread message */
+export const MessageSquareDot: AfroiconNode = { name: "MessageSquareDot", nodes: [["path",{"d":"M20.5 10V15C20.5 16.1 19.6 17 18.5 17H8L3.5 20.5V5.5C3.5 4.4 4.4 3.5 5.5 3.5H14"}],["circle",{"cx":"18.5","cy":"5.5","r":"2.6","fill":"currentColor","stroke":"none"}]] };
+/** Message apprécié · Loved message */
+export const MessageSquareHeart: AfroiconNode = { name: "MessageSquareHeart", nodes: [["path",{"d":"M20.5 15C20.5 16.1 19.6 17 18.5 17H8L3.5 20.5V5.5C3.5 4.4 4.4 3.5 5.5 3.5H18.5C19.6 3.5 20.5 4.4 20.5 5.5Z"}],["path",{"d":"M12 14C12 14 8 11.7 8 8.9C8 7.6 9 6.6 10.2 6.6C11 6.6 11.6 7 12 7.7C12.4 7 13 6.6 13.8 6.6C15 6.6 16 7.6 16 8.9C16 11.7 12 14 12 14Z"}]] };
+/** Message privé · Private message */
+export const MessageSquareLock: AfroiconNode = { name: "MessageSquareLock", nodes: [["path",{"d":"M20.5 15C20.5 16.1 19.6 17 18.5 17H8L3.5 20.5V5.5C3.5 4.4 4.4 3.5 5.5 3.5H18.5C19.6 3.5 20.5 4.4 20.5 5.5Z"}],["rect",{"x":"8.5","y":"9.5","width":"7","height":"5","rx":"1.2"}],["path",{"d":"M10 9.5V8.3A2 2 0 0 1 14 8.3V9.5"}]] };
+/** Options du message · Message options */
+export const MessageSquareMore: AfroiconNode = { name: "MessageSquareMore", nodes: [["path",{"d":"M20.5 15C20.5 16.1 19.6 17 18.5 17H8L3.5 20.5V5.5C3.5 4.4 4.4 3.5 5.5 3.5H18.5C19.6 3.5 20.5 4.4 20.5 5.5Z"}],["circle",{"cx":"8","cy":"10.25","r":"1.1","fill":"currentColor","stroke":"none"}],["circle",{"cx":"12","cy":"10.25","r":"1.1","fill":"currentColor","stroke":"none"}],["circle",{"cx":"16","cy":"10.25","r":"1.1","fill":"currentColor","stroke":"none"}]] };
+/** Messages désactivés · Messages off */
+export const MessageSquareOff: AfroiconNode = { name: "MessageSquareOff", nodes: [["path",{"d":"M20.5 15C20.5 16.1 19.6 17 18.5 17H8L3.5 20.5V5.5C3.5 4.4 4.4 3.5 5.5 3.5H18.5C19.6 3.5 20.5 4.4 20.5 5.5Z"}],["path",{"d":"M4 4L20 20"}]] };
+/** Nouveau message · New message */
+export const MessageSquarePlus: AfroiconNode = { name: "MessageSquarePlus", nodes: [["path",{"d":"M20.5 15C20.5 16.1 19.6 17 18.5 17H8L3.5 20.5V5.5C3.5 4.4 4.4 3.5 5.5 3.5H18.5C19.6 3.5 20.5 4.4 20.5 5.5Z"}],["path",{"d":"M12 7V13.5M8.75 10.25H15.25"}]] };
+/** Citer un message · Quote message */
+export const MessageSquareQuote: AfroiconNode = { name: "MessageSquareQuote", nodes: [["path",{"d":"M20.5 15C20.5 16.1 19.6 17 18.5 17H8L3.5 20.5V5.5C3.5 4.4 4.4 3.5 5.5 3.5H18.5C19.6 3.5 20.5 4.4 20.5 5.5Z"}],["circle",{"cx":"9.6","cy":"11.4","r":"1.5","fill":"currentColor","stroke":"none"}],["path",{"d":"M8.1 11.3C8.1 9.3 8.9 7.9 10.6 7"}],["circle",{"cx":"14.9","cy":"11.4","r":"1.5","fill":"currentColor","stroke":"none"}],["path",{"d":"M13.4 11.3C13.4 9.3 14.2 7.9 15.9 7"}]] };
+/** Partager le message · Share message */
+export const MessageSquareShare: AfroiconNode = { name: "MessageSquareShare", nodes: [["path",{"d":"M11 3.5H5.5C4.4 3.5 3.5 4.4 3.5 5.5V20.5L8 17H18.5C19.6 17 20.5 16.1 20.5 15V12"}],["path",{"d":"M14.5 9.5L20.5 3.5M16 3.5H20.5V8"}]] };
+/** Message signalé · Flagged message */
+export const MessageSquareWarning: AfroiconNode = { name: "MessageSquareWarning", nodes: [["path",{"d":"M20.5 15C20.5 16.1 19.6 17 18.5 17H8L3.5 20.5V5.5C3.5 4.4 4.4 3.5 5.5 3.5H18.5C19.6 3.5 20.5 4.4 20.5 5.5Z"}],["path",{"d":"M12 6.6V10.6"}],["circle",{"cx":"12","cy":"13.5","r":"0.95","fill":"currentColor","stroke":"none"}]] };
+/** Supprimer le message · Delete message */
+export const MessageSquareX: AfroiconNode = { name: "MessageSquareX", nodes: [["path",{"d":"M20.5 15C20.5 16.1 19.6 17 18.5 17H8L3.5 20.5V5.5C3.5 4.4 4.4 3.5 5.5 3.5H18.5C19.6 3.5 20.5 4.4 20.5 5.5Z"}],["path",{"d":"M9.5 7.75L14.5 12.75M14.5 7.75L9.5 12.75"}]] };
+/** Conversations · Conversations */
+export const MessagesSquare: AfroiconNode = { name: "MessagesSquare", nodes: [["path",{"d":"M8.5 10.5C8.5 9.4 9.4 8.5 10.5 8.5H18.5C19.6 8.5 20.5 9.4 20.5 10.5V20.5L17 18H10.5C9.4 18 8.5 17.1 8.5 16Z"}],["path",{"d":"M15.5 8.5V5.5C15.5 4.4 14.6 3.5 13.5 3.5H5.5C4.4 3.5 3.5 4.4 3.5 5.5V15.5L6 13.5H8.5"}]] };
+/** Appel en cours · Call in progress */
+export const PhoneCall: AfroiconNode = { name: "PhoneCall", nodes: [["path",{"d":"M6.5 3.5H8.6C9 3.5 9.4 3.8 9.5 4.2L10.4 7.4C10.5 7.8 10.3 8.3 9.9 8.5L8.2 9.4C9.3 11.8 11.2 13.7 13.6 14.8L14.5 13.1C14.7 12.7 15.2 12.5 15.6 12.6L18.8 13.5C19.2 13.6 19.5 14 19.5 14.4V16.5C19.5 18.7 17.7 20.5 15.5 20.4C9.1 20 4 14.9 3.6 8.5C3.4 5.8 4.6 3.5 6.5 3.5Z"}],["path",{"d":"M14 3.5A6.5 6.5 0 0 1 20.5 10"}],["path",{"d":"M14 7A3 3 0 0 1 17 10"}]] };
+/** Appel transféré · Forwarded call */
+export const PhoneForwarded: AfroiconNode = { name: "PhoneForwarded", nodes: [["path",{"d":"M6.5 3.5H8.6C9 3.5 9.4 3.8 9.5 4.2L10.4 7.4C10.5 7.8 10.3 8.3 9.9 8.5L8.2 9.4C9.3 11.8 11.2 13.7 13.6 14.8L14.5 13.1C14.7 12.7 15.2 12.5 15.6 12.6L18.8 13.5C19.2 13.6 19.5 14 19.5 14.4V16.5C19.5 18.7 17.7 20.5 15.5 20.4C9.1 20 4 14.9 3.6 8.5C3.4 5.8 4.6 3.5 6.5 3.5Z"}],["path",{"d":"M14 6.5H20.5M17.5 3.5L20.5 6.5L17.5 9.5"}]] };
+/** Appel entrant · Incoming call */
+export const PhoneIncoming: AfroiconNode = { name: "PhoneIncoming", nodes: [["path",{"d":"M6.5 3.5H8.6C9 3.5 9.4 3.8 9.5 4.2L10.4 7.4C10.5 7.8 10.3 8.3 9.9 8.5L8.2 9.4C9.3 11.8 11.2 13.7 13.6 14.8L14.5 13.1C14.7 12.7 15.2 12.5 15.6 12.6L18.8 13.5C19.2 13.6 19.5 14 19.5 14.4V16.5C19.5 18.7 17.7 20.5 15.5 20.4C9.1 20 4 14.9 3.6 8.5C3.4 5.8 4.6 3.5 6.5 3.5Z"}],["path",{"d":"M20.5 3.5L14.5 9.5M14.5 5V9.5H19"}]] };
+/** Appel manqué · Missed call */
+export const PhoneMissed: AfroiconNode = { name: "PhoneMissed", nodes: [["path",{"d":"M6.5 3.5H8.6C9 3.5 9.4 3.8 9.5 4.2L10.4 7.4C10.5 7.8 10.3 8.3 9.9 8.5L8.2 9.4C9.3 11.8 11.2 13.7 13.6 14.8L14.5 13.1C14.7 12.7 15.2 12.5 15.6 12.6L18.8 13.5C19.2 13.6 19.5 14 19.5 14.4V16.5C19.5 18.7 17.7 20.5 15.5 20.4C9.1 20 4 14.9 3.6 8.5C3.4 5.8 4.6 3.5 6.5 3.5Z"}],["path",{"d":"M15 4L20 9M20 4L15 9"}]] };
+/** Raccrocher · Hang up */
+export const PhoneOff: AfroiconNode = { name: "PhoneOff", nodes: [["path",{"d":"M6.5 3.5H8.6C9 3.5 9.4 3.8 9.5 4.2L10.4 7.4C10.5 7.8 10.3 8.3 9.9 8.5L8.2 9.4C9.3 11.8 11.2 13.7 13.6 14.8L14.5 13.1C14.7 12.7 15.2 12.5 15.6 12.6L18.8 13.5C19.2 13.6 19.5 14 19.5 14.4V16.5C19.5 18.7 17.7 20.5 15.5 20.4C9.1 20 4 14.9 3.6 8.5C3.4 5.8 4.6 3.5 6.5 3.5Z"}],["path",{"d":"M4 4L20 20"}]] };
+/** Appel sortant · Outgoing call */
+export const PhoneOutgoing: AfroiconNode = { name: "PhoneOutgoing", nodes: [["path",{"d":"M6.5 3.5H8.6C9 3.5 9.4 3.8 9.5 4.2L10.4 7.4C10.5 7.8 10.3 8.3 9.9 8.5L8.2 9.4C9.3 11.8 11.2 13.7 13.6 14.8L14.5 13.1C14.7 12.7 15.2 12.5 15.6 12.6L18.8 13.5C19.2 13.6 19.5 14 19.5 14.4V16.5C19.5 18.7 17.7 20.5 15.5 20.4C9.1 20 4 14.9 3.6 8.5C3.4 5.8 4.6 3.5 6.5 3.5Z"}],["path",{"d":"M14.5 9.5L20.5 3.5M16 3.5H20.5V8"}]] };
+/** Envoyer le message · Send message */
+export const SendHorizonal: AfroiconNode = { name: "SendHorizonal", nodes: [["path",{"d":"M20.5 12L4.6 4.6C3.9 4.3 3.2 5 3.5 5.7L6.5 12L3.5 18.3C3.2 19 3.9 19.7 4.6 19.4Z"}],["path",{"d":"M6.5 12H12"}]] };
+/** Mettre en arrière-plan · Send to back */
+export const SendToBack: AfroiconNode = { name: "SendToBack", nodes: [["rect",{"x":"3","y":"3","width":"8","height":"8","rx":"2"}],["rect",{"x":"13","y":"13","width":"8","height":"8","rx":"2"}],["path",{"d":"M11 7H15C16.1 7 17 7.9 17 9V13"}],["path",{"d":"M13 17H9C7.9 17 7 16.1 7 15V11"}]] };
+/** Prise de parole · Speech */
+export const Speech: AfroiconNode = { name: "Speech", nodes: [["path",{"d":"M5 20.5V16.5C3.8 15.3 3 13.6 3 11.8C3 7.5 6.4 4 10.5 4C13.8 4 15.6 6 15.9 8.7L17.2 11.6C17.4 12 17.1 12.4 16.7 12.4H15.9V14.6C15.9 15.7 15 16.6 13.9 16.6H12V20.5"}],["path",{"d":"M19.5 7.5C20.6 8.8 21.2 10.3 21.2 12C21.2 13.7 20.6 15.2 19.5 16.5"}]] };
+/** Messagerie vocale · Voicemail */
+export const Voicemail: AfroiconNode = { name: "Voicemail", nodes: [["circle",{"cx":"7","cy":"12","r":"3.8"}],["circle",{"cx":"17","cy":"12","r":"3.8"}],["path",{"d":"M7 15.8H17"}]] };
+/** Alarme réglée · Alarm set */
+export const AlarmCheck: AfroiconNode = { name: "AlarmCheck", nodes: [["circle",{"cx":"12","cy":"13","r":"7.5"}],["path",{"d":"M3.3 6.6L6.4 3.8M20.7 6.6L17.6 3.8"}],["path",{"d":"M6.9 18.5L5.2 20.5M17.1 18.5L18.8 20.5"}],["path",{"d":"M9 13.2L11.1 15.3L15.2 11.2"}]] };
+/** Alarme désactivée · Alarm off */
+export const AlarmClockOff: AfroiconNode = { name: "AlarmClockOff", nodes: [["path",{"d":"M8.2 6.5A7.5 7.5 0 0 1 18.5 16.8"}],["path",{"d":"M15.8 19.5A7.5 7.5 0 0 1 5.5 9.3"}],["path",{"d":"M20.7 6.6L17.6 3.8"}],["path",{"d":"M6.9 18.5L5.2 20.5"}],["path",{"d":"M4 4L20 20"}]] };
+/** Retirer une alarme · Remove alarm */
+export const AlarmMinus: AfroiconNode = { name: "AlarmMinus", nodes: [["circle",{"cx":"12","cy":"13","r":"7.5"}],["path",{"d":"M3.3 6.6L6.4 3.8M20.7 6.6L17.6 3.8"}],["path",{"d":"M6.9 18.5L5.2 20.5M17.1 18.5L18.8 20.5"}],["path",{"d":"M8.8 13H15.2"}]] };
+/** Ajouter une alarme · Add alarm */
+export const AlarmPlus: AfroiconNode = { name: "AlarmPlus", nodes: [["circle",{"cx":"12","cy":"13","r":"7.5"}],["path",{"d":"M3.3 6.6L6.4 3.8M20.7 6.6L17.6 3.8"}],["path",{"d":"M6.9 18.5L5.2 20.5M17.1 18.5L18.8 20.5"}],["path",{"d":"M12 9.8V16.2M8.8 13H15.2"}]] };
+/** Détecteur de fumée · Smoke alarm */
+export const AlarmSmoke: AfroiconNode = { name: "AlarmSmoke", nodes: [["path",{"d":"M3.5 3.5H20.5"}],["path",{"d":"M5.5 3.5V5.5C5.5 7.2 6.8 8.5 8.5 8.5H15.5C17.2 8.5 18.5 7.2 18.5 5.5V3.5"}],["circle",{"cx":"12","cy":"6","r":"0.95","fill":"currentColor","stroke":"none"}],["path",{"d":"M8 12C6.9 13.5 9.1 15 8 16.5S6.9 19.5 8 21M12 12C10.9 13.5 13.1 15 12 16.5S10.9 19.5 12 21M16 12C14.9 13.5 17.1 15 16 16.5S14.9 19.5 16 21"}]] };
+/** Date décroissante · Date descending */
+export const CalendarArrowDown: AfroiconNode = { name: "CalendarArrowDown", nodes: [["path",{"d":"M20.5 11.5V7.5C20.5 6.1 19.4 5 18 5H6C4.6 5 3.5 6.1 3.5 7.5V18C3.5 19.4 4.6 20.5 6 20.5H12"}],["path",{"d":"M8 3V7M16 3V7M3.5 10H20.5"}],["path",{"d":"M17.5 14V21M15 18.5L17.5 21L20 18.5"}]] };
+/** Date croissante · Date ascending */
+export const CalendarArrowUp: AfroiconNode = { name: "CalendarArrowUp", nodes: [["path",{"d":"M20.5 11.5V7.5C20.5 6.1 19.4 5 18 5H6C4.6 5 3.5 6.1 3.5 7.5V18C3.5 19.4 4.6 20.5 6 20.5H12"}],["path",{"d":"M8 3V7M16 3V7M3.5 10H20.5"}],["path",{"d":"M17.5 21V14M15 16.5L17.5 14L20 16.5"}]] };
+/** Date confirmée · Date confirmed */
+export const CalendarCheck2: AfroiconNode = { name: "CalendarCheck2", nodes: [["path",{"d":"M20.5 11.5V7.5C20.5 6.1 19.4 5 18 5H6C4.6 5 3.5 6.1 3.5 7.5V18C3.5 19.4 4.6 20.5 6 20.5H12"}],["path",{"d":"M8 3V7M16 3V7M3.5 10H20.5"}],["path",{"d":"M14.3 17.6L16.4 19.7L20.6 15.5"}]] };
+/** Réglages du calendrier · Calendar settings */
+export const CalendarCog: AfroiconNode = { name: "CalendarCog", nodes: [["path",{"d":"M20.5 11.5V7.5C20.5 6.1 19.4 5 18 5H6C4.6 5 3.5 6.1 3.5 7.5V18C3.5 19.4 4.6 20.5 6 20.5H11.5"}],["path",{"d":"M8 3V7M16 3V7M3.5 10H20.5"}],["circle",{"cx":"17.5","cy":"17.5","r":"2.3"}],["path",{"d":"M18.7 15.5L19.2 14.6M19.8 17.5L20.9 17.5M18.7 19.5L19.2 20.4M16.4 19.5L15.8 20.4M15.2 17.5L14.1 17.5M16.3 15.5L15.8 14.6"}]] };
+/** Éphéméride · Tear-off calendar */
+export const CalendarFold: AfroiconNode = { name: "CalendarFold", nodes: [["path",{"d":"M20.5 15.5V7.5C20.5 6.1 19.4 5 18 5H6C4.6 5 3.5 6.1 3.5 7.5V18C3.5 19.4 4.6 20.5 6 20.5H15.5Z"}],["path",{"d":"M8 3V7M16 3V7M3.5 10H20.5"}],["path",{"d":"M15.5 20.5V17.5C15.5 16.4 16.4 15.5 17.5 15.5H20.5"}]] };
+/** Date importante · Special date */
+export const CalendarHeart: AfroiconNode = { name: "CalendarHeart", nodes: [["path",{"d":"M20.5 11.5V7.5C20.5 6.1 19.4 5 18 5H6C4.6 5 3.5 6.1 3.5 7.5V18C3.5 19.4 4.6 20.5 6 20.5H11.5"}],["path",{"d":"M8 3V7M16 3V7M3.5 10H20.5"}],["path",{"d":"M17.5 21C17.5 21 13.5 18.8 13.5 16.1C13.5 14.8 14.5 13.8 15.7 13.8C16.5 13.8 17.1 14.2 17.5 14.9C17.9 14.2 18.5 13.8 19.3 13.8C20.5 13.8 21.5 14.8 21.5 16.1C21.5 18.8 17.5 21 17.5 21Z"}]] };
+/** Retirer du calendrier · Remove from calendar */
+export const CalendarMinus: AfroiconNode = { name: "CalendarMinus", nodes: [["rect",{"x":"3.5","y":"5","width":"17","height":"15.5","rx":"2.5"}],["path",{"d":"M8 3V7M16 3V7M3.5 10H20.5"}],["path",{"d":"M9.2 15.2H14.8"}]] };
+/** Retirer une date · Remove date */
+export const CalendarMinus2: AfroiconNode = { name: "CalendarMinus2", nodes: [["path",{"d":"M20.5 13V7.5C20.5 6.1 19.4 5 18 5H6C4.6 5 3.5 6.1 3.5 7.5V18C3.5 19.4 4.6 20.5 6 20.5H12"}],["path",{"d":"M8 3V7M16 3V7M3.5 10H20.5"}],["path",{"d":"M14.5 17.5H20.5"}]] };
+/** Sans date · No date */
+export const CalendarOff: AfroiconNode = { name: "CalendarOff", nodes: [["path",{"d":"M8.5 5H18C19.4 5 20.5 6.1 20.5 7.5V16.3"}],["path",{"d":"M16.3 20.5H6C4.6 20.5 3.5 19.4 3.5 18V8.5"}],["path",{"d":"M16 3V7M8 3V4.8M3.5 10H8.3M11.7 10H20.5"}],["path",{"d":"M4 4L20 20"}]] };
+/** Ajouter une date · Add date */
+export const CalendarPlus2: AfroiconNode = { name: "CalendarPlus2", nodes: [["path",{"d":"M20.5 11.5V7.5C20.5 6.1 19.4 5 18 5H6C4.6 5 3.5 6.1 3.5 7.5V18C3.5 19.4 4.6 20.5 6 20.5H12"}],["path",{"d":"M8 3V7M16 3V7M3.5 10H20.5"}],["path",{"d":"M17.5 14.5V20.5M14.5 17.5H20.5"}]] };
+/** Chercher une date · Find date */
+export const CalendarSearch: AfroiconNode = { name: "CalendarSearch", nodes: [["path",{"d":"M20.5 11.5V7.5C20.5 6.1 19.4 5 18 5H6C4.6 5 3.5 6.1 3.5 7.5V18C3.5 19.4 4.6 20.5 6 20.5H11.5"}],["path",{"d":"M8 3V7M16 3V7M3.5 10H20.5"}],["circle",{"cx":"16.3","cy":"16.3","r":"2.9"}],["path",{"d":"M18.4 18.4L20.8 20.8"}]] };
+/** Rendez-vous annulé · Cancelled appointment */
+export const CalendarX: AfroiconNode = { name: "CalendarX", nodes: [["rect",{"x":"3.5","y":"5","width":"17","height":"15.5","rx":"2.5"}],["path",{"d":"M8 3V7M16 3V7M3.5 10H20.5"}],["path",{"d":"M9.8 13L14.2 17.4M14.2 13L9.8 17.4"}]] };
+/** Date annulée · Cancelled date */
+export const CalendarX2: AfroiconNode = { name: "CalendarX2", nodes: [["path",{"d":"M20.5 11.5V7.5C20.5 6.1 19.4 5 18 5H6C4.6 5 3.5 6.1 3.5 7.5V18C3.5 19.4 4.6 20.5 6 20.5H12"}],["path",{"d":"M8 3V7M16 3V7M3.5 10H20.5"}],["path",{"d":"M15 15L20 20M20 15L15 20"}]] };
+/** Horloge à 1 h · 1 o'clock */
+export const Clock1: AfroiconNode = { name: "Clock1", nodes: [["circle",{"cx":"12","cy":"12","r":"9"}],["path",{"d":"M12 6.5V12L14 8.5"}]] };
+/** Horloge à 2 h · 2 o'clock */
+export const Clock2: AfroiconNode = { name: "Clock2", nodes: [["circle",{"cx":"12","cy":"12","r":"9"}],["path",{"d":"M12 6.5V12L15.5 10"}]] };
+/** Horloge à 3 h · 3 o'clock */
+export const Clock3: AfroiconNode = { name: "Clock3", nodes: [["circle",{"cx":"12","cy":"12","r":"9"}],["path",{"d":"M12 6.5V12L16 12"}]] };
+/** Horloge à 4 h · 4 o'clock */
+export const Clock4: AfroiconNode = { name: "Clock4", nodes: [["circle",{"cx":"12","cy":"12","r":"9"}],["path",{"d":"M12 6.5V12L15.5 14"}]] };
+/** Horloge à 5 h · 5 o'clock */
+export const Clock5: AfroiconNode = { name: "Clock5", nodes: [["circle",{"cx":"12","cy":"12","r":"9"}],["path",{"d":"M12 6.5V12L14 15.5"}]] };
+/** Horloge à 6 h · 6 o'clock */
+export const Clock6: AfroiconNode = { name: "Clock6", nodes: [["circle",{"cx":"12","cy":"12","r":"9"}],["path",{"d":"M12 6.5V12L12 16"}]] };
+/** Horloge à 7 h · 7 o'clock */
+export const Clock7: AfroiconNode = { name: "Clock7", nodes: [["circle",{"cx":"12","cy":"12","r":"9"}],["path",{"d":"M12 6.5V12L10 15.5"}]] };
+/** Horloge à 8 h · 8 o'clock */
+export const Clock8: AfroiconNode = { name: "Clock8", nodes: [["circle",{"cx":"12","cy":"12","r":"9"}],["path",{"d":"M12 6.5V12L8.5 14"}]] };
+/** Horloge à 9 h · 9 o'clock */
+export const Clock9: AfroiconNode = { name: "Clock9", nodes: [["circle",{"cx":"12","cy":"12","r":"9"}],["path",{"d":"M12 6.5V12L8 12"}]] };
+/** Horloge à 10 h · 10 o'clock */
+export const Clock10: AfroiconNode = { name: "Clock10", nodes: [["circle",{"cx":"12","cy":"12","r":"9"}],["path",{"d":"M12 6.5V12L8.5 10"}]] };
+/** Horloge à 11 h · 11 o'clock */
+export const Clock11: AfroiconNode = { name: "Clock11", nodes: [["circle",{"cx":"12","cy":"12","r":"9"}],["path",{"d":"M12 6.5V12L10 8.5"}]] };
+/** Horloge à 12 h · 12 o'clock */
+export const Clock12: AfroiconNode = { name: "Clock12", nodes: [["circle",{"cx":"12","cy":"12","r":"9"}],["path",{"d":"M12 6.5V12"}]] };
+/** Retard · Overdue */
+export const ClockAlert: AfroiconNode = { name: "ClockAlert", nodes: [["path",{"d":"M15.6 18.1A8 8 0 1 1 15.6 5.9"}],["path",{"d":"M10.5 7.5V12L13.5 13.8"}],["path",{"d":"M20.5 7.5V12.5"}],["circle",{"cx":"20.5","cy":"16.3","r":"0.95","fill":"currentColor","stroke":"none"}]] };
+/** Heure décroissante · Time descending */
+export const ClockArrowDown: AfroiconNode = { name: "ClockArrowDown", nodes: [["path",{"d":"M12 21A9 9 0 1 1 21 12"}],["path",{"d":"M12 7V12L14.8 13.6"}],["path",{"d":"M18 14V21M15.5 18.5L18 21L20.5 18.5"}]] };
+/** Heure croissante · Time ascending */
+export const ClockArrowUp: AfroiconNode = { name: "ClockArrowUp", nodes: [["path",{"d":"M12 21A9 9 0 1 1 21 12"}],["path",{"d":"M12 7V12L14.8 13.6"}],["path",{"d":"M18 21V14M15.5 16.5L18 14L20.5 16.5"}]] };
+/** Minuteur désactivé · Timer off */
+export const TimerOff: AfroiconNode = { name: "TimerOff", nodes: [["path",{"d":"M8.8 6.7A7.5 7.5 0 0 1 18.1 17.8"}],["path",{"d":"M16.3 19.6A7.5 7.5 0 0 1 5.9 9.2"}],["path",{"d":"M10 2.5H14M12 2.5V4.8"}],["path",{"d":"M18.3 6.7L19.6 5.4"}],["path",{"d":"M4 4L20 20"}]] };
+/** Remettre le minuteur à zéro · Reset timer */
+export const TimerReset: AfroiconNode = { name: "TimerReset", nodes: [["path",{"d":"M4.5 13.5A7.5 7.5 0 1 0 6.7 8.2L4.5 10.6"}],["path",{"d":"M4.5 6.3V10.6H8.8"}],["path",{"d":"M10 2.5H14M12 2.5V6"}],["path",{"d":"M18.3 6.7L19.6 5.4"}],["path",{"d":"M12 13.5L15 10.5"}]] };
+/** Montre · Watch */
+export const Watch: AfroiconNode = { name: "Watch", nodes: [["circle",{"cx":"12","cy":"12","r":"6"}],["path",{"d":"M9 6.8L9.6 4C9.7 3.1 10.4 2.5 11.2 2.5H12.8C13.6 2.5 14.3 3.1 14.4 4L15 6.8M9 17.2L9.6 20C9.7 20.9 10.4 21.5 11.2 21.5H12.8C13.6 21.5 14.3 20.9 14.4 20L15 17.2"}],["path",{"d":"M12 9.5V12L13.6 13.1"}]] };
+/** Graphique à barres horizontales · Horizontal bar chart */
+export const ChartBar: AfroiconNode = { name: "ChartBar", nodes: [["path",{"d":"M4 3.5V20H20.5"}],["path",{"d":"M8 7H16.5M8 11.5H20M8 16H12.5"}]] };
+/** Grandes barres horizontales · Large horizontal bars */
+export const ChartBarBig: AfroiconNode = { name: "ChartBarBig", nodes: [["path",{"d":"M4 3.5V20H20.5"}],["rect",{"x":"7.5","y":"5.5","width":"9","height":"4","rx":"1.2"}],["rect",{"x":"7.5","y":"12","width":"12.5","height":"4","rx":"1.2"}]] };
+/** Barres horizontales décroissantes · Decreasing horizontal bars */
+export const ChartBarDecreasing: AfroiconNode = { name: "ChartBarDecreasing", nodes: [["path",{"d":"M4 3.5V20H20.5"}],["path",{"d":"M8 7H20M8 11.5H16M8 16H12"}]] };
+/** Barres horizontales croissantes · Increasing horizontal bars */
+export const ChartBarIncreasing: AfroiconNode = { name: "ChartBarIncreasing", nodes: [["path",{"d":"M4 3.5V20H20.5"}],["path",{"d":"M8 7H12M8 11.5H16M8 16H20"}]] };
+/** Barres horizontales empilées · Stacked horizontal bars */
+export const ChartBarStacked: AfroiconNode = { name: "ChartBarStacked", nodes: [["path",{"d":"M4 3.5V20H20.5"}],["rect",{"x":"7.5","y":"5.5","width":"12.5","height":"4","rx":"1.2"}],["rect",{"x":"7.5","y":"12","width":"9","height":"4","rx":"1.2"}],["path",{"d":"M13.5 5.5V9.5M12 12V16"}]] };
+/** Colonnes décroissantes · Decreasing columns */
+export const ChartColumnDecreasing: AfroiconNode = { name: "ChartColumnDecreasing", nodes: [["path",{"d":"M4 3.5V20H20.5"}],["path",{"d":"M8.5 16V7.5M13 16V10.5M17.5 16V13"}]] };
+/** Colonnes empilées · Stacked columns */
+export const ChartColumnStacked: AfroiconNode = { name: "ChartColumnStacked", nodes: [["path",{"d":"M4 3.5V20H20.5"}],["rect",{"x":"7.5","y":"9","width":"4","height":"8","rx":"1"}],["rect",{"x":"14.5","y":"5","width":"4","height":"12","rx":"1"}],["path",{"d":"M7.5 13H11.5M14.5 11H18.5"}]] };
+/** Diagramme de Gantt avec axes · Gantt chart with axes */
+export const ChartGantt: AfroiconNode = { name: "ChartGantt", nodes: [["path",{"d":"M4 3.5V20H20.5"}],["path",{"d":"M7.5 7H13M10.5 11.5H16.5M14 16H20"}]] };
+/** Courbe d'évolution · Line chart */
+export const ChartLine: AfroiconNode = { name: "ChartLine", nodes: [["path",{"d":"M4 3.5V20H20.5"}],["path",{"d":"M7.5 15L11 10.5L14 13L19.5 7"}]] };
+/** Graphe de réseau · Network chart */
+export const ChartNetwork: AfroiconNode = { name: "ChartNetwork", nodes: [["path",{"d":"M4 3.5V20H20.5"}],["path",{"d":"M8.5 15.5L12.5 8.5L18 12.5"}],["circle",{"cx":"8.5","cy":"15.5","r":"1.6","fill":"currentColor","stroke":"none"}],["circle",{"cx":"12.5","cy":"8.5","r":"1.6","fill":"currentColor","stroke":"none"}],["circle",{"cx":"18","cy":"12.5","r":"1.6","fill":"currentColor","stroke":"none"}]] };
+/** Colonnes décroissantes sans axes · Decreasing columns, no axes */
+export const ChartNoAxesColumnDecreasing: AfroiconNode = { name: "ChartNoAxesColumnDecreasing", nodes: [["path",{"d":"M6.5 4.5V19.5M12 9V19.5M17.5 13.5V19.5"}]] };
+/** Graphique combiné · Combined chart */
+export const ChartNoAxesCombined: AfroiconNode = { name: "ChartNoAxesCombined", nodes: [["path",{"d":"M5.5 20V15.5M10 20V12M14.5 20V14.5M19 20V9.5"}],["path",{"d":"M4.5 10L9 6L13.5 9L19.5 4"}]] };
+/** Camembert · Pie chart */
+export const ChartPie: AfroiconNode = { name: "ChartPie", nodes: [["path",{"d":"M11 5A8 8 0 1 0 19 13H11Z"}],["path",{"d":"M13.5 2.5A8 8 0 0 1 21.5 10.5H13.5Z"}]] };
+/** Nuage de points · Scatter chart */
+export const ChartScatter: AfroiconNode = { name: "ChartScatter", nodes: [["path",{"d":"M4 3.5V20H20.5"}],["circle",{"cx":"8.5","cy":"15.5","r":"1.3","fill":"currentColor","stroke":"none"}],["circle",{"cx":"11.5","cy":"10","r":"1.3","fill":"currentColor","stroke":"none"}],["circle",{"cx":"15","cy":"13","r":"1.3","fill":"currentColor","stroke":"none"}],["circle",{"cx":"18.5","cy":"7.5","r":"1.3","fill":"currentColor","stroke":"none"}],["circle",{"cx":"10.5","cy":"6","r":"1.3","fill":"currentColor","stroke":"none"}]] };
+/** Courbe lissée · Smooth curve chart */
+export const ChartSpline: AfroiconNode = { name: "ChartSpline", nodes: [["path",{"d":"M4 3.5V20H20.5"}],["path",{"d":"M7.5 16C10.5 16 10 8.5 13 8.5C15.5 8.5 16 12.5 19.5 7"}]] };
+/** Diagramme de Gantt · Gantt chart */
+export const GanttChart: AfroiconNode = { name: "GanttChart", nodes: [["path",{"d":"M4 6.5H12.5M8 12H16.5M12 17.5H20"}]] };
+/** Diagramme de Gantt encadré · Gantt chart in square */
+export const GanttChartSquare: AfroiconNode = { name: "GanttChartSquare", nodes: [["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"3"}],["path",{"d":"M7.5 8H12.5M9.5 12H14.5M12 16H16.5"}]] };
+/** Tableau kanban · Kanban board */
+export const Kanban: AfroiconNode = { name: "Kanban", nodes: [["rect",{"x":"4","y":"4","width":"4","height":"14","rx":"1.5"}],["rect",{"x":"10","y":"4","width":"4","height":"9","rx":"1.5"}],["rect",{"x":"16","y":"4","width":"4","height":"11","rx":"1.5"}]] };
+/** Tableau kanban encadré · Kanban board in square */
+export const KanbanSquare: AfroiconNode = { name: "KanbanSquare", nodes: [["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"3"}],["path",{"d":"M8 7.5V16M12 7.5V12M16 7.5V14"}]] };
+/** Tableau kanban en brouillon · Draft kanban board */
+export const KanbanSquareDashed: AfroiconNode = { name: "KanbanSquareDashed", nodes: [["path",{"d":"M3 6.5V6A3 3 0 0 1 6 3H6.5M17.5 3H18A3 3 0 0 1 21 6V6.5M21 17.5V18A3 3 0 0 1 18 21H17.5M6.5 21H6A3 3 0 0 1 3 18V17.5M10.5 3H13.5M10.5 21H13.5M3 10.5V13.5M21 10.5V13.5"}],["path",{"d":"M8 7.5V16M12 7.5V12M16 7.5V14"}]] };
+/** Pourcentage encadré · Percentage in square */
+export const PercentSquare: AfroiconNode = { name: "PercentSquare", nodes: [["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"3"}],["path",{"d":"M15.5 8.5L8.5 15.5"}],["circle",{"cx":"9","cy":"9","r":"1.2","fill":"currentColor","stroke":"none"}],["circle",{"cx":"15","cy":"15","r":"1.2","fill":"currentColor","stroke":"none"}]] };
+/** Présentation au tableau · Presentation */
+export const Presentation: AfroiconNode = { name: "Presentation", nodes: [["path",{"d":"M2.5 4.5H21.5"}],["path",{"d":"M4 4.5V13.5C4 14.6 4.9 15.5 6 15.5H18C19.1 15.5 20 14.6 20 13.5V4.5"}],["path",{"d":"M12 15.5V18M8.5 21L12 18L15.5 21"}],["path",{"d":"M8 11.5L11 8.5L13 10.5L16 7.5"}]] };
+/** Mise à l'échelle 3D · 3D scale */
+export const Scale3D: AfroiconNode = { name: "Scale3D", nodes: [["path",{"d":"M3.5 11.5H13V20.5H3.5Z"}],["path",{"d":"M3.5 11.5L7 8H16.5L13 11.5M13 20.5L16.5 17V8"}],["path",{"d":"M17 7.5L20.5 4"}],["path",{"d":"M16.5 4H20.5V8"}]] };
+/** Somme · Sum */
+export const Sigma: AfroiconNode = { name: "Sigma", nodes: [["path",{"d":"M17.5 6.5V4.5H6.5L12.5 12L6.5 19.5H17.5V17.5"}]] };
+/** Somme encadrée · Sum in square */
+export const SigmaSquare: AfroiconNode = { name: "SigmaSquare", nodes: [["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"3"}],["path",{"d":"M15.5 9V7.5H8.5L12.5 12L8.5 16.5H15.5V15"}]] };
+/** Comptage : un · Tally: one */
+export const Tally1: AfroiconNode = { name: "Tally1", nodes: [["path",{"d":"M12 5V19"}]] };
+/** Comptage : deux · Tally: two */
+export const Tally2: AfroiconNode = { name: "Tally2", nodes: [["path",{"d":"M10 5V19M14 5V19"}]] };
+/** Comptage : trois · Tally: three */
+export const Tally3: AfroiconNode = { name: "Tally3", nodes: [["path",{"d":"M8 5V19M12 5V19M16 5V19"}]] };
+/** Comptage : quatre · Tally: four */
+export const Tally4: AfroiconNode = { name: "Tally4", nodes: [["path",{"d":"M6 5V19M10 5V19M14 5V19M18 5V19"}]] };
+/** Comptage : cinq · Tally: five */
+export const Tally5: AfroiconNode = { name: "Tally5", nodes: [["path",{"d":"M6 5V19M10 5V19M14 5V19M18 5V19"}],["path",{"d":"M3.5 16L20.5 8"}]] };
+/** Hausse et baisse · Up and down trend */
+export const TrendingUpDown: AfroiconNode = { name: "TrendingUpDown", nodes: [["path",{"d":"M2.5 16L7 11.5L10.5 15L15 10.5"}],["path",{"d":"M19.5 5V19"}],["path",{"d":"M17 7.5L19.5 5L22 7.5M17 16.5L19.5 19L22 16.5"}]] };
+/** Distinction · Badge */
+export const Badge: AfroiconNode = { name: "Badge", nodes: [["path",{"d":"M10.55 3.89Q12 2.8 13.45 3.89Q14.91 4.98 16.71 5.24Q18.51 5.49 18.76 7.29Q19.02 9.09 20.11 10.55Q21.2 12 20.11 13.45Q19.02 14.91 18.76 16.71Q18.51 18.51 16.71 18.76Q14.91 19.02 13.45 20.11Q12 21.2 10.55 20.11Q9.09 19.02 7.29 18.76Q5.49 18.51 5.24 16.71Q4.98 14.91 3.89 13.45Q2.8 12 3.89 10.55Q4.98 9.09 5.24 7.29Q5.49 5.49 7.29 5.24Q9.09 4.98 10.55 3.89Z"}]] };
+/** Badge à signaler · Flagged badge */
+export const BadgeAlert: AfroiconNode = { name: "BadgeAlert", nodes: [["path",{"d":"M10.55 3.89Q12 2.8 13.45 3.89Q14.91 4.98 16.71 5.24Q18.51 5.49 18.76 7.29Q19.02 9.09 20.11 10.55Q21.2 12 20.11 13.45Q19.02 14.91 18.76 16.71Q18.51 18.51 16.71 18.76Q14.91 19.02 13.45 20.11Q12 21.2 10.55 20.11Q9.09 19.02 7.29 18.76Q5.49 18.51 5.24 16.71Q4.98 14.91 3.89 13.45Q2.8 12 3.89 10.55Q4.98 9.09 5.24 7.29Q5.49 5.49 7.29 5.24Q9.09 4.98 10.55 3.89Z"}],["path",{"d":"M12 7.8V12.6"}],["circle",{"cx":"12","cy":"15.9","r":"0.95","fill":"currentColor","stroke":"none"}]] };
+/** Prix en centimes · Cent price */
+export const BadgeCent: AfroiconNode = { name: "BadgeCent", nodes: [["path",{"d":"M10.55 3.89Q12 2.8 13.45 3.89Q14.91 4.98 16.71 5.24Q18.51 5.49 18.76 7.29Q19.02 9.09 20.11 10.55Q21.2 12 20.11 13.45Q19.02 14.91 18.76 16.71Q18.51 18.51 16.71 18.76Q14.91 19.02 13.45 20.11Q12 21.2 10.55 20.11Q9.09 19.02 7.29 18.76Q5.49 18.51 5.24 16.71Q4.98 14.91 3.89 13.45Q2.8 12 3.89 10.55Q4.98 9.09 5.24 7.29Q5.49 5.49 7.29 5.24Q9.09 4.98 10.55 3.89Z"}],["path",{"d":"M14 9.4A3.4 3.4 0 1 0 14 14.6"}],["path",{"d":"M12.1 7.6V16.4"}]] };
+/** Prix en dollars · Dollar price */
+export const BadgeDollarSign: AfroiconNode = { name: "BadgeDollarSign", nodes: [["path",{"d":"M10.55 3.89Q12 2.8 13.45 3.89Q14.91 4.98 16.71 5.24Q18.51 5.49 18.76 7.29Q19.02 9.09 20.11 10.55Q21.2 12 20.11 13.45Q19.02 14.91 18.76 16.71Q18.51 18.51 16.71 18.76Q14.91 19.02 13.45 20.11Q12 21.2 10.55 20.11Q9.09 19.02 7.29 18.76Q5.49 18.51 5.24 16.71Q4.98 14.91 3.89 13.45Q2.8 12 3.89 10.55Q4.98 9.09 5.24 7.29Q5.49 5.49 7.29 5.24Q9.09 4.98 10.55 3.89Z"}],["path",{"d":"M14.6 9.6C14.2 8.8 13.3 8.4 12 8.4C10.5 8.4 9.5 9.2 9.5 10.2C9.5 12.6 14.5 11.6 14.5 14C14.5 15.1 13.5 15.7 12 15.7C10.6 15.7 9.6 15.1 9.2 14.4"}],["path",{"d":"M12 7V8.4M12 15.7V17"}]] };
+/** Prix en euros · Euro price */
+export const BadgeEuro: AfroiconNode = { name: "BadgeEuro", nodes: [["path",{"d":"M10.55 3.89Q12 2.8 13.45 3.89Q14.91 4.98 16.71 5.24Q18.51 5.49 18.76 7.29Q19.02 9.09 20.11 10.55Q21.2 12 20.11 13.45Q19.02 14.91 18.76 16.71Q18.51 18.51 16.71 18.76Q14.91 19.02 13.45 20.11Q12 21.2 10.55 20.11Q9.09 19.02 7.29 18.76Q5.49 18.51 5.24 16.71Q4.98 14.91 3.89 13.45Q2.8 12 3.89 10.55Q4.98 9.09 5.24 7.29Q5.49 5.49 7.29 5.24Q9.09 4.98 10.55 3.89Z"}],["path",{"d":"M15.5 9.3A3.6 3.6 0 1 0 15.5 14.7"}],["path",{"d":"M8.9 10.8H13.5M8.9 13.2H13.5"}]] };
+/** Badge d'aide · Help badge */
+export const BadgeHelp: AfroiconNode = { name: "BadgeHelp", nodes: [["path",{"d":"M10.55 3.89Q12 2.8 13.45 3.89Q14.91 4.98 16.71 5.24Q18.51 5.49 18.76 7.29Q19.02 9.09 20.11 10.55Q21.2 12 20.11 13.45Q19.02 14.91 18.76 16.71Q18.51 18.51 16.71 18.76Q14.91 19.02 13.45 20.11Q12 21.2 10.55 20.11Q9.09 19.02 7.29 18.76Q5.49 18.51 5.24 16.71Q4.98 14.91 3.89 13.45Q2.8 12 3.89 10.55Q4.98 9.09 5.24 7.29Q5.49 5.49 7.29 5.24Q9.09 4.98 10.55 3.89Z"}],["path",{"d":"M9.6 9.8A2.5 2.5 0 0 1 14.5 10.4C14.5 12 12 12.4 12 13.9"}],["circle",{"cx":"12","cy":"16.4","r":"0.95","fill":"currentColor","stroke":"none"}]] };
+/** Prix en roupies · Rupee price */
+export const BadgeIndianRupee: AfroiconNode = { name: "BadgeIndianRupee", nodes: [["path",{"d":"M10.55 3.89Q12 2.8 13.45 3.89Q14.91 4.98 16.71 5.24Q18.51 5.49 18.76 7.29Q19.02 9.09 20.11 10.55Q21.2 12 20.11 13.45Q19.02 14.91 18.76 16.71Q18.51 18.51 16.71 18.76Q14.91 19.02 13.45 20.11Q12 21.2 10.55 20.11Q9.09 19.02 7.29 18.76Q5.49 18.51 5.24 16.71Q4.98 14.91 3.89 13.45Q2.8 12 3.89 10.55Q4.98 9.09 5.24 7.29Q5.49 5.49 7.29 5.24Q9.09 4.98 10.55 3.89Z"}],["path",{"d":"M9.2 8H14.8M9.2 10.8H14.8"}],["path",{"d":"M10.2 8C12.6 8 13.6 9 13.6 10.4C13.6 11.8 12.6 12.8 10.4 12.8H9.8L14.4 16.4"}]] };
+/** Badge d'information · Info badge */
+export const BadgeInfo: AfroiconNode = { name: "BadgeInfo", nodes: [["path",{"d":"M10.55 3.89Q12 2.8 13.45 3.89Q14.91 4.98 16.71 5.24Q18.51 5.49 18.76 7.29Q19.02 9.09 20.11 10.55Q21.2 12 20.11 13.45Q19.02 14.91 18.76 16.71Q18.51 18.51 16.71 18.76Q14.91 19.02 13.45 20.11Q12 21.2 10.55 20.11Q9.09 19.02 7.29 18.76Q5.49 18.51 5.24 16.71Q4.98 14.91 3.89 13.45Q2.8 12 3.89 10.55Q4.98 9.09 5.24 7.29Q5.49 5.49 7.29 5.24Q9.09 4.98 10.55 3.89Z"}],["path",{"d":"M12 11V16"}],["circle",{"cx":"12","cy":"8.2","r":"0.95","fill":"currentColor","stroke":"none"}]] };
+/** Prix en yens · Yen price */
+export const BadgeJapaneseYen: AfroiconNode = { name: "BadgeJapaneseYen", nodes: [["path",{"d":"M10.55 3.89Q12 2.8 13.45 3.89Q14.91 4.98 16.71 5.24Q18.51 5.49 18.76 7.29Q19.02 9.09 20.11 10.55Q21.2 12 20.11 13.45Q19.02 14.91 18.76 16.71Q18.51 18.51 16.71 18.76Q14.91 19.02 13.45 20.11Q12 21.2 10.55 20.11Q9.09 19.02 7.29 18.76Q5.49 18.51 5.24 16.71Q4.98 14.91 3.89 13.45Q2.8 12 3.89 10.55Q4.98 9.09 5.24 7.29Q5.49 5.49 7.29 5.24Q9.09 4.98 10.55 3.89Z"}],["path",{"d":"M9 7.7L12 11.6L15 7.7M12 11.6V16.3"}],["path",{"d":"M9.4 12.5H14.6M9.4 14.7H14.6"}]] };
+/** Retirer le badge · Remove badge */
+export const BadgeMinus: AfroiconNode = { name: "BadgeMinus", nodes: [["path",{"d":"M10.55 3.89Q12 2.8 13.45 3.89Q14.91 4.98 16.71 5.24Q18.51 5.49 18.76 7.29Q19.02 9.09 20.11 10.55Q21.2 12 20.11 13.45Q19.02 14.91 18.76 16.71Q18.51 18.51 16.71 18.76Q14.91 19.02 13.45 20.11Q12 21.2 10.55 20.11Q9.09 19.02 7.29 18.76Q5.49 18.51 5.24 16.71Q4.98 14.91 3.89 13.45Q2.8 12 3.89 10.55Q4.98 9.09 5.24 7.29Q5.49 5.49 7.29 5.24Q9.09 4.98 10.55 3.89Z"}],["path",{"d":"M8.5 12H15.5"}]] };
+/** Attribuer un badge · Award badge */
+export const BadgePlus: AfroiconNode = { name: "BadgePlus", nodes: [["path",{"d":"M10.55 3.89Q12 2.8 13.45 3.89Q14.91 4.98 16.71 5.24Q18.51 5.49 18.76 7.29Q19.02 9.09 20.11 10.55Q21.2 12 20.11 13.45Q19.02 14.91 18.76 16.71Q18.51 18.51 16.71 18.76Q14.91 19.02 13.45 20.11Q12 21.2 10.55 20.11Q9.09 19.02 7.29 18.76Q5.49 18.51 5.24 16.71Q4.98 14.91 3.89 13.45Q2.8 12 3.89 10.55Q4.98 9.09 5.24 7.29Q5.49 5.49 7.29 5.24Q9.09 4.98 10.55 3.89Z"}],["path",{"d":"M12 8.5V15.5M8.5 12H15.5"}]] };
+/** Prix en livres sterling · Pound price */
+export const BadgePoundSterling: AfroiconNode = { name: "BadgePoundSterling", nodes: [["path",{"d":"M10.55 3.89Q12 2.8 13.45 3.89Q14.91 4.98 16.71 5.24Q18.51 5.49 18.76 7.29Q19.02 9.09 20.11 10.55Q21.2 12 20.11 13.45Q19.02 14.91 18.76 16.71Q18.51 18.51 16.71 18.76Q14.91 19.02 13.45 20.11Q12 21.2 10.55 20.11Q9.09 19.02 7.29 18.76Q5.49 18.51 5.24 16.71Q4.98 14.91 3.89 13.45Q2.8 12 3.89 10.55Q4.98 9.09 5.24 7.29Q5.49 5.49 7.29 5.24Q9.09 4.98 10.55 3.89Z"}],["path",{"d":"M14.6 9.3C14.3 8.3 13.4 7.7 12.3 7.7C10.9 7.7 10 8.7 10 10.1V14.2C10 15.2 9.6 15.8 8.8 16.3H15"}],["path",{"d":"M8.4 11.9H13"}]] };
+/** Prix en roubles · Ruble price */
+export const BadgeRussianRuble: AfroiconNode = { name: "BadgeRussianRuble", nodes: [["path",{"d":"M10.55 3.89Q12 2.8 13.45 3.89Q14.91 4.98 16.71 5.24Q18.51 5.49 18.76 7.29Q19.02 9.09 20.11 10.55Q21.2 12 20.11 13.45Q19.02 14.91 18.76 16.71Q18.51 18.51 16.71 18.76Q14.91 19.02 13.45 20.11Q12 21.2 10.55 20.11Q9.09 19.02 7.29 18.76Q5.49 18.51 5.24 16.71Q4.98 14.91 3.89 13.45Q2.8 12 3.89 10.55Q4.98 9.09 5.24 7.29Q5.49 5.49 7.29 5.24Q9.09 4.98 10.55 3.89Z"}],["path",{"d":"M10.4 16.4V7.8H12.9C14.4 7.8 15.4 8.8 15.4 10.2C15.4 11.6 14.4 12.6 12.9 12.6H8.8"}],["path",{"d":"M8.8 14.7H13.2"}]] };
+/** Prix en francs suisses · Swiss franc price */
+export const BadgeSwissFranc: AfroiconNode = { name: "BadgeSwissFranc", nodes: [["path",{"d":"M10.55 3.89Q12 2.8 13.45 3.89Q14.91 4.98 16.71 5.24Q18.51 5.49 18.76 7.29Q19.02 9.09 20.11 10.55Q21.2 12 20.11 13.45Q19.02 14.91 18.76 16.71Q18.51 18.51 16.71 18.76Q14.91 19.02 13.45 20.11Q12 21.2 10.55 20.11Q9.09 19.02 7.29 18.76Q5.49 18.51 5.24 16.71Q4.98 14.91 3.89 13.45Q2.8 12 3.89 10.55Q4.98 9.09 5.24 7.29Q5.49 5.49 7.29 5.24Q9.09 4.98 10.55 3.89Z"}],["path",{"d":"M10.8 16.4V7.8H15.2M10.8 11.7H14.4"}],["path",{"d":"M8.8 14.1H13"}]] };
+/** Non certifié · Not certified */
+export const BadgeX: AfroiconNode = { name: "BadgeX", nodes: [["path",{"d":"M10.55 3.89Q12 2.8 13.45 3.89Q14.91 4.98 16.71 5.24Q18.51 5.49 18.76 7.29Q19.02 9.09 20.11 10.55Q21.2 12 20.11 13.45Q19.02 14.91 18.76 16.71Q18.51 18.51 16.71 18.76Q14.91 19.02 13.45 20.11Q12 21.2 10.55 20.11Q9.09 19.02 7.29 18.76Q5.49 18.51 5.24 16.71Q4.98 14.91 3.89 13.45Q2.8 12 3.89 10.55Q4.98 9.09 5.24 7.29Q5.49 5.49 7.29 5.24Q9.09 4.98 10.55 3.89Z"}],["path",{"d":"M9.5 9.5L14.5 14.5M14.5 9.5L9.5 14.5"}]] };
+/** Activité professionnelle · Business */
+export const BriefcaseBusiness: AfroiconNode = { name: "BriefcaseBusiness", nodes: [["rect",{"x":"3","y":"7","width":"18","height":"13","rx":"2.5"}],["path",{"d":"M8.5 7V5.5C8.5 4.4 9.4 3.5 10.5 3.5H13.5C14.6 3.5 15.5 4.4 15.5 5.5V7"}],["path",{"d":"M3 12.5H10M14 12.5H21"}],["rect",{"x":"10","y":"11","width":"4","height":"3.5","rx":"1"}]] };
+/** Retrait des bagages · Baggage claim */
+export const BriefcaseConveyorBelt: AfroiconNode = { name: "BriefcaseConveyorBelt", nodes: [["rect",{"x":"5","y":"6.5","width":"14","height":"8.5","rx":"2"}],["path",{"d":"M9.5 6.5V5C9.5 4.2 10.2 3.5 11 3.5H13C13.8 3.5 14.5 4.2 14.5 5V6.5"}],["path",{"d":"M3 18H21"}],["circle",{"cx":"6","cy":"20.6","r":"1","fill":"currentColor","stroke":"none"}],["circle",{"cx":"12","cy":"20.6","r":"1","fill":"currentColor","stroke":"none"}],["circle",{"cx":"18","cy":"20.6","r":"1","fill":"currentColor","stroke":"none"}]] };
+/** Trousse médicale · Medical kit */
+export const BriefcaseMedical: AfroiconNode = { name: "BriefcaseMedical", nodes: [["rect",{"x":"3","y":"7","width":"18","height":"13","rx":"2.5"}],["path",{"d":"M8.5 7V5.5C8.5 4.4 9.4 3.5 10.5 3.5H13.5C14.6 3.5 15.5 4.4 15.5 5.5V7"}],["path",{"d":"M12 10.5V16.5M9 13.5H15"}]] };
+/** Devise · Currency */
+export const Currency: AfroiconNode = { name: "Currency", nodes: [["circle",{"cx":"12","cy":"12","r":"5"}],["path",{"d":"M4.5 4.5L8.5 8.5M19.5 4.5L15.5 8.5M4.5 19.5L8.5 15.5M19.5 19.5L15.5 15.5"}]] };
+/** Euro · Euro */
+export const Euro: AfroiconNode = { name: "Euro", nodes: [["path",{"d":"M17.8 7A6.5 6.5 0 1 0 17.8 17"}],["path",{"d":"M4.5 10H13M4.5 14H13"}]] };
+/** Don solidaire · Donation */
+export const HandHeart: AfroiconNode = { name: "HandHeart", nodes: [["path",{"d":"M2.5 14.5H6L10.5 17H14.2C15.1 17 15.8 16.3 15.8 15.4S15.1 13.8 14.2 13.8H10.5"}],["path",{"d":"M15.8 15.6L19.6 13.4C20.4 13 21.3 13.3 21.6 14.1S21.4 15.7 20.7 16.1L14.5 20H9L6 18.5H2.5"}],["path",{"d":"M12.6 10.8C12.6 10.8 9.1 8.7 9.1 6.3C9.1 5 10 4.2 11 4.2C11.7 4.2 12.3 4.6 12.6 5.2C13 4.6 13.6 4.2 14.3 4.2C15.3 4.2 16.2 5 16.2 6.3C16.2 8.7 12.6 10.8 12.6 10.8Z"}]] };
+/** Entraide · Helping hand */
+export const HandHelping: AfroiconNode = { name: "HandHelping", nodes: [["path",{"d":"M2.5 14.5H6L10.5 17H14.2C15.1 17 15.8 16.3 15.8 15.4S15.1 13.8 14.2 13.8H10.5"}],["path",{"d":"M15.8 15.6L19.6 13.4C20.4 13 21.3 13.3 21.6 14.1S21.4 15.7 20.7 16.1L14.5 20H9L6 18.5H2.5"}],["path",{"d":"M21.5 9.5H18L13.5 7H9.8C8.9 7 8.2 7.7 8.2 8.6S8.9 10.2 9.8 10.2H13.5"}]] };
+/** Geste rock · Rock on */
+export const HandMetal: AfroiconNode = { name: "HandMetal", nodes: [["path",{"d":"M7 12.8V5A1.5 1.5 0 0 1 10 5V11.5"}],["path",{"d":"M10 11.5V10.5A1.5 1.5 0 0 1 13 10.5V12M13 11.5V10.5A1.5 1.5 0 0 1 16 10.5V12"}],["path",{"d":"M16 11.5V6.5A1.5 1.5 0 0 1 19 6.5V14C19 18 16.5 21 12.8 21H12.2C9.9 21 8.4 20 7.2 18.4L4.3 14.6C3.7 13.8 3.9 12.8 4.6 12.3C5.3 11.8 6.3 12 6.9 12.6L7 12.8"}]] };
+/** Service à table · Table service */
+export const HandPlatter: AfroiconNode = { name: "HandPlatter", nodes: [["path",{"d":"M6 10.5A6 6 0 0 1 18 10.5"}],["path",{"d":"M4 10.5H20"}],["circle",{"cx":"12","cy":"3.3","r":"1","fill":"currentColor","stroke":"none"}],["path",{"d":"M2.5 14.5H6L10.5 17H14.2C15.1 17 15.8 16.3 15.8 15.4S15.1 13.8 14.2 13.8H10.5"}],["path",{"d":"M15.8 15.6L19.6 13.4C20.4 13 21.3 13.3 21.6 14.1S21.4 15.7 20.7 16.1L14.5 20H9L6 18.5H2.5"}]] };
+/** Très satisfait · Delighted */
+export const Laugh: AfroiconNode = { name: "Laugh", nodes: [["circle",{"cx":"12","cy":"12","r":"9"}],["path",{"d":"M7.8 10.2A1.4 1.4 0 0 1 10.4 10.2M13.6 10.2A1.4 1.4 0 0 1 16.2 10.2"}],["path",{"d":"M8 13.5H16C16 15.7 14.2 17.5 12 17.5S8 15.7 8 13.5Z"}]] };
+/** Silhouette debout · Standing person */
+export const PersonStanding: AfroiconNode = { name: "PersonStanding", nodes: [["circle",{"cx":"12","cy":"4.6","r":"2"}],["path",{"d":"M6 9H18M12 9V14.5M8.5 21L12 14.5L15.5 21"}]] };
+/** Livre sterling · Pound sterling */
+export const PoundSterling: AfroiconNode = { name: "PoundSterling", nodes: [["path",{"d":"M17 7.2C16.4 5.5 15 4.5 13.2 4.5C10.8 4.5 9.3 6.2 9.3 8.6V16.3C9.3 17.8 8.5 18.8 7 19.5H18"}],["path",{"d":"M6.5 12H14"}]] };
+/** Reçu en centimes · Cents receipt */
+export const ReceiptCent: AfroiconNode = { name: "ReceiptCent", nodes: [["path",{"d":"M6 3H18V21L15.6 19.4L13.8 21L12 19.4L10.2 21L8.4 19.4L6 21Z"}],["path",{"d":"M13.8 8.8A2.8 2.8 0 1 0 13.8 13"}],["path",{"d":"M12.2 7.3V14.5"}]] };
+/** Reçu en euros · Euro receipt */
+export const ReceiptEuro: AfroiconNode = { name: "ReceiptEuro", nodes: [["path",{"d":"M6 3H18V21L15.6 19.4L13.8 21L12 19.4L10.2 21L8.4 19.4L6 21Z"}],["path",{"d":"M14.8 8.7A3 3 0 1 0 14.8 13.1"}],["path",{"d":"M9.3 9.9H13.1M9.3 11.9H13.1"}]] };
+/** Reçu en roupies · Rupee receipt */
+export const ReceiptIndianRupee: AfroiconNode = { name: "ReceiptIndianRupee", nodes: [["path",{"d":"M6 3H18V21L15.6 19.4L13.8 21L12 19.4L10.2 21L8.4 19.4L6 21Z"}],["path",{"d":"M9.7 7.6H14.3M9.7 9.9H14.3"}],["path",{"d":"M10.5 7.6C12.5 7.6 13.3 8.4 13.3 9.6C13.3 10.7 12.5 11.6 10.7 11.6H10.2L14 14.5"}]] };
+/** Reçu en yens · Yen receipt */
+export const ReceiptJapaneseYen: AfroiconNode = { name: "ReceiptJapaneseYen", nodes: [["path",{"d":"M6 3H18V21L15.6 19.4L13.8 21L12 19.4L10.2 21L8.4 19.4L6 21Z"}],["path",{"d":"M9.5 7.5L12 10.7L14.5 7.5M12 10.7V14.5"}],["path",{"d":"M9.9 11.4H14.1M9.9 13.2H14.1"}]] };
+/** Reçu en livres sterling · Pound receipt */
+export const ReceiptPoundSterling: AfroiconNode = { name: "ReceiptPoundSterling", nodes: [["path",{"d":"M6 3H18V21L15.6 19.4L13.8 21L12 19.4L10.2 21L8.4 19.4L6 21Z"}],["path",{"d":"M14.1 8.7C13.9 7.9 13.1 7.4 12.2 7.4C11.1 7.4 10.4 8.2 10.4 9.3V12.7C10.4 13.5 10 14 9.4 14.4H14.5"}],["path",{"d":"M9 10.8H12.8"}]] };
+/** Reçu en roubles · Ruble receipt */
+export const ReceiptRussianRuble: AfroiconNode = { name: "ReceiptRussianRuble", nodes: [["path",{"d":"M6 3H18V21L15.6 19.4L13.8 21L12 19.4L10.2 21L8.4 19.4L6 21Z"}],["path",{"d":"M10.7 14.5V7.5H12.7C14 7.5 14.8 8.3 14.8 9.4C14.8 10.6 14 11.4 12.7 11.4H9.4"}],["path",{"d":"M9.4 13.1H13"}]] };
+/** Reçu en francs suisses · Swiss franc receipt */
+export const ReceiptSwissFranc: AfroiconNode = { name: "ReceiptSwissFranc", nodes: [["path",{"d":"M6 3H18V21L15.6 19.4L13.8 21L12 19.4L10.2 21L8.4 19.4L6 21Z"}],["path",{"d":"M11 14.5V7.5H14.6M11 10.7H14"}],["path",{"d":"M9.4 12.6H12.8"}]] };
+/** Ajouter une réaction · Add reaction */
+export const SmilePlus: AfroiconNode = { name: "SmilePlus", nodes: [["path",{"d":"M19 13A8 8 0 1 1 11 5"}],["circle",{"cx":"8.3","cy":"11","r":"0.95","fill":"currentColor","stroke":"none"}],["circle",{"cx":"13.7","cy":"11","r":"0.95","fill":"currentColor","stroke":"none"}],["path",{"d":"M7.6 15C8.4 16.3 9.6 17 11 17S13.6 16.3 14.4 15"}],["path",{"d":"M19 2.5V7.5M16.5 5H21.5"}]] };
+/** J'aime · Like */
+export const ThumbsUp: AfroiconNode = { name: "ThumbsUp", nodes: [["rect",{"x":"3","y":"10.5","width":"3.5","height":"9.5","rx":"1"}],["path",{"d":"M6.5 11L10 4.2C10.3 3.6 11 3.3 11.7 3.5C12.8 3.8 13.4 4.9 13.1 6L12.3 9.5H18.3C19.6 9.5 20.6 10.7 20.3 12L18.9 18.4C18.7 19.4 17.8 20 16.9 20H6.5"}]] };
+/** Billet validé · Ticket validated */
+export const TicketCheck: AfroiconNode = { name: "TicketCheck", nodes: [["path",{"d":"M3.5 7C3.5 6.2 4.2 5.5 5 5.5H19C19.8 5.5 20.5 6.2 20.5 7V10A2 2 0 0 0 20.5 14V17C20.5 17.8 19.8 18.5 19 18.5H5C4.2 18.5 3.5 17.8 3.5 17V14A2 2 0 0 0 3.5 10Z"}],["path",{"d":"M9.3 12.2L11.2 14L14.8 10"}]] };
+/** Retirer un billet · Remove ticket */
+export const TicketMinus: AfroiconNode = { name: "TicketMinus", nodes: [["path",{"d":"M3.5 7C3.5 6.2 4.2 5.5 5 5.5H19C19.8 5.5 20.5 6.2 20.5 7V10A2 2 0 0 0 20.5 14V17C20.5 17.8 19.8 18.5 19 18.5H5C4.2 18.5 3.5 17.8 3.5 17V14A2 2 0 0 0 3.5 10Z"}],["path",{"d":"M9 12H15"}]] };
+/** Billet à prix réduit · Discounted ticket */
+export const TicketPercent: AfroiconNode = { name: "TicketPercent", nodes: [["path",{"d":"M3.5 7C3.5 6.2 4.2 5.5 5 5.5H19C19.8 5.5 20.5 6.2 20.5 7V10A2 2 0 0 0 20.5 14V17C20.5 17.8 19.8 18.5 19 18.5H5C4.2 18.5 3.5 17.8 3.5 17V14A2 2 0 0 0 3.5 10Z"}],["path",{"d":"M9.4 14.8L14.6 9.2"}],["circle",{"cx":"9.7","cy":"9.7","r":"0.95","fill":"currentColor","stroke":"none"}],["circle",{"cx":"14.3","cy":"14.3","r":"0.95","fill":"currentColor","stroke":"none"}]] };
+/** Ajouter un billet · Add ticket */
+export const TicketPlus: AfroiconNode = { name: "TicketPlus", nodes: [["path",{"d":"M3.5 7C3.5 6.2 4.2 5.5 5 5.5H19C19.8 5.5 20.5 6.2 20.5 7V10A2 2 0 0 0 20.5 14V17C20.5 17.8 19.8 18.5 19 18.5H5C4.2 18.5 3.5 17.8 3.5 17V14A2 2 0 0 0 3.5 10Z"}],["path",{"d":"M12 9V15M9 12H15"}]] };
+/** Billet annulé · Voided ticket */
+export const TicketSlash: AfroiconNode = { name: "TicketSlash", nodes: [["path",{"d":"M3.5 7C3.5 6.2 4.2 5.5 5 5.5H19C19.8 5.5 20.5 6.2 20.5 7V10A2 2 0 0 0 20.5 14V17C20.5 17.8 19.8 18.5 19 18.5H5C4.2 18.5 3.5 17.8 3.5 17V14A2 2 0 0 0 3.5 10Z"}],["path",{"d":"M10 15.2L14 8.8"}]] };
+/** Billet refusé · Rejected ticket */
+export const TicketX: AfroiconNode = { name: "TicketX", nodes: [["path",{"d":"M3.5 7C3.5 6.2 4.2 5.5 5 5.5H19C19.8 5.5 20.5 6.2 20.5 7V10A2 2 0 0 0 20.5 14V17C20.5 17.8 19.8 18.5 19 18.5H5C4.2 18.5 3.5 17.8 3.5 17V14A2 2 0 0 0 3.5 10Z"}],["path",{"d":"M9.8 9.8L14.2 14.2M14.2 9.8L9.8 14.2"}]] };
+/** Billetterie · Ticketing */
+export const Tickets: AfroiconNode = { name: "Tickets", nodes: [["path",{"d":"M2.5 10C2.5 9.2 3.2 8.5 4 8.5H16C16.8 8.5 17.5 9.2 17.5 10V12.3A2 2 0 0 0 17.5 16.3V18.5C17.5 19.3 16.8 20 16 20H4C3.2 20 2.5 19.3 2.5 18.5V16.3A2 2 0 0 0 2.5 12.3Z"}],["path",{"d":"M6.5 8.5V6C6.5 5.2 7.2 4.5 8 4.5H20C20.8 4.5 21.5 5.2 21.5 6V14.5C21.5 15.3 20.8 16 20 16H19.5"}],["path",{"d":"M12.5 8.5V10M12.5 13.3V15.3M12.5 18.5V20"}]] };
+/** Billets d'avion · Plane tickets */
+export const TicketsPlane: AfroiconNode = { name: "TicketsPlane", nodes: [["path",{"d":"M3.5 7C3.5 6.2 4.2 5.5 5 5.5H19C19.8 5.5 20.5 6.2 20.5 7V10A2 2 0 0 0 20.5 14V17C20.5 17.8 19.8 18.5 19 18.5H5C4.2 18.5 3.5 17.8 3.5 17V14A2 2 0 0 0 3.5 10Z"}],["path",{"d":"M7.5 12H16.5M13.5 12L10.5 8.3M13.5 12L10.5 15.7M9.3 12L8.2 10.2M9.3 12L8.2 13.8"}]] };
+/** Membre validé · Member approved */
+export const UserCheck2: AfroiconNode = { name: "UserCheck2", nodes: [["circle",{"cx":"9.5","cy":"7.8","r":"4.6"}],["path",{"d":"M4 20.5A5.5 5.5 0 0 1 15 20.5"}],["path",{"d":"M16 10.5L18 12.5L21.5 9"}]] };
+/** Avatar · Avatar */
+export const UserCircle2: AfroiconNode = { name: "UserCircle2", nodes: [["circle",{"cx":"12","cy":"12","r":"9"}],["circle",{"cx":"12","cy":"9.6","r":"3"}],["path",{"d":"M6.1 18.8A6.5 6.5 0 0 1 17.9 18.8"}]] };
+/** Réglages du membre · Member settings */
+export const UserCog2: AfroiconNode = { name: "UserCog2", nodes: [["circle",{"cx":"9.5","cy":"7.8","r":"4.6"}],["path",{"d":"M4 20.5A5.5 5.5 0 0 1 12.5 15.9"}],["circle",{"cx":"17.5","cy":"17","r":"2.3"}],["path",{"d":"M19.8 17L20.9 17M18.65 18.99L19.2 19.94M16.35 18.99L15.8 19.94M15.2 17L14.1 17M16.35 15.01L15.8 14.06M18.65 15.01L19.2 14.06"}]] };
+/** Retirer une personne · Remove person */
+export const UserMinus: AfroiconNode = { name: "UserMinus", nodes: [["circle",{"cx":"9","cy":"8","r":"3.6"}],["path",{"d":"M2.5 20.5C2.5 16.9 5.4 14.5 9 14.5S15.5 16.9 15.5 20.5"}],["path",{"d":"M16 11H22"}]] };
+/** Retirer un membre · Remove member */
+export const UserMinus2: AfroiconNode = { name: "UserMinus2", nodes: [["circle",{"cx":"9.5","cy":"7.8","r":"4.6"}],["path",{"d":"M4 20.5A5.5 5.5 0 0 1 15 20.5"}],["path",{"d":"M16 11H22"}]] };
+/** Modifier l'utilisateur · Edit user */
+export const UserPen: AfroiconNode = { name: "UserPen", nodes: [["circle",{"cx":"9","cy":"8","r":"3.6"}],["path",{"d":"M2.5 20.5C2.5 16.9 5.4 14.5 9 14.5C10.1 14.5 11.1 14.7 12 15.1"}],["path",{"d":"M19.2 12.8C19.7 12.3 20.5 12.3 21 12.8C21.5 13.3 21.5 14.1 21 14.6L16.5 19.1L14 19.8L14.7 17.3Z"}]] };
+/** Ajouter un membre · Add member */
+export const UserPlus2: AfroiconNode = { name: "UserPlus2", nodes: [["circle",{"cx":"9.5","cy":"7.8","r":"4.6"}],["path",{"d":"M4 20.5A5.5 5.5 0 0 1 15 20.5"}],["path",{"d":"M19 8V14M16 11H22"}]] };
+/** Modifier le membre · Edit member */
+export const UserRoundPen: AfroiconNode = { name: "UserRoundPen", nodes: [["circle",{"cx":"9.5","cy":"7.8","r":"4.6"}],["path",{"d":"M4 20.5A5.5 5.5 0 0 1 12.5 15.9"}],["path",{"d":"M19.2 12.8C19.7 12.3 20.5 12.3 21 12.8C21.5 13.3 21.5 14.1 21 14.6L16.5 19.1L14 19.8L14.7 17.3Z"}]] };
+/** Rechercher un membre · Find member */
+export const UserRoundSearch: AfroiconNode = { name: "UserRoundSearch", nodes: [["circle",{"cx":"9.5","cy":"7.8","r":"4.6"}],["path",{"d":"M4 20.5A5.5 5.5 0 0 1 12.5 15.9"}],["circle",{"cx":"17","cy":"16","r":"2.6"}],["path",{"d":"M18.9 17.9L21 20"}]] };
+/** Rechercher un utilisateur · Find user */
+export const UserSearch: AfroiconNode = { name: "UserSearch", nodes: [["circle",{"cx":"9","cy":"8","r":"3.6"}],["path",{"d":"M2.5 20.5C2.5 16.9 5.4 14.5 9 14.5C10.1 14.5 11.1 14.7 12 15.1"}],["circle",{"cx":"17","cy":"16","r":"2.6"}],["path",{"d":"M18.9 17.9L21 20"}]] };
+/** Carte de membre · Member card */
+export const UserSquare2: AfroiconNode = { name: "UserSquare2", nodes: [["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"3"}],["circle",{"cx":"12","cy":"9.8","r":"3.2"}],["path",{"d":"M7 21A5 5 0 0 1 17 21"}]] };
+/** Membre bloqué · Member blocked */
+export const UserX2: AfroiconNode = { name: "UserX2", nodes: [["circle",{"cx":"9.5","cy":"7.8","r":"4.6"}],["path",{"d":"M4 20.5A5.5 5.5 0 0 1 15 20.5"}],["path",{"d":"M17 8.5L21 12.5M21 8.5L17 12.5"}]] };
+/** Coffre-fort · Safe */
+export const Vault: AfroiconNode = { name: "Vault", nodes: [["rect",{"x":"3","y":"3.5","width":"18","height":"15","rx":"2.5"}],["circle",{"cx":"11","cy":"11","r":"3.6"}],["circle",{"cx":"11","cy":"11","r":"0.9","fill":"currentColor","stroke":"none"}],["path",{"d":"M17.5 9V13M6.5 18.5V20.5M17.5 18.5V20.5"}]] };
+/** Porte-monnaie · Purse */
+export const Wallet2: AfroiconNode = { name: "Wallet2", nodes: [["rect",{"x":"3","y":"6.5","width":"18","height":"14","rx":"2.5"}],["path",{"d":"M5.5 6.5L15.4 3.6C16.2 3.4 17 4 17 4.8V6.5"}],["circle",{"cx":"16.8","cy":"13.5","r":"1.1","fill":"currentColor","stroke":"none"}]] };
+/** Portefeuille de cartes · Card wallet */
+export const WalletCards: AfroiconNode = { name: "WalletCards", nodes: [["rect",{"x":"3","y":"9","width":"18","height":"11.5","rx":"2.5"}],["path",{"d":"M6 6V4.5C6 3.7 6.7 3 7.5 3H16.5C17.3 3 18 3.7 18 4.5V6"}],["path",{"d":"M4.5 9V7.5C4.5 6.7 5.2 6 6 6H18C18.8 6 19.5 6.7 19.5 7.5V9"}],["path",{"d":"M21 12.8H17.5C16.7 12.8 16 13.5 16 14.3S16.7 15.8 17.5 15.8H21"}]] };
+/** Grosse flèche bas · Big arrow down */
+export const ArrowBigDown: AfroiconNode = { name: "ArrowBigDown", nodes: [["path",{"d":"M12 20.5L4 12.5L8.5 12.5L8.5 5C8.5 4.2 9.2 3.5 10 3.5L14 3.5C14.8 3.5 15.5 4.2 15.5 5L15.5 12.5L20 12.5Z"}]] };
+/** Grosse flèche bas jusqu'au trait · Big arrow down to bar */
+export const ArrowBigDownDash: AfroiconNode = { name: "ArrowBigDownDash", nodes: [["path",{"d":"M12 21L4 13L8.5 13L8.5 7.5C8.5 6.9 8.9 6.5 9.5 6.5L14.5 6.5C15.1 6.5 15.5 6.9 15.5 7.5L15.5 13L20 13Z"}],["path",{"d":"M15.5 3L8.5 3"}]] };
+/** Grosse flèche gauche · Big arrow left */
+export const ArrowBigLeft: AfroiconNode = { name: "ArrowBigLeft", nodes: [["path",{"d":"M3.5 12L11.5 4L11.5 8.5L19 8.5C19.8 8.5 20.5 9.2 20.5 10L20.5 14C20.5 14.8 19.8 15.5 19 15.5L11.5 15.5L11.5 20Z"}]] };
+/** Grosse flèche gauche jusqu'au trait · Big arrow left to bar */
+export const ArrowBigLeftDash: AfroiconNode = { name: "ArrowBigLeftDash", nodes: [["path",{"d":"M3 12L11 4L11 8.5L16.5 8.5C17.1 8.5 17.5 8.9 17.5 9.5L17.5 14.5C17.5 15.1 17.1 15.5 16.5 15.5L11 15.5L11 20Z"}],["path",{"d":"M21 15.5L21 8.5"}]] };
+/** Grosse flèche droite · Big arrow right */
+export const ArrowBigRight: AfroiconNode = { name: "ArrowBigRight", nodes: [["path",{"d":"M20.5 12L12.5 20L12.5 15.5L5 15.5C4.2 15.5 3.5 14.8 3.5 14L3.5 10C3.5 9.2 4.2 8.5 5 8.5L12.5 8.5L12.5 4Z"}]] };
+/** Grosse flèche droite jusqu'au trait · Big arrow right to bar */
+export const ArrowBigRightDash: AfroiconNode = { name: "ArrowBigRightDash", nodes: [["path",{"d":"M21 12L13 20L13 15.5L7.5 15.5C6.9 15.5 6.5 15.1 6.5 14.5L6.5 9.5C6.5 8.9 6.9 8.5 7.5 8.5L13 8.5L13 4Z"}],["path",{"d":"M3 8.5L3 15.5"}]] };
+/** Touche Maj (grosse flèche haut) · Shift key */
+export const ArrowBigUp: AfroiconNode = { name: "ArrowBigUp", nodes: [["path",{"d":"M12 3.5L20 11.5L15.5 11.5L15.5 19C15.5 19.8 14.8 20.5 14 20.5L10 20.5C9.2 20.5 8.5 19.8 8.5 19L8.5 11.5L4 11.5Z"}]] };
+/** Verrouillage des majuscules · Caps lock */
+export const ArrowBigUpDash: AfroiconNode = { name: "ArrowBigUpDash", nodes: [["path",{"d":"M12 3L20 11L15.5 11L15.5 16.5C15.5 17.1 15.1 17.5 14.5 17.5L9.5 17.5C8.9 17.5 8.5 17.1 8.5 16.5L8.5 11L4 11Z"}],["path",{"d":"M8.5 21L15.5 21"}]] };
+/** Trier de 0 à 9 (flèche vers le bas) · Sort 0 to 9 (down) */
+export const ArrowDown01: AfroiconNode = { name: "ArrowDown01", nodes: [["path",{"d":"M6.5 4V19.5M3 16L6.5 19.5L10 16"}],["rect",{"x":"14","y":"3.5","width":"5","height":"6.5","rx":"2.5"}],["path",{"d":"M14.6 15.3L17 13.5V20"}]] };
+/** Trier de 9 à 0 (flèche vers le bas) · Sort 9 to 0 (down) */
+export const ArrowDown10: AfroiconNode = { name: "ArrowDown10", nodes: [["path",{"d":"M6.5 4V19.5M3 16L6.5 19.5L10 16"}],["path",{"d":"M14.6 5.3L17 3.5V10"}],["rect",{"x":"14","y":"13.5","width":"5","height":"6.5","rx":"2.5"}]] };
+/** Faire descendre depuis le haut · Drop from top */
+export const ArrowDownFromLine: AfroiconNode = { name: "ArrowDownFromLine", nodes: [["path",{"d":"M12 7.5L12 20M17 15L12 20L7 15"}],["path",{"d":"M19 3.5L5 3.5"}]] };
+/** Flèche bas-gauche encadrée · Arrow down-left in square */
+export const ArrowDownLeftSquare: AfroiconNode = { name: "ArrowDownLeftSquare", nodes: [["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"3"}],["path",{"d":"M15.5 8.5L8.5 15.5M14.2 15.5L8.5 15.5L8.5 9.8"}]] };
+/** Trier par ordre croissant · Sort ascending */
+export const ArrowDownNarrowWide: AfroiconNode = { name: "ArrowDownNarrowWide", nodes: [["path",{"d":"M6.5 4V19.5M3 16L6.5 19.5L10 16"}],["path",{"d":"M13.5 6H16.5M13.5 12H18.5M13.5 18H20.5"}]] };
+/** Flèche bas-droite encadrée · Arrow down-right in square */
+export const ArrowDownRightSquare: AfroiconNode = { name: "ArrowDownRightSquare", nodes: [["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"3"}],["path",{"d":"M8.5 8.5L15.5 15.5M15.5 9.8L15.5 15.5L9.8 15.5"}]] };
+/** Flèche bas encadrée · Arrow down in square */
+export const ArrowDownSquare: AfroiconNode = { name: "ArrowDownSquare", nodes: [["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"3"}],["path",{"d":"M12 7.6L12 16.4M15.7 12.7L12 16.4L8.3 12.7"}]] };
+/** Descendre jusqu'au point · Down to point */
+export const ArrowDownToDot: AfroiconNode = { name: "ArrowDownToDot", nodes: [["path",{"d":"M12 3V15.5M6.5 10L12 15.5L17.5 10"}],["circle",{"cx":"12","cy":"19.8","r":"1.9","fill":"currentColor","stroke":"none"}]] };
+/** Aller tout en bas · Move to bottom */
+export const ArrowDownToLine: AfroiconNode = { name: "ArrowDownToLine", nodes: [["path",{"d":"M12 3.5L12 16M17 11L12 16L7 11"}],["path",{"d":"M19 20.5L5 20.5"}]] };
+/** Inverser l'ordre (bas puis haut) · Reverse order */
+export const ArrowDownUp: AfroiconNode = { name: "ArrowDownUp", nodes: [["path",{"d":"M7.5 4V19.5M4 16L7.5 19.5L11 16"}],["path",{"d":"M16.5 20V4.5M13 8L16.5 4.5L20 8"}]] };
+/** Flèche gauche cerclée · Arrow left in circle */
+export const ArrowLeftCircle: AfroiconNode = { name: "ArrowLeftCircle", nodes: [["circle",{"cx":"12","cy":"12","r":"9"}],["path",{"d":"M16.4 12L7.6 12M11.3 15.7L7.6 12L11.3 8.3"}]] };
+/** Sortir par la gauche · Exit left */
+export const ArrowLeftFromLine: AfroiconNode = { name: "ArrowLeftFromLine", nodes: [["path",{"d":"M16.5 12L4 12M9 17L4 12L9 7"}],["path",{"d":"M20.5 19L20.5 5"}]] };
+/** Flèche gauche encadrée · Arrow left in square */
+export const ArrowLeftSquare: AfroiconNode = { name: "ArrowLeftSquare", nodes: [["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"3"}],["path",{"d":"M16.4 12L7.6 12M11.3 15.7L7.6 12L11.3 8.3"}]] };
+/** Aller au début · Go to start */
+export const ArrowLeftToLine: AfroiconNode = { name: "ArrowLeftToLine", nodes: [["path",{"d":"M20.5 12L8 12M13 17L8 12L13 7"}],["path",{"d":"M3.5 19L3.5 5"}]] };
+/** Flèche droite cerclée · Arrow right in circle */
+export const ArrowRightCircle: AfroiconNode = { name: "ArrowRightCircle", nodes: [["circle",{"cx":"12","cy":"12","r":"9"}],["path",{"d":"M7.6 12L16.4 12M12.7 8.3L16.4 12L12.7 15.7"}]] };
+/** Sortir par la droite · Exit right */
+export const ArrowRightFromLine: AfroiconNode = { name: "ArrowRightFromLine", nodes: [["path",{"d":"M7.5 12L20 12M15 7L20 12L15 17"}],["path",{"d":"M3.5 5L3.5 19"}]] };
+/** Flèche droite encadrée · Arrow right in square */
+export const ArrowRightSquare: AfroiconNode = { name: "ArrowRightSquare", nodes: [["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"3"}],["path",{"d":"M7.6 12L16.4 12M12.7 8.3L16.4 12L12.7 15.7"}]] };
+/** Aller à la fin · Go to end */
+export const ArrowRightToLine: AfroiconNode = { name: "ArrowRightToLine", nodes: [["path",{"d":"M3.5 12L16 12M11 7L16 12L11 17"}],["path",{"d":"M20.5 5L20.5 19"}]] };
+/** Soulever plusieurs éléments · Lift several items */
+export const ArrowsUpFromLine: AfroiconNode = { name: "ArrowsUpFromLine", nodes: [["path",{"d":"M7.5 16.5V3.5M3.5 7.5L7.5 3.5L11.5 7.5"}],["path",{"d":"M16.5 16.5V3.5M12.5 7.5L16.5 3.5L20.5 7.5"}],["path",{"d":"M3.5 20.5H20.5"}]] };
+/** Trier de 0 à 9 (flèche vers le haut) · Sort 0 to 9 (up) */
+export const ArrowUp01: AfroiconNode = { name: "ArrowUp01", nodes: [["path",{"d":"M6.5 20V4.5M3 8L6.5 4.5L10 8"}],["rect",{"x":"14","y":"3.5","width":"5","height":"6.5","rx":"2.5"}],["path",{"d":"M14.6 15.3L17 13.5V20"}]] };
+/** Trier de 9 à 0 (flèche vers le haut) · Sort 9 to 0 (up) */
+export const ArrowUp10: AfroiconNode = { name: "ArrowUp10", nodes: [["path",{"d":"M6.5 20V4.5M3 8L6.5 4.5L10 8"}],["path",{"d":"M14.6 5.3L17 3.5V10"}],["rect",{"x":"14","y":"13.5","width":"5","height":"6.5","rx":"2.5"}]] };
+/** Trier de A à Z (flèche vers le haut) · Sort A to Z (up) */
+export const ArrowUpAZ: AfroiconNode = { name: "ArrowUpAZ", nodes: [["path",{"d":"M6.5 20V4.5M3 8L6.5 4.5L10 8"}],["path",{"d":"M13.5 10.5L17 3.5L20.5 10.5M14.8 8H19.2"}],["path",{"d":"M13.5 13.5H20.5L13.5 20.5H20.5"}]] };
+/** Changer le sens du tri · Toggle sort */
+export const ArrowUpDown: AfroiconNode = { name: "ArrowUpDown", nodes: [["path",{"d":"M7.5 20V4.5M4 8L7.5 4.5L11 8"}],["path",{"d":"M16.5 4V19.5M13 16L16.5 19.5L20 16"}]] };
+/** Partir du point vers le haut · Up from point */
+export const ArrowUpFromDot: AfroiconNode = { name: "ArrowUpFromDot", nodes: [["path",{"d":"M12 15.5V3M6.5 8.5L12 3L17.5 8.5"}],["circle",{"cx":"12","cy":"19.8","r":"1.9","fill":"currentColor","stroke":"none"}]] };
+/** Téléverser depuis la base · Upload from base */
+export const ArrowUpFromLine: AfroiconNode = { name: "ArrowUpFromLine", nodes: [["path",{"d":"M12 16.5V4M7 9L12 4L17 9"}],["path",{"d":"M5 20.5H19"}]] };
+/** Flèche haut-gauche encadrée · Arrow up-left in square */
+export const ArrowUpLeftSquare: AfroiconNode = { name: "ArrowUpLeftSquare", nodes: [["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"3"}],["path",{"d":"M15.5 15.5L8.5 8.5M8.5 14.2L8.5 8.5L14.2 8.5"}]] };
+/** Flèche haut-droite encadrée · Arrow up-right in square */
+export const ArrowUpRightSquare: AfroiconNode = { name: "ArrowUpRightSquare", nodes: [["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"3"}],["path",{"d":"M8.5 15.5L15.5 8.5M9.8 8.5L15.5 8.5L15.5 14.2"}]] };
+/** Flèche haut encadrée · Arrow up in square */
+export const ArrowUpSquare: AfroiconNode = { name: "ArrowUpSquare", nodes: [["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"3"}],["path",{"d":"M12 16.4L12 7.6M8.3 11.3L12 7.6L15.7 11.3"}]] };
+/** Aller tout en haut · Move to top */
+export const ArrowUpToLine: AfroiconNode = { name: "ArrowUpToLine", nodes: [["path",{"d":"M12 20.5V8M7 13L12 8L17 13"}],["path",{"d":"M5 3.5H19"}]] };
+/** Trier par ordre décroissant · Sort descending */
+export const ArrowUpWideNarrow: AfroiconNode = { name: "ArrowUpWideNarrow", nodes: [["path",{"d":"M6.5 20V4.5M3 8L6.5 4.5L10 8"}],["path",{"d":"M13.5 6H20.5M13.5 12H18.5M13.5 18H16.5"}]] };
+/** Trier de Z à A (flèche vers le haut) · Sort Z to A (up) */
+export const ArrowUpZA: AfroiconNode = { name: "ArrowUpZA", nodes: [["path",{"d":"M6.5 20V4.5M3 8L6.5 4.5L10 8"}],["path",{"d":"M13.5 3.5H20.5L13.5 10.5H20.5"}],["path",{"d":"M13.5 20.5L17 13.5L20.5 20.5M14.8 18H19.2"}]] };
+/** Dérouler (rond) · Expand down (round) */
+export const ChevronDownCircle: AfroiconNode = { name: "ChevronDownCircle", nodes: [["circle",{"cx":"12","cy":"12","r":"9"}],["path",{"d":"M8.5 10.5L12 14L15.5 10.5"}]] };
+/** Dérouler (carré) · Expand down (square) */
+export const ChevronDownSquare: AfroiconNode = { name: "ChevronDownSquare", nodes: [["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"3"}],["path",{"d":"M8.5 10.5L12 14L15.5 10.5"}]] };
+/** Précédent (rond) · Previous (round) */
+export const ChevronLeftCircle: AfroiconNode = { name: "ChevronLeftCircle", nodes: [["circle",{"cx":"12","cy":"12","r":"9"}],["path",{"d":"M13.5 8.5L10 12L13.5 15.5"}]] };
+/** Précédent (carré) · Previous (square) */
+export const ChevronLeftSquare: AfroiconNode = { name: "ChevronLeftSquare", nodes: [["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"3"}],["path",{"d":"M13.5 8.5L10 12L13.5 15.5"}]] };
+/** Suivant (rond) · Next (round) */
+export const ChevronRightCircle: AfroiconNode = { name: "ChevronRightCircle", nodes: [["circle",{"cx":"12","cy":"12","r":"9"}],["path",{"d":"M10.5 8.5L14 12L10.5 15.5"}]] };
+/** Suivant (carré) · Next (square) */
+export const ChevronRightSquare: AfroiconNode = { name: "ChevronRightSquare", nodes: [["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"3"}],["path",{"d":"M10.5 8.5L14 12L10.5 15.5"}]] };
+/** Replier (rond) · Collapse up (round) */
+export const ChevronUpCircle: AfroiconNode = { name: "ChevronUpCircle", nodes: [["circle",{"cx":"12","cy":"12","r":"9"}],["path",{"d":"M8.5 13.5L12 10L15.5 13.5"}]] };
+/** Replier (carré) · Collapse up (square) */
+export const ChevronUpSquare: AfroiconNode = { name: "ChevronUpSquare", nodes: [["rect",{"x":"3","y":"3","width":"18","height":"18","rx":"3"}],["path",{"d":"M8.5 13.5L12 10L15.5 13.5"}]] };
+/** Première page · First page */
+export const ChevronFirst: AfroiconNode = { name: "ChevronFirst", nodes: [["path",{"d":"M16.5 6L10.5 12L16.5 18"}],["path",{"d":"M7 6V18"}]] };
+/** Dernière page · Last page */
+export const ChevronLast: AfroiconNode = { name: "ChevronLast", nodes: [["path",{"d":"M7.5 6L13.5 12L7.5 18"}],["path",{"d":"M17 6V18"}]] };
+/** Tout en bas · Scroll to bottom */
+export const ChevronsDown: AfroiconNode = { name: "ChevronsDown", nodes: [["path",{"d":"M7 5.5L12 10.5L17 5.5"}],["path",{"d":"M7 12.5L12 17.5L17 12.5"}]] };
+/** Tout en haut · Scroll to top */
+export const ChevronsUp: AfroiconNode = { name: "ChevronsUp", nodes: [["path",{"d":"M7 18.5L12 13.5L17 18.5"}],["path",{"d":"M7 11.5L12 6.5L17 11.5"}]] };
+/** Avancer vite · Skip forward */
+export const ChevronsRight: AfroiconNode = { name: "ChevronsRight", nodes: [["path",{"d":"M5.5 7L10.5 12L5.5 17"}],["path",{"d":"M12.5 7L17.5 12L12.5 17"}]] };
+/** Reculer vite · Skip back */
+export const ChevronsLeft: AfroiconNode = { name: "ChevronsLeft", nodes: [["path",{"d":"M18.5 7L13.5 12L18.5 17"}],["path",{"d":"M11.5 7L6.5 12L11.5 17"}]] };
+/** Élargir · Widen */
+export const ChevronsLeftRight: AfroiconNode = { name: "ChevronsLeftRight", nodes: [["path",{"d":"M9 7L4 12L9 17"}],["path",{"d":"M15 7L20 12L15 17"}]] };
+/** Rétrécir · Narrow */
+export const ChevronsRightLeft: AfroiconNode = { name: "ChevronsRightLeft", nodes: [["path",{"d":"M4 7L9 12L4 17"}],["path",{"d":"M20 7L15 12L20 17"}]] };
+/** Pagination masquée · Hidden pages */
+export const ChevronsLeftRightEllipsis: AfroiconNode = { name: "ChevronsLeftRightEllipsis", nodes: [["path",{"d":"M7 7.5L3 12L7 16.5"}],["path",{"d":"M17 7.5L21 12L17 16.5"}],["circle",{"cx":"8.5","cy":"12","r":"1.1","fill":"currentColor","stroke":"none"}],["circle",{"cx":"12","cy":"12","r":"1.1","fill":"currentColor","stroke":"none"}],["circle",{"cx":"15.5","cy":"12","r":"1.1","fill":"currentColor","stroke":"none"}]] };
+/** Retour à la ligne · Line break */
+export const CornerDownLeft: AfroiconNode = { name: "CornerDownLeft", nodes: [["path",{"d":"M19.5 4L19.5 11C19.5 13.8 17.3 16 14.5 16L4.5 16"}],["path",{"d":"M8.5 12L4.5 16L8.5 20"}]] };
+/** Sous-élément · Sub-item */
+export const CornerDownRight: AfroiconNode = { name: "CornerDownRight", nodes: [["path",{"d":"M4.5 4L4.5 11C4.5 13.8 6.7 16 9.5 16L19.5 16"}],["path",{"d":"M15.5 12L19.5 16L15.5 20"}]] };
+/** Renvoyer en haut à gauche · Turn up then left */
+export const CornerUpLeft: AfroiconNode = { name: "CornerUpLeft", nodes: [["path",{"d":"M19.5 20L19.5 13C19.5 10.2 17.3 8 14.5 8L4.5 8"}],["path",{"d":"M8.5 12L4.5 8L8.5 4"}]] };
+/** Renvoyer en haut à droite · Turn up then right */
+export const CornerUpRight: AfroiconNode = { name: "CornerUpRight", nodes: [["path",{"d":"M4.5 20L4.5 13C4.5 10.2 6.7 8 9.5 8L19.5 8"}],["path",{"d":"M15.5 12L19.5 8L15.5 4"}]] };
+/** Tourner à gauche puis descendre · Turn left then down */
+export const CornerLeftDown: AfroiconNode = { name: "CornerLeftDown", nodes: [["path",{"d":"M20 4.5L13 4.5C10.2 4.5 8 6.7 8 9.5L8 19.5"}],["path",{"d":"M12 15.5L8 19.5L4 15.5"}]] };
+/** Tourner à gauche puis monter · Turn left then up */
+export const CornerLeftUp: AfroiconNode = { name: "CornerLeftUp", nodes: [["path",{"d":"M20 19.5L13 19.5C10.2 19.5 8 17.3 8 14.5L8 4.5"}],["path",{"d":"M12 8.5L8 4.5L4 8.5"}]] };
+/** Tourner à droite puis descendre · Turn right then down */
+export const CornerRightDown: AfroiconNode = { name: "CornerRightDown", nodes: [["path",{"d":"M4 4.5L11 4.5C13.8 4.5 16 6.7 16 9.5L16 19.5"}],["path",{"d":"M12 15.5L16 19.5L20 15.5"}]] };
+/** Tourner à droite puis monter · Turn right then up */
+export const CornerRightUp: AfroiconNode = { name: "CornerRightUp", nodes: [["path",{"d":"M4 19.5L11 19.5C13.8 19.5 16 17.3 16 14.5L16 4.5"}],["path",{"d":"M12 8.5L16 4.5L20 8.5"}]] };
+/** Déployer · Expand */
+export const Expand: AfroiconNode = { name: "Expand", nodes: [["path",{"d":"M14.5 9.5L20 4"}],["path",{"d":"M15 4H20V9"}],["path",{"d":"M9.5 9.5L4 4"}],["path",{"d":"M9 4L4 4L4 9"}],["path",{"d":"M14.5 14.5L20 20"}],["path",{"d":"M15 20L20 20L20 15"}],["path",{"d":"M9.5 14.5L4 20"}],["path",{"d":"M9 20L4 20L4 15"}]] };
+/** Resserrer · Shrink */
+export const Shrink: AfroiconNode = { name: "Shrink", nodes: [["path",{"d":"M20 4L15 9"}],["path",{"d":"M15 5V9H19"}],["path",{"d":"M4 4L9 9"}],["path",{"d":"M9 5L9 9L5 9"}],["path",{"d":"M20 20L15 15"}],["path",{"d":"M15 19L15 15L19 15"}],["path",{"d":"M4 20L9 15"}],["path",{"d":"M9 19L9 15L5 15"}]] };
+/** Plein cadre · Maximize */
+export const Maximize: AfroiconNode = { name: "Maximize", nodes: [["path",{"d":"M4 8.5V6C4 4.9 4.9 4 6 4H8.5"}],["path",{"d":"M20 8.5L20 6C20 4.9 19.1 4 18 4L15.5 4"}],["path",{"d":"M4 15.5L4 18C4 19.1 4.9 20 6 20L8.5 20"}],["path",{"d":"M20 15.5L20 18C20 19.1 19.1 20 18 20L15.5 20"}]] };
+/** Réduire le cadre · Minimize */
+export const Minimize: AfroiconNode = { name: "Minimize", nodes: [["path",{"d":"M8.5 4V6.5C8.5 7.6 7.6 8.5 6.5 8.5H4"}],["path",{"d":"M15.5 4L15.5 6.5C15.5 7.6 16.4 8.5 17.5 8.5L20 8.5"}],["path",{"d":"M8.5 20L8.5 17.5C8.5 16.4 7.6 15.5 6.5 15.5L4 15.5"}],["path",{"d":"M15.5 20L15.5 17.5C15.5 16.4 16.4 15.5 17.5 15.5L20 15.5"}]] };
+/** Réduire · Minimize */
+export const Minimize2: AfroiconNode = { name: "Minimize2", nodes: [["path",{"d":"M20 4L14 10"}],["path",{"d":"M14 4.5V10H19.5"}],["path",{"d":"M4 20L10 14"}],["path",{"d":"M10 19.5V14H4.5"}]] };
+/** Plein écran · Full screen */
+export const Fullscreen: AfroiconNode = { name: "Fullscreen", nodes: [["path",{"d":"M4 8.5V6C4 4.9 4.9 4 6 4H8.5"}],["path",{"d":"M20 8.5L20 6C20 4.9 19.1 4 18 4L15.5 4"}],["path",{"d":"M4 15.5L4 18C4 19.1 4.9 20 6 20L8.5 20"}],["path",{"d":"M20 15.5L20 18C20 19.1 19.1 20 18 20L15.5 20"}],["rect",{"x":"8","y":"8.5","width":"8","height":"7","rx":"1.5"}]] };
+/** Replier verticalement · Fold vertically */
+export const FoldVertical: AfroiconNode = { name: "FoldVertical", nodes: [["path",{"d":"M4 12H6M10 12H14M18 12H20"}],["path",{"d":"M12 3.5V9"}],["path",{"d":"M9.5 6.5L12 9L14.5 6.5"}],["path",{"d":"M12 20.5V15"}],["path",{"d":"M9.5 17.5L12 15L14.5 17.5"}]] };
+/** Déplier verticalement · Unfold vertically */
+export const UnfoldVertical: AfroiconNode = { name: "UnfoldVertical", nodes: [["path",{"d":"M4 12H6M10 12H14M18 12H20"}],["path",{"d":"M12 3.5V9"}],["path",{"d":"M9.5 6L12 3.5L14.5 6"}],["path",{"d":"M12 20.5V15"}],["path",{"d":"M9.5 18L12 20.5L14.5 18"}]] };
+/** Replier horizontalement · Fold horizontally */
+export const FoldHorizontal: AfroiconNode = { name: "FoldHorizontal", nodes: [["path",{"d":"M12 4L12 6M12 10L12 14M12 18L12 20"}],["path",{"d":"M3.5 12L9 12"}],["path",{"d":"M6.5 9.5L9 12L6.5 14.5"}],["path",{"d":"M20.5 12L15 12"}],["path",{"d":"M17.5 9.5L15 12L17.5 14.5"}]] };
+/** Déplier horizontalement · Unfold horizontally */
+export const UnfoldHorizontal: AfroiconNode = { name: "UnfoldHorizontal", nodes: [["path",{"d":"M12 4L12 6M12 10L12 14M12 18L12 20"}],["path",{"d":"M3.5 12L9 12"}],["path",{"d":"M6 9.5L3.5 12L6 14.5"}],["path",{"d":"M20.5 12L15 12"}],["path",{"d":"M18 9.5L20.5 12L18 14.5"}]] };
+/** Déplacer vers le bas · Move down */
+export const MoveDown: AfroiconNode = { name: "MoveDown", nodes: [["path",{"d":"M12 3.5V20.5"}],["path",{"d":"M9 17.5L12 20.5L15 17.5"}]] };
+/** Déplacer vers le haut · Move up */
+export const MoveUp: AfroiconNode = { name: "MoveUp", nodes: [["path",{"d":"M12 20.5L12 3.5"}],["path",{"d":"M9 6.5L12 3.5L15 6.5"}]] };
+/** Déplacer vers la droite · Move right */
+export const MoveRight: AfroiconNode = { name: "MoveRight", nodes: [["path",{"d":"M3.5 12L20.5 12"}],["path",{"d":"M17.5 9L20.5 12L17.5 15"}]] };
+/** Déplacer vers la gauche · Move left */
+export const MoveLeft: AfroiconNode = { name: "MoveLeft", nodes: [["path",{"d":"M20.5 12L3.5 12"}],["path",{"d":"M6.5 9L3.5 12L6.5 15"}]] };
+/** Déplacer verticalement · Move vertically */
+export const MoveVertical: AfroiconNode = { name: "MoveVertical", nodes: [["path",{"d":"M12 3.5V20.5"}],["path",{"d":"M9 6.5L12 3.5L15 6.5"}],["path",{"d":"M9 17.5L12 20.5L15 17.5"}]] };
+/** Déplacer horizontalement · Move horizontally */
+export const MoveHorizontal: AfroiconNode = { name: "MoveHorizontal", nodes: [["path",{"d":"M3.5 12H20.5"}],["path",{"d":"M6.5 9L3.5 12L6.5 15"}],["path",{"d":"M17.5 9L20.5 12L17.5 15"}]] };
+/** Déplacer en haut à droite · Move up right */
+export const MoveUpRight: AfroiconNode = { name: "MoveUpRight", nodes: [["path",{"d":"M5.5 18.5L18.5 5.5"}],["path",{"d":"M14.3 5.5H18.5V9.7"}]] };
+/** Déplacer en haut à gauche · Move up left */
+export const MoveUpLeft: AfroiconNode = { name: "MoveUpLeft", nodes: [["path",{"d":"M18.5 18.5L5.5 5.5"}],["path",{"d":"M9.7 5.5L5.5 5.5L5.5 9.7"}]] };
+/** Déplacer en bas à droite · Move down right */
+export const MoveDownRight: AfroiconNode = { name: "MoveDownRight", nodes: [["path",{"d":"M5.5 5.5L18.5 18.5"}],["path",{"d":"M14.3 18.5L18.5 18.5L18.5 14.3"}]] };
+/** Déplacer en bas à gauche · Move down left */
+export const MoveDownLeft: AfroiconNode = { name: "MoveDownLeft", nodes: [["path",{"d":"M18.5 5.5L5.5 18.5"}],["path",{"d":"M9.7 18.5L5.5 18.5L5.5 14.3"}]] };
+/** Redimensionner en diagonale · Resize diagonally */
+export const MoveDiagonal: AfroiconNode = { name: "MoveDiagonal", nodes: [["path",{"d":"M5.5 18.5L18.5 5.5"}],["path",{"d":"M14.3 5.5H18.5V9.7"}],["path",{"d":"M9.7 18.5H5.5V14.3"}]] };
+/** Redimensionner en diagonale inverse · Resize diagonally (reverse) */
+export const MoveDiagonal2: AfroiconNode = { name: "MoveDiagonal2", nodes: [["path",{"d":"M5.5 5.5L18.5 18.5"}],["path",{"d":"M9.7 5.5H5.5V9.7"}],["path",{"d":"M14.3 18.5H18.5V14.3"}]] };
+/** Déplacer en 3D · Move in 3D */
+export const Move3D: AfroiconNode = { name: "Move3D", nodes: [["path",{"d":"M9 15V3"}],["path",{"d":"M6 6L9 3L12 6"}],["path",{"d":"M9 15H21"}],["path",{"d":"M18 12L21 15L18 18"}],["path",{"d":"M9 15L3 21"}],["path",{"d":"M3 18V21H6"}]] };
+/** Scinder · Split */
+export const Split: AfroiconNode = { name: "Split", nodes: [["path",{"d":"M12 20.5V13.5C12 12.4 11.6 11.4 10.8 10.6L5 4.5"}],["path",{"d":"M13.5 10.2L19 4.5"}],["path",{"d":"M5 9V4.5H9.5"}],["path",{"d":"M14.5 4.5H19V9"}]] };
+/** Fusionner · Merge */
+export const Merge: AfroiconNode = { name: "Merge", nodes: [["path",{"d":"M9 6.5L12 3.5L15 6.5"}],["path",{"d":"M12 3.5V10.5C12 11.6 11.6 12.6 10.8 13.4L5 19.5"}],["path",{"d":"M13.5 13.8L19 19.5"}]] };
+/** Partager l'écran en colonnes · Split view side by side */
+export const SplitSquareHorizontal: AfroiconNode = { name: "SplitSquareHorizontal", nodes: [["path",{"d":"M9.5 3H6C4.3 3 3 4.3 3 6V18C3 19.7 4.3 21 6 21H9.5"}],["path",{"d":"M14.5 3L18 3C19.7 3 21 4.3 21 6L21 18C21 19.7 19.7 21 18 21L14.5 21"}],["path",{"d":"M12 3V21"}]] };
+/** Partager l'écran en lignes · Split view top and bottom */
+export const SplitSquareVertical: AfroiconNode = { name: "SplitSquareVertical", nodes: [["path",{"d":"M3 9.5L3 6C3 4.3 4.3 3 6 3L18 3C19.7 3 21 4.3 21 6L21 9.5"}],["path",{"d":"M3 14.5L3 18C3 19.7 4.3 21 6 21L18 21C19.7 21 21 19.7 21 18L21 14.5"}],["path",{"d":"M3 12L21 12"}]] };
+/** Transférer le message · Forward message */
+export const Forward: AfroiconNode = { name: "Forward", nodes: [["path",{"d":"M14.5 6.5L20 12L14.5 17.5"}],["path",{"d":"M20 12H10C6.7 12 4 14.7 4 18V19.5"}]] };
+/** Répondre à tous · Reply all */
+export const ReplyAll: AfroiconNode = { name: "ReplyAll", nodes: [["path",{"d":"M7.5 6.5L2.5 12L7.5 17.5"}],["path",{"d":"M12.5 6.5L7.5 12L12.5 17.5"}],["path",{"d":"M7.5 12H15C18.3 12 21 14.7 21 18V19.5"}]] };
+/** Refaire l'étape · Redo step */
+export const Redo2: AfroiconNode = { name: "Redo2", nodes: [["path",{"d":"M15 14.5L20 9.5L15 4.5"}],["path",{"d":"M20 9.5L9.5 9.5C6.5 9.5 4 12 4 15C4 18 6.5 20.5 9.5 20.5L13 20.5"}]] };
+/** Défaire · Undo */
+export const Undo: AfroiconNode = { name: "Undo", nodes: [["path",{"d":"M4 6.5V12.5H10"}],["path",{"d":"M4 12.5L6.6 10.1C8.1 8.8 10 8 12.2 8C16.5 8 20 11.5 20 15.8V17"}]] };
+/** Refaire · Redo */
+export const Redo: AfroiconNode = { name: "Redo", nodes: [["path",{"d":"M20 6.5L20 12.5L14 12.5"}],["path",{"d":"M20 12.5L17.4 10.1C15.9 8.8 14 8 11.8 8C7.5 8 4 11.5 4 15.8L4 17"}]] };
+/** Défaire jusqu'au repère · Undo to marker */
+export const UndoDot: AfroiconNode = { name: "UndoDot", nodes: [["path",{"d":"M4 6.5V12.5H10"}],["path",{"d":"M4 12.5L6.6 10.1C8.1 8.8 10 8 12.2 8C16.5 8 20 11.5 20 15.8V17"}],["circle",{"cx":"12","cy":"17","r":"1.4","fill":"currentColor","stroke":"none"}]] };
+/** Refaire jusqu'au repère · Redo to marker */
+export const RedoDot: AfroiconNode = { name: "RedoDot", nodes: [["path",{"d":"M20 6.5L20 12.5L14 12.5"}],["path",{"d":"M20 12.5L17.4 10.1C15.9 8.8 14 8 11.8 8C7.5 8 4 11.5 4 15.8L4 17"}],["circle",{"cx":"12","cy":"17","r":"1.4","fill":"currentColor","stroke":"none"}]] };
+/** Actualiser à rebours · Refresh (counter-clockwise) */
+export const RefreshCcw: AfroiconNode = { name: "RefreshCcw", nodes: [["path",{"d":"M4 11A8 8 0 0 1 18.4 6.6L20.5 8.5"}],["path",{"d":"M20.5 4V8.5H16"}],["path",{"d":"M20 13A8 8 0 0 1 5.6 17.4L3.5 15.5"}],["path",{"d":"M3.5 20V15.5H8"}]] };
+/** Resynchroniser · Resync */
+export const RefreshCcwDot: AfroiconNode = { name: "RefreshCcwDot", nodes: [["path",{"d":"M4 11A8 8 0 0 1 18.4 6.6L20.5 8.5"}],["path",{"d":"M20.5 4V8.5H16"}],["path",{"d":"M20 13A8 8 0 0 1 5.6 17.4L3.5 15.5"}],["path",{"d":"M3.5 20V15.5H8"}],["circle",{"cx":"12","cy":"12","r":"1.5","fill":"currentColor","stroke":"none"}]] };
+/** Actualisation désactivée · Refresh off */
+export const RefreshCwOff: AfroiconNode = { name: "RefreshCwOff", nodes: [["path",{"d":"M20 11A8 8 0 0 0 5.6 6.6L3.5 8.5"}],["path",{"d":"M3.5 4V8.5H8"}],["path",{"d":"M4 13A8 8 0 0 0 18.4 17.4L20.5 15.5"}],["path",{"d":"M20.5 20V15.5H16"}],["path",{"d":"M4 4L20 20"}]] };
+/** Répéter une fois · Repeat once */
+export const Repeat1: AfroiconNode = { name: "Repeat1", nodes: [["path",{"d":"M4 11.5V9.5C4 8.1 5.1 7 6.5 7H19.5"}],["path",{"d":"M16.5 4L19.5 7L16.5 10"}],["path",{"d":"M20 12.5V14.5C20 15.9 18.9 17 17.5 17H4.5"}],["path",{"d":"M7.5 14L4.5 17L7.5 20"}],["path",{"d":"M10.8 10.6L12.4 9.6V14.4"}]] };
+/** Republier · Repost */
+export const Repeat2: AfroiconNode = { name: "Repeat2", nodes: [["path",{"d":"M3.5 7.5L6.5 4.5L9.5 7.5"}],["path",{"d":"M6.5 4.5V15C6.5 16.4 7.6 17.5 9 17.5H13.5"}],["path",{"d":"M14.5 16.5L17.5 19.5L20.5 16.5"}],["path",{"d":"M17.5 19.5V9C17.5 7.6 16.4 6.5 15 6.5H10.5"}]] };
+/** Pivoter à gauche · Rotate left */
+export const RotateCcwSquare: AfroiconNode = { name: "RotateCcwSquare", nodes: [["path",{"d":"M11 4.5H17C18.4 4.5 19.5 5.6 19.5 7V17C19.5 18.4 18.4 19.5 17 19.5H7C5.6 19.5 4.5 18.4 4.5 17V10.5"}],["path",{"d":"M13.5 2L11 4.5L13.5 7"}]] };
+/** Pivoter à droite · Rotate right */
+export const RotateCwSquare: AfroiconNode = { name: "RotateCwSquare", nodes: [["path",{"d":"M13 4.5L7 4.5C5.6 4.5 4.5 5.6 4.5 7L4.5 17C4.5 18.4 5.6 19.5 7 19.5L17 19.5C18.4 19.5 19.5 18.4 19.5 17L19.5 10.5"}],["path",{"d":"M10.5 2L13 4.5L10.5 7"}]] };
+/** Pivoter en 3D · Rotate in 3D */
+export const Rotate3D: AfroiconNode = { name: "Rotate3D", nodes: [["path",{"d":"M15 16.7A9 4.5 0 1 0 9 16.7"}],["path",{"d":"M6.9 14.6L9.1 16.7L6.9 18.8"}],["path",{"d":"M12 3V6.2"}],["path",{"d":"M12 18.8V21"}]] };
 /** Franc CFA (CEMAC) · Central African CFA franc */
 export const CfaFrancBeac: AfroiconNode = { name: "CfaFrancBeac", nodes: [["circle",{"cx":"12","cy":"12","r":"9.1"}],["path",{"d":"M8.67 9.09C8.28 8.4 7.67 8.17 7.12 8.5C6.58 8.83 6.22 9.67 6.22 10.6C6.22 11.53 6.58 12.37 7.12 12.7C7.67 13.03 8.28 12.8 8.67 12.11"}],["path",{"d":"M11.32 12.85V8.35H13.41M11.32 10.6H13.07"}],["path",{"d":"M15.18 12.85L16.48 8.35L17.78 12.85M15.63 11.32H17.34"}],["path",{"d":"M9.8 15.65H14.2"}]] };
 /** Franc CFA (UEMOA) · West African CFA franc */
@@ -2826,4 +3798,4 @@ export const CapeVerdeanEscudo: AfroiconNode = { name: "CapeVerdeanEscudo", node
 export const Dobra: AfroiconNode = { name: "Dobra", nodes: [["circle",{"cx":"12","cy":"12","r":"9.1"}],["path",{"d":"M6.81 14.85V9.15H8.4C9.66 9.15 10.68 10.17 10.68 11.43V12.57C10.68 13.83 9.66 14.85 8.4 14.85H6.81"}],["path",{"d":"M13.66 9.15V14.85M13.66 12.8C13.66 11.66 14.45 10.75 15.43 10.75C16.4 10.75 17.19 11.66 17.19 12.8C17.19 13.93 16.4 14.85 15.43 14.85C14.45 14.85 13.66 13.93 13.66 12.8"}]] };
 
 /** Toutes les icônes : provideAfroicons(afroicons). Pratique, mais tout entre dans le bundle. */
-export const afroicons = { Baobab, Acacia, Palmier, Savane, Kilimandjaro, Dunes, Cacao, Cacaoouvert, Afrique, Feuillebananier, Cascade, Volcan, Oasis, Termitiere, Euphorbe, Pluie, Harmattan, Fleuve, Luneetoiles, Elephant, Girafe, Lion, Dromadaire, Crocodile, Poisson, Zebu, Chevre, Poulet, Tortue, Cameleon, Calao, Autruche, Hippopotame, Rhinoceros, Gorille, Gazelle, Moustique, Perroquet, Scarabee, Agama, Zebre, Okapi, Pangolin, Djembe, Kora, Tamaparleur, Balafon, Masque, Sanza, Shekere, Ngoni, Flute, Guitare, Vuvuzela, Statuette, Poterie, Tabouret, Collierperles, Ngongi, Awale, Kanaga, Sankofa, Dwennimmen, Cauri, Kente, Wax, Tresses, Adinkrahene, Eban, Nkyinkyim, Mpatapo, Nsoromma, Croixagadez, Ankh, Khamsa, Bogolan, Toghu, Calebasse, Calebassepleine, Pilon, Marmite, Marmitecouverte, Plantain, Plantainepluche, Alloco, Jebena, Foufou, Brochettes, Piment, Igname, Ignamecoupee, Manioc, Ananas, Ananastranche, Mangue, Mangueherisson, Arachide, Arachidedecortiquee, Coco, Cocoouverte, Avocat, Avocatcoupe, Epimil, Gombo, Bissap, Theiere, Tajine, Beignets, Vindepalme, Safou, Grill, Kola, Kolaouverte, Noixpalme, Pirogue, Panier, Porteuse, Boubou, Peigneafro, Mototaxi, Mobilemoney, Boutique, Taxibrousse, Keke, Lampe, Puits, Jerrycan, Ghanamustgo, Radio, Sandales, Portebebe, Moustiquaire, Panneausolaire, Houe, Machette, Filet, Poussepousse, Ardoise, Tontine, Tondeuse, Eventail, Natte, Ballon, Gele, Couturier, Fercharbon, Etal, Sechecheveux, Case, Djenne, Pyramides, Grenier, Musgum, Tatasomba, Bamileke, Minaret, Ksar, Lalibela, Zimbabwe, Ndebele, Ville, Riad, Femmemassai, Guerriermassai, Hommetouareg, Femmepeule, Femmeamazighe, Femmehabesha, Femmendebele, Hommezoulou, Femmezouloueisicholo, Femmexhosa, Hommeswahili, Femmesomalie, Femmewolof, Hommehaoussa, Femmemalgache, Femmecongolaiseliputa, Danseurdogonkanaga, Danseurelephantbamileke, Hommeagbada, Femmekente, Hommekufi, Grandmerefoulard, Enfantnoeudsbantous, Conducteurmototaxi, Marieetraditionnelle, Cheftraditionnel, Griotkora, Togunadogon, Maisonstiebele, Huttezouloue, Manyattamassai, Porteswahilie, Maisonnubienne, Ganviepilotis, Pyramidesmeroe, Tentetouaregue, Montagnedelatable, Mangrove, Foretcongo, Fromager, Lacvictoria, Arbrefeuillu, Fleurdecerisier, Tournesol, Soleil, Globeafriqueeurope, Attieke, Jollof, Injera, Mafe, Ndole, Ugalisukuma, Nyamachoma, Pilau, Chapati, Mandazi, Sambusa, Matoke, Rolex, Dorowat, Couscous, Harira, Msemen, Pastilla, Koshari, Fulmedames, Brik, Braaiboerewors, Bobotie, Bunnychow, Papchakalaka, Pouletperiperi, Romazava, Mofogasy, Thieboudienne, Yassapoulet, Pouletdg, Soupeegusi, Eba, Kedjenou, Waakye, Bankutilapia, Akara, Moinmoin, Fataya, Dibi, Tosaucegombo, Rizgras, Koki, Pondu, Pouletmoambe, Chikwangue, Mbongotchobi, Maisgrille, Boli, Bolderiz, Pain, Cuissedepoulet, Jusdegingembre, Bouye, Dolo, Tej, Kunu, Rooibos, Umqombothi, Chapman, Jusdetamarin, Kinkeliba, Eauensachet, Jusdecanne, Furadanono, Jusdecorossol, Bieredebanane, Degue, Cafetouba, Tassedecafe, Gyenyame, Nyamedua, Oeiloudjat, Croixcopte, Papaye, Corossol, Goyave, Fruitpassion, Paindesinge, Tamarin, Nere, Karite, Cannesucre, Figuebarbarie, Citronvert, Pommecajou, Jacquier, Litchi, Patatedouce, Macabo, Aubergineafricaine, Dattes, Pasteque, Masqueelephantbamileke, Teteife, Boucliermassai, Bouclierzoulou, Valiha, Fantasia, Cavalierdurbar, Mascaradeegungun, Chapeaubasotho, Tissukanga, Cotillon, Cadeau, Telephoneportable, Sacdargent, Tambouretbaguettes, Notedemusique, Maison, Voiture, Avion, Punaiseronde, Ampoule, Toquedediplome, Reveil, Chaiseplastique, Bassineemaillee, Fourneaucharbon, Balaidenervures, Charretteaane, Groupeelectrogene, Seauetgobelet, Pagneplie, Leopard, Flamantrose, Singe, Phacochere, Buffle, Vacheankole, Ane, Hyene, Suricate, Pintade, Impala, Krar, Masenqo, Begena, Oud, Guembri, Imzad, Goje, Akonting, Mvet, Sabar, Dunun, Udu, Ngoma, Atumpan, Bendir, Darbouka, Qraqeb, Kayamba, Kakaki, Algaita, Timbila, Guepard, Lycaon, Chacal, Gnou, Oryx, Koudou, Eland, Springbok, Hippotraguenoir, Topi, Cobeacroissant, Dikdik, Gerenuk, Serval, Caracal, Ratel, Orycterope, Porcepic, Mangousterayee, Damandesrochers, Chimpanze, Bonobo, Babouin, Mandrill, Makicatta, Ayeaye, Fossa, Propitheque, Bongo, Sitatunga, Potamochere, Hylochere, Chatdore, Genette, Civette, Galago, Tenrec, Tortueradiee, Grenouillegoliath, Cephalophe, Gruecouronnee, Tisserin, Becensabot, Marabout, Vautour, Pygargue, Serpentaire, Ibissacre, Pelican, Touraco, Martinpecheur, Outardekori, Francolin, Guepiercarmin, Rollier, Souimanga, Jabiru, Herongardeboeufs, Manchot, Grandduc, Mambanoir, Pythondeseba, Viperedugabon, Cobracracheur, Varandunil, Scorpion, Criquetpelerin, Abeilleafricaine, Papilloncharaxes, Mouchetsetse, Escargotgeant, Lamantin, Baleineabosse, Requinbaleine, Silure, Tilapia, Capitaine, Chevalbarbe, Moutonpeul, Basenji, Ble, Soja, Vachelaitiere, Pharmacie, CarteAlgerie, CarteAngola, CarteBenin, CarteBotswana, CarteBurkinaFaso, CarteBurundi, CarteCapVert, CarteCameroun, CarteCentrafrique, CarteTchad, CarteComores, CarteCongo, CarteRdCongo, CarteCoteDIvoire, CarteDjibouti, CarteEgypte, CarteGuineeEquatoriale, CarteErythree, CarteEswatini, CarteEthiopie, CarteGabon, CarteGambie, CarteGhana, CarteGuinee, CarteGuineeBissau, CarteKenya, CarteLesotho, CarteLiberia, CarteLibye, CarteMadagascar, CarteMalawi, CarteMali, CarteMauritanie, CarteMaurice, CarteMaroc, CarteMozambique, CarteNamibie, CarteNiger, CarteNigeria, CarteOuganda, CarteRwanda, CarteSaoTomeEtPrincipe, CarteSenegal, CarteSeychelles, CarteSierraLeone, CarteSomalie, CarteAfriqueDuSud, CarteSoudanDuSud, CarteSoudan, CarteTanzanie, CarteTogo, CarteTunisie, CarteZambie, CarteZimbabwe, MonnaieXaf, MonnaieXof, MonnaieNgn, MonnaieGhs, MonnaieZar, MonnaieKes, MonnaieUgx, MonnaieTzs, MonnaieSos, MonnaieMad, MonnaieDzd, MonnaieTnd, MonnaieLyd, MonnaieEgp, MonnaieSdg, MonnaieSsp, MonnaieEtb, MonnaieErn, MonnaieDjf, MonnaieKmf, MonnaieMga, MonnaieMur, MonnaieScr, MonnaieRwf, MonnaieBif, MonnaieCdf, MonnaieGnf, MonnaieAoa, MonnaieZmw, MonnaieMwk, MonnaieMzn, MonnaieZwg, MonnaieBwp, MonnaieNad, MonnaieLsl, MonnaieSzl, MonnaieGmd, MonnaieSle, MonnaieLrd, MonnaieMru, MonnaieCve, MonnaieStn, DrapeauAlgerie, DrapeauAngola, DrapeauBenin, DrapeauBotswana, DrapeauBurkinaFaso, DrapeauBurundi, DrapeauCapVert, DrapeauCameroun, DrapeauCentrafrique, DrapeauTchad, DrapeauComores, DrapeauCongo, DrapeauRdCongo, DrapeauCoteDIvoire, DrapeauDjibouti, DrapeauEgypte, DrapeauGuineeEquatoriale, DrapeauErythree, DrapeauEswatini, DrapeauEthiopie, DrapeauGabon, DrapeauGambie, DrapeauGhana, DrapeauGuinee, DrapeauGuineeBissau, DrapeauKenya, DrapeauLesotho, DrapeauLiberia, DrapeauLibye, DrapeauMadagascar, DrapeauMalawi, DrapeauMali, DrapeauMauritanie, DrapeauMaurice, DrapeauMaroc, DrapeauMozambique, DrapeauNamibie, DrapeauNiger, DrapeauNigeria, DrapeauOuganda, DrapeauRwanda, DrapeauSaoTomeEtPrincipe, DrapeauSenegal, DrapeauSeychelles, DrapeauSierraLeone, DrapeauSomalie, DrapeauAfriqueDuSud, DrapeauSoudanDuSud, DrapeauSoudan, DrapeauTanzanie, DrapeauTogo, DrapeauTunisie, DrapeauZambie, DrapeauZimbabwe, EmojiBaobab, EmojiKilimandjaro, EmojiOkapi, EmojiPangolin, EmojiCameleon, EmojiCalao, EmojiGorille, EmojiZebre, EmojiTermitiere, EmojiCoucherDeSoleilSavane, EmojiDjembe, EmojiKora, EmojiMasque, EmojiCalebasse, EmojiCauri, EmojiCase, EmojiPirogue, EmojiMotoTaxi, EmojiTaxiBrousse, EmojiMobileMoney, EmojiAwale, EmojiKente, EmojiTissuWax, EmojiSankofa, EmojiAttieke, EmojiJollof, EmojiFoufou, EmojiAlloco, EmojiSuya, EmojiInjera, EmojiBissap, EmojiVinDePalme, EmojiNoixDeKola, EmojiBeignets, EmojiMafe, EmojiNdole, EmojiMasqueKanaga, EmojiMasqueElephantBamileke, EmojiTeteIfe, EmojiBouclierMassai, EmojiBouclierZoulou, EmojiCroixAgadez, EmojiTambourParlant, EmojiMbira, EmojiValiha, EmojiBalafon, EmojiCeremonieCafe, EmojiFantasia, EmojiCavalierDurbar, EmojiMascaradeEgungun, EmojiTabouretAshanti, EmojiCollierPerlesMassai, EmojiChapeauBasotho, EmojiTissuBogolan, EmojiTissuKanga, EmojiJarrePoterie, EmojiFemmeMassai, EmojiGuerrierMassai, EmojiHommeTouareg, EmojiFemmePeule, EmojiFemmeAmazighe, EmojiFemmeHabesha, EmojiFemmeNdebele, EmojiHommeZoulou, EmojiFemmeZouloueIsicholo, EmojiFemmeXhosa, EmojiHommeSwahili, EmojiFemmeSomalie, EmojiFemmeWolof, EmojiHommeHaoussa, EmojiFemmeMalgache, EmojiFemmeCongolaiseLiputa, EmojiDanseurDogonKanaga, EmojiDanseurElephantBamileke, EmojiMaisonNdebele, EmojiGrenierDogon, EmojiTogunaDogon, EmojiCaseObusMusgum, EmojiMaisonsTiebele, EmojiMosqueeDjenne, EmojiEgliseLalibela, EmojiHutteZouloue, EmojiManyattaMassai, EmojiChefferieBamileke, EmojiPorteSwahilie, EmojiKsarAmazigh, EmojiGrandZimbabwe, EmojiTataSomba, EmojiMaisonNubienne, EmojiGanviePilotis, EmojiPyramidesMeroe, EmojiPyramidesGizeh, EmojiTenteTouaregue, EmojiRondavelBasotho, EmojiHippopotame, EmojiRhinoceros, EmojiCrocodile, EmojiLeopard, EmojiDromadaire, EmojiFlamantRose, EmojiPerroquetGris, EmojiSinge, EmojiPhacochere, EmojiBuffle, EmojiVacheAnkole, EmojiChevre, EmojiAne, EmojiHyene, EmojiSuricate, EmojiPintade, EmojiImpala, EmojiAutruche, EmojiJusDeGingembre, EmojiBouye, EmojiDolo, EmojiTej, EmojiKunu, EmojiAtaya, EmojiRooibos, EmojiUmqombothi, EmojiChapman, EmojiJusDeTamarin, EmojiKinkeliba, EmojiEauEnSachet, EmojiJusDeCanne, EmojiFuraDaNono, EmojiJusDeCorossol, EmojiBiereDeBanane, EmojiGuepard, EmojiLycaon, EmojiChacal, EmojiGnou, EmojiOryx, EmojiKoudou, EmojiEland, EmojiSpringbok, EmojiHippotragueNoir, EmojiTopi, EmojiCobeACroissant, EmojiDikDik, EmojiGerenuk, EmojiServal, EmojiCaracal, EmojiRatel, EmojiOrycterope, EmojiPorcEpic, EmojiMangousteRayee, EmojiDamanDesRochers, EmojiChimpanze, EmojiBonobo, EmojiBabouin, EmojiMandrill, EmojiMakiCatta, EmojiAyeAye, EmojiFossa, EmojiPropitheque, EmojiBongo, EmojiSitatunga, EmojiPotamochere, EmojiHylochere, EmojiChatDore, EmojiGenette, EmojiCivette, EmojiGalago, EmojiTenrec, EmojiTortueRadiee, EmojiGrenouilleGoliath, EmojiCephalophe, EmojiGrueCouronnee, EmojiTisserin, EmojiBecEnSabot, EmojiMarabout, EmojiVautour, EmojiPygargue, EmojiSerpentaire, EmojiIbisSacre, EmojiPelican, EmojiTouraco, EmojiMartinPecheur, EmojiOutardeKori, EmojiFrancolin, EmojiGuepierCarmin, EmojiRollier, EmojiSouimanga, EmojiJabiru, EmojiHeronGardeBoeufs, EmojiManchot, EmojiGrandDuc, EmojiMambaNoir, EmojiPythonDeSeba, EmojiVipereDuGabon, EmojiCobraCracheur, EmojiVaranDuNil, EmojiScorpion, EmojiCriquetPelerin, EmojiAbeilleAfricaine, EmojiPapillonCharaxes, EmojiMoucheTseTse, EmojiEscargotGeant, EmojiLamantin, EmojiBaleineABosse, EmojiRequinBaleine, EmojiSilure, EmojiTilapia, EmojiCapitaine, EmojiChevalBarbe, EmojiMoutonPeul, EmojiBasenji, EmojiSafou, EmojiCorossol, EmojiPapaye, EmojiGoyave, EmojiFruitDeLaPassion, EmojiPainDeSinge, EmojiTamarin, EmojiNere, EmojiKarite, EmojiRegimeNoixDePalme, EmojiCanneASucre, EmojiFigueDeBarbarie, EmojiCitronVert, EmojiPommeDeCajou, EmojiJacquier, EmojiLitchi, EmojiPlantain, EmojiIgname, EmojiManioc, EmojiPatateDouce, EmojiMacabo, EmojiArachidesEnCoque, EmojiAubergineAfricaine, EmojiGombo, EmojiPouceLeve, EmojiPouceBaisse, EmojiApplaudissements, EmojiMainsJointes, EmojiSalutMain, EmojiSigneVictoire, EmojiOkMain, EmojiBiceps, EmojiMainLevee, EmojiIndexDroite, EmojiIndexLeve, EmojiDoigtsCroises, EmojiMainsLevees, EmojiMainsCoeur, EmojiPoingLeve, EmojiPoigneeDeMain, EmojiFemmeGele, EmojiHommeAgbada, EmojiFemmeKente, EmojiHommeKufi, EmojiGrandMereFoulard, EmojiEnfantNoeudsBantous, EmojiFemmeBebeAuDos, EmojiVendeuseBassine, EmojiConducteurMotoTaxi, EmojiMarieeTraditionnelle, EmojiChefTraditionnel, EmojiGriotKora, EmojiNgoni, EmojiKrar, EmojiMasenqo, EmojiBegena, EmojiOud, EmojiGuembri, EmojiImzad, EmojiGoje, EmojiAkonting, EmojiMvet, EmojiSabar, EmojiDunun, EmojiUdu, EmojiNgoma, EmojiAtumpan, EmojiBendir, EmojiDarbouka, EmojiGankogui, EmojiQraqeb, EmojiShekere, EmojiKayamba, EmojiKakaki, EmojiAlgaita, EmojiTimbila, EmojiChutesVictoria, EmojiMontagneDeLaTable, EmojiDunesSahara, EmojiOasis, EmojiMangrove, EmojiForetCongo, EmojiSavaneAcacia, EmojiFromager, EmojiLacVictoria, EmojiGyeNyame, EmojiDwennimmen, EmojiNyameDua, EmojiAnkh, EmojiOeilOudjat, EmojiCroixCopte, EmojiMainKhamsa, EmojiUgaliSukuma, EmojiNyamaChoma, EmojiPilau, EmojiChapati, EmojiMandazi, EmojiSambusa, EmojiMatoke, EmojiRolex, EmojiDoroWat, EmojiCouscous, EmojiTajinePlat, EmojiHarira, EmojiMsemen, EmojiPastilla, EmojiTheALaMenthe, EmojiKoshari, EmojiFulMedames, EmojiBrik, EmojiDattes, EmojiBraaiBoerewors, EmojiBobotie, EmojiBunnyChow, EmojiPapChakalaka, EmojiPouletPeriPeri, EmojiRomazava, EmojiMofoGasy, EmojiThieboudienne, EmojiYassaPoulet, EmojiPouletDg, EmojiSoupeEgusi, EmojiEba, EmojiKedjenou, EmojiWaakye, EmojiBankuTilapia, EmojiAkara, EmojiMoinMoin, EmojiFataya, EmojiDibi, EmojiToSauceGombo, EmojiRizGras, EmojiPoissonBraise, EmojiKoki, EmojiPondu, EmojiPouletMoambe, EmojiChikwangue, EmojiMbongoTchobi, EmojiMaisGrille, EmojiBoli, EmojiDegue, EmojiCafeTouba, EmojiArbreFeuillu, EmojiPalmier, EmojiCactus, EmojiFleurDeCerisier, EmojiTournesol, EmojiSoleil, EmojiCroissantDeLune, EmojiNuageDePluie, EmojiGlobeAfriqueEurope, EmojiElephant, EmojiLion, EmojiGirafe, EmojiBanane, EmojiMangue, EmojiAnanas, EmojiNoixDeCoco, EmojiAvocat, EmojiPiment, EmojiBolDeRiz, EmojiMarmiteDeRagout, EmojiTasseDeCafe, EmojiPasteque, EmojiPain, EmojiCuisseDePoulet, EmojiCotillon, EmojiCadeau, EmojiTelephonePortable, EmojiSacDArgent, EmojiBallonDeFootball, EmojiTambourEtBaguettes, EmojiNoteDeMusique, EmojiMaison, EmojiVoiture, EmojiAvion, EmojiPunaiseRonde, EmojiAmpoule, EmojiToqueDeDiplome, EmojiReveil, EmojiChaisePlastique, EmojiBidonJaune, EmojiBassineEmaillee, EmojiMortierPilon, EmojiFourneauCharbon, EmojiLampeTempete, EmojiRadioTransistor, EmojiBalaiDeNervures, EmojiPanierTresse, EmojiTukTuk, EmojiMatatu, EmojiCharretteAAne, EmojiPoussePousse, EmojiEtalDeMarche, EmojiGroupeElectrogene, EmojiSeauEtGobelet, EmojiPagnePlie, EmojiMachineACoudre, EmojiVisageSouriant, EmojiVisageSouriantYeuxRieurs, EmojiVisageRayonnant, EmojiVisagePlisseRieur, EmojiVisageSueur, EmojiMortDeRire, EmojiLarmesDeJoie, EmojiVisageLegerementSouriant, EmojiClinDOeil, EmojiVisageRougissant, EmojiVisageAureole, EmojiVisageCoeurs, EmojiYeuxEnCoeur, EmojiYeuxEtoiles, EmojiBisou, EmojiMiam, EmojiLangueClinDOeil, EmojiCalin, EmojiVisagePensif, EmojiLunettesDeSoleil, EmojiSourireEnCoin, EmojiVisageNeutre, EmojiYeuxAuCiel, EmojiVisageSongeur, EmojiVisageEnLarmes, EmojiPleursBruyants, EmojiVisageFurieux, EmojiVisageHorrifie, EmojiVisageEndormi, EmojiVisageFestif, EmojiCoeurRouge, EmojiCoeurOrange, EmojiCoeurJaune, EmojiCoeurVert, EmojiCoeurBleu, EmojiCoeurViolet, EmojiCoeurNoir, EmojiCoeurBlanc, EmojiCoeurBrise, EmojiDeuxCoeurs, EmojiEtincelles, EmojiFeu, EmojiCentPoints, EmojiCocheVerte, EmojiCroixRouge, EmojiEtoile, Plus, X, Check, CheckCircle2, CheckCircle, Trash2, Pencil, PenLine, Printer, Download, Save, Copy, Search, Eye, RefreshCw, RotateCcw, History, Send, LogIn, SlidersHorizontal, Loader2, Zap, Sparkles, Fingerprint, ArrowLeft, ArrowRight, ChevronDown, ChevronRight, Home, LayoutDashboard, Workflow, ListTree, FolderKanban, Keyboard, AlertTriangle, Clock, Timer, Lock, ShieldCheck, BadgeCheck, Bell, CloudOff, Gauge, Award, Crown, FileText, FileInput, FileSearch, FileBarChart, ClipboardList, ClipboardCheck, BarChart3, TrendingUp, TrendingDown, BookOpen, BookText, BookLock, CalendarClock, CalendarCheck, Mail, MessageSquare, Smartphone, Headphones, LifeBuoy, Plug, Brain, Palette, Users, UsersRound, UserCircle, UserCheck, UserX, GraduationCap, Briefcase, Stethoscope, Pill, HardHat, ChefHat, Wallet, Coins, Banknote, DollarSign, HandCoins, Receipt, ReceiptText, Percent, Tag, Landmark, ShoppingCart, Store, Package, Boxes, Warehouse, Truck, Bus, Car, Fuel, Ticket, Building2, Factory, KeyRound, BedDouble, Shirt, UtensilsCrossed, CakeSlice, Sprout, Settings, Cog, AlertCircle, Info, HelpCircle, XCircle, Ban, Shield, ShieldAlert, Activity, BellRing, Cloud, WifiOff, Rocket, Lightbulb, Globe, Phone, MessageCircle, Inbox, Camera, Monitor, Minus, Edit2, Upload, EyeOff, Star, Link2, Share2, Paperclip, Play, ScanLine, Settings2, Wrench, Handshake, ChevronUp, ChevronLeft, ExternalLink, LogOut, MapPin, Undo2, CreditCard, Calculator, Scale, User, UserPlus, Moon, Calendar, CalendarDays, CalendarRange, FileSpreadsheet, Layers, LayoutGrid, BookMarked, Database, HardDrive, ShoppingBag, PackageCheck, Menu, PanelLeftOpen, PanelLeftClose, MoreVertical, Sun, Hourglass, ClipboardX, PiggyBank, Folder, Tractor, Building, UserCog, Quote, MailCheck, MonitorCog, BotMessageSquare, ArrowDown, ArrowDownAZ, ArrowDownCircle, ArrowDownLeft, ArrowDownRight, ArrowDownZA, ArrowLeftRight, ArrowRightLeft, ArrowUp, ArrowUpCircle, ArrowUpLeft, ArrowUpRight, ChevronsDownUp, ChevronsUpDown, GripVertical, MoreHorizontal, Move, Maximize2, Repeat, Reply, RotateCw, Shuffle, Route, Infinity, Equal, Divide, Square, CircleDot, Loader, Archive, File, FileArchive, FileCheck, FileImage, FileSignature, FileUp, FileWarning, FolderOpen, FolderTree, Image, ImagePlus, Images, Library, ScrollText, StickyNote, Table2, Columns2, List, ListChecks, Filter, BarChart2, Underline, Eraser, Code2, PencilRuler, Wand2, SearchX, Tags, BadgePercent, Bluetooth, BluetoothOff, Wifi, Usb, Server, ServerOff, Router, Network, Cpu, Power, QrCode, Barcode, Scan, MonitorSmartphone, Mic, MicOff, Video, Volume2, VolumeX, Pause, PauseCircle, PlayCircle, Youtube, DownloadCloud, UploadCloud, Link, Link2Off, Unlink, Key, Unlock, ShieldOff, ShieldX, Flashlight, FlashlightOff, PanelRight, Delete, CheckCheck, MailOpen, MailWarning, MessageSquareReply, MessageSquareText, Megaphone, BellOff, AlarmClock, AlertOctagon, CalendarPlus, Smile, Frown, Meh, ThumbsDown, Heart, Hand, UserRound, Baby, IdCard, Bug, Trophy, Target, Flag, PlusCircle, Apple, Utensils, Wine, Wheat, Syringe, HeartPulse, FlaskConical, Ship, CarFront, Container, Construction, Gavel, Glasses, Globe2, Map, Scissors, ShoppingBasket, PackageMinus, PackagePlus, Flame, CfaFrancBeac, CfaFrancBceao, Naira, Cedi, Rand, KenyanShilling, UgandanShilling, TanzanianShilling, SomaliShilling, MoroccanDirham, AlgerianDinar, TunisianDinar, LibyanDinar, EgyptianPound, SudanesePound, SouthSudanesePound, Birr, Nakfa, DjiboutianFranc, ComorianFranc, Ariary, MauritianRupee, SeychelloisRupee, RwandanFranc, BurundianFranc, CongoleseFranc, GuineanFranc, Kwanza, ZambianKwacha, MalawianKwacha, Metical, ZimbabweGold, Pula, NamibianDollar, Loti, Lilangeni, Dalasi, Leone, LiberianDollar, Ouguiya, CapeVerdeanEscudo, Dobra } as const;
+export const afroicons = { Baobab, Acacia, Palmier, Savane, Kilimandjaro, Dunes, Cacao, Cacaoouvert, Afrique, Feuillebananier, Cascade, Volcan, Oasis, Termitiere, Euphorbe, Pluie, Harmattan, Fleuve, Luneetoiles, Elephant, Girafe, Lion, Dromadaire, Crocodile, Poisson, Zebu, Chevre, Poulet, Tortue, Cameleon, Calao, Autruche, Hippopotame, Rhinoceros, Gorille, Gazelle, Moustique, Perroquet, Scarabee, Agama, Zebre, Okapi, Pangolin, Djembe, Kora, Tamaparleur, Balafon, Masque, Sanza, Shekere, Ngoni, Flute, Guitare, Vuvuzela, Statuette, Poterie, Tabouret, Collierperles, Ngongi, Awale, Kanaga, Sankofa, Dwennimmen, Cauri, Kente, Wax, Tresses, Adinkrahene, Eban, Nkyinkyim, Mpatapo, Nsoromma, Croixagadez, Ankh, Khamsa, Bogolan, Toghu, Calebasse, Calebassepleine, Pilon, Marmite, Marmitecouverte, Plantain, Plantainepluche, Alloco, Jebena, Foufou, Brochettes, Piment, Igname, Ignamecoupee, Manioc, Ananas, Ananastranche, Mangue, Mangueherisson, Arachide, Arachidedecortiquee, Coco, Cocoouverte, Avocat, Avocatcoupe, Epimil, Gombo, Bissap, Theiere, Tajine, Beignets, Vindepalme, Safou, Grill, Kola, Kolaouverte, Noixpalme, Pirogue, Panier, Porteuse, Boubou, Peigneafro, Mototaxi, Mobilemoney, Boutique, Taxibrousse, Keke, Lampe, Puits, Jerrycan, Ghanamustgo, Radio, Sandales, Portebebe, Moustiquaire, Panneausolaire, Houe, Machette, Filet, Poussepousse, Ardoise, Tontine, Tondeuse, Eventail, Natte, Ballon, Gele, Couturier, Fercharbon, Etal, Sechecheveux, Case, Djenne, Pyramides, Grenier, Musgum, Tatasomba, Bamileke, Minaret, Ksar, Lalibela, Zimbabwe, Ndebele, Ville, Riad, Femmemassai, Guerriermassai, Hommetouareg, Femmepeule, Femmeamazighe, Femmehabesha, Femmendebele, Hommezoulou, Femmezouloueisicholo, Femmexhosa, Hommeswahili, Femmesomalie, Femmewolof, Hommehaoussa, Femmemalgache, Femmecongolaiseliputa, Danseurdogonkanaga, Danseurelephantbamileke, Hommeagbada, Femmekente, Hommekufi, Grandmerefoulard, Enfantnoeudsbantous, Conducteurmototaxi, Marieetraditionnelle, Cheftraditionnel, Griotkora, Togunadogon, Maisonstiebele, Huttezouloue, Manyattamassai, Porteswahilie, Maisonnubienne, Ganviepilotis, Pyramidesmeroe, Tentetouaregue, Montagnedelatable, Mangrove, Foretcongo, Fromager, Lacvictoria, Arbrefeuillu, Fleurdecerisier, Tournesol, Soleil, Globeafriqueeurope, Attieke, Jollof, Injera, Mafe, Ndole, Ugalisukuma, Nyamachoma, Pilau, Chapati, Mandazi, Sambusa, Matoke, Rolex, Dorowat, Couscous, Harira, Msemen, Pastilla, Koshari, Fulmedames, Brik, Braaiboerewors, Bobotie, Bunnychow, Papchakalaka, Pouletperiperi, Romazava, Mofogasy, Thieboudienne, Yassapoulet, Pouletdg, Soupeegusi, Eba, Kedjenou, Waakye, Bankutilapia, Akara, Moinmoin, Fataya, Dibi, Tosaucegombo, Rizgras, Koki, Pondu, Pouletmoambe, Chikwangue, Mbongotchobi, Maisgrille, Boli, Bolderiz, Pain, Cuissedepoulet, Jusdegingembre, Bouye, Dolo, Tej, Kunu, Rooibos, Umqombothi, Chapman, Jusdetamarin, Kinkeliba, Eauensachet, Jusdecanne, Furadanono, Jusdecorossol, Bieredebanane, Degue, Cafetouba, Tassedecafe, Gyenyame, Nyamedua, Oeiloudjat, Croixcopte, Papaye, Corossol, Goyave, Fruitpassion, Paindesinge, Tamarin, Nere, Karite, Cannesucre, Figuebarbarie, Citronvert, Pommecajou, Jacquier, Litchi, Patatedouce, Macabo, Aubergineafricaine, Dattes, Pasteque, Masqueelephantbamileke, Teteife, Boucliermassai, Bouclierzoulou, Valiha, Fantasia, Cavalierdurbar, Mascaradeegungun, Chapeaubasotho, Tissukanga, Cotillon, Cadeau, Telephoneportable, Sacdargent, Tambouretbaguettes, Notedemusique, Maison, Voiture, Avion, Punaiseronde, Ampoule, Toquedediplome, Reveil, Chaiseplastique, Bassineemaillee, Fourneaucharbon, Balaidenervures, Charretteaane, Groupeelectrogene, Seauetgobelet, Pagneplie, Leopard, Flamantrose, Singe, Phacochere, Buffle, Vacheankole, Ane, Hyene, Suricate, Pintade, Impala, Krar, Masenqo, Begena, Oud, Guembri, Imzad, Goje, Akonting, Mvet, Sabar, Dunun, Udu, Ngoma, Atumpan, Bendir, Darbouka, Qraqeb, Kayamba, Kakaki, Algaita, Timbila, Guepard, Lycaon, Chacal, Gnou, Oryx, Koudou, Eland, Springbok, Hippotraguenoir, Topi, Cobeacroissant, Dikdik, Gerenuk, Serval, Caracal, Ratel, Orycterope, Porcepic, Mangousterayee, Damandesrochers, Chimpanze, Bonobo, Babouin, Mandrill, Makicatta, Ayeaye, Fossa, Propitheque, Bongo, Sitatunga, Potamochere, Hylochere, Chatdore, Genette, Civette, Galago, Tenrec, Tortueradiee, Grenouillegoliath, Cephalophe, Gruecouronnee, Tisserin, Becensabot, Marabout, Vautour, Pygargue, Serpentaire, Ibissacre, Pelican, Touraco, Martinpecheur, Outardekori, Francolin, Guepiercarmin, Rollier, Souimanga, Jabiru, Herongardeboeufs, Manchot, Grandduc, Mambanoir, Pythondeseba, Viperedugabon, Cobracracheur, Varandunil, Scorpion, Criquetpelerin, Abeilleafricaine, Papilloncharaxes, Mouchetsetse, Escargotgeant, Lamantin, Baleineabosse, Requinbaleine, Silure, Tilapia, Capitaine, Chevalbarbe, Moutonpeul, Basenji, Ble, Soja, Vachelaitiere, Pharmacie, CarteAlgerie, CarteAngola, CarteBenin, CarteBotswana, CarteBurkinaFaso, CarteBurundi, CarteCapVert, CarteCameroun, CarteCentrafrique, CarteTchad, CarteComores, CarteCongo, CarteRdCongo, CarteCoteDIvoire, CarteDjibouti, CarteEgypte, CarteGuineeEquatoriale, CarteErythree, CarteEswatini, CarteEthiopie, CarteGabon, CarteGambie, CarteGhana, CarteGuinee, CarteGuineeBissau, CarteKenya, CarteLesotho, CarteLiberia, CarteLibye, CarteMadagascar, CarteMalawi, CarteMali, CarteMauritanie, CarteMaurice, CarteMaroc, CarteMozambique, CarteNamibie, CarteNiger, CarteNigeria, CarteOuganda, CarteRwanda, CarteSaoTomeEtPrincipe, CarteSenegal, CarteSeychelles, CarteSierraLeone, CarteSomalie, CarteAfriqueDuSud, CarteSoudanDuSud, CarteSoudan, CarteTanzanie, CarteTogo, CarteTunisie, CarteZambie, CarteZimbabwe, MonnaieXaf, MonnaieXof, MonnaieNgn, MonnaieGhs, MonnaieZar, MonnaieKes, MonnaieUgx, MonnaieTzs, MonnaieSos, MonnaieMad, MonnaieDzd, MonnaieTnd, MonnaieLyd, MonnaieEgp, MonnaieSdg, MonnaieSsp, MonnaieEtb, MonnaieErn, MonnaieDjf, MonnaieKmf, MonnaieMga, MonnaieMur, MonnaieScr, MonnaieRwf, MonnaieBif, MonnaieCdf, MonnaieGnf, MonnaieAoa, MonnaieZmw, MonnaieMwk, MonnaieMzn, MonnaieZwg, MonnaieBwp, MonnaieNad, MonnaieLsl, MonnaieSzl, MonnaieGmd, MonnaieSle, MonnaieLrd, MonnaieMru, MonnaieCve, MonnaieStn, DrapeauAlgerie, DrapeauAngola, DrapeauBenin, DrapeauBotswana, DrapeauBurkinaFaso, DrapeauBurundi, DrapeauCapVert, DrapeauCameroun, DrapeauCentrafrique, DrapeauTchad, DrapeauComores, DrapeauCongo, DrapeauRdCongo, DrapeauCoteDIvoire, DrapeauDjibouti, DrapeauEgypte, DrapeauGuineeEquatoriale, DrapeauErythree, DrapeauEswatini, DrapeauEthiopie, DrapeauGabon, DrapeauGambie, DrapeauGhana, DrapeauGuinee, DrapeauGuineeBissau, DrapeauKenya, DrapeauLesotho, DrapeauLiberia, DrapeauLibye, DrapeauMadagascar, DrapeauMalawi, DrapeauMali, DrapeauMauritanie, DrapeauMaurice, DrapeauMaroc, DrapeauMozambique, DrapeauNamibie, DrapeauNiger, DrapeauNigeria, DrapeauOuganda, DrapeauRwanda, DrapeauSaoTomeEtPrincipe, DrapeauSenegal, DrapeauSeychelles, DrapeauSierraLeone, DrapeauSomalie, DrapeauAfriqueDuSud, DrapeauSoudanDuSud, DrapeauSoudan, DrapeauTanzanie, DrapeauTogo, DrapeauTunisie, DrapeauZambie, DrapeauZimbabwe, EmojiBaobab, EmojiKilimandjaro, EmojiOkapi, EmojiPangolin, EmojiCameleon, EmojiCalao, EmojiGorille, EmojiZebre, EmojiTermitiere, EmojiCoucherDeSoleilSavane, EmojiDjembe, EmojiKora, EmojiMasque, EmojiCalebasse, EmojiCauri, EmojiCase, EmojiPirogue, EmojiMotoTaxi, EmojiTaxiBrousse, EmojiMobileMoney, EmojiAwale, EmojiKente, EmojiTissuWax, EmojiSankofa, EmojiAttieke, EmojiJollof, EmojiFoufou, EmojiAlloco, EmojiSuya, EmojiInjera, EmojiBissap, EmojiVinDePalme, EmojiNoixDeKola, EmojiBeignets, EmojiMafe, EmojiNdole, EmojiMasqueKanaga, EmojiMasqueElephantBamileke, EmojiTeteIfe, EmojiBouclierMassai, EmojiBouclierZoulou, EmojiCroixAgadez, EmojiTambourParlant, EmojiMbira, EmojiValiha, EmojiBalafon, EmojiCeremonieCafe, EmojiFantasia, EmojiCavalierDurbar, EmojiMascaradeEgungun, EmojiTabouretAshanti, EmojiCollierPerlesMassai, EmojiChapeauBasotho, EmojiTissuBogolan, EmojiTissuKanga, EmojiJarrePoterie, EmojiFemmeMassai, EmojiGuerrierMassai, EmojiHommeTouareg, EmojiFemmePeule, EmojiFemmeAmazighe, EmojiFemmeHabesha, EmojiFemmeNdebele, EmojiHommeZoulou, EmojiFemmeZouloueIsicholo, EmojiFemmeXhosa, EmojiHommeSwahili, EmojiFemmeSomalie, EmojiFemmeWolof, EmojiHommeHaoussa, EmojiFemmeMalgache, EmojiFemmeCongolaiseLiputa, EmojiDanseurDogonKanaga, EmojiDanseurElephantBamileke, EmojiMaisonNdebele, EmojiGrenierDogon, EmojiTogunaDogon, EmojiCaseObusMusgum, EmojiMaisonsTiebele, EmojiMosqueeDjenne, EmojiEgliseLalibela, EmojiHutteZouloue, EmojiManyattaMassai, EmojiChefferieBamileke, EmojiPorteSwahilie, EmojiKsarAmazigh, EmojiGrandZimbabwe, EmojiTataSomba, EmojiMaisonNubienne, EmojiGanviePilotis, EmojiPyramidesMeroe, EmojiPyramidesGizeh, EmojiTenteTouaregue, EmojiRondavelBasotho, EmojiHippopotame, EmojiRhinoceros, EmojiCrocodile, EmojiLeopard, EmojiDromadaire, EmojiFlamantRose, EmojiPerroquetGris, EmojiSinge, EmojiPhacochere, EmojiBuffle, EmojiVacheAnkole, EmojiChevre, EmojiAne, EmojiHyene, EmojiSuricate, EmojiPintade, EmojiImpala, EmojiAutruche, EmojiJusDeGingembre, EmojiBouye, EmojiDolo, EmojiTej, EmojiKunu, EmojiAtaya, EmojiRooibos, EmojiUmqombothi, EmojiChapman, EmojiJusDeTamarin, EmojiKinkeliba, EmojiEauEnSachet, EmojiJusDeCanne, EmojiFuraDaNono, EmojiJusDeCorossol, EmojiBiereDeBanane, EmojiGuepard, EmojiLycaon, EmojiChacal, EmojiGnou, EmojiOryx, EmojiKoudou, EmojiEland, EmojiSpringbok, EmojiHippotragueNoir, EmojiTopi, EmojiCobeACroissant, EmojiDikDik, EmojiGerenuk, EmojiServal, EmojiCaracal, EmojiRatel, EmojiOrycterope, EmojiPorcEpic, EmojiMangousteRayee, EmojiDamanDesRochers, EmojiChimpanze, EmojiBonobo, EmojiBabouin, EmojiMandrill, EmojiMakiCatta, EmojiAyeAye, EmojiFossa, EmojiPropitheque, EmojiBongo, EmojiSitatunga, EmojiPotamochere, EmojiHylochere, EmojiChatDore, EmojiGenette, EmojiCivette, EmojiGalago, EmojiTenrec, EmojiTortueRadiee, EmojiGrenouilleGoliath, EmojiCephalophe, EmojiGrueCouronnee, EmojiTisserin, EmojiBecEnSabot, EmojiMarabout, EmojiVautour, EmojiPygargue, EmojiSerpentaire, EmojiIbisSacre, EmojiPelican, EmojiTouraco, EmojiMartinPecheur, EmojiOutardeKori, EmojiFrancolin, EmojiGuepierCarmin, EmojiRollier, EmojiSouimanga, EmojiJabiru, EmojiHeronGardeBoeufs, EmojiManchot, EmojiGrandDuc, EmojiMambaNoir, EmojiPythonDeSeba, EmojiVipereDuGabon, EmojiCobraCracheur, EmojiVaranDuNil, EmojiScorpion, EmojiCriquetPelerin, EmojiAbeilleAfricaine, EmojiPapillonCharaxes, EmojiMoucheTseTse, EmojiEscargotGeant, EmojiLamantin, EmojiBaleineABosse, EmojiRequinBaleine, EmojiSilure, EmojiTilapia, EmojiCapitaine, EmojiChevalBarbe, EmojiMoutonPeul, EmojiBasenji, EmojiSafou, EmojiCorossol, EmojiPapaye, EmojiGoyave, EmojiFruitDeLaPassion, EmojiPainDeSinge, EmojiTamarin, EmojiNere, EmojiKarite, EmojiRegimeNoixDePalme, EmojiCanneASucre, EmojiFigueDeBarbarie, EmojiCitronVert, EmojiPommeDeCajou, EmojiJacquier, EmojiLitchi, EmojiPlantain, EmojiIgname, EmojiManioc, EmojiPatateDouce, EmojiMacabo, EmojiArachidesEnCoque, EmojiAubergineAfricaine, EmojiGombo, EmojiPouceLeve, EmojiPouceBaisse, EmojiApplaudissements, EmojiMainsJointes, EmojiSalutMain, EmojiSigneVictoire, EmojiOkMain, EmojiBiceps, EmojiMainLevee, EmojiIndexDroite, EmojiIndexLeve, EmojiDoigtsCroises, EmojiMainsLevees, EmojiMainsCoeur, EmojiPoingLeve, EmojiPoigneeDeMain, EmojiFemmeGele, EmojiHommeAgbada, EmojiFemmeKente, EmojiHommeKufi, EmojiGrandMereFoulard, EmojiEnfantNoeudsBantous, EmojiFemmeBebeAuDos, EmojiVendeuseBassine, EmojiConducteurMotoTaxi, EmojiMarieeTraditionnelle, EmojiChefTraditionnel, EmojiGriotKora, EmojiNgoni, EmojiKrar, EmojiMasenqo, EmojiBegena, EmojiOud, EmojiGuembri, EmojiImzad, EmojiGoje, EmojiAkonting, EmojiMvet, EmojiSabar, EmojiDunun, EmojiUdu, EmojiNgoma, EmojiAtumpan, EmojiBendir, EmojiDarbouka, EmojiGankogui, EmojiQraqeb, EmojiShekere, EmojiKayamba, EmojiKakaki, EmojiAlgaita, EmojiTimbila, EmojiChutesVictoria, EmojiMontagneDeLaTable, EmojiDunesSahara, EmojiOasis, EmojiMangrove, EmojiForetCongo, EmojiSavaneAcacia, EmojiFromager, EmojiLacVictoria, EmojiGyeNyame, EmojiDwennimmen, EmojiNyameDua, EmojiAnkh, EmojiOeilOudjat, EmojiCroixCopte, EmojiMainKhamsa, EmojiUgaliSukuma, EmojiNyamaChoma, EmojiPilau, EmojiChapati, EmojiMandazi, EmojiSambusa, EmojiMatoke, EmojiRolex, EmojiDoroWat, EmojiCouscous, EmojiTajinePlat, EmojiHarira, EmojiMsemen, EmojiPastilla, EmojiTheALaMenthe, EmojiKoshari, EmojiFulMedames, EmojiBrik, EmojiDattes, EmojiBraaiBoerewors, EmojiBobotie, EmojiBunnyChow, EmojiPapChakalaka, EmojiPouletPeriPeri, EmojiRomazava, EmojiMofoGasy, EmojiThieboudienne, EmojiYassaPoulet, EmojiPouletDg, EmojiSoupeEgusi, EmojiEba, EmojiKedjenou, EmojiWaakye, EmojiBankuTilapia, EmojiAkara, EmojiMoinMoin, EmojiFataya, EmojiDibi, EmojiToSauceGombo, EmojiRizGras, EmojiPoissonBraise, EmojiKoki, EmojiPondu, EmojiPouletMoambe, EmojiChikwangue, EmojiMbongoTchobi, EmojiMaisGrille, EmojiBoli, EmojiDegue, EmojiCafeTouba, EmojiArbreFeuillu, EmojiPalmier, EmojiCactus, EmojiFleurDeCerisier, EmojiTournesol, EmojiSoleil, EmojiCroissantDeLune, EmojiNuageDePluie, EmojiGlobeAfriqueEurope, EmojiElephant, EmojiLion, EmojiGirafe, EmojiBanane, EmojiMangue, EmojiAnanas, EmojiNoixDeCoco, EmojiAvocat, EmojiPiment, EmojiBolDeRiz, EmojiMarmiteDeRagout, EmojiTasseDeCafe, EmojiPasteque, EmojiPain, EmojiCuisseDePoulet, EmojiCotillon, EmojiCadeau, EmojiTelephonePortable, EmojiSacDArgent, EmojiBallonDeFootball, EmojiTambourEtBaguettes, EmojiNoteDeMusique, EmojiMaison, EmojiVoiture, EmojiAvion, EmojiPunaiseRonde, EmojiAmpoule, EmojiToqueDeDiplome, EmojiReveil, EmojiChaisePlastique, EmojiBidonJaune, EmojiBassineEmaillee, EmojiMortierPilon, EmojiFourneauCharbon, EmojiLampeTempete, EmojiRadioTransistor, EmojiBalaiDeNervures, EmojiPanierTresse, EmojiTukTuk, EmojiMatatu, EmojiCharretteAAne, EmojiPoussePousse, EmojiEtalDeMarche, EmojiGroupeElectrogene, EmojiSeauEtGobelet, EmojiPagnePlie, EmojiMachineACoudre, EmojiVisageSouriant, EmojiVisageSouriantYeuxRieurs, EmojiVisageRayonnant, EmojiVisagePlisseRieur, EmojiVisageSueur, EmojiMortDeRire, EmojiLarmesDeJoie, EmojiVisageLegerementSouriant, EmojiClinDOeil, EmojiVisageRougissant, EmojiVisageAureole, EmojiVisageCoeurs, EmojiYeuxEnCoeur, EmojiYeuxEtoiles, EmojiBisou, EmojiMiam, EmojiLangueClinDOeil, EmojiCalin, EmojiVisagePensif, EmojiLunettesDeSoleil, EmojiSourireEnCoin, EmojiVisageNeutre, EmojiYeuxAuCiel, EmojiVisageSongeur, EmojiVisageEnLarmes, EmojiPleursBruyants, EmojiVisageFurieux, EmojiVisageHorrifie, EmojiVisageEndormi, EmojiVisageFestif, EmojiCoeurRouge, EmojiCoeurOrange, EmojiCoeurJaune, EmojiCoeurVert, EmojiCoeurBleu, EmojiCoeurViolet, EmojiCoeurNoir, EmojiCoeurBlanc, EmojiCoeurBrise, EmojiDeuxCoeurs, EmojiEtincelles, EmojiFeu, EmojiCentPoints, EmojiCocheVerte, EmojiCroixRouge, EmojiEtoile, Plus, X, Check, CheckCircle2, CheckCircle, Trash2, Pencil, PenLine, Printer, Download, Save, Copy, Search, Eye, RefreshCw, RotateCcw, History, Send, LogIn, SlidersHorizontal, Loader2, Zap, Sparkles, Fingerprint, ArrowLeft, ArrowRight, ChevronDown, ChevronRight, Home, LayoutDashboard, Workflow, ListTree, FolderKanban, Keyboard, AlertTriangle, Clock, Timer, Lock, ShieldCheck, BadgeCheck, Bell, CloudOff, Gauge, Award, Crown, FileText, FileInput, FileSearch, FileBarChart, ClipboardList, ClipboardCheck, BarChart3, TrendingUp, TrendingDown, BookOpen, BookText, BookLock, CalendarClock, CalendarCheck, Mail, MessageSquare, Smartphone, Headphones, LifeBuoy, Plug, Brain, Palette, Users, UsersRound, UserCircle, UserCheck, UserX, GraduationCap, Briefcase, Stethoscope, Pill, HardHat, ChefHat, Wallet, Coins, Banknote, DollarSign, HandCoins, Receipt, ReceiptText, Percent, Tag, Landmark, ShoppingCart, Store, Package, Boxes, Warehouse, Truck, Bus, Car, Fuel, Ticket, Building2, Factory, KeyRound, BedDouble, Shirt, UtensilsCrossed, CakeSlice, Sprout, Settings, Cog, AlertCircle, Info, HelpCircle, XCircle, Ban, Shield, ShieldAlert, Activity, BellRing, Cloud, WifiOff, Rocket, Lightbulb, Globe, Phone, MessageCircle, Inbox, Camera, Monitor, Minus, Edit2, Upload, EyeOff, Star, Link2, Share2, Paperclip, Play, ScanLine, Settings2, Wrench, Handshake, ChevronUp, ChevronLeft, ExternalLink, LogOut, MapPin, Undo2, CreditCard, Calculator, Scale, User, UserPlus, Moon, Calendar, CalendarDays, CalendarRange, FileSpreadsheet, Layers, LayoutGrid, BookMarked, Database, HardDrive, ShoppingBag, PackageCheck, Menu, PanelLeftOpen, PanelLeftClose, MoreVertical, Sun, Hourglass, ClipboardX, PiggyBank, Folder, Tractor, Building, UserCog, Quote, MailCheck, MonitorCog, BotMessageSquare, ArrowDown, ArrowDownAZ, ArrowDownCircle, ArrowDownLeft, ArrowDownRight, ArrowDownZA, ArrowLeftRight, ArrowRightLeft, ArrowUp, ArrowUpCircle, ArrowUpLeft, ArrowUpRight, ChevronsDownUp, ChevronsUpDown, GripVertical, MoreHorizontal, Move, Maximize2, Repeat, Reply, RotateCw, Shuffle, Route, Infinity, Equal, Divide, Square, CircleDot, Loader, Archive, File, FileArchive, FileCheck, FileImage, FileSignature, FileUp, FileWarning, FolderOpen, FolderTree, Image, ImagePlus, Images, Library, ScrollText, StickyNote, Table2, Columns2, List, ListChecks, Filter, BarChart2, Underline, Eraser, Code2, PencilRuler, Wand2, SearchX, Tags, BadgePercent, Bluetooth, BluetoothOff, Wifi, Usb, Server, ServerOff, Router, Network, Cpu, Power, QrCode, Barcode, Scan, MonitorSmartphone, Mic, MicOff, Video, Volume2, VolumeX, Pause, PauseCircle, PlayCircle, Youtube, DownloadCloud, UploadCloud, Link, Link2Off, Unlink, Key, Unlock, ShieldOff, ShieldX, Flashlight, FlashlightOff, PanelRight, Delete, CheckCheck, MailOpen, MailWarning, MessageSquareReply, MessageSquareText, Megaphone, BellOff, AlarmClock, AlertOctagon, CalendarPlus, Smile, Frown, Meh, ThumbsDown, Heart, Hand, UserRound, Baby, IdCard, Bug, Trophy, Target, Flag, PlusCircle, Apple, Utensils, Wine, Wheat, Syringe, HeartPulse, FlaskConical, Ship, CarFront, Container, Construction, Gavel, Glasses, Globe2, Map, Scissors, ShoppingBasket, PackageMinus, PackagePlus, Flame, FileAudio, FileAudio2, FileAxis3D, FileBadge, FileBadge2, FileBarChart2, FileBox, FileChartLine, FileChartPie, FileCheck2, FileClock, FileCode, FileCode2, FileCog, FileDiff, FileDigit, FileDown, FileHeart, FileJson, FileJson2, FileKey, FileKey2, FileLock, FileLock2, FileMinus, FileMinus2, FileMusic, FileOutput, FilePen, FilePlus, FilePlus2, FileQuestion, FileScan, FileSearch2, FileSliders, FileStack, FileSymlink, FileTerminal, FileType, FileType2, FileUser, FileVideo, FileVideo2, FileVolume, FileVolume2, FileX, FileX2, Files, ArchiveRestore, ArchiveX, Clipboard, ClipboardCopy, ClipboardMinus, ClipboardPaste, ClipboardPen, ClipboardPenLine, ClipboardPlus, ClipboardType, FolderArchive, FolderCheck, FolderClock, FolderClosed, FolderCode, FolderCog, FolderDot, FolderDown, FolderGit, FolderGit2, FolderHeart, FolderInput, FolderKey, FolderLock, FolderMinus, FolderOpenDot, FolderOutput, FolderPen, FolderPlus, FolderRoot, FolderSearch, FolderSearch2, FolderSymlink, FolderSync, FolderUp, FolderX, Folders, AlignLeft, AlignCenter, AlignRight, AlignJustify, AlignStartHorizontal, AlignStartVertical, AlignEndHorizontal, AlignEndVertical, AlignCenterHorizontal, AlignCenterVertical, AlignHorizontalDistributeStart, AlignVerticalDistributeStart, AlignHorizontalDistributeEnd, AlignVerticalDistributeEnd, AlignHorizontalDistributeCenter, AlignVerticalDistributeCenter, AlignHorizontalJustifyStart, AlignVerticalJustifyStart, AlignHorizontalJustifyEnd, AlignVerticalJustifyEnd, AlignHorizontalJustifyCenter, AlignVerticalJustifyCenter, AlignHorizontalSpaceAround, AlignVerticalSpaceAround, AlignHorizontalSpaceBetween, AlignVerticalSpaceBetween, BetweenHorizonalStart, BetweenVerticalStart, BetweenHorizonalEnd, BetweenVerticalEnd, SeparatorHorizontal, SeparatorVertical, Space, Baseline, Bold, CaseLower, CaseSensitive, CaseUpper, Heading, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, Highlighter, Indent, Italic, LetterText, Ligature, ListCheck, ListCollapse, ListEnd, ListFilter, ListMinus, ListMusic, ListOrdered, ListPlus, ListRestart, ListStart, ListTodo, ListVideo, ListX, Outdent, Pilcrow, PilcrowLeft, PilcrowRight, PilcrowSquare, RemoveFormatting, SpellCheck, SpellCheck2, Strikethrough, Subscript, Superscript, Text, TextCursor, TextCursorInput, TextQuote, TextSearch, TextSelect, Type, TypeOutline, WrapText, Columns3, Columns4, Grid, Grid2X2, Grid2x2Check, Grid2x2Plus, Grid2x2X, Layout, LayoutList, LayoutPanelLeft, LayoutPanelTop, LayoutTemplate, PanelBottom, PanelBottomClose, PanelBottomDashed, PanelBottomOpen, PanelLeftDashed, PanelRightClose, PanelRightDashed, PanelRightOpen, PanelTop, PanelTopClose, PanelTopDashed, PanelTopOpen, PanelsLeftBottom, PanelsRightBottom, Rows, Rows3, Rows4, Sidebar, Table, TableCellsMerge, TableCellsSplit, TableColumnsSplit, TableOfContents, TableProperties, TableRowsSplit, AtSign, BellDot, BellElectric, BellMinus, BellPlus, Contact, Contact2, MailMinus, MailPlus, MailQuestion, MailSearch, MailX, Mailbox, Mails, MegaphoneOff, MessageCircleCode, MessageCircleDashed, MessageCircleHeart, MessageCircleMore, MessageCircleOff, MessageCirclePlus, MessageCircleQuestion, MessageCircleReply, MessageCircleWarning, MessageCircleX, MessageSquareCode, MessageSquareDashed, MessageSquareDiff, MessageSquareDot, MessageSquareHeart, MessageSquareLock, MessageSquareMore, MessageSquareOff, MessageSquarePlus, MessageSquareQuote, MessageSquareShare, MessageSquareWarning, MessageSquareX, MessagesSquare, PhoneCall, PhoneForwarded, PhoneIncoming, PhoneMissed, PhoneOff, PhoneOutgoing, SendHorizonal, SendToBack, Speech, Voicemail, AlarmCheck, AlarmClockOff, AlarmMinus, AlarmPlus, AlarmSmoke, CalendarArrowDown, CalendarArrowUp, CalendarCheck2, CalendarCog, CalendarFold, CalendarHeart, CalendarMinus, CalendarMinus2, CalendarOff, CalendarPlus2, CalendarSearch, CalendarX, CalendarX2, Clock1, Clock2, Clock3, Clock4, Clock5, Clock6, Clock7, Clock8, Clock9, Clock10, Clock11, Clock12, ClockAlert, ClockArrowDown, ClockArrowUp, TimerOff, TimerReset, Watch, ChartBar, ChartBarBig, ChartBarDecreasing, ChartBarIncreasing, ChartBarStacked, ChartColumnDecreasing, ChartColumnStacked, ChartGantt, ChartLine, ChartNetwork, ChartNoAxesColumnDecreasing, ChartNoAxesCombined, ChartPie, ChartScatter, ChartSpline, GanttChart, GanttChartSquare, Kanban, KanbanSquare, KanbanSquareDashed, PercentSquare, Presentation, Scale3D, Sigma, SigmaSquare, Tally1, Tally2, Tally3, Tally4, Tally5, TrendingUpDown, Badge, BadgeAlert, BadgeCent, BadgeDollarSign, BadgeEuro, BadgeHelp, BadgeIndianRupee, BadgeInfo, BadgeJapaneseYen, BadgeMinus, BadgePlus, BadgePoundSterling, BadgeRussianRuble, BadgeSwissFranc, BadgeX, BriefcaseBusiness, BriefcaseConveyorBelt, BriefcaseMedical, Currency, Euro, HandHeart, HandHelping, HandMetal, HandPlatter, Laugh, PersonStanding, PoundSterling, ReceiptCent, ReceiptEuro, ReceiptIndianRupee, ReceiptJapaneseYen, ReceiptPoundSterling, ReceiptRussianRuble, ReceiptSwissFranc, SmilePlus, ThumbsUp, TicketCheck, TicketMinus, TicketPercent, TicketPlus, TicketSlash, TicketX, Tickets, TicketsPlane, UserCheck2, UserCircle2, UserCog2, UserMinus, UserMinus2, UserPen, UserPlus2, UserRoundPen, UserRoundSearch, UserSearch, UserSquare2, UserX2, Vault, Wallet2, WalletCards, ArrowBigDown, ArrowBigDownDash, ArrowBigLeft, ArrowBigLeftDash, ArrowBigRight, ArrowBigRightDash, ArrowBigUp, ArrowBigUpDash, ArrowDown01, ArrowDown10, ArrowDownFromLine, ArrowDownLeftSquare, ArrowDownNarrowWide, ArrowDownRightSquare, ArrowDownSquare, ArrowDownToDot, ArrowDownToLine, ArrowDownUp, ArrowLeftCircle, ArrowLeftFromLine, ArrowLeftSquare, ArrowLeftToLine, ArrowRightCircle, ArrowRightFromLine, ArrowRightSquare, ArrowRightToLine, ArrowsUpFromLine, ArrowUp01, ArrowUp10, ArrowUpAZ, ArrowUpDown, ArrowUpFromDot, ArrowUpFromLine, ArrowUpLeftSquare, ArrowUpRightSquare, ArrowUpSquare, ArrowUpToLine, ArrowUpWideNarrow, ArrowUpZA, ChevronDownCircle, ChevronDownSquare, ChevronLeftCircle, ChevronLeftSquare, ChevronRightCircle, ChevronRightSquare, ChevronUpCircle, ChevronUpSquare, ChevronFirst, ChevronLast, ChevronsDown, ChevronsUp, ChevronsRight, ChevronsLeft, ChevronsLeftRight, ChevronsRightLeft, ChevronsLeftRightEllipsis, CornerDownLeft, CornerDownRight, CornerUpLeft, CornerUpRight, CornerLeftDown, CornerLeftUp, CornerRightDown, CornerRightUp, Expand, Shrink, Maximize, Minimize, Minimize2, Fullscreen, FoldVertical, UnfoldVertical, FoldHorizontal, UnfoldHorizontal, MoveDown, MoveUp, MoveRight, MoveLeft, MoveVertical, MoveHorizontal, MoveUpRight, MoveUpLeft, MoveDownRight, MoveDownLeft, MoveDiagonal, MoveDiagonal2, Move3D, Split, Merge, SplitSquareHorizontal, SplitSquareVertical, Forward, ReplyAll, Redo2, Undo, Redo, UndoDot, RedoDot, RefreshCcw, RefreshCcwDot, RefreshCwOff, Repeat1, Repeat2, RotateCcwSquare, RotateCwSquare, Rotate3D, CfaFrancBeac, CfaFrancBceao, Naira, Cedi, Rand, KenyanShilling, UgandanShilling, TanzanianShilling, SomaliShilling, MoroccanDirham, AlgerianDinar, TunisianDinar, LibyanDinar, EgyptianPound, SudanesePound, SouthSudanesePound, Birr, Nakfa, DjiboutianFranc, ComorianFranc, Ariary, MauritianRupee, SeychelloisRupee, RwandanFranc, BurundianFranc, CongoleseFranc, GuineanFranc, Kwanza, ZambianKwacha, MalawianKwacha, Metical, ZimbabweGold, Pula, NamibianDollar, Loti, Lilangeni, Dalasi, Leone, LiberianDollar, Ouguiya, CapeVerdeanEscudo, Dobra } as const;
