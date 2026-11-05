@@ -152,8 +152,8 @@ section{position:relative}
 .swat button.on{outline:2.5px solid var(--ink)}
 .swat input[type=color]{width:30px;height:30px;border:0;padding:0;background:none;cursor:pointer}
 .rng{display:flex;align-items:center;gap:10px}
-.rng input{flex:1;accent-color:var(--a1)}
-.rng output{font:600 12px "JetBrains Mono";min-width:36px;text-align:right}
+.rng input{flex:1;min-width:0;accent-color:var(--a1)}
+.rng output{font:600 12px "JetBrains Mono";min-width:36px;flex:none;text-align:right}
 .styles{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .styles button{border:1.5px solid var(--line);border-radius:12px;padding:10px 4px 6px;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:12px;font-weight:600}
 .styles button.on{border-color:var(--ink);background:var(--bg2)}
@@ -716,7 +716,7 @@ a.eyebrow:hover{color:var(--ink);border-color:var(--muted)}
 /* ---- Bac à sable (/playground/) ---- */
 .pg .shead{margin-top:40px}
 .pglay{display:grid;grid-template-columns:280px minmax(0,1fr);gap:22px;align-items:start}
-.pgctl{position:sticky;top:84px;display:grid;gap:10px;padding:18px;border:1px solid var(--line);border-radius:20px;background:var(--card)}
+.pgctl{position:sticky;top:84px;display:grid;grid-template-columns:minmax(0,1fr);gap:10px;padding:18px;border:1px solid var(--line);border-radius:20px;background:var(--card)}
 .pgctl h3{margin:8px 0 0;font:700 11.5px "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .pgctl h3:first-child{margin-top:0}
 .pgctl .seg{height:36px;min-width:0}.pgctl .seg button{flex:1;min-width:0;padding:0 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -816,7 +816,7 @@ a.eyebrow:hover{color:var(--ink);border-color:var(--muted)}
 .pgsz span{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 /* Bac à sable, grand écran : réglages | maquettes | élément sélectionné */
 @media (min-width:1280px){
-  .pglay{grid-template-columns:260px minmax(0,1fr) 300px}
+  .pglay{grid-template-columns:272px minmax(0,1fr) 300px}
   .pginsp.inl .pgcust{grid-template-columns:minmax(0,1fr)}
   .pginsp.inl .pgprev{width:120px;justify-self:center}
   .pginsp.inl .pgcf .pgfield{grid-template-columns:minmax(0,1fr)}
@@ -848,6 +848,8 @@ a.eyebrow:hover{color:var(--ink);border-color:var(--muted)}
 .pgpickg button[draggable=true]{cursor:grab}
 /* Export PNG : sans les marques d'édition */
 .pgexport .pgi{outline-color:transparent!important;animation:none!important}.pgexport .pgi.cu::after{display:none}.pgexport .pgbtn.on{box-shadow:none}
+.pgctl>*{min-width:0}
+.pgcustom{position:relative;overflow:hidden}
 .pgveil{position:fixed;inset:0;z-index:59;background:rgba(20,17,14,.35)}
 .pgpickc{padding:10px 14px 0}
 .pgcodeh{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}.pgcodeh h4{margin:0 auto 0 0}
