@@ -145,7 +145,7 @@ for (const [mod, orig, names, label] of [[M, OM, M.afroiconNames, "Material UI"]
     assert.equal((await import(`../packages/${label === "Material UI" ? "afroicons-mui" : "afroicons-antd"}/icons/${n}.js`)).default, mod[n], `${label} : import direct ${n}`);
   }
 }
-assert.equal(M.AcUnit, OM.AcUnit, "Material UI : les icônes non redessinées viennent de @mui/icons-material");
+assert.equal(M.Google, OM.Google, "Material UI : les icônes non redessinées viennent de @mui/icons-material");
 assert.equal(A.AlipayOutlined, OA.AlipayOutlined, "Ant Design : les icônes non redessinées viennent de @ant-design/icons");
 for (const [id, v] of Object.entries(compat)) {
   assert.ok(ui.afroiconNames.includes(id), `correspondance : ${id} est une icône d'interface`);

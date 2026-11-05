@@ -72,6 +72,8 @@ export declare const EyeTwoTone: AfroIcon;
 export declare const ReloadOutlined: AfroIcon;
 /** Actualiser · Refresh (Afroicons RefreshCw) */
 export declare const SyncOutlined: AfroIcon;
+/** Annuler · Undo (Afroicons RotateCcw) */
+export declare const RotateLeftOutlined: AfroIcon;
 /** Historique · History (Afroicons History) */
 export declare const HistoryOutlined: AfroIcon;
 /** Historique · History (Afroicons History) */
@@ -160,12 +162,20 @@ export declare const SafetyCertificateOutlined: AfroIcon;
 export declare const SafetyCertificateFilled: AfroIcon;
 /** Protégé · Protected (Afroicons ShieldCheck) */
 export declare const SafetyCertificateTwoTone: AfroIcon;
+/** Certifié · Verified (Afroicons BadgeCheck) */
+export declare const VerifiedOutlined: AfroIcon;
 /** Notifications · Notifications (Afroicons Bell) */
 export declare const BellOutlined: AfroIcon;
 /** Notifications · Notifications (Afroicons Bell) */
 export declare const BellFilled: AfroIcon;
 /** Notifications · Notifications (Afroicons Bell) */
 export declare const BellTwoTone: AfroIcon;
+/** Notifications · Notifications (Afroicons Bell) */
+export declare const NotificationOutlined: AfroIcon;
+/** Notifications · Notifications (Afroicons Bell) */
+export declare const NotificationFilled: AfroIcon;
+/** Notifications · Notifications (Afroicons Bell) */
+export declare const NotificationTwoTone: AfroIcon;
 /** Performance · Gauge (Afroicons Gauge) */
 export declare const DashboardOutlined: AfroIcon;
 /** Performance · Gauge (Afroicons Gauge) */
@@ -226,6 +236,8 @@ export declare const AuditOutlined: AfroIcon;
 export declare const BarChartOutlined: AfroIcon;
 /** Hausse · Up (Afroicons TrendingUp) */
 export declare const RiseOutlined: AfroIcon;
+/** Hausse · Up (Afroicons TrendingUp) */
+export declare const StockOutlined: AfroIcon;
 /** Baisse · Down (Afroicons TrendingDown) */
 export declare const FallOutlined: AfroIcon;
 /** Guide · Guide (Afroicons BookOpen) */
@@ -348,6 +360,10 @@ export declare const GiftOutlined: AfroIcon;
 export declare const GiftFilled: AfroIcon;
 /** Colis · Parcel (Afroicons Package) */
 export declare const GiftTwoTone: AfroIcon;
+/** Livraison · Delivery (Afroicons Truck) */
+export declare const TruckOutlined: AfroIcon;
+/** Livraison · Delivery (Afroicons Truck) */
+export declare const TruckFilled: AfroIcon;
 /** Véhicule · Vehicle (Afroicons Car) */
 export declare const CarOutlined: AfroIcon;
 /** Véhicule · Vehicle (Afroicons Car) */
@@ -404,6 +420,8 @@ export declare const StopOutlined: AfroIcon;
 export declare const StopFilled: AfroIcon;
 /** Interdit · Forbidden (Afroicons Ban) */
 export declare const StopTwoTone: AfroIcon;
+/** Interdit · Forbidden (Afroicons Ban) */
+export declare const BlockOutlined: AfroIcon;
 /** Sécurité · Security (Afroicons Shield) */
 export declare const SafetyOutlined: AfroIcon;
 /** Suivi d'activité · Activity (Afroicons Activity) */
@@ -452,8 +470,14 @@ export declare const CameraTwoTone: AfroIcon;
 export declare const DesktopOutlined: AfroIcon;
 /** Écran · Screen (Afroicons Monitor) */
 export declare const LaptopOutlined: AfroIcon;
+/** Écran · Screen (Afroicons Monitor) */
+export declare const MonitorOutlined: AfroIcon;
 /** Retirer · Remove (Afroicons Minus) */
 export declare const MinusOutlined: AfroIcon;
+/** Retirer · Remove (Afroicons Minus) */
+export declare const DashOutlined: AfroIcon;
+/** Retirer · Remove (Afroicons Minus) */
+export declare const SmallDashOutlined: AfroIcon;
 /** Envoyer un fichier · Upload (Afroicons Upload) */
 export declare const UploadOutlined: AfroIcon;
 /** Envoyer un fichier · Upload (Afroicons Upload) */
@@ -576,6 +600,8 @@ export declare const ShoppingFilled: AfroIcon;
 export declare const ShoppingTwoTone: AfroIcon;
 /** Menu · Menu (Afroicons Menu) */
 export declare const MenuOutlined: AfroIcon;
+/** Menu · Menu (Afroicons Menu) */
+export declare const BarsOutlined: AfroIcon;
 /** Déplier le panneau · Open side panel (Afroicons PanelLeftOpen) */
 export declare const MenuUnfoldOutlined: AfroIcon;
 /** Replier le panneau · Close side panel (Afroicons PanelLeftClose) */
@@ -604,3 +630,473 @@ export declare const FolderOpenOutlined: AfroIcon;
 export declare const FolderOpenFilled: AfroIcon;
 /** Dossier · Folder (Afroicons Folder) */
 export declare const FolderOpenTwoTone: AfroIcon;
+/** Plus encadré · Boxed plus (Afroicons PlusSquare) */
+export declare const PlusSquareOutlined: AfroIcon;
+/** Plus encadré · Boxed plus (Afroicons PlusSquare) */
+export declare const PlusSquareFilled: AfroIcon;
+/** Plus encadré · Boxed plus (Afroicons PlusSquare) */
+export declare const PlusSquareTwoTone: AfroIcon;
+/** Créer · Create (Afroicons PlusCircle) */
+export declare const PlusCircleOutlined: AfroIcon;
+/** Créer · Create (Afroicons PlusCircle) */
+export declare const PlusCircleFilled: AfroIcon;
+/** Créer · Create (Afroicons PlusCircle) */
+export declare const PlusCircleTwoTone: AfroIcon;
+/** Descendre · Move down (Afroicons ArrowDown) */
+export declare const ArrowDownOutlined: AfroIcon;
+/** Monter · Move up (Afroicons ArrowUp) */
+export declare const ArrowUpOutlined: AfroIcon;
+/** Signalement · Flag (Afroicons Flag) */
+export declare const FlagOutlined: AfroIcon;
+/** Signalement · Flag (Afroicons Flag) */
+export declare const FlagFilled: AfroIcon;
+/** Signalement · Flag (Afroicons Flag) */
+export declare const FlagTwoTone: AfroIcon;
+/** Signaler un bug · Report a bug (Afroicons Bug) */
+export declare const BugOutlined: AfroIcon;
+/** Signaler un bug · Report a bug (Afroicons Bug) */
+export declare const BugFilled: AfroIcon;
+/** Signaler un bug · Report a bug (Afroicons Bug) */
+export declare const BugTwoTone: AfroIcon;
+/** Réduire · Minimize (Afroicons Minimize2) */
+export declare const CompressOutlined: AfroIcon;
+/** Balises de code · Code tags (Afroicons Code) */
+export declare const CodeOutlined: AfroIcon;
+/** Balises de code · Code tags (Afroicons Code) */
+export declare const CodeFilled: AfroIcon;
+/** Balises de code · Code tags (Afroicons Code) */
+export declare const CodeTwoTone: AfroIcon;
+/** Café · Coffee (Afroicons Coffee) */
+export declare const CoffeeOutlined: AfroIcon;
+/** Échanger · Swap (Afroicons ArrowLeftRight) */
+export declare const TransactionOutlined: AfroIcon;
+/** Fiche contact · Contact card (Afroicons Contact) */
+export declare const ContactsOutlined: AfroIcon;
+/** Fiche contact · Contact card (Afroicons Contact) */
+export declare const ContactsFilled: AfroIcon;
+/** Fiche contact · Contact card (Afroicons Contact) */
+export declare const ContactsTwoTone: AfroIcon;
+/** Coupe, couture · Cutting, tailoring (Afroicons Scissors) */
+export declare const ScissorOutlined: AfroIcon;
+/** Droits d'auteur · Copyright (Afroicons Copyright) */
+export declare const CopyrightOutlined: AfroIcon;
+/** Droits d'auteur · Copyright (Afroicons Copyright) */
+export declare const CopyrightTwoTone: AfroIcon;
+/** Droits d'auteur · Copyright (Afroicons Copyright) */
+export declare const CopyrightCircleOutlined: AfroIcon;
+/** Droits d'auteur · Copyright (Afroicons Copyright) */
+export declare const CopyrightCircleFilled: AfroIcon;
+/** Droits d'auteur · Copyright (Afroicons Copyright) */
+export declare const CopyrightCircleTwoTone: AfroIcon;
+/** Nouveau dossier · New folder (Afroicons FolderPlus) */
+export declare const FolderAddOutlined: AfroIcon;
+/** Nouveau dossier · New folder (Afroicons FolderPlus) */
+export declare const FolderAddFilled: AfroIcon;
+/** Nouveau dossier · New folder (Afroicons FolderPlus) */
+export declare const FolderAddTwoTone: AfroIcon;
+/** Livre sterling · Pound sterling (Afroicons PoundSterling) */
+export declare const PoundOutlined: AfroIcon;
+/** Retirer (rond) · Remove (circle) (Afroicons CircleMinus) */
+export declare const MinusCircleOutlined: AfroIcon;
+/** Retirer (rond) · Remove (circle) (Afroicons CircleMinus) */
+export declare const MinusCircleFilled: AfroIcon;
+/** Retirer (rond) · Remove (circle) (Afroicons CircleMinus) */
+export declare const MinusCircleTwoTone: AfroIcon;
+/** Avancer vite · Skip forward (Afroicons ChevronsRight) */
+export declare const DoubleRightOutlined: AfroIcon;
+/** Glisser · Drag (Afroicons GripVertical) */
+export declare const DragOutlined: AfroIcon;
+/** Glisser · Drag (Afroicons GripVertical) */
+export declare const HolderOutlined: AfroIcon;
+/** Satisfait · Satisfied (Afroicons Smile) */
+export declare const SmileOutlined: AfroIcon;
+/** Satisfait · Satisfied (Afroicons Smile) */
+export declare const SmileFilled: AfroIcon;
+/** Satisfait · Satisfied (Afroicons Smile) */
+export declare const SmileTwoTone: AfroIcon;
+/** Euro · Euro (Afroicons Euro) */
+export declare const EuroOutlined: AfroIcon;
+/** Euro · Euro (Afroicons Euro) */
+export declare const EuroTwoTone: AfroIcon;
+/** Dérouler (rond) · Expand down (round) (Afroicons ChevronDownCircle) */
+export declare const DownCircleOutlined: AfroIcon;
+/** Dérouler (rond) · Expand down (round) (Afroicons ChevronDownCircle) */
+export declare const DownCircleFilled: AfroIcon;
+/** Dérouler (rond) · Expand down (round) (Afroicons ChevronDownCircle) */
+export declare const DownCircleTwoTone: AfroIcon;
+/** Boussole · Compass (Afroicons Compass) */
+export declare const CompassOutlined: AfroIcon;
+/** Boussole · Compass (Afroicons Compass) */
+export declare const CompassFilled: AfroIcon;
+/** Boussole · Compass (Afroicons Compass) */
+export declare const CompassTwoTone: AfroIcon;
+/** Avance rapide · Fast forward (Afroicons FastForward) */
+export declare const FastForwardOutlined: AfroIcon;
+/** Avance rapide · Fast forward (Afroicons FastForward) */
+export declare const FastForwardFilled: AfroIcon;
+/** Avance rapide · Fast forward (Afroicons FastForward) */
+export declare const ForwardOutlined: AfroIcon;
+/** Avance rapide · Fast forward (Afroicons FastForward) */
+export declare const ForwardFilled: AfroIcon;
+/** Retour rapide · Rewind (Afroicons Rewind) */
+export declare const BackwardOutlined: AfroIcon;
+/** Retour rapide · Rewind (Afroicons Rewind) */
+export declare const BackwardFilled: AfroIcon;
+/** Coup de cœur · Like (Afroicons Heart) */
+export declare const HeartOutlined: AfroIcon;
+/** Coup de cœur · Like (Afroicons Heart) */
+export declare const HeartFilled: AfroIcon;
+/** Coup de cœur · Like (Afroicons Heart) */
+export declare const HeartTwoTone: AfroIcon;
+/** Filtrer · Filter (Afroicons Filter) */
+export declare const FilterOutlined: AfroIcon;
+/** Filtrer · Filter (Afroicons Filter) */
+export declare const FilterFilled: AfroIcon;
+/** Filtrer · Filter (Afroicons Filter) */
+export declare const FilterTwoTone: AfroIcon;
+/** Texte centré · Center text (Afroicons AlignCenter) */
+export declare const AlignCenterOutlined: AfroIcon;
+/** Texte aligné à gauche · Align text left (Afroicons AlignLeft) */
+export declare const AlignLeftOutlined: AfroIcon;
+/** Texte aligné à droite · Align text right (Afroicons AlignRight) */
+export declare const AlignRightOutlined: AfroIcon;
+/** Gras · Bold (Afroicons Bold) */
+export declare const BoldOutlined: AfroIcon;
+/** Italique · Italic (Afroicons Italic) */
+export declare const ItalicOutlined: AfroIcon;
+/** Vue en liste · List view (Afroicons List) */
+export declare const UnorderedListOutlined: AfroIcon;
+/** Liste numérotée · Numbered list (Afroicons ListOrdered) */
+export declare const OrderedListOutlined: AfroIcon;
+/** Rouleau de peinture · Paint roller (Afroicons PaintRoller) */
+export declare const FormatPainterOutlined: AfroIcon;
+/** Rouleau de peinture · Paint roller (Afroicons PaintRoller) */
+export declare const FormatPainterFilled: AfroIcon;
+/** Barrer le texte · Strikethrough (Afroicons Strikethrough) */
+export declare const StrikethroughOutlined: AfroIcon;
+/** Souligner · Underline (Afroicons Underline) */
+export declare const UnderlineOutlined: AfroIcon;
+/** Réduire le cadre · Minimize (Afroicons Minimize) */
+export declare const FullscreenExitOutlined: AfroIcon;
+/** Image · Image (Afroicons Image) */
+export declare const PictureOutlined: AfroIcon;
+/** Image · Image (Afroicons Image) */
+export declare const PictureFilled: AfroIcon;
+/** Image · Image (Afroicons Image) */
+export declare const PictureTwoTone: AfroIcon;
+/** Touche Commande · Command key (Afroicons Command) */
+export declare const MacCommandOutlined: AfroIcon;
+/** Touche Commande · Command key (Afroicons Command) */
+export declare const MacCommandFilled: AfroIcon;
+/** Reculer vite · Skip back (Afroicons ChevronsLeft) */
+export declare const DoubleLeftOutlined: AfroIcon;
+/** Retour à la ligne · Line break (Afroicons CornerDownLeft) */
+export declare const EnterOutlined: AfroIcon;
+/** Micro · Microphone (Afroicons Mic) */
+export declare const AudioOutlined: AfroIcon;
+/** Micro · Microphone (Afroicons Mic) */
+export declare const AudioFilled: AfroIcon;
+/** Micro · Microphone (Afroicons Mic) */
+export declare const AudioTwoTone: AfroIcon;
+/** Flamme · Cooking (Afroicons Flame) */
+export declare const FireOutlined: AfroIcon;
+/** Flamme · Cooking (Afroicons Flame) */
+export declare const FireFilled: AfroIcon;
+/** Flamme · Cooking (Afroicons Flame) */
+export declare const FireTwoTone: AfroIcon;
+/** Déverrouillé · Unlocked (Afroicons Unlock) */
+export declare const UnlockOutlined: AfroIcon;
+/** Déverrouillé · Unlocked (Afroicons Unlock) */
+export declare const UnlockFilled: AfroIcon;
+/** Déverrouillé · Unlocked (Afroicons Unlock) */
+export declare const UnlockTwoTone: AfroIcon;
+/** Répéter · Repeat (Afroicons Repeat) */
+export declare const RetweetOutlined: AfroIcon;
+/** Langues · Languages (Afroicons Languages) */
+export declare const TranslationOutlined: AfroIcon;
+/** Fusionner · Merge (Afroicons Merge) */
+export declare const MergeOutlined: AfroIcon;
+/** Fusionner · Merge (Afroicons Merge) */
+export declare const MergeFilled: AfroIcon;
+/** Micro coupé · Mic muted (Afroicons MicOff) */
+export declare const AudioMutedOutlined: AfroIcon;
+/** Autres actions · More actions (Afroicons MoreHorizontal) */
+export declare const EllipsisOutlined: AfroIcon;
+/** Wi-Fi · Wi-Fi (Afroicons Wifi) */
+export declare const WifiOutlined: AfroIcon;
+/** Agrandir · Expand (Afroicons Maximize2) */
+export declare const ArrowsAltOutlined: AfroIcon;
+/** Agrandir · Expand (Afroicons Maximize2) */
+export declare const ExpandAltOutlined: AfroIcon;
+/** Pause · Pause (Afroicons Pause) */
+export declare const PauseOutlined: AfroIcon;
+/** Mettre en pause · Pause playback (Afroicons PauseCircle) */
+export declare const PauseCircleOutlined: AfroIcon;
+/** Mettre en pause · Pause playback (Afroicons PauseCircle) */
+export declare const PauseCircleFilled: AfroIcon;
+/** Mettre en pause · Pause playback (Afroicons PauseCircle) */
+export declare const PauseCircleTwoTone: AfroIcon;
+/** Camembert · Pie chart (Afroicons ChartPie) */
+export declare const PieChartOutlined: AfroIcon;
+/** Camembert · Pie chart (Afroicons ChartPie) */
+export declare const PieChartFilled: AfroIcon;
+/** Camembert · Pie chart (Afroicons ChartPie) */
+export declare const PieChartTwoTone: AfroIcon;
+/** Épingler · Pin (Afroicons Pin) */
+export declare const PushpinOutlined: AfroIcon;
+/** Épingler · Pin (Afroicons Pin) */
+export declare const PushpinFilled: AfroIcon;
+/** Épingler · Pin (Afroicons Pin) */
+export declare const PushpinTwoTone: AfroIcon;
+/** Lire · Play (Afroicons PlayCircle) */
+export declare const PlayCircleOutlined: AfroIcon;
+/** Lire · Play (Afroicons PlayCircle) */
+export declare const PlayCircleFilled: AfroIcon;
+/** Lire · Play (Afroicons PlayCircle) */
+export declare const PlayCircleTwoTone: AfroIcon;
+/** Marche / arrêt · Power (Afroicons Power) */
+export declare const PoweroffOutlined: AfroIcon;
+/** Code QR · QR code (Afroicons QrCode) */
+export declare const QrcodeOutlined: AfroIcon;
+/** Refaire · Redo (Afroicons Redo) */
+export declare const RedoOutlined: AfroIcon;
+/** Pivoter · Rotate (Afroicons RotateCw) */
+export declare const RotateRightOutlined: AfroIcon;
+/** Laboratoire, essai · Lab, test (Afroicons FlaskConical) */
+export declare const ExperimentOutlined: AfroIcon;
+/** Laboratoire, essai · Lab, test (Afroicons FlaskConical) */
+export declare const ExperimentFilled: AfroIcon;
+/** Laboratoire, essai · Lab, test (Afroicons FlaskConical) */
+export declare const ExperimentTwoTone: AfroIcon;
+/** Mécontent · Unhappy (Afroicons Frown) */
+export declare const FrownOutlined: AfroIcon;
+/** Mécontent · Unhappy (Afroicons Frown) */
+export declare const FrownFilled: AfroIcon;
+/** Mécontent · Unhappy (Afroicons Frown) */
+export declare const FrownTwoTone: AfroIcon;
+/** Neutre · Neutral (Afroicons Meh) */
+export declare const MehOutlined: AfroIcon;
+/** Neutre · Neutral (Afroicons Meh) */
+export declare const MehFilled: AfroIcon;
+/** Neutre · Neutral (Afroicons Meh) */
+export declare const MehTwoTone: AfroIcon;
+/** J'aime · Like (Afroicons ThumbsUp) */
+export declare const LikeOutlined: AfroIcon;
+/** J'aime · Like (Afroicons ThumbsUp) */
+export declare const LikeFilled: AfroIcon;
+/** J'aime · Like (Afroicons ThumbsUp) */
+export declare const LikeTwoTone: AfroIcon;
+/** Nuage de points · Scatter chart (Afroicons ChartScatter) */
+export declare const DotChartOutlined: AfroIcon;
+/** Piste précédente · Previous track (Afroicons SkipBack) */
+export declare const FastBackwardOutlined: AfroIcon;
+/** Piste précédente · Previous track (Afroicons SkipBack) */
+export declare const FastBackwardFilled: AfroIcon;
+/** Tablette · Tablet (Afroicons Tablet) */
+export declare const TabletOutlined: AfroIcon;
+/** Tablette · Tablet (Afroicons Tablet) */
+export declare const TabletFilled: AfroIcon;
+/** Tablette · Tablet (Afroicons Tablet) */
+export declare const TabletTwoTone: AfroIcon;
+/** Je n'aime pas · Dislike (Afroicons ThumbsDown) */
+export declare const DislikeOutlined: AfroIcon;
+/** Je n'aime pas · Dislike (Afroicons ThumbsDown) */
+export declare const DislikeFilled: AfroIcon;
+/** Je n'aime pas · Dislike (Afroicons ThumbsDown) */
+export declare const DislikeTwoTone: AfroIcon;
+/** Port USB · USB port (Afroicons Usb) */
+export declare const UsbOutlined: AfroIcon;
+/** Port USB · USB port (Afroicons Usb) */
+export declare const UsbFilled: AfroIcon;
+/** Port USB · USB port (Afroicons Usb) */
+export declare const UsbTwoTone: AfroIcon;
+/** Vidéo · Video (Afroicons Video) */
+export declare const VideoCameraOutlined: AfroIcon;
+/** Vidéo · Video (Afroicons Video) */
+export declare const VideoCameraFilled: AfroIcon;
+/** Vidéo · Video (Afroicons Video) */
+export declare const VideoCameraTwoTone: AfroIcon;
+/** Son coupé · Muted (Afroicons VolumeX) */
+export declare const MutedOutlined: AfroIcon;
+/** Son coupé · Muted (Afroicons VolumeX) */
+export declare const MutedFilled: AfroIcon;
+/** Son activé · Sound on (Afroicons Volume2) */
+export declare const SoundOutlined: AfroIcon;
+/** Son activé · Sound on (Afroicons Volume2) */
+export declare const SoundFilled: AfroIcon;
+/** Son activé · Sound on (Afroicons Volume2) */
+export declare const SoundTwoTone: AfroIcon;
+/** Zoom avant · Zoom in (Afroicons ZoomIn) */
+export declare const ZoomInOutlined: AfroIcon;
+/** Zoom arrière · Zoom out (Afroicons ZoomOut) */
+export declare const ZoomOutOutlined: AfroIcon;
+/** Viseur · Crosshair (Afroicons Crosshair) */
+export declare const AimOutlined: AfroIcon;
+/** Graphique en aires · Area chart (Afroicons AreaChart) */
+export declare const AreaChartOutlined: AfroIcon;
+/** Reculer d'une image · Step back (Afroicons StepBack) */
+export declare const StepBackwardOutlined: AfroIcon;
+/** Reculer d'une image · Step back (Afroicons StepBack) */
+export declare const StepBackwardFilled: AfroIcon;
+/** Avancer d'une image · Step forward (Afroicons StepForward) */
+export declare const StepForwardOutlined: AfroIcon;
+/** Avancer d'une image · Step forward (Afroicons StepForward) */
+export declare const StepForwardFilled: AfroIcon;
+/** Code-barres · Barcode (Afroicons Barcode) */
+export declare const BarcodeOutlined: AfroIcon;
+/** Case cochée · Checked box (Afroicons SquareCheck) */
+export declare const CheckSquareOutlined: AfroIcon;
+/** Case cochée · Checked box (Afroicons SquareCheck) */
+export declare const CheckSquareFilled: AfroIcon;
+/** Case cochée · Checked box (Afroicons SquareCheck) */
+export declare const CheckSquareTwoTone: AfroIcon;
+/** Case refusée · Rejected box (Afroicons SquareX) */
+export declare const CloseSquareOutlined: AfroIcon;
+/** Case refusée · Rejected box (Afroicons SquareX) */
+export declare const CloseSquareFilled: AfroIcon;
+/** Case refusée · Rejected box (Afroicons SquareX) */
+export declare const CloseSquareTwoTone: AfroIcon;
+/** Conteneur · Suppliers (Afroicons Container) */
+export declare const ContainerOutlined: AfroIcon;
+/** Conteneur · Suppliers (Afroicons Container) */
+export declare const ContainerFilled: AfroIcon;
+/** Conteneur · Suppliers (Afroicons Container) */
+export declare const ContainerTwoTone: AfroIcon;
+/** Montant en dollars (rond) · Dollar amount (circle) (Afroicons CircleDollarSign) */
+export declare const DollarCircleOutlined: AfroIcon;
+/** Montant en dollars (rond) · Dollar amount (circle) (Afroicons CircleDollarSign) */
+export declare const DollarCircleFilled: AfroIcon;
+/** Montant en dollars (rond) · Dollar amount (circle) (Afroicons CircleDollarSign) */
+export declare const DollarCircleTwoTone: AfroIcon;
+/** Dérouler (carré) · Expand down (square) (Afroicons ChevronDownSquare) */
+export declare const DownSquareOutlined: AfroIcon;
+/** Dérouler (carré) · Expand down (square) (Afroicons ChevronDownSquare) */
+export declare const DownSquareFilled: AfroIcon;
+/** Dérouler (carré) · Expand down (square) (Afroicons ChevronDownSquare) */
+export declare const DownSquareTwoTone: AfroIcon;
+/** Précédent (rond) · Previous (round) (Afroicons ChevronLeftCircle) */
+export declare const LeftCircleOutlined: AfroIcon;
+/** Précédent (rond) · Previous (round) (Afroicons ChevronLeftCircle) */
+export declare const LeftCircleFilled: AfroIcon;
+/** Précédent (rond) · Previous (round) (Afroicons ChevronLeftCircle) */
+export declare const LeftCircleTwoTone: AfroIcon;
+/** Précédent (carré) · Previous (square) (Afroicons ChevronLeftSquare) */
+export declare const LeftSquareOutlined: AfroIcon;
+/** Précédent (carré) · Previous (square) (Afroicons ChevronLeftSquare) */
+export declare const LeftSquareFilled: AfroIcon;
+/** Précédent (carré) · Previous (square) (Afroicons ChevronLeftSquare) */
+export declare const LeftSquareTwoTone: AfroIcon;
+/** Suivant (rond) · Next (round) (Afroicons ChevronRightCircle) */
+export declare const RightCircleOutlined: AfroIcon;
+/** Suivant (rond) · Next (round) (Afroicons ChevronRightCircle) */
+export declare const RightCircleFilled: AfroIcon;
+/** Suivant (rond) · Next (round) (Afroicons ChevronRightCircle) */
+export declare const RightCircleTwoTone: AfroIcon;
+/** Suivant (carré) · Next (square) (Afroicons ChevronRightSquare) */
+export declare const RightSquareOutlined: AfroIcon;
+/** Suivant (carré) · Next (square) (Afroicons ChevronRightSquare) */
+export declare const RightSquareFilled: AfroIcon;
+/** Suivant (carré) · Next (square) (Afroicons ChevronRightSquare) */
+export declare const RightSquareTwoTone: AfroIcon;
+/** Replier (rond) · Collapse up (round) (Afroicons ChevronUpCircle) */
+export declare const UpCircleOutlined: AfroIcon;
+/** Replier (rond) · Collapse up (round) (Afroicons ChevronUpCircle) */
+export declare const UpCircleFilled: AfroIcon;
+/** Replier (rond) · Collapse up (round) (Afroicons ChevronUpCircle) */
+export declare const UpCircleTwoTone: AfroIcon;
+/** Replier (carré) · Collapse up (square) (Afroicons ChevronUpSquare) */
+export declare const UpSquareOutlined: AfroIcon;
+/** Replier (carré) · Collapse up (square) (Afroicons ChevronUpSquare) */
+export declare const UpSquareFilled: AfroIcon;
+/** Replier (carré) · Collapse up (square) (Afroicons ChevronUpSquare) */
+export declare const UpSquareTwoTone: AfroIcon;
+/** Rechercher un dossier · Find folder (Afroicons FolderSearch) */
+export declare const FolderViewOutlined: AfroIcon;
+/** Document à vérifier · Document issue (Afroicons FileWarning) */
+export declare const FileExclamationOutlined: AfroIcon;
+/** Document à vérifier · Document issue (Afroicons FileWarning) */
+export declare const FileExclamationFilled: AfroIcon;
+/** Document à vérifier · Document issue (Afroicons FileWarning) */
+export declare const FileExclamationTwoTone: AfroIcon;
+/** Fichier image · Image file (Afroicons FileImage) */
+export declare const FileImageOutlined: AfroIcon;
+/** Fichier image · Image file (Afroicons FileImage) */
+export declare const FileImageFilled: AfroIcon;
+/** Fichier image · Image file (Afroicons FileImage) */
+export declare const FileImageTwoTone: AfroIcon;
+/** Document inconnu · Unknown document (Afroicons FileQuestion) */
+export declare const FileUnknownOutlined: AfroIcon;
+/** Document inconnu · Unknown document (Afroicons FileQuestion) */
+export declare const FileUnknownFilled: AfroIcon;
+/** Document inconnu · Unknown document (Afroicons FileQuestion) */
+export declare const FileUnknownTwoTone: AfroIcon;
+/** Fichier compressé · Compressed file (Afroicons FileArchive) */
+export declare const FileZipOutlined: AfroIcon;
+/** Fichier compressé · Compressed file (Afroicons FileArchive) */
+export declare const FileZipFilled: AfroIcon;
+/** Fichier compressé · Compressed file (Afroicons FileArchive) */
+export declare const FileZipTwoTone: AfroIcon;
+/** Bifurcation de projet (fork) · Fork (Afroicons GitFork) */
+export declare const ForkOutlined: AfroIcon;
+/** Grouper la sélection · Group selection (Afroicons Group) */
+export declare const GroupOutlined: AfroIcon;
+/** Dissocier les éléments · Ungroup items (Afroicons Ungroup) */
+export declare const UngroupOutlined: AfroIcon;
+/** Pièce d'identité · ID card (Afroicons IdCard) */
+export declare const IdcardOutlined: AfroIcon;
+/** Pièce d'identité · ID card (Afroicons IdCard) */
+export declare const IdcardFilled: AfroIcon;
+/** Pièce d'identité · ID card (Afroicons IdCard) */
+export declare const IdcardTwoTone: AfroIcon;
+/** Lire la vidéo · Play video (Afroicons PlaySquare) */
+export declare const PlaySquareOutlined: AfroIcon;
+/** Lire la vidéo · Play video (Afroicons PlaySquare) */
+export declare const PlaySquareFilled: AfroIcon;
+/** Lire la vidéo · Play video (Afroicons PlaySquare) */
+export declare const PlaySquareTwoTone: AfroIcon;
+/** Moins encadré · Boxed minus (Afroicons MinusSquare) */
+export declare const MinusSquareOutlined: AfroIcon;
+/** Moins encadré · Boxed minus (Afroicons MinusSquare) */
+export declare const MinusSquareFilled: AfroIcon;
+/** Moins encadré · Boxed minus (Afroicons MinusSquare) */
+export declare const MinusSquareTwoTone: AfroIcon;
+/** Demande de fusion · Pull request (Afroicons GitPullRequest) */
+export declare const PullRequestOutlined: AfroIcon;
+/** Signer · Sign (Afroicons Signature) */
+export declare const SignatureOutlined: AfroIcon;
+/** Signer · Sign (Afroicons Signature) */
+export declare const SignatureFilled: AfroIcon;
+/** Transfert · Transfer (Afroicons ArrowRightLeft) */
+export declare const SwapOutlined: AfroIcon;
+/** Resserrer · Shrink (Afroicons Shrink) */
+export declare const ShrinkOutlined: AfroIcon;
+/** Aller tout en haut · Move to top (Afroicons ArrowUpToLine) */
+export declare const ToTopOutlined: AfroIcon;
+/** Mode vibreur · Vibrate mode (Afroicons Vibrate) */
+export declare const ShakeOutlined: AfroIcon;
+/** Différences entre versions · Diff (Afroicons Diff) */
+export declare const DiffOutlined: AfroIcon;
+/** Différences entre versions · Diff (Afroicons Diff) */
+export declare const DiffFilled: AfroIcon;
+/** Différences entre versions · Diff (Afroicons Diff) */
+export declare const DiffTwoTone: AfroIcon;
+/** Fusionner des cellules · Merge cells (Afroicons TableCellsMerge) */
+export declare const MergeCellsOutlined: AfroIcon;
+/** Scinder une cellule · Split cell (Afroicons TableCellsSplit) */
+export declare const SplitCellsOutlined: AfroIcon;
+/** Plein écran · Full screen (Afroicons Fullscreen) */
+export declare const FullscreenOutlined: AfroIcon;
+/** Déployer · Expand (Afroicons Expand) */
+export declare const ExpandOutlined: AfroIcon;
+/** Choisir la taille du texte · Text size (Afroicons ALargeSmall) */
+export declare const FontSizeOutlined: AfroIcon;
+/** Document protégé par mot de passe · Password-protected document (Afroicons FileLock) */
+export declare const FileProtectOutlined: AfroIcon;
+/** Sélection à la souris · Mouse selection (Afroicons MousePointerSquareDashed) */
+export declare const SelectOutlined: AfroIcon;
+/** Tri ascendant · Sort ascending (Afroicons SortAsc) */
+export declare const SortAscendingOutlined: AfroIcon;
+/** Tri descendant · Sort descending (Afroicons SortDesc) */
+export declare const SortDescendingOutlined: AfroIcon;
+/** Code binaire · Binary code (Afroicons Binary) */
+export declare const FieldBinaryOutlined: AfroIcon;
