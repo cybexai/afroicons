@@ -149,8 +149,9 @@ function classe() {
   const chalk = "rgba(255,253,248,.85)";
   g.push(stroke("M274 160L290 122L306 160M282 146H298", chalk, 4), stroke("M324 122V160M324 122Q346 122 346 132Q346 141 324 141Q350 141 350 151Q350 160 324 160", chalk, 4), stroke("M392 126Q372 120 370 141Q372 162 392 156", chalk, 4));
   g.push(stroke("M266 190L274 184V214M288 200H314M301 187V213M330 190L338 184V214M356 196H384M356 207H384M402 188Q420 180 424 192Q424 202 402 214H428", chalk, 4));
-  g.push(`<g transform="translate(476 100) scale(0.18)"><path d="${allege(carte.countries.map((c) => c.d).join(""))}" fill="${C.ocre}" fill-rule="evenodd" opacity=".9"/></g>`);
-  g.push(`<circle cx="554" cy="158" r="7" fill="${C.terra}"/>`);
+  // Carte de l'Afrique (976×849) réduite pour tenir dans l'ardoise (x 242–618, y 82–288), îles comprises ; le point marque le Cameroun.
+  g.push(`<g transform="translate(470 106) scale(0.14)"><path d="${allege(carte.countries.map((c) => c.d).join(""))}" fill="${C.ocre}" fill-rule="evenodd" opacity=".9"/></g>`);
+  g.push(`<circle cx="530.6" cy="151.1" r="5.5" fill="${C.terra}"/>`);
   // Fenêtre sur la cour : manguier, terre rouge, bâtiment de l'école
   g.push(`<rect x="652" y="74" width="122" height="170" rx="8" fill="${C.white}"/><rect x="662" y="84" width="102" height="150" rx="3" fill="${C.sky}"/>`);
   g.push(`<rect x="662" y="192" width="102" height="42" fill="${C.rose}"/><rect x="730" y="164" width="34" height="30" fill="${C.sand}"/><path d="M726 166L746 152L768 166Z" fill="${C.grey}"/>`);

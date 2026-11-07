@@ -194,5 +194,6 @@ for (const x of ILLUS) {
   assert.ok(x.svg.length < 50_000, `illustration ${x.id} : moins de 50 Ko`);
   const ids = new Set([...x.svg.matchAll(/id="([^"]+)"/g)].map((m) => m[1]));
   for (const [, ref] of x.svg.matchAll(/url\(#([^)]+)\)/g)) assert.ok(ids.has(ref), `illustration ${x.id} : motif ${ref} défini`);
+  for (const [, ref] of x.svg.matchAll(/href="#([^"]+)"/g)) assert.ok(ids.has(ref), `illustration ${x.id} : forme ${ref} définie`);
 }
 console.log(`✔ ${ILLUS.length} illustrations`);

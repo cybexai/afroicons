@@ -17,7 +17,7 @@ const recolor = (svg: string, to: readonly string[]) => {
   return svg.replace(/#[0-9a-f]{6}\b/gi, (h) => map.get(h.toLowerCase()) ?? h);
 };
 // Plusieurs SVG dans la même page : chaque copie garde ses propres identifiants de motifs.
-const scope = (svg: string, k: string) => svg.replace(/id="([\w-]+)"/g, `id="$1-${k}"`).replace(/url\(#([\w-]+)\)/g, `url(#$1-${k})`);
+const scope = (svg: string, k: string) => svg.replace(/id="([\w-]+)"/g, `id="$1-${k}"`).replace(/url\(#([\w-]+)\)/g, `url(#$1-${k})`).replace(/href="#([\w-]+)"/g, `href="#$1-${k}"`);
 // Rendu PNG net : le SVG reçoit la taille finale avant d'être dessiné dans le canevas.
 const png = (svg: string, w: number, h: number) => svgToPng(svg.replace("<svg ", `<svg width="${w}" height="${h}" `), w, h);
 /** Hook : télécharge le PNG d'un SVG, avec un message si le navigateur refuse le rendu. */
