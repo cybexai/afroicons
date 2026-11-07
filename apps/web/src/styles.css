@@ -1144,3 +1144,28 @@ button.ilimg:hover .ilhover,button.ilimg:focus-visible .ilhover{opacity:1;transf
 .ilobj .ilacts .btn{height:36px;font-size:13px;gap:6px}
 .iledited{font-weight:600;color:var(--a1)}
 @media (max-width:560px){.ilobjgrid{grid-template-columns:minmax(0,1fr)}.ilstagebar{align-items:flex-start}}
+/* Fiche d'une scène : export par format, puis actions sur toutes les scènes */
+.ilout{gap:12px}
+.ilexp{border:1px solid var(--line);border-radius:16px;background:var(--card);overflow:hidden}
+.ilexprow{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 12px 12px 16px}
+.ilexprow+.ilexprow{border-top:1px solid var(--line)}
+.ilfmt{min-width:0}
+.ilfmt strong{display:block;font:700 13px "JetBrains Mono";letter-spacing:.08em}
+.ilfmt small{display:block;margin-top:2px;font-size:12.5px;color:var(--muted)}
+.ilexpacts{display:flex;align-items:center;gap:8px;flex:none}
+.ilexpacts .btn{height:38px;padding:0 14px;gap:7px;font-size:13.5px}
+.ilseg{display:inline-flex;gap:2px;padding:3px;border-radius:11px;background:var(--bg2)}
+.ilseg button{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:32px;padding:0 10px;line-height:1;border:0;border-radius:8px;background:transparent;color:var(--muted);font:700 12.5px "JetBrains Mono";cursor:pointer}
+.ilseg button small{font-size:10.5px;font-weight:500;line-height:1;opacity:.75}
+.ilseg button.on{background:var(--card);color:var(--ink);box-shadow:0 1px 3px #0000002b}
+.ilseg button:focus-visible{outline:2px solid var(--a1);outline-offset:1px}
+.ilmore{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.ilmore .btn{height:38px;gap:7px;font-size:13.5px}
+.ilmore .lnk{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:13.5px}
+.ilmore .lnk:hover{color:var(--ink)}
+@media (max-width:560px){
+  .ilexprow{flex-direction:column;align-items:stretch;gap:10px}
+  .ilexpacts{flex-wrap:wrap}
+  .ilexpacts .btn{flex:1;justify-content:center}
+  .ilseg{flex:1 1 100%}.ilseg button{flex:1;justify-content:center}
+}

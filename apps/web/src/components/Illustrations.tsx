@@ -4,7 +4,7 @@ import { CITIES, FLAGS, type CityId } from "../lib/constants";
 import { svgToPng } from "../lib/svg";
 import { useApp } from "../state";
 import { C, SKIN, defs, person } from "../../../../scripts/illustrations/lib.mjs";
-import { IClose, ICopyPlus, IEyeOff, ILayerUp, INext, IPrev, IRedo, ISearch, ISliders, IUndo } from "./ui";
+import { IClose, ICopy, ICopyPlus, IDown, IEyeOff, IGrid, ILayerUp, INext, IPrev, IRedo, IReplay, ISearch, ISliders, IUndo } from "./ui";
 import { inert } from "./Overlays";
 import { NO_EDITS, applyEdits, count, isEmpty, paintsOf, paletteOf, patternsOf, strip, tag, tf, type Edits, type Obj } from "../lib/sceneEdit";
 
@@ -500,17 +500,27 @@ function Editor({ scene, base, list, open, close, applyAll, edits, setEdits }: {
           </div>
 
           <div className="ilout">
-            <div className="ilacts">
-              <button className="btn p" onClick={() => a.save(file + ".svg", svg)}>{a.tt("Télécharger le SVG", "Download SVG")}</button>
-              <button className="btn" onClick={() => a.copy(svg, a.tt("SVG copié", "SVG copied"))}>{a.tt("Copier le SVG", "Copy SVG")}</button>
+            <div className="ilexp">
+              <div className="ilexprow">
+                <div className="ilfmt"><strong>SVG</strong><small>{a.tt("Vectoriel · web, Figma, Illustrator", "Vector · web, Figma, Illustrator")}</small></div>
+                <div className="ilexpacts">
+                  <button className="btn p" onClick={() => a.save(file + ".svg", svg)}><IDown s={16} />{a.tt("Télécharger", "Download")}</button>
+                  <button className="btn" onClick={() => a.copy(svg, a.tt("SVG copié", "SVG copied"))}><ICopy s={16} />{a.tt("Copier", "Copy")}</button>
+                </div>
+              </div>
+              <div className="ilexprow">
+                <div className="ilfmt"><strong>PNG</strong><small>{a.tt(`Image · ${pw}×${pw * 0.75} px`, `Image · ${pw}×${pw * 0.75} px`)}</small></div>
+                <div className="ilexpacts">
+                  <div className="ilseg" role="group" aria-label={a.tt("Largeur du PNG", "PNG width")}>
+                    {PNG_W.map((w) => <button key={w} type="button" aria-pressed={pw === w} className={pw === w ? "on" : ""} onClick={() => setPw(w)} title={`${w}×${w * 0.75} px`}>{w === 800 ? "S" : w === 1600 ? "M" : "L"}<small>{w}</small></button>)}
+                  </div>
+                  <button className="btn" onClick={() => savePng(file + ".png", svg, pw, pw * 0.75)}><IDown s={16} />{a.tt("Télécharger", "Download")}</button>
+                </div>
+              </div>
             </div>
-            <div className="ilacts">
-              <select value={pw} onChange={(ev) => setPw(+ev.target.value)} aria-label={a.tt("Taille du PNG", "PNG size")}>{PNG_W.map((w) => <option key={w} value={w}>{w}×{w * 0.75}</option>)}</select>
-              <button className="btn" onClick={() => savePng(file + ".png", svg, pw, pw * 0.75)}>{a.tt("Télécharger le PNG", "Download PNG")}</button>
-            </div>
-            <div className="ilacts">
-              <button className="btn" onClick={() => { applyAll({ ...L, flip: false }); a.toast(a.tt("Réglages appliqués à toutes les scènes", "Settings applied to every scene")); }}>{a.tt("Appliquer à toutes les scènes", "Apply to every scene")}</button>
-              <button className="btn" onClick={() => { setL({ ...base, flip: false }); if (!isEmpty(ed)) commit(NO_EDITS); setSel([]); }}>{a.tt("Réinitialiser", "Reset")}</button>
+            <div className="ilmore">
+              <button className="btn" onClick={() => { applyAll({ ...L, flip: false }); a.toast(a.tt("Réglages appliqués à toutes les scènes", "Settings applied to every scene")); }} title={a.tt("Ambiance, fond, drapeau, peau et coins pour toutes les scènes (les retouches d'objets restent propres à cette scène)", "Mood, background, flag, skin and corners for every scene (object edits stay on this scene)")}><IGrid s={16} />{a.tt("Appliquer à toutes les scènes", "Apply to every scene")}</button>
+              <button className="lnk" onClick={() => { setL({ ...base, flip: false }); if (!isEmpty(ed)) commit(NO_EDITS); setSel([]); }}><IReplay s={15} />{a.tt("Tout réinitialiser", "Reset everything")}</button>
             </div>
           </div>
         </div>
