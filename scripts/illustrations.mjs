@@ -14,13 +14,13 @@ const only = oi >= 0 ? args[oi + 1].split(",") : null;
 const all = [];
 // Les rubriques de la page Illustrations : chaque scène en a une (le site en fait des filtres).
 const CAT = {
-  travail: ["bureau", "startup", "solaire", "bronze", "poterie", "tissage", "cordonnier", "telephone", "couturiere", "menuisier", "garage", "recyclage"],
-  savoir: ["classe", "campus", "ecole", "bibliotheque", "code", "labo", "sante", "pharmacie", "radio", "pharmatrad", "tradipraticien", "dentiste", "maternelle"],
-  famille: ["repas", "nattes", "appel", "cuisine", "naissance", "aeroport", "tontine", "anniversaire", "grandsparents"],
-  ville: ["marche", "moto", "coiffure", "pagnes", "beignets", "transfert", "gare", "taxi", "livraison", "pluie", "nuit", "boulangerie", "banque", "bayam"],
-  village: ["champ", "village", "pirogues", "cacao", "potager", "elevage", "poulailler", "fumage", "huile", "plantes", "cafe"],
+  travail: ["bureau", "startup", "solaire", "bronze", "poterie", "tissage", "cordonnier", "telephone", "couturiere", "menuisier", "garage", "recyclage", "photographe", "electricienne", "chantier"],
+  savoir: ["classe", "campus", "ecole", "bibliotheque", "code", "labo", "sante", "pharmacie", "radio", "pharmatrad", "tradipraticien", "dentiste", "maternelle", "vaccination", "resultats"],
+  famille: ["repas", "nattes", "appel", "cuisine", "naissance", "aeroport", "tontine", "anniversaire", "grandsparents", "samedi"],
+  ville: ["marche", "moto", "coiffure", "pagnes", "beignets", "transfert", "gare", "taxi", "livraison", "pluie", "nuit", "boulangerie", "banque", "bayam", "maquis"],
+  village: ["champ", "village", "pirogues", "cacao", "potager", "elevage", "poulailler", "fumage", "huile", "plantes", "cafe", "riziere"],
   fete: ["fete", "chefferie", "dot", "conte", "danse", "defile", "mairie", "lutte", "ngondo", "nguon", "masques", "cranes", "funerailles", "libation"],
-  loisirs: ["football", "braise", "match", "course", "plage", "gym", "concert", "cinema", "awale", "basket", "jeuxvideo"],
+  loisirs: ["football", "braise", "match", "course", "plage", "gym", "concert", "cinema", "awale", "basket", "jeuxvideo", "danseurs"],
 };
 const catOf = (id) => Object.keys(CAT).find((k) => CAT[k].includes(id));
 
