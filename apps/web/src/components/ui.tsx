@@ -52,3 +52,8 @@ export const ITrash = ui('<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/>');
 export const IUp = ui('<path d="M12 19V5M5 12l7-7 7 7"/>');
 export const ISun = ui('<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>');
 export const IMoon = ui('<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>');
+export const IUndo = ui('<path d="M9 14L4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 010 11H11"/>');
+export const IRedo = ui('<path d="M15 14l5-5-5-5"/><path d="M20 9H9.5a5.5 5.5 0 000 11H13"/>');
+export const ICopyPlus = ui('<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2h2M14 11v6M11 14h6"/>');
+export const IEyeOff = ui('<path d="M3 3l18 18M10.6 10.6a2 2 0 002.8 2.8M9.9 5.1A9.8 9.8 0 0112 5c5 0 9 4.5 10 7a13 13 0 01-3.2 4.3M6.6 6.6C4.4 8 2.8 10 2 12c1 2.5 5 7 10 7a9.6 9.6 0 004.2-.9"/>');
+export const ILayerUp = ui('<path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 16l9 5 9-5"/>');

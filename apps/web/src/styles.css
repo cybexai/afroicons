@@ -1101,3 +1101,46 @@ button.ilimg:hover .ilhover,button.ilimg:focus-visible .ilhover{opacity:1;transf
   .iltools .ilpals button,.ilcats button{flex:none}
 }
 .iltools .ilnote{flex:1 1 100%;margin:0}
+/* Retouche objet par objet (fiche d'une scène) */
+.ilstagebar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px}
+.ilhint{margin:0;font-size:12.5px;line-height:1.45;color:var(--muted)}
+.ilhist{display:flex;gap:6px;flex:none}
+.ilhist .ib:disabled{opacity:.35;cursor:default}
+.ilstagewrap{position:relative;margin-top:10px}
+.ilstagewrap .ilbig{margin-top:0}
+.ilbig.edit{cursor:pointer;touch-action:none;user-select:none;-webkit-user-select:none}
+.ilboxes{position:absolute;inset:0;pointer-events:none;overflow:hidden;border-radius:20px}
+.ilboxes i{position:absolute;border-radius:4px}
+.ilboxes .hov{box-shadow:0 0 0 1px #fff9;outline:1.5px dashed var(--a1);outline-offset:1px}
+.ilboxes .on{box-shadow:0 0 0 1.5px #fff,0 0 0 3.5px var(--a1),0 0 0 5px #fff6}
+.ilednote{margin:10px 0 0}
+.ilobjnav{margin-top:12px}
+.ilobjnav .btn{height:36px;font-size:13px}
+.ilobj{margin-top:14px;padding:16px;border:1.5px solid var(--a1);border-radius:16px;background:color-mix(in srgb,var(--a1) 5%,var(--card))}
+.ilobjhead{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:12px}
+.ilobjhead .kick{display:block;margin-bottom:2px}
+.ilobjhead strong{font-size:16px}
+.ilobjlvl{display:flex;gap:16px;flex-wrap:wrap;margin:-4px 0 12px;font-size:13.5px}
+.lnk{background:none;border:0;padding:0;font:inherit;color:var(--a1);font-weight:600;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.ilpaints{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ilpaint .sw,.ilpat .sw{position:relative;display:block;width:30px;height:30px;border-radius:50%;border:2px solid var(--line);overflow:hidden;cursor:pointer;background-image:conic-gradient(#C24E2A,#E3A22F,#2E6B4E,#22305C,#C24E2A)}
+.ilpaint .sw[style*="background"]{background-image:none}
+.ilpaint input,.ilpat input{position:absolute;inset:0;opacity:0;width:100%;height:100%;cursor:pointer;border:0;padding:0}
+.ilpaint:focus-within .sw,.ilpat:focus-within .sw{outline:2px solid var(--a1);outline-offset:2px}
+.ilpat{display:flex;align-items:center;gap:8px;padding:4px 6px 4px 12px;border:1px solid var(--line);border-radius:12px;background:var(--card);font-size:13px}
+.ilpat select{height:30px;border:0;background:transparent;color:var(--ink);font:inherit;font-weight:600;cursor:pointer}
+.ilpaints .lnk{font-size:13px;height:auto;border:0;background:none;padding:0;color:var(--a1)}
+.ilobjgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px;margin:14px 0}
+.ilnum{display:grid;gap:6px;font-size:13px;color:var(--muted)}
+.ilnum span{display:flex;justify-content:space-between;gap:8px}
+.ilnum output{font:600 12px "JetBrains Mono";color:var(--ink)}
+.ilnum input{width:100%;accent-color:var(--a1)}
+.ilpad{display:grid;gap:6px;font-size:13px;color:var(--muted)}
+.ilpad div{display:flex;gap:6px}
+.ilpad .ib{width:36px;height:32px;font-size:15px}
+.ilorder{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:12px 0;font-size:13px;color:var(--muted)}
+.ilorder span{margin-right:4px}
+.ilorder .btn{height:32px;padding:0 10px;font-size:12.5px}
+.ilobj .ilacts .btn{height:36px;font-size:13px;gap:6px}
+.iledited{font-weight:600;color:var(--a1)}
+@media (max-width:560px){.ilobjgrid{grid-template-columns:minmax(0,1fr)}.ilstagebar{align-items:flex-start}}
