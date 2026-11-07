@@ -3,7 +3,7 @@ import { AFRO, CITIES, COUNTRIES, EMOJIS, FLAGS, ICONS, PAGE, UI, REGNAME, ROT_C
 import { animateDraw, logoSvg, svgStr } from "../lib/svg";
 import { MOD } from "../lib/platform";
 import { useApp, useName } from "../state";
-import { IClose, IDown, IMenu, IMoon, ISearch, ISun, Raw, Svg, T } from "./ui";
+import { IChevron, IClose, IDown, IMenu, IMoon, ISearch, ISun, Raw, Svg, T } from "./ui";
 import { inert } from "./Overlays";
 
 export function Nav() {
@@ -11,6 +11,15 @@ export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [cityOpen, setCityOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
+  useEffect(() => {
+    if (!moreOpen) return;
+    const close = (e: MouseEvent) => { if (!(e.target as HTMLElement).closest(".morem")) setMoreOpen(false); };
+    const esc = (e: KeyboardEvent) => { if (e.key === "Escape") { setMoreOpen(false); (document.querySelector(".morem > button") as HTMLElement | null)?.focus(); } };
+    document.addEventListener("click", close);
+    document.addEventListener("keydown", esc);
+    return () => { document.removeEventListener("click", close); document.removeEventListener("keydown", esc); };
+  }, [moreOpen]);
   useEffect(() => {
     const f = () => setScrolled(scrollY > 8);
     addEventListener("scroll", f, { passive: true });
@@ -28,7 +37,7 @@ export function Nav() {
     if (!menuOpen) return;
     const close = (e: MouseEvent) => { if (!(e.target as HTMLElement).closest(".menum")) setMenuOpen(false); };
     const esc = (e: KeyboardEvent) => { if (e.key === "Escape") setMenuOpen(false); };
-    const wide = matchMedia("(min-width: 1401px)");
+    const wide = matchMedia("(min-width: 1101px)");
     const off = () => { if (wide.matches) setMenuOpen(false); };
     document.addEventListener("click", close);
     document.addEventListener("keydown", esc);
@@ -43,10 +52,12 @@ export function Nav() {
     return () => io.disconnect();
   }, []);
   const links = [["icones", "nav1"], ["carte", "nav8"], ["atelier", "nav2"], ["vitrine", "nav5"], ["utiliser", "nav3"], ["marque", "nav6"], ["idees", "nav7"]];
+  const main = links.slice(0, 2), more = links.slice(2);
   // Hors de l'accueil, les liens du menu ramènent aux sections de l'accueil.
   const home = PAGE === "home", sec = (h: string) => (home ? "#" : "/#") + h;
   const news = <a href="/nouveautes/" className={PAGE === "news" ? "on" : ""} aria-current={PAGE === "news" ? "page" : undefined}><T k="newsT" /></a>;
   const play = <a href="/playground/" className={PAGE === "playground" ? "on" : ""} aria-current={PAGE === "playground" ? "page" : undefined}>{a.tt("Bac à sable", "Playground")}</a>;
+  const illus = <a href="/illustrations/" className={PAGE === "illus" ? "on" : ""} aria-current={PAGE === "illus" ? "page" : undefined}>Illustrations</a>;
   const toggleMode = () => a.setMode(a.mode === "dark" ? "light" : "dark");
   const logo = logoSvg({ s: 36, door: a.pal[1], sun: a.pal[0] });
 
@@ -54,9 +65,19 @@ export function Nav() {
     <nav className={"top wrap" + (scrolled ? " scrolled" : "")}>
       <a className="logo" href={home ? "#top" : "/"} aria-label="Afroicons"><Raw className="mk" html={logo} /><span className="wm-t">Afroicons</span></a>
       <div className="navlinks">
-        {links.map(([h, k]) => <a key={h} href={sec(h)} className={active === h ? "on" : ""} aria-current={active === h ? "location" : undefined}><T k={k} /></a>)}
+        {/* Les deux sections principales, les pages, puis les autres sections de l'accueil dans « Plus ». */}
+        {main.map(([h, k]) => <a key={h} href={sec(h)} className={active === h ? "on" : ""} aria-current={active === h ? "location" : undefined}><T k={k} /></a>)}
+        {illus}
         {play}
         {news}
+        <div className="morem">
+          <button type="button" className={"navmore" + (more.some(([h]) => h === active) ? " on" : "")} aria-expanded={moreOpen} aria-controls="morepop" onClick={(e) => { e.stopPropagation(); setMoreOpen((o) => !o); }}>
+            {a.tt("Plus", "More")}<IChevron s={15} />
+          </button>
+          <div id="morepop" className={"citypop morepop" + (moreOpen ? " open" : "")} {...inert(!moreOpen)}>
+            {more.map(([h, k]) => <a key={h} href={sec(h)} className={active === h ? "on" : ""} aria-current={active === h ? "location" : undefined} onClick={() => setMoreOpen(false)}><T k={k} /></a>)}
+          </div>
+        </div>
       </div>
       <div className="navr">
         <button className="kbtn" aria-label={a.t("cmdLbl")} onClick={() => a.setCmdOpen(true)}><ISearch s={17} /><span className="lbl"><T k="cmdLbl" /></span><span className="kbd" aria-hidden="true">{MOD + "K"}</span></button>
@@ -80,9 +101,11 @@ export function Nav() {
         <div className="menum">
           <button className="ib" aria-label={a.tt("Menu", "Menu")} aria-expanded={menuOpen} aria-controls="mmenu" onClick={(e) => { e.stopPropagation(); setMenuOpen((o) => !o); }}>{menuOpen ? <IClose /> : <IMenu />}</button>
           <div id="mmenu" className={"mpop" + (menuOpen ? " open" : "")} {...inert(!menuOpen)}>
-            {links.map(([h, k]) => <a key={h} href={sec(h)} onClick={() => setMenuOpen(false)}><T k={k} /></a>)}
+            {main.map(([h, k]) => <a key={h} href={sec(h)} onClick={() => setMenuOpen(false)}><T k={k} /></a>)}
+            {illus}
             {play}
             {news}
+            {more.map(([h, k]) => <a key={h} href={sec(h)} onClick={() => setMenuOpen(false)}><T k={k} /></a>)}
             <div className="mx">
               <button onClick={toggleMode}>{a.mode === "dark" ? <ISun /> : <IMoon />}{a.mode === "dark" ? a.tt("Mode clair", "Light mode") : a.tt("Mode sombre", "Dark mode")}</button>
               <div className="kick" style={{ padding: "10px 12px 4px", margin: 0 }}>{a.tt("Ambiance", "Mood")}</div>

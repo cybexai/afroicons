@@ -54,6 +54,8 @@ function useAppState() {
   const [current, setCurrent] = useState<string | null>(null);
   const [cmdOpen, setCmdOpen] = useState(false);
   const [helpOpen, setHelpOpen] = useState(false);
+  // Une autre fenêtre ouverte (fiche d'une illustration) : la page derrière devient inerte, comme pour une icône.
+  const [sheetOpen, setSheetOpen] = useState(false);
   const [list, setList] = useState<Icon[]>([]); // icônes visibles dans la grille (pour ← → dans la fiche)
 
   const [pattern, setPattern] = useState<PatternState>({ pal: city, icons: ["baobab", "djembe", "cauri", "sankofa", "calebasse", "case"], lay: "brick", rot: "tilt", den: 76, str: 1.75, seed: 7 });
@@ -153,7 +155,7 @@ function useAppState() {
     lang, setLang, t, tt, mode, setMode, city, setCity, theme, pal, ink, badgeBg,
     color, setColor, bg, setBg, stroke, setStroke, size, setSize, style, setStyle, tone, setTone, fillsReady, needFills, bodies,
     favs, toggleFav, sel, setSel, toggleSel, selecting, setSelecting,
-    current, openIcon, cmdOpen, setCmdOpen, helpOpen, setHelpOpen, list, setList,
+    current, openIcon, cmdOpen, setCmdOpen, helpOpen, setHelpOpen, sheetOpen, setSheetOpen, list, setList,
     pattern, setPattern, downloads, canDownload, toast, toastMsg, copy, save,
   };
 }

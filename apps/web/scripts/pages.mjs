@@ -105,7 +105,7 @@ function page({ path, title, desc, canonical, body, app = true }) {
   writeFileSync(join(dist, path, "index.html"), h);
 }
 
-const nav = `<nav><a href="/">Afroicons</a> › <a href="/icones/">Toutes les icônes</a> · <a href="/playground/">Bac à sable</a></nav>`;
+const nav = `<nav><a href="/">Afroicons</a> › <a href="/icones/">Toutes les icônes</a> · <a href="/illustrations/">Illustrations</a> · <a href="/playground/">Bac à sable</a></nav>`;
 for (const i of icons) {
   const base = i.variantOf ? bySlug[i.variantOf] : i;
   const variants = icons.filter((x) => x.slug === base.slug || x.variantOf === base.slug).filter((x) => x.slug !== i.slug);
@@ -189,7 +189,17 @@ page({
   body: `<nav><a href="/">Afroicons</a> › <a href="/icones/">Toutes les icônes</a></nav><h1>Bac à sable</h1><p>Essayez les icônes Afroicons dans des interfaces réalistes (application web, application mobile, page vitrine), réglez couleur, taille, épaisseur et mode sombre comme sur votre site, remplacez chaque icône en un clic, puis copiez le code React, Angular ou HTML des icônes utilisées.</p>`,
 });
 
+// Page « Illustrations » : les scènes (src/illustrations.json), décrites pour les moteurs de recherche.
+const ILLUS = JSON.parse(read("src/illustrations.json"));
+page({
+  path: "illustrations",
+  title: "Illustrations africaines libres — scènes SVG à télécharger | Afroicons",
+  desc: `${ILLUS.length} illustrations libres de la vie africaine d'aujourd'hui (bureau, marché, école, santé, fête…), en SVG et PNG, recolorables, avec des personnages à composer. Licence MIT.`,
+  canonical: `${SITE}/illustrations/`,
+  body: `<nav><a href="/">Afroicons</a> › <a href="/icones/">Toutes les icônes</a></nav><h1>Illustrations</h1><p>Des scènes de la vie africaine d'aujourd'hui, pour vos sites, présentations et réseaux sociaux : téléchargez-les en SVG ou en PNG, dans les couleurs de votre choix, et composez vos propres personnages. Licence MIT.</p><ul>${ILLUS.map((x) => `<li><b>${esc(x.fr)}</b> — ${esc(x.tags.slice(0, 6).join(", "))}</li>`).join("")}</ul>`,
+});
+
 const today = new Date().toISOString().slice(0, 10);
 const entry = (loc, prio) => `  <url><loc>${loc}</loc><lastmod>${today}</lastmod><priority>${prio}</priority></url>`;
-writeFileSync(join(dist, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[entry(`${SITE}/`, "1.0"), entry(`${SITE}/icones/`, "0.8"), entry(`${SITE}/nouveautes/`, "0.5"), entry(`${SITE}/playground/`, "0.6"), ...icons.map((i) => entry(url(i), "0.6"))].join("\n")}\n</urlset>\n`);
-console.log(`✔ ${icons.length} pages d'icônes, la liste, les nouveautés et le plan du site (${icons.length + 4} adresses)`);
+writeFileSync(join(dist, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[entry(`${SITE}/`, "1.0"), entry(`${SITE}/icones/`, "0.8"), entry(`${SITE}/nouveautes/`, "0.5"), entry(`${SITE}/playground/`, "0.6"), entry(`${SITE}/illustrations/`, "0.7"), ...icons.map((i) => entry(url(i), "0.6"))].join("\n")}\n</urlset>\n`);
+console.log(`✔ ${icons.length} pages d'icônes, la liste, les nouveautés et le plan du site (${icons.length + 5} adresses)`);

@@ -179,3 +179,20 @@ for (const n of A.afroiconNames) assert.match(html(A[n]), /^<span role="img" ari
 assert.match(html(A.EyeFilled, { twoToneColor: "#f00" }), /aria-label="eye"/, "Ant Design : twoToneColor accepté sans attribut parasite");
 assert.doesNotMatch(html(A.EyeFilled, { twoToneColor: "#f00" }), /twotonecolor|twoToneColor/i);
 console.log(`✔ afroicons-mui : ${M.afroiconNames.length} noms Material UI ; afroicons-antd : ${A.afroiconNames.length} noms Ant Design`);
+
+// Illustrations : des scènes 800×600 complètes, nommées en deux langues, sans motif partagé par erreur.
+const ILLUS = JSON.parse(readFileSync(new URL("../src/illustrations.json", import.meta.url), "utf8"));
+assert.ok(ILLUS.length >= 3, "illustrations : au moins 3 scènes");
+assert.equal(new Set(ILLUS.map((x) => x.id)).size, ILLUS.length, "illustrations : identifiants uniques");
+for (const x of ILLUS) {
+  assert.match(x.id, /^[a-z0-9-]+$/, `illustration ${x.id} : identifiant`);
+  assert.ok(x.fr && x.en && x.tags.length >= 4, `illustration ${x.id} : noms et mots-clés`);
+  assert.match(x.svg, /^<svg xmlns="http:\/\/www\.w3\.org\/2000\/svg" viewBox="0 0 800 600">/, `illustration ${x.id} : cadre`);
+  // Le cadre que la fiche du site sait régler (fond, coins, miroir) : voir applyLook() dans Illustrations.tsx.
+  assert.match(x.svg, /<clipPath id="cadre"><rect width="800" height="600" rx="36"\/><\/clipPath><rect width="800" height="600" rx="36" fill="#[0-9A-Fa-f]{6}"\/><g clip-path="url\(#cadre\)">/, `illustration ${x.id} : cadre réglable`);
+  assert.doesNotMatch(x.svg, /NaN|undefined|<script|<text/i, `illustration ${x.id} : contenu`);
+  assert.ok(x.svg.length < 50_000, `illustration ${x.id} : moins de 50 Ko`);
+  const ids = new Set([...x.svg.matchAll(/id="([^"]+)"/g)].map((m) => m[1]));
+  for (const [, ref] of x.svg.matchAll(/url\(#([^)]+)\)/g)) assert.ok(ids.has(ref), `illustration ${x.id} : motif ${ref} défini`);
+}
+console.log(`✔ ${ILLUS.length} illustrations`);

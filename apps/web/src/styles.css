@@ -35,6 +35,13 @@ nav.top.scrolled{border-bottom-color:var(--line)}
 .navlinks{display:flex;gap:4px;margin-left:12px}
 .navlinks a{white-space:nowrap;padding:7px 12px;border-radius:10px;font-weight:500;color:var(--muted);font-size:14.5px}
 .navlinks a:hover{color:var(--ink);background:var(--bg2)}
+.morem{position:relative}
+.navmore{display:flex;align-items:center;gap:4px;white-space:nowrap;padding:7px 10px 7px 12px;border-radius:10px;font-weight:500;color:var(--muted);font-size:14.5px}
+.navmore:hover,.navmore[aria-expanded="true"],.navmore.on{color:var(--ink);background:var(--bg2)}
+.navmore svg{transition:transform .18s var(--ease)}.navmore[aria-expanded="true"] svg{transform:rotate(180deg)}
+.morepop{left:0;right:auto;width:220px}
+.morepop a{display:block;padding:9px 12px;border-radius:10px;font-weight:500;color:var(--ink)}
+.morepop a:hover,.morepop a.on{background:var(--bg2)}
 .navr{margin-left:auto;display:flex;align-items:center;gap:8px}
 .kbtn{display:flex;align-items:center;gap:10px;height:40px;padding:0 10px 0 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--muted);min-width:230px;font-size:14px}
 .kbtn:hover{border-color:var(--ink);color:var(--ink)}
@@ -514,7 +521,7 @@ footer .fr{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 @media (min-width:641px){footer{padding-right:64px}}
 @media (max-width:640px){footer{padding-bottom:76px}}
 .regs{scrollbar-width:none}.regs::-webkit-scrollbar{display:none}
-@media (max-width:1500px){.kbtn{min-width:0}.kbtn .lbl{display:none}}
+@media (max-width:1360px){.kbtn{min-width:0}.kbtn .lbl{display:none}}
 /* Menu (sous 1120 px) */
 .menum{position:relative;display:none}
 .mpop{position:absolute;right:0;top:48px;width:260px;max-width:calc(100vw - 24px);max-height:calc(100vh - 80px);overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:8px;box-shadow:0 18px 50px -12px #0005;opacity:0;transform:translateY(-6px) scale(.98);pointer-events:none;transition:.18s var(--ease)}
@@ -525,7 +532,7 @@ footer .fr{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .mcities{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:0 4px 4px}
 .mcities button{display:flex;align-items:center;gap:8px;padding:8px;border-radius:10px;font-size:13.5px;font-weight:500;text-align:left}
 .mcities button.on,.mcities button:hover{background:var(--bg2)}
-@media (max-width:1400px){.navlinks{display:none}.menum{display:block}}
+@media (max-width:1100px){.navlinks{display:none}.menum{display:block}}
 @media (max-width:520px){.citym,.ib.thm{display:none}.mpop .mx{display:block}nav.top{gap:8px}.navr{gap:4px}.logo{gap:8px}}
 @media (hover:none){
   .hint,.cmd .foot,.kbtn .kbd,.sbox .kbd,.dacts .kbd{display:none}
@@ -978,3 +985,79 @@ a.eyebrow:hover{color:var(--ink);border-color:var(--muted)}
 .pgshoth .btn,.pgdrop .btn{color:var(--ink)}.pgdrop .btn.a{color:#fff}
 .pgfile{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;pointer-events:none}.pglogoin .btn{position:relative}.pglogoin .btn:focus-within{outline:2px solid var(--a1);outline-offset:2px}
 .pgpin:focus-visible{outline:2px solid var(--pp);outline-offset:3px;border-radius:6px}.pgdrop:focus-visible{outline:2px solid var(--pp);outline-offset:3px}
+
+/* ---------- Illustrations (/illustrations/) ---------- */
+.illus .shead{margin-top:40px}
+.iltools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:8px 0 22px}
+.ilsearch{flex:1 1 280px;display:flex;align-items:center;gap:10px;height:44px;padding:0 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--muted)}
+.ilsearch input{flex:1;min-width:0;border:0;background:none;font:inherit;color:var(--ink);outline:none}
+.ilsearch:focus-within{border-color:var(--at);box-shadow:0 0 0 3px color-mix(in srgb,var(--at) 20%,transparent)}
+.ilpals{display:flex;flex-wrap:wrap;gap:6px}
+.ilpals button{display:flex;align-items:center;gap:8px;height:40px;padding:0 12px;border:1px solid var(--line);border-radius:12px;background:var(--card);font-size:13.5px;font-weight:500;color:var(--muted)}
+.ilpals button.on{border-color:var(--ink);color:var(--ink)}
+.ilgrid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:20px}
+.ilcard{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.ilcard.wait{aspect-ratio:4/3.6;background:var(--bg2);animation:ilpulse 1.4s ease-in-out infinite}
+@keyframes ilpulse{50%{opacity:.55}}
+.ilimg{aspect-ratio:4/3;line-height:0}
+.ilimg svg{width:100%;height:100%;display:block}
+.ilmeta{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px 14px;flex-wrap:wrap}
+.ilmeta h3{margin:0;font-size:16px}
+.ilacts{display:flex;gap:6px;flex-wrap:wrap}
+.ilacts .btn{height:34px;padding:0 12px;font-size:13px}
+.ilempty{padding:40px 0;color:var(--muted);text-align:center}
+.ilcomp{margin:56px 0 24px;display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:28px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px}
+.ilprev{display:flex;flex-direction:column;gap:12px;position:sticky;top:90px}
+.ilstage{background:var(--bg2);border-radius:18px;aspect-ratio:240/345;line-height:0}
+.ilstage svg{width:100%;height:100%}
+.ilctl h3{margin:0 0 6px;font-size:22px}
+.ilctl>p{margin:0 0 16px;color:var(--muted)}
+.ilch{border:0;padding:0;margin:0 0 14px;min-width:0}
+.ilch legend{font:700 11.5px "JetBrains Mono";letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding:0}
+.ilch>div{display:flex;flex-wrap:wrap;gap:6px}
+.ilch button{height:34px;padding:0 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);font-size:13.5px;color:var(--ink)}
+.ilch button.on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.ilch button.ilsw{width:34px;padding:0;border-radius:50%;border:2px solid var(--line)}
+.ilch button.ilsw.on{border-color:var(--ink);box-shadow:0 0 0 2px var(--card) inset}
+.ilchecks{display:flex;gap:18px;flex-wrap:wrap;font-size:14px}
+.ilchecks label{display:flex;align-items:center;gap:8px}
+@media (max-width:760px){.ilcomp{grid-template-columns:1fr;padding:16px}.ilprev{position:static;max-width:300px;margin:0 auto;width:100%}}
+
+/* ===== Illustrations : fiche de personnalisation d'une scène ===== */
+button.ilimg{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.ilimg.clear,.ilbig.clear{background-color:#fff;background-image:linear-gradient(45deg,#0000000d 25%,transparent 25%,transparent 75%,#0000000d 75%),linear-gradient(45deg,#0000000d 25%,transparent 25%,transparent 75%,#0000000d 75%);background-size:16px 16px;background-position:0 0,8px 8px}
+.ilacts .ilcust{gap:6px}
+.ildrawer{width:min(620px,calc(100% - 20px))}
+.ilbig{margin-top:18px;border-radius:20px;overflow:hidden;line-height:0}
+.ilbig.sq{border-radius:0}
+.ilch legend output{text-transform:none;letter-spacing:0;font-weight:500;color:var(--ink)}
+.ilbig svg{width:100%;height:auto;display:block}
+.ilfields{margin-top:20px}
+.ilfields .ilpals button{height:36px;padding:0 10px;border-radius:11px;background:var(--card);color:var(--muted);font-size:13px}
+.ilfields .ilpals button.on{background:var(--card);border-color:var(--ink);color:var(--ink)}
+.ilslots{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px!important}
+.ilslot{display:flex;align-items:center;gap:9px;padding:8px;border:1px solid var(--line);border-radius:12px;background:var(--card);font-size:13px;cursor:pointer;min-width:0}
+.ilslot small{display:block;font:500 10.5px "JetBrains Mono";color:var(--muted)}
+.ilslot .sw,.ilsw.pick{position:relative;flex:none;width:30px;height:30px;border-radius:50%;border:2px solid var(--line);overflow:hidden}
+.ilsw.pick{display:inline-block;width:34px;height:34px;cursor:pointer;background:conic-gradient(#C24E2A,#E3A22F,#2E6B4E,#22305C,#C24E2A)}
+.ilsw.pick.on{border-color:var(--ink)}
+.ilslot input,.ilsw.pick input{position:absolute;inset:0;opacity:0;width:100%;height:100%;cursor:pointer;border:0;padding:0}
+.ilslot:focus-within,.ilsw.pick:focus-within{outline:2px solid var(--a1);outline-offset:2px}
+.ilch button.ilsw.clear{background-color:#fff;background-image:linear-gradient(45deg,#0002 25%,transparent 25%,transparent 75%,#0002 75%),linear-gradient(45deg,#0002 25%,transparent 25%,transparent 75%,#0002 75%);background-size:10px 10px;background-position:0 0,5px 5px}
+.ilch button.ilsw.orig{background:linear-gradient(135deg,#E4ECE6 50%,#F4E3C3 50%)}
+.ilrng{display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--muted)}
+.ilrng input{flex:1}
+.ilout{display:grid;gap:8px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.ilout .ilacts .btn{min-height:40px;height:auto;padding:8px 12px;line-height:1.2;flex:1;justify-content:center;font-size:13.5px;text-align:center}
+.ilout select{height:40px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);padding:0 10px;font:inherit;font-size:13.5px}
+.ilnote{margin:18px 0 0;font-size:14px;color:var(--muted)}
+.ilnote .lnk{color:var(--a1);text-decoration:underline;text-underline-offset:3px;font-weight:600}
+@media (max-width:560px){.ilslots{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* Curseur de peau : deux sens autour d'un neutre, donc une piste neutre marquée au centre (pas de remplissage). */
+.ilrng input{-webkit-appearance:none;appearance:none;height:22px;background:transparent;cursor:pointer}
+.ilrng input::-webkit-slider-runnable-track{height:6px;border-radius:3px;background:linear-gradient(90deg,#3A2118,#A9714A) ,var(--bg2)}
+.ilrng input::-moz-range-track{height:6px;border-radius:3px;background:linear-gradient(90deg,#3A2118,#A9714A)}
+.ilrng input::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;margin-top:-7px;border-radius:50%;background:var(--card);border:3px solid var(--ink);box-shadow:0 1px 4px #0003}
+.ilrng input::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--card);border:3px solid var(--ink)}
+.ilrng input:focus-visible{outline:2px solid var(--a1);outline-offset:4px;border-radius:6px}
+.ilrng{position:relative}

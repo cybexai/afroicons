@@ -9,6 +9,7 @@ import { IdeaBox, IdeaBoundary } from "./components/IdeaBox";
 import { AfricaMap } from "./components/AfricaMap";
 import { Changelog } from "./components/Changelog";
 import { Playground } from "./components/Playground";
+import { Illustrations } from "./components/Illustrations";
 import { BodiesContext, ToneContext } from "./components/ui";
 
 export default function App() {
@@ -34,6 +35,7 @@ export default function App() {
   // Le titre de l'onglet suit l'icône ouverte, puis revient au titre de la page, dans la langue choisie.
   useEffect(() => {
     const siteTitle = { current: (PAGE === "news" ? a.tt("Nouveautés — journal des versions | Afroicons", "What's new — release notes | Afroicons")
+      : PAGE === "illus" ? a.tt("Illustrations africaines libres — scènes SVG à télécharger | Afroicons", "Free African illustrations — SVG scenes to download | Afroicons")
       : PAGE === "playground" ? a.tt("Bac à sable — essayez les icônes dans votre interface | Afroicons", "Playground — try the icons in your interface | Afroicons")
       : a.tt("Afroicons — des icônes qui racontent l'Afrique", "Afroicons — icons that tell Africa's story")) };
     const i = a.current ? byId[a.current] : null;
@@ -41,7 +43,7 @@ export default function App() {
   }, [a.current, a.lang]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Pas de défilement de la page derrière une fenêtre ouverte.
-  const modal = !!a.current || a.cmdOpen || a.helpOpen;
+  const modal = !!a.current || a.cmdOpen || a.helpOpen || a.sheetOpen;
   useEffect(() => {
     document.documentElement.classList.toggle("locked", modal);
   }, [modal]);
@@ -74,7 +76,7 @@ export default function App() {
       <div {...inert(modal)}>
       {PAGE !== "home" ? <>
         <Nav />
-        <main className="wrap">{PAGE === "news" ? <Changelog /> : <Playground />}</main>
+        <main className="wrap">{PAGE === "news" ? <Changelog /> : PAGE === "illus" ? <Illustrations /> : <Playground />}</main>
       </> : <>
         <a className="skip" href="#icones">{a.tt("Aller aux icônes", "Skip to icons")}</a>
         <Nav />

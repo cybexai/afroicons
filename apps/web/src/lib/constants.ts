@@ -189,4 +189,4 @@ export const STYLES: { id: Style; fr: string; en: string }[] = [
 export const SHOWCASE = ["baobab", "djembe", "sankofa", "mototaxi", "case", "kora", "masque", "calebasse", "elephant", "mobilemoney", "pirogue", "djenne", "musgum", "cameleon", "ananas", "taxibrousse"].filter((id) => byId[id]);
 
 /** Page affichée : l'accueil, ou le journal des versions (afroicons.org/nouveautes/). */
-export const PAGE: "home" | "news" | "playground" = /^\/nouveautes\/?$/.test(location.pathname) ? "news" : /^\/playground\/?$/.test(location.pathname) ? "playground" : "home";
+export const PAGE: "home" | "news" | "playground" | "illus" = /^\/nouveautes\/?$/.test(location.pathname) ? "news" : /^\/playground\/?$/.test(location.pathname) ? "playground" : /^\/illustrations\/?$/.test(location.pathname) ? "illus" : "home";
