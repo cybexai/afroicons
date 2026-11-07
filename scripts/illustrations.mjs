@@ -14,13 +14,13 @@ const only = oi >= 0 ? args[oi + 1].split(",") : null;
 const all = [];
 // Les rubriques de la page Illustrations : chaque scène en a une (le site en fait des filtres).
 const CAT = {
-  travail: ["bureau", "startup", "solaire", "bronze", "poterie", "tissage", "cordonnier", "telephone"],
-  savoir: ["classe", "campus", "ecole", "bibliotheque", "code", "labo", "sante"],
-  famille: ["repas", "nattes", "appel", "cuisine", "naissance", "aeroport", "tontine"],
-  ville: ["marche", "moto", "coiffure", "pagnes", "beignets", "transfert", "gare", "taxi", "livraison", "pluie", "nuit"],
-  village: ["champ", "village", "pirogues", "cacao", "potager", "elevage", "poulailler", "fumage"],
-  fete: ["fete", "chefferie", "dot", "conte", "danse", "defile", "mairie"],
-  loisirs: ["football", "braise", "match", "course", "plage", "gym"],
+  travail: ["bureau", "startup", "solaire", "bronze", "poterie", "tissage", "cordonnier", "telephone", "couturiere", "menuisier", "garage"],
+  savoir: ["classe", "campus", "ecole", "bibliotheque", "code", "labo", "sante", "pharmacie", "radio", "pharmatrad", "tradipraticien"],
+  famille: ["repas", "nattes", "appel", "cuisine", "naissance", "aeroport", "tontine", "anniversaire"],
+  ville: ["marche", "moto", "coiffure", "pagnes", "beignets", "transfert", "gare", "taxi", "livraison", "pluie", "nuit", "boulangerie"],
+  village: ["champ", "village", "pirogues", "cacao", "potager", "elevage", "poulailler", "fumage", "huile", "plantes"],
+  fete: ["fete", "chefferie", "dot", "conte", "danse", "defile", "mairie", "lutte", "ngondo", "nguon", "masques", "cranes", "funerailles", "libation"],
+  loisirs: ["football", "braise", "match", "course", "plage", "gym", "concert", "cinema", "awale"],
 };
 const catOf = (id) => Object.keys(CAT).find((k) => CAT[k].includes(id));
 
