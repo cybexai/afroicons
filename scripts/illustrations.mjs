@@ -12,17 +12,32 @@ const dir = join(root, "scripts/illustrations");
 const args = process.argv.slice(2), pi = args.indexOf("--png"), oi = args.indexOf("--only");
 const only = oi >= 0 ? args[oi + 1].split(",") : null;
 const all = [];
-for (const file of readdirSync(dir).filter((f) => f.endsWith(".mjs") && f !== "lib.mjs").sort()) {
+// Les rubriques de la page Illustrations : chaque scène en a une (le site en fait des filtres).
+const CAT = {
+  travail: ["bureau", "startup", "solaire", "bronze", "poterie", "tissage", "cordonnier", "telephone"],
+  savoir: ["classe", "campus", "ecole", "bibliotheque", "code", "labo", "sante"],
+  famille: ["repas", "nattes", "appel", "cuisine", "naissance", "aeroport", "tontine"],
+  ville: ["marche", "moto", "coiffure", "pagnes", "beignets", "transfert", "gare", "taxi", "livraison", "pluie", "nuit"],
+  village: ["champ", "village", "pirogues", "cacao", "potager", "elevage", "poulailler", "fumage"],
+  fete: ["fete", "chefferie", "dot", "conte", "danse", "defile", "mairie"],
+  loisirs: ["football", "braise", "match", "course", "plage", "gym"],
+};
+const catOf = (id) => Object.keys(CAT).find((k) => CAT[k].includes(id));
+
+for (const file of readdirSync(dir).filter((f) => f.endsWith(".mjs") && f !== "lib.mjs" && f !== "flag.mjs").sort()) {
   let list;
   try { list = (await import(pathToFileURL(join(dir, file)).href + "?t=" + Date.now())).default; }
   catch (e) { if (!only) throw e; console.warn(`⚠ ${file} ignoré : ${e.message}`); continue; } // avec --only, un fichier en cours d'écriture ailleurs ne bloque pas
   for (const sc of list) {
     if (only && !only.includes(sc.id)) { all.push({ id: sc.id, skip: true }); continue; }
     if (all.some((x) => x.id === sc.id && !x.skip)) throw new Error(`illustration en double : ${sc.id}`);
-    const svg = sc.draw();
+    // Les anciens Illustrator (2019 et avant) ne lisent que xlink:href : on écrit les deux notations.
+    let svg = sc.draw();
+    if (/ href="#/.test(svg)) svg = svg.replace('viewBox="0 0 800 600">', 'viewBox="0 0 800 600" xmlns:xlink="http://www.w3.org/1999/xlink">').replace(/ href="#([\w-]+)"/g, ' xlink:href="#$1" href="#$1"');
     if (!/^<svg [^>]*viewBox="0 0 800 600"/.test(svg)) throw new Error(`${sc.id} : le SVG doit faire 800×600`);
     if (/NaN|undefined/.test(svg)) throw new Error(`${sc.id} : valeur invalide dans le SVG (NaN ou undefined)`);
-    all.push({ id: sc.id, fr: sc.fr, en: sc.en, tags: sc.tags ?? [], svg, file });
+    if (!only && !catOf(sc.id)) throw new Error(`${sc.id} : rubrique manquante (CAT dans scripts/illustrations.mjs)`);
+    all.push({ id: sc.id, cat: catOf(sc.id) ?? "travail", fr: sc.fr, en: sc.en, tags: sc.tags ?? [], svg, file });
   }
 }
 // Avec --only, seul le rendu PNG est fait : le JSON n'est écrit qu'avec toutes les scènes.

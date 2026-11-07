@@ -1,5 +1,6 @@
 // Scènes : le match à la télé, la course de la montagne, l'atelier de code pour filles.
 import { C, SKIN, person, frame, cloud, stroke, f } from "./lib.mjs";
+import { flag } from "./flag.mjs";
 
 /** Dessine `svg` (repère local d'un personnage) aux mêmes position, échelle et sens qu'un person(). */
 const at = (x, y, s, flip, svg) => `<g transform="translate(${f(x)} ${f(y)}) scale(${flip ? -s : s} ${s})">${svg}</g>`;
@@ -108,7 +109,7 @@ function match() {
   g.push(shadow(kx, 568, 32));
   g.push(person({ x: kx, y: ky, s: ks, legs: "walkskirt", skin: SKIN.s2, hair: { type: "puffs" }, top: C.red, sleeve: "short", bottom: C.green, face: "laugh",
     arms: { r: [[34, -232], [40, -284]], l: [[-46, -172], [-54, -214]] } }));
-  g.push(at(kx, ky, ks, false, stroke("M40 -284V-336", C.wood2, 3) + `<path d="M40 -336L-4 -326L40 -314Z" fill="${C.green}"/><path d="M40 -325L18 -320L40 -314Z" fill="${C.yellow}"/>` + hand(40, -286, SKIN.s2)));
+  g.push(at(kx, ky, ks, false, stroke("M40 -284V-336", C.wood2, 3) + flag(40, -336, 34) + hand(40, -286, SKIN.s2)));
   // Confettis
   for (const [x, y, r, c] of [[430, 150, 20, C.yellow], [470, 120, -30, C.red], [560, 110, 40, C.green], [600, 300, -10, C.yellow], [420, 260, 60, C.red], [770, 300, 20, C.green], [300, 140, -40, C.green]]) g.push(`<rect x="${x}" y="${y}" width="10" height="5" fill="${c}" transform="rotate(${r} ${x} ${y})"/>`);
   return frame(g.join(""), C.sand);
@@ -173,7 +174,7 @@ function course() {
   const fx = 104, fy = 574, fs = 0.98;
   g.push(person({ x: fx, y: fy, s: fs, legs: "skirt", robe: "kaba", skin: SKIN.s3, hair: { type: "foulard", color: C.green, wax: "wax1" }, top: C.terra, wax: "wax3", face: "laugh",
     arms: { r: [[46, -226], [52, -282]], l: [[-46, -170], [-36, -132]] } }));
-  g.push(at(fx, fy, fs, false, stroke("M52 -240V-372", C.wood2, 4) + rect(52, -372, 26, 44, C.green) + rect(78, -372, 26, 44, C.red) + rect(104, -372, 26, 44, C.yellow) + star(91, -350, 9, C.yellow) + hand(52, -282, SKIN.s3)));
+  g.push(at(fx, fy, fs, false, stroke("M52 -240V-372", C.wood2, 4) + flag(52, -372, 70) + hand(52, -282, SKIN.s3)));
   g.push(person({ x: 222, y: 564, s: 0.96, skin: SKIN.s4, hair: { type: "short" }, hat: { type: "kufi", color: C.dark, wax: "toghu" }, top: C.dark, wax: "toghu", bottom: C.indigo, face: "laugh",
     arms: { l: [[-30, -196], [-14, -222]], r: [[30, -196], [14, -222]] } }));
   // mains en porte-voix autour de la bouche

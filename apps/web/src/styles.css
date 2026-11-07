@@ -1061,3 +1061,43 @@ button.ilimg{display:block;width:100%;padding:0;border:0;background:none;cursor:
 .ilrng input::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--card);border:3px solid var(--ink)}
 .ilrng input:focus-visible{outline:2px solid var(--a1);outline-offset:4px;border-radius:6px}
 .ilrng{position:relative}
+.ilflag{display:flex!important;align-items:center;gap:10px}
+.ilflagsw{width:42px;height:29px;flex:none;line-height:0}
+.ilflagsw svg{width:100%;height:100%}
+.ilflag select{flex:1;min-width:0;height:40px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);padding:0 10px;font:inherit;font-size:13.5px}
+
+/* Illustrations : menus déroulants (flèche dessinée, à distance du bord) et cases à cocher dessinées */
+.ilout select,.ilflag select{-webkit-appearance:none;appearance:none;background-image:var(--chev);background-repeat:no-repeat;background-position:right 14px center;background-size:16px;padding:0 42px 0 14px;cursor:pointer}
+.ilck{position:relative;display:inline-flex;align-items:center;gap:10px;cursor:pointer;user-select:none;font-size:14px}
+.ilck input{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
+.ilck .box{width:22px;height:22px;flex:none;border-radius:7px;border:2px solid var(--line);background:var(--card);display:grid;place-items:center;color:transparent;transition:background .15s,border-color .15s,color .15s}
+.ilck .box svg{width:15px;height:15px}
+.ilck:hover .box{border-color:var(--muted)}
+.ilck input:checked+.box{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.ilck input:focus-visible+.box{outline:2px solid var(--a1);outline-offset:2px}
+/* Audit UI/UX des illustrations : rubriques, aperçu léger, survol, mobile */
+.ilheadacts{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.iltools .ilrow{flex:1 1 100%;display:flex;align-items:center;gap:12px;min-width:0}
+.iltools .illbl{flex:none;width:78px;font-size:12.5px;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--muted)}
+.ilcats{display:flex;flex-wrap:wrap;gap:6px}
+.ilcats button{display:inline-flex;align-items:center;gap:7px;height:36px;padding:0 12px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:13.5px;font-weight:500;color:var(--muted)}
+.ilcats button small{font-size:11.5px;font-weight:600;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:var(--bg2);color:var(--muted);display:inline-grid;place-items:center}
+.ilcats button.on{border-color:var(--ink);background:var(--ink);color:var(--bg)}
+.ilcats button.on small{background:color-mix(in srgb,var(--bg) 22%,transparent);color:var(--bg)}
+.ilcats button:disabled{opacity:.45;cursor:default}
+.ilimg{position:relative;overflow:hidden}
+.ilimg img{width:100%;height:100%;display:block;object-fit:cover}
+.ilhover{position:absolute;right:12px;bottom:12px;display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 13px;border-radius:999px;background:var(--ink);color:var(--bg);font-size:13px;font-weight:600;line-height:1;opacity:0;transform:translateY(6px);transition:opacity .18s,transform .18s;pointer-events:none}
+button.ilimg:hover .ilhover,button.ilimg:focus-visible .ilhover{opacity:1;transform:none}
+@media (hover:none){.ilhover{opacity:1;transform:none;height:30px;padding:0 11px;font-size:12.5px}}
+@media (prefers-reduced-motion:reduce){.ilhover{transition:none}}
+.iltitle{display:flex;flex-direction:column;gap:2px;min-width:0}
+.iltitle span{font-size:12.5px;color:var(--muted)}
+@media (max-width:700px){
+  .iltools .ilrow{flex-direction:column;align-items:stretch;gap:6px}
+  .iltools .illbl{width:auto}
+  .iltools .ilpals,.ilcats{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:2px 16px;scroll-padding:0 16px}
+  .iltools .ilpals::-webkit-scrollbar,.ilcats::-webkit-scrollbar{display:none}
+  .iltools .ilpals button,.ilcats button{flex:none}
+}
+.iltools .ilnote{flex:1 1 100%;margin:0}

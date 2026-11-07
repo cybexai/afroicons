@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { CITIES, type CityId } from "../lib/constants";
+import { CITIES, FLAGS, type CityId } from "../lib/constants";
 import { svgToPng } from "../lib/svg";
 import { useApp } from "../state";
 import { C, SKIN, defs, person } from "../../../../scripts/illustrations/lib.mjs";
@@ -8,7 +8,11 @@ import { IClose, INext, IPrev, ISearch, ISliders } from "./ui";
 import { inert } from "./Overlays";
 
 /** Une scène de src/illustrations.json (scripts/illustrations.mjs). */
-interface Scene { id: string; fr: string; en: string; tags: string[]; svg: string }
+interface Scene { id: string; cat: string; fr: string; en: string; tags: string[]; svg: string }
+/** Les rubriques (voir CAT dans scripts/illustrations.mjs). */
+const CATS: [string, string, string][] = [["travail", "Travail et métiers", "Work and trades"], ["savoir", "École, santé, savoir", "School, health, knowledge"], ["famille", "Famille", "Family"], ["ville", "En ville", "In town"], ["village", "Village et nature", "Village and nature"], ["fete", "Fêtes et traditions", "Celebrations and traditions"], ["loisirs", "Sport et loisirs", "Sport and leisure"]];
+// Aperçu léger d'une scène dans la grille : une image (un seul élément), au lieu de milliers de formes dans la page.
+const dataUri = (svg: string) => "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
 
 // Les 4 couleurs de marque des scènes (ambiance Douala) : remplacées par celles de l'ambiance choisie.
 const BRAND = CITIES.douala.c;
@@ -30,12 +34,16 @@ function usePng() {
 }
 /* ---------------- Personnalisation d'une scène (comme la fiche d'une icône) ---------------- */
 /** Réglages d'une scène : les 4 couleurs de marque, le fond, la peau, les coins, le miroir. */
-interface Look { colors: string[]; bg: string | null; skin: number; round: boolean; flip: boolean }
-const lookOf = (city: CityId): Look => ({ colors: [...CITIES[city].c], bg: null, skin: 0, round: true, flip: false });
+interface Look { colors: string[]; bg: string | null; skin: number; round: boolean; flip: boolean; flag: string | null }
+const lookOf = (city: CityId): Look => ({ colors: [...CITIES[city].c], bg: null, skin: 0, round: true, flip: false, flag: null });
+/** Le pays de chaque ambiance : c'est son drapeau qui flotte dans les scènes (sauf pays choisi dans la fiche). */
+const CITY_ISO: Record<CityId, string> = { douala: "CM", dakar: "SN", marrakech: "MA", lagos: "NG", zanzibar: "TZ", kinshasa: "CD" };
+const FLAG_OF = new Map(FLAGS.filter((x) => x.iso).map((x) => [x.iso as string, x]));
+const flagIso = (L: Look) => L.flag ?? CITY_ISO[cityOf(L) ?? "douala"];
 const TONES = Object.values(SKIN); // du plus foncé au plus clair
 const sameCols = (x: string[], y: readonly string[]) => x.every((c, k) => c.toLowerCase() === y[k].toLowerCase());
 const cityOf = (L: Look) => (Object.keys(CITIES) as CityId[]).find((k) => sameCols(L.colors, CITIES[k].c)) ?? null;
-const custom = (L: Look) => L.bg != null || L.skin !== 0 || !L.round || L.flip || !cityOf(L);
+const custom = (L: Look) => L.bg != null || L.skin !== 0 || !L.round || L.flip || L.flag != null || !cityOf(L);
 /** Applique les réglages à une scène (dessinée aux couleurs de Douala). */
 function applyLook(svg: string, L: Look) {
   const map = new Map<string, string>(BRAND.map((c, k) => [c.toLowerCase(), L.colors[k]]));
@@ -46,6 +54,9 @@ function applyLook(svg: string, L: Look) {
   out = out.replace('<clipPath id="cadre"><rect width="800" height="600" rx="36"/>', `<clipPath id="cadre"><rect width="800" height="600" rx="${rx}"/>`);
   out = out.replace(/<\/clipPath><rect width="800" height="600" rx="36" fill="([^"]+)"\/><g clip-path="url\(#cadre\)">/, (_m, f) => `</clipPath><rect width="800" height="600" rx="${rx}" fill="${L.bg ?? f}"/><g clip-path="url(#cadre)">` + (L.flip ? '<g transform="matrix(-1 0 0 1 800 0)">' : ""));
   if (L.flip) out = out.replace(/<\/svg>\s*$/, "</g></svg>");
+  // Les drapeaux (voir flag.mjs) : celui du pays voulu, couleurs officielles, jamais recolorés ; à l'endroit même en miroir.
+  const fb = FLAG_OF.get(flagIso(L))?.body;
+  if (fb) out = out.replace(/(<g data-flag=")[A-Z]{2}("[^>]*>)<!--f-->[\s\S]*?<!--\/f-->/g, (_m, a, b) => `${a}${flagIso(L)}${b}<!--f-->${L.flip ? '<g transform="translate(22 0) scale(-1 1)">' : ""}<g transform="translate(-1 -4.5)">${fb}</g>${L.flip ? "</g>" : ""}<!--/f-->`);
   return out;
 }
 const SLOTS: [string, string][] = [["Principale", "Main"], ["Accent", "Accent"], ["Profonde", "Deep"], ["Nature", "Nature"]];
@@ -139,12 +150,23 @@ function Editor({ scene, base, list, open, close, applyAll }: { scene: Scene | n
                 <label className={"ilsw pick" + (L.bg && L.bg !== "none" && !BGS.some(([c]) => c === L.bg) ? " on" : "")} title={a.tt("Couleur libre", "Custom colour")} style={L.bg && L.bg !== "none" && !BGS.some(([c]) => c === L.bg) ? { background: L.bg } : undefined}><input type="color" value={L.bg && L.bg !== "none" ? L.bg : "#F6EFE4"} aria-label={a.tt("Fond : couleur libre", "Background: custom colour")} onChange={(ev) => set({ bg: ev.target.value.toUpperCase() })} /></label>
               </div>
             </fieldset>
+            {sc.svg.includes("data-flag=") && (
+              <fieldset className="ilch"><legend>{a.tt("Drapeau", "Flag")}</legend>
+                <div className="ilflag">
+                  <span className="ilflagsw" aria-hidden="true" dangerouslySetInnerHTML={{ __html: `<svg viewBox="1 4.5 22 15">${FLAG_OF.get(flagIso(L))?.body ?? ""}</svg>` }} />
+                  <select value={L.flag ?? ""} onChange={(ev) => set({ flag: ev.target.value || null })} aria-label={a.tt("Drapeau de la scène", "Flag in the scene")}>
+                    <option value="">{a.tt(`Selon l'ambiance (${FLAG_OF.get(CITY_ISO[city ?? "douala"])?.country?.fr})`, `From the mood (${FLAG_OF.get(CITY_ISO[city ?? "douala"])?.country?.en})`)}</option>
+                    {[...FLAG_OF.values()].sort((x, y) => (en ? x.country!.en.localeCompare(y.country!.en, "en") : x.country!.fr.localeCompare(y.country!.fr, "fr"))).map((x) => <option key={x.iso} value={x.iso}>{en ? x.country!.en : x.country!.fr}</option>)}
+                  </select>
+                </div>
+              </fieldset>
+            )}
             <fieldset className="ilch"><legend>{a.tt("Teintes de peau", "Skin tones")} · <output>{L.skin === 0 ? a.tt("comme dessinées", "as drawn") : L.skin < 0 ? a.tt(`plus foncées (${L.skin})`, `darker (${L.skin})`) : a.tt(`plus claires (+${L.skin})`, `lighter (+${L.skin})`)}</output></legend>
               <div className="rng ilrng"><span>{a.tt("Plus foncées", "Darker")}</span><input type="range" min={-2} max={2} step={1} value={L.skin} onChange={(ev) => set({ skin: +ev.target.value })} aria-label={a.tt("Teintes de peau", "Skin tones")} aria-valuetext={L.skin === 0 ? a.tt("Comme dessinées", "As drawn") : L.skin < 0 ? a.tt("Plus foncées", "Darker") : a.tt("Plus claires", "Lighter")} /><span>{a.tt("Plus claires", "Lighter")}</span></div>
             </fieldset>
             <div className="ilchecks">
-              <label><input type="checkbox" checked={L.round} onChange={(ev) => set({ round: ev.target.checked })} /> {a.tt("Coins arrondis", "Rounded corners")}</label>
-              <label><input type="checkbox" checked={L.flip} onChange={(ev) => set({ flip: ev.target.checked })} /> {a.tt("Miroir", "Mirror")}</label>
+              <Check on={L.round} set={(round) => set({ round })} label={a.tt("Coins arrondis", "Rounded corners")} />
+              <Check on={L.flip} set={(flip) => set({ flip })} label={a.tt("Miroir", "Mirror")} />
             </div>
           </div>
 
@@ -205,6 +227,17 @@ function drawPerso(p: Perso) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-110 -330 240 345">${defs}<ellipse cx="10" cy="0" rx="90" ry="9" fill="#000" opacity=".07"/>${chair}${person(o)}</svg>`;
 }
 
+/** Case à cocher dessinée (la vraie case reste là, invisible, pour le clavier et les lecteurs d'écran). */
+function Check({ on, set, label }: { on: boolean; set: (v: boolean) => void; label: string }) {
+  return (
+    <label className="ilck">
+      <input type="checkbox" checked={on} onChange={(e) => set(e.target.checked)} />
+      <span className="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></span>
+      <span>{label}</span>
+    </label>
+  );
+}
+
 function Choice<T extends string | number>({ label, value, list, set }: { label: string; value: T; list: [T, string][]; set: (v: T) => void }) {
   return (
     <fieldset className="ilch"><legend>{label}</legend>
@@ -226,7 +259,7 @@ function Composer({ colors }: { colors: string[] }) {
     setP({ skin: r(Object.keys(SKIN) as Perso["skin"][]), hair: r(HAIRS)[0], outfit: r(OUTFITS)[0], pose: r(POSES)[0], hat: Math.random() < 0.6 ? "" : r(HATS)[0], face: r(FACES)[0], color: Math.floor(Math.random() * 5), wax: Math.random() < 0.5, beard: Math.random() < 0.3 });
   };
   return (
-    <section className="ilcomp" aria-labelledby="ilcomp-h">
+    <section id="composer" className="ilcomp" aria-labelledby="ilcomp-h">
       <div className="ilprev">
         <div className="ilstage" role="img" aria-label={a.tt("Aperçu de votre personnage", "Preview of your character")} dangerouslySetInnerHTML={{ __html: scope(svg, "perso") }} />
         <div className="ilacts">
@@ -250,8 +283,8 @@ function Composer({ colors }: { colors: string[] }) {
           <div>{COLORS.map((c, n) => <button key={c} type="button" className={"ilsw" + (p.color === n ? " on" : "")} aria-pressed={p.color === n} aria-label={a.tt(`Couleur ${n + 1}`, `Colour ${n + 1}`)} style={{ background: recolor(c, colors) }} onClick={() => set({ color: n })} />)}</div>
         </fieldset>
         <div className="ilchecks">
-          <label><input type="checkbox" checked={p.wax} onChange={(e) => set({ wax: e.target.checked })} /> {a.tt("Tissu wax", "Wax print")}</label>
-          <label><input type="checkbox" checked={p.beard} onChange={(e) => set({ beard: e.target.checked })} /> {a.tt("Barbe", "Beard")}</label>
+          <Check on={p.wax} set={(wax) => set({ wax })} label={a.tt("Tissu wax", "Wax print")} />
+          <Check on={p.beard} set={(beard) => set({ beard })} label={a.tt("Barbe", "Beard")} />
         </div>
       </div>
     </section>
@@ -265,6 +298,7 @@ export function Illustrations() {
   const [failed, setFailed] = useState(false);
   const savePng = usePng();
   const [q, setQ] = useState("");
+  const [cat, setCat] = useState("");
   // Réglages de la page (ambiance, fond, peau…) : la fiche d'une scène en part, et peut les appliquer à toutes.
   const [look, setLook] = useState<Look>(() => lookOf(a.city));
   useEffect(() => setLook(lookOf(a.city)), [a.city]);
@@ -274,48 +308,83 @@ export function Illustrations() {
   useEffect(() => {
     import("../../../../src/illustrations.json").then((m) => setScenes(m.default as Scene[])).catch(() => setFailed(true));
   }, []);
+  // Lien direct vers une scène (#marche) : la fiche s'ouvre, et l'adresse suit la scène ouverte.
+  useEffect(() => {
+    if (!scenes) return;
+    const fromHash = () => { const id = decodeURIComponent(location.hash.slice(1)); const s = scenes.find((x) => x.id === id); if (s) setCur(s); };
+    fromHash();
+    addEventListener("hashchange", fromHash);
+    return () => removeEventListener("hashchange", fromHash);
+  }, [scenes]);
+  useEffect(() => {
+    if (!scenes) return;
+    const want = cur ? "#" + cur.id : "";
+    if (location.hash !== want) history.replaceState(null, "", location.pathname + location.search + want);
+  }, [cur, scenes]);
   const en = a.lang === "en";
-  const shown = useMemo(() => {
+  const catName = (k: string) => { const c = CATS.find((x) => x[0] === k); return c ? (en ? c[2] : c[1]) : ""; };
+  const found = useMemo(() => {
     const n = nrm(q.trim());
-    return (scenes ?? []).filter((s) => !n || nrm([s.fr, s.en, ...s.tags].join(" ")).includes(n));
+    return (scenes ?? []).filter((s) => !n || nrm([s.fr, s.en, ...s.tags, ...(CATS.find((c) => c[0] === s.cat) ?? []).slice(1)].join(" ")).includes(n));
   }, [scenes, q]);
+  const shown = useMemo(() => found.filter((s) => !cat || s.cat === cat), [found, cat]);
   const file = (s: Scene) => `afroicons-${s.id}${custom(look) ? "-perso" : city === "douala" ? "" : "-" + city}`;
+  const toComposer = () => document.getElementById("composer")?.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
 
   return (
     <section id="illustrations" className="illus">
-      <div className="shead"><div>
+      <div className="shead ilhead"><div>
         <div className="kick">{a.tt("Nouveau · illustrations libres", "New · free illustrations")}</div>
         <h2>{a.tt("Illustrations", "Illustrations")}</h2>
-        <p>{a.tt("Des scènes de la vie africaine d'aujourd'hui, pour vos sites, présentations et réseaux sociaux. Elles prennent les couleurs de l'ambiance choisie ; téléchargez-les en SVG ou en PNG. Licence MIT.", "Scenes of everyday African life today, for your websites, slides and social posts. They take on the colours of the chosen mood; download them as SVG or PNG. MIT licence.")}</p>
+        <p>{a.tt(`${scenes?.length ?? ""} scènes de la vie africaine d'aujourd'hui, pour vos sites, présentations et réseaux sociaux. Choisissez une ambiance, ou ouvrez une scène pour la personnaliser : couleurs, fond, drapeau, teintes de peau. En SVG ou en PNG, licence MIT.`, `${scenes?.length ?? ""} scenes of everyday African life today, for your websites, slides and social posts. Pick a mood, or open a scene to customise it: colours, background, flag, skin tones. As SVG or PNG, MIT licence.`)}</p>
+        <div className="ilheadacts">
+          <button className="btn" onClick={toComposer}>{a.tt("Composer un personnage", "Build a character")} ↓</button>
+        </div>
       </div></div>
 
       <div className="iltools">
-        <label className="ilsearch"><ISearch s={17} /><input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder={a.tt("Chercher une scène : marché, école, santé…", "Search a scene: market, school, health…")} aria-label={a.tt("Chercher une illustration", "Search illustrations")} /></label>
-        <div className="ilpals" role="group" aria-label={a.tt("Couleurs des illustrations", "Illustration colours")}>
-          {(Object.entries(CITIES) as [CityId, (typeof CITIES)[CityId]][]).map(([k, v]) => (
-            <button key={k} type="button" aria-pressed={cityOf(look) === k} className={cityOf(look) === k ? "on" : ""} onClick={() => setCity(k)} title={v.n}>
-              <span className="dots">{v.c.map((c) => <i key={c} style={{ background: c }} />)}</span><span>{v.n}</span>
-            </button>
-          ))}
+        <label className="ilsearch"><ISearch s={17} /><input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder={a.tt("Chercher une scène : marché, école, drapeau…", "Search a scene: market, school, flag…")} aria-label={a.tt("Chercher une illustration", "Search illustrations")} /></label>
+        <div className="ilrow">
+          <span className="illbl">{a.tt("Ambiance", "Mood")}</span>
+          <div className="ilpals" role="group" aria-label={a.tt("Couleurs des illustrations", "Illustration colours")}>
+            {(Object.entries(CITIES) as [CityId, (typeof CITIES)[CityId]][]).map(([k, v]) => (
+              <button key={k} type="button" aria-pressed={cityOf(look) === k} className={cityOf(look) === k ? "on" : ""} onClick={() => setCity(k)} title={v.n}>
+                <span className="dots">{v.c.map((c) => <i key={c} style={{ background: c }} />)}</span><span>{v.n}</span>
+              </button>
+            ))}
+          </div>
         </div>
+        {scenes && <div className="ilrow">
+          <span className="illbl">{a.tt("Rubrique", "Topic")}</span>
+          <div className="ilcats" role="group" aria-label={a.tt("Rubriques", "Topics")}>
+            {[["", a.tt("Toutes", "All")] as [string, string], ...CATS.map(([k]) => [k, catName(k)] as [string, string])].map(([k, n]) => {
+              const c = k ? found.filter((s) => s.cat === k).length : found.length;
+              return <button key={k || "all"} type="button" aria-pressed={cat === k} className={cat === k ? "on" : ""} disabled={!c && cat !== k} onClick={() => setCat(k)}>{n}<small>{c}</small></button>;
+            })}
+          </div>
+        </div>}
+        {custom(look) && <p className="ilnote" role="status">{a.tt("Vos réglages personnalisés s'appliquent à toutes les scènes.", "Your custom settings apply to every scene.")} <button className="lnk" onClick={() => setLook(lookOf(a.city))}>{a.tt("Revenir aux réglages d'origine", "Back to the original settings")}</button></p>}
       </div>
 
       {failed ? <p className="ilempty">{a.tt("Les illustrations n'ont pas pu se charger. Vérifiez votre connexion puis rechargez la page.", "The illustrations could not load. Check your connection, then reload the page.")}</p>
-        : !scenes ? <div className="ilgrid" aria-busy="true">{[0, 1, 2, 3].map((k) => <div key={k} className="ilcard wait" />)}</div>
-        : !shown.length ? <p className="ilempty">{a.tt("Aucune scène ne correspond. Essayez « marché », « école » ou « famille ».", "No scene matches. Try “market”, “school” or “family”.")}</p>
+        : !scenes ? <div className="ilgrid" aria-busy="true">{[0, 1, 2, 3, 4, 5].map((k) => <div key={k} className="ilcard wait" />)}</div>
+        : !shown.length ? <div className="ilempty"><p>{a.tt("Aucune scène ne correspond. Essayez « marché », « école » ou « famille ».", "No scene matches. Try “market”, “school” or “family”.")}</p><button className="btn" onClick={() => { setQ(""); setCat(""); }}>{a.tt("Tout afficher", "Show all")}</button></div>
         : <ul className="ilgrid">
           {shown.map((s) => {
             const svg = applyLook(s.svg, look);
+            const name = en ? s.en : s.fr;
             return (
               <li key={s.id} className="ilcard">
-                <button type="button" className={"ilimg" + (look.bg === "none" ? " clear" : "")} aria-label={a.tt(`Personnaliser « ${s.fr} »`, `Customise “${s.en}”`)} onClick={() => setCur(s)} dangerouslySetInnerHTML={{ __html: scope(svg, s.id) }} />
+                <button type="button" className={"ilimg" + (look.bg === "none" ? " clear" : "")} aria-label={a.tt(`Personnaliser « ${s.fr} »`, `Customise “${s.en}”`)} onClick={() => setCur(s)}>
+                  <img src={dataUri(svg)} alt="" width={800} height={600} loading="lazy" decoding="async" />
+                  <span className="ilhover" aria-hidden="true"><ISliders s={15} />{a.tt("Personnaliser", "Customise")}</span>
+                </button>
                 <div className="ilmeta">
-                  <h3>{en ? s.en : s.fr}</h3>
+                  <div className="iltitle"><h3>{name}</h3><span>{catName(s.cat)}</span></div>
                   <div className="ilacts">
                     <button className="btn p" onClick={() => a.save(file(s) + ".svg", svg)} aria-label={a.tt(`Télécharger « ${s.fr} » en SVG`, `Download “${s.en}” as SVG`)}>SVG</button>
                     <button className="btn" onClick={() => savePng(file(s) + ".png", svg, 1600, 1200)} aria-label={a.tt(`Télécharger « ${s.fr} » en PNG`, `Download “${s.en}” as PNG`)}>PNG</button>
                     <button className="btn" onClick={() => a.copy(svg, a.tt("SVG copié", "SVG copied"))} aria-label={a.tt(`Copier le code SVG de « ${s.fr} »`, `Copy the SVG code of “${s.en}”`)}>{a.tt("Copier", "Copy")}</button>
-                    <button className="btn ilcust" onClick={() => setCur(s)} aria-label={a.tt(`Personnaliser « ${s.fr} »`, `Customise “${s.en}”`)} ><ISliders s={15} />{a.tt("Personnaliser", "Customise")}</button>
                   </div>
                 </div>
               </li>
@@ -323,9 +392,8 @@ export function Illustrations() {
           })}
         </ul>}
 
-      {custom(look) && <p className="ilnote">{a.tt("Vos réglages s'appliquent à toutes les scènes.", "Your settings apply to every scene.")} <button className="lnk" onClick={() => setLook(lookOf(a.city))}>{a.tt("Revenir aux réglages d'origine", "Back to the original settings")}</button></p>}
       <Composer colors={look.colors} />
-      <Editor scene={cur} base={look} list={shown} open={setCur} close={() => setCur(null)} applyAll={setLook} />
+      <Editor scene={cur} base={look} list={shown.some((x) => x.id === cur?.id) ? shown : scenes ?? []} open={setCur} close={() => setCur(null)} applyAll={setLook} />
     </section>
   );
 }

@@ -187,13 +187,20 @@ assert.equal(new Set(ILLUS.map((x) => x.id)).size, ILLUS.length, "illustrations 
 for (const x of ILLUS) {
   assert.match(x.id, /^[a-z0-9-]+$/, `illustration ${x.id} : identifiant`);
   assert.ok(x.fr && x.en && x.tags.length >= 4, `illustration ${x.id} : noms et mots-clés`);
-  assert.match(x.svg, /^<svg xmlns="http:\/\/www\.w3\.org\/2000\/svg" viewBox="0 0 800 600">/, `illustration ${x.id} : cadre`);
+  assert.match(x.svg, /^<svg xmlns="http:\/\/www\.w3\.org\/2000\/svg" viewBox="0 0 800 600"( xmlns:xlink="http:\/\/www\.w3\.org\/1999\/xlink")?>/, `illustration ${x.id} : cadre`);
   // Le cadre que la fiche du site sait régler (fond, coins, miroir) : voir applyLook() dans Illustrations.tsx.
   assert.match(x.svg, /<clipPath id="cadre"><rect width="800" height="600" rx="36"\/><\/clipPath><rect width="800" height="600" rx="36" fill="#[0-9A-Fa-f]{6}"\/><g clip-path="url\(#cadre\)">/, `illustration ${x.id} : cadre réglable`);
   assert.doesNotMatch(x.svg, /NaN|undefined|<script|<text/i, `illustration ${x.id} : contenu`);
   assert.ok(x.svg.length < 50_000, `illustration ${x.id} : moins de 50 Ko`);
   const ids = new Set([...x.svg.matchAll(/id="([^"]+)"/g)].map((m) => m[1]));
   for (const [, ref] of x.svg.matchAll(/url\(#([^)]+)\)/g)) assert.ok(ids.has(ref), `illustration ${x.id} : motif ${ref} défini`);
+  // Les drapeaux (flag.mjs) : un vrai drapeau, encadré pour que le site le remplace par celui du pays voulu.
+  const nf = (x.svg.match(/data-flag="/g) ?? []).length;
+  assert.equal((x.svg.match(/<g data-flag="[A-Z]{2}" transform="[^"]+"><!--f-->[\s\S]*?<!--\/f-->/g) ?? []).length, nf, `illustration ${x.id} : drapeaux remplaçables`);
   for (const [, ref] of x.svg.matchAll(/href="#([^"]+)"/g)) assert.ok(ids.has(ref), `illustration ${x.id} : forme ${ref} définie`);
+  // Compatibilité Illustrator 2019 et avant : chaque href a son xlink:href, et l'espace de noms est déclaré.
+  const nHref = (x.svg.match(/ href="#/g) || []).length;
+  assert.equal((x.svg.match(/ xlink:href="#/g) || []).length, nHref, `illustration ${x.id} : xlink:href pour chaque href`);
+  if (nHref) assert.ok(/^<svg [^>]*xmlns:xlink="http:\/\/www\.w3\.org\/1999\/xlink"/.test(x.svg), `illustration ${x.id} : xmlns:xlink déclaré`);
 }
 console.log(`✔ ${ILLUS.length} illustrations`);

@@ -1,5 +1,6 @@
 // Scènes : la veillée des contes, la danse au son des tambours, la sortie d'école.
 import { C, SKIN, HAIR, person, frame, palm, cloud, stroke, f } from "./lib.mjs";
+import { flag } from "./flag.mjs";
 
 /** Dessine `svg` (repère local d'un personnage) aux mêmes position, échelle et sens qu'un person(). */
 const at = (x, y, s, flip, svg) => `<g transform="translate(${f(x)} ${f(y)}) scale(${flip ? -s : s} ${s})">${svg}</g>`;
@@ -159,9 +160,8 @@ function danse() {
 function ecole() {
   const g = [];
   g.push(cloud(80, 70, 0.8), cloud(600, 50, 0.9));
-  // Drapeau (vert, rouge, jaune, étoile), le mât part de derrière le toit
-  g.push(stroke("M690 190V40", C.grey, 4), `<rect x="692" y="44" width="22" height="44" fill="${C.leaf2}"/><rect x="714" y="44" width="22" height="44" fill="${C.red}"/><rect x="736" y="44" width="22" height="44" fill="${C.yellow}"/>`);
-  g.push(`<path d="M725 58L727.5 64H734L729 68L731 74L725 70.5L719 74L721 68L716 64H722.5Z" fill="${C.yellow}"/>`);
+  // Drapeau du pays (suit l'ambiance sur le site), le mât part de derrière le toit
+  g.push(stroke("M690 190V40", C.grey, 4), flag(692, 44, 66));
   // Bâtiment de l'école, toit de tôle, volets bleus
   g.push(`<rect x="150" y="196" width="600" height="230" fill="${C.cream}"/><rect x="150" y="336" width="600" height="90" fill="${C.ocre}"/><rect x="150" y="330" width="600" height="8" fill="${C.terra}"/>`);
   g.push(`<path d="M130 204L180 150H720L770 204Z" fill="${C.steel}"/>`);
