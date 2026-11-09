@@ -1169,3 +1169,17 @@ button.ilimg:hover .ilhover,button.ilimg:focus-visible .ilhover{opacity:1;transf
   .ilexpacts .btn{flex:1;justify-content:center}
   .ilseg{flex:1 1 100%}.ilseg button{flex:1;justify-content:center}
 }
+
+/* Fiche d'une icône (afroicons.org/icones/baobab/) : le contenu de la page, écrit à la construction */
+.fiche-page{max-width:880px;margin:0 auto;padding-top:28px;padding-bottom:64px}
+.fiche-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px}
+.fiche{line-height:1.65}
+.fiche>nav{font-size:14px;color:var(--muted);margin:18px 0 4px}
+.fiche a{color:var(--at,#C24E2A)}
+.fiche h1{font:800 clamp(32px,5vw,48px)/1.1 "Bricolage Grotesque","DM Sans",system-ui,sans-serif;margin:10px 0 6px;letter-spacing:-.02em}
+.fiche h2{font:700 21px/1.3 "Bricolage Grotesque","DM Sans",system-ui,sans-serif;margin:32px 0 10px}
+.fiche svg{color:var(--ink);vertical-align:middle;margin-right:14px}
+.fiche pre{background:var(--ink);color:var(--bg);padding:14px 16px;border-radius:12px;overflow:auto;font:13px/1.55 "JetBrains Mono",ui-monospace,monospace}
+.fiche code{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.92em}
+.fiche ul.g{display:flex;flex-wrap:wrap;gap:6px 16px;padding:0;list-style:none}
+.fiche ol,.fiche ul:not(.g){padding-left:20px}

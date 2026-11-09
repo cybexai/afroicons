@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { PAGE, byId } from "./lib/constants";
+import { FICHE, PAGE, byId } from "./lib/constants";
 import { useApp } from "./state";
 import { Hero, Marquee, Nav } from "./components/Header";
 import { Library } from "./components/Library";
@@ -14,12 +14,14 @@ import { BodiesContext, ToneContext } from "./components/ui";
 
 export default function App() {
   const a = useApp();
+  const fiche = PAGE === "icon" ? FICHE : null;
 
   // Lien direct vers une icône : afroicons.org/icones/baobab/ (ou l'ancienne forme afroicons.org/#baobab)
   useEffect(() => {
     const open = () => {
       const h = location.hash.slice(1), p = location.pathname.match(/\/icones\/([a-z0-9-]+)\/?$/)?.[1];
-      if (byId[h]) a.openIcon(h); else if (p && byId[p]) a.openIcon(p);
+      // Sur la fiche d'une icône, la fiche est la page : l'atelier s'ouvre au clic, pas d'office.
+      if (byId[h]) a.openIcon(h); else if (p && byId[p] && PAGE !== "icon") a.openIcon(p);
     };
     open();
     // Arrivée depuis une autre page sur une section (afroicons.org/#atelier) : on y descend une fois la page affichée.
@@ -36,6 +38,7 @@ export default function App() {
   useEffect(() => {
     const siteTitle = { current: (PAGE === "news" ? a.tt("Nouveautés — journal des versions | Afroicons", "What's new — release notes | Afroicons")
       : PAGE === "illus" ? a.tt("Illustrations africaines libres — scènes SVG à télécharger | Afroicons", "Free African illustrations — SVG scenes to download | Afroicons")
+      : PAGE === "icon" && FICHE ? FICHE.title
       : PAGE === "playground" ? a.tt("Bac à sable — essayez les icônes dans votre interface | Afroicons", "Playground — try the icons in your interface | Afroicons")
       : a.tt("Afroicons — des icônes qui racontent l'Afrique", "Afroicons — icons that tell Africa's story")) };
     const i = a.current ? byId[a.current] : null;
@@ -74,7 +77,16 @@ export default function App() {
     <BodiesContext.Provider value={a.bodies}><ToneContext.Provider value={a.tone}>
       {/* Quand une fenêtre est ouverte, la page derrière devient inerte : le focus clavier y reste enfermé. */}
       <div {...inert(modal)}>
-      {PAGE !== "home" ? <>
+      {fiche ? <>
+        <Nav />
+        <main className="wrap fiche-page">
+          {byId[fiche.slug] ? <div className="fiche-actions">
+            <button type="button" className="btn p" onClick={() => a.openIcon(fiche.slug)}>{a.tt("Personnaliser et télécharger", "Customise and download")}</button>
+            <a className="btn" href="/#icones">{a.tt("Toutes les icônes", "All icons")}</a>
+          </div> : null}
+          <article className="fiche" dangerouslySetInnerHTML={{ __html: fiche.html }} />
+        </main>
+      </> : PAGE !== "home" ? <>
         <Nav />
         <main className="wrap">{PAGE === "news" ? <Changelog /> : PAGE === "illus" ? <Illustrations /> : <Playground />}</main>
       </> : <>

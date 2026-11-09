@@ -188,5 +188,8 @@ export const STYLES: { id: Style; fr: string; en: string }[] = [
 ];
 export const SHOWCASE = ["baobab", "djembe", "sankofa", "mototaxi", "case", "kora", "masque", "calebasse", "elephant", "mobilemoney", "pirogue", "djenne", "musgum", "cameleon", "ananas", "taxibrousse"].filter((id) => byId[id]);
 
-/** Page affichée : l'accueil, ou le journal des versions (afroicons.org/nouveautes/). */
-export const PAGE: "home" | "news" | "playground" | "illus" = /^\/nouveautes\/?$/.test(location.pathname) ? "news" : /^\/playground\/?$/.test(location.pathname) ? "playground" : /^\/illustrations\/?$/.test(location.pathname) ? "illus" : "home";
+/** Page affichée : l'accueil, le journal des versions (afroicons.org/nouveautes/), le bac à sable, les illustrations, ou la fiche d'une icône (afroicons.org/icones/baobab/). */
+export const PAGE: "home" | "news" | "playground" | "illus" | "icon" = /^\/nouveautes\/?$/.test(location.pathname) ? "news" : /^\/playground\/?$/.test(location.pathname) ? "playground" : /^\/illustrations\/?$/.test(location.pathname) ? "illus" : /^\/icones\/[a-z0-9-]+\/?$/.test(location.pathname) ? "icon" : "home";
+/** Fiche d'une icône : le contenu écrit à la construction (scripts/pages.mjs), lu avant que l'application ne remplace #root.
+ *  Il reste le contenu principal de la page, pour les visiteurs comme pour les moteurs de recherche. */
+export const FICHE = PAGE === "icon" ? { slug: location.pathname.split("/").filter(Boolean)[1], html: document.querySelector("#root .seo")?.innerHTML ?? "", title: document.title } : null;
