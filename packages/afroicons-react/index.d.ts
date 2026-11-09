@@ -979,6 +979,12 @@ export declare const Soja: Afroicon;
 export declare const Vachelaitiere: Afroicon;
 /** Pharmacie · Pharmacy */
 export declare const Pharmacie: Afroicon;
+/** Cachet · Rubber stamp */
+export declare const Cachet: Afroicon;
+/** Conteneur · Shipping container */
+export declare const Conteneur: Afroicon;
+/** Parpaing · Cement block */
+export declare const Parpaing: Afroicon;
 /** Carte de l'Algérie · Map of Algeria */
 export declare const CarteAlgerie: Afroicon;
 /** Carte de l'Angola · Map of Angola */

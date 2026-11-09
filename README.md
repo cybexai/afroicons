@@ -1,6 +1,6 @@
 <p align="center"><img src="docs/logo.svg" width="96" alt="Afroicons"></p>
 <h1 align="center">Afroicons</h1>
-<p align="center"><b>Des icônes libres qui racontent l'Afrique.</b><br>585 icônes culturelles, au trait et remplies (dont les cartes des 54 pays et 42 monnaies), + les 56 drapeaux (54 pays, l'Union africaine et le panafricain) + 483 emojis + 1557 icônes d'interface · grille 24 px · FR / EN · open source (MIT)</p>
+<p align="center"><b>Des icônes libres qui racontent l'Afrique.</b><br>588 icônes culturelles, au trait et remplies (dont les cartes des 54 pays et 42 monnaies), + les 56 drapeaux (54 pays, l'Union africaine et le panafricain) + 483 emojis + 1557 icônes d'interface · grille 24 px · FR / EN · open source (MIT)</p>
 <p align="center"><a href="https://afroicons.org"><b>afroicons.org</b></a></p>
 <p align="center">
   <a href="LICENSE"><img alt="Licence MIT" src="https://img.shields.io/badge/licence-MIT-C24E2A"></a>

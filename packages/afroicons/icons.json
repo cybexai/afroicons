@@ -10442,6 +10442,65 @@
   "fill": "<mask id=\"afm-pharmacie\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><rect x=\"4.4\" y=\"2.8\" width=\"9\" height=\"3.2\" rx=\"1\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M5.6 6V7.2C4.4 7.8 3.4 8.8 3.4 10.6V19.2C3.4 20.3 4.3 21.2 5.4 21.2H12.4C13.5 21.2 14.4 20.3 14.4 19.2V10.6C14.4 8.8 13.4 7.8 12.2 7.2V6Z\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M15.4 17.59L18.1 12.91C19.37 10.72 22.66 12.62 21.4 14.81L18.7 19.49C17.43 21.68 14.14 19.78 15.4 17.59Z\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M8.9 11.4V17M6.1 14.2H11.7\" fill=\"none\" stroke=\"#000\"/><path d=\"M16.75 15.25L20.05 17.15\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-pharmacie)\"/>"
  },
  {
+  "id": "cachet",
+  "fr": "Cachet",
+  "en": "Rubber stamp",
+  "cat": "vie",
+  "region": "pan",
+  "tags": [
+   "cachet",
+   "tampon",
+   "stamp",
+   "officiel",
+   "administration",
+   "signature",
+   "légaliser",
+   "mairie"
+  ],
+  "since": "0.12",
+  "body": "<path d=\"M10.4 10.5V7.6C9.7 7.1 9.3 6.3 9.3 5.4C9.3 3.9 10.5 2.8 12 2.8C13.5 2.8 14.7 3.9 14.7 5.4C14.7 6.3 14.3 7.1 13.6 7.6V10.5\"/><path d=\"M5.5 12C5.5 11.2 6.2 10.5 7 10.5H17C17.8 10.5 18.5 11.2 18.5 12V15H5.5Z\"/><path d=\"M6.5 15V17.5H17.5V15\"/><path d=\"M7 21H17\"/>",
+  "fill": "<mask id=\"afm-cachet\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><path d=\"M10.4 10.5V7.6C9.7 7.1 9.3 6.3 9.3 5.4C9.3 3.9 10.5 2.8 12 2.8C13.5 2.8 14.7 3.9 14.7 5.4C14.7 6.3 14.3 7.1 13.6 7.6V10.5Z\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M5.5 12C5.5 11.2 6.2 10.5 7 10.5H17C17.8 10.5 18.5 11.2 18.5 12V15H5.5Z\" fill=\"#fff\" stroke=\"#fff\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-cachet)\"/><path d=\"M6.5 15V17.5H17.5V15\"/><path d=\"M7 21H17\"/>"
+ },
+ {
+  "id": "conteneur",
+  "fr": "Conteneur",
+  "en": "Shipping container",
+  "cat": "vie",
+  "region": "pan",
+  "tags": [
+   "conteneur",
+   "container",
+   "import-export",
+   "port",
+   "douala",
+   "fret",
+   "boutique conteneur"
+  ],
+  "since": "0.12",
+  "body": "<path d=\"M2.5 10H15.5V20H2.5Z\"/><path d=\"M2.5 10L8.5 4.5H21.5L15.5 10\"/><path d=\"M15.5 20L21.5 14.5V4.5\"/><path d=\"M5.5 12.5V17.5M9 12.5V17.5M12.5 12.5V17.5\"/>",
+  "fill": "<mask id=\"afm-conteneur\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><path d=\"M2.5 10H15.5V20H2.5Z\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M2.5 10L8.5 4.5H21.5L15.5 10Z\" fill=\"#fff\" stroke=\"#fff\"/><path d=\"M5.5 12.5V17.5M9 12.5V17.5M12.5 12.5V17.5\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-conteneur)\"/><path d=\"M15.5 20L21.5 14.5V4.5\"/>"
+ },
+ {
+  "id": "parpaing",
+  "fr": "Parpaing",
+  "en": "Cement block",
+  "cat": "vie",
+  "region": "pan",
+  "tags": [
+   "parpaing",
+   "agglo",
+   "brique",
+   "cement block",
+   "chantier",
+   "btp",
+   "construction",
+   "maçon"
+  ],
+  "since": "0.12",
+  "body": "<rect x=\"2.5\" y=\"6\" width=\"19\" height=\"12\" rx=\"1.5\"/><rect x=\"5.5\" y=\"9\" width=\"5\" height=\"6\" rx=\"0.8\"/><rect x=\"13.5\" y=\"9\" width=\"5\" height=\"6\" rx=\"0.8\"/>",
+  "fill": "<mask id=\"afm-parpaing\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"24\" height=\"24\"><rect x=\"2.5\" y=\"6\" width=\"19\" height=\"12\" rx=\"1.5\" fill=\"#fff\" stroke=\"#fff\"/><rect x=\"5.5\" y=\"9\" width=\"5\" height=\"6\" rx=\"0.8\" fill=\"none\" stroke=\"#000\"/><rect x=\"13.5\" y=\"9\" width=\"5\" height=\"6\" rx=\"0.8\" fill=\"none\" stroke=\"#000\"/></mask><rect width=\"24\" height=\"24\" fill=\"currentColor\" stroke=\"none\" mask=\"url(#afm-parpaing)\"/>"
+ },
+ {
   "id": "carte-algerie",
   "fr": "Carte de l'Algérie",
   "en": "Map of Algeria",
